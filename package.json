@@ -1,0 +1,13 @@
+{
+	"name": "stamp-atlas",
+	"private": true,
+	"version": "0.0.0",
+	"scripts": {
+		"dev": "wrangler dev",
+		"deploy": "wrangler deploy",
+		"upload-projection": "wrangler r2 object put stamp-atlas-public/public.json --file ./public/public.json --content-type application/json"
+	},
+	"devDependencies": {
+		"wrangler": "^4.0.0"
+	}
+}

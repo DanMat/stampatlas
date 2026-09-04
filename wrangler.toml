@@ -1,0 +1,22 @@
+name = "stamp-atlas"
+main = "src/worker.ts"
+compatibility_date = "2026-09-01"
+workers_dev = true
+
+# The read path is a materialised projection served from R2 by the Worker: no database a
+# crawler can wake, a few kilobytes of public-safe JSON behind the edge. The projection object
+# is uploaded at deploy (`npm run upload-projection`); the Worker reads it through this binding
+# and falls back to a bundled copy for local `wrangler dev`.
+[[r2_buckets]]
+binding = "PROJECTION"
+bucket_name = "stamp-atlas-public"
+
+# Static assets (the atlas imagery) served straight from public/ by the edge, no code path.
+# Unmatched requests (/ and /api/*) fall through to the Worker.
+[assets]
+directory = "./public"
+
+# The public custom domain. wrangler provisions the DNS record and edge cert (needs Zone perms).
+[[routes]]
+pattern = "stampatlas.danmat.dev"
+custom_domain = true
