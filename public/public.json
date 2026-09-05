@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T18:03:56.725683Z",
+  "generatedAt": "2026-09-05T18:26:46.335Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -12,21 +12,21 @@
         "metric": "albumCount",
         "unit": "physical albums photographed",
         "value": {
-          "confirmed": 1,
+          "confirmed": 0,
           "candidate": 0,
           "unknown": 0
         },
-        "eligiblePopulation": 1
+        "eligiblePopulation": 0
       },
       {
         "metric": "albumPositionCount",
         "unit": "positions encountered while traversing an album — pages, covers, inserts, dividers",
         "value": {
-          "confirmed": 2,
+          "confirmed": 0,
           "candidate": 0,
           "unknown": 0
         },
-        "eligiblePopulation": 2
+        "eligiblePopulation": 0
       },
       {
         "metric": "positionOccupancy",
@@ -34,9 +34,9 @@
         "value": {
           "confirmed": 0,
           "candidate": 0,
-          "unknown": 2
+          "unknown": 0
         },
-        "eligiblePopulation": 2
+        "eligiblePopulation": 0
       },
       {
         "metric": "albumArchetypeCoverage",
@@ -44,23 +44,17 @@
         "value": {
           "confirmed": 0,
           "candidate": 0,
-          "unknown": 1
+          "unknown": 0
         },
-        "eligiblePopulation": 1
-      },
-      {
-        "metric": "philatelicItemCount",
-        "unit": "individual items the binder has bound to a page — one stamp, cover, block or sheet",
-        "value": {
-          "confirmed": 1,
-          "candidate": 0,
-          "unknown": 32
-        },
-        "eligiblePopulation": 33
+        "eligiblePopulation": 0
       }
     ],
-    "asOf": "2026-09-03T18:03:56.725683Z",
+    "asOf": "2026-09-05T18:26:46.429Z",
     "pending": [
+      {
+        "metric": "philatelicItemCount",
+        "blockedBy": "detection has not yet bound an item on any published album"
+      },
       {
         "metric": "distinctIssuerCount",
         "blockedBy": "resolving identified issues to distinct issuer entities"
@@ -79,33 +73,7 @@
       }
     ]
   },
-  "albums": [
-    {
-      "physicalAlbumId": "PA-01M1KP-0",
-      "displayName": "Trial plate — two pages",
-      "archetype": null,
-      "positionCount": 2,
-      "positions": [
-        {
-          "sequenceIndex": 0,
-          "role": "PAGE",
-          "pageNumber": null
-        },
-        {
-          "sequenceIndex": 1,
-          "role": "PAGE",
-          "pageNumber": null
-        }
-      ],
-      "observedEmpty": 0,
-      "observedUnknown": 2,
-      "capturedOn": "2026-09-03",
-      "itemCount": {
-        "total": 33,
-        "identified": 1
-      }
-    }
-  ],
+  "albums": [],
   "withheld": [
     "objectRef",
     "workingCopyRef",
