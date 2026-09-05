@@ -212,6 +212,15 @@ export const PAGE = `<!doctype html>
   .survey p { margin:0; font-family:"Fraunces",serif; font-size:clamp(1.08rem,2.1vw,1.3rem); line-height:1.45; color:var(--ink-2); text-wrap:pretty; }
   .survey p strong { color:var(--ink); font-weight:600; }
   .survey .bar { height:6px; margin-top:1rem; }
+
+  /* curiosities — playful, honest statistics derived from the projection, each gated to what is known */
+  .curios { display:grid; grid-template-columns:repeat(auto-fit,minmax(248px,1fr)); gap:1rem; margin:.2rem 0 1rem; }
+  .curio { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:1.3rem 1.4rem; box-shadow:var(--shadow); }
+  .curio .big { font-family:"Fraunces",serif; font-size:clamp(1.9rem,4.6vw,2.6rem); font-weight:500; line-height:1; letter-spacing:-.02em; color:var(--sea); font-variant-numeric:tabular-nums; }
+  .curio .big small { font-size:.36em; color:var(--muted); font-weight:400; letter-spacing:.02em; margin-left:.15em; }
+  .curio p { margin:.7rem 0 0; font-family:"Fraunces",serif; font-size:1rem; line-height:1.45; color:var(--ink-2); text-wrap:pretty; }
+  .curio p b { color:var(--ink); font-weight:600; }
+  .curios-empty { font-family:"Fraunces",serif; font-size:1.05rem; line-height:1.5; color:var(--muted); max-width:52ch; margin:.2rem 0 1rem; text-wrap:pretty; }
   .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1px; background:var(--line);
     border:1px solid var(--line); border-radius:12px; overflow:hidden; box-shadow:var(--shadow); }
   .stat { background:var(--panel); padding:1.15rem 1.25rem 1.2rem; display:flex; flex-direction:column; }
@@ -578,13 +587,18 @@ function home(){
     <div class="stats" id="stats"></div>
     <div class="legend"><span><i class="c"></i> confirmed by a person</span><span><i class="a"></i> machine candidate</span><span><i class="u"></i> not yet looked at</span></div>
 
-    <div class="sec-label"><span class="rn">iii.</span> The territories</div>
+    <div class="sec-label"><span class="rn">iii.</span> Curiosities</div>
+    <p class="prose muted">Strange statistics, read straight off the collection — honest today, and gaining new
+       ones as more of the archive comes to be known.</p>
+    <div class="curios" id="curios"></div>
+
+    <div class="sec-label"><span class="rn">iv.</span> The territories</div>
     <p class="prose muted">As each stamp is identified it takes its place in a territory — a country, an era, a theme.
        Charted ground is drawn solid; the rest is dashed, and waiting.</p>
     <div class="terr" id="terr-preview"></div>
     <p style="margin-top:1.2rem"><a class="backlink" href="#/atlas">See the whole atlas →</a></p>
 
-    <div class="sec-label"><span class="rn">iv.</span> Walk the exhibit</div>
+    <div class="sec-label"><span class="rn">v.</span> Walk the exhibit</div>
     <ol class="walk">
       <li><a href="#/atlas"><span class="rn">Room I</span><b>The Atlas</b><span class="s">The territories — charted, and honestly blank.</span></a></li>
       <li><a href="\${firstAlbumHref()}"><span class="rn">Room II</span><b>An album</b><span class="s">One shelf of the collection, position by position.</span></a></li>
@@ -607,6 +621,52 @@ function renderStats(root){
       s.appendChild(el('div','bar','<i class="c" style="width:'+pc(d.v.confirmed)+'%"></i><i class="a" style="width:'+pc(d.v.candidate)+'%"></i><i class="u" style="width:'+pc(d.v.unknown)+'%"></i>'));
     }
     root.appendChild(s);
+  }
+}
+
+/* curiosities: playful facts computed from the projection. Each is gated on the data it needs, so
+   count-based ones appear the moment items exist and the date/issuer ones slot in later. Numbers come
+   from the projection (traceable); the page only phrases them — it invents no facts. */
+function curiosities(){
+  const albums = DATA.albums||[];
+  const positions = albums.reduce((n,a)=>n+(a.positionCount||0),0);
+  const pic = (DATA.facts.metrics||[]).find(m=>m.metric==='philatelicItemCount');
+  const items = pic ? (pic.eligiblePopulation||0) : 0;
+  const identified = pic ? ((pic.value&&pic.value.confirmed)||0) : 0;
+  const num = n => n.toLocaleString();
+  const out = [];
+  if(items>0){
+    const years = items/365;
+    out.push({ n:num(items), unit: items===1?'day':'days',
+      text:'At <b>one stamp a day</b>, you would need <b>'+num(items)+'</b> '+(items===1?'day':'days')
+        + (years>=1 ? ' — about <b>'+(years<10?years.toFixed(1):Math.round(years))+' years</b>' : '')
+        + ' — to look through the whole collection, one window at a time.' });
+    const waiting = items-identified;
+    if(waiting>0) out.push({ n:num(waiting), unit:'still to name',
+      text:'<b>'+num(waiting)+'</b> of the '+num(items)+' object'+(items===1?'':'s')+' '+(waiting===1?'is':'are')
+        + ' still waiting to be identified. The collection is, quietly, still telling us what it is.' });
+  }
+  if(positions>0){
+    out.push({ n:num(positions), unit: positions===1?'page':'pages',
+      text:'<b>'+num(positions)+'</b> position'+(positions===1?'':'s')+' walked through — pages, covers, inserts, '
+        + 'dividers — each preserved as a photograph, once, and kept for good.' });
+  }
+  return out;
+}
+function renderCurios(root){
+  if(!root) return;
+  const cs = curiosities();
+  if(!cs.length){
+    root.innerHTML = '<p class="curios-empty">The curiosities begin once the first pages are in — strange '
+      + 'statistics, computed straight from the collection. Come back and watch them appear.</p>';
+    return;
+  }
+  root.innerHTML = '';
+  for(const c of cs){
+    const d = el('div','curio');
+    d.appendChild(el('div','big', c.n+' <small>'+esc(c.unit)+'</small>'));
+    d.appendChild(el('p', null, c.text));
+    root.appendChild(d);
   }
 }
 
@@ -808,6 +868,7 @@ function route(){
   lastDepth=depth;
   view.appendChild(node);
   if(hash==='/') renderStats($('#stats'));
+  if(hash==='/') renderCurios($('#curios'));
   if(hash==='/') { const p=$('#terr-preview'); if(p) territoryCards(4).forEach(c=>p.appendChild(c)); }
   if(name==='atlas' && $('#terr')) territoryCards().forEach(c=>$('#terr').appendChild(c));
   if(room==='album'){
