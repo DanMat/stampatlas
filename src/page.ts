@@ -1,895 +1,1164 @@
-/** Stamp Atlas — the public story page. Self-contained; fetches /api/public.json and renders it. */
+/** Stamp Atlas — the public story page. Self-contained; fetches /api/public.json and renders it.
+ *  GENERATED from scratchpad/live-index.html by to-page-ts.py — edit the HTML, then regenerate. */
 export const PAGE = `<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stamp Atlas</title>
-<meta name="description" content="A lifetime's stamp collection, told as an atlas — every stamp a small window onto a place, a person, a year the world thought worth remembering. Being charted, one page at a time." />
-<meta property="og:title" content="Stamp Atlas" />
-<meta property="og:description" content="Every stamp is a small window — onto a place, a person, a year. One lifetime's collection, being charted into an atlas." />
-<meta property="og:image" content="https://stampatlas.danmat.dev/assets/hero.jpg" />
-<meta property="og:type" content="website" />
-<meta name="theme-color" content="#efe6d3" media="(prefers-color-scheme: light)" />
-<meta name="theme-color" content="#110f0b" media="(prefers-color-scheme: dark)" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..600,0..100,0..1;1,9..144,400..600,0..100,0..1&family=Inter:opsz,wght@14..32,400..600&display=swap" rel="stylesheet" />
+<meta name="description" content="Stamp Atlas — one person's stamp collection, twenty-five years in the making, read as a history of the world's post.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
-  /* ============================================================
-     Tokens. Parchment by day, a lamplit reading room by night.
-     ============================================================ */
-  :root {
-    --paper:#efe6d3; --paper-deep:#e3d6ba; --panel:#f9f4e8; --mat:#fdfaf3;
-    --ink:#231e15; --ink-2:#4a4133; --muted:#74684f; --line:#d8caa9; --hair:#c6b78f;
-    --crimson:#962b20; --sea:#2b5859; --gold:#9a7727; --uncharted:#a4967a;
-    --lamp:rgba(255,252,240,.7);
-    --grid:color-mix(in srgb, var(--line) 62%, transparent);
-    --shadow:0 1px 2px rgba(36,31,22,.06), 0 10px 32px rgba(36,31,22,.09);
-    --shadow-lift:0 2px 4px rgba(36,31,22,.08), 0 18px 44px rgba(36,31,22,.14);
-    --ease:cubic-bezier(.2,.7,.2,1);
-    --gutter:clamp(1.1rem,4vw,2.4rem);
-    color-scheme: light;
+/* ————————————————————————————————————————————————
+   STAMP ATLAS · tokens
+   A warm, aged-cartography world: parchment, iron-gall ink,
+   terracotta, ochre, umber. Dark mode is lamplit leather.
+———————————————————————————————————————————————— */
+:root{
+  --paper:#f4ead8; --paper-2:#ecdfc4; --paper-3:#e0cfab; --paper-4:#d2bd92;
+  --ink:#2a1c12; --ink-2:#5a4632; --ink-3:#8a7458; --ink-4:#b39c78;
+  --rule:#cbb48d; --rule-soft:#dfd0b0;
+  --terra:#b8522d; --terra-2:#d9764f; --ochre:#c9932b; --ochre-2:#e2b45a;
+  --sienna:#8e4a22; --umber:#5b3b22; --olive:#6f6d3b; --rose:#b56b5c; --moss:#576b45;
+  --sea:#e9dcbd; --land:#d9c8a1; --land-line:#7c6446;
+  --shadow: 0 1px 0 rgba(90,60,30,.12), 0 12px 30px -18px rgba(70,40,10,.45);
+  --glow: rgba(201,147,43,.22);
+  --hole: var(--paper);
+  --ff-display:"Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --ff-body:"Newsreader", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --ff-mono:"IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  --radius:6px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1f1611; --paper-2:#281d15; --paper-3:#33261b; --paper-4:#443323;
+    --ink:#f6ead1; --ink-2:#e6d3ab; --ink-3:#c6b088; --ink-4:#8a7658;
+    --rule:#4e3b28; --rule-soft:#3a2b1d;
+    --terra:#d8764c; --terra-2:#e89a76; --ochre:#dfae48; --ochre-2:#f0c977;
+    --sienna:#cf8a5a; --umber:#b89168; --olive:#a9a56c; --rose:#d3907f; --moss:#8fa374;
+    --sea:#221912; --land:#3a2b1d; --land-line:#9c7f5a;
+    --shadow: 0 1px 0 rgba(0,0,0,.4), 0 14px 34px -18px rgba(0,0,0,.8);
+    --glow: rgba(223,174,72,.18);
+    color-scheme: dark;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --paper:#110f0b; --paper-deep:#0b0907; --panel:#1a1712; --mat:#efe6d3;
-      --ink:#ede5d3; --ink-2:#cfc3a9; --muted:#a0927a; --line:#2e2820; --hair:#443a2a;
-      --crimson:#d97f62; --sea:#86b6b4; --gold:#d0ab58; --uncharted:#7a6e57;
-      --lamp:rgba(214,160,80,.13);
-      --grid:color-mix(in srgb, var(--line) 55%, transparent);
-      --shadow:0 1px 2px rgba(0,0,0,.35), 0 12px 36px rgba(0,0,0,.5);
-      --shadow-lift:0 2px 4px rgba(0,0,0,.4), 0 22px 54px rgba(0,0,0,.6);
-      color-scheme: dark;
-    }
-  }
-  * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
-  body {
-    margin:0; background-color:var(--paper); color:var(--ink); overflow-x:clip;
-    font:400 17px/1.65 "Inter", ui-sans-serif, system-ui, sans-serif;
-    font-feature-settings:"cv11","ss01";
-    /* paper grain, a lamp at the top of the page, and a cartographic graticule fading toward the horizon */
-    background-image:
-      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/><feColorMatrix values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0 .55'/></filter><rect width='180' height='180' filter='url(%23g)'/></svg>"),
-      radial-gradient(90% 46% at 50% -8%, var(--lamp), transparent 70%),
-      radial-gradient(120% 70% at 50% 0%, transparent 35%, var(--paper) 100%),
-      linear-gradient(var(--grid) 1px, transparent 1px),
-      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-    background-size: 180px 180px, 100% 100%, 100% 100%, 64px 64px, 64px 64px;
-    background-position: 0 0, 0 0, 0 0, -1px -1px, -1px -1px;
-    background-attachment: scroll, fixed, fixed, scroll, scroll;
-    background-blend-mode: soft-light, normal, normal, normal, normal;
-  }
-  .wrap { max-width:1040px; margin:0 auto; padding:var(--gutter); }
-  a { color:var(--crimson); text-decoration:none; }
-  a:hover { text-decoration:underline; text-underline-offset:3px; text-decoration-thickness:1px; }
-  h1,h2,h3 { font-family:"Fraunces", Georgia, serif; font-weight:600; line-height:1.06; letter-spacing:-.018em; margin:0; text-wrap:balance; }
-  h1 { font-variation-settings:"opsz" 144, "SOFT" 20; }
-  em { font-variation-settings:"WONK" 1; }
-  .serif { font-family:"Fraunces", Georgia, serif; }
-  .caps { font-family:"Inter",sans-serif; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; font-weight:600; }
-  ::selection { background:color-mix(in srgb, var(--gold) 35%, transparent); }
-  :focus-visible { outline:2px solid var(--crimson); outline-offset:3px; border-radius:3px; }
+}
+:root[data-theme="dark"]{
+  --paper:#1f1611; --paper-2:#281d15; --paper-3:#33261b; --paper-4:#443323;
+  --ink:#f6ead1; --ink-2:#e6d3ab; --ink-3:#c6b088; --ink-4:#8a7658;
+  --rule:#4e3b28; --rule-soft:#3a2b1d;
+  --terra:#d8764c; --terra-2:#e89a76; --ochre:#dfae48; --ochre-2:#f0c977;
+  --sienna:#cf8a5a; --umber:#b89168; --olive:#a9a56c; --rose:#d3907f; --moss:#8fa374;
+  --sea:#221912; --land:#3a2b1d; --land-line:#9c7f5a;
+  --shadow: 0 1px 0 rgba(0,0,0,.4), 0 14px 34px -18px rgba(0,0,0,.8);
+  --glow: rgba(223,174,72,.18);
+  color-scheme: dark;
+}
 
-  /* the perforation mask (the stamp edge) — used on the logo mark */
-  :root { --perf: radial-gradient(circle closest-side at 50% 50%, #0000 97%, #000) 0 0 / 10px 10px; }
+/* ———— base ———— */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important} }
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--ff-body); font-size:clamp(17px,1.05vw + 12px,19px); line-height:1.55;
+  font-variation-settings:"opsz" 18;
+  overflow-x:hidden;
+  position:relative;
+}
+/* parchment grain — an engraved graticule + stipple, painted theme-aware as a mask of the
+   ink colour, so it becomes faint dark grain on paper and faint light grain in lamplight. */
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+  --grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><path d='M15 0v120M45 0v120M75 0v120M105 0v120M0 15h120M0 45h120M0 75h120M0 105h120' stroke='currentColor' stroke-width='.5' opacity='.05'/><path d='M79.6 39.7q4.8 1.8 9.6-.5M67.2 41.4q6.3 1.9 12.6.2M27.3 77.3q6.1 1.5 12.2.5M77.1 84.9q6.5 1.8 13-.5M96.1 17.8q5.8 1.1 11.5 0M34.8 67.6q5.4.5 10.7.7M30.5 108.1q7.7 2 15.3.9M92 10.7q7.2-.2 14.4-.2M75.5 69.3q4.8 1 9.5.9M24 57.9q6.2-2.3 12.3-.4M22.9 70.9q5.9 2.2 11.7-.1' fill='none' stroke='currentColor' stroke-width='.45' stroke-linecap='round' opacity='.09'/><path d='M47.4 97.4v.1M10 17.9v.1M78 50v.1M7.8 54.2v.1M105.6 100.7v.1M79.9 41.6v.1M62.1 60v.1M92.8 57.1v.1M38.1 51.3v.1M6.9 5.3v.1M43.9 2.1v.1M99.4 51.9v.1M66.4 85.4v.1M82.3 6.1v.1M87.8 96.9v.1M51.7 78.6v.1M96.5 10.3v.1M116.6 9.9v.1M90.2 81.9v.1M109.8 115.1v.1M76.5 22v.1M32.3 17.1v.1M116.6 28.9v.1M115.4 58.9v.1M112.4 93.8v.1M8.6 66.1v.1M85.1 53.7v.1M105.5 40.4v.1M42.5 35.3v.1M68.2 27.1v.1M108.1 54.3v.1M19.5 35.6v.1M56.8 65.1v.1M84.4 24.9v.1' stroke='currentColor' stroke-width='1.1' stroke-linecap='round' opacity='.07'/><path d='M84.3 18.3v.1M40.7 104.9v.1M28.8 46.3v.1M66.3 19.2v.1M67 42.2v.1M61.1 39.3v.1M56.9 59.8v.1M39 38.9v.1M9.8 31.9v.1M37.3 2.2v.1M53.9 99.3v.1M18.4 3.8v.1M23.8 84.2v.1M97 16.6v.1M100.3 79.9v.1M109.8 80.1v.1M49.5 88.5v.1M21.7 88.8v.1M103 6.4v.1M12.8 13.2v.1M64.4 73.5v.1M25.4 96.1v.1M103 107.5v.1M39.3 81v.1M60.5 10.5v.1M19.7 15.4v.1M114.7 43.5v.1M78 64.7v.1M71.4 99.1v.1M106.9 94.3v.1M83.8 12.9v.1M57.6 22.6v.1M66 98.9v.1M101.3 26.1v.1M82.5 99.3v.1M45 48.4v.1M71.9 56.2v.1M100.9 112.8v.1M97.2 105.7v.1M31.7 30.9v.1M3.4 14.8v.1M67.1 7v.1M27 36.7v.1M55.2 82.9v.1M8 27.2v.1M14.3 76.7v.1M88.8 27.5v.1M6.2 84.3v.1M46.4 40v.1M5.5 40.8v.1M96.3 27.4v.1M36 57.9v.1M63.5 24.9v.1M107.8 27.3v.1M51.7 14.5v.1M87.5 115.2v.1M22.5 101.5v.1M16.6 22.8v.1M84.8 93.4v.1M8.6 77v.1M34.5 9.2v.1M93.7 38.8v.1M3.5 74.9v.1M76 8.6v.1M55.4 27.5v.1M27.8 9.6v.1M41.5 87.9v.1M41.7 19.5v.1M69.8 35.6v.1M104.9 65.2v.1' stroke='currentColor' stroke-width='.65' stroke-linecap='round' opacity='.09'/></svg>");
+  background:var(--ink);
+  -webkit-mask:var(--grain) 0 0/120px 120px repeat; mask:var(--grain) 0 0/120px 120px repeat;
+  opacity:.85;
+}
+a{color:var(--sienna);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--terra)}
+:focus-visible{outline:2px solid var(--ochre);outline-offset:3px;border-radius:2px}
+button{font:inherit;color:inherit}
+img,svg{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,40px);position:relative;z-index:1}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mono{font-family:var(--ff-mono);font-size:.78em;letter-spacing:.02em}
+.small{font-size:.85em;color:var(--ink-2)}
+.muted{color:var(--ink-3)}
+.italic{font-style:italic}
+h1,h2,h3,h4{font-family:var(--ff-display);font-weight:500;line-height:1.08;margin:0;font-variation-settings:"opsz" 72,"SOFT" 40}
+h2{font-size:clamp(30px,3.4vw,46px);letter-spacing:-.01em}
+h3{font-size:clamp(20px,1.6vw,25px);font-variation-settings:"opsz" 36,"SOFT" 30}
+h4{font-size:1.05rem;font-variation-settings:"opsz" 18,"SOFT" 20}
+p{margin:.5em 0 1em}
+.deck{font-family:var(--ff-body);font-style:italic;font-size:1.12em;color:var(--ink-2);max-width:62ch;font-variation-settings:"opsz" 24}
+.eyebrow{font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terra)}
+hr.rule{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--rule),transparent);margin:2rem 0}
 
-  /* ============================================================
-     Top bar
-     ============================================================ */
-  nav.bar { display:flex; align-items:center; justify-content:space-between; gap:1rem;
-    padding:.8rem var(--gutter); border-bottom:1px solid var(--line);
-    position:sticky; top:0; z-index:10; background:color-mix(in srgb, var(--paper) 84%, transparent);
-    backdrop-filter:blur(12px) saturate(1.15); -webkit-backdrop-filter:blur(12px) saturate(1.15); }
-  .logo { font-family:"Fraunces",serif; font-weight:600; font-size:1.15rem; color:var(--ink); display:flex; align-items:center; gap:.6rem; white-space:nowrap; flex:none; }
-  .logo:hover { text-decoration:none; }
-  .logo .mark { width:22px; height:26px; border-radius:3px; background:var(--crimson);
-    -webkit-mask:var(--perf); mask:var(--perf); flex:none; }
-  .crumbs { flex:1; display:flex; align-items:center; gap:.55rem; min-width:0; overflow:hidden;
-    font-family:"Inter",sans-serif; font-size:.72rem; letter-spacing:.06em; color:var(--muted); white-space:nowrap; }
-  .crumbs:empty { display:none; }
-  .crumbs .rn { font-family:"Fraunces",serif; font-style:italic; font-weight:500; letter-spacing:0; color:var(--gold); font-size:.9rem; }
-  .crumbs .sep { color:var(--hair); }
-  .crumbs b { color:var(--ink-2); font-weight:500; overflow:hidden; text-overflow:ellipsis; }
-  @media (max-width:900px){ .crumbs { display:none; } }
-  .navlinks { display:flex; gap:clamp(.8rem,2.2vw,1.4rem); margin-left:auto; font-family:"Inter",sans-serif; font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; font-weight:500; }
-  .navlinks a { color:var(--muted); padding-bottom:3px; border-bottom:2px solid transparent; white-space:nowrap; flex:none;
-    transition:color .2s var(--ease), border-color .2s var(--ease); }
-  .navlinks a:hover { color:var(--ink); text-decoration:none; }
-  .navlinks a.on { color:var(--ink); border-bottom-color:var(--crimson); }
-  @media (max-width:560px){ .navlinks { gap:.8rem; font-size:.66rem; letter-spacing:.08em; } .logo span.word { display:none; } }
+/* ———— perforation frame: the signature motif ————
+   Two mask layers: a grid of holes whose centres fall on the box edge,
+   unioned with the content-box rectangle so holes only survive at the rim. */
+.perf{
+  --hole-r:3px; --hole-gap:11px;
+  padding:7px; background:var(--paper-2);
+  -webkit-mask:
+    radial-gradient(circle var(--hole-r) at 50% 50%, transparent 98%, #000 100%) calc(var(--hole-gap)/-2) calc(var(--hole-gap)/-2)/var(--hole-gap) var(--hole-gap),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask-composite: source-over;
+          mask:
+    radial-gradient(circle var(--hole-r) at 50% 50%, transparent 98%, #000 100%) calc(var(--hole-gap)/-2) calc(var(--hole-gap)/-2)/var(--hole-gap) var(--hole-gap),
+    linear-gradient(#000 0 0) content-box;
+          mask-composite: add;
+}
+.perf > .inner{background:var(--paper-2);border:1px solid var(--rule-soft);padding:clamp(14px,2vw,22px);height:100%}
+.card{background:var(--paper-2);border:1px solid var(--rule);border-radius:var(--radius);padding:clamp(14px,2vw,22px);box-shadow:var(--shadow)}
+.card.flat{box-shadow:none}
+.grid{display:grid;gap:clamp(12px,1.6vw,20px)}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+@media (min-width:761px){.g2.split{grid-template-columns:var(--split)}}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.card h3 + .bars{margin-top:12px}
 
-  /* view transitions: walking deeper slides in from the right; walking back, from the left */
-  #view > * { animation:rise .55s var(--ease) both; }
-  #view[data-dir="deeper"] > * { animation-name:rise-deeper; }
-  #view[data-dir="back"] > * { animation-name:rise-back; }
-  @keyframes rise { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
-  @keyframes rise-deeper { from { opacity:0; transform:translate(22px,6px); } to { opacity:1; transform:none; } }
-  @keyframes rise-back { from { opacity:0; transform:translate(-22px,6px); } to { opacity:1; transform:none; } }
-  @media (prefers-reduced-motion: reduce) { #view > * { animation:none !important; } html { scroll-behavior:auto; } }
+/* ———— masthead ———— */
+.masthead{position:relative;z-index:2;padding:18px 0 8px;border-bottom:1px solid var(--rule)}
+.masthead .wrap{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
+.brand .rose{width:44px;height:44px;flex:none}
+.brand .name{font-family:var(--ff-display);font-size:1.7rem;font-weight:600;letter-spacing:.01em;font-variation-settings:"opsz" 60,"SOFT" 60;line-height:1}
+.brand .name small{display:block;font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3);margin-top:5px;font-weight:400}
+.mast-right{margin-left:auto;display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);background:var(--paper-2);color:var(--ink);padding:8px 14px;border-radius:999px;font-family:var(--ff-mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:transform .15s,background .15s,border-color .15s}
+.btn:hover{background:var(--paper-3);border-color:var(--ink-4);transform:translateY(-1px)}
+.btn.primary{background:var(--terra);border-color:var(--terra);color:#fff7ea}
+.btn.primary:hover{background:var(--sienna);border-color:var(--sienna)}
+.btn.ghost{background:transparent}
+.btn svg{width:14px;height:14px}
 
-  /* ============================================================
-     The mat — a mounted stamp, perforated on all four sides.
-     ============================================================ */
-  .mat { background:var(--mat); padding:14px 14px 30px; box-shadow:var(--shadow); position:relative; }
-  .mat img { outline:1px solid rgba(36,31,22,.14); outline-offset:-1px; }
-  .mat::before, .mat::after, .mat > .pl, .mat > .pr { content:""; position:absolute; pointer-events:none; }
-  .mat::before, .mat::after { left:0; right:0; height:12px;
-    background:radial-gradient(circle closest-side, var(--paper) 74%, #0000 76%) 0 0 / 16px 12px repeat-x; }
-  .mat::before { top:-6px; } .mat::after { bottom:-6px; }
-  .mat > .pl, .mat > .pr { top:0; bottom:0; width:12px;
-    background:radial-gradient(circle closest-side, var(--paper) 74%, #0000 76%) 0 0 / 12px 16px repeat-y; }
-  .mat > .pl { left:-6px; } .mat > .pr { right:-6px; }
-  .mat .cap { position:absolute; left:14px; right:14px; bottom:9px; text-align:center; font-family:"Fraunces",serif; font-style:italic;
-    font-size:.78rem; color:#6f634c; letter-spacing:.02em; }
+/* ———— contents nav: album tab dividers, one per PART ————
+   The bounded axis. Chapters (≤ ~20) sit inside a handful of named parts;
+   the strip never holds more than the parts, so it cannot overflow. */
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.nav-row{display:flex;align-items:stretch;gap:4px;min-height:46px}
+.parts{list-style:none;margin:0;padding:0;display:flex;gap:2px;min-width:0}
+.parts li{flex:none}
+.part-btn,.contents-btn{display:flex;flex-direction:column;justify-content:center;gap:2px;height:100%;padding:6px 11px 5px;background:none;border:0;border-bottom:3px solid transparent;border-radius:0;font-family:var(--ff-mono);font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);cursor:pointer;white-space:nowrap;text-align:left}
+.part-btn small,.contents-btn small{font-size:.58rem;letter-spacing:.14em;color:var(--ink-4)}
+.part-btn:hover,.contents-btn:hover,.part-btn[aria-expanded="true"],.contents-btn[aria-expanded="true"]{color:var(--ink);background:var(--paper-2)}
+.part-btn[aria-current="true"]{color:var(--terra);border-bottom-color:var(--terra)}
+.part-btn[aria-current="true"] small{color:var(--terra);opacity:.75}
+/* engraved ornaments */
+.part-btn{flex-direction:row;align-items:center;gap:9px}
+.part-btn .pcol{display:flex;flex-direction:column;gap:2px;min-width:0}
+.emblem{display:inline-flex;flex:none;color:var(--ink-3)}
+.emblem svg{width:1.15em;height:1.15em;display:block}
+.part-btn[aria-current="true"] .emblem,.part-btn:hover .emblem{color:var(--terra)}
+.contents-part .cp-head{display:flex;align-items:center;gap:11px;margin-bottom:6px}
+.contents-part .cp-head .emblem{color:var(--ochre)}
+.contents-part .cp-head .emblem svg{width:23px;height:23px}
+.contents-part .cp-head .eyebrow{margin-bottom:0}
+.ch-divider{color:color-mix(in oklab,var(--ink) 32%,transparent);margin:4px auto clamp(12px,2.6vw,26px);max-width:1180px;padding:0 clamp(16px,4vw,40px)}
+.ch-divider svg{display:block;width:100%;height:34px}
+.chapter:first-of-type .ch-divider{display:none}
+.footseal{color:var(--sienna);--seal-accent:var(--terra);width:58px;height:58px;flex:none;opacity:.92;align-self:center}
+.footseal svg{width:100%;height:100%;display:block}
+.contents-btn{display:none;flex-direction:row;align-items:center;gap:8px;padding:6px 10px 6px 4px}
+.contents-btn svg{width:16px;height:16px;flex:none}
+.contents-btn .lbl b{color:var(--terra);font-weight:500;margin-right:4px}
+.nav-here{margin-left:auto;display:flex;align-items:center;gap:8px;font-family:var(--ff-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:0 10px;min-width:0}
+.nav-here b{color:var(--terra);font-weight:500;flex:none}
+.nav-here span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:30ch}
+.index-btn{align-self:center;flex:none;padding:5px 11px;margin-left:auto}
+.nav-here + .index-btn{margin-left:0}
+.index-btn kbd,.contents-foot kbd,.gaz kbd{font-family:var(--ff-mono);font-size:.6rem;border:1px solid var(--rule);border-radius:3px;padding:0 5px;color:var(--ink-3);line-height:1.5}
+@media (max-width:1180px){.nav-here{display:none}}
+@media (max-width:1040px){.parts{display:none}.contents-btn{display:flex}}
+@media (max-width:640px){.index-btn kbd{display:none}}
+/* the contents page itself: drops from the tab strip */
+.contents{position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--rule);box-shadow:var(--shadow);max-height:calc(100vh - 56px);overflow:auto}
+.contents[hidden]{display:none}
+.contents > .wrap{padding-top:20px;padding-bottom:18px}
+.contents-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:18px 26px}
+.contents-part{transition:opacity .2s}
+.contents-part.dim{opacity:.5}
+.contents-part .eyebrow{display:block;margin-bottom:2px}
+.contents-part h4{font-size:1.15rem;margin:0 0 4px}
+.contents-part ol{list-style:none;margin:0;padding:8px 0 0;display:grid;gap:2px;border-top:1px solid var(--rule-soft)}
+.contents-part a{display:grid;grid-template-columns:2.8ch 1fr;gap:2px 8px;text-decoration:none;color:var(--ink);padding:5px 6px;border-radius:4px;font-size:.95em;line-height:1.3}
+.contents-part a b{font-family:var(--ff-mono);font-size:.7rem;color:var(--ochre);font-weight:500;padding-top:3px;text-align:right}
+.contents-part a:hover{background:var(--paper-2);color:var(--terra)}
+.contents-part a[aria-current="true"]{color:var(--terra);background:var(--paper-2)}
+.contents-part a[aria-current="true"]::after{content:"you are here";grid-column:2;font-family:var(--ff-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.contents-foot{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;align-items:center;margin-top:18px;padding-top:12px;border-top:1px solid var(--rule-soft);font-size:.86em;color:var(--ink-3);font-style:italic}
+.contents-foot .btn{font-style:normal}
 
-  /* ============================================================
-     Hero
-     ============================================================ */
-  .hero { display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(1.6rem,5vw,3.6rem); align-items:center; margin:clamp(1.6rem,5vw,3.4rem) 0 clamp(2.4rem,6vw,4rem); }
-  @media (max-width:760px){ .hero { grid-template-columns:1fr; } .hero .heroimg { order:-1; max-width:420px; margin:1.4rem auto 0; } }
-  .kicker { font-family:"Inter",sans-serif; font-size:.74rem; letter-spacing:.24em; text-transform:uppercase; color:var(--crimson); font-weight:600; display:flex; align-items:center; gap:.7rem; }
-  .kicker::before { content:""; width:1.6rem; height:1px; background:var(--crimson); flex:none; }
-  .hero h1 { font-size:clamp(2.7rem,7.6vw,4.9rem); margin:.7rem 0 .5rem; font-weight:500; }
-  .hero h1 em { font-style:italic; font-weight:400; color:var(--sea); font-variation-settings:"opsz" 144, "SOFT" 20, "WONK" 1; }
-  .hero .lede { font-family:"Fraunces",serif; font-size:clamp(1.15rem,2.2vw,1.35rem); line-height:1.5; color:var(--ink-2); max-width:44ch; margin:.6rem 0 1.7rem; text-wrap:pretty; }
-  .ctas { display:flex; flex-wrap:wrap; gap:.7rem; align-items:center; }
-  .heroimg { position:relative; }
-  .heroimg img { width:100%; aspect-ratio:1/1; object-fit:cover; display:block; background:var(--panel); }
-  /* the postmark: a circular date stamp with its wavy killer lines, struck across the corner */
-  .postmark { position:absolute; width:clamp(150px,34%,210px); right:-8%; top:-7%; color:var(--crimson); transform:rotate(-8deg); pointer-events:none;
-    filter:drop-shadow(0 1px 0 rgba(255,255,255,.25)); opacity:.94; mix-blend-mode:multiply; }
-  @media (prefers-color-scheme: dark) { .postmark { mix-blend-mode:normal; opacity:.92; } }
-  .postmark circle, .postmark path { fill:none; stroke:currentColor; stroke-linecap:round; }
-  .postmark .ring { font-family:"Inter",sans-serif; font-size:9.5px; font-weight:600; letter-spacing:2.2px; fill:currentColor; }
-  .postmark .date { font-family:"Fraunces",serif; font-size:11.5px; font-weight:600; letter-spacing:.4px; fill:currentColor; }
-  .cta { display:inline-flex; gap:.6rem; align-items:center; background:var(--crimson); color:#fff;
-    padding:.8rem 1.25rem; border-radius:8px; font-family:"Inter",sans-serif; font-weight:600; font-size:.93rem;
-    box-shadow:0 1px 0 rgba(0,0,0,.08); transition:transform .2s var(--ease), filter .2s var(--ease); }
-  .cta:hover { text-decoration:none; filter:brightness(1.07); transform:translateY(-1px); }
-  .cta.ghost { background:transparent; color:var(--ink); border:1px solid var(--hair); box-shadow:none; }
-  .cta.ghost:hover { border-color:var(--ink); }
-  .asof-inline { margin:1.3rem 0 0; font-family:"Inter",sans-serif; font-size:.78rem; color:var(--muted); letter-spacing:.02em; }
+/* ———— hero ———— */
+.hero{position:relative;padding:clamp(40px,7vw,96px) 0 clamp(30px,5vw,60px);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .9fr;gap:clamp(24px,4vw,56px);align-items:center}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(40px,6.2vw,84px);font-weight:400;letter-spacing:-.02em;line-height:.98;font-variation-settings:"opsz" 144,"SOFT" 70;max-width:10.6em;text-wrap:balance}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--terra)}
+.hero .lede{font-size:clamp(18px,1.4vw,22px);color:var(--ink-2);max-width:56ch;font-variation-settings:"opsz" 24}
+.hero .lede strong{color:var(--ink);font-weight:500}
+.hero .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.hero-plate{position:relative}
+.hero-graticule{position:absolute;inset:-40% -30% -40% -20%;pointer-events:none;opacity:.35;z-index:0}
+.bigfacts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+@media (max-width:520px){.bigfacts{grid-template-columns:1fr 1fr}}
+.bigfacts .bf{border-top:2px solid var(--rule);padding-top:8px}
+.bigfacts .n{font-family:var(--ff-display);font-size:clamp(28px,3vw,42px);font-weight:600;line-height:1;font-variation-settings:"opsz" 144,"SOFT" 30;color:var(--ink);letter-spacing:-.02em}
+.bigfacts .l{font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:6px}
 
-  /* ============================================================
-     Section furniture
-     ============================================================ */
-  .sec-label { font-family:"Inter",sans-serif; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase;
-    color:var(--muted); margin:3.4rem 0 1.1rem; display:flex; align-items:center; gap:.9rem; font-weight:600; }
-  .sec-label::after { content:""; flex:1; height:1px; background:var(--line); }
-  .sec-label .rn { font-family:"Fraunces",serif; font-style:italic; font-weight:500; letter-spacing:0; text-transform:none; font-size:1rem; color:var(--gold); }
-  .prose { max-width:64ch; text-wrap:pretty; }
-  .prose p { margin:0 0 1rem; }
-  .big { font-family:"Fraunces",serif; font-size:clamp(1.4rem,3.2vw,1.95rem); line-height:1.34; color:var(--ink); font-weight:400; letter-spacing:-.005em; }
-  .big strong { font-weight:600; }
-  .room { font-family:"Inter",sans-serif; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:1.8rem; display:flex; gap:.7rem; align-items:baseline; flex-wrap:wrap; }
-  .room .rn { font-family:"Fraunces",serif; font-style:italic; font-weight:500; letter-spacing:0; text-transform:none; font-size:1.1rem; color:var(--gold); }
-  .title { font-size:clamp(2.1rem,6vw,3.4rem); margin:.35rem 0 .7rem; font-weight:500; }
-  .backlink { font-family:"Inter",sans-serif; font-size:.8rem; letter-spacing:.06em; color:var(--muted); }
-  .backlink:hover { color:var(--crimson); }
-  .muted { color:var(--muted); } .empty-note { color:var(--muted); font-style:italic; font-family:"Fraunces",serif; }
-  .ledger-line { font-family:"Inter",sans-serif; font-size:.78rem; letter-spacing:.04em; color:var(--muted); margin:1.4rem 0 1rem; }
+/* ———— chapter frame ———— */
+.chapter{padding:clamp(44px,6vw,84px) 0;border-top:1px solid var(--rule);scroll-margin-top:52px}
+.chapter-head{display:grid;grid-template-columns:auto 1fr;gap:16px 26px;align-items:start;margin-bottom:clamp(20px,3vw,36px)}
+.chapter-head .numeral{font-family:var(--ff-display);font-size:clamp(34px,4vw,52px);font-weight:300;color:var(--ochre);line-height:1;font-variation-settings:"opsz" 144;padding-top:6px;min-width:2.2ch;text-align:right}
+.chapter-head .deck{margin:.4em 0 0}
+.chapter-head .eyebrow{margin-bottom:6px;display:block}
 
-  /* the trail — where you are on the route through the exhibit */
-  .trail { list-style:none; margin:1.7rem 0 0; padding:0; display:flex; flex-wrap:wrap; align-items:center; row-gap:.55rem;
-    font-family:"Inter",sans-serif; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:var(--muted); }
-  .trail li { display:flex; align-items:center; }
-  .trail li + li::before { content:""; width:clamp(.9rem,3.5vw,2.4rem); height:1px; background:var(--hair); margin:0 .65rem; }
-  .trail .stop { display:inline-flex; align-items:center; gap:.5rem; color:inherit; }
-  .trail a.stop:hover { text-decoration:none; color:var(--ink); }
-  .trail .stop::before { content:""; width:7px; height:7px; border-radius:50%; border:1.5px solid currentColor; flex:none; }
-  .trail i { font-style:italic; font-family:"Fraunces",serif; font-size:.95rem; letter-spacing:0; text-transform:none; font-weight:500; color:var(--gold); }
-  .trail .done { color:var(--ink-2); }
-  .trail .done .stop::before { background:currentColor; opacity:.55; }
-  .trail .here { color:var(--crimson); }
-  .trail .here i { color:var(--crimson); }
-  .trail .here .stop::before { background:currentColor; box-shadow:0 0 0 3px color-mix(in srgb, var(--crimson) 22%, transparent); }
-  .trail .ahead { color:var(--uncharted); }
+/* ———— stat tiles ———— */
+.tile{display:flex;flex-direction:column;gap:6px;min-height:118px}
+.tile .n{font-family:var(--ff-display);font-size:clamp(30px,3.2vw,44px);font-weight:600;letter-spacing:-.02em;line-height:1;font-variation-settings:"opsz" 144,"SOFT" 30}
+.tile .n small{font-size:.5em;font-weight:400;color:var(--ink-3);letter-spacing:0}
+.tile .l{font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.tile .s{font-size:.86em;color:var(--ink-2);font-style:italic;margin-top:auto}
+.tile.accent .n{color:var(--terra)}
+.tile.gold .n{color:var(--ochre)}
 
-  /* ============================================================
-     The three windows — why a stranger should care
-     ============================================================ */
-  .windows { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-top:1.4rem; }
-  @media (max-width:760px){ .windows { grid-template-columns:1fr; } }
-  .window { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:1.5rem 1.4rem 1.6rem; box-shadow:var(--shadow); position:relative; overflow:hidden; }
-  .window::before { content:attr(data-n); position:absolute; right:.9rem; top:.3rem; font-family:"Fraunces",serif; font-style:italic; font-size:3.6rem; line-height:1; color:color-mix(in srgb, var(--gold) 24%, transparent); font-weight:400; }
-  .window h3 { font-size:1.5rem; margin:0 0 .55rem; font-weight:500; }
-  .window h3 em { font-style:italic; color:var(--sea); }
-  .window p { margin:0; font-size:.95rem; color:var(--ink-2); text-wrap:pretty; }
+/* ———— data lists / bars ———— */
+.bars{display:grid;gap:8px}
+.bar{display:grid;grid-template-columns:minmax(120px,190px) 1fr auto;gap:12px;align-items:center;font-size:.92em}
+.bar .lbl{line-height:1.2}
+.bar .trk{display:block;height:12px;background:var(--paper-3);border-radius:2px;overflow:hidden;position:relative}
+.bar .fil{display:block;height:100%;background:linear-gradient(90deg,var(--sienna),var(--terra));transform-origin:left;animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
+.bar .fil.g{background:linear-gradient(90deg,var(--umber),var(--ochre))}
+.bar .fil.o{background:linear-gradient(90deg,var(--moss),var(--olive))}
+.bar .val{font-family:var(--ff-mono);font-size:.76rem;color:var(--ink-2);min-width:4ch;text-align:right}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.bar.clickable{cursor:pointer;border-radius:4px}
+.bar.clickable:hover .lbl{color:var(--terra)}
+table.tbl{width:100%;border-collapse:collapse;font-size:.92em}
+table.tbl th{font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);text-align:left;font-weight:500;padding:8px 10px 8px 0;border-bottom:1px solid var(--rule)}
+table.tbl td{padding:8px 10px 8px 0;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+table.tbl td.num{font-family:var(--ff-mono);font-size:.8rem;text-align:right;white-space:nowrap}
+.scroll-x{overflow-x:auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);border-radius:999px;padding:4px 11px;font-size:.84em;background:var(--paper-2);cursor:pointer;transition:background .15s,border-color .15s}
+.chip:hover,.chip[aria-pressed="true"]{background:var(--paper-3);border-color:var(--ink-4)}
+.chip[aria-pressed="true"]{background:var(--terra);color:#fff7ea;border-color:var(--terra)}
+.chip .k{font-family:var(--ff-mono);font-size:.7rem;color:var(--ink-3)}
+.chip[aria-pressed="true"] .k{color:#fff7ea;opacity:.8}
+.tag{display:inline-block;font-family:var(--ff-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:3px;background:var(--paper-3);color:var(--ink-2)}
+.tag.defunct{background:color-mix(in srgb,var(--terra) 16%,transparent);color:var(--terra)}
+.tag.current{background:color-mix(in srgb,var(--moss) 18%,transparent);color:var(--moss)}
+.tag.unknown{background:color-mix(in srgb,var(--ochre) 20%,transparent);color:var(--sienna)}
 
-  /* ============================================================
-     The survey — one honest number, then the ledger
-     ============================================================ */
-  .survey { display:grid; grid-template-columns:auto 1fr; gap:clamp(1.2rem,4vw,2.6rem); align-items:center; padding:1.6rem 1.8rem; margin-bottom:1rem;
-    border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow);
-    background:linear-gradient(135deg, var(--panel), color-mix(in srgb, var(--panel) 78%, var(--paper-deep))); }
-  @media (max-width:620px){ .survey { grid-template-columns:1fr; } }
-  .survey .pct { font-family:"Fraunces",serif; font-size:clamp(3.6rem,9vw,5.6rem); font-weight:500; line-height:.9; letter-spacing:-.03em; font-variant-numeric:tabular-nums; color:var(--sea); }
-  .survey .pct.zero { color:var(--uncharted); }
-  .survey .pct small { font-size:.42em; color:var(--muted); font-weight:400; margin-left:.04em; }
-  .survey .pk { font-family:"Inter",sans-serif; font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:.6rem; }
-  .survey p { margin:0; font-family:"Fraunces",serif; font-size:clamp(1.08rem,2.1vw,1.3rem); line-height:1.45; color:var(--ink-2); text-wrap:pretty; }
-  .survey p strong { color:var(--ink); font-weight:600; }
-  .survey .bar { height:6px; margin-top:1rem; }
+/* ———— charts (inline SVG) ———— */
+.chart{width:100%;height:auto;display:block;font-family:var(--ff-mono)}
+.chart text{fill:var(--ink-2);font-size:11px}
+.chart .axis{stroke:var(--rule);stroke-width:1}
+.chart .grid{stroke:var(--rule-soft);stroke-width:1;stroke-dasharray:2 4}
+.chart .bar-rect{fill:var(--sienna);transition:fill .15s;cursor:pointer}
+.chart .bar-rect:hover,.chart .bar-rect.on{fill:var(--terra)}
+.chart .bar-rect.max{fill:var(--ochre)}
+.chart .area{fill:var(--terra);opacity:.18}
+.chart .line{fill:none;stroke:var(--terra);stroke-width:2}
+.chart .line2{fill:none;stroke:var(--ochre);stroke-width:2;stroke-dasharray:4 3}
+.chart .dot{fill:var(--paper);stroke:var(--terra);stroke-width:2}
+.donut .seg{transition:opacity .2s}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.84em;color:var(--ink-2)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.swatch{display:inline-block;width:100%;aspect-ratio:1/1;border-radius:4px;border:1px solid rgba(0,0,0,.15)}
 
-  /* curiosities — playful, honest statistics derived from the projection, each gated to what is known */
-  .curios { display:grid; grid-template-columns:repeat(auto-fit,minmax(248px,1fr)); gap:1rem; margin:.2rem 0 1rem; }
-  .curio { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:1.3rem 1.4rem; box-shadow:var(--shadow); }
-  .curio .big { font-family:"Fraunces",serif; font-size:clamp(1.9rem,4.6vw,2.6rem); font-weight:500; line-height:1; letter-spacing:-.02em; color:var(--sea); font-variant-numeric:tabular-nums; }
-  .curio .big small { font-size:.36em; color:var(--muted); font-weight:400; letter-spacing:.02em; margin-left:.15em; }
-  .curio p { margin:.7rem 0 0; font-family:"Fraunces",serif; font-size:1rem; line-height:1.45; color:var(--ink-2); text-wrap:pretty; }
-  .curio p b { color:var(--ink); font-weight:600; }
-  .curios-empty { font-family:"Fraunces",serif; font-size:1.05rem; line-height:1.5; color:var(--muted); max-width:52ch; margin:.2rem 0 1rem; text-wrap:pretty; }
-  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1px; background:var(--line);
-    border:1px solid var(--line); border-radius:12px; overflow:hidden; box-shadow:var(--shadow); }
-  .stat { background:var(--panel); padding:1.15rem 1.25rem 1.2rem; display:flex; flex-direction:column; }
-  .stat .n { font-family:"Fraunces",serif; font-size:2.1rem; font-weight:500; line-height:1; font-variant-numeric:tabular-nums; letter-spacing:-.02em; }
-  .stat .n small { font-size:1.05rem; color:var(--muted); font-weight:400; margin-left:.15rem; }
-  .stat .n.unknown { color:var(--uncharted); }
-  .stat .k { font-family:"Inter",sans-serif; font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-2); margin-top:.6rem; font-weight:600; }
-  .stat .d { font-family:"Inter",sans-serif; font-size:.78rem; color:var(--muted); margin-top:.3rem; line-height:1.45; flex:1; }
-  .bar { display:flex; height:5px; border-radius:3px; overflow:hidden; margin-top:.9rem; background:color-mix(in srgb, var(--line) 60%, transparent); }
-  .bar i { display:block; height:100%; }
-  .bar .c { background:var(--sea); }
-  .bar .a { background:var(--gold); }
-  .bar .e { background:color-mix(in srgb, var(--hair) 70%, transparent); }
-  .bar .u { background:repeating-linear-gradient(90deg, var(--uncharted) 0 3px, transparent 3px 6px); opacity:.7; }
-  .legend { display:flex; flex-wrap:wrap; gap:1.1rem; margin-top:.8rem; font-family:"Inter",sans-serif; font-size:.74rem; color:var(--muted); letter-spacing:.03em; }
-  .legend span { display:inline-flex; align-items:center; gap:.45rem; }
-  .legend i { width:12px; height:8px; border-radius:2px; display:inline-block; }
-  .legend .c { background:var(--sea); } .legend .a { background:var(--gold); }
-  .legend .u { background:repeating-linear-gradient(90deg, var(--uncharted) 0 3px, transparent 3px 6px); }
+/* ———— time machine ———— */
+.tm{display:grid;grid-template-columns:230px 1fr;gap:clamp(14px,2vw,24px)}
+@media (max-width:760px){.tm{grid-template-columns:1fr}}
+.tm .dial{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:6px}
+@media (min-width:761px){.tm .dial{grid-template-columns:1fr 1fr}}
+.tm .dial button{border:1px solid var(--rule);background:var(--paper-2);padding:8px 6px;font-family:var(--ff-mono);font-size:.74rem;cursor:pointer;border-radius:3px}
+.tm .dial button:hover{border-color:var(--ink-4);background:var(--paper-3)}
+.tm .dial button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tm .era{position:relative}
+.tm .era h3{font-size:clamp(28px,3.4vw,44px);font-weight:400;font-variation-settings:"opsz" 144,"SOFT" 40}
+.tm .era .ctx{font-style:italic;color:var(--ink-2);font-size:1.05em}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 18px;margin:14px 0}
+.kv > div{border-top:1px solid var(--rule);padding-top:6px}
+.kv .k{font-family:var(--ff-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.kv .v{font-size:1em;color:var(--ink)}
+.timeline{position:relative;padding-left:22px;border-left:2px solid var(--rule);display:grid;gap:14px}
+.timeline .ev{position:relative}
+.timeline .ev::before{content:"";position:absolute;left:-28px;top:.45em;width:10px;height:10px;border-radius:50%;background:var(--ochre);border:2px solid var(--paper)}
+.timeline .ev .y{font-family:var(--ff-mono);font-size:.74rem;color:var(--terra);letter-spacing:.06em}
+.timeline .ev .t{font-weight:500}
+.timeline .ev .o{font-size:.88em;color:var(--ink-2)}
 
-  /* ============================================================
-     Territories
-     ============================================================ */
-  .terr { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1.1rem; }
-  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden; box-shadow:var(--shadow);
-    display:flex; flex-direction:column; transition:transform .25s var(--ease), box-shadow .25s var(--ease); color:var(--ink); }
-  a.card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lift); text-decoration:none; }
-  .card .top { height:112px; background:var(--sea); background-size:cover; background-position:center; position:relative; }
-  /* a map wash over the plate so a bright survey sheet sits quietly in the case, in either scheme */
-  .card .top::after { content:""; position:absolute; inset:0;
-    background:linear-gradient(to top, color-mix(in srgb, var(--panel) 70%, transparent), transparent 60%), color-mix(in srgb, var(--sea) 22%, transparent); }
-  @media (prefers-color-scheme: dark) { .card .top { filter:brightness(.72) sepia(.25); } }
-  .card .body { padding:.95rem 1.05rem 1.15rem; display:flex; flex-direction:column; flex:1; }
-  .card h3 { font-size:1.2rem; margin:.3rem 0 .3rem; color:var(--ink); font-weight:500; }
-  .card .meta { font-family:"Inter",sans-serif; font-size:.77rem; color:var(--muted); }
-  .card .bar { margin-top:.8rem; height:4px; }
-  .card .go { margin-top:auto; padding-top:.8rem; font-family:"Inter",sans-serif; font-size:.76rem; color:var(--crimson); letter-spacing:.04em; }
-  .card.uncharted { opacity:.78; box-shadow:none; border-style:dashed; background:transparent; }
-  .card.uncharted .top { height:72px; background:
-      repeating-linear-gradient(45deg, color-mix(in srgb,var(--uncharted) 18%, transparent) 0 6px, transparent 6px 12px); }
-  .card.uncharted .top::after { display:none; }
-  .card.uncharted h3 { color:var(--ink-2); }
-  .tag { display:inline-block; font-family:"Inter",sans-serif; font-size:.62rem; letter-spacing:.12em; text-transform:uppercase;
-    padding:.22rem .55rem; border-radius:999px; background:color-mix(in srgb,var(--sea) 14%, transparent); color:var(--sea); font-weight:600; align-self:flex-start; }
-  .tag.grey { background:color-mix(in srgb,var(--uncharted) 18%, transparent); color:var(--uncharted); }
-  .tag.gold { background:color-mix(in srgb,var(--gold) 20%, transparent); color:color-mix(in srgb, var(--gold) 80%, var(--ink)); }
+/* ———— map ———— */
+.map-wrap{display:grid;grid-template-columns:1.6fr .9fr;gap:clamp(14px,2vw,24px)}
+@media (max-width:900px){.map-wrap{grid-template-columns:1fr}}
+.map-frame{background:var(--sea);border:1px solid var(--rule);border-radius:var(--radius);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.map-frame svg{display:block;width:100%;height:auto}
+.map-frame .land{fill:var(--land);stroke:var(--land-line);stroke-width:.8;stroke-linejoin:round}
+.map-frame .grat{stroke:var(--land-line);stroke-opacity:.25;stroke-width:.5;fill:none}
+.map-frame .hatch{fill:url(#hatch);opacity:.55}
+.map-frame .pin{cursor:pointer}
+.map-frame .pin circle.c{fill:var(--terra);fill-opacity:.62;stroke:var(--paper);stroke-width:1.2;transition:fill-opacity .15s,r .2s}
+.map-frame .pin.defunct circle.c{fill:var(--ochre);}
+.map-frame .pin:hover circle.c,.map-frame .pin.on circle.c,.map-frame .pin:focus-visible circle.c{fill-opacity:1}
+.map-frame .pin.dim circle.c{fill-opacity:.12}
+.map-frame .pin text{font-family:var(--ff-mono);font-size:8.5px;fill:var(--ink);paint-order:stroke;stroke:var(--sea);stroke-width:3px;stroke-linejoin:round;pointer-events:none}
+.map-frame .pin.on text{font-weight:500;fill:var(--terra)}
+.map-frame .compass{opacity:.75}
+.map-tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.place{min-height:300px}
+.place .eyebrow{margin-bottom:6px;display:block}
+.place h3{font-size:clamp(26px,2.6vw,34px);font-weight:400;font-variation-settings:"opsz" 96,"SOFT" 40;margin-bottom:6px}
+.place .story{font-size:1em}
+.place .row{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0}
+.place .row > div{border-top:1px solid var(--rule);padding-top:5px;min-width:90px}
+.place .row .k{font-family:var(--ff-mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.place .row .v{font-weight:500}
+.mini-legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--ff-mono);font-size:.68rem;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;align-items:center}
+.mini-legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
 
-  /* ============================================================
-     The walk — the exhibit route, room by room
-     ============================================================ */
-  .walk { list-style:none; padding:0; margin:1.2rem 0 0; display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:12px; overflow:hidden; box-shadow:var(--shadow); }
-  @media (max-width:700px){ .walk { grid-template-columns:1fr; } }
-  .walk a { display:block; background:var(--panel); padding:1.2rem 1.25rem 1.3rem; color:var(--ink); height:100%; position:relative; transition:background .25s var(--ease); }
-  .walk a:hover { text-decoration:none; background:color-mix(in srgb, var(--panel) 70%, var(--paper-deep)); }
-  .walk .rn { font-family:"Fraunces",serif; font-style:italic; font-size:1.25rem; color:var(--gold); display:block; }
-  .walk b { font-family:"Fraunces",serif; font-weight:500; font-size:1.3rem; display:block; margin:.2rem 0 .25rem; }
-  .walk span.s { font-family:"Inter",sans-serif; font-size:.82rem; color:var(--muted); display:block; }
-  .walk a::after { content:"→"; position:absolute; right:1.1rem; top:1.1rem; color:var(--hair); transition:color .25s var(--ease), transform .25s var(--ease); }
-  .walk a:hover::after { color:var(--crimson); transform:translateX(3px); }
+/* ———— family tree ———— */
+.tree h4{margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--rule-soft)}
+.tall{max-height:640px;overflow:auto}
+.tree ul{list-style:none;margin:0;padding-left:22px;position:relative}
+.tree>ul{padding-left:0}
+.tree li{position:relative;padding:3px 0 3px 0}
+.tree ul ul li::before{content:"";position:absolute;left:-14px;top:0;bottom:0;border-left:1px solid var(--rule)}
+.tree ul ul li::after{content:"";position:absolute;left:-14px;top:1.05em;width:11px;border-top:1px solid var(--rule)}
+.tree ul ul li:last-child::before{bottom:auto;height:1.05em}
+.tree .node{display:inline-flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.tree .node .nm{font-weight:500}
+.tree .node .yr{font-family:var(--ff-mono);font-size:.7rem;color:var(--ink-3)}
+.tree .node .ct{font-family:var(--ff-mono);font-size:.7rem;color:var(--terra)}
+.tree .node .ct.zero{color:var(--ink-4);font-style:italic}
 
-  /* the doors at the foot of each room: a slim one back, a wide one on */
-  .doors { display:grid; grid-template-columns:minmax(10rem,auto) 1fr; gap:1rem; margin-top:3.6rem; align-items:stretch; }
-  @media (max-width:640px){ .doors { grid-template-columns:1fr; } .door.back { order:2; } }
-  .door { color:var(--ink); border-radius:14px; transition:transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease); }
-  .door:hover { text-decoration:none; }
-  .door.back { display:flex; flex-direction:column; justify-content:center; padding:1.2rem 1.3rem; border:1px dashed var(--hair); color:var(--muted); }
-  .door.back:hover { border-style:solid; border-color:var(--ink-2); color:var(--ink); }
-  .door.back .t { font-family:"Fraunces",serif; font-size:1.1rem; font-weight:500; display:block; margin-top:.2rem; }
-  .door.next { display:grid; grid-template-columns:1fr auto; align-items:center; gap:1rem; padding:1.4rem 1.5rem;
-    border:1px solid var(--line); background:var(--panel); box-shadow:var(--shadow); }
-  .door.next:hover { transform:translateY(-2px); box-shadow:var(--shadow-lift); }
-  .door .k { font-family:"Inter",sans-serif; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; display:block; }
-  .door.next .t { font-family:"Fraunces",serif; font-size:clamp(1.3rem,3vw,1.7rem); font-weight:500; display:block; margin-top:.2rem; }
-  .door .s { font-family:"Inter",sans-serif; font-size:.85rem; color:var(--muted); display:block; margin-top:.25rem; }
-  .door .arrow { font-family:"Fraunces",serif; font-size:2rem; color:var(--crimson); transition:transform .25s var(--ease); }
-  .door.next:hover .arrow { transform:translateX(4px); }
+/* ———— bubbles (themes) ———— */
+.bubbles{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;padding:10px 0}
+.bubble{--s:60px;width:var(--s);height:var(--s);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:var(--paper-3);border:1px solid var(--rule);cursor:pointer;line-height:1.05;padding:4px;transition:transform .2s,background .2s;font-family:var(--ff-display);font-variation-settings:"opsz" 24,"SOFT" 60}
+.bubble:hover,.bubble[aria-pressed="true"]{transform:scale(1.06);background:var(--ochre-2);border-color:var(--ochre);color:var(--ink)}
+.bubble .t{font-size:clamp(.6rem,calc(var(--s) * .16),1.05rem)}
+.bubble .c{font-family:var(--ff-mono);font-size:.62rem;color:var(--ink-3);margin-top:2px}
+.bubble.big{background:color-mix(in srgb,var(--terra) 22%,var(--paper-3))}
+.theme-detail{margin-top:14px}
 
-  /* ============================================================
-     Album — the exhibit case
-     ============================================================ */
-  .label { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:0; margin:1.4rem 0 1.8rem; border-top:1px solid var(--ink); border-bottom:1px solid var(--line); }
-  .label div { padding:.8rem 1rem .85rem 0; border-right:1px solid var(--line); margin-right:1rem; }
-  .label div:last-child { border-right:0; }
-  .label .ft { font-family:"Inter",sans-serif; font-size:.64rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; }
-  .label .fv { font-family:"Fraunces",serif; font-size:1.1rem; margin-top:.2rem; font-weight:500; }
-  .label .fv.soft { color:var(--uncharted); font-style:italic; font-weight:400; }
-  .label code { font-family:ui-monospace,Menlo,monospace; font-size:.9rem; letter-spacing:.02em; }
-  .case { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:1.4rem 1.5rem 1.5rem; box-shadow:var(--shadow); margin-top:1.4rem;
-    background-image:linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size:32px 32px; }
-  .plate { display:grid; grid-template-columns:repeat(auto-fill, 42px); gap:10px; }
-  .cell { width:42px; height:54px; border-radius:3px; background:var(--panel); border:1px solid var(--hair); position:relative; cursor:default;
-    box-shadow:0 1px 0 rgba(36,31,22,.06); font-family:"Inter",sans-serif; font-size:.58rem; color:var(--muted); display:grid; place-content:end start; padding:3px 4px;
-    transition:transform .2s var(--ease), box-shadow .2s var(--ease); }
-  .cell:hover, .cell:focus-visible { transform:translateY(-2px); box-shadow:var(--shadow); }
-  .cell.filled { background:color-mix(in srgb,var(--sea) 18%, var(--panel)); border-color:var(--sea); color:var(--sea); }
-  .cell.empty { background:transparent; border-style:dashed; box-shadow:none; }
-  .cell.unknown { background:
-      repeating-linear-gradient(45deg, color-mix(in srgb,var(--uncharted) 22%, transparent) 0 4px, transparent 4px 8px), var(--panel); }
-  .cell.cover { border-radius:3px 6px 6px 3px; border-left-width:3px; }
-  .readout { margin-top:1.1rem; padding:.7rem .9rem; border-radius:8px; background:color-mix(in srgb, var(--paper-deep) 55%, transparent);
-    font-family:ui-monospace,Menlo,monospace; font-size:.74rem; color:var(--ink-2); letter-spacing:.01em; min-height:2.4rem; }
-  .readout:empty::before { content:"Hover or tap a position to read its record."; color:var(--muted); font-style:italic; font-family:"Fraunces",serif; font-size:.86rem; }
-  .plate-legend { display:flex; flex-wrap:wrap; gap:1.2rem; margin-top:1.1rem; font-family:"Inter",sans-serif; font-size:.74rem; color:var(--muted); }
-  .plate-legend span { display:inline-flex; align-items:center; gap:.5rem; }
-  .plate-legend i { width:14px; height:18px; border-radius:2px; border:1px solid var(--hair); display:inline-block; }
-  .plate-legend .filled { background:color-mix(in srgb,var(--sea) 18%, var(--panel)); border-color:var(--sea); }
-  .plate-legend .empty { border-style:dashed; }
-  .plate-legend .unknown { background:repeating-linear-gradient(45deg, color-mix(in srgb,var(--uncharted) 22%, transparent) 0 3px, transparent 3px 6px); }
+/* ———— DNA ———— */
+.dna-strip{display:flex;height:64px;gap:2px;align-items:flex-end}
+.dna-strip i{flex:1;background:var(--sienna);opacity:.85;border-radius:2px 2px 0 0;min-width:2px}
+.dna-strip i.hi{background:var(--terra);opacity:1}
+.dna-strip i.lo{background:var(--ochre);opacity:.7}
+.dna-lines{display:grid;gap:10px;font-size:1.02em}
+.dna-lines .ln{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline}
+.dna-lines .ln b{font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ochre);font-weight:500;padding-top:3px;min-width:8ch}
+.meter{height:8px;background:var(--paper-3);border-radius:4px;overflow:hidden;margin-top:6px}
+.meter i{display:block;height:100%;background:linear-gradient(90deg,var(--umber),var(--ochre));animation:grow .9s cubic-bezier(.2,.8,.2,1) both;transform-origin:left}
+.sentence{font-family:var(--ff-display);font-size:clamp(22px,2.4vw,32px);font-weight:300;font-style:italic;line-height:1.25;font-variation-settings:"opsz" 96,"SOFT" 60;color:var(--ink)}
+.sentence strong{font-weight:500;font-style:normal;color:var(--terra)}
 
-  /* ============================================================
-     Lists — counting rules, pending promises
-     ============================================================ */
-  ul.clean { list-style:none; padding:0; margin:0; display:grid; gap:.6rem; }
-  ul.clean li { background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--crimson);
-    border-radius:8px; padding:.8rem 1rem; font-size:.94rem; text-wrap:pretty; }
-  ul.pending li { border-left-color:var(--uncharted); display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; align-items:baseline; }
-  ul.pending .m { font-family:"Fraunces",serif; font-weight:500; font-size:1.05rem; }
-  ul.pending .b { color:var(--muted); font-size:.8rem; font-family:"Inter",sans-serif; letter-spacing:.02em; }
-  ul.pending .b::before { content:"awaiting "; color:var(--uncharted); font-style:italic; }
-  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; margin-top:1.2rem; }
-  @media (max-width:700px){ .steps { grid-template-columns:1fr; } }
-  .step { padding:1.2rem 0 0; border-top:2px solid var(--ink); }
-  .step .rn { font-family:"Fraunces",serif; font-style:italic; color:var(--gold); font-size:1.1rem; }
-  .step h3 { font-size:1.35rem; font-weight:500; margin:.2rem 0 .4rem; }
-  .step p { margin:0; font-size:.93rem; color:var(--ink-2); }
+/* ———— connections ———— */
+.pair{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:stretch}
+@media (max-width:640px){.pair{grid-template-columns:1fr}.pair .link{transform:rotate(90deg)}}
+.pair .link{display:flex;align-items:center;justify-content:center;color:var(--ochre)}
+.pair.stack{grid-template-columns:1fr;gap:6px}
+.pair.stack .link{height:26px;transform:rotate(90deg)}
+.obj{display:flex;gap:12px;align-items:flex-start;cursor:pointer;border-radius:4px}
+.obj > div{min-width:0}
+.obj:hover .ttl{color:var(--terra)}
+.obj .ph{flex:none}
+.obj .ttl{font-weight:500}
+.obj .meta{font-family:var(--ff-mono);font-size:.7rem;color:var(--ink-3);letter-spacing:.04em;margin-top:3px}
+.connect-note{margin-top:12px;font-style:italic;color:var(--ink-2);border-top:1px dashed var(--rule);padding-top:10px}
+.network svg{width:100%;height:auto;display:block}
+.network .edge{stroke:var(--rule);stroke-width:1.2}
+.network .edge.succ{stroke:var(--terra);stroke-dasharray:3 3}
+.network .edge.omni{stroke:var(--ochre)}
+.network .node circle{fill:var(--paper-2);stroke:var(--ink-3);stroke-width:1.2;cursor:pointer}
+.network .node:hover circle,.network .node:focus-visible circle{stroke:var(--terra);stroke-width:2}
+.network .node text{font-family:var(--ff-mono);font-size:9px;fill:var(--ink);text-anchor:middle;pointer-events:none}
 
-  /* ============================================================
-     A page — the entry format
-     ============================================================ */
-  .entry { display:grid; grid-template-columns:minmax(240px,320px) 1fr; gap:clamp(1.6rem,4vw,3rem); align-items:start; margin-top:1.8rem; }
-  @media (max-width:720px){ .entry { grid-template-columns:1fr; } .entry .specimen-col { max-width:320px; margin:0 auto; } }
-  .specimen { position:relative; background:var(--mat); padding:14px; box-shadow:var(--shadow); aspect-ratio:4/5; display:grid; }
-  .specimen::before, .specimen::after, .specimen > .pl, .specimen > .pr { content:""; position:absolute; pointer-events:none; }
-  .specimen::before, .specimen::after { left:0; right:0; height:12px;
-    background:radial-gradient(circle closest-side, var(--paper) 74%, #0000 76%) 0 0 / 16px 12px repeat-x; }
-  .specimen::before { top:-6px; } .specimen::after { bottom:-6px; }
-  .specimen > .pl, .specimen > .pr { top:0; bottom:0; width:12px;
-    background:radial-gradient(circle closest-side, var(--paper) 74%, #0000 76%) 0 0 / 12px 16px repeat-y; }
-  .specimen > .pl { left:-6px; } .specimen > .pr { right:-6px; }
-  /* a glassine hinge peeking over the top edge — the stamp is mounted, not printed */
-  .specimen > .hinge { position:absolute; top:-9px; left:50%; width:28px; height:16px; transform:translateX(-50%) rotate(-1.5deg);
-    background:rgba(255,255,255,.55); border:1px solid rgba(36,31,22,.12); border-radius:2px; pointer-events:none; }
-  .specimen .inner { border:1px solid rgba(36,31,22,.16); display:grid; place-content:center; text-align:center; padding:1.2rem;
-    color:#6b5f4a; font-family:"Inter",sans-serif; font-size:.78rem; line-height:1.55;
-    background:repeating-linear-gradient(135deg, rgba(36,31,22,.045) 0 6px, transparent 6px 12px), #f5eedf; }
-  .specimen .inner b { display:block; font-family:"Fraunces",serif; font-weight:500; font-size:1.05rem; color:#3e3628; margin-bottom:.4rem; letter-spacing:.01em; }
-  .specimen .inner .st { display:inline-block; margin-top:.9rem; font-size:.6rem; letter-spacing:.16em; text-transform:uppercase; border:1px solid #b9ac8f; padding:.25rem .55rem; border-radius:999px; color:#7a6d55; }
-  .specimen-col .capline { font-family:"Fraunces",serif; font-style:italic; font-size:.86rem; color:var(--muted); text-align:center; margin:1.1rem 0 0; }
-  .entry h2 { font-size:clamp(1.9rem,4.5vw,2.6rem); margin:.5rem 0 .6rem; font-weight:500; }
-  .entry .stand { font-family:"Fraunces",serif; font-size:1.12rem; font-style:italic; color:var(--ink-2); line-height:1.5; margin:0 0 1rem; }
-  .demo-flag { display:inline-block; font-family:"Inter",sans-serif; font-size:.64rem; letter-spacing:.12em; text-transform:uppercase;
-    background:var(--gold); color:#1c1400; padding:.26rem .6rem; border-radius:999px; font-weight:600; vertical-align:middle; }
-  .era { margin:1.4rem 0; }
-  .era img { width:100%; border-radius:6px; display:block; box-shadow:var(--shadow); outline:1px solid rgba(36,31,22,.1); outline-offset:-1px; }
-  @media (prefers-color-scheme: dark) { .era img { filter:brightness(.8) sepia(.15); } }
-  .era figcaption { font-family:"Fraunces",serif; font-style:italic; font-size:.84rem; color:var(--muted); margin-top:.5rem; }
-  .facts { border-top:1px solid var(--ink); margin-top:1.2rem; }
-  .fact { border-bottom:1px solid var(--line); padding:.75rem 0; font-family:"Inter",sans-serif; display:grid; grid-template-columns:9rem 1fr; gap:1rem; font-size:.93rem; }
-  @media (max-width:480px){ .fact { grid-template-columns:1fr; gap:.15rem; } }
-  .fact .ft { font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; padding-top:.2rem; }
-  .fact .fv.soft { color:var(--uncharted); font-style:italic; font-family:"Fraunces",serif; font-size:1rem; }
-  .src { font-family:"Inter",sans-serif; font-size:.78rem; color:var(--muted); margin-top:.7rem; }
+/* ———— placeholder plates (no real stamp imagery, ever) ———— */
+.plate{position:relative;background:var(--paper-3);border:1px solid var(--rule);aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px;overflow:hidden;color:var(--ink-2);border-radius:3px}
+.plate.wide{aspect-ratio:16/9}
+.plate:not(.sm):not(.full){max-width:340px;margin-inline:auto}
+.plate.sm{width:78px;aspect-ratio:4/5;padding:6px;font-size:.6rem}
+.plate::before{content:"";position:absolute;inset:6px;border:1px dashed var(--ink-4);border-radius:2px;pointer-events:none;opacity:.7}
+.plate .ico{width:34%;max-width:64px;opacity:.75;margin-bottom:6px}
+.plate.sm .ico{width:50%;margin-bottom:2px}
+.plate .cap{font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;line-height:1.3}
+.plate.sm .cap{font-size:.5rem;letter-spacing:.06em}
+.plate.withheld{background:repeating-linear-gradient(135deg,var(--paper-3) 0 8px,var(--paper-2) 8px 16px)}
+.plate.art{background:radial-gradient(ellipse at 50% 30%,color-mix(in srgb,var(--ochre) 28%,var(--paper-3)),var(--paper-3) 70%)}
+.plate .prompt{font-size:.78em;font-style:italic;color:var(--ink-2);margin-top:8px;max-width:34ch;line-height:1.35}
+.plate.has-art{padding:0;color:#f4ead8}
+.plate .plate-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.94)}
+.plate.has-art .cap{position:absolute;left:0;right:0;bottom:0;margin:0;padding:20px 12px 9px;background:linear-gradient(transparent,rgba(30,18,10,.68));color:#f4ead8;text-align:left;text-transform:uppercase;letter-spacing:.1em}
+:root[data-theme="dark"] .plate .plate-img{filter:saturate(.9) brightness(.8)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .plate .plate-img{filter:saturate(.9) brightness(.8)}}
 
-  /* ============================================================
-     Footer
-     ============================================================ */
-  footer { margin-top:5rem; padding:2.4rem var(--gutter) 2.8rem; border-top:2px solid var(--ink);
-    font-family:"Inter",sans-serif; font-size:.82rem; color:var(--muted); background:color-mix(in srgb, var(--paper-deep) 55%, var(--paper)); }
-  footer .cols { max-width:1040px; margin:0 auto; display:grid; grid-template-columns:1fr 1.2fr; gap:2rem; }
-  @media (max-width:640px){ footer .cols { grid-template-columns:1fr; } }
-  footer p { margin:0 0 .6rem; text-wrap:pretty; }
-  footer code { font-family:ui-monospace,Menlo,monospace; font-size:.74rem; color:var(--ink-2); background:color-mix(in srgb, var(--line) 45%, transparent); padding:.05rem .3rem; border-radius:3px; }
-  footer .colophon { max-width:1040px; margin:1.8rem auto 0; padding-top:1.2rem; border-top:1px solid var(--line); font-size:.76rem; }
+/* ———— play / discovery ———— */
+.play-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(14px,2vw,24px);align-items:start}
+.map-wrap{align-items:start}
+@media (max-width:820px){.play-grid{grid-template-columns:1fr}}
+.discovery{position:relative}
+.discovery .q{font-family:var(--ff-display);font-size:clamp(22px,2.2vw,30px);font-weight:400;line-height:1.2;font-variation-settings:"opsz" 96,"SOFT" 50}
+.discovery .a{margin-top:10px}
+.ticker{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0;font-style:italic;color:var(--ink-2);min-height:3.4em;display:flex;align-items:center;gap:14px}
+.ticker .eyebrow{flex:none}
+.ticker .txt{animation:fadein .6s both}
+@keyframes fadein{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+.surprise{border-left:4px solid var(--terra)}
+
+/* ———— questions ———— */
+.qa{display:grid;gap:0}
+.qa details{border-top:1px solid var(--rule);padding:12px 0}
+.qa details:last-child{border-bottom:1px solid var(--rule)}
+.qa summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-family:var(--ff-display);font-size:1.15em;font-variation-settings:"opsz" 24,"SOFT" 40}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";font-family:var(--ff-mono);color:var(--ochre);flex:none}
+.qa details[open] summary::after{content:"−"}
+.qa .ans{padding:8px 0 4px;color:var(--ink-2)}
+.qa .ans .big{font-family:var(--ff-display);font-size:2em;color:var(--terra);font-weight:500;line-height:1;font-variation-settings:"opsz" 144;display:block;margin:6px 0}
+
+/* ———— unknowns ———— */
+.unk{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(14px,2vw,24px);align-items:start}
+@media (max-width:820px){.unk{grid-template-columns:1fr}}
+.unk .n{font-family:var(--ff-display);font-size:clamp(64px,9vw,120px);font-weight:300;line-height:.9;font-variation-settings:"opsz" 144,"SOFT" 60;color:var(--ochre);letter-spacing:-.03em}
+
+/* ———— modal (the last click: one object) ———— */
+.modal[hidden]{display:none}
+.modal{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(30,18,10,.55);backdrop-filter:blur(3px)}
+.modal .box{background:var(--paper);color:var(--ink);max-width:760px;width:100%;max-height:92vh;overflow:auto;border-radius:8px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);padding:0;position:relative}
+.modal .box .inner{display:grid;grid-template-columns:220px 1fr;gap:20px;padding:22px}
+@media (max-width:620px){.modal .box .inner{grid-template-columns:1fr}}
+.modal .close{position:absolute;top:10px;right:10px}
+.modal h3{font-size:clamp(22px,2.4vw,30px);font-weight:400;font-variation-settings:"opsz" 96,"SOFT" 40;margin:6px 0 4px}
+.modal .facts{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin:12px 0;font-size:.92em}
+.modal .facts .k{font-family:var(--ff-mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.modal .facts .v{color:var(--ink)}
+.modal .why{border-top:1px dashed var(--rule);padding-top:10px;font-style:italic;color:var(--ink-2)}
+
+/* ———— empty state ———— */
+.empty{text-align:center;padding:clamp(60px,12vw,140px) 0}
+.empty h1{font-size:clamp(34px,5vw,64px);font-weight:300;font-variation-settings:"opsz" 144,"SOFT" 70}
+.empty p{max-width:52ch;margin:1em auto;color:var(--ink-2);font-style:italic}
+
+/* ———— facets: in-chapter, self-scaling classification lists ————
+   The unbounded axis. A facet is a find box + optional filter chips + sort,
+   capped at N with "Show all". It never touches the global menu. */
+.facet-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px}
+.facet-find{display:flex;align-items:center;gap:7px;border:1px solid var(--rule);border-radius:999px;padding:4px 12px;background:var(--paper);flex:1 1 170px;max-width:300px}
+.facet-find:focus-within{border-color:var(--ochre);box-shadow:0 0 0 3px var(--glow)}
+.facet-find svg{width:14px;height:14px;color:var(--ink-3);flex:none}
+.facet-find input{border:0;background:transparent;font:inherit;font-size:.9em;color:var(--ink);width:100%;min-width:0;outline:none;padding:0}
+.facet-find input::placeholder{color:var(--ink-4);font-style:italic}
+.facet-sort select{font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);background:var(--paper-2);color:var(--ink-2);border-radius:999px;padding:5px 10px;cursor:pointer}
+.facet-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 12px;margin-top:10px;font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.facet-empty{font-style:italic;color:var(--ink-3);padding:8px 0}
+.linkish{background:none;border:0;padding:0;margin:0;color:var(--sienna);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;cursor:pointer;font:inherit;letter-spacing:inherit;text-transform:inherit}
+.linkish:hover{color:var(--terra)}
+/* running foot of every chapter: where you are, what's next */
+.ch-foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 16px;margin-top:clamp(28px,4vw,44px);padding-top:10px;border-top:1px dashed var(--rule);font-family:var(--ff-mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.ch-foot a{text-decoration:none;color:var(--sienna)}
+.ch-foot a:hover{color:var(--terra)}
+/* the thing the Index jumped to, briefly lit */
+.hit:not(tr){animation:hit 2.2s ease-out both}
+tr.hit>td{animation:hit 2.2s ease-out both}
+@keyframes hit{0%{box-shadow:inset 0 0 0 200px color-mix(in srgb,var(--ochre) 28%,transparent),0 0 0 3px var(--ochre)}100%{box-shadow:inset 0 0 0 200px transparent,0 0 0 3px transparent}}
+@media (prefers-reduced-motion: reduce){.hit:not(tr){outline:2px solid var(--ochre);outline-offset:3px}tr.hit>td{background:color-mix(in srgb,var(--ochre) 22%,transparent)}}
+
+/* ———— the Index (gazetteer): a searchable back-of-the-atlas index ———— */
+.gaz[hidden]{display:none}
+.gaz{position:fixed;inset:0;z-index:60;display:flex;align-items:flex-start;justify-content:center;padding:min(10vh,80px) 16px 16px;background:rgba(30,18,10,.55);backdrop-filter:blur(3px)}
+.gaz-box{width:100%;max-width:720px;max-height:min(80vh,720px);display:flex;flex-direction:column;background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:8px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);overflow:hidden}
+.gaz-head{display:flex;align-items:center;flex-wrap:wrap;gap:6px 12px;padding:14px 16px 0}
+.gaz-find{display:flex;align-items:center;gap:10px;margin:8px 16px 0;border-bottom:2px solid var(--rule);padding:6px 2px 8px}
+.gaz-find:focus-within{border-bottom-color:var(--ochre)}
+.gaz-find svg{width:18px;height:18px;color:var(--ink-3);flex:none}
+.gaz-find input{flex:1;border:0;background:transparent;font-family:var(--ff-display);font-size:clamp(20px,2.4vw,26px);font-variation-settings:"opsz" 36,"SOFT" 40;color:var(--ink);outline:none;min-width:0;padding:0}
+.gaz-find input::placeholder{color:var(--ink-4);font-style:italic;font-weight:300}
+.gaz-kinds{display:flex;gap:6px;overflow-x:auto;padding:10px 16px 6px;scrollbar-width:none}
+.gaz-kinds::-webkit-scrollbar{display:none}
+.gaz-kinds .chip{flex:none;font-size:.8em}
+.gaz-list{overflow:auto;padding:4px 8px 8px;flex:1 1 auto;min-height:140px}
+.gaz-group{font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);padding:12px 10px 4px}
+.gaz-opt{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;padding:7px 10px;border-radius:5px;cursor:pointer}
+.gaz-opt .kind{font-family:var(--ff-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);min-width:8ch}
+.gaz-opt .lbl{flex:1 1 auto;line-height:1.3}
+.gaz-opt .lbl mark{background:color-mix(in srgb,var(--ochre) 35%,transparent);color:inherit;border-radius:2px;padding:0 1px}
+.gaz-opt .to{margin-left:auto;font-family:var(--ff-mono);font-size:.64rem;letter-spacing:.06em;color:var(--ink-3);white-space:nowrap}
+.gaz-opt .to b{color:var(--ochre);font-weight:500}
+.gaz-opt .hint{flex-basis:100%;font-size:.84em;color:var(--ink-2);font-style:italic;padding-left:calc(8ch + 10px)}
+.gaz-opt[aria-selected="true"]{background:var(--paper-2);box-shadow:inset 0 0 0 1px var(--rule)}
+.gaz-opt[aria-selected="true"] .lbl{color:var(--terra)}
+.gaz-empty{padding:24px 12px;text-align:center;font-style:italic;color:var(--ink-3)}
+.gaz-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;padding:8px 16px 12px;border-top:1px solid var(--rule-soft);font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+@media (max-width:560px){.gaz{padding:8px}.gaz-box{max-height:calc(100vh - 16px)}.gaz-opt .hint{padding-left:0}.gaz-opt .kind{min-width:0}.gaz-head .sub{display:none}}
+
+/* ———— footer ———— */
+footer{border-top:1px solid var(--rule);padding:32px 0 48px;color:var(--ink-3);font-size:.86em}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:flex-start}
+footer .wrap > div{flex:1 1 320px;max-width:56ch}
+.reveal{transition:opacity .6s ease,transform .6s ease}
+:root.anim .reveal{opacity:0;transform:translateY(10px)}
+:root.anim .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){:root.anim .reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<nav class="bar">
-  <a class="logo" href="#/"><span class="mark"></span><span class="word">Stamp Atlas</span></a>
-  <div class="crumbs" id="crumbs" aria-label="Where you are in the exhibit"></div>
-  <div class="navlinks" id="nav">
-    <a href="#/" data-v="home">Home</a>
-    <a href="#/atlas" data-v="atlas">The Atlas</a>
-    <a href="#/entry" data-v="entry">A Page</a>
-    <a href="#/about" data-v="about">How it works</a>
+<a class="sr" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Stamp Atlas — home">
+      <svg class="rose" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width=".6" stroke-dasharray="1 2"/>
+        <path d="M24 3 L27 21 L24 24 L21 21Z M24 45 L21 27 L24 24 L27 27Z" fill="var(--terra)"/>
+        <path d="M3 24 L21 21 L24 24 L21 27Z M45 24 L27 27 L24 24 L27 21Z" fill="currentColor"/>
+        <path d="M9 9 L22 20 L24 24 L20 22Z M39 39 L26 28 L24 24 L28 26Z M39 9 L28 22 L24 24 L26 20Z M9 39 L20 26 L24 24 L22 28Z" fill="var(--ochre)" opacity=".9"/>
+        <circle cx="24" cy="24" r="2.2" fill="var(--paper)" stroke="currentColor" stroke-width="1"/>
+      </svg>
+      <span class="name">Stamp Atlas<small>a collection, read as a map of time</small></span>
+    </a>
+    <div class="mast-right">
+      <button class="btn" id="themeToggle" type="button" aria-pressed="false" title="Toggle lamplight (dark mode)">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a6.5 6.5 0 1 0 6.3 8.1A5 5 0 0 1 8 1.5z" fill="currentColor"/></svg>
+        <span class="lbl">Lamplight</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Contents">
+  <div class="wrap nav-row">
+    <button type="button" class="contents-btn" id="contentsBtn" aria-expanded="false" aria-controls="contentsPanel">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span class="lbl">Contents</span>
+    </button>
+    <ul class="parts" id="partsList"></ul>
+    <div class="nav-here" id="navHere"></div>
+    <button type="button" class="btn index-btn" id="indexBtn" aria-haspopup="dialog" aria-controls="gaz" title="Search the index (press /)">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Index <kbd aria-hidden="true">/</kbd>
+    </button>
+  </div>
+  <div class="contents" id="contentsPanel" hidden>
+    <div class="wrap">
+      <div class="contents-grid" id="contentsGrid"></div>
+      <div class="contents-foot"><span id="contentsNote"></span><button type="button" class="btn" data-open-index="">Search the Index <kbd aria-hidden="true">/</kbd></button></div>
+    </div>
   </div>
 </nav>
 
-<main id="view" class="wrap"><p class="empty-note">Charting…</p></main>
-<noscript><p class="wrap empty-note">Stamp Atlas draws itself from a small file of facts, which needs scripts turned on.</p></noscript>
+<main id="main" style="position:relative;z-index:1">
+  <div id="app"><p class="wrap muted italic" style="padding:40px 0">Charting…</p></div>
+</main>
+<noscript><p class="wrap muted italic" style="padding:40px 0">Stamp Atlas draws itself from a small file of facts, which needs scripts turned on.</p></noscript>
 
 <footer>
-  <div class="cols">
-    <div>
-      <p class="serif" style="font-size:1.15rem;color:var(--ink);margin:0 0 .4rem">Stamp Atlas</p>
-      <p id="asof"></p>
-      <p>The world, one stamp at a time — a personal collection, charted as it is digitised. Most of the map is still blank paper. It is meant to be watched filling in.</p>
+  <div class="wrap">
+    <div class="footseal" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><circle cx="32" cy="32" r="29" stroke-width="1.9" stroke-dasharray="0 3.65"/><circle cx="32" cy="32" r="25.5" stroke-width=".8"/><circle cx="32" cy="32" r="23.6" stroke-width=".4"/><circle cx="32" cy="32" r="21.6" stroke-width="2.6" stroke-dasharray=".45 1.45" opacity=".8"/><circle cx="32" cy="32" r="18.6" stroke-width=".5"/><g fill="var(--seal-accent,currentColor)" stroke="none"><path d="M32 15.5c3.1 5 3.1 11.6 0 17.2-3.1-5.6-3.1-12.2 0-17.2z"/><path d="M32 15.5c3.1 5 3.1 11.6 0 17.2-3.1-5.6-3.1-12.2 0-17.2z" transform="rotate(90 32 32)"/><path d="M32 15.5c3.1 5 3.1 11.6 0 17.2-3.1-5.6-3.1-12.2 0-17.2z" transform="rotate(180 32 32)"/><path d="M32 15.5c3.1 5 3.1 11.6 0 17.2-3.1-5.6-3.1-12.2 0-17.2z" transform="rotate(270 32 32)"/></g><g stroke-width=".55"><path d="M32 17.5c2.6 4.4 2.6 10.2 0 15-2.6-4.8-2.6-10.6 0-15z" transform="rotate(45 32 32)"/><path d="M32 17.5c2.6 4.4 2.6 10.2 0 15-2.6-4.8-2.6-10.6 0-15z" transform="rotate(135 32 32)"/><path d="M32 17.5c2.6 4.4 2.6 10.2 0 15-2.6-4.8-2.6-10.6 0-15z" transform="rotate(225 32 32)"/><path d="M32 17.5c2.6 4.4 2.6 10.2 0 15-2.6-4.8-2.6-10.6 0-15z" transform="rotate(315 32 32)"/><path d="M32 19.5v11" transform="rotate(45 32 32)"/><path d="M32 19.5v11" transform="rotate(135 32 32)"/><path d="M32 19.5v11" transform="rotate(225 32 32)"/><path d="M32 19.5v11" transform="rotate(315 32 32)"/></g><circle cx="32" cy="32" r="4.2" stroke-width=".5"/><circle cx="32" cy="32" r="2" fill="currentColor" stroke="none"/></svg></div>
+    <div class="colophon">
+      <div class="eyebrow">Stamp Atlas</div>
+      <p><em>Every number on this page is an aggregate, computed from the photographed albums. No prices, no locations, no scans of modern designs. Where something is not yet known, it says so.</em></p>
+      <p id="footStamp" class="mono"></p>
     </div>
     <div>
-      <p><strong style="color:var(--ink-2)">What never leaves the archive.</strong> The album photographs and their fingerprints stay private:
-         <span id="withheld"></span></p>
-      <p>Machine findings are <em>candidates</em> until a person confirms them. Stamp Atlas states what it knows, marks
-         what it doesn't, and never manufactures certainty — or a valuation.</p>
+      <div class="eyebrow">Method</div>
+      <p class="small">Photograph once, preserve forever, reprocess forever. A machine's reading is a candidate until a person confirms it; both are kept. A stamp is counted under the issuer whose name is printed on it, in the year it was issued — <em>Ceylon</em> stays Ceylon. Guesses are marked as guesses, and where the atlas cannot say something honestly, it says nothing and shows you the gap.</p>
     </div>
   </div>
-  <p class="colophon">Every number on this site is read from the collection's own records, not typed in. Era pictures are original art, never copies of a stamp; where a design is still in copyright, the mat stays empty and says so.</p>
 </footer>
 
-<script type="application/javascript">
+<!-- The Index: the atlas's back-of-book gazetteer. Built at load from the chapter registry
+     and whatever real entities the projection carries (albums now; issuers, themes, people
+     and years as identification fills them in). Open with the Index button, "/" or Ctrl/Cmd+K. -->
+<div class="gaz" id="gaz" hidden role="dialog" aria-modal="true" aria-labelledby="gazTitle">
+  <div class="gaz-box">
+    <div class="gaz-head">
+      <span class="eyebrow" id="gazTitle">Index · Gazetteer</span>
+      <span class="small italic sub" style="color:var(--ink-3)">chapters now; every issuer, subject, person and year as the collection is read</span>
+      <button class="btn ghost" type="button" id="gazClose" aria-label="Close the index" style="margin-left:auto">Close</button>
+    </div>
+    <label class="gaz-find">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span class="sr">Search the index</span>
+      <input id="gazInput" type="text" role="combobox" aria-expanded="true" aria-controls="gazList" aria-autocomplete="list" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="a chapter · an album · a measure the atlas already holds">
+    </label>
+    <div class="gaz-kinds" id="gazKinds" role="group" aria-label="Filter the index by kind"></div>
+    <div class="gaz-list" id="gazList" role="listbox" aria-label="Index entries"></div>
+    <div class="gaz-foot"><span id="gazCount"></span><span><kbd>↑</kbd><kbd>↓</kbd> move · <kbd>↵</kbd> go · <kbd>esc</kbd> close</span></div>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   STAMP ATLAS — the public story page.
+   Self-contained. On load it fetches /api/public.json and renders ONLY
+   what that projection contains. Nothing philatelic is invented here:
+   where the data has a number it shows; where it does not, the page says
+   plainly that the ground is not yet charted. The design is a port of the
+   Fable atlas; the honesty semantics are the live page's.
+   ===================================================================== */
+(function(){
+"use strict";
 let DATA = null;
+const $  = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
+const fmt = n => (n==null ? "—" : Number(n).toLocaleString("en-GB"));
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\\"":"&quot;"}[c]));
+const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX"];
+const state = { chapter:null, contentsPart:null };
 
-const $ = (s, r=document) => r.querySelector(s);
-const el = (t,c,h)=>{const e=document.createElement(t); if(c)e.className=c; if(h!=null)e.innerHTML=h; return e;};
-const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const plural = (n,w,ws) => n+' '+(n===1?w:(ws||w+'s'));
-/* a date-only string (capturedOn) is a calendar day, not an instant — parse it as local so it never slips a day */
+/* ——— dates (a calendar day is parsed locally so it never slips) ——— */
 const toDate = s => /^\\d{4}-\\d{2}-\\d{2}$/.test(String(s)) ? new Date(+s.slice(0,4), +s.slice(5,7)-1, +s.slice(8,10)) : new Date(s);
-function niceDate(iso){
-  if(!iso) return '';
-  const d=toDate(iso); if(isNaN(d)) return String(iso);
-  return d.toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'});
-}
-const asOfIso = () => (DATA.facts&&DATA.facts.asOf)||DATA.generatedAt;
-const asOfDate = () => niceDate(asOfIso());
-/* the postmark's own date, in the terse uppercase a cancellation uses */
-function stampDate(){
-  const d=new Date(asOfIso()); if(isNaN(d)) return '';
-  return d.getDate()+' '+d.toLocaleDateString('en',{month:'short'}).toUpperCase()+' '+d.getFullYear();
-}
+function niceDate(iso){ if(!iso) return ""; const d=toDate(iso); if(isNaN(d)) return String(iso); return d.toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"}); }
+const asOfIso  = () => (DATA&&DATA.facts&&DATA.facts.asOf) || (DATA&&DATA.generatedAt) || null;
+const asOfDate = () => niceDate(asOfIso()) || "an unrecorded day";
 
-/* Plain-language names for the projection's metrics. The numbers come from the data; only the words are ours. */
+/* ——— WAYFINDING · the bounded axis ———
+   An atlas groups its plates into a few named PARTS. Chapters are finite and
+   live here; anything the scans discover (issuers, themes, years…) is NOT a
+   chapter — it fills IN a chapter, so the menu can never overflow. */
+const PARTS=[
+  { id:"in-time",  title:"The World in Time",      blurb:"Headline counts, then the decades one by one.",           chapters:[["glance","Glance"],["time","Time"]] },
+  { id:"places",   title:"Peoples & Places",       blurb:"Who issued, where they stood, whose faces they printed.", chapters:[["issuers","Issuers"],["map","Map"],["people","People"]] },
+  { id:"subjects", title:"Subjects & Patterns",    blurb:"What recurs, what the whole looks like, what connects.",  chapters:[["themes","Themes"],["dna","DNA"],["connections","Connections"]] },
+  { id:"object",   title:"The Physical Object",    blurb:"Money, paper, perforations, series and binders.",         chapters:[["language","Money"],["physical","Physical"],["sets","Sets"],["albums","Albums"],["colour","Colour"]] },
+  { id:"reading",  title:"Reading the Collection", blurb:"Play, questions of scale, and the blank quarters.",       chapters:[["play","Play"],["questions","Questions"],["unknown","Unknowns"]] }
+];
+const CHAPTERS=PARTS.flatMap(p=>p.chapters);
+const CH={};
+const partOf=id=>PARTS.find(p=>p.chapters.some(c=>c[0]===id));
+const shortOf=id=>(CHAPTERS.find(c=>c[0]===id)||[id,id])[1];
+const idxOf=id=>CHAPTERS.findIndex(c=>c[0]===id);
+
+/* ——— honesty layer (ported from the live page) ———
+   The projection speaks in confirmed / candidate / unknown triples over an
+   eligible population. disp() turns a triple into an honest headline and line;
+   an unobserved position is "not yet looked at", never "empty". */
+const metric   = id => ((DATA.facts&&DATA.facts.metrics)||[]).find(m=>m.metric===id);
+const pendingOf= id => ((DATA.facts&&DATA.facts.pending)||[]).find(p=>p.metric===id);
 const FRIENDLY = {
-  albumCount:{label:'Albums charted', d:'physical albums photographed as evidence'},
-  albumPositionCount:{label:'Positions traversed', d:'pages, covers, inserts and dividers walked through'},
-  positionOccupancy:{label:'Positions holding stamps', d:'positions actually seen to hold material'},
-  albumArchetypeCoverage:{label:'Album structures classified', d:'albums whose layout a person has identified'},
-  philatelicItemCount:{label:'Items identified', d:'individual stamps, covers and blocks found on a page — and how many have been named'},
+  albumCount:            {label:"Albums charted",             d:"physical albums photographed as evidence"},
+  albumPositionCount:    {label:"Positions traversed",        d:"pages, covers, inserts and dividers walked through"},
+  positionOccupancy:     {label:"Positions holding material", d:"positions actually seen to hold a stamp"},
+  albumArchetypeCoverage:{label:"Album structures classified",d:"albums whose layout a person has identified"},
+  philatelicItemCount:   {label:"Stamps & items counted",    d:"individual stamps, covers and blocks found on a page — and how many are named"},
 };
 const FRIENDLY_PENDING = {
-  distinctIssuerCount:'Distinct issuers',
-  distinctTerritoryCount:'Distinct territories',
-  extinctIssuerCount:'Issuers that no longer exist',
-  earliestIssueYear:'Earliest year of issue',
-  philatelicItemCount:'Stamps and items counted',
+  philatelicItemCount: "Stamps & items counted",
+  distinctIssuerCount: "Distinct issuers",
+  distinctTerritoryCount: "Distinct territories",
+  extinctIssuerCount: "Issuers that no longer exist",
+  earliestIssueYear: "Earliest year of issue",
 };
 function disp(m){
   const v=m.value||{confirmed:0,candidate:0,unknown:0};
-  const hasU=(v.candidate+v.unknown)>0;
-  const pop=m.eligiblePopulation ?? (v.confirmed+v.candidate+v.unknown);
+  const hasU=((v.candidate||0)+(v.unknown||0))>0;
+  const pop=(m.eligiblePopulation!=null)?m.eligiblePopulation:((v.confirmed||0)+(v.candidate||0)+(v.unknown||0));
   const parts=[];
-  if(v.confirmed) parts.push(v.confirmed+' confirmed');
-  if(v.candidate) parts.push(v.candidate+' candidate');
-  if(v.unknown) parts.push(v.unknown+' not yet looked at');
+  if(v.confirmed) parts.push(v.confirmed+" confirmed");
+  if(v.candidate) parts.push(v.candidate+" candidate");
+  if(v.unknown)   parts.push(v.unknown+" not yet looked at");
   return {
-    n: hasU ? v.confirmed+'<small>/ '+pop+'</small>' : String(v.confirmed),
-    d: hasU ? parts.join(' · ') : (pop ? v.confirmed+' of '+pop+' — every one accounted for' : 'nothing to count yet'),
+    n: hasU ? (v.confirmed||0)+"<small>/ "+pop+"</small>" : String(v.confirmed||0),
+    d: hasU ? parts.join(" · ") : (pop ? (v.confirmed||0)+" of "+pop+" — every one accounted for" : "nothing to count yet"),
     u: hasU, pop, v
   };
 }
-/* how many of an album's positions have actually been looked at and seen to hold material */
-function seenCount(a){
-  const pos=a.positions||[];
-  if(pos.some(p=>p.isEmpty!==undefined)) return pos.filter(p=>p.isEmpty===false).length;
-  if(a.observedEmpty===undefined||a.observedUnknown===undefined) return 0;
-  return Math.max(0,(a.positionCount||0)-a.observedEmpty-a.observedUnknown);
+
+/* ——— small builders (plate / chapter frame / perforated tile) ——— */
+const icoFrame = \`<svg class="ico" viewBox="0 0 64 80" aria-hidden="true"><rect x="6" y="6" width="52" height="68" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M14 58 L26 40 L34 50 L42 34 L50 58Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><circle cx="22" cy="24" r="5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>\`;
+const icoLock  = \`<svg class="ico" viewBox="0 0 64 80" aria-hidden="true"><rect x="6" y="6" width="52" height="68" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="20" y="36" width="24" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M25 36v-6a7 7 0 0 1 14 0v6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>\`;
+const icoQuill = \`<svg class="ico" viewBox="0 0 64 80" aria-hidden="true"><rect x="6" y="6" width="52" height="68" rx="2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M18 62 C22 40, 34 26, 48 18 C44 34, 36 48, 22 58Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M18 62 L30 44" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>\`;
+function plate(kind, opts={}){
+  const size = opts.size||"";
+  // A commissioned, original engraved plate (never a real stamp) — show the art itself.
+  // \`withheld\` can never take art: it stands for a real in-copyright stamp we must not show.
+  if(opts.src && kind!=="withheld"){
+    const label = opts.alt || (opts.cap ? String(opts.cap).replace(/<br>/g," — ") : "Original engraved plate");
+    return \`<figure class="plate art has-art \${size}" role="img" aria-label="\${esc(label)}">\`
+      + \`<img class="plate-img" src="\${esc(opts.src)}" alt="" loading="\${opts.eager?"eager":"lazy"}"\${opts.eager?' fetchpriority="high"':''} decoding="async" aria-hidden="true">\`
+      + (opts.cap ? \`<figcaption class="cap">\${opts.cap}</figcaption>\` : "")
+      + \`</figure>\`;
+  }
+  const cls = kind==="withheld"?"withheld":kind==="art"?"art":"";
+  const cap = kind==="withheld" ? "In copyright<br>image withheld"
+            : kind==="art"      ? (opts.cap||"Commissioned plate<br>pending")
+            :                     (opts.cap||"Era illustration<br>pending");
+  const ico = kind==="withheld"?icoLock:kind==="art"?icoQuill:icoFrame;
+  const alt = opts.alt || cap.replace(/<br>/g," — ");
+  return \`<div class="plate \${cls} \${size}" role="img" aria-label="\${esc(alt)}">\${ico}<div class="cap">\${cap}</div>\${opts.prompt?\`<div class="prompt">\${esc(opts.prompt)}</div>\`:""}</div>\`;
+}
+function chapter(id, i, title, deck, body){
+  CH[id]={i,title,deck}; const p=partOf(id); const pn=PARTS.indexOf(p);
+  return \`<section class="chapter reveal" id="\${id}" aria-labelledby="\${id}-h">
+    <div class="ch-divider" aria-hidden="true">\${DIVIDER}</div>
+    <div class="wrap">
+      <div class="chapter-head"><div class="numeral" aria-hidden="true">\${ROMAN[i]}</div>
+        <div><span class="eyebrow">\${p?\`Part \${ROMAN[pn]} · \${esc(p.title)} &nbsp;·&nbsp; \`:""}Chapter \${i+1}</span><h2 id="\${id}-h">\${title}</h2><p class="deck">\${deck}</p></div></div>
+      \${body}
+      <div class="ch-foot" data-ch-foot="\${id}"></div>
+    </div></section>\`;
+}
+function tile(n, l, s, cls="", key){ return \`<div class="perf"\${key?\` data-key="\${esc(key)}"\`:""}><div class="inner tile \${cls}"><div class="n">\${n}</div><div class="l">\${l}</div>\${s?\`<div class="s">\${s}</div>\`:""}</div></div>\`; }
+
+/* a real metric, rendered as a perforated stat tile */
+function metricTile(id, cls){
+  const m=metric(id); if(!m) return "";
+  const d=disp(m); const f=FRIENDLY[id]||{};
+  const s = esc(d.d) + (f.d?\`<br><span class="muted">\${esc(f.d)}</span>\`:"");
+  return tile(d.n, esc(f.label||id), s, cls, id);
+}
+/* a metric the atlas cannot compute yet — shown as an honest promise, not a zero */
+function pendingTile(id){
+  const p=pendingOf(id); const label=FRIENDLY_PENDING[id]||id;
+  return \`<div class="perf" data-key="\${esc(label)}"><div class="inner tile"><div class="n" style="font-weight:300;color:var(--ink-4)">—</div><div class="l">\${esc(label)}</div><div class="s"><span class="tag unknown">awaiting</span> \${p?esc(p.blockedBy):"not yet available"}</div></div></div>\`;
+}
+/* graduation-aware: the moment a pending metric becomes a real metric, the number
+   shows instead of the promise — the same tile, filled in. */
+function smartTile(id, cls){ return metric(id) ? metricTile(id, cls) : pendingTile(id); }
+/* the earliest year may graduate either as a triple metric or as a plain scalar fact */
+function earliestTile(){
+  if(metric("earliestIssueYear")) return metricTile("earliestIssueYear","gold");
+  const y=DATA.facts && DATA.facts.earliestIssueYear;
+  if(y!=null && typeof y!=="object") return tile(esc(String(y)),"Earliest year of issue","the oldest issue the atlas has identified","gold","earliestIssueYear");
+  return pendingTile("earliestIssueYear");
+}
+/* a small "waiting on" list for the awaiting chapters */
+function pendItems(ids){
+  return ids.map(id=>{ const p=pendingOf(id); if(!p) return ""; const label=FRIENDLY_PENDING[id]||id;
+    return \`<li data-key="\${esc(label)}" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--rule-soft);padding:9px 0"><span>\${esc(label)}</span><span class="mono" style="color:var(--ink-3)">awaiting \${esc(p.blockedBy)}</span></li>\`;
+  }).filter(Boolean).join("");
 }
 
-const firstAlbumHref = () => (DATA.albums&&DATA.albums[0]) ? '#/album/'+encodeURIComponent(DATA.albums[0].physicalAlbumId) : '#/atlas';
-
-/* ---------- shared furniture: the trail, the doors, the postmark ---------- */
-const STOPS = () => [
-  ['atlas','I','The Atlas','#/atlas'],
-  ['album','II','An album',firstAlbumHref()],
-  ['entry','III','A page','#/entry'],
-  ['about','Notes','How it is drawn','#/about'],
-];
-function trail(cur){
-  const stops=STOPS(); const i=stops.findIndex(s=>s[0]===cur);
-  return '<ol class="trail" aria-label="Your route through the exhibit">'+stops.map((s,j)=>{
-    const st=j<i?'done':j===i?'here':'ahead';
-    const inner='<i>'+s[1]+'</i>'+esc(s[2]);
-    return '<li class="'+st+'">'+(st==='here'
-      ? '<span class="stop" aria-current="page">'+inner+'</span>'
-      : '<a class="stop" href="'+s[3]+'">'+inner+'</a>')+'</li>';
-  }).join('')+'</ol>';
-}
-function doors(back, next){
-  return '<div class="doors">'
-    +(back?'<a class="door back" href="'+back.href+'"><span class="k">'+esc(back.k)+'</span><span class="t">'+esc(back.t)+'</span></a>':'')
-    +'<a class="door next" href="'+next.href+'"><span><span class="k">'+esc(next.k)+'</span><span class="t">'+esc(next.t)+'</span>'
-    +'<span class="s">'+esc(next.s)+'</span></span><span class="arrow">→</span></a></div>';
-}
-function postmark(){
-  return '<svg class="postmark" viewBox="0 0 270 120" aria-hidden="true">'
-    +'<defs><path id="pm-top" d="M20,60 A40,40 0 0,1 100,60"/><path id="pm-bot" d="M20,60 A40,40 0 0,0 100,60"/></defs>'
-    +'<circle cx="60" cy="60" r="56" stroke-width="2.2"/><circle cx="60" cy="60" r="31" stroke-width="1.4"/>'
-    +'<text class="ring"><textPath href="#pm-top" startOffset="50%" text-anchor="middle">STAMP ATLAS</textPath></text>'
-    +'<text class="ring"><textPath href="#pm-bot" startOffset="50%" text-anchor="middle">CHARTED</textPath></text>'
-    +'<text class="date" x="60" y="64" text-anchor="middle">'+esc(stampDate())+'</text>'
-    +'<g stroke-width="2">'+[32,46,60,74,88].map(y=>'<path d="M126,'+y+' q8,-5 16,0 t16,0 t16,0 t16,0 t16,0 t16,0 t16,0 t16,0"/>').join('')+'</g>'
-    +'</svg>';
+/* ——— HERO (honest headline; real album/position counts, item-count pending) ——— */
+function hero(){
+  const albums=DATA.albums||[];
+  const positions=albums.reduce((n,a)=>n+(a.positionCount||0),0);
+  return \`<section class="hero" id="top"><div class="wrap">
+    <div>
+      <span class="eyebrow">A collection, being charted · as of \${esc(asOfDate())}</span>
+      <h1 style="margin-top:10px">Every stamp is a small <em>window</em> onto a place and a year.</h1>
+      <p class="lede" style="margin-top:20px">One lifetime's collection of those windows — being charted, page by page, into an atlas. Most of the map is still blank paper. That is the honest first page of every atlas: come back and watch it fill in.</p>
+      <div class="actions">
+        <a class="btn primary" href="#glance">See what is charted</a>
+        <a class="btn" href="#unknown">What isn't known yet</a>
+      </div>
+      <div class="bigfacts">
+        <div class="bf"><div class="n">\${fmt(albums.length)}</div><div class="l">albums charted</div></div>
+        <div class="bf"><div class="n">\${fmt(positions)}</div><div class="l">positions traversed</div></div>
+        <div class="bf"><div class="n">—</div><div class="l">stamps · awaiting the read</div></div>
+      </div>
+    </div>
+    <div class="hero-plate">
+      <svg class="hero-graticule" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" stroke="var(--ochre)" stroke-width=".7">\${[40,80,120,160,190].map(r=>\`<circle cx="200" cy="200" r="\${r}"/>\`).join("")}\${[0,30,60,90,120,150].map(a=>\`<line x1="200" y1="10" x2="200" y2="390" transform="rotate(\${a} 200 200)"/>\`).join("")}</g></svg>
+      <div class="perf"><div class="inner" style="padding:10px">\${plate("art",{size:"full",eager:true,src:"assets/plate-frontispiece.jpg",cap:"Plate I · Frontispiece",alt:"An engraved compass-rose frontispiece on aged parchment"})}</div></div>
+    </div>
+  </div></section>\`;
 }
 
-/* ---------- views ---------- */
-function home(){
-  const v = el('div');
-  const albums = DATA.albums||[];
-  const positions = albums.reduce((n,a)=>n+(a.positionCount||0),0);
+/* ——— I · GLANCE (real: the four metric triples; item-count & year pending) ——— */
+function glance(){
+  const albums=DATA.albums||[];
+  const positions=albums.reduce((n,a)=>n+(a.positionCount||0),0);
 
-  /* one honest headline number: how much of the traversed ground has actually been examined for stamps */
-  let survey='';
-  const occ=(DATA.facts.metrics||[]).find(m=>m.metric==='positionOccupancy');
+  /* one honest headline number: how much traversed ground has actually been examined */
+  let survey="";
+  const occ=metric("positionOccupancy");
   if(occ){
-    const o=occ.value||{}; const pop=occ.eligiblePopulation ?? ((o.confirmed||0)+(o.candidate||0)+(o.unknown||0));
-    const examined=Math.max(0,pop-(o.unknown||0)); const pct=pop?Math.round(100*examined/pop):0;
-    const line = !pop ? 'Nothing has been photographed for the archive yet. The atlas will say so until it has.'
-      : pct===0 ? '<strong>'+examined+' of '+plural(pop,'position')+'</strong> have been examined for stamps. The map is, for now, blank paper — which is the honest first page of every atlas.'
-      : pct<100 ? '<strong>'+examined+' of '+plural(pop,'position')+'</strong> have been examined for stamps; the rest is hatched, not guessed at.'
-      : '<strong>Every one of '+plural(pop,'position')+'</strong> has been examined. Now the identifying begins.';
-    survey='<div class="survey"><div><div class="pct'+(pct===0?' zero':'')+'">'+pct+'<small>%</small></div><div class="pk">of positions examined</div></div>'
-      +'<div><p>'+line+'</p><div class="bar"><i class="c" style="width:'+(pop?Math.round(100*(o.confirmed||0)/pop):0)+'%"></i><i class="a" style="width:'+(pop?Math.round(100*(o.candidate||0)/pop):0)+'%"></i><i class="u" style="width:'+(pop?Math.round(100*(o.unknown||0)/pop):0)+'%"></i></div></div></div>';
+    const o=occ.value||{}; const pop=(occ.eligiblePopulation!=null)?occ.eligiblePopulation:((o.confirmed||0)+(o.candidate||0)+(o.unknown||0));
+    const examined=Math.max(0,pop-(o.unknown||0)); const p=pop?Math.round(100*examined/pop):0;
+    const line = !pop ? "Nothing has been photographed for the archive yet. The atlas will say so until it has."
+      : p===0 ? \`<strong>\${examined} of \${fmt(pop)} position\${pop===1?"":"s"}</strong> have been examined for stamps. The map is, for now, blank paper — the honest first page of every atlas.\`
+      : p<100 ? \`<strong>\${examined} of \${fmt(pop)} position\${pop===1?"":"s"}</strong> have been examined for stamps; the rest is hatched, not guessed at.\`
+      : \`<strong>Every one of \${fmt(pop)} position\${pop===1?"":"s"}</strong> has been examined. Now the identifying begins.\`;
+    const seg=x=>pop?Math.round(100*(x||0)/pop):0;
+    const hatch="repeating-linear-gradient(90deg,var(--ink-4) 0 3px,transparent 3px 6px)";
+    survey=\`<div class="card" style="margin-bottom:22px"><div class="grid g2 split" style="--split:auto 1fr;align-items:center;gap:clamp(16px,3vw,34px)">
+      <div><div style="font-family:var(--ff-display);font-weight:600;font-size:clamp(52px,9vw,92px);line-height:.9;letter-spacing:-.03em;color:\${p===0?"var(--ink-4)":"var(--terra)"}">\${p}<small style="font-size:.4em;color:var(--ink-3)">%</small></div><div class="eyebrow" style="margin-top:6px">of positions examined</div></div>
+      <div><p class="deck" style="font-style:normal;color:var(--ink-2);margin:0 0 12px">\${line}</p>
+        <div style="height:10px;border-radius:3px;overflow:hidden;display:flex;background:var(--paper-3)"><i style="width:\${seg(o.confirmed)}%;background:var(--terra)"></i><i style="width:\${seg(o.candidate)}%;background:var(--ochre)"></i><i style="width:\${seg(o.unknown)}%;background:\${hatch}"></i></div>
+        <div class="legend" style="margin-top:8px"><span><i style="background:var(--terra)"></i> examined, holds material</span><span><i style="background:var(--ochre)"></i> machine candidate</span><span><i style="background:\${hatch}"></i> not yet looked at</span></div>
+      </div></div></div>\`;
   }
 
-  v.innerHTML = \`
-    <section class="hero">
-      <div>
-        <div class="kicker">A lifetime's collection, told as an atlas</div>
-        <h1>Every stamp is a small <em>window.</em></h1>
-        <p class="lede">Onto a place, a person, a year the world thought worth remembering. This is one lifetime's
-          collection of those windows — being charted, page by page, into an atlas.</p>
-        <div class="ctas">
-          <a class="cta" href="#/atlas">Walk into the atlas →</a>
-          <a class="cta ghost" href="#/about">How it is drawn</a>
-        </div>
-        <p class="asof-inline">Charted as of \${esc(asOfDate())} · \${plural(albums.length,'album')} · \${plural(positions,'position')}</p>
-      </div>
-      <div class="heroimg">
-        <div class="mat"><i class="pl"></i><i class="pr"></i>
-          <img src="/assets/hero.jpg" alt="An antique atlas open on a desk beside a magnifying glass" loading="eager" fetchpriority="high" />
-          <span class="cap">The reading room — original art, not a stamp</span>
-        </div>
-        \${postmark()}
-      </div>
-    </section>
+  const tiles=\`<div class="grid g4">
+    \${metricTile("albumCount","accent")}
+    \${metricTile("albumPositionCount","")}
+    \${metricTile("positionOccupancy","gold")}
+    \${metricTile("albumArchetypeCoverage","")}
+    \${smartTile("philatelicItemCount","")}
+    \${earliestTile()}
+  </div>\`;
 
-    <p class="big prose">The atlas is being drawn. <strong>\${plural(albums.length,'album')}</strong> charted so far,
-       <strong>\${plural(positions,'position')}</strong> traversed — and most of the world is still blank paper.
-       That is the pleasure of the thing: come back and watch it fill in.</p>
+  const notes=\`<div class="grid g2" style="margin-top:22px">
+    <div class="card"><h3>Identified &amp; unresolved</h3>
+      \${(function(){ const m=metric("philatelicItemCount");
+        if(m){ const d=disp(m); return \`<p class="small"><strong>\${fmt(d.v.confirmed||0)}</strong> item\${(d.v.confirmed||0)===1?"":"s"} named\${d.v.candidate?\`, <strong>\${fmt(d.v.candidate)}</strong> still a machine's candidate\`:""}\${d.v.unknown?\`, <strong>\${fmt(d.v.unknown)}</strong> not yet looked at\`:""} — of \${fmt(d.pop)} found so far. The unnamed are not forgotten; they wait in <a href="#unknown">the Unknowns</a>.</p>\`; }
+        return \`<p class="small">How many stamps the collection holds — and how many have been named — cannot be counted until the pages are read. Rather than show a zero that reads as emptiness, the atlas shows the promise: <em>awaiting \${esc((pendingOf("philatelicItemCount")||{}).blockedBy||"identification")}</em>. When it graduates, the split appears here and in <a href="#unknown">the Unknowns</a>.</p>\`; })()}</div>
+    <div class="card"><h3>Growth of the collection</h3>
+      <p class="small">Charted against the calendar — when each album was captured, and the ground it covers — this draws itself once more than a single album is in. \${positions===0?"Nothing has been photographed yet.":\`So far \${fmt(positions)} position\${positions===1?"":"s"} across \${fmt(albums.length)} album\${albums.length===1?"":"s"} \${albums.length===1?"has":"have"} been captured.\`}</p></div>
+  </div>\`;
 
-    <div class="sec-label"><span class="rn">i.</span> Why a stamp deserves a second look</div>
-    <div class="windows">
-      <div class="window" data-n="I"><h3>A <em>place</em></h3>
-        <p>A stamp is issued by somewhere — a kingdom, a colony, a republic that lasted eleven years. Some of those
-           places no longer exist. The stamp does, and it still says where it came from.</p></div>
-      <div class="window" data-n="II"><h3>A <em>person</em></h3>
-        <p>A face on a stamp is a decision: <em>this is who we are, this year.</em> Monarchs, poets, engineers, a nurse.
-           The list of who a country chose to print is a kind of autobiography.</p></div>
-      <div class="window" data-n="III"><h3>A <em>year</em></h3>
-        <p>Every issue is pinned to a moment — a coronation, a bridge opened, a war ended, a bird nearly lost. Read
-           enough of them in a row and you are reading the century.</p></div>
+  return chapter("glance",0,"The collection at a glance",
+    "The honest headline first: what has been photographed, walked through and looked at. The stories come as the pages are read.",
+    survey+tiles+notes);
+}
+
+/* ——— the "Awaiting the archive" chapters — the vision, honestly empty ——— */
+function awaiting(id,i,title,deck,vision,opts={}){
+  const pend = opts.pending ? pendItems(opts.pending) : "";
+  const body=\`<div class="grid g2 split" style="--split:1fr 320px;align-items:start">
+    <div>
+      <span class="tag unknown">Awaiting the archive</span>
+      <p class="deck" style="margin:12px 0 0;font-style:normal;color:var(--ink)">\${vision}</p>
+      <p class="small muted" style="margin-top:14px">This chapter fills in as albums are photographed and their pages read. Until the atlas has looked, it shows the shape of what is coming — and counts nothing it has not seen.</p>
+      \${pend?\`<div style="margin-top:18px"><div class="eyebrow" style="margin-bottom:6px">Waiting on</div><ul style="list-style:none;margin:0;padding:0">\${pend}</ul></div>\`:""}
     </div>
-
-    <div class="sec-label"><span class="rn">ii.</span> Where the survey stands</div>
-    \${survey}
-    <div class="stats" id="stats"></div>
-    <div class="legend"><span><i class="c"></i> confirmed by a person</span><span><i class="a"></i> machine candidate</span><span><i class="u"></i> not yet looked at</span></div>
-
-    <div class="sec-label"><span class="rn">iii.</span> Curiosities</div>
-    <p class="prose muted">Strange statistics, read straight off the collection — honest today, and gaining new
-       ones as more of the archive comes to be known.</p>
-    <div class="curios" id="curios"></div>
-
-    <div class="sec-label"><span class="rn">iv.</span> The territories</div>
-    <p class="prose muted">As each stamp is identified it takes its place in a territory — a country, an era, a theme.
-       Charted ground is drawn solid; the rest is dashed, and waiting.</p>
-    <div class="terr" id="terr-preview"></div>
-    <p style="margin-top:1.2rem"><a class="backlink" href="#/atlas">See the whole atlas →</a></p>
-
-    <div class="sec-label"><span class="rn">v.</span> Walk the exhibit</div>
-    <ol class="walk">
-      <li><a href="#/atlas"><span class="rn">Room I</span><b>The Atlas</b><span class="s">The territories — charted, and honestly blank.</span></a></li>
-      <li><a href="\${firstAlbumHref()}"><span class="rn">Room II</span><b>An album</b><span class="s">One shelf of the collection, position by position.</span></a></li>
-      <li><a href="#/entry"><span class="rn">Room III</span><b>A page</b><span class="s">What a single identified stamp will become.</span></a></li>
-    </ol>
-  \`;
-  return v;
+    <div class="perf"><div class="inner" style="padding:10px">\${plate(opts.plate||"art",{size:"full",src:opts.src,cap:opts.cap||"Plate · pending",prompt:opts.prompt||"An original illustration will stand here — the era, drawn fresh. Never a copy of a stamp."})}</div></div>
+  </div>\`;
+  return chapter(id,i,title,deck,body);
 }
-
-function renderStats(root){
-  root.innerHTML='';
-  for(const m of DATA.facts.metrics){
-    const d=disp(m); const f=FRIENDLY[m.metric]||{};
-    const s=el('div','stat');
-    s.appendChild(el('div','n'+(d.u?' unknown':''), d.n));
-    s.appendChild(el('div','k', esc(f.label||m.metric)));
-    s.appendChild(el('div','d', esc(d.d)+(f.d?'<br/><span style="opacity:.8">'+esc(f.d)+'</span>':'')));
-    if(d.pop>0){
-      const pc=x=>Math.round(100*x/d.pop);
-      s.appendChild(el('div','bar','<i class="c" style="width:'+pc(d.v.confirmed)+'%"></i><i class="a" style="width:'+pc(d.v.candidate)+'%"></i><i class="u" style="width:'+pc(d.v.unknown)+'%"></i>'));
-    }
-    root.appendChild(s);
-  }
-}
-
-/* curiosities: playful facts computed from the projection. Each is gated on the data it needs, so
-   count-based ones appear the moment items exist and the date/issuer ones slot in later. Numbers come
-   from the projection (traceable); the page only phrases them — it invents no facts. */
-function curiosities(){
-  const albums = DATA.albums||[];
-  const positions = albums.reduce((n,a)=>n+(a.positionCount||0),0);
-  const pic = (DATA.facts.metrics||[]).find(m=>m.metric==='philatelicItemCount');
-  const items = pic ? (pic.eligiblePopulation||0) : 0;
-  const identified = pic ? ((pic.value&&pic.value.confirmed)||0) : 0;
-  const num = n => n.toLocaleString();
-  const out = [];
-  if(items>0){
-    const years = items/365;
-    out.push({ n:num(items), unit: items===1?'day':'days',
-      text:'At <b>one stamp a day</b>, you would need <b>'+num(items)+'</b> '+(items===1?'day':'days')
-        + (years>=1 ? ' — about <b>'+(years<10?years.toFixed(1):Math.round(years))+' years</b>' : '')
-        + ' — to look through the whole collection, one window at a time.' });
-    const waiting = items-identified;
-    if(waiting>0) out.push({ n:num(waiting), unit:'still to name',
-      text:'<b>'+num(waiting)+'</b> of the '+num(items)+' object'+(items===1?'':'s')+' '+(waiting===1?'is':'are')
-        + ' still waiting to be identified. The collection is, quietly, still telling us what it is.' });
-  }
-  if(positions>0){
-    out.push({ n:num(positions), unit: positions===1?'page':'pages',
-      text:'<b>'+num(positions)+'</b> position'+(positions===1?'':'s')+' walked through — pages, covers, inserts, '
-        + 'dividers — each preserved as a photograph, once, and kept for good.' });
-  }
-  return out;
-}
-function renderCurios(root){
-  if(!root) return;
-  const cs = curiosities();
-  if(!cs.length){
-    root.innerHTML = '<p class="curios-empty">The curiosities begin once the first pages are in — strange '
-      + 'statistics, computed straight from the collection. Come back and watch them appear.</p>';
-    return;
-  }
-  root.innerHTML = '';
-  for(const c of cs){
-    const d = el('div','curio');
-    d.appendChild(el('div','big', c.n+' <small>'+esc(c.unit)+'</small>'));
-    d.appendChild(el('p', null, c.text));
-    root.appendChild(d);
-  }
-}
-
-/* territories: the real albums as the first charted ground, then the planned halls drawn dashed */
-const UNCHARTED = [
-  'The British Empire','Europe between the Wars','The New World','Africa & the Cape',
-  'The Commonwealth','Ships, Flight & Exploration','Monarchs & Republics','The Miniature Sheets',
-];
-function territoryCards(limit){
-  const cards=[];
-  for(const a of (DATA.albums||[])){
-    const n=a.positionCount||0, seen=seenCount(a), emp=a.observedEmpty||0, unk=a.observedUnknown||0;
-    const pc=x=>n?Math.round(100*x/n):0;
-    const c=el('a','card'); c.href='#/album/'+encodeURIComponent(a.physicalAlbumId);
-    c.innerHTML=\`<div class="top" style="background-image:url('/assets/territory.jpg')"></div>
-      <div class="body"><span class="tag">Charted</span>
-      <h3>\${esc(a.displayName||'Untitled')}</h3>
-      <div class="meta">\${plural(n,'position')} · captured \${esc(niceDate(a.capturedOn)||'')}</div>
-      <div class="bar" title="\${seen} holding material · \${emp} observed empty · \${unk} not yet looked at"><i class="c" style="width:\${pc(seen)}%"></i><i class="e" style="width:\${pc(emp)}%"></i><i class="u" style="width:\${pc(unk)}%"></i></div>
-      <div class="go">Enter the album →</div></div>\`;
-    cards.push(c);
-  }
-  for(const name of UNCHARTED){
-    const c=el('div','card uncharted');
-    c.innerHTML=\`<div class="top"></div><div class="body"><span class="tag grey">Planned</span>
-      <h3>\${esc(name)}</h3><div class="meta">awaiting survey</div></div>\`;
-    cards.push(c);
-  }
-  return limit?cards.slice(0,limit):cards;
-}
-
-function atlas(){
-  const v=el('div');
-  const n=(DATA.albums||[]).length;
-  v.innerHTML=\`\${trail('atlas')}
-    <div class="room"><span class="rn">Room I</span> The Atlas</div>
-    <h1 class="title">The territories</h1>
-    <p class="big prose">Each territory is a hall of the exhibit — a country, an era or a theme, with its own stamps and
-      its own stories. Today <strong>\${n===0?'no ground is':n===1?'one patch of ground is':n+' patches of ground are'}</strong> charted.
-      The rest is drawn dashed: honest blank, waiting for the survey.</p>
-    <p class="ledger-line">\${n===1?'1 territory charted':n+' territories charted'} · \${UNCHARTED.length} planned · dashed ground has not been surveyed</p>
-    <div class="terr" id="terr"></div>
-    \${doors({href:'#/',k:'Back',t:'The entrance'},{href:firstAlbumHref(),k:'Walk on · Room II',
-      t:n?'Enter the charted album':'The first album, when it is charted',
-      s:n?(DATA.albums[0].displayName||'Untitled')+' — every position, and what has and hasn’t been looked at.':'Nothing photographed yet. The atlas will say so until it has.'})}\`;
-  return v;
-}
-
-function album(id){
-  const a=(DATA.albums||[]).find(x=>x.physicalAlbumId===id);
-  const v=el('div');
-  if(!a){ v.innerHTML=trail('album')+'<div class="room"><span class="rn">Room II</span> An album</div><p class="empty-note" style="margin-top:1rem">That album is not in the atlas — or not yet.</p><p><a class="backlink" href="#/atlas">← Room I · The Atlas</a></p>'; return v; }
-  const pos=a.positions||[];
-  const cells=pos.map(p=>{
-    const cls = p.isEmpty===true?'empty':(p.isEmpty===undefined?'unknown':'filled');
-    const role=String(p.role||'').toLowerCase();
-    const rec='Position '+p.sequenceIndex+(p.pageNumber?' · page '+p.pageNumber:'')+' · '+role+' · '+(cls==='empty'?'observed empty':cls==='unknown'?'not yet looked at':'holds material');
-    return '<div class="cell '+cls+(role.includes('cover')?' cover':'')+'" tabindex="0" title="'+esc(rec)+'" data-rec="'+esc(rec)+'">'+(p.pageNumber?esc(p.pageNumber):p.sequenceIndex+1)+'</div>';
-  }).join('');
-  const seen=seenCount(a);
-  const pend=(DATA.facts.pending||[]).map(p=>'<li><span class="m">'+esc(FRIENDLY_PENDING[p.metric]||p.metric)+'</span><span class="b">'+esc(p.blockedBy)+'</span></li>').join('');
-  v.innerHTML=\`\${trail('album')}
-    <div class="room"><span class="rn">Room II</span> An album</div>
-    <h1 class="title">\${esc(a.displayName||'Untitled')}</h1>
-    <div class="label">
-      <div><div class="ft">Accession</div><div class="fv"><code>\${esc(a.physicalAlbumId)}</code></div></div>
-      <div><div class="ft">Captured</div><div class="fv">\${esc(niceDate(a.capturedOn)||'—')}</div></div>
-      <div><div class="ft">Positions</div><div class="fv">\${a.positionCount}</div></div>
-      <div><div class="ft">Structure</div><div class="fv\${a.archetype?'':' soft'}">\${a.archetype?esc(a.archetype):'not yet classified'}</div></div>
+const timeCh        = () => awaiting("time",1,"The world in time",
+  "Read in order, the collection becomes a timeline of the last two centuries.",
+  "Once each stamp's year of issue is read, this chapter lays the collection across the calendar: the crowded decades, the thin years, and the earliest issue the atlas holds.",
+  {pending:["earliestIssueYear"],src:"assets/plate-time.jpg",cap:"Plate · The cabinet of decades"});
+const issuersCh     = () => awaiting("issuers",2,"The issuers",
+  "Who printed the post — kingdoms, colonies, republics that lasted a decade, and the states that outlived them.",
+  "Every stamp is issued by somewhere. Once identification runs, this chapter counts the distinct issuers, and how many of them are places that no longer exist.",
+  {pending:["distinctIssuerCount","extinctIssuerCount"],src:"assets/plate-issuers.jpg",cap:"Plate · Lost postal worlds"});
+const mapCh         = () => awaiting("map",3,"The map",
+  "Every issuer pinned on an aged chart — where the post came from, and how the borders moved.",
+  "Once territories are resolved, the collection is drawn onto a world chart: a pin for every place that issued a stamp, the vanished ones marked apart.",
+  {pending:["distinctTerritoryCount"],plate:"era",cap:"Survey chart · pending",prompt:"A blank survey chart — pins appear as territories are resolved."});
+const peopleCh      = () => awaiting("people",4,"The people",
+  "The faces a nation chose to print — monarchs, poets, engineers, a nurse. A kind of national autobiography.",
+  "Once the designs are read, this chapter gathers the people who appear on the stamps, and how often each recurs.",
+  {src:"assets/plate-people.jpg",cap:"Plate · The gallery of faces"});
+const themesCh      = () => awaiting("themes",5,"The themes",
+  "What the collection keeps returning to — birds, ships, flight, the ends of wars.",
+  "Once subjects are identified, the recurring themes surface here — and the honest absences, the subjects the collection never touches.",
+  {src:"assets/plate-themes.jpg",cap:"Plate · A cabinet of subjects"});
+const dnaCh         = () => awaiting("dna",6,"The collection's DNA",
+  "The shape of the whole, distilled to a handful of honest sentences.",
+  "When there is enough read to summarise, this chapter states what the collection is — in plain, checkable lines drawn straight from the counts.",
+  {cap:"Profile · pending",prompt:"The collection, distilled — once there is enough to distil."});
+const connectionsCh = () => awaiting("connections",7,"Connections",
+  "Two stamps, one thread — the same event seen from two countries, decades apart.",
+  "Once objects are identified, the atlas draws the links between them: shared events, shared designs, successor states.",
+  {cap:"Connection plate · pending",prompt:"Two stamps, one connection — drawn once both are read."});
+const languageCh    = () => awaiting("language",8,"Money &amp; language",
+  "Denominations and scripts — the day a currency went decimal, the alphabets the post was printed in.",
+  "Once the face values and inscriptions are read, this chapter charts the money and the writing systems across the collection.",
+  {cap:"Denomination plate · pending",prompt:"A denomination plate will stand here."});
+const physicalCh    = () => awaiting("physical",9,"The physical object",
+  "Paper, perforation, watermark, postmark — the stamp as a thing you can hold.",
+  "Much of this can only be read from the photograph with care, and some of it not at all. The atlas will record what it can measure, and mark what it cannot.",
+  {plate:"era",cap:"Detail plate · pending",prompt:"Perforation and watermark, drawn — where the photograph allows."});
+const setsCh        = () => awaiting("sets",10,"Sets &amp; series",
+  "Series and omnibus issues — one design shared across many issuers in a single year.",
+  "Once issues are identified, the atlas reconstructs the sets: the long-running series, and the omnibus designs that crossed borders.",
+  {cap:"Set plate · pending",prompt:"A shared omnibus design — drawn once the set is read."});
+const colourCh      = () => awaiting("colour",12,"Colour",
+  "The collection by hue — the commonest inks, the most colourful decade.",
+  "Once the images are read for colour, this chapter sorts the collection by its dominant inks — honestly, and without a scan of any modern design.",
+  {plate:"art",cap:"Colour study · pending",prompt:"A colour study — the collection's palette, drawn fresh."});
+const playCh        = () => {
+  const body=\`<div class="grid g2 split" style="--split:1fr 320px;align-items:start">
+    <div>
+      <span class="tag unknown">Nothing to discover yet</span>
+      <p class="deck" style="margin:12px 0 0;font-style:normal;color:var(--ink)">A door for wandering — a surprising fact, a question of scale, a giraffe where you didn't expect one. Each one is computed straight from the collection, so none of it can be invented.</p>
+      <p class="small muted" style="margin-top:14px">The surprises begin once the first pages are read. Until the data can support a fact, the atlas offers none — that is the whole game.</p>
     </div>
-    <p class="prose">Of \${plural(a.positionCount||0,'position')}: <strong>\${seen}</strong> seen holding material,
-       <strong>\${a.observedEmpty??'—'}</strong> observed empty, <strong>\${a.observedUnknown??'—'}</strong> not yet looked at.
-       Each cell below is one position in the album — solid where stamps were seen, dashed where the page was empty,
-       hatched where nobody has looked yet.</p>
-    <div class="case">
-      <div class="plate">\${cells}</div>
-      <div class="readout" id="readout" aria-live="polite"></div>
-      <div class="plate-legend"><span><i class="filled"></i> holds material</span><span><i class="empty"></i> observed empty</span><span><i class="unknown"></i> not yet looked at</span></div>
-    </div>
-    <div class="sec-label">Still to know about this album</div>
-    <p class="prose muted">Which countries, which years, how many distinct stamps — these arrive when identification runs.
-       Until then the atlas says so rather than guessing. What will appear here, and what each fact is waiting on:</p>
-    <ul class="clean pending">\${pend||'<li class="muted">Nothing outstanding.</li>'}</ul>
-    \${doors({href:'#/atlas',k:'Back · Room I',t:'The Atlas'},{href:'#/entry',k:'Walk on · Room III',
-      t:'What one of these positions becomes',s:'The page every identified stamp will get — its story, its era, and the honest state of its image.'})}\`;
-  return v;
-}
-
-/* the rich-entry FORMAT, shown as a labelled demonstration until identification produces real ones */
-function entry(){
-  const v=el('div');
-  v.innerHTML=\`\${trail('entry')}
-    <div class="room"><span class="rn">Room III</span> A page from the atlas <span class="demo-flag">Format preview</span></div>
-    <h1 class="title">One stamp, told properly</h1>
-    <p class="prose muted">This is the shape every identified stamp will take — a story, its era rendered as original art,
-      and the honest state of its image. A worked example, not a real catalogue entry, shown so you can see where the atlas is going.</p>
-    <div class="entry">
-      <div class="specimen-col">
-        <div class="specimen"><i class="pl"></i><i class="pr"></i><i class="hinge"></i>
-          <div class="inner"><b>Design in copyright</b>The stamp's own photograph stays in the private archive.
-            <span class="st">image withheld</span></div>
-        </div>
-        <p class="capline">Where a design is still in copyright, the mat stays empty and says so.</p>
-      </div>
-      <div>
-        <span class="tag gold">Example entry</span>
-        <h2>The era, not the stamp</h2>
-        <p class="stand">Where a stamp's design is still in copyright, the atlas shows the <em>world behind it</em> —
-          an original illustration of the moment it marks — never a copy of the stamp.</p>
-        <p>A commemorative issue is a small national decision about what deserves remembering: a coronation, a bridge,
-          a bird, a war's end. The atlas tells that story from recorded facts — who issued it, when, what it marked, how it
-          was printed — and lets an original picture of the era stand in for a stamp it may not lawfully reproduce.</p>
-        <figure class="era" style="margin-left:0;margin-right:0">
-          <img src="/assets/territory.jpg" alt="Original era illustration (demonstration): a blank survey sheet with a compass rose" loading="lazy" />
-          <figcaption>An original illustration stands here — the era, drawn fresh. This one is the blank survey sheet, because the stamp is not yet identified.</figcaption>
-        </figure>
-        <div class="facts">
-          <div class="fact"><div class="ft">Issued by</div><div class="fv soft">determined at identification</div></div>
-          <div class="fact"><div class="ft">Year</div><div class="fv soft">determined at identification</div></div>
-          <div class="fact"><div class="ft">What it marks</div><div class="fv soft">determined at identification</div></div>
-          <div class="fact"><div class="ft">Printed</div><div class="fv soft">determined at identification</div></div>
-          <div class="fact"><div class="ft">Image</div><div class="fv">A real photograph only when the design is public domain; otherwise original art in its place.</div></div>
-          <div class="fact"><div class="ft">Certainty</div><div class="fv">Every fact carries its status — confirmed by a person, or a machine's candidate.</div></div>
-        </div>
-        <p class="src">Narrative written from recorded facts. Public-domain reference sources are cited on each real entry. No valuations, ever.</p>
-      </div>
-    </div>
-    \${doors({href:firstAlbumHref(),k:'Back · Room II',t:'The album'},{href:'#/about',k:'Behind the glass',
-      t:'How the atlas is drawn',s:'Photograph once, preserve forever, reprocess forever — and how we count.'})}\`;
-  return v;
-}
-
-function about(){
-  const v=el('div');
-  const rules=(DATA.facts.countingRules||[]).map(r=>'<li>'+esc(r)+'</li>').join('');
-  const pend=(DATA.facts.pending||[]).map(p=>'<li><span class="m">'+esc(FRIENDLY_PENDING[p.metric]||p.metric)+'</span><span class="b">'+esc(p.blockedBy)+'</span></li>').join('');
-  v.innerHTML=\`\${trail('about')}
-    <div class="room"><span class="rn">Notes</span> How the atlas is drawn</div>
-    <h1 class="title">Photograph once. Preserve forever. Reprocess forever.</h1>
-    <p class="big prose">A stamp is photographed as evidence and never thrown away. Everything you see here is derived
-      from that evidence — and improves every time the collection is read again.</p>
-    <div class="steps">
-      <div class="step"><span class="rn">1</span><h3>Photograph</h3><p>Every album page is captured once, in order, as it is. Empty pages included — an empty page is a fact too.</p></div>
-      <div class="step"><span class="rn">2</span><h3>Preserve</h3><p>The originals go into an archive that only grows. Nothing is edited in place; nothing is deleted.</p></div>
-      <div class="step"><span class="rn">3</span><h3>Reprocess</h3><p>Detection and identification run over the archive again and again. Better readings replace worse ones; both are kept.</p></div>
-    </div>
-    <div class="sec-label">How we count</div>
-    <ul class="clean">\${rules}</ul>
-    <div class="sec-label">Coming as identification runs</div>
-    <p class="prose muted">These facts don't exist yet — they need the stamps to be identified. They're listed as promises, not hidden as zeroes.</p>
-    <ul class="clean pending">\${pend}</ul>
-    <div class="sec-label">On truth</div>
-    <p class="prose">Stamp Atlas produces <strong>assertions, never truth</strong>. A machine's reading is a candidate; a person
-      confirms it or doesn't; both are kept. Where the atlas cannot say something honestly, it says nothing — and shows you the gap.</p>
-    \${doors({href:'#/entry',k:'Back · Room III',t:'A page'},{href:'#/atlas',k:'Back to the rooms',
-      t:'Return to the atlas',s:'Charted as of '+asOfDate()+'. Come back — it fills in.'})}\`;
-  return v;
-}
-
-/* ---------- router ---------- */
-const ROOMS = {
-  home:  { crumbs:[], title:'Stamp Atlas' },
-  atlas: { crumbs:[['I','The Atlas']], title:'The Atlas — Stamp Atlas' },
-  album: { crumbs:[['I','The Atlas'],['II','']], title:'An album — Stamp Atlas' },
-  entry: { crumbs:[['III','A page']], title:'A page — Stamp Atlas' },
-  about: { crumbs:[['Notes','How it works']], title:'How it works — Stamp Atlas' },
+    <div class="perf"><div class="inner" style="padding:10px">\${plate("art",{size:"full",cap:"Discovery · pending",prompt:"A surprising fact will appear here — drawn from the data, never from the imagination."})}</div></div>
+  </div>\`;
+  return chapter("play",13,"Play &amp; discovery","A way in for the curious — surprising facts and questions of scale, drawn straight from the data.",body);
 };
-const DEPTH = { home:0, atlas:1, album:2, entry:3, about:4 };
-let lastDepth = 0;
-function setCrumbs(key, leaf){
-  const r=ROOMS[key]||ROOMS.home;
-  const c=$('#crumbs'); c.innerHTML='';
-  r.crumbs.forEach(([rn,label],i)=>{
-    if(i) c.appendChild(el('span','sep','›'));
-    c.appendChild(el('span','rn',esc(rn)));
-    c.appendChild(el('b',null,esc(label||leaf||'')));
-  });
-  document.title = leaf ? esc(leaf)+' — Stamp Atlas' : r.title;
+
+/* ——— Albums (real: the albums list; empty today) ——— */
+function albumsCh(){
+  const albums=DATA.albums||[];
+  let body;
+  if(!albums.length){
+    body=\`<div class="grid g2 split" style="--split:1fr 320px;align-items:start">
+      <div>
+        <span class="tag unknown">No album charted yet</span>
+        <p class="deck" style="margin:12px 0 0;font-style:normal;color:var(--ink)">The shelves are still empty. When the first album is photographed, it appears here — every position walked through in order, solid where a stamp was seen, dashed where the page was empty, hatched where nobody has looked yet.</p>
+        <p class="small muted" style="margin-top:14px">An empty page is a fact too: the atlas records it as observed-empty, never guessed. Come back and watch the shelves fill.</p>
+      </div>
+      <div class="perf"><div class="inner" style="padding:10px">\${plate("era",{size:"full",cap:"First album · pending",prompt:"The first binder, when it is charted."})}</div></div>
+    </div>\`;
+  } else {
+    body=\`<p class="ledger-line small mono" style="color:var(--ink-3)">\${fmt(albums.length)} album\${albums.length===1?"":"s"} charted · each captured once and kept for good</p>
+    <div class="grid g3">\`+albums.map(a=>{
+      const label=a.label||a.physicalAlbumId; const n=a.positionCount||0;
+      const items=(a.itemCount!=null)?\`\${fmt(a.itemCount)} item\${a.itemCount===1?"":"s"} found\`:"items not yet counted";
+      return \`<div class="card" data-key="\${esc(a.physicalAlbumId)}"><span class="tag current">Charted</span>
+        <h3 style="margin-top:8px">\${esc(label)}</h3>
+        <div class="mono small" style="color:var(--ink-3);margin-top:4px">\${esc(a.physicalAlbumId)}</div>
+        <p class="small" style="margin-top:10px">\${fmt(n)} position\${n===1?"":"s"} traversed · \${esc(items)}</p></div>\`;
+    }).join("")+\`</div>\`;
+  }
+  return chapter("albums",11,"The albums","The physical albums themselves — each a shelf of the collection, walked position by position.",body);
 }
 
-function route(){
-  if(!DATA){ return; }
-  const hash=location.hash.replace(/^#/,'')||'/';
-  const view=$('#view'); view.innerHTML='';
-  let name='home', node, room='home', leaf='';
-  if(hash==='/'){ node=home(); }
-  else if(hash==='/atlas'){ node=atlas(); name='atlas'; room='atlas'; }
-  else if(hash.startsWith('/album/')){
-    const id=decodeURIComponent(hash.slice(7));
-    node=album(id); name='atlas'; room='album';
-    const a=(DATA.albums||[]).find(x=>x.physicalAlbumId===id); leaf=a?(a.displayName||'Untitled'):'Not in the atlas';
-  }
-  else if(hash==='/entry'){ node=entry(); name='entry'; room='entry'; }
-  else if(hash==='/about'){ node=about(); name='about'; room='about'; }
-  else { node=home(); }
-  /* walking deeper into the exhibit slides the room in from the right; walking back, from the left */
-  const depth=DEPTH[room]??0;
-  view.dataset.dir = depth>lastDepth?'deeper':depth<lastDepth?'back':'same';
-  lastDepth=depth;
-  view.appendChild(node);
-  if(hash==='/') renderStats($('#stats'));
-  if(hash==='/') renderCurios($('#curios'));
-  if(hash==='/') { const p=$('#terr-preview'); if(p) territoryCards(4).forEach(c=>p.appendChild(c)); }
-  if(name==='atlas' && $('#terr')) territoryCards().forEach(c=>$('#terr').appendChild(c));
-  if(room==='album'){
-    const plate=$('.plate'), out=$('#readout');
-    if(plate&&out){
-      const show=e=>{ const c=e.target.closest('.cell'); if(c) out.textContent=c.dataset.rec; };
-      plate.addEventListener('mouseover',show); plate.addEventListener('click',show); plate.addEventListener('focusin',show);
-    }
-  }
-  for(const a of document.querySelectorAll('#nav a')) a.classList.toggle('on', a.dataset.v===name);
-  setCrumbs(room, leaf);
-  window.scrollTo(0,0);
+/* ——— Questions (real answers where known, honest pending where not) ——— */
+function answer(id){
+  const m=metric(id);
+  if(m){ const d=disp(m); const f=FRIENDLY[id]||{}; return \`<span class="big">\${d.n}</span>\${esc(d.d)}\${f.d?\` — <span class="muted">\${esc(f.d)}</span>\`:""}\`; }
+  const p=pendingOf(id);
+  return \`<span class="muted italic">Not yet known — awaiting \${p?esc(p.blockedBy):"more of the collection to be read"}.</span>\`;
+}
+function questionsCh(){
+  const qa=[
+    ["How many albums have been charted?","albumCount"],
+    ["How many positions has the survey walked through?","albumPositionCount"],
+    ["How many of those positions actually hold material?","positionOccupancy"],
+    ["How many album structures have been classified?","albumArchetypeCoverage"],
+    ["How many individual stamps does the collection hold?","philatelicItemCount"],
+    ["What is the earliest stamp in the collection?","earliestIssueYear"],
+  ];
+  const rows=qa.map(q=>\`<details><summary>\${esc(q[0])}</summary><div class="ans">\${answer(q[1])}</div></details>\`).join("");
+  const body=\`<div class="qa">\${rows}</div><p class="small muted" style="margin-top:16px">Every answer is read from the collection's own records — never typed in. Where an answer isn't known yet, the atlas says exactly what it is waiting on rather than guess.</p>\`;
+  return chapter("questions",14,"Questions of scale","Plain questions, answered from the record — or marked honestly as not yet known.",body);
 }
 
-fetch('/api/public.json').then(r=>r.json()).then(d=>{
-  DATA=d;
-  $('#asof').textContent = 'Charted as of '+asOfDate()+'.';
-  if(d.withheld&&d.withheld.length) $('#withheld').innerHTML = d.withheld.map(w=>'<code>'+esc(w)+'</code>').join(', ')+'.';
-  route();
-}).catch(()=>{ $('#view').innerHTML='<p class="empty-note">The atlas could not be loaded just now. Try again in a moment.</p>'; });
-window.addEventListener('hashchange', route);
+/* ——— Unknowns (real: pending metrics as a feature + the withheld list) ——— */
+function unknownCh(){
+  const pend=(DATA.facts&&DATA.facts.pending)||[]; const withheld=DATA.withheld||[];
+  const pendRows=pend.map(p=>{ const label=FRIENDLY_PENDING[p.metric]||p.metric;
+    return \`<li data-key="\${esc(label)}" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--rule-soft);padding:11px 0"><span style="font-weight:500">\${esc(label)}</span><span class="mono" style="color:var(--ink-3)">awaiting \${esc(p.blockedBy)}</span></li>\`;
+  }).join("");
+  const withRows=withheld.map(w=>\`<code>\${esc(w)}</code>\`).join(", ");
+  const body=\`<div class="unk">
+    <div>
+      <div class="n">\${pend.length||0}</div>
+      <p class="deck" style="font-style:normal;color:var(--ink-2)">things the atlas does not yet know — named plainly, as a feature. An unknown you can see is worth more than a number someone invented.</p>
+      <div style="margin-top:18px;max-width:300px">\${plate("art",{size:"full",src:"assets/plate-unknowns.jpg",cap:"Plate · The blank leaf",alt:"An engraved blank, perforated leaf under lamplight"})}</div>
+    </div>
+    <div>
+      <div class="card" data-key="pending"><h3>What the atlas does not yet know</h3>
+        <p class="small">These facts don't exist yet — they need the stamps to be identified. They are listed as promises, not hidden as zeroes.</p>
+        <ul style="list-style:none;margin:12px 0 0;padding:0">\${pendRows||'<li class="muted" style="padding:11px 0">Nothing outstanding.</li>'}</ul>
+      </div>
+      <div class="card" data-key="withheld" style="margin-top:16px"><h3>Deliberately not published</h3>
+        <p class="small">Some fields exist in the archive but never leave it. The album photographs and their fingerprints stay private; nothing here is ever a price, a location, or a scan of a modern design.</p>
+        <p class="mono" style="margin-top:10px;color:var(--ink-2)">\${withRows||"—"}</p>
+      </div>
+    </div>
+  </div>\`;
+  return chapter("unknown",15,"The unknowns","What the atlas cannot yet say — and what it will never publish. The blank quarters of the map, kept honest.",body);
+}
+
+/* =====================================================================
+   WAYFINDING · 1 CONTENTS (tab strip + contents page)
+   ===================================================================== */
+/* ——— engraved ornaments: inline SVG, currentColor, decorative (aria-hidden) ——— */
+const EMBLEMS=[
+  \`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 3h13M5.5 21h13"/><path d="M7.5 3.5c0 4.6 3.4 6.4 4.5 8.5-1.1 2.1-4.5 3.9-4.5 8.5M16.5 3.5c0 4.6-3.4 6.4-4.5 8.5 1.1 2.1 4.5 3.9 4.5 8.5"/><path d="M9.6 19.3h4.8M10.2 18h3.6" stroke-width=".7"/><path d="M12 12.5v3" stroke-width=".7" stroke-dasharray=".6 1.2"/><path d="M9.6 6.2h4.8" stroke-width=".7"/></svg>\`,
+  \`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.6" stroke-width=".6" stroke-dasharray="1.2 1.5"/><path d="M12 2.5l-1.8 7.7L2.5 12l7.7 1.8 1.8 7.7 1.8-7.7 7.7-1.8-7.7-1.8z" stroke-width=".8"/><path d="M12 2.5l1.8 7.7L12 12zM21.5 12l-7.7 1.8L12 12zM12 21.5l-1.8-7.7L12 12zM2.5 12l7.7-1.8L12 12z" fill="currentColor" stroke="none"/></svg>\`,
+  \`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" stroke-width=".8"/><path d="M6.5 17.5c0-7.3 4-11 11-11 0 7-3.7 11-11 11z"/><path d="M6.5 17.5l8.5-8.5" stroke-width=".7"/><path d="M9.2 14.8c1.5.3 2.8.1 4-.8M10.9 13.1c1.2.2 2.3-.1 3.2-.9M9.2 14.8c-.4-1.5-.2-2.8.7-4M10.9 13.1c-.3-1.2 0-2.3.8-3.2" stroke-width=".5"/></svg>\`,
+  \`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 15.5h19" stroke-width=".8"/><path d="M4.5 15.5h.01M8.5 15.5h.01M12.5 15.5h.01M16.5 15.5h.01M20.5 15.5h.01" stroke-width="2.1"/><path d="M4 17.5h4M9.5 17.5h4M15 17.5h4M4 19.5h4M9.5 19.5h4M15 19.5h4" stroke-width=".45"/><circle cx="10" cy="9" r="5.5" fill="var(--paper,#efe3cb)" fill-opacity=".85"/><circle cx="10" cy="9" r="5.5" stroke-width="1.1"/><path d="M14.3 13.3l5.2 5.2" stroke-width="1.6"/><path d="M6.6 6.6a4 4 0 0 1 2.6-1.6" stroke-width=".5"/></svg>\`,
+  \`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.2c-2.4-1.9-5.4-2.2-9-1.6v14.2c3.6-.6 6.6-.3 9 1.6 2.4-1.9 5.4-2.2 9-1.6V4.6c-3.6-.6-6.6-.3-9 1.6z"/><path d="M12 6.2v14.2"/><path d="M5 8.2c1.8-.3 3.3-.2 4.6.3M5 10.7c1.8-.3 3.3-.2 4.6.3M5 13.2c1.8-.3 3.3-.2 4.6.3M14.4 8.5c1.3-.5 2.8-.6 4.6-.3M14.4 11c1.3-.5 2.8-.6 4.6-.3M14.4 13.5c1.3-.5 2.8-.6 4.6-.3" stroke-width=".55"/><path d="M4 20.3c3-.5 5.6-.2 8 1.4 2.4-1.6 5-1.9 8-1.4" stroke-width=".55"/></svg>\`
+];
+const emblem=i=>\`<span class="emblem" aria-hidden="true">\${EMBLEMS[i]||""}</span>\`;
+const DIVIDER=\`<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="36" fill="currentColor" stroke="currentColor" stroke-width=".5" stroke-linejoin="round" aria-hidden="true"><svg x="50%" width="100%" overflow="visible"><g stroke="none"><rect x="-100%" y="17.6" width="100%" height=".8" transform="translate(-40 0)"/><rect y="17.6" width="100%" height=".8" transform="translate(40 0)"/><circle cx="-41" cy="18" r="1.1"/><circle cx="41" cy="18" r="1.1"/><circle cx="-36.5" cy="18" r=".5"/><circle cx="36.5" cy="18" r=".5"/></g><g transform="translate(0 18)scale(1.12)"><circle r="10.5" fill="none" stroke-dasharray="1 1.06"/><circle r="8.6" fill="none" stroke-width=".35"/><path d="M5.3-5.3L-1.27-1.27 0 0zM5.3 5.3L1.27-1.27 0 0zM-5.3 5.3L1.27 1.27 0 0zM-5.3-5.3L-1.27 1.27 0 0z" fill="none"/><path d="M5.3-5.3L1.27 1.27 0 0zM5.3 5.3L-1.27 1.27 0 0zM-5.3 5.3L-1.27-1.27 0 0zM-5.3-5.3L1.27-1.27 0 0z" stroke="none"/><path d="M0-13L-2.4 0 0 0zM13 0L0-2.4 0 0zM0 13L2.4 0 0 0zM-13 0L0 2.4 0 0z" fill="none"/><path d="M0-13L2.4 0 0 0zM13 0L0 2.4 0 0zM0 13L-2.4 0 0 0zM-13 0L0-2.4 0 0z" stroke="none"/><circle r="1.5" fill="none" stroke-width=".6"/></g></svg></svg>\`;
+function nav(){
+  $("#partsList").innerHTML=PARTS.map((p,i)=>{ const a=idxOf(p.chapters[0][0]), b=idxOf(p.chapters[p.chapters.length-1][0]);
+    return \`<li><button type="button" class="part-btn" data-part="\${p.id}" aria-expanded="false" aria-controls="contentsPanel" aria-current="false">\${emblem(i)}<span class="pcol"><small>Part \${ROMAN[i]} · \${ROMAN[a]}–\${ROMAN[b]}</small><span>\${esc(p.title)}</span></span></button></li>\`; }).join("");
+  $("#contentsGrid").innerHTML=PARTS.map((p,i)=>\`<div class="contents-part" data-part="\${p.id}"><div class="cp-head">\${emblem(i)}<div><span class="eyebrow">Part \${ROMAN[i]}</span><h4>\${esc(p.title)}</h4></div></div><p class="small italic" style="margin:0 0 8px">\${esc(p.blurb)}</p><ol>\${p.chapters.map(c=>{ const m=CH[c[0]]; return m?\`<li><a href="#\${c[0]}" data-ch="\${c[0]}" aria-current="false"><b>\${ROMAN[m.i]}</b><span>\${esc(m.title)}</span></a></li>\`:""; }).join("")}</ol></div>\`).join("");
+  $("#contentsNote").textContent=\`\${CHAPTERS.length} chapters in \${PARTS.length} parts. The parts are fixed; whatever the scans discover lives inside a chapter.\`;
+}
+let lastNavBtn=null;
+function openContents(partId,focus){
+  state.contentsPart=partId||null; $("#contentsPanel").hidden=false;
+  $$(".part-btn").forEach(b=>b.setAttribute("aria-expanded",String(b.dataset.part===partId)));
+  $("#contentsBtn").setAttribute("aria-expanded","true");
+  $$(".contents-part").forEach(d=>d.classList.toggle("dim",!!partId&&d.dataset.part!==partId));
+  if(focus){ const first=partId?$(\`.contents-part[data-part="\${partId}"] a\`):$("#contentsGrid a"); if(first) first.focus(); }
+}
+function closeContents(refocus){
+  const panel=$("#contentsPanel"); if(panel.hidden) return; panel.hidden=true; state.contentsPart=null;
+  $$(".part-btn").forEach(b=>b.setAttribute("aria-expanded","false")); $("#contentsBtn").setAttribute("aria-expanded","false");
+  if(refocus&&lastNavBtn&&lastNavBtn.focus) lastNavBtn.focus(); lastNavBtn=null;
+}
+function toggleContents(partId,btn,viaKeyboard){
+  if(!$("#contentsPanel").hidden&&state.contentsPart===(partId||null)){ closeContents(true); return; }
+  lastNavBtn=btn; openContents(partId,viaKeyboard);
+}
+function setHere(id){
+  state.chapter=id; const p=id?partOf(id):null; const m=id?CH[id]:null;
+  $$(".part-btn").forEach(b=>b.setAttribute("aria-current",String(!!p&&b.dataset.part===p.id)));
+  $$("#contentsGrid a[data-ch]").forEach(a=>a.setAttribute("aria-current",String(a.dataset.ch===id)));
+  $("#navHere").innerHTML=m?\`<b>\${ROMAN[m.i]}</b><span>\${esc(m.title)}</span>\`:"";
+  $("#contentsBtn .lbl").innerHTML=m?\`<b>\${ROMAN[m.i]}</b> \${esc(shortOf(id))}\`:"Contents";
+}
+function chapterFeet(){
+  $$("[data-ch-foot]").forEach(el=>{ const id=el.dataset.chFoot; const i=idxOf(id); const next=CHAPTERS[i+1]; const p=partOf(id);
+    el.innerHTML=\`<span>\${p?\`Part \${ROMAN[PARTS.indexOf(p)]} · \${esc(p.title)}\`:""}</span><span>\${next&&CH[next[0]]?\`<a href="#\${next[0]}">Next · \${ROMAN[i+1]} \${esc(CH[next[0]].title)} →</a>\`:\`<button type="button" class="linkish" data-open-contents>Back to the contents ↑</button>\`}</span>\`; });
+}
+
+/* =====================================================================
+   WAYFINDING · 3 INDEX (gazetteer) — built from the registry + real data
+   ===================================================================== */
+let GAZ=[]; const gaz={q:"",kind:null,active:-1,rows:[],last:null};
+const GROUPS=["Chapters","Measures","Albums","Awaiting","Withheld"];
+const RANK={Part:.6,Chapter:.6,Measure:.4,Album:.4,"Not yet known":.3,"Not published":.2};
+const norm=s=>String(s==null?"":s).toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").replace(/[^\\p{L}\\p{N}\\s]/gu," ").replace(/\\s+/g," ").trim();
+const strip=s=>String(s==null?"":s).replace(/<[^>]+>/g," ");
+function byKey(sec,key){ const k=String(key).replace(/["\\\\]/g,"\\\\$&"); return $(\`#\${sec} [data-key="\${k}"]\`); }
+function buildIndex(){
+  GAZ=[];
+  const add=(group,kind,label,hint,ch,keys,act,o={})=>GAZ.push(Object.assign({group,kind,label:String(label),hint:hint||"",ch,l:norm(label),k:norm([label,hint].concat(keys||[]).join(" ")),a:(o.alias||[]).map(norm),act},o));
+  const AT=(sec,key)=>()=>byKey(sec,key);
+  /* the bounded axis: parts & chapters */
+  PARTS.forEach((p,i)=>add("Chapters","Part",\`Part \${ROMAN[i]} · \${p.title}\`,p.blurb,p.chapters[0][0],[p.chapters.map(c=>c[1]).join(" "),"contents"]));
+  CHAPTERS.forEach(c=>{ const m=CH[c[0]]; if(m) add("Chapters","Chapter",m.title,\`\${ROMAN[m.i]} · \${c[1]}\`,c[0],[c[1],strip(m.deck)],null,{alias:[c[1]]}); });
+  /* real measures the atlas already holds */
+  ((DATA.facts&&DATA.facts.metrics)||[]).forEach(m=>{ const f=FRIENDLY[m.metric]||{}; const d=disp(m); add("Measures","Measure",f.label||m.metric,strip(d.d),"glance",[m.metric,f.d],AT("glance",m.metric)); });
+  /* the honest unknowns — a feature, indexed like anything else */
+  ((DATA.facts&&DATA.facts.pending)||[]).forEach(p=>{ const label=FRIENDLY_PENDING[p.metric]||p.metric; add("Awaiting","Not yet known",label,\`awaiting \${p.blockedBy}\`,"unknown",[p.metric,"pending unknown not yet"],AT("unknown",label)); });
+  /* deliberately withheld fields */
+  (DATA.withheld||[]).forEach(w=>add("Withheld","Not published",w,"kept private — never leaves the archive","unknown",["withheld private not published"],AT("unknown","withheld")));
+  /* real entities: albums now; issuers, themes, people and years slot in here as they appear */
+  (DATA.albums||[]).forEach(a=>{ const label=a.label||a.physicalAlbumId; add("Albums","Album",label,\`\${a.positionCount||0} position\${(a.positionCount||0)===1?"":"s"}\`,"albums",[a.physicalAlbumId,"binder"],AT("albums",a.physicalAlbumId)); });
+}
+function search(q,kind){
+  const tokens=norm(q).split(" ").filter(Boolean);
+  let pool=kind?GAZ.filter(e=>e.group===kind):GAZ;
+  if(!tokens.length) return pool.map(e=>({e,s:0}));
+  const score=e=>{ let s=0; for(const t of tokens){ let m=0;
+      if(e.a.includes(t)||e.l===t) m=6; else if(e.l.startsWith(t)) m=4; else if(e.l.includes(" "+t)) m=3.2; else if(e.l.includes(t)) m=2.4;
+      else if(e.k.startsWith(t)||e.k.includes(" "+t)) m=1.4; else if(e.k.includes(t)) m=1;
+      if(!m) return 0; s+=m; }
+    return s+(RANK[e.kind]||0); };
+  const out=[]; for(const e of pool){ const s=score(e); if(s) out.push({e,s}); }
+  out.sort((a,b)=>b.s-a.s||a.e.label.localeCompare(b.e.label)); return out;
+}
+function hl(label,tokens){
+  if(!tokens.length) return esc(label); const low=label.toLowerCase(); const marks=[];
+  tokens.forEach(t=>{ const i=low.indexOf(t); if(i>=0) marks.push([i,i+t.length]); });
+  if(!marks.length) return esc(label); marks.sort((a,b)=>a[0]-b[0]);
+  let out="",pos=0; marks.forEach(([a,b])=>{ if(a<pos) return; out+=esc(label.slice(pos,a))+"<mark>"+esc(label.slice(a,b))+"</mark>"; pos=b; }); return out+esc(label.slice(pos));
+}
+function gazRender(){
+  const tokens=norm(gaz.q).split(" ").filter(Boolean); const browsing=!tokens.length;
+  let rows=search(gaz.q,gaz.kind);
+  if(browsing&&!gaz.kind) rows=rows.filter(r=>r.e.kind==="Chapter");   // empty box = the contents page
+  const cap=browsing?400:50; const more=Math.max(0,rows.length-cap); gaz.rows=rows.slice(0,cap);
+  const list=$("#gazList");
+  if(!gaz.rows.length){ list.innerHTML=\`<div class="gaz-empty">Nothing in the index matches “\${esc(gaz.q)}”\${gaz.kind?\` under \${esc(gaz.kind)}\`:""}.<br><span class="small">The collection is still being read — for now the index holds the chapters, the measures already charted, and the atlas's honest unknowns. Clear the box to browse by chapter.</span></div>\`; gaz.active=-1; gazActive(); return; }
+  let html="", last=null;
+  gaz.rows.forEach((r,i)=>{ const e=r.e;
+    if(browsing){ const p=partOf(e.ch); const g=gaz.kind?e.kind:(p?\`Part \${ROMAN[PARTS.indexOf(p)]} · \${p.title}\`:""); if(g!==last){ html+=\`<div class="gaz-group" role="presentation">\${esc(g)}</div>\`; last=g; } }
+    const to=e.ch&&CH[e.ch]?\`→ <b>\${ROMAN[CH[e.ch].i]}</b> \${esc(shortOf(e.ch))}\`:"";
+    html+=\`<div class="gaz-opt" role="option" id="gaz-opt-\${i}" data-i="\${i}" aria-selected="false"><span class="kind">\${esc(e.kind)}</span><span class="lbl">\${hl(e.label,tokens)}</span><span class="to">\${to}</span>\${e.hint?\`<span class="hint">\${esc(e.hint)}</span>\`:""}</div>\`; });
+  if(!browsing) html=\`<div class="gaz-group" role="presentation">\${rows.length} match\${rows.length===1?"":"es"}</div>\`+html;
+  if(more) html+=\`<div class="gaz-group" role="presentation">\${more} more — keep typing to narrow</div>\`;
+  list.innerHTML=html; list.scrollTop=0; gaz.active=browsing?-1:0; gazActive();
+}
+function gazActive(scroll=true){
+  $$(".gaz-opt").forEach((o,i)=>o.setAttribute("aria-selected",String(i===gaz.active)));
+  const inp=$("#gazInput"); if(gaz.active>=0){ inp.setAttribute("aria-activedescendant","gaz-opt-"+gaz.active); const o=$("#gaz-opt-"+gaz.active); if(o&&scroll) o.scrollIntoView({block:"nearest"}); } else inp.removeAttribute("aria-activedescendant");
+}
+function gazKinds(){
+  const counts={}; GAZ.forEach(e=>counts[e.group]=(counts[e.group]||0)+1);
+  $("#gazKinds").innerHTML=\`<button type="button" class="chip" data-gkind="" aria-pressed="\${String(!gaz.kind)}">Everything <span class="k">\${GAZ.length}</span></button>\`+GROUPS.filter(g=>counts[g]).map(g=>\`<button type="button" class="chip" data-gkind="\${esc(g)}" aria-pressed="\${String(gaz.kind===g)}">\${esc(g)} <span class="k">\${counts[g]}</span></button>\`).join("");
+}
+function openGaz(q){
+  const g=$("#gaz"); if(!g.hidden){ $("#gazInput").focus(); return; }
+  gaz.last=document.activeElement; closeContents(false); g.hidden=false; document.body.style.overflow="hidden";
+  gaz.q=q||""; gaz.kind=null; const inp=$("#gazInput"); inp.value=gaz.q;
+  $("#gazCount").textContent=\`\${GAZ.length} entries · \${CHAPTERS.length} chapters · rebuilt from the data on every load\`;
+  gazKinds(); gazRender(); inp.focus(); if(gaz.q) inp.select();
+}
+function closeGaz(){ const g=$("#gaz"); if(g.hidden) return; g.hidden=true; document.body.style.overflow=""; if(gaz.last&&gaz.last.focus) gaz.last.focus(); gaz.last=null; }
+function flash(el){ el.classList.remove("hit"); void el.offsetWidth; el.classList.add("hit"); setTimeout(()=>el.classList.remove("hit"),2300); }
+function go(e){
+  closeGaz(); let target=null; try{ if(e.act) target=e.act(); }catch(err){ console.warn("index jump failed",err); }
+  if(e.noScroll) return;
+  const sec=e.ch?$("#"+e.ch):null;
+  if(sec){ sec.classList.add("in"); try{ history.replaceState(null,"","#"+e.ch); }catch(x){} }
+  const el=target||sec; if(!el) return;
+  el.scrollIntoView({behavior:reduced?"auto":"smooth",block:target?"center":"start"}); if(target) flash(target);
+}
+
+/* ——— THEME ——— */
+function initTheme(){
+  let saved=null; try{ saved=localStorage.getItem("sa-theme"); }catch(e){}
+  if(saved) document.documentElement.setAttribute("data-theme",saved);
+  const btn=$("#themeToggle"); const sync=()=>{ const dark=document.documentElement.getAttribute("data-theme")==="dark"||(!document.documentElement.getAttribute("data-theme")&&window.matchMedia("(prefers-color-scheme: dark)").matches); btn.setAttribute("aria-pressed",String(dark)); btn.querySelector(".lbl").textContent=dark?"Daylight":"Lamplight"; };
+  btn.addEventListener("click",()=>{ const dark=btn.getAttribute("aria-pressed")==="true"; const next=dark?"light":"dark"; document.documentElement.setAttribute("data-theme",next); try{ localStorage.setItem("sa-theme",next); }catch(e){} sync(); });
+  sync();
+}
+
+/* ——— BOOT ——— */
+function render(){
+  const albums=DATA.albums||[]; const positions=albums.reduce((n,a)=>n+(a.positionCount||0),0);
+  /* Arm scroll-reveal ONLY when this page owns its own scroll — a top-level document, not
+     embedded in a preview/snapshot iframe (where the observer never fires). Set the flag
+     before rendering so sections are born hidden with no flash; unarmed, they are simply
+     visible and nothing can get stuck hidden. */
+  const canAnimate = !reduced && ("IntersectionObserver" in window) && window.self===window.top;
+  if(canAnimate) document.documentElement.classList.add("anim");
+  $("#app").innerHTML=[hero(),glance(),timeCh(),issuersCh(),mapCh(),peopleCh(),themesCh(),dnaCh(),connectionsCh(),languageCh(),physicalCh(),setsCh(),albumsCh(),colourCh(),playCh(),questionsCh(),unknownCh()].join("");
+  /* wayfinding is built AFTER the chapters, from the registry and the data — so new
+     chapters or a hundred new entities need no change here */
+  nav(); chapterFeet(); buildIndex(); setHere(null);
+  $("#footStamp").textContent=\`Charted as of \${asOfDate()} · \${fmt(albums.length)} album\${albums.length===1?"":"s"} · \${fmt(positions)} position\${positions===1?"":"s"} · \${GAZ.length} index entries · projection generated \${niceDate(DATA.generatedAt)||"—"}\`;
+  /* reveal on scroll */
+  if(reduced||!("IntersectionObserver" in window)) $$(".reveal").forEach(e=>e.classList.add("in"));
+  else { const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }),{rootMargin:"0px 0px -8% 0px"}); $$(".reveal").forEach(e=>io.observe(e)); }
+  /* scroll spy → "you are here" in the tab strip, the contents page and the running head */
+  if("IntersectionObserver" in window){ const spy=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting) setHere(e.target.classList.contains("hero")?null:e.target.id); }); },{rootMargin:"-40% 0px -55% 0px"}); $$(".chapter, .hero").forEach(s=>spy.observe(s)); }
+}
+function bootError(){
+  document.documentElement.classList.remove("anim");
+  $("#app").innerHTML=\`<section class="empty wrap"><span class="eyebrow">Stamp Atlas</span><h1 style="margin-top:12px">The atlas could not be loaded just now.</h1><p>It draws itself from a small file of facts that did not arrive. Nothing is broken — try again in a moment.</p><div style="max-width:220px;margin:24px auto 0">\${plate("art",{src:"assets/plate-frontispiece.jpg",cap:"Plate I · Frontispiece",alt:"An engraved compass-rose frontispiece"})}</div></section>\`;
+  $("#partsList").innerHTML=""; $("#contentsGrid").innerHTML=""; const ib=$("#indexBtn"), cb=$("#contentsBtn"); if(ib) ib.hidden=true; if(cb) cb.hidden=true;
+  $("#footStamp").textContent="";
+}
+
+/* ——— delegated interactions ——— */
+document.addEventListener("click",e=>{
+  if(!$("#contentsPanel").hidden&&!e.target.closest(".nav")) closeContents(false);
+  const oi=e.target.closest("[data-open-index]"); if(oi){ e.preventDefault(); openGaz(oi.dataset.openIndex||""); return; }
+  const oc=e.target.closest("[data-open-contents]"); if(oc){ lastNavBtn=oc; openContents(null,true); return; }
+});
+document.addEventListener("keydown",e=>{
+  const isEl=e.target instanceof Element; const typing=isEl&&e.target.matches("input,textarea,select,[contenteditable]");
+  if(e.key==="Escape"){ if(!$("#gaz").hidden){ closeGaz(); return; } if(!$("#contentsPanel").hidden){ closeContents(true); return; } return; }
+  if(((e.key==="k"||e.key==="K")&&(e.metaKey||e.ctrlKey))||(e.key==="/"&&!typing&&!e.metaKey&&!e.ctrlKey&&!e.altKey)){ e.preventDefault(); openGaz(); return; }
+});
+$("#partsList").addEventListener("click",e=>{ const b=e.target.closest(".part-btn"); if(b) toggleContents(b.dataset.part,b,e.detail===0); });
+$("#contentsBtn").addEventListener("click",e=>toggleContents(null,$("#contentsBtn"),e.detail===0));
+$("#contentsPanel").addEventListener("click",e=>{ if(e.target.closest("a[data-ch]")) closeContents(false); });
+$("#indexBtn").addEventListener("click",()=>openGaz());
+$("#gazInput").addEventListener("input",e=>{ gaz.q=e.target.value; gazRender(); });
+$("#gazInput").addEventListener("keydown",e=>{ const n=gaz.rows.length;
+  if(e.key==="ArrowDown"){ e.preventDefault(); if(n){ gaz.active=(gaz.active+1)%n; gazActive(); } }
+  else if(e.key==="ArrowUp"){ e.preventDefault(); if(n){ gaz.active=(gaz.active-1+n)%n; gazActive(); } }
+  else if(e.key==="Enter"){ e.preventDefault(); if(gaz.active>=0&&gaz.rows[gaz.active]) go(gaz.rows[gaz.active].e); else if(n===1) go(gaz.rows[0].e); } });
+$("#gazList").addEventListener("click",e=>{ const o=e.target.closest(".gaz-opt"); if(o) go(gaz.rows[+o.dataset.i].e); });
+$("#gazList").addEventListener("mousemove",e=>{ const o=e.target.closest(".gaz-opt"); if(o&&+o.dataset.i!==gaz.active){ gaz.active=+o.dataset.i; gazActive(false); } });
+$("#gazKinds").addEventListener("click",e=>{ const b=e.target.closest("[data-gkind]"); if(!b) return; gaz.kind=b.dataset.gkind||null; gazKinds(); gazRender(); $("#gazInput").focus(); });
+$("#gaz").addEventListener("click",e=>{ if(e.target===$("#gaz")||e.target.closest("#gazClose")) closeGaz(); });
+$("#gaz").addEventListener("keydown",e=>{ if(e.key!=="Tab") return; const f=$$("#gaz button,#gaz input").filter(x=>x.offsetParent!==null); if(!f.length) return; const first=f[0], last=f[f.length-1];
+  if(e.shiftKey&&document.activeElement===first){ e.preventDefault(); last.focus(); } else if(!e.shiftKey&&document.activeElement===last){ e.preventDefault(); first.focus(); } });
+
+initTheme();
+fetch("/api/public.json").then(r=>{ if(!r.ok) throw new Error("http "+r.status); return r.json(); })
+  .then(d=>{ DATA=d||{}; DATA.facts=DATA.facts||{}; render(); })
+  .catch(()=>bootError());
+})();
 </script>
 </body>
-</html>`;
+</html>
+`;
