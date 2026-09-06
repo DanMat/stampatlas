@@ -5,7 +5,8 @@
 	"scripts": {
 		"dev": "wrangler dev",
 		"deploy": "wrangler deploy",
-		"upload-projection": "wrangler r2 object put stamp-atlas-public/public.json --file ./public/public.json --content-type application/json"
+		"upload-projection": "wrangler r2 object put stamp-atlas-public/public.json --file ./public/public.json --content-type application/json",
+		"build:page": "python3 scripts/to-page-ts.py design/page.src.html src/page.ts"
 	},
 	"devDependencies": {
 		"wrangler": "^4.0.0"
