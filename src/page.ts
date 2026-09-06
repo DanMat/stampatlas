@@ -174,7 +174,7 @@ hr.rule{border:0;height:1px;background:linear-gradient(90deg,transparent,var(--r
 .nav-here + .index-btn{margin-left:0}
 .index-btn kbd,.contents-foot kbd,.gaz kbd{font-family:var(--ff-mono);font-size:.6rem;border:1px solid var(--rule);border-radius:3px;padding:0 5px;color:var(--ink-3);line-height:1.5}
 @media (max-width:1180px){.nav-here{display:none}}
-@media (max-width:1040px){.parts{display:none}.contents-btn{display:flex}}
+@media (max-width:1040px){.parts{display:none}.contents-btn{display:flex}.nav-here + .index-btn{margin-left:auto}}
 @media (max-width:640px){.index-btn kbd{display:none}}
 /* the contents page itself: drops from the tab strip */
 .contents{position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--rule);box-shadow:var(--shadow);max-height:calc(100vh - 56px);overflow:auto}
@@ -482,7 +482,7 @@ tr.hit>td{animation:hit 2.2s ease-out both}
 .gaz-find input::placeholder{color:var(--ink-4);font-style:italic;font-weight:300}
 .gaz-kinds{display:flex;gap:6px;overflow-x:auto;padding:10px 16px 6px;scrollbar-width:none}
 .gaz-kinds::-webkit-scrollbar{display:none}
-.gaz-kinds .chip{flex:none;font-size:.8em}
+.gaz-kinds .chip{flex:none;font-size:.8em;line-height:1.5;min-height:30px;box-sizing:border-box}
 .gaz-list{overflow:auto;padding:4px 8px 8px;flex:1 1 auto;min-height:140px}
 .gaz-group{font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);padding:12px 10px 4px}
 .gaz-opt{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;padding:7px 10px;border-radius:5px;cursor:pointer}
