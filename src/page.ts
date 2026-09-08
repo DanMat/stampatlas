@@ -756,6 +756,7 @@ const FRIENDLY = {
   albumPositionCount:    {label:"Positions traversed",        d:"pages, covers, inserts and dividers walked through"},
   positionOccupancy:     {label:"Positions holding material", d:"positions actually seen to hold a stamp"},
   albumArchetypeCoverage:{label:"Album structures classified",d:"albums whose layout a person has identified"},
+  countedStampCount:     {label:"Stamps counted",            d:"individual stamps a person has counted on the photographed pages — confirmed by hand, not a machine"},
   philatelicItemCount:   {label:"Stamps & items counted",    d:"individual stamps, covers and blocks found on a page — and how many are named"},
   distinctIssuerCount:   {label:"Distinct issuers",           d:"places whose name is printed on a stamp here"},
   extinctIssuerCount:    {label:"Issuers that no longer exist",d:"counted under the name printed, in the year issued"},
@@ -938,11 +939,12 @@ function decadeChart(){
 function frontispiece(){
   const albums=DATA.albums||[]; const positions=albums.reduce((n,a)=>n+(a.positionCount||0),0);
   const items=metric("philatelicItemCount"); const named=items?(items.value.confirmed||0):0;
+  const counted=metric("countedStampCount"); const countedN=counted?(counted.value.confirmed||0):0;
   return \`<section class="front" id="top"><div class="wrap">
     <div>
       <span class="eyebrow">Frontispiece · a collection, being charted · as of \${esc(asOfDate())}</span>
       <h1 style="margin-top:10px" tabindex="-1" id="pageTitle">Every stamp is a small <em>window</em> onto a place and a year.</h1>
-      <p class="lede" style="margin-top:20px">One lifetime's collection of those windows, being charted page by page into an atlas of five Parts. \${named?\`<strong>\${fmt(named)} stamp\${named===1?" has":"s have"} been named so far</strong>; the rest of the map is still blank paper, and it says so.\`:\`<strong>Nothing has been named yet.</strong> That is the honest first page of every atlas: come back and watch it fill in.\`}</p>
+      <p class="lede" style="margin-top:20px">One lifetime's collection of those windows, being charted page by page into an atlas of five Parts. \${countedN?\`<strong>\${fmt(countedN)} stamps counted by hand so far</strong>\${named?\`, \${fmt(named)} of them named\`:\`, none named yet\`} — the count is confirmed, the names come slowly, and the page says which is which.\`:\`<strong>Nothing has been counted yet.</strong> That is the honest first page of every atlas: come back and watch it fill in.\`}</p>
       <div class="actions">
         <a class="btn primary" href="\${partHref(PARTS[0])}">Open Part I</a>
         <a class="btn" href="#/stamps">The Register</a>
@@ -951,7 +953,7 @@ function frontispiece(){
       <div class="bigfacts">
         <div class="bf"><div class="n">\${fmt(albums.length)}</div><div class="l">albums charted</div></div>
         <div class="bf"><div class="n">\${fmt(positions)}</div><div class="l">positions traversed</div></div>
-        <div class="bf"><div class="n">\${items?\`\${fmt(named)}<small>/ \${fmt(disp(items).pop)}</small>\`:"—"}</div><div class="l">\${items?"stamps named / found":"stamps · awaiting the read"}</div></div>
+        <div class="bf"><div class="n">\${countedN?fmt(countedN):"—"}</div><div class="l">\${countedN?"stamps counted":"stamps · awaiting the count"}</div></div>
       </div>
     </div>
     <div class="hero-plate">
@@ -969,7 +971,7 @@ function glanceBand(){
     <div class="grid g4">
       \${metricTile("albumCount","accent",chHref("albums"))}
       \${metricTile("albumPositionCount","",chHref("glance"))}
-      \${smartTile("philatelicItemCount","","#/stamps")}
+      \${metric("countedStampCount")?metricTile("countedStampCount","gold","#/stamps"):smartTile("philatelicItemCount","","#/stamps")}
       \${yearsTile("earliest")}
       \${yearsTile("latest")}
       \${smartTile("distinctIssuerCount","",chHref("issuers"))}
