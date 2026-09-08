@@ -1068,7 +1068,26 @@ function candidatesPage(){
     <div class="grid g2" style="margin-top:18px">${groups||"<p class=small>No candidate readings yet.</p>"}</div>
   </div></section>`;
 }
-function homePage(){ return frontispiece()+glanceBand()+candidatesBand()+todayBand()+mapBand()+doorsBand()+recentBand(); }
+function issuersBand(){
+  const iss=(DATA.facts&&DATA.facts.issuers)||[];
+  if(!iss.length) return "";
+  const top=iss.slice(0,15);
+  return `<section class="band reveal" aria-labelledby="iss-h"><div class="wrap">
+    <div class="band-head"><div><span class="eyebrow">By issuer</span><h2 id="iss-h">Where the stamps come from</h2></div><a class="more" href="#/countries">All ${fmt(iss.length)} issuers →</a></div>
+    <p class="small" style="max-width:66ch;margin-top:4px">Counted by the issuer name printed on each stamp, <em>as the machine read it</em> — not yet resolved to entities, so "Nippon", "NIPPON" and "Japan Post" stay separate rows until a person maps them to Japan. Every count is a candidate until confirmed.</p>
+    <div class="grid g3" style="margin-top:16px">${top.map(i=>`<div class="card" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span>${dot(i.confirmed>0?"confirmed":"candidate","")} ${esc(i.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">${fmt(i.candidate+i.confirmed)}</strong></div>`).join("")}</div>
+  </div></section>`;
+}
+function countriesPage(){
+  const iss=(DATA.facts&&DATA.facts.issuers)||[];
+  const rows=iss.map(i=>`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>${dot(i.confirmed>0?"confirmed":"candidate","")} ${esc(i.name)}</span><span class="small">${i.confirmed?`${fmt(i.confirmed)} confirmed${i.candidate?" · ":""}`:""}${i.candidate?`${fmt(i.candidate)} candidate`:""}</span></li>`).join("");
+  return `<section class="band"><div class="wrap"><span class="eyebrow">By issuer</span>
+    <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Issuers</h1>
+    <p class="lede" style="max-width:66ch">${fmt(iss.length)} distinct issuer names the atlas has read across the collection, counted by how many stamps carry each. <strong>As read, not yet resolved to entities</strong> — "Nippon", "NIPPON" and "Japan Post" stay separate until a person maps them to Japan, and the succession graph (which issuers no longer exist) is a later phase. Every count is a candidate until a person confirms it.</p>
+    <ul style="list-style:none;padding:0;margin:20px 0 0;columns:2;column-gap:40px">${rows||"<li class=small>No issuers read yet.</li>"}</ul>
+  </div></section>`;
+}
+function homePage(){ return frontispiece()+glanceBand()+candidatesBand()+issuersBand()+todayBand()+mapBand()+doorsBand()+recentBand(); }
 
 /* =====================================================================
    CHAPTERS · populated where the projection allows, awaiting where not
@@ -1431,6 +1450,7 @@ function parseRoute(){
   if(seg[0]==="chapter"){ const p=partOf(seg[1]); return p?{kind:"part",part:p,chapter:seg[1],redirect:partHref(p,seg[1])}:{kind:"404",hash:h}; }
   if(seg[0]==="stamps") return {kind:"register"};
   if(seg[0]==="candidates") return {kind:"candidates"};
+  if(seg[0]==="countries"||seg[0]==="issuers") return {kind:"countries"};
   if(seg[0]==="stamp"){ if(seg[1]==="today"){ const s=stampOfTheDay(); return s?{kind:"stamp",stamp:s,redirect:stampHref(s.id)}:{kind:"register",redirect:"#/stamps",noToday:true}; } const s=stampById(seg[1]); return s?{kind:"stamp",stamp:s}:{kind:"404",hash:h}; }
   return {kind:"404",hash:h};
 }
@@ -1455,6 +1475,7 @@ function navigate(){
     case "part":     html=partPage(r.part); title=`Part ${ROMAN[PARTS.indexOf(r.part)]} · ${r.part.title} — Stamp Atlas`; break;
     case "register": html=registerPage(); title="The Register — Stamp Atlas"; break;
     case "candidates": html=candidatesPage(); title="Candidate readings — Stamp Atlas"; break;
+    case "countries": html=countriesPage(); title="Issuers — Stamp Atlas"; break;
     case "stamp":    html=stampPage(r.stamp); title=`${r.stamp.title} · ${issuerName(r.stamp)} ${yearOf(r.stamp)||""} — Stamp Atlas`; break;
     default:         html=notFoundPage(r.hash); title="Off the edge of the map — Stamp Atlas";
   }
