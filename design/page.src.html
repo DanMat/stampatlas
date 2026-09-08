@@ -1042,7 +1042,33 @@ function recentBand(){
   const right=`<div class="card"><span class="eyebrow">The shelves</span><ul class="recent" style="margin-top:8px">${albums.map(a=>`<li style="grid-template-columns:1fr auto"><div><div class="ttl"><a href="${chHref("albums")}">${esc(a.displayName||a.physicalAlbumId)}</a></div><div class="meta">${fmt(a.positionCount||0)} positions${a.itemCount&&a.itemCount.total!=null?` · ${fmt(a.itemCount.total)} items found`:" · items not yet counted"}</div></div><span class="when">${esc(niceDate(a.capturedOn))}</span></li>`).join("")||`<li class="small muted">No album charted yet.</li>`}</ul></div>`;
   return `<section class="band reveal"><div class="wrap"><div class="grid g2">${left}${right}</div></div></section>`;
 }
-function homePage(){ return frontispiece()+glanceBand()+todayBand()+mapBand()+doorsBand()+recentBand(); }
+function candidatesBand(){
+  const cands=DATA.candidates||[];
+  const np=(DATA.facts&&DATA.facts.namingProgress)||{namedByMachine:cands.length,verifiedByPerson:0};
+  if(!cands.length) return "";
+  const sample=cands.slice(0,12);
+  return `<section class="band reveal" aria-labelledby="cand-h"><div class="wrap">
+    <div class="band-head"><div><span class="eyebrow">The machine's reading</span><h2 id="cand-h">What the atlas thinks it sees</h2></div><a class="more" href="#/candidates">All candidate readings →</a></div>
+    <p class="lede" style="max-width:64ch;margin-top:6px">Each card is the machine's <strong>candidate</strong> reading of one stamp — drawn from the photograph, cited to what it saw, <em>and not yet confirmed by a person</em>. <strong>${fmt(np.namedByMachine)}</strong> named by the atlas · <strong>${fmt(np.verifiedByPerson)}</strong> verified by a person. The gap is honest guesswork, and the page never hides it.</p>
+    <div class="grid g3" style="margin-top:18px">${sample.map(c=>`<div class="card"><div class="meta">${dot("candidate","candidate")} ${esc(c.album)} · p${esc(String(c.page))} · ${c.ordinal}/${c.stampsOnPage}</div><p class="small" style="margin-top:8px">${esc(c.reading||"Nothing legible yet — a closer photograph would help.")}</p></div>`).join("")}</div>
+    ${cands.length>sample.length?`<p class="small" style="margin-top:14px"><a href="#/candidates">…and ${fmt(cands.length-sample.length)} more candidate readings →</a></p>`:""}
+  </div></section>`;
+}
+function candidatesPage(){
+  const cands=DATA.candidates||[];
+  const np=(DATA.facts&&DATA.facts.namingProgress)||{namedByMachine:cands.length,verifiedByPerson:0};
+  const byAlbum={}; cands.forEach(c=>{ (byAlbum[c.album]=byAlbum[c.album]||[]).push(c); });
+  const groups=Object.keys(byAlbum).sort().map(al=>{
+    const rows=byAlbum[al].map(c=>`<li><span class="meta">${dot("candidate")} p${esc(String(c.page))} · ${c.ordinal}/${c.stampsOnPage}</span> <span class="small">${esc(c.reading||"nothing legible yet")}</span></li>`).join("");
+    return `<div class="card"><h3>${esc(al)}</h3><ul class="recent" style="margin-top:8px">${rows}</ul></div>`;
+  }).join("");
+  return `<section class="band"><div class="wrap"><span class="eyebrow">The machine's reading · candidates</span>
+    <h1 style="margin-top:8px">Candidate readings</h1>
+    <p class="lede" style="max-width:64ch">${fmt(np.namedByMachine)} stamps the atlas has read and named as <strong>candidates</strong>, ${fmt(np.verifiedByPerson)} confirmed by a person. A candidate is the machine's honest guess from the photograph, cited to what it saw; a person turns it from a guess into a fact over time. Nothing here is verified, and it says so.</p>
+    <div class="grid g2" style="margin-top:18px">${groups||"<p class=small>No candidate readings yet.</p>"}</div>
+  </div></section>`;
+}
+function homePage(){ return frontispiece()+glanceBand()+candidatesBand()+todayBand()+mapBand()+doorsBand()+recentBand(); }
 
 /* =====================================================================
    CHAPTERS · populated where the projection allows, awaiting where not
@@ -1404,6 +1430,7 @@ function parseRoute(){
   if(seg[0]==="part"){ const p=partById(seg[1]); if(!p) return {kind:"404",hash:h}; if(seg[2]&&partOf(seg[2])!==p) return {kind:"404",hash:h}; return {kind:"part",part:p,chapter:seg[2]||null}; }
   if(seg[0]==="chapter"){ const p=partOf(seg[1]); return p?{kind:"part",part:p,chapter:seg[1],redirect:partHref(p,seg[1])}:{kind:"404",hash:h}; }
   if(seg[0]==="stamps") return {kind:"register"};
+  if(seg[0]==="candidates") return {kind:"candidates"};
   if(seg[0]==="stamp"){ if(seg[1]==="today"){ const s=stampOfTheDay(); return s?{kind:"stamp",stamp:s,redirect:stampHref(s.id)}:{kind:"register",redirect:"#/stamps",noToday:true}; } const s=stampById(seg[1]); return s?{kind:"stamp",stamp:s}:{kind:"404",hash:h}; }
   return {kind:"404",hash:h};
 }
@@ -1427,6 +1454,7 @@ function navigate(){
     case "home":     html=homePage(); break;
     case "part":     html=partPage(r.part); title=`Part ${ROMAN[PARTS.indexOf(r.part)]} · ${r.part.title} — Stamp Atlas`; break;
     case "register": html=registerPage(); title="The Register — Stamp Atlas"; break;
+    case "candidates": html=candidatesPage(); title="Candidate readings — Stamp Atlas"; break;
     case "stamp":    html=stampPage(r.stamp); title=`${r.stamp.title} · ${issuerName(r.stamp)} ${yearOf(r.stamp)||""} — Stamp Atlas`; break;
     default:         html=notFoundPage(r.hash); title="Off the edge of the map — Stamp Atlas";
   }
