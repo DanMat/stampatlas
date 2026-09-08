@@ -1,11 +1,12 @@
 {
-  "generatedAt": "2026-09-08T06:29:23.111Z",
+  "generatedAt": "2026-09-08T17:09:11.070Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
       "A position photographed twice is one position. Retakes never inflate a count.",
       "An empty page is counted as a page. It was traversed, photographed and recorded as empty.",
-      "A page nobody has looked at is \"unobserved\", never \"empty\" — those are different claims."
+      "A page nobody has looked at is \"unobserved\", never \"empty\" — those are different claims.",
+      "A stamp is counted when a person counts it on a photographed page — confirmed by a human, not a machine."
     ],
     "metrics": [
       {
@@ -49,6 +50,16 @@
         "eligiblePopulation": 3
       },
       {
+        "metric": "countedStampCount",
+        "unit": "stamps a person counted on a photographed page",
+        "value": {
+          "confirmed": 456,
+          "candidate": 0,
+          "unknown": 0
+        },
+        "eligiblePopulation": 456
+      },
+      {
         "metric": "philatelicItemCount",
         "unit": "individual items the binder has bound to a page — one stamp, cover, block or sheet",
         "value": {
@@ -59,7 +70,7 @@
         "eligiblePopulation": 116
       }
     ],
-    "asOf": "2026-09-08T06:29:25.308Z",
+    "asOf": "2026-09-08T17:09:15.962Z",
     "pending": [
       {
         "metric": "distinctIssuerCount",
@@ -178,7 +189,9 @@
       "itemCount": {
         "total": 79,
         "identified": 0
-      }
+      },
+      "countedItems": 131,
+      "pagesCounted": 17
     },
     {
       "physicalAlbumId": "PA-2C3N3Y-1",
@@ -238,7 +251,9 @@
       "itemCount": {
         "total": 19,
         "identified": 0
-      }
+      },
+      "countedItems": 101,
+      "pagesCounted": 9
     },
     {
       "physicalAlbumId": "PA-XVZNE7-N",
@@ -298,7 +313,9 @@
       "itemCount": {
         "total": 18,
         "identified": 0
-      }
+      },
+      "countedItems": 224,
+      "pagesCounted": 9
     }
   ],
   "stamps": [],
