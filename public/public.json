@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T17:09:11.070Z",
+  "generatedAt": "2026-09-08T22:42:43.925Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -65,12 +65,16 @@
         "value": {
           "confirmed": 0,
           "candidate": 0,
-          "unknown": 116
+          "unknown": 318
         },
-        "eligiblePopulation": 116
+        "eligiblePopulation": 318
       }
     ],
-    "asOf": "2026-09-08T17:09:15.962Z",
+    "asOf": "2026-09-08T22:42:52.922Z",
+    "namingProgress": {
+      "namedByMachine": 202,
+      "verifiedByPerson": 0
+    },
     "pending": [
       {
         "metric": "distinctIssuerCount",
@@ -187,7 +191,7 @@
       "observedUnknown": 17,
       "capturedOn": "2026-09-08",
       "itemCount": {
-        "total": 79,
+        "total": 171,
         "identified": 0
       },
       "countedItems": 131,
@@ -249,7 +253,7 @@
       "observedUnknown": 9,
       "capturedOn": "2026-09-08",
       "itemCount": {
-        "total": 19,
+        "total": 87,
         "identified": 0
       },
       "countedItems": 101,
@@ -311,7 +315,7 @@
       "observedUnknown": 9,
       "capturedOn": "2026-09-08",
       "itemCount": {
-        "total": 18,
+        "total": 60,
         "identified": 0
       },
       "countedItems": 224,
@@ -319,6 +323,4879 @@
     }
   ],
   "stamps": [],
+  "candidates": [
+    {
+      "id": "PA-2C3N3Y-1-p1-1",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 1,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "grey/blue cat, die-cut shape"
+      ],
+      "reading": "Depicts grey/blue cat, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M2188AZ02WN71TD7T5FZ402P",
+        "asr_01M2188B1AGZZCEB6GRCC1RBGV",
+        "asr_01M2188B3144CSEA9KJJQDMATW",
+        "asr_01M2188B4VK7BYQQSPP2TW0DGW"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p1-10",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 10,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": "75",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "blue-toned landscape, round stamp"
+      ],
+      "reading": "Depicts blue-toned landscape, round stamp. Printed \"NIPPON\". A face value of 75. A single stamp.",
+      "basis": [
+        "asr_01M2188BN1YAK09CG48CNTDZCN",
+        "asr_01M2188BQ8B227JNHWNS302NET",
+        "asr_01M2188BS5TYAD7SWFSRAKJA0Z",
+        "asr_01M2188BV4ZE3D0BFFT3EEWFVN"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p1-11",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 11,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "rabbit with strawberries/berries, oval stamp"
+      ],
+      "reading": "Depicts rabbit with strawberries/berries, oval stamp. Printed \"NIPPON\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M2188D16MJ5X8S7N77NQ07J3",
+        "asr_01M2188D2XT53ACXDZESPRQ2AZ",
+        "asr_01M2188D7736Z282ESN0KBDQ7B",
+        "asr_01M2188DB5WJE0E98A0Q3NX81B"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p1-12",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 12,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "green leaves with flowers"
+      ],
+      "reading": "Depicts green leaves with flowers. Printed \"NIPPON\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M2188C0EXAGR9C9DZJP90JFV",
+        "asr_01M2188C2DENQPZKS062SACWD1",
+        "asr_01M2188C4K3DWTNFW6KBY2CQXS",
+        "asr_01M2188C6QV6CKXB0GJW40YM5H"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p1-13",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 13,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "purple rabbit, die-cut shape"
+      ],
+      "reading": "Depicts purple rabbit, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M2188BAPQZT0NHXYSHT2AT5N",
+        "asr_01M2188BCDDKTEJGYJ490C03V7",
+        "asr_01M2188BE79DBM00FYRPDXMKCD",
+        "asr_01M2188BG1XNRAW49E6RXCHHYP"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p1-14",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 14,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "large orange/brown cat, die-cut shape"
+      ],
+      "reading": "Depicts large orange/brown cat, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M2188CP8237RC5DX2698TCE3",
+        "asr_01M2188CR5333R175C714H10R9",
+        "asr_01M2188CSVN29CT63448R65Z9T",
+        "asr_01M2188CW2R9M721HRM9JXWYYS"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p1-15",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 15,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "blue background with white flowers and child figure, die-cut shape"
+      ],
+      "reading": "Depicts blue background with white flowers and child figure, die-cut shape. Printed \"NIPPON\". A single stamp.",
+      "basis": [
+        "asr_01M2188CC3EQP48ER4556C74WG",
+        "asr_01M2188CE3C8S7AR4R4NKY99QT",
+        "asr_01M2188CFW5F838J5Q7YBBV6EC"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p1-2",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 2,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "floral/envelope design, scalloped round stamp"
+      ],
+      "reading": "Depicts floral/envelope design, scalloped round stamp. Printed \"NIPPON\". A single stamp.",
+      "basis": [
+        "asr_01M218885T9DKVR22BQ0QV6HSP",
+        "asr_01M218887EXAH6REJJR4BNH3GN",
+        "asr_01M218889403VM0RG5NS2ZC7TW"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p1-3",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 3,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "lavender rabbit, die-cut shape"
+      ],
+      "reading": "Depicts lavender rabbit, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21889EHGMJF3GXMJ64W1JCM",
+        "asr_01M21889GGB6KB59386NWH1XR6",
+        "asr_01M21889KCZVW6V15YJGZ2VHVR",
+        "asr_01M21889N48GKAN6Z803HHAJQ0"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p1-4",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 4,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "child figure in yellow, round stamp"
+      ],
+      "reading": "Depicts child figure in yellow, round stamp. Printed \"NIPPON\". A single stamp.",
+      "basis": [
+        "asr_01M21889X3A799KMETXGFHC0AJ",
+        "asr_01M21889Z3S8NXVJFSTEYABQYZ",
+        "asr_01M2188A17S8WANK02XR8YAZ4Z"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p1-5",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 5,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "brown horse or donkey, die-cut shape"
+      ],
+      "reading": "Depicts brown horse or donkey, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M2188AM1AW17RWM9K1DSB17N",
+        "asr_01M2188ANPDP7GSZ7RY8DQSVYF",
+        "asr_01M2188AQM29GNVJ3CPMDQ857B",
+        "asr_01M2188ASNJWGD8ARMSAVGY698"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p1-6",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 6,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "purple/pink pansies"
+      ],
+      "reading": "Depicts purple/pink pansies. Printed \"NIPPON\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M2188A83YXP5HMF819JBHS31",
+        "asr_01M2188AA20RS0RW1R2K9FP2SN",
+        "asr_01M2188ACGSYCQX57MA8SJ9XRH",
+        "asr_01M2188AEBTPHVN7039WJJ705C"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p1-7",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 7,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "parakeet/lovebird, pink background"
+      ],
+      "reading": "Depicts parakeet/lovebird, pink background. Printed \"NIPPON\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21888FVFAMAHWDZARH6KYX5",
+        "asr_01M21888HNYG1QXQVMZ0QDVM2D",
+        "asr_01M21888KKJB380HF7MTJ2AAAN",
+        "asr_01M21888N9ASVKPGGKX4GNJAXV"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p1-8",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 8,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "blue/purple rabbit with moon and stars, die-cut shape"
+      ],
+      "reading": "Depicts blue/purple rabbit with moon and stars, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M218893X4JQB2C92VYX8VNGH",
+        "asr_01M218895J97GQ1FB9GV1A7PNS",
+        "asr_01M2188977P4B6D2DJ8GQDR2JD",
+        "asr_01M2188993JNBC0T6BBDZ5YZNZ"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p1-9",
+      "album": "PA-2C3N3Y-1",
+      "page": 1,
+      "ordinal": 9,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "NIPPON",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "white animal (goat or dog), die-cut shape"
+      ],
+      "reading": "Depicts white animal (goat or dog), die-cut shape. Printed \"NIPPON\". A single stamp.",
+      "basis": [
+        "asr_01M21888TJDE2AKVXXP3NH5ME8",
+        "asr_01M21888WDT0NT4J0GZSPDXHRB",
+        "asr_01M21888Y6B7T7BDNHRCCM0S9R"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p2-1",
+      "album": "PA-2C3N3Y-1",
+      "page": 2,
+      "ordinal": 1,
+      "stampsOnPage": 12,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Monaco",
+      "denomination": "2.50€",
+      "year": "2015",
+      "form": "souvenir-sheet",
+      "containsCount": 2,
+      "subjects": [
+        "Prince Albert I Antarctic expedition portrait (sepia/purple)"
+      ],
+      "reading": "Depicts Prince Albert I Antarctic expedition portrait (sepia/purple). Printed \"Monaco\". A face value of 2.50€. Issued 2015. A souvenir-sheet of 2.",
+      "basis": [
+        "asr_01M2189Q2JE5J68H267GZ4HN9Q",
+        "asr_01M2189Q488N7R77P3710KD48S",
+        "asr_01M2189Q6NDKFY5XFJV36393K4",
+        "asr_01M2189Q8CF91R2DFK6KVZZD38",
+        "asr_01M2189QABW50XEVHREKH5HMQW"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p2-10",
+      "album": "PA-2C3N3Y-1",
+      "page": 2,
+      "ordinal": 10,
+      "stampsOnPage": 12,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Fujeira",
+      "denomination": null,
+      "year": null,
+      "form": "block",
+      "containsCount": 6,
+      "subjects": [
+        "spotted wildcat or horse painting"
+      ],
+      "reading": "Depicts spotted wildcat or horse painting. Printed \"Fujeira\". A block of 6.",
+      "basis": [
+        "asr_01M2189P754B317BBWDMQFAKFE",
+        "asr_01M2189P8Y9Y2E1CQC6H6QH7VA",
+        "asr_01M2189PATTH1G1VBVBP2MZSW3"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p2-11",
+      "album": "PA-2C3N3Y-1",
+      "page": 2,
+      "ordinal": 11,
+      "stampsOnPage": 12,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Monaco",
+      "denomination": "1.30€",
+      "year": "1929",
+      "form": "souvenir-sheet",
+      "containsCount": 4,
+      "subjects": [
+        "75th Grand Prix de Monaco - vintage race car (purple background)"
+      ],
+      "reading": "Depicts 75th Grand Prix de Monaco - vintage race car (purple background). Printed \"Monaco\". A face value of 1.30€. Issued 1929. A souvenir-sheet of 4.",
+      "basis": [
+        "asr_01M2189RRS07CEYNHTDQ31EGH2",
+        "asr_01M2189RTH4NFPS0GNEE3R915H",
+        "asr_01M2189RW6QWC4G6B7VB0A747K",
+        "asr_01M2189RXW5QDSR6XKHW2A8BF0",
+        "asr_01M2189RZSHRH63VER3P9Y755C"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p2-12",
+      "album": "PA-2C3N3Y-1",
+      "page": 2,
+      "ordinal": 12,
+      "stampsOnPage": 12,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Monaco",
+      "denomination": "0.85€",
+      "year": "1929",
+      "form": "souvenir-sheet",
+      "containsCount": 4,
+      "subjects": [
+        "75th Grand Prix de Monaco - vintage race car (blue background)"
+      ],
+      "reading": "Depicts 75th Grand Prix de Monaco - vintage race car (blue background). Printed \"Monaco\". A face value of 0.85€. Issued 1929. A souvenir-sheet of 4.",
+      "basis": [
+        "asr_01M2189S50HEVTFE4J3F49HABY",
+        "asr_01M2189S7376BK6MF34RY5CQVH",
+        "asr_01M2189SCT4MDYF51CKRK3R7DY",
+        "asr_01M2189SJJYGPN72BKWKW829R9",
+        "asr_01M2189SRB95PXJWYN28C8R7Q9"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p2-2",
+      "album": "PA-2C3N3Y-1",
+      "page": 2,
+      "ordinal": 2,
+      "stampsOnPage": 12,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Fujeira",
+      "denomination": null,
+      "year": null,
+      "form": "block",
+      "containsCount": 6,
+      "subjects": [
+        "Dalmatian dog painting"
+      ],
+      "reading": "Depicts Dalmatian dog painting. Printed \"Fujeira\". A block of 6.",
+      "basis": [
+        "asr_01M2189NP7SBBAXBG4KQGC8W30",
+        "asr_01M2189NR1H5BJYQ5ADFBD6NK0",
+        "asr_01M2189NSWVHGAWG3EQ3WTA3C2"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p2-3",
+      "album": "PA-2C3N3Y-1",
+      "page": 2,
+      "ordinal": 3,
+      "stampsOnPage": 12,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Fujeira",
+      "denomination": null,
+      "year": null,
+      "form": "block",
+      "containsCount": 6,
+      "subjects": [
+        "dark animal (bull/ox) painting"
+      ],
+      "reading": "Depicts dark animal (bull/ox) painting. Printed \"Fujeira\". A block of 6.",
+      "basis": [
+        "asr_01M2189NDMTXTDHZV8TNXT2E82",
+        "asr_01M2189NFFZ6RMF56BAAT5ENPE",
+        "asr_01M2189NH425G5C0QJH9847NSP"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p2-4",
+      "album": "PA-2C3N3Y-1",
+      "page": 2,
+      "ordinal": 4,
+      "stampsOnPage": 12,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Fujeira",
+      "denomination": null,
+      "year": null,
+      "form": "block",
+      "containsCount": 6,
+      "subjects": [
+        "African tribal scene with figures"
+      ],
+      "reading": "Depicts African tribal scene with figures. Printed \"Fujeira\". A block of 6.",
+      "basis": [
+        "asr_01M2189PS9MMRYAZYTB8RSGSG1",
+        "asr_01M2189PV97BD976N0GF96ETA4",
+        "asr_01M2189PWZCZXVFV4Y7M8C24KS"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p2-5",
+      "album": "PA-2C3N3Y-1",
+      "page": 2,
+      "ordinal": 5,
+      "stampsOnPage": 12,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Fujeira",
+      "denomination": null,
+      "year": null,
+      "form": "block",
+      "containsCount": 6,
+      "subjects": [
+        "African tribal scene with cattle"
+      ],
+      "reading": "Depicts African tribal scene with cattle. Printed \"Fujeira\". A block of 6.",
+      "basis": [
+        "asr_01M2189PGKGBSE9X5ZP6ZJZXKT",
+        "asr_01M2189PJ7Y17MJJX6ZRCJ510Y",
+        "asr_01M2189PM0Q7EF6BAQ4EBD0MKJ"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p2-6",
+      "album": "PA-2C3N3Y-1",
+      "page": 2,
+      "ordinal": 6,
+      "stampsOnPage": 12,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Monaco",
+      "denomination": "0.85€",
+      "year": "1929",
+      "form": "souvenir-sheet",
+      "containsCount": 4,
+      "subjects": [
+        "75th Grand Prix de Monaco - vintage race car (green background)"
+      ],
+      "reading": "Depicts 75th Grand Prix de Monaco - vintage race car (green background). Printed \"Monaco\". A face value of 0.85€. Issued 1929. A souvenir-sheet of 4.",
+      "basis": [
+        "asr_01M2189RCXNKV5JS1W2SPVBVRK",
+        "asr_01M2189REJJX0SY7KW3GF1A9YG",
+        "asr_01M2189RG9FK7K9FQJ6JECSZBH",
+        "asr_01M2189RJ566NH0JFMKFZ7H5SF",
+        "asr_01M2189RKRP02C4CPGE1MJ2JJ1"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p2-7",
+      "album": "PA-2C3N3Y-1",
+      "page": 2,
+      "ordinal": 7,
+      "stampsOnPage": 12,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Fujeira",
+      "denomination": null,
+      "year": null,
+      "form": "block",
+      "containsCount": 6,
+      "subjects": [
+        "cattle/herd painting"
+      ],
+      "reading": "Depicts cattle/herd painting. Printed \"Fujeira\". A block of 6.",
+      "basis": [
+        "asr_01M2189NZ6KBEP83NGEVF0EJJ5",
+        "asr_01M2189P0S35F72V4ZF6Z9EYWD",
+        "asr_01M2189P29QW25D46MP3QZEWYN"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p2-8",
+      "album": "PA-2C3N3Y-1",
+      "page": 2,
+      "ordinal": 8,
+      "stampsOnPage": 12,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Monaco",
+      "denomination": "1.06€",
+      "year": "1929",
+      "form": "souvenir-sheet",
+      "containsCount": 4,
+      "subjects": [
+        "75th Grand Prix de Monaco - vintage race car (yellow background)"
+      ],
+      "reading": "Depicts 75th Grand Prix de Monaco - vintage race car (yellow background). Printed \"Monaco\". A face value of 1.06€. Issued 1929. A souvenir-sheet of 4.",
+      "basis": [
+        "asr_01M2189QYCADEHTXPQ1PB6ZSMC",
+        "asr_01M2189R1F2XS4Z0MW3GBTNQPB",
+        "asr_01M2189R32JTT4WNJA2E3ZBJ20",
+        "asr_01M2189R4QH0W04CNCX3FEC8HN",
+        "asr_01M2189R79641XK73G6E1R1M4A"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p2-9",
+      "album": "PA-2C3N3Y-1",
+      "page": 2,
+      "ordinal": 9,
+      "stampsOnPage": 12,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Monaco",
+      "denomination": "2.50€",
+      "year": "2015",
+      "form": "souvenir-sheet",
+      "containsCount": 2,
+      "subjects": [
+        "Prince Albert I Antarctic expedition scene (ship/ice)"
+      ],
+      "reading": "Depicts Prince Albert I Antarctic expedition scene (ship/ice). Printed \"Monaco\". A face value of 2.50€. Issued 2015. A souvenir-sheet of 2.",
+      "basis": [
+        "asr_01M2189QFR5EESRMSKXVKD0Q0E",
+        "asr_01M2189QHJNG576B8XG1KPWTH4",
+        "asr_01M2189QM15SEX7YW7BC9CY8CS",
+        "asr_01M2189QNYY91DQABZ8CG3AKC9",
+        "asr_01M2189QQX3FCVNMGY08HN8453"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p3-1",
+      "album": "PA-2C3N3Y-1",
+      "page": 3,
+      "ordinal": 1,
+      "stampsOnPage": 5,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Republica del Ecuador",
+      "denomination": "10c",
+      "year": "1939",
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Globe/emblem design"
+      ],
+      "reading": "Depicts Globe/emblem design. Printed \"Republica del Ecuador\". A face value of 10c. Issued 1939. A single stamp.",
+      "basis": [
+        "asr_01M218A0V4ZGT3DS816YZAZ49M",
+        "asr_01M218A0WZ5YJ288WQM5TAGPZG",
+        "asr_01M218A0YXVYXG0QKM4Q9CX79Z",
+        "asr_01M218A10RMS6SD183H7KWKJG3",
+        "asr_01M218A12R6K51H250ZPD3XK5T"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p3-2",
+      "album": "PA-2C3N3Y-1",
+      "page": 3,
+      "ordinal": 2,
+      "stampsOnPage": 5,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "St. Vincent",
+      "denomination": "3 cents",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Figures with starburst design"
+      ],
+      "reading": "Depicts Figures with starburst design. Printed \"St. Vincent\". A face value of 3 cents. A single stamp.",
+      "basis": [
+        "asr_01M218A2604DNPDWWZ49G4KN0A",
+        "asr_01M218A27QAN7RF275T4XGDTKP",
+        "asr_01M218A29PZ6YEHXENJD3NNEEH",
+        "asr_01M218A2BBBNPCXJ7J2P4T221C"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p3-3",
+      "album": "PA-2C3N3Y-1",
+      "page": 3,
+      "ordinal": 3,
+      "stampsOnPage": 5,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Republica del Ecuador",
+      "denomination": "5c",
+      "year": "1939",
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Globe/emblem design"
+      ],
+      "reading": "Depicts Globe/emblem design. Printed \"Republica del Ecuador\". A face value of 5c. Issued 1939. A single stamp.",
+      "basis": [
+        "asr_01M218A1M2BKBR2N62G1CVT0NW",
+        "asr_01M218A1NS7M1727Y49282F1Y2",
+        "asr_01M218A1QJ82ZANC78AEBVEGGV",
+        "asr_01M218A1S55DY9FH2PHAMEZWFX",
+        "asr_01M218A1V2WX7A96ZEAB6MJ6P6"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p3-4",
+      "album": "PA-2C3N3Y-1",
+      "page": 3,
+      "ordinal": 4,
+      "stampsOnPage": 5,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Republica del Ecuador",
+      "denomination": "10c",
+      "year": "1939",
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Globe/emblem design"
+      ],
+      "reading": "Depicts Globe/emblem design. Printed \"Republica del Ecuador\". A face value of 10c. Issued 1939. A single stamp.",
+      "basis": [
+        "asr_01M218A17VDHX8AVCQMVM66VKM",
+        "asr_01M218A19XFYPY7NEQQYJQ28PS",
+        "asr_01M218A1BNDV66WJG6VHS9MCHZ",
+        "asr_01M218A1D6EDJC1NG944M5FYKY",
+        "asr_01M218A1EZG5549M524J38R20H"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p3-5",
+      "album": "PA-2C3N3Y-1",
+      "page": 3,
+      "ordinal": 5,
+      "stampsOnPage": 5,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M218A203SEYJNHPFJQ3RV146"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-1",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 1,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": "1",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "sports figure, single athlete design"
+      ],
+      "reading": "Depicts sports figure, single athlete design. A face value of 1. A single stamp.",
+      "basis": [
+        "asr_01M218B06BTVK98JPCKE1YAPXJ",
+        "asr_01M218B082ACX0NCMBXCT8Z05R",
+        "asr_01M218B0A1X8WX4NGBRN7TH02H"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-10",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 10,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Monaco",
+      "denomination": "2f",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "sailing ship, blue"
+      ],
+      "reading": "Depicts sailing ship, blue. Printed \"Monaco\". A face value of 2f. A single stamp.",
+      "basis": [
+        "asr_01M218B0SZE7HHZH65P70QT77D",
+        "asr_01M218B0VNTQH9VF1RSWCQCS5Q",
+        "asr_01M218B0XTNP80RPKR11DGWSVP",
+        "asr_01M218B0ZNCM51B2QHTJJVAEF0"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-11",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 11,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Monaco",
+      "denomination": "2f",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "sailing ship, blue"
+      ],
+      "reading": "Depicts sailing ship, blue. Printed \"Monaco\". A face value of 2f. A single stamp.",
+      "basis": [
+        "asr_01M218B2EJCTWR8SRAFZHKRX8J",
+        "asr_01M218B2G4TQ32W8AF78DFQTTX",
+        "asr_01M218B2HR7ZEYAQWCFDNXGJRF",
+        "asr_01M218B2K8645KNS2VYD5JNSBD"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-12",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 12,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Magyar Posta",
+      "denomination": "1 Ft",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "football players with flags"
+      ],
+      "reading": "Depicts football players with flags. Printed \"Magyar Posta\". A face value of 1 Ft. A single stamp.",
+      "basis": [
+        "asr_01M218B3ZD0V3JT7ZHYTEKGXD8",
+        "asr_01M218B413A9X2RS8ZZG63J10D",
+        "asr_01M218B42KZ5G0RJ6Q1TJQP1HY",
+        "asr_01M218B44B8RZYJB9CAMY33MK8"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-13",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 13,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": "1",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "figure/design, red-toned"
+      ],
+      "reading": "Depicts figure/design, red-toned. A face value of 1. A single stamp.",
+      "basis": [
+        "asr_01M218B1TB095MB9ZWN92M8ZH7",
+        "asr_01M218B1WCJKN8T1DRMDMN5HMM",
+        "asr_01M218B1XVZJDFME0X60G5B6PH"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-14",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 14,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Magyar Posta",
+      "denomination": "4 Ft",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "football players with flags"
+      ],
+      "reading": "Depicts football players with flags. Printed \"Magyar Posta\". A face value of 4 Ft. A single stamp.",
+      "basis": [
+        "asr_01M218B5E97E9P4699ZV2JBNG9",
+        "asr_01M218B5FSG75WPPE4SBKXKAV0",
+        "asr_01M218B5JSPAS0HM3M9VD4N401",
+        "asr_01M218B5M5MR5HSTC4WN1X665Y"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-15",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 15,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Republik Maluku Selatan",
+      "denomination": "10",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "butterfly"
+      ],
+      "reading": "Depicts butterfly. Printed \"Republik Maluku Selatan\". A face value of 10. A single stamp.",
+      "basis": [
+        "asr_01M218B30XMPM87F8EVFV41BCC",
+        "asr_01M218B32P39H2M7DXFCHMYX55",
+        "asr_01M218B34B8DWZYDV01MYC41X9",
+        "asr_01M218B35ZB5RC7JV7GPFRVYGH"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-16",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 16,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Magyar Posta",
+      "denomination": "1 Ft",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "football players with flags (World Cup themed)"
+      ],
+      "reading": "Depicts football players with flags (World Cup themed). Printed \"Magyar Posta\". A face value of 1 Ft. A single stamp.",
+      "basis": [
+        "asr_01M218B3C3EGWS0BM7T8NY4CBK",
+        "asr_01M218B3DTDCS4XA621TC18M5J",
+        "asr_01M218B3FQBHMDW7PAWVXSDW1D",
+        "asr_01M218B3HCSVHWKQCPPF8P2Y2R"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-17",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 17,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Magyar Posta",
+      "denomination": "2 Ft",
+      "year": "1962",
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "football players with flags, 'VB Chile' World Cup"
+      ],
+      "reading": "Depicts football players with flags, 'VB Chile' World Cup. Printed \"Magyar Posta\". A face value of 2 Ft. Issued 1962. A single stamp.",
+      "basis": [
+        "asr_01M218B4PVR37MSHZY1HJ8P4ZD",
+        "asr_01M218B4S1DCKN07REPB64BPYW",
+        "asr_01M218B4THFBS42VFENCKXPG02",
+        "asr_01M218B4W5XRCKTFE459HG7SF6",
+        "asr_01M218B4XZKF4QB1M2QB3KD5PG"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-2",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 2,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Monaco",
+      "denomination": "3f",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "castle/building, red-toned"
+      ],
+      "reading": "Depicts castle/building, red-toned. Printed \"Monaco\". A face value of 3f. A single stamp.",
+      "basis": [
+        "asr_01M218B2394ZG1P5DFF7FZ3EPW",
+        "asr_01M218B24VAMYD8HFR7BEVWYJ1",
+        "asr_01M218B26HPDQC33SEK12XKN6D",
+        "asr_01M218B29FCDSJWMGKTWH9YHRA"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-3",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 3,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Monaco",
+      "denomination": "3f",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "abstract/pattern design"
+      ],
+      "reading": "Depicts abstract/pattern design. Printed \"Monaco\". A face value of 3f. A single stamp.",
+      "basis": [
+        "asr_01M218B0F8Z0ABTRD29EW00V95",
+        "asr_01M218B0GZ7G8SKTV1SF2VQWP7",
+        "asr_01M218B0JC1D2CRVN2ANTHVA0P",
+        "asr_01M218B0MAHNM3JF09VQYP8X4Z"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-4",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 4,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Republik Maluku Selatan",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "butterfly"
+      ],
+      "reading": "Depicts butterfly. Printed \"Republik Maluku Selatan\". A single stamp.",
+      "basis": [
+        "asr_01M218B2R6CC2VJ3BATCS8Q1C6",
+        "asr_01M218B2SV4TWYJMC21GES47W3",
+        "asr_01M218B2VHYD2B3TRQJBGFPB48"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-5",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 5,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Magyar Posta",
+      "denomination": "1 Ft",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "football players with flags"
+      ],
+      "reading": "Depicts football players with flags. Printed \"Magyar Posta\". A face value of 1 Ft. A single stamp.",
+      "basis": [
+        "asr_01M218B53294KMRFX241B5G55E",
+        "asr_01M218B54REXRENMB5V2SFSA70",
+        "asr_01M218B56WQAK38P5CR37A5BMJ",
+        "asr_01M218B58G5VA3TQ3A8KQHBP02"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-6",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 6,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Magyar Posta",
+      "denomination": "2 Ft",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "football players with flags"
+      ],
+      "reading": "Depicts football players with flags. Printed \"Magyar Posta\". A face value of 2 Ft. A single stamp.",
+      "basis": [
+        "asr_01M218B3P1F9K3942WCC6PSG09",
+        "asr_01M218B3QG1FQDB0GM221308DY",
+        "asr_01M218B3S4T3E1J9S37S8XDCAY",
+        "asr_01M218B3TF4T45QCWZ560D1245"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-7",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 7,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Republik Maluku Selatan",
+      "denomination": "2½",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "butterfly"
+      ],
+      "reading": "Depicts butterfly. Printed \"Republik Maluku Selatan\". A face value of 2½. A single stamp.",
+      "basis": [
+        "asr_01M218B15E6GJ4A7VBRPXAN45S",
+        "asr_01M218B17AFA8W7E2MRCQ4X8R5",
+        "asr_01M218B1910VJ9FWNSYBTN5SFZ",
+        "asr_01M218B1AFGDJCF91K7PMZ241D"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-8",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 8,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Magyar Posta",
+      "denomination": "40 f",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Olympic sport scene, colorful"
+      ],
+      "reading": "Depicts Olympic sport scene, colorful. Printed \"Magyar Posta\". A face value of 40 f. A single stamp.",
+      "basis": [
+        "asr_01M218B4AZBF7TTN5H37MNCN39",
+        "asr_01M218B4CRRTSKVXSPNVA3MGBV",
+        "asr_01M218B4EDKE1FSHZSNS5R1NKF",
+        "asr_01M218B4G918811AN1KBMG8RD1"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p4-9",
+      "album": "PA-2C3N3Y-1",
+      "page": 4,
+      "ordinal": 9,
+      "stampsOnPage": 17,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Republik Maluku Selatan",
+      "denomination": "7½",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "butterfly"
+      ],
+      "reading": "Depicts butterfly. Printed \"Republik Maluku Selatan\". A face value of 7½. A single stamp.",
+      "basis": [
+        "asr_01M218B1GDSSP3YPVJ7FB0AJX6",
+        "asr_01M218B1J1HA4R151NJ6VZMQGB",
+        "asr_01M218B1KQBJZE40ZRJ1PE5WJR",
+        "asr_01M218B1NAHV2ZY09MJ0V8AJGH"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p6-1",
+      "album": "PA-2C3N3Y-1",
+      "page": 6,
+      "ordinal": 1,
+      "stampsOnPage": 7,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "MONGOLIA",
+      "denomination": "50",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Space capsule/satellite (Soyuz-related)"
+      ],
+      "reading": "Depicts Space capsule/satellite (Soyuz-related). Printed \"MONGOLIA\". A face value of 50. A single stamp.",
+      "basis": [
+        "asr_01M218DHQ1KCQTMWPNDYTYG3K8",
+        "asr_01M218DHRFXWQPPX8KVNXATP2N",
+        "asr_01M218DHT581AJJ9RHTE15TN5P",
+        "asr_01M218DHW4Y59GWMW8K95AGQJB"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p6-2",
+      "album": "PA-2C3N3Y-1",
+      "page": 6,
+      "ordinal": 2,
+      "stampsOnPage": 7,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "AJMAN STATE",
+      "denomination": "various (e.g., 1, 4, 5, 10, 15)",
+      "year": null,
+      "form": "block",
+      "containsCount": 8,
+      "subjects": [
+        "Sheep and other animals"
+      ],
+      "reading": "Depicts Sheep and other animals. Printed \"AJMAN STATE\". A face value of various (e.g., 1, 4, 5, 10, 15). A block of 8.",
+      "basis": [
+        "asr_01M218DK6ZEZGDBVBBK57DCRA0",
+        "asr_01M218DK9CAVNBR2MN82S124X2",
+        "asr_01M218DKAZTHNTHNZNC1999W8G",
+        "asr_01M218DKCNQ16WXHXGVJX50KPF"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p6-3",
+      "album": "PA-2C3N3Y-1",
+      "page": 6,
+      "ordinal": 3,
+      "stampsOnPage": 7,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "S. TOME E PRINCIPE",
+      "denomination": "15/15/15/3",
+      "year": "1982",
+      "form": "strip",
+      "containsCount": 4,
+      "subjects": [
+        "Campeonato Mundial de Futebol 1982 Espana - soccer players"
+      ],
+      "reading": "Depicts Campeonato Mundial de Futebol 1982 Espana - soccer players. Printed \"S. TOME E PRINCIPE\". A face value of 15/15/15/3. Issued 1982. A strip of 4.",
+      "basis": [
+        "asr_01M218DKHYN80BG7P9HEAKHTME",
+        "asr_01M218DKMEMABBNFVG2FDPNAHS",
+        "asr_01M218DKNYF9A4Y20V9XGXZY7A",
+        "asr_01M218DKQH3SBGTCJBRVM6QQCN",
+        "asr_01M218DKSMV66QTWZGJ812E6JT"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p6-4",
+      "album": "PA-2C3N3Y-1",
+      "page": 6,
+      "ordinal": 4,
+      "stampsOnPage": 7,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": "7",
+      "year": null,
+      "form": "strip",
+      "containsCount": 4,
+      "subjects": [
+        "Historical/royal court painting scene with figures in robes"
+      ],
+      "reading": "Depicts Historical/royal court painting scene with figures in robes. A face value of 7. A strip of 4.",
+      "basis": [
+        "asr_01M218DJM9Q8Y5RCDA1MT8GBRX",
+        "asr_01M218DJP3G5KD2XPNC9DJJ3NW",
+        "asr_01M218DJQKTP52X33VXZ1E11YA"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p6-5",
+      "album": "PA-2C3N3Y-1",
+      "page": 6,
+      "ordinal": 5,
+      "stampsOnPage": 7,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "S. TOME E PRINCIPE",
+      "denomination": null,
+      "year": null,
+      "form": "block",
+      "containsCount": 4,
+      "subjects": [
+        "Football/soccer players in action"
+      ],
+      "reading": "Depicts Football/soccer players in action. Printed \"S. TOME E PRINCIPE\". A block of 4.",
+      "basis": [
+        "asr_01M218DJBZ796P5YBXT6D2VCYJ",
+        "asr_01M218DJE2WETQMKK42V2QXKHP",
+        "asr_01M218DJFTGPDGJ21P4PGSQ7V3"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p6-6",
+      "album": "PA-2C3N3Y-1",
+      "page": 6,
+      "ordinal": 6,
+      "stampsOnPage": 7,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "RAS AL KHAIMA",
+      "denomination": "various (e.g., 10, 15, 20, 25, 50, 70, 120, 150)",
+      "year": null,
+      "form": "block",
+      "containsCount": 8,
+      "subjects": [
+        "Dogs, horses, and other animals in nature scenes"
+      ],
+      "reading": "Depicts Dogs, horses, and other animals in nature scenes. Printed \"RAS AL KHAIMA\". A face value of various (e.g., 10, 15, 20, 25, 50, 70, 120, 150). A block of 8.",
+      "basis": [
+        "asr_01M218DJWHHH9M4KV627V1FV46",
+        "asr_01M218DJYAS5JV6ABHTME20WSK",
+        "asr_01M218DK00SZ8FA2K317SQMKRM",
+        "asr_01M218DK1PE8CCZTDMA17WAGX7"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p6-7",
+      "album": "PA-2C3N3Y-1",
+      "page": 6,
+      "ordinal": 7,
+      "stampsOnPage": 7,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "MONGOLIA",
+      "denomination": "40",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Camels"
+      ],
+      "reading": "Depicts Camels. Printed \"MONGOLIA\". A face value of 40. A single stamp.",
+      "basis": [
+        "asr_01M218DJ224MM93QDVZTFWR3BW",
+        "asr_01M218DJ3MM7WR0H2ND5198VRG",
+        "asr_01M218DJ5A5EWN8ADQSR8S57N3",
+        "asr_01M218DJ71BBXX81W23EVWBQF3"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p7-1",
+      "album": "PA-2C3N3Y-1",
+      "page": 7,
+      "ordinal": 1,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Mongolia",
+      "denomination": "60s",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Tractor"
+      ],
+      "reading": "Depicts Tractor. Printed \"Mongolia\". A face value of 60s. A single stamp.",
+      "basis": [
+        "asr_01M218EE54DFRKFNX9KFSRJ3PT",
+        "asr_01M218EE6XKD5HGQNXAMWP6EA8",
+        "asr_01M218EE8JY63P7D26AJF3F5WN",
+        "asr_01M218EEA87JY02W4W6ZSH0JK9"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p7-2",
+      "album": "PA-2C3N3Y-1",
+      "page": 7,
+      "ordinal": 2,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Angola",
+      "denomination": "KZ. 3.500.000,00",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Gorilla (side profile)"
+      ],
+      "reading": "Depicts Gorilla (side profile). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
+      "basis": [
+        "asr_01M218EF4Y2K4EN1W7173A9GDE",
+        "asr_01M218EF6HEZ4CSZKN80AWZ7TH",
+        "asr_01M218EF8BTXTY7SPZWEPZ703N",
+        "asr_01M218EFA1Y36888PWN1SK7H70"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p7-3",
+      "album": "PA-2C3N3Y-1",
+      "page": 7,
+      "ordinal": 3,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Mongolia",
+      "denomination": "50s",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Tractor"
+      ],
+      "reading": "Depicts Tractor. Printed \"Mongolia\". A face value of 50s. A single stamp.",
+      "basis": [
+        "asr_01M218EEFJQ5SAE3T27K8AQBEX",
+        "asr_01M218EEHED8QTBSKNT5S6PS2P",
+        "asr_01M218EEK5W5H7DFS8RMHRWVQE",
+        "asr_01M218EEMZ6CQ6NB742FDR3PXR"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p7-4",
+      "album": "PA-2C3N3Y-1",
+      "page": 7,
+      "ordinal": 4,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Angola",
+      "denomination": "KZ. 3.500.000,00",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Gorilla (portrait)"
+      ],
+      "reading": "Depicts Gorilla (portrait). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
+      "basis": [
+        "asr_01M218EFGPJ8K4C8E8C3XRHBZT",
+        "asr_01M218EFJDJ8QSBHXQ510S1GBY",
+        "asr_01M218EFM32TS7AFSBKJSCT2F9",
+        "asr_01M218EFNS5JRH8E0HQ5DHW5YH"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p7-5",
+      "album": "PA-2C3N3Y-1",
+      "page": 7,
+      "ordinal": 5,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Angola",
+      "denomination": "KZ. 3.500.000,00",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Gorilla (sitting)"
+      ],
+      "reading": "Depicts Gorilla (sitting). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
+      "basis": [
+        "asr_01M218EG71SZD62W8TVW6C6SGJ",
+        "asr_01M218EG8WY25PHWR0YZFH3QC6",
+        "asr_01M218EGB52N5CHSN0Q38VNSDE",
+        "asr_01M218EGCWZD1Z86J7RY613BT9"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p7-6",
+      "album": "PA-2C3N3Y-1",
+      "page": 7,
+      "ordinal": 6,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Angola",
+      "denomination": "KZ. 3.500.000,00",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Gorilla (close-up face)"
+      ],
+      "reading": "Depicts Gorilla (close-up face). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
+      "basis": [
+        "asr_01M218EETNWBAT0DRDN51YW2ZQ",
+        "asr_01M218EEWGP3C0F69RP6TYMSGA",
+        "asr_01M218EEY154Y7RB76CQYJ2B7D",
+        "asr_01M218EEZSV9J5FKYR4RCNGZ4D"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p7-7",
+      "album": "PA-2C3N3Y-1",
+      "page": 7,
+      "ordinal": 7,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Angola",
+      "denomination": "KZ. 3.500.000,00",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Gorilla (open mouth/roaring)"
+      ],
+      "reading": "Depicts Gorilla (open mouth/roaring). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
+      "basis": [
+        "asr_01M218EFV2JNYB1HBYD3S7Q62N",
+        "asr_01M218EFWRQ0J7PW7W8QC419EY",
+        "asr_01M218EFYEPY7SS60NS7F82ZDT",
+        "asr_01M218EG1VSNEYMJ5YDM9273KJ"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p7-8",
+      "album": "PA-2C3N3Y-1",
+      "page": 7,
+      "ordinal": 8,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Mongolia",
+      "denomination": "1",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Soviet-Mongolian friendship/space theme illustration (exact subject unclear)"
+      ],
+      "reading": "Depicts Soviet-Mongolian friendship/space theme illustration (exact subject unclear). Printed \"Mongolia\". A face value of 1. A single stamp.",
+      "basis": [
+        "asr_01M218EDTRATE83D6FX7JHT9M7",
+        "asr_01M218EDWKTD6RK4CZ125Q21WG",
+        "asr_01M218EDYBPCPC1GR69MV7B40K",
+        "asr_01M218EE02ZJYWXA85BKGY159B"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p7-9",
+      "album": "PA-2C3N3Y-1",
+      "page": 7,
+      "ordinal": 9,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Angola",
+      "denomination": "KZ. 3.500.000,00",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Gorilla (close-up face, different angle)"
+      ],
+      "reading": "Depicts Gorilla (close-up face, different angle). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
+      "basis": [
+        "asr_01M218EGJ7Y1CPCHQ0E9SS2ZQX",
+        "asr_01M218EGMDT0MP15V17NDAH4XN",
+        "asr_01M218EGP9T3XNRV42CPF4765T",
+        "asr_01M218EGQZ66HD7NDEGDTK0BQ4"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p8-1",
+      "album": "PA-2C3N3Y-1",
+      "page": 8,
+      "ordinal": 1,
+      "stampsOnPage": 3,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Republic of Korea",
+      "denomination": "20",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Bird (appears to be a rooster or pheasant)"
+      ],
+      "reading": "Depicts Bird (appears to be a rooster or pheasant). Printed \"Republic of Korea\". A face value of 20. A single stamp.",
+      "basis": [
+        "asr_01M218EQ784J193MGZ1EFK8Z46",
+        "asr_01M218EQ90YT9MPXPMK0FWQF8A",
+        "asr_01M218EQAXGDX74FNTH77XG5PB",
+        "asr_01M218EQCNJ9K2JSR79T5JRA2J"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p8-2",
+      "album": "PA-2C3N3Y-1",
+      "page": 8,
+      "ordinal": 2,
+      "stampsOnPage": 3,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": "4",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Butterfly"
+      ],
+      "reading": "Depicts Butterfly. A face value of 4. A single stamp.",
+      "basis": [
+        "asr_01M218EQJEY3WY2MGJ5KTXGADV",
+        "asr_01M218EQN0H3VSEW3B5HY911NJ",
+        "asr_01M218EQPQDVBTYAS50XWWRZKM"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p8-3",
+      "album": "PA-2C3N3Y-1",
+      "page": 8,
+      "ordinal": 3,
+      "stampsOnPage": 3,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Korea",
+      "denomination": "10",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Train (bullet train/rail)"
+      ],
+      "reading": "Depicts Train (bullet train/rail). Printed \"Korea\". A face value of 10. A single stamp.",
+      "basis": [
+        "asr_01M218EPWTPEM39VRJTDVDVJZG",
+        "asr_01M218EPYJMS7K6XXJYQGEJM9M",
+        "asr_01M218EQ09XJGHCD1EQ9KP6K6D",
+        "asr_01M218EQ233GRRFR2JTVDEQ4AP"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p1-1",
+      "album": "PA-7KQ7BY-T",
+      "page": 1,
+      "ordinal": 1,
+      "stampsOnPage": 1,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "strip",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A strip.",
+      "basis": [
+        "asr_01M21JGMTSQHBE78B334Y81ARV"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p11-1",
+      "album": "PA-7KQ7BY-T",
+      "page": 11,
+      "ordinal": 1,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPT9MK0NRWHRGZJ4YR7QE"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p11-10",
+      "album": "PA-7KQ7BY-T",
+      "page": 11,
+      "ordinal": 10,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPTH2ZDQDMFDJA82G12JM"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p11-2",
+      "album": "PA-7KQ7BY-T",
+      "page": 11,
+      "ordinal": 2,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPTV4VRRK523FARB0DJKQ"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p11-3",
+      "album": "PA-7KQ7BY-T",
+      "page": 11,
+      "ordinal": 3,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPV50B5J9A6SCV4DF632M"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p11-4",
+      "album": "PA-7KQ7BY-T",
+      "page": 11,
+      "ordinal": 4,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPV9PT84228FS0HYDE62C"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p11-5",
+      "album": "PA-7KQ7BY-T",
+      "page": 11,
+      "ordinal": 5,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPSZBS63S15DJE6XM6NCM"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p11-6",
+      "album": "PA-7KQ7BY-T",
+      "page": 11,
+      "ordinal": 6,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPTP280QYJH7NXXH0QEM4"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p11-7",
+      "album": "PA-7KQ7BY-T",
+      "page": 11,
+      "ordinal": 7,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPST35JBB5816A1V001JB"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p11-8",
+      "album": "PA-7KQ7BY-T",
+      "page": 11,
+      "ordinal": 8,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPT4FKXYTE2W5DBQTYS9D"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p11-9",
+      "album": "PA-7KQ7BY-T",
+      "page": 11,
+      "ordinal": 9,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPV0EJZR4CRJ6E58FM9GN"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p15-1",
+      "album": "PA-7KQ7BY-T",
+      "page": 15,
+      "ordinal": 1,
+      "stampsOnPage": 8,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "other",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A other.",
+      "basis": [
+        "asr_01M21JQGJ82FRAJP2Q1HR39QP7"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p15-2",
+      "album": "PA-7KQ7BY-T",
+      "page": 15,
+      "ordinal": 2,
+      "stampsOnPage": 8,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JQHH7KB80SQCMZ2E3BGS4"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p15-3",
+      "album": "PA-7KQ7BY-T",
+      "page": 15,
+      "ordinal": 3,
+      "stampsOnPage": 8,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JQHBDGTRYT2HHNT5GN48P"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p15-4",
+      "album": "PA-7KQ7BY-T",
+      "page": 15,
+      "ordinal": 4,
+      "stampsOnPage": 8,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "flag"
+      ],
+      "reading": "Depicts flag. A single stamp.",
+      "basis": [
+        "asr_01M21JQGPZ05Z59RX2QAGBNZQ5",
+        "asr_01M21JQGS3TZ8V1MYK9XH17HJE"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p15-5",
+      "album": "PA-7KQ7BY-T",
+      "page": 15,
+      "ordinal": 5,
+      "stampsOnPage": 8,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "other",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A other.",
+      "basis": [
+        "asr_01M21JQG8MBPVDK2P2CDS7Z17T"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p15-6",
+      "album": "PA-7KQ7BY-T",
+      "page": 15,
+      "ordinal": 6,
+      "stampsOnPage": 8,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "butterfly"
+      ],
+      "reading": "Depicts butterfly. A single stamp.",
+      "basis": [
+        "asr_01M21JQH44TC1S250VHXJQ3GM5",
+        "asr_01M21JQH6604XYZGRN65Z9KD7G"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p15-7",
+      "album": "PA-7KQ7BY-T",
+      "page": 15,
+      "ordinal": 7,
+      "stampsOnPage": 8,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "portrait"
+      ],
+      "reading": "Depicts portrait. A single stamp.",
+      "basis": [
+        "asr_01M21JQGXT1PD6G954ST8358AS",
+        "asr_01M21JQGZ7TSGY02BSEDVJPVA1"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p15-8",
+      "album": "PA-7KQ7BY-T",
+      "page": 15,
+      "ordinal": 8,
+      "stampsOnPage": 8,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "other",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A other.",
+      "basis": [
+        "asr_01M21JQGDGCDX36862594787AC"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-1",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 1,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": "08",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "golden-haired character, orange/red background"
+      ],
+      "reading": "Depicts golden-haired character, orange/red background. A face value of 08. A single stamp.",
+      "basis": [
+        "asr_01M21JHY14CSM6G67QAV8GVXN2",
+        "asr_01M21JHY34GB0DZAZW0BX945ZC",
+        "asr_01M21JHY50HGGSHP39WG8K379M"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-10",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 10,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character, red/orange background"
+      ],
+      "reading": "Depicts character, red/orange background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ1DBRZC3P8VHN84GQMH6",
+        "asr_01M21JJ1ETDKW7CFQ9TXGP4EEP",
+        "asr_01M21JJ1GGM471CKM2D7N5AV2J",
+        "asr_01M21JJ1J1S6YMT4G7RHC48Q0G"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-11",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 11,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character, orange background"
+      ],
+      "reading": "Depicts character, orange background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ3SRGWKRAS8430R0772V",
+        "asr_01M21JJ3VFG9EYJPKZFGQQ3GWV",
+        "asr_01M21JJ3WWJSCECV6NQVA26B3W",
+        "asr_01M21JJ3YAXHBA9T1XGNEWKHX5"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-12",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 12,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character, dark blue background"
+      ],
+      "reading": "Depicts character, dark blue background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ4PESARHA6T26W41HG64",
+        "asr_01M21JJ4R37MR9YDJBPCBQCS2X",
+        "asr_01M21JJ4T082CQVSJ61N8F03S2",
+        "asr_01M21JJ4VS5Q5ZR4GPZHN0TVQ7"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-13",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 13,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "robot/mechanical character"
+      ],
+      "reading": "Depicts robot/mechanical character. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ2DG02PXDASV2FF9ZBC6",
+        "asr_01M21JJ2F690PA68HR8DNT6H9E",
+        "asr_01M21JJ2GWEMQ2QG1CCRMRPWRE",
+        "asr_01M21JJ2JPBJ5YCP7GF1KJPZX5"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-14",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 14,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": "08",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character with circular blue pattern"
+      ],
+      "reading": "Depicts character with circular blue pattern. A face value of 08. A single stamp.",
+      "basis": [
+        "asr_01M21JHZJQYMDZV5T1VFYSH3RT",
+        "asr_01M21JHZMDJ0F2P8DHAZQPFY4C",
+        "asr_01M21JHZP2EWJBXDP0TQGFBRPS"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-15",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 15,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character with blue rocket/spaceship"
+      ],
+      "reading": "Depicts character with blue rocket/spaceship. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ1PXG0B8VY6SD8DYMM20",
+        "asr_01M21JJ1RD5PAK3R9VHZB1PQMC",
+        "asr_01M21JJ1TQWDENTKANV5J75X7H",
+        "asr_01M21JJ1WFEWH88W8C8WMX5WXQ"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-16",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 16,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": "08",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "green-toned character"
+      ],
+      "reading": "Depicts green-toned character. A face value of 08. A single stamp.",
+      "basis": [
+        "asr_01M21JJ4E704SAVKMVG5YMTGZ8",
+        "asr_01M21JJ4FVDYJCSGQ4W1PBMGH2",
+        "asr_01M21JJ4HKJK9BRPZ57TVDAM9C"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-17",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 17,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "young boy character, red/orange background (possibly young Goku)"
+      ],
+      "reading": "Depicts young boy character, red/orange background (possibly young Goku). Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JHYY6XC42GQ04V1HK34HP",
+        "asr_01M21JHYZW5DFZSNESVANFAV7X",
+        "asr_01M21JHZ1F7C1F758G7ZTEFRXH",
+        "asr_01M21JHZ354PM75RR7DWCAMP5W"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-18",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 18,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character with angel-like wings"
+      ],
+      "reading": "Depicts character with angel-like wings. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ0G93MRY2PZZBEPMA5A2",
+        "asr_01M21JJ0HZR66ZK6KQWMY17FP5",
+        "asr_01M21JJ0KRRNQFZYQVQJEXCYEG",
+        "asr_01M21JJ0N62B7E6357X5XAAG2A"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-19",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 19,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": "08",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "green wand/staff item"
+      ],
+      "reading": "Depicts green wand/staff item. A face value of 08. A single stamp.",
+      "basis": [
+        "asr_01M21JJ14M5TEEJ4HKTKVSXABY",
+        "asr_01M21JJ16J5PVVCBA08H5DHC6M",
+        "asr_01M21JJ18FJYP14REQRC2J281W"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-2",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 2,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Dragon Ball Z character, blue/white background"
+      ],
+      "reading": "Depicts Dragon Ball Z character, blue/white background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JHYA13EVWKDWP760JVS5B",
+        "asr_01M21JHYBPPQAFXB4TPP8GXJ4A",
+        "asr_01M21JHYD65W1VSZGMYK7QWPYE",
+        "asr_01M21JHYF3HZ5SDGK7ZW6V5GWJ"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-20",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 20,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character, blue/white background"
+      ],
+      "reading": "Depicts character, blue/white background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ3156ERAQ26S9R4HDS4Z",
+        "asr_01M21JJ32VQ1PH6WZ8CY4BNRD4",
+        "asr_01M21JJ34N4GDTFTXMFMVFFWZ4",
+        "asr_01M21JJ36B3B2EMEEZPMS4R985"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-21",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 21,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character, dark background"
+      ],
+      "reading": "Depicts character, dark background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JHZV4SFFCR5EP0Q7QH7AQ",
+        "asr_01M21JHZWXTD1KTYC4NY74V990",
+        "asr_01M21JHZYF7HPMDBJ8Y98Z4WTP",
+        "asr_01M21JJ005CB50NFVQ4P5AYBPR"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-22",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 22,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "witch-like character, purple/dark background"
+      ],
+      "reading": "Depicts witch-like character, purple/dark background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ05MX112Q40YGGDMJFDE",
+        "asr_01M21JJ07JFBQPG46ZQEE1GC4T",
+        "asr_01M21JJ09GHQ92S5REDYSF9V0T",
+        "asr_01M21JJ0B2Z0W0RD3WXFW2HNAH"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-23",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 23,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character, blue sky background"
+      ],
+      "reading": "Depicts character, blue sky background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JHZ7Z2SF7CVM0JP56WFYG",
+        "asr_01M21JHZ9P71N7Z8WT7NPJF95T",
+        "asr_01M21JHZB6YND05285T33H0PCQ",
+        "asr_01M21JHZCVMZX0S08EBRB33EJA"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-24",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 24,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character, white/light background"
+      ],
+      "reading": "Depicts character, white/light background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ5PTYW6BWVKJ2HQVDX6H",
+        "asr_01M21JJ5RMRJ2E61N245E00V8M",
+        "asr_01M21JJ5T6HY7D5JT0BS1NQ6KH",
+        "asr_01M21JJ5VQNVVK1GMMQXJ99RK0"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-25",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 25,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character, blue background"
+      ],
+      "reading": "Depicts character, blue background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ5BYY09CD4TTFNT8WA7A",
+        "asr_01M21JJ5DQ1ZCWD1M592PXET0T",
+        "asr_01M21JJ5FHQENTF5SDRNC9T2PP",
+        "asr_01M21JJ5H7XJZJ0P365DA0KTWN"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-3",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 3,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": "08",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "red character wearing helmet"
+      ],
+      "reading": "Depicts red character wearing helmet. A face value of 08. A single stamp.",
+      "basis": [
+        "asr_01M21JJ2R76XQEZJKSG8DMHEWV",
+        "asr_01M21JJ2TJKM50HBK59DEQ9RN4",
+        "asr_01M21JJ2W9K98TWEC6KXBM0DRV"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-4",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 4,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character, red/fire background"
+      ],
+      "reading": "Depicts character, red/fire background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ50K1X26X3JYS35NHMH4",
+        "asr_01M21JJ52EM58P341N6M5281TP",
+        "asr_01M21JJ5470YWMZCSSHCQFJ5TC",
+        "asr_01M21JJ55WAKRG3BRAAXP8733M"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-5",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 5,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character, purple background"
+      ],
+      "reading": "Depicts character, purple background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ0TCAM9P3EZR1QFNTYQH",
+        "asr_01M21JJ0W1S5CBXGX3EHHVQNSP",
+        "asr_01M21JJ0XVZAB27V2ETCSTWXB2",
+        "asr_01M21JJ0ZGXM2CJNCDYD7JZZ7W"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-6",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 6,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character, green/tree background"
+      ],
+      "reading": "Depicts character, green/tree background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ43BTXCSGPXHG3JMK1SN",
+        "asr_01M21JJ44XNMCV7EYMJJFC01F2",
+        "asr_01M21JJ46ZW7QDA09QGD81D5ZB",
+        "asr_01M21JJ48MWVVN3QCWPVJ603EE"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-7",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 7,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character, brown/tan background"
+      ],
+      "reading": "Depicts character, brown/tan background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ3D7X4H2PSXM6F94F8HY",
+        "asr_01M21JJ3GS3XA24F7CPWJ9NNG6",
+        "asr_01M21JJ3JJDJD8XRG5BW364B2E",
+        "asr_01M21JJ3MA25FXS6JGY924290N"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-8",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 8,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "fighting scene, red background"
+      ],
+      "reading": "Depicts fighting scene, red background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JJ2311N2KE2WQEDQE3V6G",
+        "asr_01M21JJ24QKKXGA6Y2CBHNE3HR",
+        "asr_01M21JJ26QAMSPDXAAQQGB3EKQ",
+        "asr_01M21JJ28AF6ZGC6M34Q2RHK8C"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p3-9",
+      "album": "PA-7KQ7BY-T",
+      "page": 3,
+      "ordinal": 9,
+      "stampsOnPage": 25,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Japan Post",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Dragon Ball Z character, green background"
+      ],
+      "reading": "Depicts Dragon Ball Z character, green background. Printed \"Japan Post\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JHYKXG8ZAT8A8CYFYQ90V",
+        "asr_01M21JHYNJQEFQBW4AMXGA4T1J",
+        "asr_01M21JHYQ9J0X5GGVT55G9DNZQ",
+        "asr_01M21JHYS33CA0BBSMYBMEECE5"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-1",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 1,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "pink-haired character"
+      ],
+      "reading": "Depicts pink-haired character. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKBHEGYPMWC0A5QWY79P1",
+        "asr_01M21JKBK7DPD04JC2BH3CMRDX",
+        "asr_01M21JKBMWSV0Y262JYX0M8Y0J",
+        "asr_01M21JKBPH5GXHVQ00XDV01YS0"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-10",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 10,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "outdoor scene with character"
+      ],
+      "reading": "Depicts outdoor scene with character. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JK999ZTQH7T59VB593Z81",
+        "asr_01M21JK9BSKR6CNJ4N5ZFTH4QS",
+        "asr_01M21JK9DFB92W9F3JR4QM472R",
+        "asr_01M21JK9FMD2V2MGFP26PGTC4P"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-11",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 11,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "red-hooded character"
+      ],
+      "reading": "Depicts red-hooded character. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKAX7P41AATW5SGJXBSPG",
+        "asr_01M21JKAYVGZYJXH7706ZY2W7G",
+        "asr_01M21JKB0DS3E3GX9XWNXHFECT",
+        "asr_01M21JKB1VT7AKYG91S8WPYWAM"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-12",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 12,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "monster character"
+      ],
+      "reading": "Depicts monster character. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKB6VDD59PBWRSSD4SH2R",
+        "asr_01M21JKB8DKFK5WKKBF24PE680",
+        "asr_01M21JKBA2E743T9ZMAMAGTSFY",
+        "asr_01M21JKBCBJ8RMA4PAM7NKNX5F"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-13",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 13,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "pink stylized character"
+      ],
+      "reading": "Depicts pink stylized character. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JK8M7MSZ3G2P7VFDBZYMT",
+        "asr_01M21JK8P89AYEWRPB29GHZ0XK",
+        "asr_01M21JK8RADM1CH03BVP421KKH",
+        "asr_01M21JK8T5XH085CZYMDB1YYXP"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-14",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 14,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "anime character with city background"
+      ],
+      "reading": "Depicts anime character with city background. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JK8A51H56GW4DCMSWRV8T",
+        "asr_01M21JK8BTA2KKNXRXRKZ1E2Y0",
+        "asr_01M21JK8DSS941ZPAYXWMM4C7G",
+        "asr_01M21JK8FAT3SG0E1JYXZZCGZM"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-15",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 15,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character seated, blue outfit"
+      ],
+      "reading": "Depicts character seated, blue outfit. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKHRVT7DRS3QP1BT7GQAE",
+        "asr_01M21JKHTDG9A08SVT3MEBZXP1",
+        "asr_01M21JKHX80G0N4Y07WHPKR6X0",
+        "asr_01M21JKHYTFY7MSM9JFTHK713M"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-16",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 16,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "ninja-style character, orange explosion background"
+      ],
+      "reading": "Depicts ninja-style character, orange explosion background. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKJSTZ32SN2CS868NGYY5",
+        "asr_01M21JKJW8ST9M2SNCD1KVEW9K",
+        "asr_01M21JKJXT0QN9ZCW6PBX5WDRV",
+        "asr_01M21JKJZB556F24HNJT2V9F67"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-17",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 17,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character with green hair, sleeping pose"
+      ],
+      "reading": "Depicts character with green hair, sleeping pose. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKHF2AR1Z6FMKNQY1W7S4",
+        "asr_01M21JKHGH5W88889DJB9T90S8",
+        "asr_01M21JKHJ4ERKRCZ8QFH206BGW",
+        "asr_01M21JKHKJ9B943NTADA55N5V6"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-18",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 18,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character portrait, purple tones"
+      ],
+      "reading": "Depicts character portrait, purple tones. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKGVC16SXQFXR5FZRHBCZ",
+        "asr_01M21JKGX21VT7V78BGAMGHYMA",
+        "asr_01M21JKGYTS9Z3A0J3N9FVC73J",
+        "asr_01M21JKH0MTCVHBTE3RN0ZYFHG"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-19",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 19,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "blue/water themed character"
+      ],
+      "reading": "Depicts blue/water themed character. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKFK13XFSRR268MHXNM3M",
+        "asr_01M21JKFMQET9TJRN7TRXP0003",
+        "asr_01M21JKFP5HVWSRMN2TGKR0ZQP",
+        "asr_01M21JKFQNNGRX9FQSPHEBBJ5P"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-2",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 2,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "anime characters, portrait"
+      ],
+      "reading": "Depicts anime characters, portrait. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JK80F7546QVNX28V9KSVX",
+        "asr_01M21JK822N8BFHGVDP0HMXQTH",
+        "asr_01M21JK83SXT185VWZBD5DV450",
+        "asr_01M21JK857HX1KJ6A7GPSMS9C9"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-20",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 20,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "boxing-style character"
+      ],
+      "reading": "Depicts boxing-style character. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKDZ528XKF2XEBPA6FA3W",
+        "asr_01M21JKE0ZVE39XZH37S6MD3XP",
+        "asr_01M21JKE2WSASDYHJJX52PCJVS",
+        "asr_01M21JKE4J0J4QE59CRC6Q6P18"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-21",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 21,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "two characters together"
+      ],
+      "reading": "Depicts two characters together. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKCHXDNTMKNSMEQ21EER3",
+        "asr_01M21JKCKHT711T672GDJGY5JT",
+        "asr_01M21JKCN6Q0WW07B697HDHQ93",
+        "asr_01M21JKCPSSP4PA6QC3JFZKZPH"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-22",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 22,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character portrait"
+      ],
+      "reading": "Depicts character portrait. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKEKEVHKNJRHRNKEH2VTW",
+        "asr_01M21JKEN6ARR1032PJ16AHC05",
+        "asr_01M21JKEPMNT9DSMWPVEBJQWJV",
+        "asr_01M21JKER9XRNKZ61WW365BR47"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-23",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 23,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character, pink background"
+      ],
+      "reading": "Depicts character, pink background. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKKT8YWNBN4FV39TYGE6K",
+        "asr_01M21JKKVW1RK5C8W6PYDTCEF0",
+        "asr_01M21JKKXJZEPE2Y13M5H8EAKW",
+        "asr_01M21JKKZ905YDCMZ3XAY3BE27"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-24",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 24,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character with magnifying/eye motif"
+      ],
+      "reading": "Depicts character with magnifying/eye motif. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKG6VNHPFB8FSSH9WBXPX",
+        "asr_01M21JKG8VMS9P3SASY5J0ZNPB",
+        "asr_01M21JKGAJA73N6B750VNHP88V",
+        "asr_01M21JKGC7101ZZ6WGXTSX6KY0"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-25",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 25,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character with pink/cherry blossom theme"
+      ],
+      "reading": "Depicts character with pink/cherry blossom theme. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKKG5876KYDAWE4A3MA8E",
+        "asr_01M21JKKHKBTA7Z0WSGT55B1QH",
+        "asr_01M21JKKK5PEMVA8A1F21DBWT2",
+        "asr_01M21JKKMQN6PS3M0QX3BP5KG3"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-26",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 26,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "robot/fighting scene"
+      ],
+      "reading": "Depicts robot/fighting scene. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKD88GCHPXECGFYFPGSAC",
+        "asr_01M21JKD9Z8FHVKPXCGGST1RCD",
+        "asr_01M21JKDC4NS6F5H950JJYFP2Y",
+        "asr_01M21JKDDV7QN0AR4HRZ8FD6MM"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-27",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 27,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "pirate-style character in white"
+      ],
+      "reading": "Depicts pirate-style character in white. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKH5CR61S43KFZRRDB2CH",
+        "asr_01M21JKH74KW6XJBKAMR21DK8K",
+        "asr_01M21JKH8R3H5J48PRJZDFRM4D",
+        "asr_01M21JKHAFWZ3HG9H6265TNJWV"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-28",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 28,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "ninja character in green setting"
+      ],
+      "reading": "Depicts ninja character in green setting. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKK47SK232KBBSBZV2TCR",
+        "asr_01M21JKK692RW2VRMJXB4HM2EZ",
+        "asr_01M21JKK80S41MVH9GJNG6TYJZ",
+        "asr_01M21JKK9SGD5EPZ9ZJTTKRT30"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-29",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 29,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "dark character close-up"
+      ],
+      "reading": "Depicts dark character close-up. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKE9ASW1Z6JBCZJRA6BP0",
+        "asr_01M21JKEB0YVRHED0DARJ2PQDH",
+        "asr_01M21JKECRM7Y5Y6QV64REN09Q",
+        "asr_01M21JKEEJZCYXAQE0F2024S6X"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-3",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 3,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "orange-clad action character"
+      ],
+      "reading": "Depicts orange-clad action character. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKA8MQ5V275R9K803GYWA",
+        "asr_01M21JKAA2VZ84YY12T96ZV0PR",
+        "asr_01M21JKABRNGA30P3DYGCW316D",
+        "asr_01M21JKADFS29RYWK8BW2XQ30V"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-30",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 30,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Detective-style character, night scene"
+      ],
+      "reading": "Depicts Detective-style character, night scene. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKFWQRFVTVZE0T5TP1J0F",
+        "asr_01M21JKFYAS19QMNX36A5QF90E",
+        "asr_01M21JKG005JM0Q5TXMCS7P5P7",
+        "asr_01M21JKG1XNM3GMJ0Z10FJ8SNA"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-31",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 31,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "fire/action scene"
+      ],
+      "reading": "Depicts fire/action scene. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKDKKPAN4Y6DAFQTB52M3",
+        "asr_01M21JKDN9VEW32MSZ69WZ2R0A",
+        "asr_01M21JKDPZMJBRZKQ094ZXWJ95",
+        "asr_01M21JKDSBFP6HE1SKYN8HR3S0"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-32",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 32,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "fist/action close-up"
+      ],
+      "reading": "Depicts fist/action close-up. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKJ3ZJC3MQYBSSEJAJY1X",
+        "asr_01M21JKJ5KAZD5RTA7N59E738W",
+        "asr_01M21JKJ74HV1VSCWPANNE0TBK",
+        "asr_01M21JKJ8T3QGNN10ZFN9MFP5S"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-33",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 33,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "sports character"
+      ],
+      "reading": "Depicts sports character. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKF90XF61QND4FYZVKVPP",
+        "asr_01M21JKFAPMH6PWQKDM4THP633",
+        "asr_01M21JKFCDT9DGZSN129728JQE",
+        "asr_01M21JKFE2YF2VPJ461BWC9GNT"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-34",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 34,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character portrait"
+      ],
+      "reading": "Depicts character portrait. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKCW18P83QYA4V8626M92",
+        "asr_01M21JKCXF1JTY4KSP9QQGC3SA",
+        "asr_01M21JKCZ8XP7YVTKNJRZB4N7Y",
+        "asr_01M21JKD39BFZGVBXE9GBDWKJ7"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-35",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 35,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "dark-toned character portrait"
+      ],
+      "reading": "Depicts dark-toned character portrait. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKC6CJB47510RH9BXZ5BG",
+        "asr_01M21JKC93GR7ZT16FGZM31D69",
+        "asr_01M21JKCANDCSCVA95MVAJ55Y4",
+        "asr_01M21JKCCCT0A0F7D67D3EY8XZ"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-36",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 36,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character portrait, warm tones"
+      ],
+      "reading": "Depicts character portrait, warm tones. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKGH0RMJJCX0A5343G1GA",
+        "asr_01M21JKGJGQ3QPN9K4TS53ARJ2",
+        "asr_01M21JKGMMYR342BX3TS8DRRN1",
+        "asr_01M21JKGPA9G4P0QXE6X6BZVW8"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-37",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 37,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "two boxers fighting"
+      ],
+      "reading": "Depicts two boxers fighting. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKEX1AJKBWR7BPCWE4BW0",
+        "asr_01M21JKEYMVJ6GGFNYMGC63EJQ",
+        "asr_01M21JKF06M1BZFZDQND7ZA4M3",
+        "asr_01M21JKF1P2PD8FDPXBVHH9HX4"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-38",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 38,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "ninja-style character, orange tones"
+      ],
+      "reading": "Depicts ninja-style character, orange tones. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKJE4BN5PMTPQNEFMR29X",
+        "asr_01M21JKJHEDCFCT5T4VJYCNT2K",
+        "asr_01M21JKJJZAKYA5Q26CA1AKH3R",
+        "asr_01M21JKJMVCTT78QHJ2H5FY8MV"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-4",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 4,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character with spiky red hair"
+      ],
+      "reading": "Depicts character with spiky red hair. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKAJV52CDXGDEG8KTZ97P",
+        "asr_01M21JKAMG1K4516V811PPGT5Y",
+        "asr_01M21JKAP3TK212B6HJXEG12JF",
+        "asr_01M21JKAQMHS3Q059HJJCM3VVD"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-5",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 5,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "monster/robot character"
+      ],
+      "reading": "Depicts monster/robot character. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JK9MAF66MEWPPCZBP2B4W",
+        "asr_01M21JK9PHTDYVSHBMAHYFK1G2",
+        "asr_01M21JK9R2347WS3E8YKRZ63J4",
+        "asr_01M21JK9SSH5TMTBRVYZM5SPPE"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-6",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 6,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "baseball player character"
+      ],
+      "reading": "Depicts baseball player character. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JK8ZQBJ9Y83AZNHM1KE7V",
+        "asr_01M21JK919NPZ3HX3P9YRRZNZJ",
+        "asr_01M21JK92W4STPQSKN7SEGFBPK",
+        "asr_01M21JK94DT0FE7SECR15M8RAZ"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-7",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 7,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "character in green setting"
+      ],
+      "reading": "Depicts character in green setting. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JK9YVEZF4K8CFXPNAHPGW",
+        "asr_01M21JKA0NHE5Z93K5MC686DQ3",
+        "asr_01M21JKA29VN8JS5DVJG99GGCT",
+        "asr_01M21JKA3KW57JNJ7YWP1GFDAP"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-8",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 8,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "anime character in landscape"
+      ],
+      "reading": "Depicts anime character in landscape. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JK7NVS1TGSY0AHXK7FQXN",
+        "asr_01M21JK7QJFSDH36MS118D257X",
+        "asr_01M21JK7S8YSPQ9J16YVT9N2RC",
+        "asr_01M21JK7VFFK4VWJSHJW14VVDK"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p4-9",
+      "album": "PA-7KQ7BY-T",
+      "page": 4,
+      "ordinal": 9,
+      "stampsOnPage": 38,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Nippon",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "action character mid-motion"
+      ],
+      "reading": "Depicts action character mid-motion. Printed \"Nippon\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21JKBVNPD57JXMSF0DJMDJP",
+        "asr_01M21JKBXBKN41YT2WTAAVQHEM",
+        "asr_01M21JKBZHHXDQEZRDF48GTR1J",
+        "asr_01M21JKC1AME1HTD796XKZTVW6"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p9-1",
+      "album": "PA-7KQ7BY-T",
+      "page": 9,
+      "ordinal": 1,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPD47NBZVR2R091WHV3VR"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p9-10",
+      "album": "PA-7KQ7BY-T",
+      "page": 9,
+      "ordinal": 10,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPDNJ3GPVM3FQF66VC34C"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p9-2",
+      "album": "PA-7KQ7BY-T",
+      "page": 9,
+      "ordinal": 2,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPCY42AAXET8RAYKM498S"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p9-3",
+      "album": "PA-7KQ7BY-T",
+      "page": 9,
+      "ordinal": 3,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPCRAH794SS1D1XCG6W5B"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p9-4",
+      "album": "PA-7KQ7BY-T",
+      "page": 9,
+      "ordinal": 4,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPDTFV90K0VVCEVEGCG1V"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p9-5",
+      "album": "PA-7KQ7BY-T",
+      "page": 9,
+      "ordinal": 5,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPD9CVQAFEJVXKDSF5MNX"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p9-6",
+      "album": "PA-7KQ7BY-T",
+      "page": 9,
+      "ordinal": 6,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPEA9APR1GZX6MWBMXRZT"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p9-7",
+      "album": "PA-7KQ7BY-T",
+      "page": 9,
+      "ordinal": 7,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPE5B97QSQ6TMQ9J1W5T5"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p9-8",
+      "album": "PA-7KQ7BY-T",
+      "page": 9,
+      "ordinal": 8,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPDZY3232CPF2BPM03CB0"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-7KQ7BY-T-p9-9",
+      "album": "PA-7KQ7BY-T",
+      "page": 9,
+      "ordinal": 9,
+      "stampsOnPage": 10,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [],
+      "reading": "A single stamp.",
+      "basis": [
+        "asr_01M21JPDFPTBC3Y1ZZ28V621S5"
+      ],
+      "capturedAt": "2026-09-08T06:16:14.923Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-1",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 1,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": null,
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (Roman numeral XI)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (Roman numeral XI). Printed \"YEMEN\". A se-tenant.",
+      "basis": [
+        "asr_01M21JRJZTAGKGK57ET8K7EHYM",
+        "asr_01M21JRK1H6CRFB5263MRJHJHE",
+        "asr_01M21JRK3CGY2XWWEHG0EG9BZK"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-10",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 10,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": null,
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (Roman numeral VIII?)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (Roman numeral VIII?). Printed \"YEMEN\". A se-tenant.",
+      "basis": [
+        "asr_01M21JRN0XAKAY6E97GWP9M7C3",
+        "asr_01M21JRN2C72M96B4CJ0V8KZXF",
+        "asr_01M21JRN5GEWNFJTES03ABMEAH"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-11",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 11,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": null,
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (Roman numeral III)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (Roman numeral III). Printed \"YEMEN\". A se-tenant.",
+      "basis": [
+        "asr_01M21JRPEYEGCY5V4T2BT9B0EM",
+        "asr_01M21JRPH9BC43VBR4ZMWAMA8G",
+        "asr_01M21JRPK1EFMD5KJR5WFZC8GJ"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-12",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 12,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": null,
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (Roman numeral IX?)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (Roman numeral IX?). Printed \"YEMEN\". A se-tenant.",
+      "basis": [
+        "asr_01M21JRMQ94AMP0CWVPC7M5XF1",
+        "asr_01M21JRMRZHX1HCT9E5ZCYGNGZ",
+        "asr_01M21JRMV9XW2FHGRHM41HRKDP"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-13",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 13,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": null,
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (Roman numeral XII?)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (Roman numeral XII?). Printed \"YEMEN\". A se-tenant.",
+      "basis": [
+        "asr_01M21JRK8BC4DWWM48D2SJRHAH",
+        "asr_01M21JRKA0DQAS417M00DA0VJP",
+        "asr_01M21JRKCJQGQ4FG9MF9RNC5KM"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-14",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 14,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": null,
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (Roman numeral X)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (Roman numeral X). Printed \"YEMEN\". A se-tenant.",
+      "basis": [
+        "asr_01M21JRME402RBH5M9S9CT9FH5",
+        "asr_01M21JRMFZCX4WQNSF74E29Q2Z",
+        "asr_01M21JRMHPHCMXYG3MBWMGCTDC"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-15",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 15,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": null,
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (Roman numeral V)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (Roman numeral V). Printed \"YEMEN\". A se-tenant.",
+      "basis": [
+        "asr_01M21JRQ1V649T0721YZJNT7VK",
+        "asr_01M21JRQ3ESEMCTR9E1D1A2PZA",
+        "asr_01M21JRQ50MWTYTGGAWCEVQMYW"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-2",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 2,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": null,
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (Roman numeral II)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (Roman numeral II). Printed \"YEMEN\". A se-tenant.",
+      "basis": [
+        "asr_01M21JRP70QNCH3CE8K2JJTSKD",
+        "asr_01M21JRP8QJFKRZBY0EJXY9TYJ",
+        "asr_01M21JRPAAYXHJ7V62HMVF2WBT"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-3",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 3,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": "15",
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (numeral 15)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (numeral 15). Printed \"YEMEN\". A face value of 15. A se-tenant.",
+      "basis": [
+        "asr_01M21JRKVGRSBW70ZZ39XQA3FW",
+        "asr_01M21JRKX29424HVP8559S49Q4",
+        "asr_01M21JRKYT110W7V4E1972WKBH",
+        "asr_01M21JRM0JY057AN9B7B9E7VKM"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-4",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 4,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": null,
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (Roman numeral I)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (Roman numeral I). Printed \"YEMEN\". A se-tenant.",
+      "basis": [
+        "asr_01M21JRNYMSSZ6NGFTH33RH3XC",
+        "asr_01M21JRP0ABQGMYKEQ8GR718T4",
+        "asr_01M21JRP1ZZK968C73MJF07DG8"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-5",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 5,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": null,
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (Roman numeral VII?)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (Roman numeral VII?). Printed \"YEMEN\". A se-tenant.",
+      "basis": [
+        "asr_01M21JRNPA6XH3D99NAE9B6TPN",
+        "asr_01M21JRNQV6P4BDX7C5X3P2P4W",
+        "asr_01M21JRNSAP38JR41BEG49Y0E6"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-6",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 6,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": null,
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (Roman numeral XIV)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (Roman numeral XIV). Printed \"YEMEN\". A se-tenant.",
+      "basis": [
+        "asr_01M21JRM5ZPD1FRZCSR4V1JGG8",
+        "asr_01M21JRM7QY9Y1XWNSMXPRWVTP",
+        "asr_01M21JRM99FP22CZZABYTEQQX7"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-7",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 7,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": "4",
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (numeral 4)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (numeral 4). Printed \"YEMEN\". A face value of 4. A se-tenant.",
+      "basis": [
+        "asr_01M21JRNBSQTSKRBQQV3CT2KNV",
+        "asr_01M21JRNDG7DDWBH5YVSFW9MC6",
+        "asr_01M21JRNFH58G03DDA2S5X34S6",
+        "asr_01M21JRNHAT5M4NGTQAX0B1J3G"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-8",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 8,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": "3",
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (numeral 3)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (numeral 3). Printed \"YEMEN\". A face value of 3. A se-tenant.",
+      "basis": [
+        "asr_01M21JRPR5QCJNXQS9XSNKPP0H",
+        "asr_01M21JRPSW3WT6CMA6YXM3X23T",
+        "asr_01M21JRPVE1ZQFDXXKCVW13J7M",
+        "asr_01M21JRPX5AVT79CE592ECPS53"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p1-9",
+      "album": "PA-XVZNE7-N",
+      "page": 1,
+      "ordinal": 9,
+      "stampsOnPage": 15,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "YEMEN",
+      "denomination": null,
+      "year": null,
+      "form": "se-tenant",
+      "containsCount": null,
+      "subjects": [
+        "Life of Christ - painting scene (Roman numeral XIII?)"
+      ],
+      "reading": "Depicts Life of Christ - painting scene (Roman numeral XIII?). Printed \"YEMEN\". A se-tenant.",
+      "basis": [
+        "asr_01M21JRKK7W4VA3PE056XCJD51",
+        "asr_01M21JRKMWQJW40A59MQ5XHCP3",
+        "asr_01M21JRKPAMYS7F2C51G0BE8S7"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p3-1",
+      "album": "PA-XVZNE7-N",
+      "page": 3,
+      "ordinal": 1,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Umm Al Qiwain",
+      "denomination": null,
+      "year": null,
+      "form": "sheetlet",
+      "containsCount": 20,
+      "subjects": [
+        "History of Olympic Games"
+      ],
+      "reading": "Depicts History of Olympic Games. Printed \"Umm Al Qiwain\". A sheetlet of 20.",
+      "basis": [
+        "asr_01M21JTWHZZ4DEN31RJ7B3WGKF",
+        "asr_01M21JTWKQEP4B38YB1TXN0W5W",
+        "asr_01M21JTWQD92ZNH122JRP77FRQ"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p3-2",
+      "album": "PA-XVZNE7-N",
+      "page": 3,
+      "ordinal": 2,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Umm Al Qiwain",
+      "denomination": null,
+      "year": null,
+      "form": "sheetlet",
+      "containsCount": 20,
+      "subjects": [
+        "Tropical Fishes"
+      ],
+      "reading": "Depicts Tropical Fishes. Printed \"Umm Al Qiwain\". A sheetlet of 20.",
+      "basis": [
+        "asr_01M21JTVQ4NXS9MCX92AXNEXN4",
+        "asr_01M21JTVRTS1FAG4P1AF44RB36",
+        "asr_01M21JTVTRB83JXGVQTG6RJVER"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p3-3",
+      "album": "PA-XVZNE7-N",
+      "page": 3,
+      "ordinal": 3,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Umm Al Qiwain",
+      "denomination": null,
+      "year": null,
+      "form": "sheetlet",
+      "containsCount": 20,
+      "subjects": [
+        "Old and New Locomotives"
+      ],
+      "reading": "Depicts Old and New Locomotives. Printed \"Umm Al Qiwain\". A sheetlet of 20.",
+      "basis": [
+        "asr_01M21JTX6T4GN86GAVBVWS4XRN",
+        "asr_01M21JTX8CGKW53KGQCPAZPVCN",
+        "asr_01M21JTX9X5XG27S6H2QKMEFTT"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p3-4",
+      "album": "PA-XVZNE7-N",
+      "page": 3,
+      "ordinal": 4,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Umm Al Qiwain",
+      "denomination": null,
+      "year": null,
+      "form": "sheetlet",
+      "containsCount": 20,
+      "subjects": [
+        "Tropical Fishes"
+      ],
+      "reading": "Depicts Tropical Fishes. Printed \"Umm Al Qiwain\". A sheetlet of 20.",
+      "basis": [
+        "asr_01M21JTVZMVQTB87W9V5XQS211",
+        "asr_01M21JTW16ZBE1CRVD9D6DJJT0",
+        "asr_01M21JTW2ZH69VZZW8VT62085S"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p3-5",
+      "album": "PA-XVZNE7-N",
+      "page": 3,
+      "ordinal": 5,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Umm Al Qiwain",
+      "denomination": null,
+      "year": null,
+      "form": "sheetlet",
+      "containsCount": 20,
+      "subjects": [
+        "Aircraft (unlabeled sheetlet)"
+      ],
+      "reading": "Depicts Aircraft (unlabeled sheetlet). Printed \"Umm Al Qiwain\". A sheetlet of 20.",
+      "basis": [
+        "asr_01M21JTWWA38V76EZTSK9YYHXT",
+        "asr_01M21JTWY0W879N2K8W7YS3EVC",
+        "asr_01M21JTWZPCHTXSMH1KSD8TA5T"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p3-6",
+      "album": "PA-XVZNE7-N",
+      "page": 3,
+      "ordinal": 6,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Ajman State",
+      "denomination": null,
+      "year": null,
+      "form": "sheetlet",
+      "containsCount": 20,
+      "subjects": [
+        "Wild Animals"
+      ],
+      "reading": "Depicts Wild Animals. Printed \"Ajman State\". A sheetlet of 20.",
+      "basis": [
+        "asr_01M21JTW82ZV49PJRSK384FP01",
+        "asr_01M21JTWAC853Q6Q6H85597598",
+        "asr_01M21JTWC3VAMATFJD89MCZ1TQ"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p4-1",
+      "album": "PA-XVZNE7-N",
+      "page": 4,
+      "ordinal": 1,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Guyana",
+      "denomination": "$2",
+      "year": "1988",
+      "form": "souvenir-sheet",
+      "containsCount": 1,
+      "subjects": [
+        "Summer Olympic Games - Korea '88 (javelin thrower)"
+      ],
+      "reading": "Depicts Summer Olympic Games - Korea '88 (javelin thrower). Printed \"Guyana\". A face value of $2. Issued 1988. A souvenir-sheet of 1.",
+      "basis": [
+        "asr_01M21JVS3HTPN7ZMH3HHQ0RKD5",
+        "asr_01M21JVS645X3NF2KXXEDGSEJN",
+        "asr_01M21JVS84QZECT2CN9223NB8F",
+        "asr_01M21JVS9Y0K75BK3G0HKXMS2V",
+        "asr_01M21JVSBVCMW201SNR2F413RG"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p4-2",
+      "album": "PA-XVZNE7-N",
+      "page": 4,
+      "ordinal": 2,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Guyana",
+      "denomination": "$2.55",
+      "year": null,
+      "form": "souvenir-sheet",
+      "containsCount": 1,
+      "subjects": [
+        "Lady with Umbrella Statue - Barcelona (Olympics)"
+      ],
+      "reading": "Depicts Lady with Umbrella Statue - Barcelona (Olympics). Printed \"Guyana\". A face value of $2.55. A souvenir-sheet of 1.",
+      "basis": [
+        "asr_01M21JVR6FK9HP48FY13RK1ZHP",
+        "asr_01M21JVR88ET7QEK9X1CXEXY1Q",
+        "asr_01M21JVR9Z3HM694XHXXWZREZ8",
+        "asr_01M21JVRBMR5F49RYSJYZRYGC3"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p4-3",
+      "album": "PA-XVZNE7-N",
+      "page": 4,
+      "ordinal": 3,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "sheetlet",
+      "containsCount": 16,
+      "subjects": [
+        "Famous Men - portrait sheet"
+      ],
+      "reading": "Depicts Famous Men - portrait sheet. A sheetlet of 16.",
+      "basis": [
+        "asr_01M21JVRG2Z4S356SNVQF6ZTP6",
+        "asr_01M21JVRHG5YY6DW5FR82W55V4"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p4-4",
+      "album": "PA-XVZNE7-N",
+      "page": 4,
+      "ordinal": 4,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Republic of Liberia",
+      "denomination": "75",
+      "year": null,
+      "form": "souvenir-sheet",
+      "containsCount": 1,
+      "subjects": [
+        "Plymouth Plantation Village (Bicentenary of American Independence)"
+      ],
+      "reading": "Depicts Plymouth Plantation Village (Bicentenary of American Independence). Printed \"Republic of Liberia\". A face value of 75. A souvenir-sheet of 1.",
+      "basis": [
+        "asr_01M21JVRPFGZ5SFHTKGF3AG2WB",
+        "asr_01M21JVRRYD77V7V325H1H4DMM",
+        "asr_01M21JVRTJR494CFD5Y1NY0AQN",
+        "asr_01M21JVRW0WMA2VGSH4GQ3GBBN"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p4-5",
+      "album": "PA-XVZNE7-N",
+      "page": 4,
+      "ordinal": 5,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Guyana",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Nude - Joan Miro"
+      ],
+      "reading": "Depicts Nude - Joan Miro. Printed \"Guyana\". A single stamp.",
+      "basis": [
+        "asr_01M21JVSGP93KK4SEK9ZRGVQJ7",
+        "asr_01M21JVSJ6QX3AB3D87TDE9FYW",
+        "asr_01M21JVSKRKH7NK502J6PHN4ZT"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p4-6",
+      "album": "PA-XVZNE7-N",
+      "page": 4,
+      "ordinal": 6,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Guyana",
+      "denomination": "$2.55",
+      "year": null,
+      "form": "souvenir-sheet",
+      "containsCount": 1,
+      "subjects": [
+        "The General Lee - Barcelona (Olympics)"
+      ],
+      "reading": "Depicts The General Lee - Barcelona (Olympics). Printed \"Guyana\". A face value of $2.55. A souvenir-sheet of 1.",
+      "basis": [
+        "asr_01M21JVSRQ62FXSJC1SCQWSN6J",
+        "asr_01M21JVSTGEBFM7S8J57H6B3V7",
+        "asr_01M21JVSW60CC6R51N2P4G0QXX",
+        "asr_01M21JVSXN0GMQWMTQKZ5EJKDS"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p5-1",
+      "album": "PA-XVZNE7-N",
+      "page": 5,
+      "ordinal": 1,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Monaco",
+      "denomination": "0,85F (each, x3)",
+      "year": null,
+      "form": "strip",
+      "containsCount": 3,
+      "subjects": [
+        "50e Concours International de Bouquets - flower arrangements"
+      ],
+      "reading": "Depicts 50e Concours International de Bouquets - flower arrangements. Printed \"Monaco\". A face value of 0,85F (each, x3). A strip of 3.",
+      "basis": [
+        "asr_01M21JX0SJ5WAC001CDP6S23YK",
+        "asr_01M21JX0VACQQS0EGF5QFNNWB5",
+        "asr_01M21JX0XX7WHK5GVQDY5YKN2F",
+        "asr_01M21JX11KFKP6NCPP21E4BFQ8"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p5-2",
+      "album": "PA-XVZNE7-N",
+      "page": 5,
+      "ordinal": 2,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Aitutaki",
+      "denomination": null,
+      "year": null,
+      "form": "souvenir-sheet",
+      "containsCount": 1,
+      "subjects": [
+        "Religious icon (Byzantine-style painting)"
+      ],
+      "reading": "Depicts Religious icon (Byzantine-style painting). Printed \"Aitutaki\". A souvenir-sheet of 1.",
+      "basis": [
+        "asr_01M21JWZXDR57CEHPZ2ZMA1GKC",
+        "asr_01M21JWZZ7QSK0QJFPJNQW76KR",
+        "asr_01M21JX00Z3Q7AQDWMN2FHHRJC"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p5-3",
+      "album": "PA-XVZNE7-N",
+      "page": 5,
+      "ordinal": 3,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Aitutaki",
+      "denomination": "35c / 50c / ?",
+      "year": "1778 (event date on sheet border)",
+      "form": "souvenir-sheet",
+      "containsCount": 3,
+      "subjects": [
+        "Bicentennial of Cook's Discovery of the Hawaiian Islands"
+      ],
+      "reading": "Depicts Bicentennial of Cook's Discovery of the Hawaiian Islands. Printed \"Aitutaki\". A face value of 35c / 50c / ?. Issued 1778 (event date on sheet border). A souvenir-sheet of 3.",
+      "basis": [
+        "asr_01M21JX087HTQ0ZER3D1ETNS23",
+        "asr_01M21JX09ZBYC475P2D5TTNDAS",
+        "asr_01M21JX0CQE58WC22P5GD92GFP",
+        "asr_01M21JX0E9Z59SDC21E2TWTFEP",
+        "asr_01M21JX0JGRW1N0FYF9R56TCZ2"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p5-4",
+      "album": "PA-XVZNE7-N",
+      "page": 5,
+      "ordinal": 4,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Aitutaki",
+      "denomination": "20c / 35c / 15c / ? (one value not legible)",
+      "year": "1971",
+      "form": "se-tenant",
+      "containsCount": 4,
+      "subjects": [
+        "Easter 1971 - religious paintings"
+      ],
+      "reading": "Depicts Easter 1971 - religious paintings. Printed \"Aitutaki\". A face value of 20c / 35c / 15c / ? (one value not legible). Issued 1971. A se-tenant of 4.",
+      "basis": [
+        "asr_01M21JWZ69G1ESZ8F8898RC5MM",
+        "asr_01M21JWZ7S45V7YQWXMD5YFP8Q",
+        "asr_01M21JWZ9J3T1H8VJ0XZ6KQJVK",
+        "asr_01M21JWZBAZ7KH39WPMZ9H7PPN",
+        "asr_01M21JWZCZHH30Z7X25DPMVJKN"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p5-5",
+      "album": "PA-XVZNE7-N",
+      "page": 5,
+      "ordinal": 5,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Batum",
+      "denomination": "500",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Field Poppy - postage stamp with postmark"
+      ],
+      "reading": "Depicts Field Poppy - postage stamp with postmark. Printed \"Batum\". A face value of 500. A single stamp.",
+      "basis": [
+        "asr_01M21JX1C1DCJZNYJXT3CBVYX6",
+        "asr_01M21JX1DXWE0WPBASMN5A9SS1",
+        "asr_01M21JX1FM9YFE36M67YBWX52R",
+        "asr_01M21JX1HB3HB97BCEH2TD5YWD"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p5-6",
+      "album": "PA-XVZNE7-N",
+      "page": 5,
+      "ordinal": 6,
+      "stampsOnPage": 6,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Republikan'i Madagasikara",
+      "denomination": "2000",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Map-shaped stamp with inset portrait"
+      ],
+      "reading": "Depicts Map-shaped stamp with inset portrait. Printed \"Republikan'i Madagasikara\". A face value of 2000. A single stamp.",
+      "basis": [
+        "asr_01M21JWZJ7ZJ06SAJY362BXN93",
+        "asr_01M21JWZM632J9K0JVCMK69RC2",
+        "asr_01M21JWZP2XBMZY70XRV6SCQ80",
+        "asr_01M21JWZQS6XXKF6V46JS6GJWX"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p7-1",
+      "album": "PA-XVZNE7-N",
+      "page": 7,
+      "ordinal": 1,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "UMM AL QIWAIN",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Martial arts/combat sport pose"
+      ],
+      "reading": "Depicts Martial arts/combat sport pose. Printed \"UMM AL QIWAIN\". A single stamp.",
+      "basis": [
+        "asr_01M21JYV8HCSNWXVSRKNJS5FJB",
+        "asr_01M21JYVAQ0H1X4565NAAR87KE",
+        "asr_01M21JYVC77YXDHJC6PZNYG5Z3"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p7-2",
+      "album": "PA-XVZNE7-N",
+      "page": 7,
+      "ordinal": 2,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "UMM AL QIWAIN",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Athlete performing exercise/gymnastics move"
+      ],
+      "reading": "Depicts Athlete performing exercise/gymnastics move. Printed \"UMM AL QIWAIN\". A single stamp.",
+      "basis": [
+        "asr_01M21JYTNS4S4TQD2VQ5QT2DJ5",
+        "asr_01M21JYTQNERSPRBZBFKY4AX2A",
+        "asr_01M21JYTSEEZC85AWR0ZGVTN7X"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p7-3",
+      "album": "PA-XVZNE7-N",
+      "page": 7,
+      "ordinal": 3,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "UMM AL QIWAIN",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Person in green outfit with flowers/plant"
+      ],
+      "reading": "Depicts Person in green outfit with flowers/plant. Printed \"UMM AL QIWAIN\". A single stamp.",
+      "basis": [
+        "asr_01M21JYTYDED29SN3GD20FKDJ5",
+        "asr_01M21JYV0562YATWV3H81G0RTZ",
+        "asr_01M21JYV373YAKWX0HXXJMYB2J"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p7-4",
+      "album": "PA-XVZNE7-N",
+      "page": 7,
+      "ordinal": 4,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "UMM AL QIWAIN",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Landscape/mountain scene with figure or animal"
+      ],
+      "reading": "Depicts Landscape/mountain scene with figure or animal. Printed \"UMM AL QIWAIN\". A single stamp.",
+      "basis": [
+        "asr_01M21JYWC7J0PZ64W0AR8J1WNW",
+        "asr_01M21JYWE1BKY1TX1HXT35EFEE",
+        "asr_01M21JYWFNRAX5KMZZ0AY6PC5X"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p7-5",
+      "album": "PA-XVZNE7-N",
+      "page": 7,
+      "ordinal": 5,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "UMM AL QIWAIN",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Person in white robes, possibly falconry or traditional scene"
+      ],
+      "reading": "Depicts Person in white robes, possibly falconry or traditional scene. Printed \"UMM AL QIWAIN\". A single stamp.",
+      "basis": [
+        "asr_01M21JYVJ2TMRBJNXZDXH2G898",
+        "asr_01M21JYVKJSH3KR1S6ZBP74RJ6",
+        "asr_01M21JYVN7HQTBVMKW9DA6YP6A"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p7-6",
+      "album": "PA-XVZNE7-N",
+      "page": 7,
+      "ordinal": 6,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "UMM AL QIWAIN",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Athlete in red performing gymnastics move"
+      ],
+      "reading": "Depicts Athlete in red performing gymnastics move. Printed \"UMM AL QIWAIN\". A single stamp.",
+      "basis": [
+        "asr_01M21JYW3J5A2SJGTASF5Y70NB",
+        "asr_01M21JYW58Z8YZYP3ZQ59BGDDB",
+        "asr_01M21JYW6YKPF0P51TG0RMSGMM"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p7-7",
+      "album": "PA-XVZNE7-N",
+      "page": 7,
+      "ordinal": 7,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "UMM AL QIWAIN",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Athlete in red, jumping/running pose"
+      ],
+      "reading": "Depicts Athlete in red, jumping/running pose. Printed \"UMM AL QIWAIN\". A single stamp.",
+      "basis": [
+        "asr_01M21JYWYTF8EHW3DD0ZWAYVNM",
+        "asr_01M21JYX0A2NT9CT0NK39MSBFC",
+        "asr_01M21JYX20BZ5YF0M21GPX7PNB"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p7-8",
+      "album": "PA-XVZNE7-N",
+      "page": 7,
+      "ordinal": 8,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "UMM AL QIWAIN",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Person in colorful sports uniform, possibly wrestling"
+      ],
+      "reading": "Depicts Person in colorful sports uniform, possibly wrestling. Printed \"UMM AL QIWAIN\". A single stamp.",
+      "basis": [
+        "asr_01M21JYWMSPRAQQQ2WYRA5X7HV",
+        "asr_01M21JYWPFSD3TZVATVXEF7TTJ",
+        "asr_01M21JYWSGH0D3AE2EFY5K6NYY"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    },
+    {
+      "id": "PA-XVZNE7-N-p7-9",
+      "album": "PA-XVZNE7-N",
+      "page": 7,
+      "ordinal": 9,
+      "stampsOnPage": 9,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "UMM AL QIWAIN",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Circular emblem/badge design, blue and red"
+      ],
+      "reading": "Depicts Circular emblem/badge design, blue and red. Printed \"UMM AL QIWAIN\". A single stamp.",
+      "basis": [
+        "asr_01M21JYVTWB6CTSRRZG4VMFZE2",
+        "asr_01M21JYVWP1ZJ1XVK6F9ABV0NM",
+        "asr_01M21JYVYBVBD1CM6WZA0HS4ME"
+      ],
+      "capturedAt": "2026-09-08T06:16:30.999Z"
+    }
+  ],
   "withheld": [
     "objectRef",
     "workingCopyRef",
