@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T23:06:56.216Z",
+  "generatedAt": "2026-09-08T23:56:33.193Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -68,18 +68,156 @@
           "unknown": 318
         },
         "eligiblePopulation": 318
+      },
+      {
+        "metric": "distinctIssuerCount",
+        "unit": "issuers whose name is printed on a stamp here — as read, not yet resolved to entities",
+        "value": {
+          "confirmed": 0,
+          "candidate": 26,
+          "unknown": 0
+        },
+        "eligiblePopulation": 26
       }
     ],
-    "asOf": "2026-09-08T23:07:05.024Z",
+    "asOf": "2026-09-08T23:56:41.624Z",
     "namingProgress": {
       "namedByMachine": 202,
       "verifiedByPerson": 0
     },
-    "pending": [
+    "issuers": [
       {
-        "metric": "distinctIssuerCount",
-        "blockedBy": "resolving identified issues to distinct issuer entities"
+        "name": "Nippon",
+        "candidate": 38,
+        "confirmed": 0
       },
+      {
+        "name": "Japan Post",
+        "candidate": 20,
+        "confirmed": 0
+      },
+      {
+        "name": "NIPPON",
+        "candidate": 15,
+        "confirmed": 0
+      },
+      {
+        "name": "YEMEN",
+        "candidate": 15,
+        "confirmed": 0
+      },
+      {
+        "name": "Monaco",
+        "candidate": 11,
+        "confirmed": 0
+      },
+      {
+        "name": "UMM AL QIWAIN",
+        "candidate": 9,
+        "confirmed": 0
+      },
+      {
+        "name": "Magyar Posta",
+        "candidate": 7,
+        "confirmed": 0
+      },
+      {
+        "name": "Angola",
+        "candidate": 6,
+        "confirmed": 0
+      },
+      {
+        "name": "Fujeira",
+        "candidate": 6,
+        "confirmed": 0
+      },
+      {
+        "name": "Umm Al Qiwain",
+        "candidate": 5,
+        "confirmed": 0
+      },
+      {
+        "name": "Guyana",
+        "candidate": 4,
+        "confirmed": 0
+      },
+      {
+        "name": "Republik Maluku Selatan",
+        "candidate": 4,
+        "confirmed": 0
+      },
+      {
+        "name": "Aitutaki",
+        "candidate": 3,
+        "confirmed": 0
+      },
+      {
+        "name": "Mongolia",
+        "candidate": 3,
+        "confirmed": 0
+      },
+      {
+        "name": "Republica del Ecuador",
+        "candidate": 3,
+        "confirmed": 0
+      },
+      {
+        "name": "MONGOLIA",
+        "candidate": 2,
+        "confirmed": 0
+      },
+      {
+        "name": "S. TOME E PRINCIPE",
+        "candidate": 2,
+        "confirmed": 0
+      },
+      {
+        "name": "Ajman State",
+        "candidate": 1,
+        "confirmed": 0
+      },
+      {
+        "name": "AJMAN STATE",
+        "candidate": 1,
+        "confirmed": 0
+      },
+      {
+        "name": "Batum",
+        "candidate": 1,
+        "confirmed": 0
+      },
+      {
+        "name": "Korea",
+        "candidate": 1,
+        "confirmed": 0
+      },
+      {
+        "name": "RAS AL KHAIMA",
+        "candidate": 1,
+        "confirmed": 0
+      },
+      {
+        "name": "Republic of Korea",
+        "candidate": 1,
+        "confirmed": 0
+      },
+      {
+        "name": "Republic of Liberia",
+        "candidate": 1,
+        "confirmed": 0
+      },
+      {
+        "name": "Republikan'i Madagasikara",
+        "candidate": 1,
+        "confirmed": 0
+      },
+      {
+        "name": "St. Vincent",
+        "candidate": 1,
+        "confirmed": 0
+      }
+    ],
+    "pending": [
       {
         "metric": "distinctTerritoryCount",
         "blockedBy": "resolving the issuer of an issue to a normalised territory"
