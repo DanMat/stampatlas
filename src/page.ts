@@ -1164,6 +1164,18 @@ function setMatch(c,dim,value){
   if(dim==="defunct") return c.issuerStatus==="defunct" && (value==="*"||(c.resolvedIssuer||c.issuer)===value);
   return false;
 }
+/* A sourced, attributed history for a place or historical issuer (ADR-0024) — Wikipedia, cited with
+   a link. Never machine-invented: shown only when a summary was actually sourced. */
+const placeRef=name=>((DATA.references&&DATA.references.places)||{})[name]||null;
+function placeExplainer(name){
+  const r=placeRef(name); if(!r||!r.extract) return "";
+  return \`<div class="card" style="border-left:3px solid var(--terra);margin-bottom:18px"><h3 style="margin-top:0">About \${esc(name)}\${r.description?\` <span class="small" style="color:var(--ink-3);font-weight:400">· \${esc(r.description)}</span>\`:""}</h3>
+    <p class="small" style="color:var(--ink-2);line-height:1.65">\${esc(r.extract)}</p>
+    <p class="small" style="color:var(--ink-3);margin-top:8px">Source: <a href="\${esc(r.url)}" target="_blank" rel="noopener">\${esc(r.source||"Wikipedia")}</a>\${r.license?\` · \${esc(r.license)}\`:""}. Sourced context, cited — not one of the collection's own facts.</p></div>\`;
+}
+/* Curated philatelic-term definitions — authored, not machine-guessed. Shown on a form's page. */
+const FORM_GLOSSARY={single:"A single postage stamp — one design, one unit, separated from its neighbours.","se-tenant":"Se-tenant (French, “joined together”): two or more different stamp designs printed side by side and kept attached.",strip:"A strip — three or more stamps still joined in a row, as issued.",block:"A block — four or more stamps still joined in a rectangle; the classic is the block of four.","miniature-sheet":"A miniature sheet — one or a few stamps on a small decorative sheet with a wide illustrated margin, sold as a single unit.","souvenir-sheet":"A souvenir sheet — a commemorative sheetlet, often a single stamp in an ornate border, issued to mark an event.",sheetlet:"A sheetlet — a small complete pane of stamps, smaller than a full post-office sheet.",cover:"A cover — an envelope or wrapper that has been through the post, collected for its stamps, postmark and route. A first-day cover is one posted on an issue’s first day.","postal-stationery":"Postal stationery — an item with the postage imprinted rather than affixed: a pre-stamped envelope, postcard or aerogramme.",other:"Other / unclassified — a piece the machine couldn’t confidently type: a label, a fragment, or something unusual."};
+function formGlossary(name){ const g=FORM_GLOSSARY[name]; return g?\`<div class="card" style="border-left:3px solid var(--moss);margin-bottom:18px"><h3 style="margin-top:0">What is a \${esc(formLabel(name).replace(/s$/,""))}?</h3><p class="small" style="color:var(--ink-2);line-height:1.65">\${esc(g)}</p></div>\`:""; }
 /* The filtered set behind any count: every matching candidate stamp, grouped by album, each a link
    to its own page. This is the drill-down — a number is never a dead end. */
 function setPage(dim,value){
@@ -1176,9 +1188,13 @@ function setPage(dim,value){
   }).join("");
   const heading=dim==="defunct"&&value==="*"?"Issuers that no longer exist":esc(String(label));
   const backHref={territory:"#/territories",theme:"#/themes",form:"#/forms",issuer:"#/countries",currency:"#/money",defunct:"#/territories"}[dim]||"#/";
+  // The nerdy header: a form's definition, or a sourced history for a place/issuer.
+  const explainer = dim==="form" ? formGlossary(value)
+    : (["territory","issuer","defunct"].includes(dim) && value!=="*") ? placeExplainer(value) : "";
   return \`<section class="band"><div class="wrap"><span class="eyebrow"><a href="\${backHref}" style="color:inherit">\${esc(DIM_LABEL[dim]||dim)}</a>\${dim==="defunct"&&value==="*"?"":\` · \${esc(String(label))}\`}</span>
     <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">\${heading}</h1>
     <p class="lede" style="max-width:64ch"><strong>\${fmt(cands.length)}</strong> candidate stamp\${cands.length===1?"":"s"} \${dim==="defunct"?"from issuers that no longer exist":\`the machine read as <strong>\${esc(String(label))}</strong>\`}. Open one for the full read, its resolution, and its apparent duplicates.</p>
+    \${explainer?\`<div style="margin-top:18px">\${explainer}</div>\`:""}
     <div class="grid g2" style="margin-top:18px">\${groups||"<p class=small>No matching stamps.</p>"}</div>
     \${CANDLEGEND}
   </div></section>\`;
