@@ -1265,8 +1265,8 @@ function moneyBand(){
   const top=c.slice(0,15);
   return \`<section class="band reveal" aria-labelledby="cur-h"><div class="wrap">
     <div class="band-head"><div><span class="eyebrow">By currency</span><h2 id="cur-h">The money on the stamps</h2></div><a class="more" href="#/money">All currencies →</a></div>
-    <p class="small" style="max-width:66ch;margin-top:4px">A light read of the face values' currency — francs, pence, cents, forint. <strong>Coarse and candidate</strong>: parsed from the denomination the machine saw, not a normalised value; a real currency pass is a later step.</p>
-    <div class="grid g3" style="margin-top:16px">\${top.map(x=>\`<div class="card" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span>\${dot("candidate","")} \${esc(x.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">\${fmt(x.candidate)}</strong></div>\`).join("")}</div>
+    <p class="small" style="max-width:66ch;margin-top:4px">A light read of the face values' currency, with a <em>rough total postage</em> in each — sub-units folded into the main unit (cents→dollars, fillér→forint). <strong>Coarse and candidate</strong>: parsed from the denomination the machine saw, disambiguated by territory; never converted across currencies (that would be a fiction). It's the postage once affixed, <em>not</em> the collection's worth.</p>
+    <div class="grid g3" style="margin-top:16px">\${top.map(x=>\`<div class="card" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span>\${dot("candidate","")} \${esc(x.name)} <span class="small" style="color:var(--ink-3)">· \${fmt(x.candidate)}</span></span><strong style="font-family:var(--ff-display);font-size:1.4em">\${x.valueTotal!=null?\`\${esc(x.unit)}\${fmt(Math.round(x.valueTotal))}\`:"—"}</strong></div>\`).join("")}</div>
     \${CANDLEGEND}
   </div></section>\`;
 }
@@ -1274,10 +1274,10 @@ function moneyPage(){
   const all=(DATA.facts&&DATA.facts.currencies)||[];
   const c=all.filter(x=>x.name!=="unmarked");
   const unmarked=(all.find(x=>x.name==="unmarked")||{}).candidate||0;
-  const rows=c.map(x=>\`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>\${dot("candidate","")} \${esc(x.name)}</span><span class="small">\${fmt(x.candidate)}</span></li>\`).join("");
+  const rows=c.map(x=>\`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>\${dot("candidate","")} \${esc(x.name)}</span><span class="small">\${x.valueTotal!=null?\`<strong>\${esc(x.unit)}\${fmt(Math.round(x.valueTotal*100)/100)}</strong> · \`:""}\${fmt(x.candidate)} stamp\${x.candidate===1?"":"s"}</span></li>\`).join("");
   return \`<section class="band"><div class="wrap"><span class="eyebrow">By currency</span>
     <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Money</h1>
-    <p class="lede" style="max-width:66ch">\${fmt(c.length)} currencies the atlas read across the face values. <strong>A light candidate parse</strong> — grouped by the symbol the machine saw ("80f", "10p", "2.50€"), not a normalised value; a proper currency resolver is a later step, and \${fmt(unmarked)} face value\${unmarked===1?"":"s"} it couldn't place are left <em>unmarked</em> rather than guessed.</p>
+    <p class="lede" style="max-width:66ch">\${fmt(c.length)} currencies the atlas read across the face values, each with a <strong>rough total of the postage</strong> in that currency — sub-units folded into the main unit (100 cents = $1, 100 fillér = 1 Ft). <strong>A light candidate parse</strong> from the denomination the machine saw, disambiguated by the issuer's territory; face values are <em>never</em> converted between currencies (adding a 1950s DDR pfennig to a euro would be a made-up number), and this is the postage once affixed, <em>not</em> the collection's worth. \${fmt(unmarked)} face value\${unmarked===1?"":"s"} it couldn't place are left <em>unmarked</em> rather than guessed.</p>
     <ul style="list-style:none;padding:0;margin:20px 0 0;columns:2;column-gap:40px">\${rows||"<li class=small>No currencies read yet.</li>"}</ul>
     \${CANDLEGEND}
   </div></section>\`;
