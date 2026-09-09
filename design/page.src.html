@@ -746,6 +746,9 @@ const stampHref=id=>`#/stamp/${id}`;
 const candHref=id=>`#/candidate/${encodeURIComponent(id)}`;
 /* A drill-down link: an aggregate count → the actual candidate stamps behind it. */
 const setHref=(dim,value)=>`#/set/${dim}/${encodeURIComponent(value)}`;
+/* Inline drill-down link — subtle terra underline so entity text reads as clickable without shouting.
+   Falls back to plain text when there's no value to link to. */
+const sl=(dim,value,text)=>value?`<a href="${setHref(dim,value)}" style="color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--terra) 55%,transparent);text-underline-offset:2px">${text}</a>`:text;
 const candidateById=id=>(DATA.candidates||[]).find(c=>c.id===id)||null;
 /* The "distinct as read" fingerprint — the same fields facts.ts groups on. Two candidates that
    fingerprint alike are the apparent duplicates a person would later merge or keep. */
@@ -1097,13 +1100,15 @@ function candidatesPage(){
 /* One candidate stamp, in full — everything the machine read, each field marked candidate, with
    its apparent duplicates and its provenance. No image (real stamp imagery is never published). */
 function candidatePage(c){
-  const crumbs=`<div class="wrap st-crumbs"><a href="#/">Frontispiece</a><span>›</span><a href="#/candidates">Candidate readings</a><span>›</span><span>${esc(c.album)} · p${esc(String(c.page))} · ${c.ordinal}/${c.stampsOnPage}</span></div>`;
+  const crumbs=`<div class="wrap st-crumbs"><a href="#/">Frontispiece</a><span>›</span><a href="#/candidates">Candidate readings</a><span>›</span><span><a href="${setHref('album',c.album)}" style="color:inherit">${esc(c.album)}</a> · p${esc(String(c.page))} · ${c.ordinal}/${c.stampsOnPage}</span></div>`;
   const row=(label,val,extra)=>val?`<div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-top:1px solid var(--rule-soft)"><span class="small" style="color:var(--ink-3);min-width:12ch">${esc(label)}</span><span style="text-align:right">${val}${extra?` <span class="small" style="color:var(--ink-3)">${extra}</span>`:""}</span></div>`:"";
-  // Issuer + its candidate resolution.
-  const terr=c.territory&&c.territory!==c.issuer?` → ${esc(c.territory)}`:"";
-  const defunct=c.issuerStatus==="defunct"?` <span class="small" style="color:var(--terra)">· no longer issues${c.succeededBy?` → ${esc(c.succeededBy)}`:""}</span>`:"";
-  const issuerRow=row("Issuer", c.issuer?`${esc(c.issuer)}${terr}${defunct}`:"", c.issuer?"as printed":"");
-  const formVal=c.form?`${esc(c.form)}${c.containsCount?` of ${fmt(c.containsCount)}`:""}`:"";
+  // Issuer + its candidate resolution — every entity a drill-down link.
+  const terr=c.territory&&c.territory!==c.issuer?` → ${sl('territory',c.territory,esc(c.territory))}`:"";
+  const defunct=c.issuerStatus==="defunct"?` <span class="small" style="color:var(--terra)">· no longer issues${c.succeededBy?` → ${sl('territory',c.succeededBy,esc(c.succeededBy))}`:""}</span>`:"";
+  const issuerRow=row("Issuer", c.issuer?`${sl('issuer',c.issuer,esc(c.issuer))}${terr}${defunct}`:"", c.issuer?"as printed":"");
+  const cur=c.denomination?candCurrency(c):null;
+  const denomVal=c.denomination?(cur&&cur!=="unmarked"?sl('currency',cur,esc(c.denomination)):esc(c.denomination)):"";
+  const formVal=c.form?sl('form',c.form,`${esc(c.form)}${c.containsCount?` of ${fmt(c.containsCount)}`:""}`):"";
   const subjects=(c.subjects||[]).length?c.subjects.map(esc).join(", "):"";
   // Apparent duplicates — other candidates sharing this fingerprint.
   const fp=candFingerprint(c);
@@ -1117,17 +1122,17 @@ function candidatePage(c){
       <div class="card">
         <h3 style="margin-top:0">What the machine read</h3>
         ${issuerRow}
-        ${row("Denomination", c.denomination?esc(c.denomination):"")}
+        ${row("Denomination", denomVal)}
         ${row("Year", c.year?esc(c.year):"")}
         ${row("Form", formVal)}
         ${row("Subjects", subjects)}
-        ${row("Theme", c.theme?esc(c.theme):"")}
+        ${row("Theme", c.theme?sl('theme',c.theme,esc(c.theme)):"")}
         ${(!c.issuer&&!c.denomination&&!c.year&&!subjects)?`<p class="small" style="color:var(--ink-3);margin-top:10px">Nothing legible was read — a closer photograph would help.</p>`:""}
         <p class="small" style="color:var(--ink-3);border-top:1px solid var(--rule-soft);margin-top:10px;padding-top:10px">Read from ${fmt((c.basis||[]).length)} cited observation${(c.basis||[]).length===1?"":"s"}, by <span class="mono">${esc(c.reader||"page-vision")}</span>. Every line is a candidate a person has not yet confirmed.</p>
       </div>
       <div class="card">
         <h3 style="margin-top:0">Where it sits</h3>
-        ${row("Album", esc(c.album))}
+        ${row("Album", sl('album',c.album,esc(c.album)))}
         ${row("Page", esc(String(c.page)))}
         ${row("On the page", `${c.ordinal} of ${c.stampsOnPage}`)}
         ${c.capturedAt?row("Photographed", esc(niceDate(c.capturedAt))):""}
@@ -1152,12 +1157,13 @@ function candCurrency(c){
   if(/fill|\bf\b/i.test(d)) return francLand?"franc":"Ft forint";
   return "unmarked";
 }
-const DIM_LABEL={territory:"Territory",theme:"Theme",form:"Form",issuer:"Issuer",currency:"Currency",defunct:"No longer exists"};
+const DIM_LABEL={territory:"Territory",theme:"Theme",form:"Form",issuer:"Issuer",currency:"Currency",defunct:"No longer exists",album:"Album"};
 function setMatch(c,dim,value){
   if(dim==="territory") return c.territory===value;
   if(dim==="theme") return c.theme===value;
   if(dim==="form") return c.form===value;
   if(dim==="issuer") return c.issuer===value;
+  if(dim==="album") return c.album===value;
   if(dim==="currency") return candCurrency(c)===value;
   if(dim==="defunct") return c.issuerStatus==="defunct" && (value==="*"||(c.resolvedIssuer||c.issuer)===value);
   return false;
@@ -1182,16 +1188,22 @@ function setPage(dim,value){
   const byAlbum={}; cands.forEach(c=>{ (byAlbum[c.album]=byAlbum[c.album]||[]).push(c); });
   const groups=Object.keys(byAlbum).sort().map(al=>{
     const rows=byAlbum[al].slice().sort((a,b)=>a.id.localeCompare(b.id)).map(c=>`<li><a href="${candHref(c.id)}" style="color:inherit;text-decoration:none"><span class="meta">${dot("candidate")} p${esc(String(c.page))} · ${c.ordinal}/${c.stampsOnPage}</span> <span class="small">${esc(c.reading||"nothing legible yet")}</span></a></li>`).join("");
-    return `<div class="card"><h3>${esc(al)}</h3><ul class="recent" style="margin-top:8px">${rows}</ul></div>`;
+    // Don't self-link the album header when we're already viewing that album.
+    const head=dim==="album"?esc(al):`<a href="${setHref('album',al)}" style="color:inherit">${esc(al)}</a>`;
+    return `<div class="card"><h3>${head}</h3><ul class="recent" style="margin-top:8px">${rows}</ul></div>`;
   }).join("");
   const heading=dim==="defunct"&&value==="*"?"Issuers that no longer exist":esc(String(label));
-  const backHref={territory:"#/territories",theme:"#/themes",form:"#/forms",issuer:"#/countries",currency:"#/money",defunct:"#/territories"}[dim]||"#/";
+  const backHref={territory:"#/territories",theme:"#/themes",form:"#/forms",issuer:"#/countries",currency:"#/money",defunct:"#/territories",album:"#/"}[dim]||"#/";
   // The nerdy header: a form's definition, or a sourced history for a place/issuer.
   const explainer = dim==="form" ? formGlossary(value)
     : (["territory","issuer","defunct"].includes(dim) && value!=="*") ? placeExplainer(value) : "";
+  const leadPhrase = dim==="defunct" ? "from issuers that no longer exist"
+    : dim==="album" ? `in <strong>${esc(String(label))}</strong>`
+    : dim==="form" ? `read as <strong>${esc(String(label))}</strong>`
+    : `the machine read as <strong>${esc(String(label))}</strong>`;
   return `<section class="band"><div class="wrap"><span class="eyebrow"><a href="${backHref}" style="color:inherit">${esc(DIM_LABEL[dim]||dim)}</a>${dim==="defunct"&&value==="*"?"":` · ${esc(String(label))}`}</span>
     <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">${heading}</h1>
-    <p class="lede" style="max-width:64ch"><strong>${fmt(cands.length)}</strong> candidate stamp${cands.length===1?"":"s"} ${dim==="defunct"?"from issuers that no longer exist":`the machine read as <strong>${esc(String(label))}</strong>`}. Open one for the full read, its resolution, and its apparent duplicates.</p>
+    <p class="lede" style="max-width:64ch"><strong>${fmt(cands.length)}</strong> candidate stamp${cands.length===1?"":"s"} ${leadPhrase}. Open one for the full read, its resolution, and its apparent duplicates.</p>
     ${explainer?`<div style="margin-top:18px">${explainer}</div>`:""}
     <div class="grid g2" style="margin-top:18px">${groups||"<p class=small>No matching stamps.</p>"}</div>
     ${CANDLEGEND}
@@ -1664,7 +1676,7 @@ function buildIndex(){
   const yrs=new Map(); stamps().forEach(s=>{ const y=yearOf(s); if(y) yrs.set(y,(yrs.get(y)||[]).concat(s)); });
   Array.from(yrs.keys()).sort().forEach(y=>{ const ss=yrs.get(y); add("Years","Year",String(y),ss.map(s=>s.short||s.title||s.id).join(", "),ss.length===1?stampHref(ss[0].id):chHref("time"),[String(Math.floor(y/10))+"0s decade"],ss.length===1?{}:{key:ss[0].id,sec:"time"}); });
   (DATA.sets||[]).forEach(t=>add("Sets","Set",t.name,`${t.valuesHeld} of ${t.valuesTotal} values`,chHref("sets"),[String(t.year)],{key:t.id,sec:"sets"}));
-  (DATA.albums||[]).forEach(a=>{ const label=a.displayName||a.physicalAlbumId; add("Albums","Album",label,`${a.positionCount||0} position${(a.positionCount||0)===1?"":"s"}`,chHref("albums"),[a.physicalAlbumId,"binder"],{key:a.physicalAlbumId,sec:"albums"}); });
+  (DATA.albums||[]).forEach(a=>{ const label=a.displayName||a.physicalAlbumId; add("Albums","Album",label,`${a.positionCount||0} position${(a.positionCount||0)===1?"":"s"}`,setHref('album',a.physicalAlbumId),[a.physicalAlbumId,"binder"]); });
   ((DATA.facts&&DATA.facts.metrics)||[]).forEach(m=>{ const f=FRIENDLY[m.metric]||{}; const d=disp(m); add("Measures","Measure",f.label||m.metric,strip(d.d),chHref("glance"),[m.metric,f.d],{key:m.metric,sec:"glance"}); });
   ((DATA.facts&&DATA.facts.pending)||[]).forEach(p=>{ const label=FRIENDLY_PENDING[p.metric]||p.metric; add("Awaiting","Not yet known",label,`awaiting ${p.blockedBy}`,chHref("unknown"),[p.metric,"pending unknown not yet"],{key:label,sec:"unknown"}); });
   (DATA.withheld||[]).forEach(w=>add("Withheld","Not published",w,"kept private — never leaves the archive",chHref("unknown"),["withheld private not published"],{key:"withheld",sec:"unknown"}));
