@@ -744,6 +744,8 @@ const chHref=id=>{ const p=partOf(id); return p?partHref(p,id):"#/"; };
 const stampHref=id=>`#/stamp/${id}`;
 /* Candidate stamps have no iss_ — their page is keyed by the public locator id. */
 const candHref=id=>`#/candidate/${encodeURIComponent(id)}`;
+/* A drill-down link: an aggregate count → the actual candidate stamps behind it. */
+const setHref=(dim,value)=>`#/set/${dim}/${encodeURIComponent(value)}`;
 const candidateById=id=>(DATA.candidates||[]).find(c=>c.id===id)||null;
 /* The "distinct as read" fingerprint — the same fields facts.ts groups on. Two candidates that
    fingerprint alike are the apparent duplicates a person would later merge or keep. */
@@ -1136,6 +1138,49 @@ function candidatePage(c){
     ${CANDLEGEND}
   </div></section>`;
 }
+/* Client-side currency bucket — MUST mirror facts.ts parseFaceValue's buckets so the drill-down
+   set matches the count it came from. Bucket only (no value), enough to filter. */
+function candCurrency(c){
+  const d=(c.denomination||"").trim(); if(!d) return null;
+  const terr=(c.territory||"").toLowerCase(); const francLand=/france|monaco|switz|swiss|belg|luxemb/.test(terr);
+  if(/€|\beur/i.test(d)) return "€ euro";
+  if(/£|\bgbp/i.test(d)||/pence|penny|\bp\b/i.test(d)) return "£ sterling";
+  if(/\$|\busd/i.test(d)||(/¢|cents?\b|\bc\b/i.test(d)&&!francLand)) return "$ dollar";
+  if(/\bft\b|forint/i.test(d)) return "Ft forint";
+  if(/franc|\bfr\b|\bfs\b/i.test(d)) return "franc";
+  if(/centime/i.test(d)||(/\bc\b/i.test(d)&&francLand)) return "franc";
+  if(/fill|\bf\b/i.test(d)) return francLand?"franc":"Ft forint";
+  return "unmarked";
+}
+const DIM_LABEL={territory:"Territory",theme:"Theme",form:"Form",issuer:"Issuer",currency:"Currency",defunct:"No longer exists"};
+function setMatch(c,dim,value){
+  if(dim==="territory") return c.territory===value;
+  if(dim==="theme") return c.theme===value;
+  if(dim==="form") return c.form===value;
+  if(dim==="issuer") return c.issuer===value;
+  if(dim==="currency") return candCurrency(c)===value;
+  if(dim==="defunct") return c.issuerStatus==="defunct" && (value==="*"||(c.resolvedIssuer||c.issuer)===value);
+  return false;
+}
+/* The filtered set behind any count: every matching candidate stamp, grouped by album, each a link
+   to its own page. This is the drill-down — a number is never a dead end. */
+function setPage(dim,value){
+  const cands=(DATA.candidates||[]).filter(c=>setMatch(c,dim,value));
+  const label=dim==="form"?formLabel(value):(dim==="defunct"&&value!=="*"?value:value);
+  const byAlbum={}; cands.forEach(c=>{ (byAlbum[c.album]=byAlbum[c.album]||[]).push(c); });
+  const groups=Object.keys(byAlbum).sort().map(al=>{
+    const rows=byAlbum[al].slice().sort((a,b)=>a.id.localeCompare(b.id)).map(c=>`<li><a href="${candHref(c.id)}" style="color:inherit;text-decoration:none"><span class="meta">${dot("candidate")} p${esc(String(c.page))} · ${c.ordinal}/${c.stampsOnPage}</span> <span class="small">${esc(c.reading||"nothing legible yet")}</span></a></li>`).join("");
+    return `<div class="card"><h3>${esc(al)}</h3><ul class="recent" style="margin-top:8px">${rows}</ul></div>`;
+  }).join("");
+  const heading=dim==="defunct"&&value==="*"?"Issuers that no longer exist":esc(String(label));
+  const backHref={territory:"#/territories",theme:"#/themes",form:"#/forms",issuer:"#/countries",currency:"#/money",defunct:"#/territories"}[dim]||"#/";
+  return `<section class="band"><div class="wrap"><span class="eyebrow"><a href="${backHref}" style="color:inherit">${esc(DIM_LABEL[dim]||dim)}</a>${dim==="defunct"&&value==="*"?"":` · ${esc(String(label))}`}</span>
+    <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">${heading}</h1>
+    <p class="lede" style="max-width:64ch"><strong>${fmt(cands.length)}</strong> candidate stamp${cands.length===1?"":"s"} ${dim==="defunct"?"from issuers that no longer exist":`the machine read as <strong>${esc(String(label))}</strong>`}. Open one for the full read, its resolution, and its apparent duplicates.</p>
+    <div class="grid g2" style="margin-top:18px">${groups||"<p class=small>No matching stamps.</p>"}</div>
+    ${CANDLEGEND}
+  </div></section>`;
+}
 function issuersBand(){
   const iss=(DATA.facts&&DATA.facts.issuers)||[];
   if(!iss.length) return "";
@@ -1143,7 +1188,7 @@ function issuersBand(){
   return `<section class="band reveal" aria-labelledby="iss-h"><div class="wrap">
     <div class="band-head"><div><span class="eyebrow">By issuer</span><h2 id="iss-h">Who printed the post</h2></div><a class="more" href="#/countries">All ${fmt(iss.length)} issuers →</a></div>
     <p class="small" style="max-width:66ch;margin-top:4px">Counted by the issuer name printed on each stamp, <em>as the machine read it</em> — "Nippon", "NIPPON" and "Japan Post" stay separate rows here; the machine's candidate resolution rolls them up under <a href="#/territories">territories</a> and flags the ones that no longer exist. Every count is a candidate until confirmed.</p>
-    <div class="grid g3" style="margin-top:16px">${top.map(i=>`<div class="card" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span>${dot(i.confirmed>0?"confirmed":"candidate","")} ${esc(i.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">${fmt(i.candidate+i.confirmed)}</strong></div>`).join("")}</div>
+    <div class="grid g3" style="margin-top:16px">${top.map(i=>`<a class="card" href="${setHref('issuer',i.name)}" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;color:inherit;text-decoration:none"><span>${dot(i.confirmed>0?"confirmed":"candidate","")} ${esc(i.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">${fmt(i.candidate+i.confirmed)}</strong></a>`).join("")}</div>
     ${CANDLEGEND}
   </div></section>`;
 }
@@ -1158,7 +1203,7 @@ function extinctCard(){
     cur.count+=(i.candidate||0)+(i.confirmed||0); if(!cur.succ&&i.succeededBy) cur.succ=i.succeededBy; byName[key]=cur; });
   const list=Object.values(byName).sort((a,b)=>b.count-a.count);
   if(!list.length) return "";
-  const rows=list.map(d=>`<li style="display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid var(--rule-soft)"><span>${dot("candidate","")} <strong>${esc(d.name)}</strong>${d.succ?` <span class="small" style="color:var(--ink-3)">→ ${esc(d.succ)}</span>`:""}</span><span class="small">${fmt(d.count)}</span></li>`).join("");
+  const rows=list.map(d=>`<li><a href="${setHref('defunct',d.name)}" style="display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid var(--rule-soft);color:inherit;text-decoration:none"><span>${dot("candidate","")} <strong>${esc(d.name)}</strong>${d.succ?` <span class="small" style="color:var(--ink-3)">→ ${esc(d.succ)}</span>`:""}</span><span class="small">${fmt(d.count)}</span></a></li>`).join("");
   return `<div class="card" style="border-left:3px solid var(--terra)"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><h3 style="margin:0">Issuers that no longer exist</h3><strong style="font-family:var(--ff-display);font-size:1.6em;color:var(--terra)">${fmt(list.length)}</strong></div>
     <p class="small" style="margin:6px 0 4px;color:var(--ink-2)">Places that once printed the post and have since been renamed, absorbed or dissolved — each still counted under the name it issued as, with where it went next.</p>
     <ul style="list-style:none;padding:0;margin:8px 0 0">${rows}</ul>
@@ -1171,7 +1216,7 @@ function countriesPage(){
   const rows=iss.map(i=>{
     const mark=i.status==="defunct"?` <span class="small" style="color:var(--terra)">· no longer issues${i.succeededBy?` → ${esc(i.succeededBy)}`:""}</span>`:"";
     const terr=i.territory&&i.territory!==i.name?` <span class="small" style="color:var(--ink-3)">· ${esc(i.territory)}</span>`:"";
-    return `<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>${dot(i.confirmed>0?"confirmed":"candidate","")} ${esc(i.name)}${terr}${mark}</span><span class="small">${i.confirmed?`${fmt(i.confirmed)} confirmed${i.candidate?" · ":""}`:""}${i.candidate?`${fmt(i.candidate)}${i.distinct<i.candidate?` <span style="color:var(--ink-3)">· ${fmt(i.distinct)} distinct</span>`:""}`:""}</span></li>`;
+    return `<li><a href="${setHref('issuer',i.name)}" style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4);color:inherit;text-decoration:none"><span>${dot(i.confirmed>0?"confirmed":"candidate","")} ${esc(i.name)}${terr}${mark}</span><span class="small">${i.confirmed?`${fmt(i.confirmed)} confirmed${i.candidate?" · ":""}`:""}${i.candidate?`${fmt(i.candidate)}${i.distinct<i.candidate?` <span style="color:var(--ink-3)">· ${fmt(i.distinct)} distinct</span>`:""}`:""}</span></a></li>`;
   }).join("");
   return `<section class="band"><div class="wrap"><span class="eyebrow">By issuer</span>
     <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Issuers</h1>
@@ -1189,14 +1234,14 @@ function themesBand(){
   return `<section class="band reveal" aria-labelledby="th-h"><div class="wrap">
     <div class="band-head"><div><span class="eyebrow">By theme</span><h2 id="th-h">What the collection is about</h2></div><a class="more" href="#/themes">All ${fmt(th.length)} themes →</a></div>
     <p class="small" style="max-width:66ch;margin-top:4px">The machine grouped each stamp it read by <em>subject</em> — a bird, a footballer, a saint — into a coarse theme. A candidate view of the collection's shape, drawn from ${fmt(total)} read subjects; a person confirms a theme over time.</p>
-    <div class="grid g3" style="margin-top:16px">${top.map(t=>`<div class="card" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span>${dot(t.confirmed>0?"confirmed":"candidate","")} ${esc(t.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">${fmt(t.candidate+t.confirmed)}</strong></div>`).join("")}</div>
+    <div class="grid g3" style="margin-top:16px">${top.map(t=>`<a class="card" href="${setHref('theme',t.name)}" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;color:inherit;text-decoration:none"><span>${dot(t.confirmed>0?"confirmed":"candidate","")} ${esc(t.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">${fmt(t.candidate+t.confirmed)}</strong></a>`).join("")}</div>
     ${CANDLEGEND}
   </div></section>`;
 }
 function themesPage(){
   const th=(DATA.facts&&DATA.facts.themes)||[];
   const total=th.reduce((n,t)=>n+t.candidate+t.confirmed,0);
-  const rows=th.map(t=>`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>${dot(t.confirmed>0?"confirmed":"candidate","")} ${esc(t.name)}</span><span class="small">${t.confirmed?`${fmt(t.confirmed)} confirmed${t.candidate?" · ":""}`:""}${t.candidate?`${fmt(t.candidate)}${t.distinct<t.candidate?` <span style="color:var(--ink-3)">· ${fmt(t.distinct)} distinct</span>`:""}`:""}</span></li>`).join("");
+  const rows=th.map(t=>`<li><a href="${setHref('theme',t.name)}" style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4);color:inherit;text-decoration:none"><span>${dot(t.confirmed>0?"confirmed":"candidate","")} ${esc(t.name)}</span><span class="small">${t.confirmed?`${fmt(t.confirmed)} confirmed${t.candidate?" · ":""}`:""}${t.candidate?`${fmt(t.candidate)}${t.distinct<t.candidate?` <span style="color:var(--ink-3)">· ${fmt(t.distinct)} distinct</span>`:""}`:""}</span></a></li>`).join("");
   return `<section class="band"><div class="wrap"><span class="eyebrow">By theme</span>
     <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Themes</h1>
     <p class="lede" style="max-width:66ch">${fmt(th.length)} themes the atlas has grouped the collection under, from ${fmt(total)} subjects the machine read across the pages. <strong>A candidate grouping</strong> — each is only as good as the subject the machine read, and a person confirms a theme over time. Nothing here is verified, and it says so.</p>
@@ -1213,14 +1258,14 @@ function territoriesBand(){
   return `<section class="band reveal" aria-labelledby="terr-h"><div class="wrap">
     <div class="band-head"><div><span class="eyebrow">By territory</span><h2 id="terr-h">Where the post came from</h2></div><a class="more" href="#/territories">All ${fmt(t.length)} territories →</a></div>
     <p class="small" style="max-width:66ch;margin-top:4px">The issuer names rolled up to the <em>place</em> — "Nippon", "NIPPON" and "Japan Post" become one Japan. A candidate resolution the machine proposed; a person confirms it${ext.length?`, and it flags <a href="#/countries">${fmt(new Set(ext.map(i=>i.resolvedName||i.name)).size)} that no longer exist</a>`:""}.</p>
-    <div class="grid g3" style="margin-top:16px">${top.map(x=>`<div class="card" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span>${dot("candidate","")} ${esc(x.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">${fmt(x.candidate+x.confirmed)}</strong></div>`).join("")}</div>
+    <div class="grid g3" style="margin-top:16px">${top.map(x=>`<a class="card" href="${setHref('territory',x.name)}" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;color:inherit;text-decoration:none"><span>${dot("candidate","")} ${esc(x.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">${fmt(x.candidate+x.confirmed)}</strong></a>`).join("")}</div>
     ${CANDLEGEND}
   </div></section>`;
 }
 function territoriesPage(){
   const t=(DATA.facts&&DATA.facts.territories)||[];
   const total=t.reduce((n,x)=>n+x.candidate+x.confirmed,0);
-  const rows=t.map(x=>`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>${dot("candidate","")} ${esc(x.name)}</span><span class="small">${fmt(x.candidate+x.confirmed)}${x.distinct<x.candidate?` <span style="color:var(--ink-3)">· ${fmt(x.distinct)} distinct</span>`:""}</span></li>`).join("");
+  const rows=t.map(x=>`<li><a href="${setHref('territory',x.name)}" style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4);color:inherit;text-decoration:none"><span>${dot("candidate","")} ${esc(x.name)}</span><span class="small">${fmt(x.candidate+x.confirmed)}${x.distinct<x.candidate?` <span style="color:var(--ink-3)">· ${fmt(x.distinct)} distinct</span>`:""}</span></a></li>`).join("");
   return `<section class="band"><div class="wrap"><span class="eyebrow">By territory</span>
     <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Territories</h1>
     <p class="lede" style="max-width:66ch">${fmt(t.length)} territories the collection touches, from ${fmt(total)} stamps — the issuer names resolved to the <em>place</em>. A rename of one continuous place folds together (Ceylon and Sri Lanka are one territory, two issuer names); genuinely distinct states stay apart (East and West Germany never fold into modern Germany). <strong>A candidate resolution</strong> the machine proposed; a person confirms it.</p>
@@ -1242,14 +1287,14 @@ function formsBand(){
   return `<section class="band reveal" aria-labelledby="form-h"><div class="wrap">
     <div class="band-head"><div><span class="eyebrow">By form</span><h2 id="form-h">The special pieces</h2></div><a class="more" href="#/forms">All forms →</a></div>
     <p class="small" style="max-width:66ch;margin-top:4px">Most of the collection is single stamps; these are the pieces that are <em>more</em> — sheets, blocks, se-tenant strips, covers. <strong>${fmt(specialTotal)}</strong> special ${specialTotal===1?"piece":"pieces"} the machine read, all candidate until confirmed.</p>
-    <div class="grid g3" style="margin-top:16px">${top.map(x=>`<div class="card" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span>${dot("candidate","")} ${esc(formLabel(x.name))}</span><strong style="font-family:var(--ff-display);font-size:1.5em">${fmt(x.candidate)}</strong></div>`).join("")}</div>
+    <div class="grid g3" style="margin-top:16px">${top.map(x=>`<a class="card" href="${setHref('form',x.name)}" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;color:inherit;text-decoration:none"><span>${dot("candidate","")} ${esc(formLabel(x.name))}</span><strong style="font-family:var(--ff-display);font-size:1.5em">${fmt(x.candidate)}</strong></a>`).join("")}</div>
     ${CANDLEGEND}
   </div></section>`;
 }
 function formsPage(){
   const f=(DATA.facts&&DATA.facts.forms)||[];
   const total=f.reduce((n,x)=>n+x.candidate,0);
-  const rows=f.map(x=>`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>${dot("candidate","")} ${esc(formLabel(x.name))}</span><span class="small">${fmt(x.candidate)}${x.distinct<x.candidate?` <span style="color:var(--ink-3)">· ${fmt(x.distinct)} distinct</span>`:""}</span></li>`).join("");
+  const rows=f.map(x=>`<li><a href="${setHref('form',x.name)}" style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4);color:inherit;text-decoration:none"><span>${dot("candidate","")} ${esc(formLabel(x.name))}</span><span class="small">${fmt(x.candidate)}${x.distinct<x.candidate?` <span style="color:var(--ink-3)">· ${fmt(x.distinct)} distinct</span>`:""}</span></a></li>`).join("");
   return `<section class="band"><div class="wrap"><span class="eyebrow">By form</span>
     <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Forms</h1>
     <p class="lede" style="max-width:66ch">Every piece the machine read, by philatelic form — from a plain single stamp to a souvenir sheet, block, se-tenant strip or cover — across ${fmt(total)} read. <strong>Candidate</strong>: the form is the machine's reading (a first-day cover reads simply as "cover"), a person confirms it. A sheet is one collectible <em>and</em> its stamps (ADR-0036).</p>
@@ -1264,7 +1309,7 @@ function moneyBand(){
   return `<section class="band reveal" aria-labelledby="cur-h"><div class="wrap">
     <div class="band-head"><div><span class="eyebrow">By currency</span><h2 id="cur-h">The money on the stamps</h2></div><a class="more" href="#/money">All currencies →</a></div>
     <p class="small" style="max-width:66ch;margin-top:4px">A light read of the face values' currency, with a <em>rough total postage</em> in each — sub-units folded into the main unit (cents→dollars, fillér→forint). <strong>Coarse and candidate</strong>: parsed from the denomination the machine saw, disambiguated by territory; never converted across currencies (that would be a fiction). It's the postage once affixed, <em>not</em> the collection's worth.</p>
-    <div class="grid g3" style="margin-top:16px">${top.map(x=>`<div class="card" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span>${dot("candidate","")} ${esc(x.name)} <span class="small" style="color:var(--ink-3)">· ${fmt(x.candidate)}</span></span><strong style="font-family:var(--ff-display);font-size:1.4em">${x.valueTotal!=null?`${esc(x.unit)}${fmt(Math.round(x.valueTotal))}`:"—"}</strong></div>`).join("")}</div>
+    <div class="grid g3" style="margin-top:16px">${top.map(x=>`<a class="card" href="${setHref('currency',x.name)}" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;color:inherit;text-decoration:none"><span>${dot("candidate","")} ${esc(x.name)} <span class="small" style="color:var(--ink-3)">· ${fmt(x.candidate)}</span></span><strong style="font-family:var(--ff-display);font-size:1.4em">${x.valueTotal!=null?`${esc(x.unit)}${fmt(Math.round(x.valueTotal))}`:"—"}</strong></a>`).join("")}</div>
     ${CANDLEGEND}
   </div></section>`;
 }
@@ -1272,7 +1317,7 @@ function moneyPage(){
   const all=(DATA.facts&&DATA.facts.currencies)||[];
   const c=all.filter(x=>x.name!=="unmarked");
   const unmarked=(all.find(x=>x.name==="unmarked")||{}).candidate||0;
-  const rows=c.map(x=>`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>${dot("candidate","")} ${esc(x.name)}</span><span class="small">${x.valueTotal!=null?`<strong>${esc(x.unit)}${fmt(Math.round(x.valueTotal*100)/100)}</strong> · `:""}${fmt(x.candidate)} stamp${x.candidate===1?"":"s"}</span></li>`).join("");
+  const rows=c.map(x=>`<li><a href="${setHref('currency',x.name)}" style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4);color:inherit;text-decoration:none"><span>${dot("candidate","")} ${esc(x.name)}</span><span class="small">${x.valueTotal!=null?`<strong>${esc(x.unit)}${fmt(Math.round(x.valueTotal*100)/100)}</strong> · `:""}${fmt(x.candidate)} stamp${x.candidate===1?"":"s"}</span></a></li>`).join("");
   return `<section class="band"><div class="wrap"><span class="eyebrow">By currency</span>
     <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Money</h1>
     <p class="lede" style="max-width:66ch">${fmt(c.length)} currencies the atlas read across the face values, each with a <strong>rough total of the postage</strong> in that currency — sub-units folded into the main unit (100 cents = $1, 100 fillér = 1 Ft). <strong>A light candidate parse</strong> from the denomination the machine saw, disambiguated by the issuer's territory; face values are <em>never</em> converted between currencies (adding a 1950s DDR pfennig to a euro would be a made-up number), and this is the postage once affixed, <em>not</em> the collection's worth. ${fmt(unmarked)} face value${unmarked===1?"":"s"} it couldn't place are left <em>unmarked</em> rather than guessed.</p>
@@ -1651,6 +1696,7 @@ function parseRoute(){
   if(seg[0]==="stamps") return {kind:"register"};
   if(seg[0]==="candidates") return {kind:"candidates"};
   if(seg[0]==="candidate"){ const c=candidateById(decodeURIComponent(seg.slice(1).join("/"))); return c?{kind:"candidate",candidate:c}:{kind:"404",hash:h}; }
+  if(seg[0]==="set"&&seg[1]) return {kind:"set",dim:seg[1],value:seg[2]?decodeURIComponent(seg.slice(2).join("/")):"*"};
   if(seg[0]==="countries"||seg[0]==="issuers") return {kind:"countries"};
   if(seg[0]==="themes") return {kind:"themes"};
   if(seg[0]==="territories") return {kind:"territories"};
@@ -1681,6 +1727,7 @@ function navigate(){
     case "register": html=registerPage(); title="The Register — Stamp Atlas"; break;
     case "candidates": html=candidatesPage(); title="Candidate readings — Stamp Atlas"; break;
     case "candidate": html=candidatePage(r.candidate); title=`${r.candidate.album} · p${r.candidate.page} · ${r.candidate.ordinal}/${r.candidate.stampsOnPage} — Stamp Atlas`; break;
+    case "set":      html=setPage(r.dim,r.value); title=`${r.value==="*"?"Set":r.value} — Stamp Atlas`; break;
     case "countries": html=countriesPage(); title="Issuers — Stamp Atlas"; break;
     case "themes":   html=themesPage(); title="Themes — Stamp Atlas"; break;
     case "territories": html=territoriesPage(); title="Territories — Stamp Atlas"; break;
