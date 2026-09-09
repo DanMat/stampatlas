@@ -1053,6 +1053,7 @@ function candidatesBand(){
   return `<section class="band reveal" aria-labelledby="cand-h"><div class="wrap">
     <div class="band-head"><div><span class="eyebrow">The machine's reading</span><h2 id="cand-h">What the atlas thinks it sees</h2></div><a class="more" href="#/candidates">All candidate readings →</a></div>
     <p class="lede" style="max-width:64ch;margin-top:6px">Each card is the machine's <strong>candidate</strong> reading of one stamp — drawn from the photograph, cited to what it saw, <em>and not yet confirmed by a person</em>. <strong>${fmt(np.namedByMachine)}</strong> named by the atlas · <strong>${fmt(np.verifiedByPerson)}</strong> verified by a person. The gap is honest guesswork, and the page never hides it.</p>
+    ${(DATA.facts&&DATA.facts.distinctReadings)?`<p class="small" style="margin-top:8px;color:var(--ink-2)"><strong>${fmt(np.namedByMachine)}</strong> read · <strong>${fmt(DATA.facts.distinctReadings)}</strong> distinct as read · <strong>${fmt(np.namedByMachine-DATA.facts.distinctReadings)}</strong> look like duplicates <span class="small" style="color:var(--ink-3)">— fingerprinted on what was read, an estimate not a verified count</span></p>`:""}
     <div class="grid g3" style="margin-top:18px">${sample.map(c=>`<div class="card"><div class="meta">${dot("candidate","*")} ${esc(c.album)} · p${esc(String(c.page))} · ${c.ordinal}/${c.stampsOnPage}</div><p class="small" style="margin-top:8px">${esc(c.reading||"Nothing legible yet — a closer photograph would help.")}</p></div>`).join("")}</div>
     ${cands.length>sample.length?`<p class="small" style="margin-top:14px"><a href="#/candidates">…and ${fmt(cands.length-sample.length)} more candidate readings →</a></p>`:""}
     ${CANDLEGEND}
@@ -1069,6 +1070,7 @@ function candidatesPage(){
   return `<section class="band"><div class="wrap"><span class="eyebrow">The machine's reading · candidates</span>
     <h1 style="margin-top:8px">Candidate readings</h1>
     <p class="lede" style="max-width:64ch">${fmt(np.namedByMachine)} stamps the atlas has read and named as <strong>candidates</strong>, ${fmt(np.verifiedByPerson)} confirmed by a person. A candidate is the machine's honest guess from the photograph, cited to what it saw; a person turns it from a guess into a fact over time. Nothing here is verified, and it says so.</p>
+    ${(DATA.facts&&DATA.facts.distinctReadings)?`<p class="small" style="max-width:66ch;margin-top:2px;color:var(--ink-2)"><strong>${fmt(np.namedByMachine)}</strong> read · <strong>${fmt(DATA.facts.distinctReadings)}</strong> distinct as read · <strong>${fmt(np.namedByMachine-DATA.facts.distinctReadings)}</strong> look like duplicates. Two stamps count as one when they read the same — issuer, year, value and subject; a fuzzy signal (sparse reads merge, "Nippon" and "NIPPON" split), never a verified duplicate count.</p>`:""}
     <div class="grid g2" style="margin-top:18px">${groups||"<p class=small>No candidate readings yet.</p>"}</div>
     ${CANDLEGEND}
   </div></section>`;
@@ -1086,10 +1088,11 @@ function issuersBand(){
 }
 function countriesPage(){
   const iss=(DATA.facts&&DATA.facts.issuers)||[];
-  const rows=iss.map(i=>`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>${dot(i.confirmed>0?"confirmed":"candidate","")} ${esc(i.name)}</span><span class="small">${i.confirmed?`${fmt(i.confirmed)} confirmed${i.candidate?" · ":""}`:""}${i.candidate?fmt(i.candidate):""}</span></li>`).join("");
+  const rows=iss.map(i=>`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>${dot(i.confirmed>0?"confirmed":"candidate","")} ${esc(i.name)}</span><span class="small">${i.confirmed?`${fmt(i.confirmed)} confirmed${i.candidate?" · ":""}`:""}${i.candidate?`${fmt(i.candidate)}${i.distinct<i.candidate?` <span style="color:var(--ink-3)">· ${fmt(i.distinct)} distinct</span>`:""}`:""}</span></li>`).join("");
   return `<section class="band"><div class="wrap"><span class="eyebrow">By issuer</span>
     <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Issuers</h1>
     <p class="lede" style="max-width:66ch">${fmt(iss.length)} distinct issuer names the atlas has read across the collection, counted by how many stamps carry each. <strong>As read, not yet resolved to entities</strong> — "Nippon", "NIPPON" and "Japan Post" stay separate until a person maps them to Japan, and the succession graph (which issuers no longer exist) is a later phase. Every count is a candidate until a person confirms it.</p>
+    ${(DATA.facts&&DATA.facts.distinctReadings)?`<p class="small" style="max-width:66ch;margin-top:2px;color:var(--ink-2)"><strong>${fmt((DATA.facts.namingProgress||{}).namedByMachine||0)}</strong> read · <strong>${fmt(DATA.facts.distinctReadings)}</strong> distinct as read. Each row's <span style="color:var(--ink-3)">· N distinct</span> is how many of its stamps look different — fingerprinted on issuer, year, value and subject, an estimate not a verified duplicate count.</p>`:""}
     <ul style="list-style:none;padding:0;margin:20px 0 0;columns:2;column-gap:40px">${rows||"<li class=small>No issuers read yet.</li>"}</ul>
     ${CANDLEGEND}
   </div></section>`;
@@ -1109,10 +1112,11 @@ function themesBand(){
 function themesPage(){
   const th=(DATA.facts&&DATA.facts.themes)||[];
   const total=th.reduce((n,t)=>n+t.candidate+t.confirmed,0);
-  const rows=th.map(t=>`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>${dot(t.confirmed>0?"confirmed":"candidate","")} ${esc(t.name)}</span><span class="small">${t.confirmed?`${fmt(t.confirmed)} confirmed${t.candidate?" · ":""}`:""}${t.candidate?fmt(t.candidate):""}</span></li>`).join("");
+  const rows=th.map(t=>`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>${dot(t.confirmed>0?"confirmed":"candidate","")} ${esc(t.name)}</span><span class="small">${t.confirmed?`${fmt(t.confirmed)} confirmed${t.candidate?" · ":""}`:""}${t.candidate?`${fmt(t.candidate)}${t.distinct<t.candidate?` <span style="color:var(--ink-3)">· ${fmt(t.distinct)} distinct</span>`:""}`:""}</span></li>`).join("");
   return `<section class="band"><div class="wrap"><span class="eyebrow">By theme</span>
     <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Themes</h1>
     <p class="lede" style="max-width:66ch">${fmt(th.length)} themes the atlas has grouped the collection under, from ${fmt(total)} subjects the machine read across the pages. <strong>A candidate grouping</strong> — each is only as good as the subject the machine read, and a person confirms a theme over time. Nothing here is verified, and it says so.</p>
+    ${(DATA.facts&&DATA.facts.distinctReadings)?`<p class="small" style="max-width:66ch;margin-top:2px;color:var(--ink-2)"><strong>${fmt((DATA.facts.namingProgress||{}).namedByMachine||0)}</strong> read · <strong>${fmt(DATA.facts.distinctReadings)}</strong> distinct as read. Each row's <span style="color:var(--ink-3)">· N distinct</span> is how many of its stamps look different — fingerprinted on issuer, year, value and subject, an estimate not a verified duplicate count.</p>`:""}
     <ul style="list-style:none;padding:0;margin:20px 0 0;columns:2;column-gap:40px">${rows||"<li class=small>No themes read yet.</li>"}</ul>
     ${CANDLEGEND}
   </div></section>`;
