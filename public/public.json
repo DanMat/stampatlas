@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T23:56:33.193Z",
+  "generatedAt": "2026-09-09T00:16:54.660Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -78,9 +78,19 @@
           "unknown": 0
         },
         "eligiblePopulation": 26
+      },
+      {
+        "metric": "distinctThemeCount",
+        "unit": "themes the machine grouped read subjects under — candidate, not yet confirmed",
+        "value": {
+          "confirmed": 0,
+          "candidate": 13,
+          "unknown": 0
+        },
+        "eligiblePopulation": 13
       }
     ],
-    "asOf": "2026-09-08T23:56:41.624Z",
+    "asOf": "2026-09-09T00:17:03.920Z",
     "namingProgress": {
       "namedByMachine": 202,
       "verifiedByPerson": 0
@@ -213,6 +223,73 @@
       },
       {
         "name": "St. Vincent",
+        "candidate": 1,
+        "confirmed": 0
+      }
+    ],
+    "themes": [
+      {
+        "name": "other",
+        "candidate": 71,
+        "confirmed": 0
+      },
+      {
+        "name": "wildlife",
+        "candidate": 28,
+        "confirmed": 0
+      },
+      {
+        "name": "sport",
+        "candidate": 27,
+        "confirmed": 0
+      },
+      {
+        "name": "religion",
+        "candidate": 17,
+        "confirmed": 0
+      },
+      {
+        "name": "art",
+        "candidate": 6,
+        "confirmed": 0
+      },
+      {
+        "name": "flora",
+        "candidate": 6,
+        "confirmed": 0
+      },
+      {
+        "name": "people",
+        "candidate": 6,
+        "confirmed": 0
+      },
+      {
+        "name": "transport",
+        "candidate": 5,
+        "confirmed": 0
+      },
+      {
+        "name": "maritime",
+        "candidate": 3,
+        "confirmed": 0
+      },
+      {
+        "name": "event",
+        "candidate": 2,
+        "confirmed": 0
+      },
+      {
+        "name": "space",
+        "candidate": 2,
+        "confirmed": 0
+      },
+      {
+        "name": "buildings",
+        "candidate": 1,
+        "confirmed": 0
+      },
+      {
+        "name": "map",
         "candidate": 1,
         "confirmed": 0
       }
@@ -493,6 +570,7 @@
       "subjects": [
         "grey/blue cat, die-cut shape"
       ],
+      "theme": "wildlife",
       "reading": "Depicts grey/blue cat, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M2188AZ02WN71TD7T5FZ402P",
@@ -518,6 +596,7 @@
       "subjects": [
         "blue-toned landscape, round stamp"
       ],
+      "theme": "other",
       "reading": "Depicts blue-toned landscape, round stamp. Printed \"NIPPON\". A face value of 75. A single stamp.",
       "basis": [
         "asr_01M2188BN1YAK09CG48CNTDZCN",
@@ -543,6 +622,7 @@
       "subjects": [
         "rabbit with strawberries/berries, oval stamp"
       ],
+      "theme": "wildlife",
       "reading": "Depicts rabbit with strawberries/berries, oval stamp. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M2188D16MJ5X8S7N77NQ07J3",
@@ -568,6 +648,7 @@
       "subjects": [
         "green leaves with flowers"
       ],
+      "theme": "flora",
       "reading": "Depicts green leaves with flowers. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M2188C0EXAGR9C9DZJP90JFV",
@@ -593,6 +674,7 @@
       "subjects": [
         "purple rabbit, die-cut shape"
       ],
+      "theme": "wildlife",
       "reading": "Depicts purple rabbit, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M2188BAPQZT0NHXYSHT2AT5N",
@@ -618,6 +700,7 @@
       "subjects": [
         "large orange/brown cat, die-cut shape"
       ],
+      "theme": "wildlife",
       "reading": "Depicts large orange/brown cat, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M2188CP8237RC5DX2698TCE3",
@@ -643,6 +726,7 @@
       "subjects": [
         "blue background with white flowers and child figure, die-cut shape"
       ],
+      "theme": "flora",
       "reading": "Depicts blue background with white flowers and child figure, die-cut shape. Printed \"NIPPON\". A single stamp.",
       "basis": [
         "asr_01M2188CC3EQP48ER4556C74WG",
@@ -667,6 +751,7 @@
       "subjects": [
         "floral/envelope design, scalloped round stamp"
       ],
+      "theme": "flora",
       "reading": "Depicts floral/envelope design, scalloped round stamp. Printed \"NIPPON\". A single stamp.",
       "basis": [
         "asr_01M218885T9DKVR22BQ0QV6HSP",
@@ -691,6 +776,7 @@
       "subjects": [
         "lavender rabbit, die-cut shape"
       ],
+      "theme": "wildlife",
       "reading": "Depicts lavender rabbit, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21889EHGMJF3GXMJ64W1JCM",
@@ -716,6 +802,7 @@
       "subjects": [
         "child figure in yellow, round stamp"
       ],
+      "theme": "people",
       "reading": "Depicts child figure in yellow, round stamp. Printed \"NIPPON\". A single stamp.",
       "basis": [
         "asr_01M21889X3A799KMETXGFHC0AJ",
@@ -740,6 +827,7 @@
       "subjects": [
         "brown horse or donkey, die-cut shape"
       ],
+      "theme": "wildlife",
       "reading": "Depicts brown horse or donkey, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M2188AM1AW17RWM9K1DSB17N",
@@ -765,6 +853,7 @@
       "subjects": [
         "purple/pink pansies"
       ],
+      "theme": "flora",
       "reading": "Depicts purple/pink pansies. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M2188A83YXP5HMF819JBHS31",
@@ -790,6 +879,7 @@
       "subjects": [
         "parakeet/lovebird, pink background"
       ],
+      "theme": "wildlife",
       "reading": "Depicts parakeet/lovebird, pink background. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21888FVFAMAHWDZARH6KYX5",
@@ -815,6 +905,7 @@
       "subjects": [
         "blue/purple rabbit with moon and stars, die-cut shape"
       ],
+      "theme": "wildlife",
       "reading": "Depicts blue/purple rabbit with moon and stars, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M218893X4JQB2C92VYX8VNGH",
@@ -840,6 +931,7 @@
       "subjects": [
         "white animal (goat or dog), die-cut shape"
       ],
+      "theme": "wildlife",
       "reading": "Depicts white animal (goat or dog), die-cut shape. Printed \"NIPPON\". A single stamp.",
       "basis": [
         "asr_01M21888TJDE2AKVXXP3NH5ME8",
@@ -864,6 +956,7 @@
       "subjects": [
         "Prince Albert I Antarctic expedition portrait (sepia/purple)"
       ],
+      "theme": "people",
       "reading": "Depicts Prince Albert I Antarctic expedition portrait (sepia/purple). Printed \"Monaco\". A face value of 2.50€. Issued 2015. A souvenir-sheet of 2.",
       "basis": [
         "asr_01M2189Q2JE5J68H267GZ4HN9Q",
@@ -890,6 +983,7 @@
       "subjects": [
         "spotted wildcat or horse painting"
       ],
+      "theme": "art",
       "reading": "Depicts spotted wildcat or horse painting. Printed \"Fujeira\". A block of 6.",
       "basis": [
         "asr_01M2189P754B317BBWDMQFAKFE",
@@ -914,6 +1008,7 @@
       "subjects": [
         "75th Grand Prix de Monaco - vintage race car (purple background)"
       ],
+      "theme": "sport",
       "reading": "Depicts 75th Grand Prix de Monaco - vintage race car (purple background). Printed \"Monaco\". A face value of 1.30€. Issued 1929. A souvenir-sheet of 4.",
       "basis": [
         "asr_01M2189RRS07CEYNHTDQ31EGH2",
@@ -940,6 +1035,7 @@
       "subjects": [
         "75th Grand Prix de Monaco - vintage race car (blue background)"
       ],
+      "theme": "sport",
       "reading": "Depicts 75th Grand Prix de Monaco - vintage race car (blue background). Printed \"Monaco\". A face value of 0.85€. Issued 1929. A souvenir-sheet of 4.",
       "basis": [
         "asr_01M2189S50HEVTFE4J3F49HABY",
@@ -966,6 +1062,7 @@
       "subjects": [
         "Dalmatian dog painting"
       ],
+      "theme": "art",
       "reading": "Depicts Dalmatian dog painting. Printed \"Fujeira\". A block of 6.",
       "basis": [
         "asr_01M2189NP7SBBAXBG4KQGC8W30",
@@ -990,6 +1087,7 @@
       "subjects": [
         "dark animal (bull/ox) painting"
       ],
+      "theme": "art",
       "reading": "Depicts dark animal (bull/ox) painting. Printed \"Fujeira\". A block of 6.",
       "basis": [
         "asr_01M2189NDMTXTDHZV8TNXT2E82",
@@ -1014,6 +1112,7 @@
       "subjects": [
         "African tribal scene with figures"
       ],
+      "theme": "people",
       "reading": "Depicts African tribal scene with figures. Printed \"Fujeira\". A block of 6.",
       "basis": [
         "asr_01M2189PS9MMRYAZYTB8RSGSG1",
@@ -1038,6 +1137,7 @@
       "subjects": [
         "African tribal scene with cattle"
       ],
+      "theme": "people",
       "reading": "Depicts African tribal scene with cattle. Printed \"Fujeira\". A block of 6.",
       "basis": [
         "asr_01M2189PGKGBSE9X5ZP6ZJZXKT",
@@ -1062,6 +1162,7 @@
       "subjects": [
         "75th Grand Prix de Monaco - vintage race car (green background)"
       ],
+      "theme": "sport",
       "reading": "Depicts 75th Grand Prix de Monaco - vintage race car (green background). Printed \"Monaco\". A face value of 0.85€. Issued 1929. A souvenir-sheet of 4.",
       "basis": [
         "asr_01M2189RCXNKV5JS1W2SPVBVRK",
@@ -1088,6 +1189,7 @@
       "subjects": [
         "cattle/herd painting"
       ],
+      "theme": "art",
       "reading": "Depicts cattle/herd painting. Printed \"Fujeira\". A block of 6.",
       "basis": [
         "asr_01M2189NZ6KBEP83NGEVF0EJJ5",
@@ -1112,6 +1214,7 @@
       "subjects": [
         "75th Grand Prix de Monaco - vintage race car (yellow background)"
       ],
+      "theme": "sport",
       "reading": "Depicts 75th Grand Prix de Monaco - vintage race car (yellow background). Printed \"Monaco\". A face value of 1.06€. Issued 1929. A souvenir-sheet of 4.",
       "basis": [
         "asr_01M2189QYCADEHTXPQ1PB6ZSMC",
@@ -1138,6 +1241,7 @@
       "subjects": [
         "Prince Albert I Antarctic expedition scene (ship/ice)"
       ],
+      "theme": "maritime",
       "reading": "Depicts Prince Albert I Antarctic expedition scene (ship/ice). Printed \"Monaco\". A face value of 2.50€. Issued 2015. A souvenir-sheet of 2.",
       "basis": [
         "asr_01M2189QFR5EESRMSKXVKD0Q0E",
@@ -1164,6 +1268,7 @@
       "subjects": [
         "Globe/emblem design"
       ],
+      "theme": "other",
       "reading": "Depicts Globe/emblem design. Printed \"Republica del Ecuador\". A face value of 10c. Issued 1939. A single stamp.",
       "basis": [
         "asr_01M218A0V4ZGT3DS816YZAZ49M",
@@ -1190,6 +1295,7 @@
       "subjects": [
         "Figures with starburst design"
       ],
+      "theme": "other",
       "reading": "Depicts Figures with starburst design. Printed \"St. Vincent\". A face value of 3 cents. A single stamp.",
       "basis": [
         "asr_01M218A2604DNPDWWZ49G4KN0A",
@@ -1215,6 +1321,7 @@
       "subjects": [
         "Globe/emblem design"
       ],
+      "theme": "other",
       "reading": "Depicts Globe/emblem design. Printed \"Republica del Ecuador\". A face value of 5c. Issued 1939. A single stamp.",
       "basis": [
         "asr_01M218A1M2BKBR2N62G1CVT0NW",
@@ -1241,6 +1348,7 @@
       "subjects": [
         "Globe/emblem design"
       ],
+      "theme": "other",
       "reading": "Depicts Globe/emblem design. Printed \"Republica del Ecuador\". A face value of 10c. Issued 1939. A single stamp.",
       "basis": [
         "asr_01M218A17VDHX8AVCQMVM66VKM",
@@ -1265,6 +1373,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M218A203SEYJNHPFJQ3RV146"
@@ -1287,6 +1396,7 @@
       "subjects": [
         "sports figure, single athlete design"
       ],
+      "theme": "sport",
       "reading": "Depicts sports figure, single athlete design. A face value of 1. A single stamp.",
       "basis": [
         "asr_01M218B06BTVK98JPCKE1YAPXJ",
@@ -1311,6 +1421,7 @@
       "subjects": [
         "sailing ship, blue"
       ],
+      "theme": "maritime",
       "reading": "Depicts sailing ship, blue. Printed \"Monaco\". A face value of 2f. A single stamp.",
       "basis": [
         "asr_01M218B0SZE7HHZH65P70QT77D",
@@ -1336,6 +1447,7 @@
       "subjects": [
         "sailing ship, blue"
       ],
+      "theme": "maritime",
       "reading": "Depicts sailing ship, blue. Printed \"Monaco\". A face value of 2f. A single stamp.",
       "basis": [
         "asr_01M218B2EJCTWR8SRAFZHKRX8J",
@@ -1361,6 +1473,7 @@
       "subjects": [
         "football players with flags"
       ],
+      "theme": "sport",
       "reading": "Depicts football players with flags. Printed \"Magyar Posta\". A face value of 1 Ft. A single stamp.",
       "basis": [
         "asr_01M218B3ZD0V3JT7ZHYTEKGXD8",
@@ -1386,6 +1499,7 @@
       "subjects": [
         "figure/design, red-toned"
       ],
+      "theme": "other",
       "reading": "Depicts figure/design, red-toned. A face value of 1. A single stamp.",
       "basis": [
         "asr_01M218B1TB095MB9ZWN92M8ZH7",
@@ -1410,6 +1524,7 @@
       "subjects": [
         "football players with flags"
       ],
+      "theme": "sport",
       "reading": "Depicts football players with flags. Printed \"Magyar Posta\". A face value of 4 Ft. A single stamp.",
       "basis": [
         "asr_01M218B5E97E9P4699ZV2JBNG9",
@@ -1435,6 +1550,7 @@
       "subjects": [
         "butterfly"
       ],
+      "theme": "wildlife",
       "reading": "Depicts butterfly. Printed \"Republik Maluku Selatan\". A face value of 10. A single stamp.",
       "basis": [
         "asr_01M218B30XMPM87F8EVFV41BCC",
@@ -1460,6 +1576,7 @@
       "subjects": [
         "football players with flags (World Cup themed)"
       ],
+      "theme": "sport",
       "reading": "Depicts football players with flags (World Cup themed). Printed \"Magyar Posta\". A face value of 1 Ft. A single stamp.",
       "basis": [
         "asr_01M218B3C3EGWS0BM7T8NY4CBK",
@@ -1485,6 +1602,7 @@
       "subjects": [
         "football players with flags, 'VB Chile' World Cup"
       ],
+      "theme": "sport",
       "reading": "Depicts football players with flags, 'VB Chile' World Cup. Printed \"Magyar Posta\". A face value of 2 Ft. Issued 1962. A single stamp.",
       "basis": [
         "asr_01M218B4PVR37MSHZY1HJ8P4ZD",
@@ -1511,6 +1629,7 @@
       "subjects": [
         "castle/building, red-toned"
       ],
+      "theme": "buildings",
       "reading": "Depicts castle/building, red-toned. Printed \"Monaco\". A face value of 3f. A single stamp.",
       "basis": [
         "asr_01M218B2394ZG1P5DFF7FZ3EPW",
@@ -1536,6 +1655,7 @@
       "subjects": [
         "abstract/pattern design"
       ],
+      "theme": "other",
       "reading": "Depicts abstract/pattern design. Printed \"Monaco\". A face value of 3f. A single stamp.",
       "basis": [
         "asr_01M218B0F8Z0ABTRD29EW00V95",
@@ -1561,6 +1681,7 @@
       "subjects": [
         "butterfly"
       ],
+      "theme": "wildlife",
       "reading": "Depicts butterfly. Printed \"Republik Maluku Selatan\". A single stamp.",
       "basis": [
         "asr_01M218B2R6CC2VJ3BATCS8Q1C6",
@@ -1585,6 +1706,7 @@
       "subjects": [
         "football players with flags"
       ],
+      "theme": "sport",
       "reading": "Depicts football players with flags. Printed \"Magyar Posta\". A face value of 1 Ft. A single stamp.",
       "basis": [
         "asr_01M218B53294KMRFX241B5G55E",
@@ -1610,6 +1732,7 @@
       "subjects": [
         "football players with flags"
       ],
+      "theme": "sport",
       "reading": "Depicts football players with flags. Printed \"Magyar Posta\". A face value of 2 Ft. A single stamp.",
       "basis": [
         "asr_01M218B3P1F9K3942WCC6PSG09",
@@ -1635,6 +1758,7 @@
       "subjects": [
         "butterfly"
       ],
+      "theme": "wildlife",
       "reading": "Depicts butterfly. Printed \"Republik Maluku Selatan\". A face value of 2½. A single stamp.",
       "basis": [
         "asr_01M218B15E6GJ4A7VBRPXAN45S",
@@ -1660,6 +1784,7 @@
       "subjects": [
         "Olympic sport scene, colorful"
       ],
+      "theme": "sport",
       "reading": "Depicts Olympic sport scene, colorful. Printed \"Magyar Posta\". A face value of 40 f. A single stamp.",
       "basis": [
         "asr_01M218B4AZBF7TTN5H37MNCN39",
@@ -1685,6 +1810,7 @@
       "subjects": [
         "butterfly"
       ],
+      "theme": "wildlife",
       "reading": "Depicts butterfly. Printed \"Republik Maluku Selatan\". A face value of 7½. A single stamp.",
       "basis": [
         "asr_01M218B1GDSSP3YPVJ7FB0AJX6",
@@ -1710,6 +1836,7 @@
       "subjects": [
         "Space capsule/satellite (Soyuz-related)"
       ],
+      "theme": "space",
       "reading": "Depicts Space capsule/satellite (Soyuz-related). Printed \"MONGOLIA\". A face value of 50. A single stamp.",
       "basis": [
         "asr_01M218DHQ1KCQTMWPNDYTYG3K8",
@@ -1735,6 +1862,7 @@
       "subjects": [
         "Sheep and other animals"
       ],
+      "theme": "wildlife",
       "reading": "Depicts Sheep and other animals. Printed \"AJMAN STATE\". A face value of various (e.g., 1, 4, 5, 10, 15). A block of 8.",
       "basis": [
         "asr_01M218DK6ZEZGDBVBBK57DCRA0",
@@ -1760,6 +1888,7 @@
       "subjects": [
         "Campeonato Mundial de Futebol 1982 Espana - soccer players"
       ],
+      "theme": "sport",
       "reading": "Depicts Campeonato Mundial de Futebol 1982 Espana - soccer players. Printed \"S. TOME E PRINCIPE\". A face value of 15/15/15/3. Issued 1982. A strip of 4.",
       "basis": [
         "asr_01M218DKHYN80BG7P9HEAKHTME",
@@ -1786,6 +1915,7 @@
       "subjects": [
         "Historical/royal court painting scene with figures in robes"
       ],
+      "theme": "art",
       "reading": "Depicts Historical/royal court painting scene with figures in robes. A face value of 7. A strip of 4.",
       "basis": [
         "asr_01M218DJM9Q8Y5RCDA1MT8GBRX",
@@ -1810,6 +1940,7 @@
       "subjects": [
         "Football/soccer players in action"
       ],
+      "theme": "sport",
       "reading": "Depicts Football/soccer players in action. Printed \"S. TOME E PRINCIPE\". A block of 4.",
       "basis": [
         "asr_01M218DJBZ796P5YBXT6D2VCYJ",
@@ -1834,6 +1965,7 @@
       "subjects": [
         "Dogs, horses, and other animals in nature scenes"
       ],
+      "theme": "wildlife",
       "reading": "Depicts Dogs, horses, and other animals in nature scenes. Printed \"RAS AL KHAIMA\". A face value of various (e.g., 10, 15, 20, 25, 50, 70, 120, 150). A block of 8.",
       "basis": [
         "asr_01M218DJWHHH9M4KV627V1FV46",
@@ -1859,6 +1991,7 @@
       "subjects": [
         "Camels"
       ],
+      "theme": "wildlife",
       "reading": "Depicts Camels. Printed \"MONGOLIA\". A face value of 40. A single stamp.",
       "basis": [
         "asr_01M218DJ224MM93QDVZTFWR3BW",
@@ -1884,6 +2017,7 @@
       "subjects": [
         "Tractor"
       ],
+      "theme": "transport",
       "reading": "Depicts Tractor. Printed \"Mongolia\". A face value of 60s. A single stamp.",
       "basis": [
         "asr_01M218EE54DFRKFNX9KFSRJ3PT",
@@ -1909,6 +2043,7 @@
       "subjects": [
         "Gorilla (side profile)"
       ],
+      "theme": "wildlife",
       "reading": "Depicts Gorilla (side profile). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
       "basis": [
         "asr_01M218EF4Y2K4EN1W7173A9GDE",
@@ -1934,6 +2069,7 @@
       "subjects": [
         "Tractor"
       ],
+      "theme": "transport",
       "reading": "Depicts Tractor. Printed \"Mongolia\". A face value of 50s. A single stamp.",
       "basis": [
         "asr_01M218EEFJQ5SAE3T27K8AQBEX",
@@ -1959,6 +2095,7 @@
       "subjects": [
         "Gorilla (portrait)"
       ],
+      "theme": "wildlife",
       "reading": "Depicts Gorilla (portrait). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
       "basis": [
         "asr_01M218EFGPJ8K4C8E8C3XRHBZT",
@@ -1984,6 +2121,7 @@
       "subjects": [
         "Gorilla (sitting)"
       ],
+      "theme": "wildlife",
       "reading": "Depicts Gorilla (sitting). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
       "basis": [
         "asr_01M218EG71SZD62W8TVW6C6SGJ",
@@ -2009,6 +2147,7 @@
       "subjects": [
         "Gorilla (close-up face)"
       ],
+      "theme": "wildlife",
       "reading": "Depicts Gorilla (close-up face). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
       "basis": [
         "asr_01M218EETNWBAT0DRDN51YW2ZQ",
@@ -2034,6 +2173,7 @@
       "subjects": [
         "Gorilla (open mouth/roaring)"
       ],
+      "theme": "wildlife",
       "reading": "Depicts Gorilla (open mouth/roaring). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
       "basis": [
         "asr_01M218EFV2JNYB1HBYD3S7Q62N",
@@ -2059,6 +2199,7 @@
       "subjects": [
         "Soviet-Mongolian friendship/space theme illustration (exact subject unclear)"
       ],
+      "theme": "space",
       "reading": "Depicts Soviet-Mongolian friendship/space theme illustration (exact subject unclear). Printed \"Mongolia\". A face value of 1. A single stamp.",
       "basis": [
         "asr_01M218EDTRATE83D6FX7JHT9M7",
@@ -2084,6 +2225,7 @@
       "subjects": [
         "Gorilla (close-up face, different angle)"
       ],
+      "theme": "wildlife",
       "reading": "Depicts Gorilla (close-up face, different angle). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
       "basis": [
         "asr_01M218EGJ7Y1CPCHQ0E9SS2ZQX",
@@ -2109,6 +2251,7 @@
       "subjects": [
         "Bird (appears to be a rooster or pheasant)"
       ],
+      "theme": "wildlife",
       "reading": "Depicts Bird (appears to be a rooster or pheasant). Printed \"Republic of Korea\". A face value of 20. A single stamp.",
       "basis": [
         "asr_01M218EQ784J193MGZ1EFK8Z46",
@@ -2134,6 +2277,7 @@
       "subjects": [
         "Butterfly"
       ],
+      "theme": "wildlife",
       "reading": "Depicts Butterfly. A face value of 4. A single stamp.",
       "basis": [
         "asr_01M218EQJEY3WY2MGJ5KTXGADV",
@@ -2158,6 +2302,7 @@
       "subjects": [
         "Train (bullet train/rail)"
       ],
+      "theme": "transport",
       "reading": "Depicts Train (bullet train/rail). Printed \"Korea\". A face value of 10. A single stamp.",
       "basis": [
         "asr_01M218EPWTPEM39VRJTDVDVJZG",
@@ -2181,6 +2326,7 @@
       "form": "strip",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A strip.",
       "basis": [
         "asr_01M21JGMTSQHBE78B334Y81ARV"
@@ -2201,6 +2347,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPT9MK0NRWHRGZJ4YR7QE"
@@ -2221,6 +2368,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPTH2ZDQDMFDJA82G12JM"
@@ -2241,6 +2389,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPTV4VRRK523FARB0DJKQ"
@@ -2261,6 +2410,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPV50B5J9A6SCV4DF632M"
@@ -2281,6 +2431,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPV9PT84228FS0HYDE62C"
@@ -2301,6 +2452,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPSZBS63S15DJE6XM6NCM"
@@ -2321,6 +2473,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPTP280QYJH7NXXH0QEM4"
@@ -2341,6 +2494,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPST35JBB5816A1V001JB"
@@ -2361,6 +2515,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPT4FKXYTE2W5DBQTYS9D"
@@ -2381,6 +2536,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPV0EJZR4CRJ6E58FM9GN"
@@ -2401,6 +2557,7 @@
       "form": "other",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A other.",
       "basis": [
         "asr_01M21JQGJ82FRAJP2Q1HR39QP7"
@@ -2421,6 +2578,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JQHH7KB80SQCMZ2E3BGS4"
@@ -2441,6 +2599,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JQHBDGTRYT2HHNT5GN48P"
@@ -2463,6 +2622,7 @@
       "subjects": [
         "flag"
       ],
+      "theme": "other",
       "reading": "Depicts flag. A single stamp.",
       "basis": [
         "asr_01M21JQGPZ05Z59RX2QAGBNZQ5",
@@ -2484,6 +2644,7 @@
       "form": "other",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A other.",
       "basis": [
         "asr_01M21JQG8MBPVDK2P2CDS7Z17T"
@@ -2506,6 +2667,7 @@
       "subjects": [
         "butterfly"
       ],
+      "theme": "wildlife",
       "reading": "Depicts butterfly. A single stamp.",
       "basis": [
         "asr_01M21JQH44TC1S250VHXJQ3GM5",
@@ -2529,6 +2691,7 @@
       "subjects": [
         "portrait"
       ],
+      "theme": "people",
       "reading": "Depicts portrait. A single stamp.",
       "basis": [
         "asr_01M21JQGXT1PD6G954ST8358AS",
@@ -2550,6 +2713,7 @@
       "form": "other",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A other.",
       "basis": [
         "asr_01M21JQGDGCDX36862594787AC"
@@ -2572,6 +2736,7 @@
       "subjects": [
         "golden-haired character, orange/red background"
       ],
+      "theme": "other",
       "reading": "Depicts golden-haired character, orange/red background. A face value of 08. A single stamp.",
       "basis": [
         "asr_01M21JHY14CSM6G67QAV8GVXN2",
@@ -2596,6 +2761,7 @@
       "subjects": [
         "character, red/orange background"
       ],
+      "theme": "other",
       "reading": "Depicts character, red/orange background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ1DBRZC3P8VHN84GQMH6",
@@ -2621,6 +2787,7 @@
       "subjects": [
         "character, orange background"
       ],
+      "theme": "other",
       "reading": "Depicts character, orange background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ3SRGWKRAS8430R0772V",
@@ -2646,6 +2813,7 @@
       "subjects": [
         "character, dark blue background"
       ],
+      "theme": "other",
       "reading": "Depicts character, dark blue background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ4PESARHA6T26W41HG64",
@@ -2671,6 +2839,7 @@
       "subjects": [
         "robot/mechanical character"
       ],
+      "theme": "other",
       "reading": "Depicts robot/mechanical character. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ2DG02PXDASV2FF9ZBC6",
@@ -2696,6 +2865,7 @@
       "subjects": [
         "character with circular blue pattern"
       ],
+      "theme": "other",
       "reading": "Depicts character with circular blue pattern. A face value of 08. A single stamp.",
       "basis": [
         "asr_01M21JHZJQYMDZV5T1VFYSH3RT",
@@ -2720,6 +2890,7 @@
       "subjects": [
         "character with blue rocket/spaceship"
       ],
+      "theme": "other",
       "reading": "Depicts character with blue rocket/spaceship. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ1PXG0B8VY6SD8DYMM20",
@@ -2745,6 +2916,7 @@
       "subjects": [
         "green-toned character"
       ],
+      "theme": "other",
       "reading": "Depicts green-toned character. A face value of 08. A single stamp.",
       "basis": [
         "asr_01M21JJ4E704SAVKMVG5YMTGZ8",
@@ -2769,6 +2941,7 @@
       "subjects": [
         "young boy character, red/orange background (possibly young Goku)"
       ],
+      "theme": "other",
       "reading": "Depicts young boy character, red/orange background (possibly young Goku). Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JHYY6XC42GQ04V1HK34HP",
@@ -2794,6 +2967,7 @@
       "subjects": [
         "character with angel-like wings"
       ],
+      "theme": "other",
       "reading": "Depicts character with angel-like wings. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ0G93MRY2PZZBEPMA5A2",
@@ -2819,6 +2993,7 @@
       "subjects": [
         "green wand/staff item"
       ],
+      "theme": "other",
       "reading": "Depicts green wand/staff item. A face value of 08. A single stamp.",
       "basis": [
         "asr_01M21JJ14M5TEEJ4HKTKVSXABY",
@@ -2843,6 +3018,7 @@
       "subjects": [
         "Dragon Ball Z character, blue/white background"
       ],
+      "theme": "other",
       "reading": "Depicts Dragon Ball Z character, blue/white background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JHYA13EVWKDWP760JVS5B",
@@ -2868,6 +3044,7 @@
       "subjects": [
         "character, blue/white background"
       ],
+      "theme": "other",
       "reading": "Depicts character, blue/white background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ3156ERAQ26S9R4HDS4Z",
@@ -2893,6 +3070,7 @@
       "subjects": [
         "character, dark background"
       ],
+      "theme": "other",
       "reading": "Depicts character, dark background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JHZV4SFFCR5EP0Q7QH7AQ",
@@ -2918,6 +3096,7 @@
       "subjects": [
         "witch-like character, purple/dark background"
       ],
+      "theme": "other",
       "reading": "Depicts witch-like character, purple/dark background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ05MX112Q40YGGDMJFDE",
@@ -2943,6 +3122,7 @@
       "subjects": [
         "character, blue sky background"
       ],
+      "theme": "other",
       "reading": "Depicts character, blue sky background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JHZ7Z2SF7CVM0JP56WFYG",
@@ -2968,6 +3148,7 @@
       "subjects": [
         "character, white/light background"
       ],
+      "theme": "other",
       "reading": "Depicts character, white/light background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ5PTYW6BWVKJ2HQVDX6H",
@@ -2993,6 +3174,7 @@
       "subjects": [
         "character, blue background"
       ],
+      "theme": "other",
       "reading": "Depicts character, blue background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ5BYY09CD4TTFNT8WA7A",
@@ -3018,6 +3200,7 @@
       "subjects": [
         "red character wearing helmet"
       ],
+      "theme": "other",
       "reading": "Depicts red character wearing helmet. A face value of 08. A single stamp.",
       "basis": [
         "asr_01M21JJ2R76XQEZJKSG8DMHEWV",
@@ -3042,6 +3225,7 @@
       "subjects": [
         "character, red/fire background"
       ],
+      "theme": "other",
       "reading": "Depicts character, red/fire background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ50K1X26X3JYS35NHMH4",
@@ -3067,6 +3251,7 @@
       "subjects": [
         "character, purple background"
       ],
+      "theme": "other",
       "reading": "Depicts character, purple background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ0TCAM9P3EZR1QFNTYQH",
@@ -3092,6 +3277,7 @@
       "subjects": [
         "character, green/tree background"
       ],
+      "theme": "other",
       "reading": "Depicts character, green/tree background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ43BTXCSGPXHG3JMK1SN",
@@ -3117,6 +3303,7 @@
       "subjects": [
         "character, brown/tan background"
       ],
+      "theme": "other",
       "reading": "Depicts character, brown/tan background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ3D7X4H2PSXM6F94F8HY",
@@ -3142,6 +3329,7 @@
       "subjects": [
         "fighting scene, red background"
       ],
+      "theme": "other",
       "reading": "Depicts fighting scene, red background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ2311N2KE2WQEDQE3V6G",
@@ -3167,6 +3355,7 @@
       "subjects": [
         "Dragon Ball Z character, green background"
       ],
+      "theme": "other",
       "reading": "Depicts Dragon Ball Z character, green background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JHYKXG8ZAT8A8CYFYQ90V",
@@ -3192,6 +3381,7 @@
       "subjects": [
         "pink-haired character"
       ],
+      "theme": "other",
       "reading": "Depicts pink-haired character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKBHEGYPMWC0A5QWY79P1",
@@ -3217,6 +3407,7 @@
       "subjects": [
         "outdoor scene with character"
       ],
+      "theme": "other",
       "reading": "Depicts outdoor scene with character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK999ZTQH7T59VB593Z81",
@@ -3242,6 +3433,7 @@
       "subjects": [
         "red-hooded character"
       ],
+      "theme": "other",
       "reading": "Depicts red-hooded character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKAX7P41AATW5SGJXBSPG",
@@ -3267,6 +3459,7 @@
       "subjects": [
         "monster character"
       ],
+      "theme": "other",
       "reading": "Depicts monster character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKB6VDD59PBWRSSD4SH2R",
@@ -3292,6 +3485,7 @@
       "subjects": [
         "pink stylized character"
       ],
+      "theme": "other",
       "reading": "Depicts pink stylized character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK8M7MSZ3G2P7VFDBZYMT",
@@ -3317,6 +3511,7 @@
       "subjects": [
         "anime character with city background"
       ],
+      "theme": "other",
       "reading": "Depicts anime character with city background. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK8A51H56GW4DCMSWRV8T",
@@ -3342,6 +3537,7 @@
       "subjects": [
         "character seated, blue outfit"
       ],
+      "theme": "other",
       "reading": "Depicts character seated, blue outfit. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKHRVT7DRS3QP1BT7GQAE",
@@ -3367,6 +3563,7 @@
       "subjects": [
         "ninja-style character, orange explosion background"
       ],
+      "theme": "other",
       "reading": "Depicts ninja-style character, orange explosion background. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKJSTZ32SN2CS868NGYY5",
@@ -3392,6 +3589,7 @@
       "subjects": [
         "character with green hair, sleeping pose"
       ],
+      "theme": "other",
       "reading": "Depicts character with green hair, sleeping pose. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKHF2AR1Z6FMKNQY1W7S4",
@@ -3417,6 +3615,7 @@
       "subjects": [
         "character portrait, purple tones"
       ],
+      "theme": "other",
       "reading": "Depicts character portrait, purple tones. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKGVC16SXQFXR5FZRHBCZ",
@@ -3442,6 +3641,7 @@
       "subjects": [
         "blue/water themed character"
       ],
+      "theme": "other",
       "reading": "Depicts blue/water themed character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKFK13XFSRR268MHXNM3M",
@@ -3467,6 +3667,7 @@
       "subjects": [
         "anime characters, portrait"
       ],
+      "theme": "other",
       "reading": "Depicts anime characters, portrait. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK80F7546QVNX28V9KSVX",
@@ -3492,6 +3693,7 @@
       "subjects": [
         "boxing-style character"
       ],
+      "theme": "sport",
       "reading": "Depicts boxing-style character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKDZ528XKF2XEBPA6FA3W",
@@ -3517,6 +3719,7 @@
       "subjects": [
         "two characters together"
       ],
+      "theme": "other",
       "reading": "Depicts two characters together. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKCHXDNTMKNSMEQ21EER3",
@@ -3542,6 +3745,7 @@
       "subjects": [
         "character portrait"
       ],
+      "theme": "other",
       "reading": "Depicts character portrait. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKEKEVHKNJRHRNKEH2VTW",
@@ -3567,6 +3771,7 @@
       "subjects": [
         "character, pink background"
       ],
+      "theme": "other",
       "reading": "Depicts character, pink background. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKKT8YWNBN4FV39TYGE6K",
@@ -3592,6 +3797,7 @@
       "subjects": [
         "character with magnifying/eye motif"
       ],
+      "theme": "other",
       "reading": "Depicts character with magnifying/eye motif. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKG6VNHPFB8FSSH9WBXPX",
@@ -3617,6 +3823,7 @@
       "subjects": [
         "character with pink/cherry blossom theme"
       ],
+      "theme": "other",
       "reading": "Depicts character with pink/cherry blossom theme. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKKG5876KYDAWE4A3MA8E",
@@ -3642,6 +3849,7 @@
       "subjects": [
         "robot/fighting scene"
       ],
+      "theme": "other",
       "reading": "Depicts robot/fighting scene. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKD88GCHPXECGFYFPGSAC",
@@ -3667,6 +3875,7 @@
       "subjects": [
         "pirate-style character in white"
       ],
+      "theme": "other",
       "reading": "Depicts pirate-style character in white. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKH5CR61S43KFZRRDB2CH",
@@ -3692,6 +3901,7 @@
       "subjects": [
         "ninja character in green setting"
       ],
+      "theme": "other",
       "reading": "Depicts ninja character in green setting. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKK47SK232KBBSBZV2TCR",
@@ -3717,6 +3927,7 @@
       "subjects": [
         "dark character close-up"
       ],
+      "theme": "other",
       "reading": "Depicts dark character close-up. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKE9ASW1Z6JBCZJRA6BP0",
@@ -3742,6 +3953,7 @@
       "subjects": [
         "orange-clad action character"
       ],
+      "theme": "other",
       "reading": "Depicts orange-clad action character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKA8MQ5V275R9K803GYWA",
@@ -3767,6 +3979,7 @@
       "subjects": [
         "Detective-style character, night scene"
       ],
+      "theme": "other",
       "reading": "Depicts Detective-style character, night scene. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKFWQRFVTVZE0T5TP1J0F",
@@ -3792,6 +4005,7 @@
       "subjects": [
         "fire/action scene"
       ],
+      "theme": "other",
       "reading": "Depicts fire/action scene. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKDKKPAN4Y6DAFQTB52M3",
@@ -3817,6 +4031,7 @@
       "subjects": [
         "fist/action close-up"
       ],
+      "theme": "other",
       "reading": "Depicts fist/action close-up. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKJ3ZJC3MQYBSSEJAJY1X",
@@ -3842,6 +4057,7 @@
       "subjects": [
         "sports character"
       ],
+      "theme": "sport",
       "reading": "Depicts sports character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKF90XF61QND4FYZVKVPP",
@@ -3867,6 +4083,7 @@
       "subjects": [
         "character portrait"
       ],
+      "theme": "other",
       "reading": "Depicts character portrait. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKCW18P83QYA4V8626M92",
@@ -3892,6 +4109,7 @@
       "subjects": [
         "dark-toned character portrait"
       ],
+      "theme": "other",
       "reading": "Depicts dark-toned character portrait. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKC6CJB47510RH9BXZ5BG",
@@ -3917,6 +4135,7 @@
       "subjects": [
         "character portrait, warm tones"
       ],
+      "theme": "other",
       "reading": "Depicts character portrait, warm tones. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKGH0RMJJCX0A5343G1GA",
@@ -3942,6 +4161,7 @@
       "subjects": [
         "two boxers fighting"
       ],
+      "theme": "sport",
       "reading": "Depicts two boxers fighting. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKEX1AJKBWR7BPCWE4BW0",
@@ -3967,6 +4187,7 @@
       "subjects": [
         "ninja-style character, orange tones"
       ],
+      "theme": "other",
       "reading": "Depicts ninja-style character, orange tones. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKJE4BN5PMTPQNEFMR29X",
@@ -3992,6 +4213,7 @@
       "subjects": [
         "character with spiky red hair"
       ],
+      "theme": "other",
       "reading": "Depicts character with spiky red hair. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKAJV52CDXGDEG8KTZ97P",
@@ -4017,6 +4239,7 @@
       "subjects": [
         "monster/robot character"
       ],
+      "theme": "other",
       "reading": "Depicts monster/robot character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK9MAF66MEWPPCZBP2B4W",
@@ -4042,6 +4265,7 @@
       "subjects": [
         "baseball player character"
       ],
+      "theme": "sport",
       "reading": "Depicts baseball player character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK8ZQBJ9Y83AZNHM1KE7V",
@@ -4067,6 +4291,7 @@
       "subjects": [
         "character in green setting"
       ],
+      "theme": "other",
       "reading": "Depicts character in green setting. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK9YVEZF4K8CFXPNAHPGW",
@@ -4092,6 +4317,7 @@
       "subjects": [
         "anime character in landscape"
       ],
+      "theme": "other",
       "reading": "Depicts anime character in landscape. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK7NVS1TGSY0AHXK7FQXN",
@@ -4117,6 +4343,7 @@
       "subjects": [
         "action character mid-motion"
       ],
+      "theme": "other",
       "reading": "Depicts action character mid-motion. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKBVNPD57JXMSF0DJMDJP",
@@ -4140,6 +4367,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPD47NBZVR2R091WHV3VR"
@@ -4160,6 +4388,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPDNJ3GPVM3FQF66VC34C"
@@ -4180,6 +4409,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPCY42AAXET8RAYKM498S"
@@ -4200,6 +4430,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPCRAH794SS1D1XCG6W5B"
@@ -4220,6 +4451,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPDTFV90K0VVCEVEGCG1V"
@@ -4240,6 +4472,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPD9CVQAFEJVXKDSF5MNX"
@@ -4260,6 +4493,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPEA9APR1GZX6MWBMXRZT"
@@ -4280,6 +4514,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPE5B97QSQ6TMQ9J1W5T5"
@@ -4300,6 +4535,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPDZY3232CPF2BPM03CB0"
@@ -4320,6 +4556,7 @@
       "form": "single",
       "containsCount": null,
       "subjects": [],
+      "theme": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPDFPTBC3Y1ZZ28V621S5"
@@ -4342,6 +4579,7 @@
       "subjects": [
         "Life of Christ - painting scene (Roman numeral XI)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (Roman numeral XI). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRJZTAGKGK57ET8K7EHYM",
@@ -4366,6 +4604,7 @@
       "subjects": [
         "Life of Christ - painting scene (Roman numeral VIII?)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (Roman numeral VIII?). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRN0XAKAY6E97GWP9M7C3",
@@ -4390,6 +4629,7 @@
       "subjects": [
         "Life of Christ - painting scene (Roman numeral III)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (Roman numeral III). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRPEYEGCY5V4T2BT9B0EM",
@@ -4414,6 +4654,7 @@
       "subjects": [
         "Life of Christ - painting scene (Roman numeral IX?)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (Roman numeral IX?). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRMQ94AMP0CWVPC7M5XF1",
@@ -4438,6 +4679,7 @@
       "subjects": [
         "Life of Christ - painting scene (Roman numeral XII?)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (Roman numeral XII?). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRK8BC4DWWM48D2SJRHAH",
@@ -4462,6 +4704,7 @@
       "subjects": [
         "Life of Christ - painting scene (Roman numeral X)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (Roman numeral X). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRME402RBH5M9S9CT9FH5",
@@ -4486,6 +4729,7 @@
       "subjects": [
         "Life of Christ - painting scene (Roman numeral V)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (Roman numeral V). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRQ1V649T0721YZJNT7VK",
@@ -4510,6 +4754,7 @@
       "subjects": [
         "Life of Christ - painting scene (Roman numeral II)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (Roman numeral II). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRP70QNCH3CE8K2JJTSKD",
@@ -4534,6 +4779,7 @@
       "subjects": [
         "Life of Christ - painting scene (numeral 15)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (numeral 15). Printed \"YEMEN\". A face value of 15. A se-tenant.",
       "basis": [
         "asr_01M21JRKVGRSBW70ZZ39XQA3FW",
@@ -4559,6 +4805,7 @@
       "subjects": [
         "Life of Christ - painting scene (Roman numeral I)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (Roman numeral I). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRNYMSSZ6NGFTH33RH3XC",
@@ -4583,6 +4830,7 @@
       "subjects": [
         "Life of Christ - painting scene (Roman numeral VII?)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (Roman numeral VII?). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRNPA6XH3D99NAE9B6TPN",
@@ -4607,6 +4855,7 @@
       "subjects": [
         "Life of Christ - painting scene (Roman numeral XIV)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (Roman numeral XIV). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRM5ZPD1FRZCSR4V1JGG8",
@@ -4631,6 +4880,7 @@
       "subjects": [
         "Life of Christ - painting scene (numeral 4)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (numeral 4). Printed \"YEMEN\". A face value of 4. A se-tenant.",
       "basis": [
         "asr_01M21JRNBSQTSKRBQQV3CT2KNV",
@@ -4656,6 +4906,7 @@
       "subjects": [
         "Life of Christ - painting scene (numeral 3)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (numeral 3). Printed \"YEMEN\". A face value of 3. A se-tenant.",
       "basis": [
         "asr_01M21JRPR5QCJNXQS9XSNKPP0H",
@@ -4681,6 +4932,7 @@
       "subjects": [
         "Life of Christ - painting scene (Roman numeral XIII?)"
       ],
+      "theme": "religion",
       "reading": "Depicts Life of Christ - painting scene (Roman numeral XIII?). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRKK7W4VA3PE056XCJD51",
@@ -4705,6 +4957,7 @@
       "subjects": [
         "History of Olympic Games"
       ],
+      "theme": "sport",
       "reading": "Depicts History of Olympic Games. Printed \"Umm Al Qiwain\". A sheetlet of 20.",
       "basis": [
         "asr_01M21JTWHZZ4DEN31RJ7B3WGKF",
@@ -4729,6 +4982,7 @@
       "subjects": [
         "Tropical Fishes"
       ],
+      "theme": "wildlife",
       "reading": "Depicts Tropical Fishes. Printed \"Umm Al Qiwain\". A sheetlet of 20.",
       "basis": [
         "asr_01M21JTVQ4NXS9MCX92AXNEXN4",
@@ -4753,6 +5007,7 @@
       "subjects": [
         "Old and New Locomotives"
       ],
+      "theme": "transport",
       "reading": "Depicts Old and New Locomotives. Printed \"Umm Al Qiwain\". A sheetlet of 20.",
       "basis": [
         "asr_01M21JTX6T4GN86GAVBVWS4XRN",
@@ -4777,6 +5032,7 @@
       "subjects": [
         "Tropical Fishes"
       ],
+      "theme": "wildlife",
       "reading": "Depicts Tropical Fishes. Printed \"Umm Al Qiwain\". A sheetlet of 20.",
       "basis": [
         "asr_01M21JTVZMVQTB87W9V5XQS211",
@@ -4801,6 +5057,7 @@
       "subjects": [
         "Aircraft (unlabeled sheetlet)"
       ],
+      "theme": "transport",
       "reading": "Depicts Aircraft (unlabeled sheetlet). Printed \"Umm Al Qiwain\". A sheetlet of 20.",
       "basis": [
         "asr_01M21JTWWA38V76EZTSK9YYHXT",
@@ -4825,6 +5082,7 @@
       "subjects": [
         "Wild Animals"
       ],
+      "theme": "wildlife",
       "reading": "Depicts Wild Animals. Printed \"Ajman State\". A sheetlet of 20.",
       "basis": [
         "asr_01M21JTW82ZV49PJRSK384FP01",
@@ -4849,6 +5107,7 @@
       "subjects": [
         "Summer Olympic Games - Korea '88 (javelin thrower)"
       ],
+      "theme": "sport",
       "reading": "Depicts Summer Olympic Games - Korea '88 (javelin thrower). Printed \"Guyana\". A face value of $2. Issued 1988. A souvenir-sheet of 1.",
       "basis": [
         "asr_01M21JVS3HTPN7ZMH3HHQ0RKD5",
@@ -4875,6 +5134,7 @@
       "subjects": [
         "Lady with Umbrella Statue - Barcelona (Olympics)"
       ],
+      "theme": "sport",
       "reading": "Depicts Lady with Umbrella Statue - Barcelona (Olympics). Printed \"Guyana\". A face value of $2.55. A souvenir-sheet of 1.",
       "basis": [
         "asr_01M21JVR6FK9HP48FY13RK1ZHP",
@@ -4900,6 +5160,7 @@
       "subjects": [
         "Famous Men - portrait sheet"
       ],
+      "theme": "people",
       "reading": "Depicts Famous Men - portrait sheet. A sheetlet of 16.",
       "basis": [
         "asr_01M21JVRG2Z4S356SNVQF6ZTP6",
@@ -4923,6 +5184,7 @@
       "subjects": [
         "Plymouth Plantation Village (Bicentenary of American Independence)"
       ],
+      "theme": "event",
       "reading": "Depicts Plymouth Plantation Village (Bicentenary of American Independence). Printed \"Republic of Liberia\". A face value of 75. A souvenir-sheet of 1.",
       "basis": [
         "asr_01M21JVRPFGZ5SFHTKGF3AG2WB",
@@ -4948,6 +5210,7 @@
       "subjects": [
         "Nude - Joan Miro"
       ],
+      "theme": "art",
       "reading": "Depicts Nude - Joan Miro. Printed \"Guyana\". A single stamp.",
       "basis": [
         "asr_01M21JVSGP93KK4SEK9ZRGVQJ7",
@@ -4972,6 +5235,7 @@
       "subjects": [
         "The General Lee - Barcelona (Olympics)"
       ],
+      "theme": "sport",
       "reading": "Depicts The General Lee - Barcelona (Olympics). Printed \"Guyana\". A face value of $2.55. A souvenir-sheet of 1.",
       "basis": [
         "asr_01M21JVSRQ62FXSJC1SCQWSN6J",
@@ -4997,6 +5261,7 @@
       "subjects": [
         "50e Concours International de Bouquets - flower arrangements"
       ],
+      "theme": "flora",
       "reading": "Depicts 50e Concours International de Bouquets - flower arrangements. Printed \"Monaco\". A face value of 0,85F (each, x3). A strip of 3.",
       "basis": [
         "asr_01M21JX0SJ5WAC001CDP6S23YK",
@@ -5022,6 +5287,7 @@
       "subjects": [
         "Religious icon (Byzantine-style painting)"
       ],
+      "theme": "religion",
       "reading": "Depicts Religious icon (Byzantine-style painting). Printed \"Aitutaki\". A souvenir-sheet of 1.",
       "basis": [
         "asr_01M21JWZXDR57CEHPZ2ZMA1GKC",
@@ -5046,6 +5312,7 @@
       "subjects": [
         "Bicentennial of Cook's Discovery of the Hawaiian Islands"
       ],
+      "theme": "event",
       "reading": "Depicts Bicentennial of Cook's Discovery of the Hawaiian Islands. Printed \"Aitutaki\". A face value of 35c / 50c / ?. Issued 1778 (event date on sheet border). A souvenir-sheet of 3.",
       "basis": [
         "asr_01M21JX087HTQ0ZER3D1ETNS23",
@@ -5072,6 +5339,7 @@
       "subjects": [
         "Easter 1971 - religious paintings"
       ],
+      "theme": "religion",
       "reading": "Depicts Easter 1971 - religious paintings. Printed \"Aitutaki\". A face value of 20c / 35c / 15c / ? (one value not legible). Issued 1971. A se-tenant of 4.",
       "basis": [
         "asr_01M21JWZ69G1ESZ8F8898RC5MM",
@@ -5098,6 +5366,7 @@
       "subjects": [
         "Field Poppy - postage stamp with postmark"
       ],
+      "theme": "flora",
       "reading": "Depicts Field Poppy - postage stamp with postmark. Printed \"Batum\". A face value of 500. A single stamp.",
       "basis": [
         "asr_01M21JX1C1DCJZNYJXT3CBVYX6",
@@ -5123,6 +5392,7 @@
       "subjects": [
         "Map-shaped stamp with inset portrait"
       ],
+      "theme": "map",
       "reading": "Depicts Map-shaped stamp with inset portrait. Printed \"Republikan'i Madagasikara\". A face value of 2000. A single stamp.",
       "basis": [
         "asr_01M21JWZJ7ZJ06SAJY362BXN93",
@@ -5148,6 +5418,7 @@
       "subjects": [
         "Martial arts/combat sport pose"
       ],
+      "theme": "sport",
       "reading": "Depicts Martial arts/combat sport pose. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYV8HCSNWXVSRKNJS5FJB",
@@ -5172,6 +5443,7 @@
       "subjects": [
         "Athlete performing exercise/gymnastics move"
       ],
+      "theme": "sport",
       "reading": "Depicts Athlete performing exercise/gymnastics move. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYTNS4S4TQD2VQ5QT2DJ5",
@@ -5196,6 +5468,7 @@
       "subjects": [
         "Person in green outfit with flowers/plant"
       ],
+      "theme": "other",
       "reading": "Depicts Person in green outfit with flowers/plant. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYTYDED29SN3GD20FKDJ5",
@@ -5220,6 +5493,7 @@
       "subjects": [
         "Landscape/mountain scene with figure or animal"
       ],
+      "theme": "other",
       "reading": "Depicts Landscape/mountain scene with figure or animal. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYWC7J0PZ64W0AR8J1WNW",
@@ -5244,6 +5518,7 @@
       "subjects": [
         "Person in white robes, possibly falconry or traditional scene"
       ],
+      "theme": "other",
       "reading": "Depicts Person in white robes, possibly falconry or traditional scene. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYVJ2TMRBJNXZDXH2G898",
@@ -5268,6 +5543,7 @@
       "subjects": [
         "Athlete in red performing gymnastics move"
       ],
+      "theme": "sport",
       "reading": "Depicts Athlete in red performing gymnastics move. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYW3J5A2SJGTASF5Y70NB",
@@ -5292,6 +5568,7 @@
       "subjects": [
         "Athlete in red, jumping/running pose"
       ],
+      "theme": "sport",
       "reading": "Depicts Athlete in red, jumping/running pose. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYWYTF8EHW3DD0ZWAYVNM",
@@ -5316,6 +5593,7 @@
       "subjects": [
         "Person in colorful sports uniform, possibly wrestling"
       ],
+      "theme": "sport",
       "reading": "Depicts Person in colorful sports uniform, possibly wrestling. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYWMSPRAQQQ2WYRA5X7HV",
@@ -5340,6 +5618,7 @@
       "subjects": [
         "Circular emblem/badge design, blue and red"
       ],
+      "theme": "other",
       "reading": "Depicts Circular emblem/badge design, blue and red. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYVTWB6CTSRRZG4VMFZE2",
