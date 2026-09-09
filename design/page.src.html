@@ -1163,9 +1163,11 @@ function candCurrency(c){
    the value exactly as read. A bare number keeps no unit (stays distinct — 25 of an unknown unit). */
 function normDenom(d){
   if(!d) return "";
-  let s=d.toLowerCase().trim().replace(/½/g,".5").replace(/¼/g,".25").replace(/¾/g,".75").replace(/⅓/g,".33").replace(/⅔/g,".67");
-  const nm=s.match(/\d+(?:[.,]\d+)?/); const num=nm?parseFloat(nm[0].replace(",",".")):null;
-  let unit=s.replace(/\d+(?:[.,]\d+)?/,"").replace(/[^a-z¢£$€]/g,"");
+  let s=d.toLowerCase().trim().replace(/½/g,".5").replace(/¼/g,".25").replace(/¾/g,".75").replace(/⅓/g,".33").replace(/⅔/g,".67").replace(/\s*\+\s*/g,"+");
+  // Keep a semi-postal "80+20" distinct from "80"; otherwise canonicalise 8 = 8.0 = 8.00.
+  const nm=s.match(/\d[\d.,+]*/); const raw=nm?nm[0].replace(/,/g,"."):null;
+  const num=raw==null?null:(raw.includes("+")?raw:String(parseFloat(raw)));
+  let unit=s.replace(/\d[\d.,+]*/,"").replace(/[^a-z¢£$€]/g,"");
   const U=[[/^(c|cent|cents|cts|ct|¢)$/,"c"],[/^(p|d|penny|pence)$/,"d"],[/^(pta|ptas|pts|peseta|pesetas)$/,"pta"],[/^(l|lire|lira)$/,"lire"],[/^(fr|fs|franc|francs)$/,"fr"],[/^(ft|forint)$/,"ft"],[/^(fill|filler)$/,"fill"],[/^(eur|euro|€)$/,"eur"],[/^(gbp|£)$/,"gbp"],[/^(usd|\$)$/,"usd"],[/^(kr|kop|kopeck|kopek)$/,"kop"],[/^(pf|pfennig)$/,"pf"],[/^(k|kn|kuna)$/,"kn"],[/^(din|dinar)$/,"din"]];
   for(const [re,to] of U){ if(re.test(unit)){ unit=to; break; } }
   return num!=null?`${num}${unit?" "+unit:""}`:s;
