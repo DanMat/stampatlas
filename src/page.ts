@@ -749,12 +749,16 @@ const candHref=id=>\`#/candidate/\${encodeURIComponent(id)}\`;
 const candidateById=id=>(DATA.candidates||[]).find(c=>c.id===id)||null;
 /* The "distinct as read" fingerprint — the same fields facts.ts groups on. Two candidates that
    fingerprint alike are the apparent duplicates a person would later merge or keep. */
-const candFingerprint=c=>[
-  (c.issuer||"").replace(/\\s+/g," ").trim().toLowerCase(),
-  (c.year||"").replace(/\\s+/g," ").trim().toLowerCase(),
-  (c.denomination||"").replace(/\\s+/g," ").trim().toLowerCase(),
-  (c.subjects||[]).map(s=>s.replace(/\\s+/g," ").trim().toLowerCase()).sort().join(" / ")
-].join("|");
+const candFingerprint=c=>{
+  const fp=[
+    (c.issuer||"").replace(/\\s+/g," ").trim().toLowerCase(),
+    (c.year||"").replace(/\\s+/g," ").trim().toLowerCase(),
+    (c.denomination||"").replace(/\\s+/g," ").trim().toLowerCase(),
+    (c.subjects||[]).map(s=>s.replace(/\\s+/g," ").trim().toLowerCase()).sort().join(" / ")
+  ].join("|");
+  // An unread stamp is not a duplicate of another unread stamp — key it uniquely so it has no siblings.
+  return fp.replace(/\\|/g,"")===""?"unread:"+c.id:fp;
+};
 /* chapter titles are static so the Contents and Index can be built before a Part renders */
 const CHAPTER_TITLES={glance:"The collection at a glance",time:"The world in time",issuers:"The issuers",map:"The map",people:"The people",themes:"The themes",dna:"The collection's DNA",connections:"Connections",language:"Money & language",physical:"The physical object",sets:"Sets & series",albums:"The albums",colour:"Colour",play:"Play & discovery",questions:"Questions of scale",unknown:"The unknowns"};
 CHAPTERS.forEach((c,i)=>{ CH[c[0]]={i,title:CHAPTER_TITLES[c[0]]||c[1]}; });
