@@ -1115,6 +1115,27 @@ function candidatePage(c){
   const fp=candFingerprint(c);
   const sibs=(DATA.candidates||[]).filter(x=>x.id!==c.id&&candFingerprint(x)===fp);
   const sibList=sibs.length?`<div class="card"><h3>Looks like ${fmt(sibs.length)} other${sibs.length===1?"":"s"} on the shelf</h3><p class="small" style="color:var(--ink-2)">Same reading — issuer, year, value and subject — so these are the apparent duplicates a person would later merge or keep as extras. A fuzzy match on what was read, not a verified duplicate.</p><ul class="recent" style="margin-top:8px">${sibs.slice(0,20).map(x=>`<li><a href="${candHref(x.id)}">${esc(x.album)} · p${esc(String(x.page))} · ${x.ordinal}/${x.stampsOnPage}</a></li>`).join("")}</ul></div>`:"";
+  // "What we've found out" — sourced candidate facts (ADR-0054 D4). The machine asked; a named source
+  // answered. Every value links back to its source; all hedged as unconfirmed, and honest that a
+  // mis-read issuer carries the wrong history until a person corrects it.
+  const kLabel={founded:"Founded",dissolved:"Dissolved","succeeded-by":"Succeeded by","preceded-by":"Preceded by",country:"Country",capital:"Capital","is-a":"In brief"};
+  const kOrder={founded:1,dissolved:2,"succeeded-by":3,"preceded-by":4,country:5,capital:6,"is-a":7};
+  // Generic class-descriptions add nothing next to the summary ("aspect of history", the philately
+  // meta-article a term sometimes resolves to) — drop them, and show at most one 'is-a' at all.
+  const kMeta=/postage stamps and postal history|aspect of|history of a country|^national flag$|^country\b|sovereign state|^human$/i;
+  const know=c.knowledge||[];
+  const kSum=know.filter(k=>k.factType==="summary");
+  let isa=0;
+  const kFacts=know.filter(k=>k.factType!=="summary")
+    .filter(k=>k.factType!=="is-a"?true:(kMeta.test(k.value)||isa++>=1?false:true))
+    .sort((a,b)=>(kOrder[a.factType]||9)-(kOrder[b.factType]||9));
+  const srcLink=k=>k.sourceUrl?`<a href="${esc(k.sourceUrl)}" target="_blank" rel="noopener nofollow">${esc(k.source)}</a>`:esc(k.source);
+  const kCard=know.length?`<div class="card" style="margin-top:18px">
+      <h3 style="margin-top:0">What we've found out <span class="small" style="color:var(--ink-3);font-weight:400">· from open sources, unconfirmed</span></h3>
+      ${kSum.map(k=>`<p class="small" style="color:var(--ink-2);margin:6px 0 12px">${esc(k.value)} <span style="color:var(--ink-3)">— ${srcLink(k)}</span></p>`).join("")}
+      ${kFacts.map(k=>row(kLabel[k.factType]||esc(k.factType), esc(k.value), srcLink(k))).join("")}
+      <p class="small" style="color:var(--ink-3);border-top:1px solid var(--rule-soft);margin-top:10px;padding-top:10px">The machine asked the questions a collector would; each answer comes from the named source and is a candidate a person has not yet confirmed. Facts rest on the machine's reading of the issuer — a mis-read issuer carries the wrong history until corrected.</p>
+    </div>`:"";
   return `${crumbs}<section class="band"><div class="wrap" style="max-width:820px">
     <span class="eyebrow">The machine's reading · one stamp</span>
     <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">${dot("candidate","*")} ${esc(c.album)} · page ${esc(String(c.page))} · stamp ${c.ordinal} of ${c.stampsOnPage}</h1>
@@ -1140,6 +1161,7 @@ function candidatePage(c){
         <p class="small" style="color:var(--ink-3);border-top:1px solid var(--rule-soft);margin-top:10px;padding-top:10px">No image is shown: the atlas never publishes photographs of the stamps themselves.</p>
       </div>
     </div>
+    ${kCard}
     ${sibList?`<div style="margin-top:18px">${sibList}</div>`:""}
     ${CANDLEGEND}
   </div></section>`;
