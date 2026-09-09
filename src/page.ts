@@ -744,6 +744,17 @@ const idxOf=id=>CHAPTERS.findIndex(c=>c[0]===id);
 const partHref=(p,ch)=>\`#/part/\${p.id}\${ch?"/"+ch:""}\`;
 const chHref=id=>{ const p=partOf(id); return p?partHref(p,id):"#/"; };
 const stampHref=id=>\`#/stamp/\${id}\`;
+/* Candidate stamps have no iss_ — their page is keyed by the public locator id. */
+const candHref=id=>\`#/candidate/\${encodeURIComponent(id)}\`;
+const candidateById=id=>(DATA.candidates||[]).find(c=>c.id===id)||null;
+/* The "distinct as read" fingerprint — the same fields facts.ts groups on. Two candidates that
+   fingerprint alike are the apparent duplicates a person would later merge or keep. */
+const candFingerprint=c=>[
+  (c.issuer||"").replace(/\\s+/g," ").trim().toLowerCase(),
+  (c.year||"").replace(/\\s+/g," ").trim().toLowerCase(),
+  (c.denomination||"").replace(/\\s+/g," ").trim().toLowerCase(),
+  (c.subjects||[]).map(s=>s.replace(/\\s+/g," ").trim().toLowerCase()).sort().join(" / ")
+].join("|");
 /* chapter titles are static so the Contents and Index can be built before a Part renders */
 const CHAPTER_TITLES={glance:"The collection at a glance",time:"The world in time",issuers:"The issuers",map:"The map",people:"The people",themes:"The themes",dna:"The collection's DNA",connections:"Connections",language:"Money & language",physical:"The physical object",sets:"Sets & series",albums:"The albums",colour:"Colour",play:"Play & discovery",questions:"Questions of scale",unknown:"The unknowns"};
 CHAPTERS.forEach((c,i)=>{ CH[c[0]]={i,title:CHAPTER_TITLES[c[0]]||c[1]}; });
@@ -1056,7 +1067,7 @@ function candidatesBand(){
     <div class="band-head"><div><span class="eyebrow">The machine's reading</span><h2 id="cand-h">What the atlas thinks it sees</h2></div><a class="more" href="#/candidates">All candidate readings →</a></div>
     <p class="lede" style="max-width:64ch;margin-top:6px">Each card is the machine's <strong>candidate</strong> reading of one stamp — drawn from the photograph, cited to what it saw, <em>and not yet confirmed by a person</em>. <strong>\${fmt(np.namedByMachine)}</strong> named by the atlas · <strong>\${fmt(np.verifiedByPerson)}</strong> verified by a person. The gap is honest guesswork, and the page never hides it.</p>
     \${(DATA.facts&&DATA.facts.distinctReadings)?\`<p class="small" style="margin-top:8px;color:var(--ink-2)"><strong>\${fmt(np.namedByMachine)}</strong> read · <strong>\${fmt(DATA.facts.distinctReadings)}</strong> distinct as read · <strong>\${fmt(np.namedByMachine-DATA.facts.distinctReadings)}</strong> look like duplicates <span class="small" style="color:var(--ink-3)">— fingerprinted on what was read, an estimate not a verified count</span></p>\`:""}
-    <div class="grid g3" style="margin-top:18px">\${sample.map(c=>\`<div class="card"><div class="meta">\${dot("candidate","*")} \${esc(c.album)} · p\${esc(String(c.page))} · \${c.ordinal}/\${c.stampsOnPage}</div><p class="small" style="margin-top:8px">\${esc(c.reading||"Nothing legible yet — a closer photograph would help.")}</p></div>\`).join("")}</div>
+    <div class="grid g3" style="margin-top:18px">\${sample.map(c=>\`<a class="card" href="\${candHref(c.id)}" style="display:block;color:inherit;text-decoration:none"><div class="meta">\${dot("candidate","*")} \${esc(c.album)} · p\${esc(String(c.page))} · \${c.ordinal}/\${c.stampsOnPage}</div><p class="small" style="margin-top:8px">\${esc(c.reading||"Nothing legible yet — a closer photograph would help.")}</p></a>\`).join("")}</div>
     \${cands.length>sample.length?\`<p class="small" style="margin-top:14px"><a href="#/candidates">…and \${fmt(cands.length-sample.length)} more candidate readings →</a></p>\`:""}
     \${CANDLEGEND}
   </div></section>\`;
@@ -1066,7 +1077,7 @@ function candidatesPage(){
   const np=(DATA.facts&&DATA.facts.namingProgress)||{namedByMachine:cands.length,verifiedByPerson:0};
   const byAlbum={}; cands.forEach(c=>{ (byAlbum[c.album]=byAlbum[c.album]||[]).push(c); });
   const groups=Object.keys(byAlbum).sort().map(al=>{
-    const rows=byAlbum[al].map(c=>\`<li><span class="meta">\${dot("candidate")} p\${esc(String(c.page))} · \${c.ordinal}/\${c.stampsOnPage}</span> <span class="small">\${esc(c.reading||"nothing legible yet")}</span></li>\`).join("");
+    const rows=byAlbum[al].map(c=>\`<li><a href="\${candHref(c.id)}" style="color:inherit;text-decoration:none"><span class="meta">\${dot("candidate")} p\${esc(String(c.page))} · \${c.ordinal}/\${c.stampsOnPage}</span> <span class="small">\${esc(c.reading||"nothing legible yet")}</span></a></li>\`).join("");
     return \`<div class="card"><h3>\${esc(al)}</h3><ul class="recent" style="margin-top:8px">\${rows}</ul></div>\`;
   }).join("");
   return \`<section class="band"><div class="wrap"><span class="eyebrow">The machine's reading · candidates</span>
@@ -1074,6 +1085,50 @@ function candidatesPage(){
     <p class="lede" style="max-width:64ch">\${fmt(np.namedByMachine)} stamps the atlas has read and named as <strong>candidates</strong>, \${fmt(np.verifiedByPerson)} confirmed by a person. A candidate is the machine's honest guess from the photograph, cited to what it saw; a person turns it from a guess into a fact over time. Nothing here is verified, and it says so.</p>
     \${(DATA.facts&&DATA.facts.distinctReadings)?\`<p class="small" style="max-width:66ch;margin-top:2px;color:var(--ink-2)"><strong>\${fmt(np.namedByMachine)}</strong> read · <strong>\${fmt(DATA.facts.distinctReadings)}</strong> distinct as read · <strong>\${fmt(np.namedByMachine-DATA.facts.distinctReadings)}</strong> look like duplicates. Two stamps count as one when they read the same — issuer, year, value and subject; a fuzzy signal (sparse reads merge, "Nippon" and "NIPPON" split), never a verified duplicate count.</p>\`:""}
     <div class="grid g2" style="margin-top:18px">\${groups||"<p class=small>No candidate readings yet.</p>"}</div>
+    \${CANDLEGEND}
+  </div></section>\`;
+}
+/* One candidate stamp, in full — everything the machine read, each field marked candidate, with
+   its apparent duplicates and its provenance. No image (real stamp imagery is never published). */
+function candidatePage(c){
+  const crumbs=\`<div class="wrap st-crumbs"><a href="#/">Frontispiece</a><span>›</span><a href="#/candidates">Candidate readings</a><span>›</span><span>\${esc(c.album)} · p\${esc(String(c.page))} · \${c.ordinal}/\${c.stampsOnPage}</span></div>\`;
+  const row=(label,val,extra)=>val?\`<div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-top:1px solid var(--rule-soft)"><span class="small" style="color:var(--ink-3);min-width:12ch">\${esc(label)}</span><span style="text-align:right">\${val}\${extra?\` <span class="small" style="color:var(--ink-3)">\${extra}</span>\`:""}</span></div>\`:"";
+  // Issuer + its candidate resolution.
+  const terr=c.territory&&c.territory!==c.issuer?\` → \${esc(c.territory)}\`:"";
+  const defunct=c.issuerStatus==="defunct"?\` <span class="small" style="color:var(--terra)">· no longer issues\${c.succeededBy?\` → \${esc(c.succeededBy)}\`:""}</span>\`:"";
+  const issuerRow=row("Issuer", c.issuer?\`\${esc(c.issuer)}\${terr}\${defunct}\`:"", c.issuer?"as printed":"");
+  const formVal=c.form?\`\${esc(c.form)}\${c.containsCount?\` of \${fmt(c.containsCount)}\`:""}\`:"";
+  const subjects=(c.subjects||[]).length?c.subjects.map(esc).join(", "):"";
+  // Apparent duplicates — other candidates sharing this fingerprint.
+  const fp=candFingerprint(c);
+  const sibs=(DATA.candidates||[]).filter(x=>x.id!==c.id&&candFingerprint(x)===fp);
+  const sibList=sibs.length?\`<div class="card"><h3>Looks like \${fmt(sibs.length)} other\${sibs.length===1?"":"s"} on the shelf</h3><p class="small" style="color:var(--ink-2)">Same reading — issuer, year, value and subject — so these are the apparent duplicates a person would later merge or keep as extras. A fuzzy match on what was read, not a verified duplicate.</p><ul class="recent" style="margin-top:8px">\${sibs.slice(0,20).map(x=>\`<li><a href="\${candHref(x.id)}">\${esc(x.album)} · p\${esc(String(x.page))} · \${x.ordinal}/\${x.stampsOnPage}</a></li>\`).join("")}</ul></div>\`:"";
+  return \`\${crumbs}<section class="band"><div class="wrap" style="max-width:820px">
+    <span class="eyebrow">The machine's reading · one stamp</span>
+    <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">\${dot("candidate","*")} \${esc(c.album)} · page \${esc(String(c.page))} · stamp \${c.ordinal} of \${c.stampsOnPage}</h1>
+    <p class="lede" style="max-width:64ch">\${esc(c.reading||"Nothing legible yet — a closer photograph would help.")}</p>
+    <div class="grid g2 split" style="--split:1.4fr 1fr;align-items:start;margin-top:18px">
+      <div class="card">
+        <h3 style="margin-top:0">What the machine read</h3>
+        \${issuerRow}
+        \${row("Denomination", c.denomination?esc(c.denomination):"")}
+        \${row("Year", c.year?esc(c.year):"")}
+        \${row("Form", formVal)}
+        \${row("Subjects", subjects)}
+        \${row("Theme", c.theme?esc(c.theme):"")}
+        \${(!c.issuer&&!c.denomination&&!c.year&&!subjects)?\`<p class="small" style="color:var(--ink-3);margin-top:10px">Nothing legible was read — a closer photograph would help.</p>\`:""}
+        <p class="small" style="color:var(--ink-3);border-top:1px solid var(--rule-soft);margin-top:10px;padding-top:10px">Read from \${fmt((c.basis||[]).length)} cited observation\${(c.basis||[]).length===1?"":"s"}, by <span class="mono">\${esc(c.reader||"page-vision")}</span>. Every line is a candidate a person has not yet confirmed.</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">Where it sits</h3>
+        \${row("Album", esc(c.album))}
+        \${row("Page", esc(String(c.page)))}
+        \${row("On the page", \`\${c.ordinal} of \${c.stampsOnPage}\`)}
+        \${c.capturedAt?row("Photographed", esc(niceDate(c.capturedAt))):""}
+        <p class="small" style="color:var(--ink-3);border-top:1px solid var(--rule-soft);margin-top:10px;padding-top:10px">No image is shown: the atlas never publishes photographs of the stamps themselves.</p>
+      </div>
+    </div>
+    \${sibList?\`<div style="margin-top:18px">\${sibList}</div>\`:""}
     \${CANDLEGEND}
   </div></section>\`;
 }
@@ -1484,6 +1539,7 @@ function buildIndex(){
   PARTS.forEach((p,i)=>add("Pages","Part",\`Part \${ROMAN[i]} · \${p.title}\`,p.blurb,partHref(p),[p.chapters.map(c=>c[1]).join(" "),"contents"]));
   CHAPTERS.forEach(c=>{ const m=CH[c[0]]; add("Chapters","Chapter",m.title,\`\${ROMAN[m.i]} · \${c[1]} · \${chapterStatus(c[0])}\`,chHref(c[0]),[c[1],strip(m.deck||"")],{alias:[c[1]],to:c[0]}); });
   stamps().forEach(s=>add("Stamps","Stamp",\`\${s.title} — \${issuerName(s)}, \${yearOf(s)||"year unread"}\`,\`\${s.identity.issuerAsPrinted.value} · \${denomOf(s)||""} · \${s.story?"story written":"identity only"}\`,stampHref(s.id),[s.id,s.slug||"",s.short||"",(s.facts||[]).map(f=>f.text).join(" ")]));
+  (DATA.candidates||[]).forEach(c=>add("Stamps","Candidate",\`\${c.album} · p\${c.page} · \${c.ordinal}/\${c.stampsOnPage}\`,c.reading||\`\${c.issuer||"issuer unread"} · \${c.territory||""}\`,candHref(c.id),[c.issuer||"",c.territory||"",c.resolvedIssuer||"",(c.subjects||[]).join(" "),c.theme||"","candidate machine reading"]));
   (DATA.issuers||[]).forEach(i=>add("Issuers","Issuer",i.name,\`\${i.status==="candidate"?"machine candidate":(i.state==="defunct"?"no longer issues":"current")}\${i.today?\` · today \${i.today}\`:""} · \${i.items||0} item\${(i.items||0)===1?"":"s"}\`,chHref("issuers"),[i.asPrinted,i.today,i.note],{key:i.id,sec:"issuers"}));
   (DATA.people||[]).forEach(p=>add("People","Person",p.name,\`\${p.role} · \${p.lived||""}\`,chHref("people"),[p.role],{key:p.id,sec:"people"}));
   (DATA.themes||[]).forEach(t=>add("Themes","Theme",t.name,\`\${t.stamps.length} named stamp\${t.stamps.length===1?"":"s"}\`,chHref("themes"),[],{key:t.id,sec:"themes"}));
@@ -1537,6 +1593,7 @@ function parseRoute(){
   if(seg[0]==="chapter"){ const p=partOf(seg[1]); return p?{kind:"part",part:p,chapter:seg[1],redirect:partHref(p,seg[1])}:{kind:"404",hash:h}; }
   if(seg[0]==="stamps") return {kind:"register"};
   if(seg[0]==="candidates") return {kind:"candidates"};
+  if(seg[0]==="candidate"){ const c=candidateById(decodeURIComponent(seg.slice(1).join("/"))); return c?{kind:"candidate",candidate:c}:{kind:"404",hash:h}; }
   if(seg[0]==="countries"||seg[0]==="issuers") return {kind:"countries"};
   if(seg[0]==="themes") return {kind:"themes"};
   if(seg[0]==="territories") return {kind:"territories"};
@@ -1564,6 +1621,7 @@ function navigate(){
     case "part":     html=partPage(r.part); title=\`Part \${ROMAN[PARTS.indexOf(r.part)]} · \${r.part.title} — Stamp Atlas\`; break;
     case "register": html=registerPage(); title="The Register — Stamp Atlas"; break;
     case "candidates": html=candidatesPage(); title="Candidate readings — Stamp Atlas"; break;
+    case "candidate": html=candidatePage(r.candidate); title=\`\${r.candidate.album} · p\${r.candidate.page} · \${r.candidate.ordinal}/\${r.candidate.stampsOnPage} — Stamp Atlas\`; break;
     case "countries": html=countriesPage(); title="Issuers — Stamp Atlas"; break;
     case "themes":   html=themesPage(); title="Themes — Stamp Atlas"; break;
     case "territories": html=territoriesPage(); title="Territories — Stamp Atlas"; break;
