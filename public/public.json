@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T00:33:55.283Z",
+  "generatedAt": "2026-09-09T01:10:42.178Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -65,19 +65,19 @@
         "value": {
           "confirmed": 0,
           "candidate": 0,
-          "unknown": 318
+          "unknown": 332
         },
-        "eligiblePopulation": 318
+        "eligiblePopulation": 332
       },
       {
         "metric": "distinctIssuerCount",
         "unit": "issuers whose name is printed on a stamp here — as read, not yet resolved to entities",
         "value": {
           "confirmed": 0,
-          "candidate": 26,
+          "candidate": 27,
           "unknown": 0
         },
-        "eligiblePopulation": 26
+        "eligiblePopulation": 27
       },
       {
         "metric": "distinctThemeCount",
@@ -90,12 +90,12 @@
         "eligiblePopulation": 13
       }
     ],
-    "asOf": "2026-09-09T00:34:04.348Z",
+    "asOf": "2026-09-09T01:10:51.843Z",
     "namingProgress": {
-      "namedByMachine": 202,
+      "namedByMachine": 216,
       "verifiedByPerson": 0
     },
-    "distinctReadings": 171,
+    "distinctReadings": 185,
     "issuers": [
       {
         "name": "Nippon",
@@ -135,9 +135,9 @@
       },
       {
         "name": "Magyar Posta",
-        "candidate": 7,
+        "candidate": 8,
         "confirmed": 0,
-        "distinct": 6
+        "distinct": 7
       },
       {
         "name": "Angola",
@@ -147,6 +147,12 @@
       },
       {
         "name": "Fujeira",
+        "candidate": 6,
+        "confirmed": 0,
+        "distinct": 6
+      },
+      {
+        "name": "Mongolia",
         "candidate": 6,
         "confirmed": 0,
         "distinct": 6
@@ -164,6 +170,12 @@
         "distinct": 4
       },
       {
+        "name": "N.D. Hrvatska",
+        "candidate": 4,
+        "confirmed": 0,
+        "distinct": 4
+      },
+      {
         "name": "Republik Maluku Selatan",
         "candidate": 4,
         "confirmed": 0,
@@ -171,12 +183,6 @@
       },
       {
         "name": "Aitutaki",
-        "candidate": 3,
-        "confirmed": 0,
-        "distinct": 3
-      },
-      {
-        "name": "Mongolia",
         "candidate": 3,
         "confirmed": 0,
         "distinct": 3
@@ -263,15 +269,15 @@
       },
       {
         "name": "wildlife",
-        "candidate": 28,
+        "candidate": 33,
         "confirmed": 0,
-        "distinct": 27
+        "distinct": 32
       },
       {
         "name": "sport",
-        "candidate": 27,
+        "candidate": 29,
         "confirmed": 0,
-        "distinct": 26
+        "distinct": 28
       },
       {
         "name": "religion",
@@ -280,22 +286,22 @@
         "distinct": 17
       },
       {
-        "name": "art",
-        "candidate": 6,
-        "confirmed": 0,
-        "distinct": 6
-      },
-      {
         "name": "flora",
-        "candidate": 6,
+        "candidate": 9,
         "confirmed": 0,
-        "distinct": 6
+        "distinct": 9
       },
       {
         "name": "people",
-        "candidate": 6,
+        "candidate": 8,
         "confirmed": 0,
-        "distinct": 6
+        "distinct": 8
+      },
+      {
+        "name": "art",
+        "candidate": 7,
+        "confirmed": 0,
+        "distinct": 7
       },
       {
         "name": "transport",
@@ -305,9 +311,9 @@
       },
       {
         "name": "maritime",
-        "candidate": 3,
+        "candidate": 4,
         "confirmed": 0,
-        "distinct": 2
+        "distinct": 3
       },
       {
         "name": "event",
@@ -519,7 +525,7 @@
       "observedUnknown": 9,
       "capturedOn": "2026-09-08",
       "itemCount": {
-        "total": 87,
+        "total": 101,
         "identified": 0
       },
       "countedItems": 101,
@@ -1857,6 +1863,360 @@
         "asr_01M218B1J1HA4R151NJ6VZMQGB",
         "asr_01M218B1KQBJZE40ZRJ1PE5WJR",
         "asr_01M218B1NAHV2ZY09MJ0V8AJGH"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p5-1",
+      "album": "PA-2C3N3Y-1",
+      "page": 5,
+      "ordinal": 1,
+      "stampsOnPage": 14,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": "60",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Fish/underwater aquatic scene"
+      ],
+      "theme": "wildlife",
+      "reading": "Depicts Fish/underwater aquatic scene. A face value of 60. A single stamp.",
+      "basis": [
+        "asr_01M21VCS192F9B6YW0HW2D8N1Q",
+        "asr_01M21VCS2Y68QHXZM805VPQCJT",
+        "asr_01M21VCS4MNQXGTTR5ZNQQE6T7"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p5-10",
+      "album": "PA-2C3N3Y-1",
+      "page": 5,
+      "ordinal": 10,
+      "stampsOnPage": 14,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "N.D. Hrvatska",
+      "denomination": "30",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Bird (Costa series)"
+      ],
+      "theme": "wildlife",
+      "reading": "Depicts Bird (Costa series). Printed \"N.D. Hrvatska\". A face value of 30. A single stamp.",
+      "basis": [
+        "asr_01M21VCTQJK46037GYMDA8Q1QZ",
+        "asr_01M21VCTV9Z4J17SYWG5M8N6NR",
+        "asr_01M21VCTWZCZ6VD1B8WM26WFR0",
+        "asr_01M21VCTYENK1PKNMMNRCTSVQQ"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p5-11",
+      "album": "PA-2C3N3Y-1",
+      "page": 5,
+      "ordinal": 11,
+      "stampsOnPage": 14,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Flowers/berries, decorative border"
+      ],
+      "theme": "flora",
+      "reading": "Depicts Flowers/berries, decorative border. A single stamp.",
+      "basis": [
+        "asr_01M21VCVRH5TR8XEQ8NN9WEXAM",
+        "asr_01M21VCVT3TFFP8GPAK8A4WW7W"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p5-12",
+      "album": "PA-2C3N3Y-1",
+      "page": 5,
+      "ordinal": 12,
+      "stampsOnPage": 14,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "N.D. Hrvatska",
+      "denomination": "35",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Bird (Costa series)"
+      ],
+      "theme": "wildlife",
+      "reading": "Depicts Bird (Costa series). Printed \"N.D. Hrvatska\". A face value of 35. A single stamp.",
+      "basis": [
+        "asr_01M21VCVYYQNMR47XADGB5NXFD",
+        "asr_01M21VCW0N1HVK0VVGQS6BNNQK",
+        "asr_01M21VCW2AXBGPTJY5CC6VFE0E",
+        "asr_01M21VCW56YPNTCGMRSAW25D60"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p5-13",
+      "album": "PA-2C3N3Y-1",
+      "page": 5,
+      "ordinal": 13,
+      "stampsOnPage": 14,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Mongolia",
+      "denomination": "60",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Children in colorful traditional dress, decorative border"
+      ],
+      "theme": "people",
+      "reading": "Depicts Children in colorful traditional dress, decorative border. Printed \"Mongolia\". A face value of 60. A single stamp.",
+      "basis": [
+        "asr_01M21VCV42ES0CM3R52RGD25W9",
+        "asr_01M21VCV5VYNANZ4JJWCKJ1MBT",
+        "asr_01M21VCV7NQGFK1Y08MN5F6MS7",
+        "asr_01M21VCVAS20QZ0MBHG15YA62F"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p5-14",
+      "album": "PA-2C3N3Y-1",
+      "page": 5,
+      "ordinal": 14,
+      "stampsOnPage": 14,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Mongolia",
+      "denomination": "50",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Deer with children, decorative border"
+      ],
+      "theme": "wildlife",
+      "reading": "Depicts Deer with children, decorative border. Printed \"Mongolia\". A face value of 50. A single stamp.",
+      "basis": [
+        "asr_01M21VCTCA36FZF7SA4483A463",
+        "asr_01M21VCTE4RAFCF5HM2PV7XB3H",
+        "asr_01M21VCTFK07GBT955YDGYSRSG",
+        "asr_01M21VCTH4ACNA3BYNFKWW3ZY5"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p5-2",
+      "album": "PA-2C3N3Y-1",
+      "page": 5,
+      "ordinal": 2,
+      "stampsOnPage": 14,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "N.D. Hrvatska",
+      "denomination": "40",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Red poppy flower"
+      ],
+      "theme": "flora",
+      "reading": "Depicts Red poppy flower. Printed \"N.D. Hrvatska\". A face value of 40. A single stamp.",
+      "basis": [
+        "asr_01M21VCS9SVQAD6E7N919JTS80",
+        "asr_01M21VCSBJAN0E17BVFG91G3N3",
+        "asr_01M21VCSD4SEP9XXNE78RV1NN7",
+        "asr_01M21VCSET64TKGP97QAT109S8"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p5-3",
+      "album": "PA-2C3N3Y-1",
+      "page": 5,
+      "ordinal": 3,
+      "stampsOnPage": 14,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Magyar Posta",
+      "denomination": "80",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Olympic athlete throwing javelin"
+      ],
+      "theme": "sport",
+      "reading": "Depicts Olympic athlete throwing javelin. Printed \"Magyar Posta\". A face value of 80. A single stamp.",
+      "basis": [
+        "asr_01M21VCRQAJ6HGRJEX24KV90DM",
+        "asr_01M21VCRRTZVP21BZT4074Z0FJ",
+        "asr_01M21VCRTJZ6DV1GXXWW30QMW9",
+        "asr_01M21VCRW87RFFD505XZT483QV"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p5-4",
+      "album": "PA-2C3N3Y-1",
+      "page": 5,
+      "ordinal": 4,
+      "stampsOnPage": 14,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": "1",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Colorful abstract/portrait design"
+      ],
+      "theme": "art",
+      "reading": "Depicts Colorful abstract/portrait design. A face value of 1. A single stamp.",
+      "basis": [
+        "asr_01M21VCRDEMDXS6BR35BA8Q9DE",
+        "asr_01M21VCRF329267ZN37GHMQSTA",
+        "asr_01M21VCRGS2AJY23KV51NQ8JK6"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p5-5",
+      "album": "PA-2C3N3Y-1",
+      "page": 5,
+      "ordinal": 5,
+      "stampsOnPage": 14,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "N.D. Hrvatska",
+      "denomination": "20",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Purple/violet flower"
+      ],
+      "theme": "flora",
+      "reading": "Depicts Purple/violet flower. Printed \"N.D. Hrvatska\". A face value of 20. A single stamp.",
+      "basis": [
+        "asr_01M21VCR39ZDC0GCQQGDZJ42Y4",
+        "asr_01M21VCR4Z71D9HWHE935DS47Y",
+        "asr_01M21VCR6N6DX2TRGJC8S9YG1F",
+        "asr_01M21VCR8B28TZA3ZQASPMQSAH"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p5-6",
+      "album": "PA-2C3N3Y-1",
+      "page": 5,
+      "ordinal": 6,
+      "stampsOnPage": 14,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Coastal landscape with buildings/boats"
+      ],
+      "theme": "maritime",
+      "reading": "Depicts Coastal landscape with buildings/boats. A single stamp.",
+      "basis": [
+        "asr_01M21VCSN2CR5N21F6FN34VWS6",
+        "asr_01M21VCSPVNVYAVBSVXMKT1P5E"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p5-7",
+      "album": "PA-2C3N3Y-1",
+      "page": 5,
+      "ordinal": 7,
+      "stampsOnPage": 14,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Sheep/lamb with flowers, ornate decorative border"
+      ],
+      "theme": "wildlife",
+      "reading": "Depicts Sheep/lamb with flowers, ornate decorative border. A single stamp.",
+      "basis": [
+        "asr_01M21VCT57NSH3BMHKKN25F807",
+        "asr_01M21VCT6WNB46Z22519M1FVBQ"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p5-8",
+      "album": "PA-2C3N3Y-1",
+      "page": 5,
+      "ordinal": 8,
+      "stampsOnPage": 14,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": "Mongolia",
+      "denomination": null,
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Children in purple/pink traditional dress, decorative border"
+      ],
+      "theme": "people",
+      "reading": "Depicts Children in purple/pink traditional dress, decorative border. Printed \"Mongolia\". A single stamp.",
+      "basis": [
+        "asr_01M21VCVFTV0GW878418K0W1EH",
+        "asr_01M21VCVHM1M1SNK818ZM5G1T2",
+        "asr_01M21VCVKDX0VM49A83096NHAP"
+      ],
+      "capturedAt": "2026-09-08T06:16:24.785Z"
+    },
+    {
+      "id": "PA-2C3N3Y-1-p5-9",
+      "album": "PA-2C3N3Y-1",
+      "page": 5,
+      "ordinal": 9,
+      "stampsOnPage": 14,
+      "status": "candidate",
+      "reader": "page-vision",
+      "issuer": null,
+      "denomination": "60",
+      "year": null,
+      "form": "single",
+      "containsCount": null,
+      "subjects": [
+        "Olympic athlete swimming/diving"
+      ],
+      "theme": "sport",
+      "reading": "Depicts Olympic athlete swimming/diving. A face value of 60. A single stamp.",
+      "basis": [
+        "asr_01M21VCSWR9KWN4Q4KW7D3N080",
+        "asr_01M21VCSYDG70CR9KGNRB78BQA",
+        "asr_01M21VCSZW1ADSDJXB9JH7DRDT"
       ],
       "capturedAt": "2026-09-08T06:16:24.785Z"
     },
