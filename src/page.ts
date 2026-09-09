@@ -1082,19 +1082,42 @@ function issuersBand(){
   if(!iss.length) return "";
   const top=iss.slice(0,15);
   return \`<section class="band reveal" aria-labelledby="iss-h"><div class="wrap">
-    <div class="band-head"><div><span class="eyebrow">By issuer</span><h2 id="iss-h">Where the stamps come from</h2></div><a class="more" href="#/countries">All \${fmt(iss.length)} issuers →</a></div>
-    <p class="small" style="max-width:66ch;margin-top:4px">Counted by the issuer name printed on each stamp, <em>as the machine read it</em> — not yet resolved to entities, so "Nippon", "NIPPON" and "Japan Post" stay separate rows until a person maps them to Japan. Every count is a candidate until confirmed.</p>
+    <div class="band-head"><div><span class="eyebrow">By issuer</span><h2 id="iss-h">Who printed the post</h2></div><a class="more" href="#/countries">All \${fmt(iss.length)} issuers →</a></div>
+    <p class="small" style="max-width:66ch;margin-top:4px">Counted by the issuer name printed on each stamp, <em>as the machine read it</em> — "Nippon", "NIPPON" and "Japan Post" stay separate rows here; the machine's candidate resolution rolls them up under <a href="#/territories">territories</a> and flags the ones that no longer exist. Every count is a candidate until confirmed.</p>
     <div class="grid g3" style="margin-top:16px">\${top.map(i=>\`<div class="card" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span>\${dot(i.confirmed>0?"confirmed":"candidate","")} \${esc(i.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">\${fmt(i.candidate+i.confirmed)}</strong></div>\`).join("")}</div>
     \${CANDLEGEND}
   </div></section>\`;
 }
+/* The marquee card: issuers the collection holds that no longer issue — Ceylon, Umm al-Quwain,
+   the Trucial States — each with the successor the machine named. Candidate until confirmed. */
+function extinctCard(){
+  const iss=(DATA.facts&&DATA.facts.issuers)||[];
+  // Distinct defunct issuers, by their resolved (normalised) name, keeping the largest count + successor.
+  const byName={};
+  iss.forEach(i=>{ if(i.status!=="defunct") return; const key=i.resolvedName||i.name;
+    const cur=byName[key]||{name:key,count:0,succ:i.succeededBy||null,territory:i.territory||null};
+    cur.count+=(i.candidate||0)+(i.confirmed||0); if(!cur.succ&&i.succeededBy) cur.succ=i.succeededBy; byName[key]=cur; });
+  const list=Object.values(byName).sort((a,b)=>b.count-a.count);
+  if(!list.length) return "";
+  const rows=list.map(d=>\`<li style="display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid var(--rule-soft)"><span>\${dot("candidate","")} <strong>\${esc(d.name)}</strong>\${d.succ?\` <span class="small" style="color:var(--ink-3)">→ \${esc(d.succ)}</span>\`:""}</span><span class="small">\${fmt(d.count)}</span></li>\`).join("");
+  return \`<div class="card" style="border-left:3px solid var(--terra)"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><h3 style="margin:0">Issuers that no longer exist</h3><strong style="font-family:var(--ff-display);font-size:1.6em;color:var(--terra)">\${fmt(list.length)}</strong></div>
+    <p class="small" style="margin:6px 0 4px;color:var(--ink-2)">Places that once printed the post and have since been renamed, absorbed or dissolved — each still counted under the name it issued as, with where it went next.</p>
+    <ul style="list-style:none;padding:0;margin:8px 0 0">\${rows}</ul>
+    \${CANDLEGEND}</div>\`;
+}
 function countriesPage(){
   const iss=(DATA.facts&&DATA.facts.issuers)||[];
-  const rows=iss.map(i=>\`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>\${dot(i.confirmed>0?"confirmed":"candidate","")} \${esc(i.name)}</span><span class="small">\${i.confirmed?\`\${fmt(i.confirmed)} confirmed\${i.candidate?" · ":""}\`:""}\${i.candidate?\`\${fmt(i.candidate)}\${i.distinct<i.candidate?\` <span style="color:var(--ink-3)">· \${fmt(i.distinct)} distinct</span>\`:""}\`:""}</span></li>\`).join("");
+  const terrs=(DATA.facts&&DATA.facts.territories)||[];
+  const resolved=iss.some(i=>i.territory);
+  const rows=iss.map(i=>{
+    const mark=i.status==="defunct"?\` <span class="small" style="color:var(--terra)">· no longer issues\${i.succeededBy?\` → \${esc(i.succeededBy)}\`:""}</span>\`:"";
+    const terr=i.territory&&i.territory!==i.name?\` <span class="small" style="color:var(--ink-3)">· \${esc(i.territory)}</span>\`:"";
+    return \`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>\${dot(i.confirmed>0?"confirmed":"candidate","")} \${esc(i.name)}\${terr}\${mark}</span><span class="small">\${i.confirmed?\`\${fmt(i.confirmed)} confirmed\${i.candidate?" · ":""}\`:""}\${i.candidate?\`\${fmt(i.candidate)}\${i.distinct<i.candidate?\` <span style="color:var(--ink-3)">· \${fmt(i.distinct)} distinct</span>\`:""}\`:""}</span></li>\`;
+  }).join("");
   return \`<section class="band"><div class="wrap"><span class="eyebrow">By issuer</span>
     <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Issuers</h1>
-    <p class="lede" style="max-width:66ch">\${fmt(iss.length)} distinct issuer names the atlas has read across the collection, counted by how many stamps carry each. <strong>As read, not yet resolved to entities</strong> — "Nippon", "NIPPON" and "Japan Post" stay separate until a person maps them to Japan, and the succession graph (which issuers no longer exist) is a later phase. Every count is a candidate until a person confirms it.</p>
-    \${(DATA.facts&&DATA.facts.distinctReadings)?\`<p class="small" style="max-width:66ch;margin-top:2px;color:var(--ink-2)"><strong>\${fmt((DATA.facts.namingProgress||{}).namedByMachine||0)}</strong> read · <strong>\${fmt(DATA.facts.distinctReadings)}</strong> distinct as read. Each row's <span style="color:var(--ink-3)">· N distinct</span> is how many of its stamps look different — fingerprinted on issuer, year, value and subject, an estimate not a verified duplicate count.</p>\`:""}
+    <p class="lede" style="max-width:66ch">\${fmt(iss.length)} distinct issuer names the atlas has read, counted by how many stamps carry each — kept as the name is <em>printed</em> ("Nippon", "NIPPON", "Japan Post" stay three rows). \${resolved?\`The machine has <strong>proposed</strong> where each sits: they roll up into <a href="#/territories">\${fmt(terrs.length)} territories</a>, and it flags the ones that no longer exist. All candidate until a person confirms.\`:\`Resolving them to territories is the next step.\`}</p>
+    \${resolved?\`<div style="margin:18px 0">\${extinctCard()}</div>\`:""}
     <ul style="list-style:none;padding:0;margin:20px 0 0;columns:2;column-gap:40px">\${rows||"<li class=small>No issuers read yet.</li>"}</ul>
     \${CANDLEGEND}
   </div></section>\`;
@@ -1123,7 +1146,31 @@ function themesPage(){
     \${CANDLEGEND}
   </div></section>\`;
 }
-function homePage(){ return frontispiece()+glanceBand()+candidatesBand()+issuersBand()+themesBand()+todayBand()+mapBand()+doorsBand()+recentBand(); }
+function territoriesBand(){
+  const t=(DATA.facts&&DATA.facts.territories)||[];
+  if(!t.length) return "";
+  const ext=(DATA.facts&&DATA.facts.issuers||[]).filter(i=>i.status==="defunct");
+  const top=t.slice(0,15);
+  return \`<section class="band reveal" aria-labelledby="terr-h"><div class="wrap">
+    <div class="band-head"><div><span class="eyebrow">By territory</span><h2 id="terr-h">Where the post came from</h2></div><a class="more" href="#/territories">All \${fmt(t.length)} territories →</a></div>
+    <p class="small" style="max-width:66ch;margin-top:4px">The issuer names rolled up to the <em>place</em> — "Nippon", "NIPPON" and "Japan Post" become one Japan. A candidate resolution the machine proposed; a person confirms it\${ext.length?\`, and it flags <a href="#/countries">\${fmt(new Set(ext.map(i=>i.resolvedName||i.name)).size)} that no longer exist</a>\`:""}.</p>
+    <div class="grid g3" style="margin-top:16px">\${top.map(x=>\`<div class="card" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span>\${dot("candidate","")} \${esc(x.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">\${fmt(x.candidate+x.confirmed)}</strong></div>\`).join("")}</div>
+    \${CANDLEGEND}
+  </div></section>\`;
+}
+function territoriesPage(){
+  const t=(DATA.facts&&DATA.facts.territories)||[];
+  const total=t.reduce((n,x)=>n+x.candidate+x.confirmed,0);
+  const rows=t.map(x=>\`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>\${dot("candidate","")} \${esc(x.name)}</span><span class="small">\${fmt(x.candidate+x.confirmed)}\${x.distinct<x.candidate?\` <span style="color:var(--ink-3)">· \${fmt(x.distinct)} distinct</span>\`:""}</span></li>\`).join("");
+  return \`<section class="band"><div class="wrap"><span class="eyebrow">By territory</span>
+    <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Territories</h1>
+    <p class="lede" style="max-width:66ch">\${fmt(t.length)} territories the collection touches, from \${fmt(total)} stamps — the issuer names resolved to the <em>place</em>. A rename of one continuous place folds together (Ceylon and Sri Lanka are one territory, two issuer names); genuinely distinct states stay apart (East and West Germany never fold into modern Germany). <strong>A candidate resolution</strong> the machine proposed; a person confirms it.</p>
+    <div style="margin:18px 0">\${extinctCard()}</div>
+    <ul style="list-style:none;padding:0;margin:20px 0 0;columns:2;column-gap:40px">\${rows||"<li class=small>No territories resolved yet.</li>"}</ul>
+    \${CANDLEGEND}
+  </div></section>\`;
+}
+function homePage(){ return frontispiece()+glanceBand()+candidatesBand()+issuersBand()+themesBand()+territoriesBand()+todayBand()+mapBand()+doorsBand()+recentBand(); }
 
 /* =====================================================================
    CHAPTERS · populated where the projection allows, awaiting where not
@@ -1432,6 +1479,7 @@ function buildIndex(){
   if((DATA.candidates||[]).length) add("Pages","Page","Candidate readings","what the machine read, not yet confirmed","#/candidates",["candidates machine reading unconfirmed"]);
   if(DATA.facts&&(DATA.facts.issuers||[]).length) add("Pages","Page","Issuers","the collection by issuer name, as read","#/countries",["issuers countries where from"]);
   if(DATA.facts&&(DATA.facts.themes||[]).length) add("Pages","Page","Themes","the collection by subject theme, as read","#/themes",["themes subjects what about"]);
+  if(DATA.facts&&(DATA.facts.territories||[]).length) add("Pages","Page","Territories","issuers rolled up to the place, and which no longer exist","#/territories",["territories countries places extinct defunct"]);
   if(stampOfTheDay()) add("Pages","Page","Stamp of the day",stampOfTheDay().title,"#/stamp/today",["today featured rotate"]);
   PARTS.forEach((p,i)=>add("Pages","Part",\`Part \${ROMAN[i]} · \${p.title}\`,p.blurb,partHref(p),[p.chapters.map(c=>c[1]).join(" "),"contents"]));
   CHAPTERS.forEach(c=>{ const m=CH[c[0]]; add("Chapters","Chapter",m.title,\`\${ROMAN[m.i]} · \${c[1]} · \${chapterStatus(c[0])}\`,chHref(c[0]),[c[1],strip(m.deck||"")],{alias:[c[1]],to:c[0]}); });
@@ -1491,6 +1539,7 @@ function parseRoute(){
   if(seg[0]==="candidates") return {kind:"candidates"};
   if(seg[0]==="countries"||seg[0]==="issuers") return {kind:"countries"};
   if(seg[0]==="themes") return {kind:"themes"};
+  if(seg[0]==="territories") return {kind:"territories"};
   if(seg[0]==="stamp"){ if(seg[1]==="today"){ const s=stampOfTheDay(); return s?{kind:"stamp",stamp:s,redirect:stampHref(s.id)}:{kind:"register",redirect:"#/stamps",noToday:true}; } const s=stampById(seg[1]); return s?{kind:"stamp",stamp:s}:{kind:"404",hash:h}; }
   return {kind:"404",hash:h};
 }
@@ -1517,6 +1566,7 @@ function navigate(){
     case "candidates": html=candidatesPage(); title="Candidate readings — Stamp Atlas"; break;
     case "countries": html=countriesPage(); title="Issuers — Stamp Atlas"; break;
     case "themes":   html=themesPage(); title="Themes — Stamp Atlas"; break;
+    case "territories": html=territoriesPage(); title="Territories — Stamp Atlas"; break;
     case "stamp":    html=stampPage(r.stamp); title=\`\${r.stamp.title} · \${issuerName(r.stamp)} \${yearOf(r.stamp)||""} — Stamp Atlas\`; break;
     default:         html=notFoundPage(r.hash); title="Off the edge of the map — Stamp Atlas";
   }
