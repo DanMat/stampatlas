@@ -778,7 +778,10 @@ function disp(m){
            u: hasU, pop, v };
 }
 /* status vocabulary for a single fact on a stamp page */
-const STATUS={confirmed:"confirmed",candidate:"candidate",unknown:"not known",nm:"not measurable"};
+const STATUS={confirmed:"confirmed",candidate:"*",unknown:"not known",nm:"not measurable"};
+/* One reusable legend for the asterisk. A candidate carries a bare "*" mark rather than the
+   word repeated on every card; this line, shown once per view, is what the mark means. */
+const CANDLEGEND=`<p class="small candlegend" style="color:var(--ink-3);margin-top:10px"><span class="dot candidate" style="vertical-align:baseline"></span> <strong>*</strong> the machine's reading — not yet confirmed by a person.</p>`;
 const SOURCE={printed:"printed on the stamp",reference:"reference",album:"album record",machine:"machine reading","machine+person":"machine, confirmed by a person",curator:"collector's note"};
 const dot=(st,label)=>`<span class="dot ${esc(st||"unknown")}">${esc(label||STATUS[st]||st||"")}</span>`;
 
@@ -1050,8 +1053,9 @@ function candidatesBand(){
   return `<section class="band reveal" aria-labelledby="cand-h"><div class="wrap">
     <div class="band-head"><div><span class="eyebrow">The machine's reading</span><h2 id="cand-h">What the atlas thinks it sees</h2></div><a class="more" href="#/candidates">All candidate readings →</a></div>
     <p class="lede" style="max-width:64ch;margin-top:6px">Each card is the machine's <strong>candidate</strong> reading of one stamp — drawn from the photograph, cited to what it saw, <em>and not yet confirmed by a person</em>. <strong>${fmt(np.namedByMachine)}</strong> named by the atlas · <strong>${fmt(np.verifiedByPerson)}</strong> verified by a person. The gap is honest guesswork, and the page never hides it.</p>
-    <div class="grid g3" style="margin-top:18px">${sample.map(c=>`<div class="card"><div class="meta">${dot("candidate","candidate")} ${esc(c.album)} · p${esc(String(c.page))} · ${c.ordinal}/${c.stampsOnPage}</div><p class="small" style="margin-top:8px">${esc(c.reading||"Nothing legible yet — a closer photograph would help.")}</p></div>`).join("")}</div>
+    <div class="grid g3" style="margin-top:18px">${sample.map(c=>`<div class="card"><div class="meta">${dot("candidate","*")} ${esc(c.album)} · p${esc(String(c.page))} · ${c.ordinal}/${c.stampsOnPage}</div><p class="small" style="margin-top:8px">${esc(c.reading||"Nothing legible yet — a closer photograph would help.")}</p></div>`).join("")}</div>
     ${cands.length>sample.length?`<p class="small" style="margin-top:14px"><a href="#/candidates">…and ${fmt(cands.length-sample.length)} more candidate readings →</a></p>`:""}
+    ${CANDLEGEND}
   </div></section>`;
 }
 function candidatesPage(){
@@ -1066,6 +1070,7 @@ function candidatesPage(){
     <h1 style="margin-top:8px">Candidate readings</h1>
     <p class="lede" style="max-width:64ch">${fmt(np.namedByMachine)} stamps the atlas has read and named as <strong>candidates</strong>, ${fmt(np.verifiedByPerson)} confirmed by a person. A candidate is the machine's honest guess from the photograph, cited to what it saw; a person turns it from a guess into a fact over time. Nothing here is verified, and it says so.</p>
     <div class="grid g2" style="margin-top:18px">${groups||"<p class=small>No candidate readings yet.</p>"}</div>
+    ${CANDLEGEND}
   </div></section>`;
 }
 function issuersBand(){
@@ -1076,18 +1081,43 @@ function issuersBand(){
     <div class="band-head"><div><span class="eyebrow">By issuer</span><h2 id="iss-h">Where the stamps come from</h2></div><a class="more" href="#/countries">All ${fmt(iss.length)} issuers →</a></div>
     <p class="small" style="max-width:66ch;margin-top:4px">Counted by the issuer name printed on each stamp, <em>as the machine read it</em> — not yet resolved to entities, so "Nippon", "NIPPON" and "Japan Post" stay separate rows until a person maps them to Japan. Every count is a candidate until confirmed.</p>
     <div class="grid g3" style="margin-top:16px">${top.map(i=>`<div class="card" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span>${dot(i.confirmed>0?"confirmed":"candidate","")} ${esc(i.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">${fmt(i.candidate+i.confirmed)}</strong></div>`).join("")}</div>
+    ${CANDLEGEND}
   </div></section>`;
 }
 function countriesPage(){
   const iss=(DATA.facts&&DATA.facts.issuers)||[];
-  const rows=iss.map(i=>`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>${dot(i.confirmed>0?"confirmed":"candidate","")} ${esc(i.name)}</span><span class="small">${i.confirmed?`${fmt(i.confirmed)} confirmed${i.candidate?" · ":""}`:""}${i.candidate?`${fmt(i.candidate)} candidate`:""}</span></li>`).join("");
+  const rows=iss.map(i=>`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>${dot(i.confirmed>0?"confirmed":"candidate","")} ${esc(i.name)}</span><span class="small">${i.confirmed?`${fmt(i.confirmed)} confirmed${i.candidate?" · ":""}`:""}${i.candidate?`${fmt(i.candidate)}*`:""}</span></li>`).join("");
   return `<section class="band"><div class="wrap"><span class="eyebrow">By issuer</span>
     <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Issuers</h1>
     <p class="lede" style="max-width:66ch">${fmt(iss.length)} distinct issuer names the atlas has read across the collection, counted by how many stamps carry each. <strong>As read, not yet resolved to entities</strong> — "Nippon", "NIPPON" and "Japan Post" stay separate until a person maps them to Japan, and the succession graph (which issuers no longer exist) is a later phase. Every count is a candidate until a person confirms it.</p>
     <ul style="list-style:none;padding:0;margin:20px 0 0;columns:2;column-gap:40px">${rows||"<li class=small>No issuers read yet.</li>"}</ul>
+    ${CANDLEGEND}
   </div></section>`;
 }
-function homePage(){ return frontispiece()+glanceBand()+candidatesBand()+issuersBand()+todayBand()+mapBand()+doorsBand()+recentBand(); }
+function themesBand(){
+  const th=(DATA.facts&&DATA.facts.themes)||[];
+  if(!th.length) return "";
+  const total=th.reduce((n,t)=>n+t.candidate+t.confirmed,0);
+  const top=th.slice(0,15);
+  return `<section class="band reveal" aria-labelledby="th-h"><div class="wrap">
+    <div class="band-head"><div><span class="eyebrow">By theme</span><h2 id="th-h">What the collection is about</h2></div><a class="more" href="#/themes">All ${fmt(th.length)} themes →</a></div>
+    <p class="small" style="max-width:66ch;margin-top:4px">The machine grouped each stamp it read by <em>subject</em> — a bird, a footballer, a saint — into a coarse theme. A candidate view of the collection's shape, drawn from ${fmt(total)} read subjects; a person confirms a theme over time.</p>
+    <div class="grid g3" style="margin-top:16px">${top.map(t=>`<div class="card" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span>${dot(t.confirmed>0?"confirmed":"candidate","")} ${esc(t.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">${fmt(t.candidate+t.confirmed)}</strong></div>`).join("")}</div>
+    ${CANDLEGEND}
+  </div></section>`;
+}
+function themesPage(){
+  const th=(DATA.facts&&DATA.facts.themes)||[];
+  const total=th.reduce((n,t)=>n+t.candidate+t.confirmed,0);
+  const rows=th.map(t=>`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>${dot(t.confirmed>0?"confirmed":"candidate","")} ${esc(t.name)}</span><span class="small">${t.confirmed?`${fmt(t.confirmed)} confirmed${t.candidate?" · ":""}`:""}${t.candidate?`${fmt(t.candidate)}*`:""}</span></li>`).join("");
+  return `<section class="band"><div class="wrap"><span class="eyebrow">By theme</span>
+    <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Themes</h1>
+    <p class="lede" style="max-width:66ch">${fmt(th.length)} themes the atlas has grouped the collection under, from ${fmt(total)} subjects the machine read across the pages. <strong>A candidate grouping</strong> — each is only as good as the subject the machine read, and a person confirms a theme over time. Nothing here is verified, and it says so.</p>
+    <ul style="list-style:none;padding:0;margin:20px 0 0;columns:2;column-gap:40px">${rows||"<li class=small>No themes read yet.</li>"}</ul>
+    ${CANDLEGEND}
+  </div></section>`;
+}
+function homePage(){ return frontispiece()+glanceBand()+candidatesBand()+issuersBand()+themesBand()+todayBand()+mapBand()+doorsBand()+recentBand(); }
 
 /* =====================================================================
    CHAPTERS · populated where the projection allows, awaiting where not
@@ -1393,6 +1423,9 @@ function buildIndex(){
   const add=(group,kind,label,hint,href,keys,o={})=>GAZ.push(Object.assign({group,kind,label:String(label),hint:hint||"",href,l:norm(label),k:norm([label,hint].concat(keys||[]).join(" ")),a:(o.alias||[]).map(norm)},o));
   add("Pages","Page","Frontispiece","the home page — the collection at a glance","#/",["home dashboard start"]);
   add("Pages","Page","The Register","every stamp a person has named","#/stamps",["stamps list identified"]);
+  if((DATA.candidates||[]).length) add("Pages","Page","Candidate readings","what the machine read, not yet confirmed","#/candidates",["candidates machine reading unconfirmed"]);
+  if(DATA.facts&&(DATA.facts.issuers||[]).length) add("Pages","Page","Issuers","the collection by issuer name, as read","#/countries",["issuers countries where from"]);
+  if(DATA.facts&&(DATA.facts.themes||[]).length) add("Pages","Page","Themes","the collection by subject theme, as read","#/themes",["themes subjects what about"]);
   if(stampOfTheDay()) add("Pages","Page","Stamp of the day",stampOfTheDay().title,"#/stamp/today",["today featured rotate"]);
   PARTS.forEach((p,i)=>add("Pages","Part",`Part ${ROMAN[i]} · ${p.title}`,p.blurb,partHref(p),[p.chapters.map(c=>c[1]).join(" "),"contents"]));
   CHAPTERS.forEach(c=>{ const m=CH[c[0]]; add("Chapters","Chapter",m.title,`${ROMAN[m.i]} · ${c[1]} · ${chapterStatus(c[0])}`,chHref(c[0]),[c[1],strip(m.deck||"")],{alias:[c[1]],to:c[0]}); });
@@ -1451,6 +1484,7 @@ function parseRoute(){
   if(seg[0]==="stamps") return {kind:"register"};
   if(seg[0]==="candidates") return {kind:"candidates"};
   if(seg[0]==="countries"||seg[0]==="issuers") return {kind:"countries"};
+  if(seg[0]==="themes") return {kind:"themes"};
   if(seg[0]==="stamp"){ if(seg[1]==="today"){ const s=stampOfTheDay(); return s?{kind:"stamp",stamp:s,redirect:stampHref(s.id)}:{kind:"register",redirect:"#/stamps",noToday:true}; } const s=stampById(seg[1]); return s?{kind:"stamp",stamp:s}:{kind:"404",hash:h}; }
   return {kind:"404",hash:h};
 }
@@ -1476,6 +1510,7 @@ function navigate(){
     case "register": html=registerPage(); title="The Register — Stamp Atlas"; break;
     case "candidates": html=candidatesPage(); title="Candidate readings — Stamp Atlas"; break;
     case "countries": html=countriesPage(); title="Issuers — Stamp Atlas"; break;
+    case "themes":   html=themesPage(); title="Themes — Stamp Atlas"; break;
     case "stamp":    html=stampPage(r.stamp); title=`${r.stamp.title} · ${issuerName(r.stamp)} ${yearOf(r.stamp)||""} — Stamp Atlas`; break;
     default:         html=notFoundPage(r.hash); title="Off the edge of the map — Stamp Atlas";
   }
