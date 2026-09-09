@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T02:49:52.073Z",
+  "generatedAt": "2026-09-09T02:57:39.035Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -110,7 +110,7 @@
         "eligiblePopulation": 25
       }
     ],
-    "asOf": "2026-09-09T02:50:04.109Z",
+    "asOf": "2026-09-09T02:57:51.987Z",
     "namingProgress": {
       "namedByMachine": 307,
       "verifiedByPerson": 0
