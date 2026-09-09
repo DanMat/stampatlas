@@ -767,6 +767,8 @@ CHAPTERS.forEach((c,i)=>{ CH[c[0]]={i,title:CHAPTER_TITLES[c[0]]||c[1]}; });
 const metric   = id => ((DATA.facts&&DATA.facts.metrics)||[]).find(m=>m.metric===id);
 const pendingOf= id => ((DATA.facts&&DATA.facts.pending)||[]).find(p=>p.metric===id);
 const FRIENDLY = {
+  specialFormatCount:    {label:"Special formats",           d:"pieces that are more than a single stamp — sheets, blocks, covers"},
+  distinctCurrencyCount: {label:"Currencies",                d:"currencies read across the face values"},
   albumCount:            {label:"Albums charted",             d:"physical albums photographed as evidence"},
   albumPositionCount:    {label:"Positions traversed",        d:"pages, covers, inserts and dividers walked through"},
   positionOccupancy:     {label:"Positions holding material", d:"positions actually seen to hold a stamp"},
@@ -1229,7 +1231,58 @@ function territoriesPage(){
     \${CANDLEGEND}
   </div></section>\`;
 }
-function homePage(){ return frontispiece()+glanceBand()+candidatesBand()+issuersBand()+themesBand()+territoriesBand()+todayBand()+mapBand()+doorsBand()+recentBand(); }
+/* Nicely label a raw object-type for a reader. */
+const FORM_LABEL={single:"single stamps","se-tenant":"se-tenant",strip:"strips",block:"blocks","miniature-sheet":"miniature sheets","souvenir-sheet":"souvenir sheets",sheetlet:"sheetlets",cover:"covers","postal-stationery":"postal stationery",other:"other / unclassified"};
+const formLabel=n=>FORM_LABEL[n]||n;
+function formsBand(){
+  const f=(DATA.facts&&DATA.facts.forms)||[];
+  if(!f.length) return "";
+  const special=f.filter(x=>x.name!=="single");
+  const specialTotal=special.reduce((n,x)=>n+x.candidate,0);
+  if(!specialTotal) return ""; // nothing but singles — not worth a band
+  const top=special.slice(0,15);
+  return \`<section class="band reveal" aria-labelledby="form-h"><div class="wrap">
+    <div class="band-head"><div><span class="eyebrow">By form</span><h2 id="form-h">The special pieces</h2></div><a class="more" href="#/forms">All forms →</a></div>
+    <p class="small" style="max-width:66ch;margin-top:4px">Most of the collection is single stamps; these are the pieces that are <em>more</em> — sheets, blocks, se-tenant strips, covers. <strong>\${fmt(specialTotal)}</strong> special \${specialTotal===1?"piece":"pieces"} the machine read, all candidate until confirmed.</p>
+    <div class="grid g3" style="margin-top:16px">\${top.map(x=>\`<div class="card" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span>\${dot("candidate","")} \${esc(formLabel(x.name))}</span><strong style="font-family:var(--ff-display);font-size:1.5em">\${fmt(x.candidate)}</strong></div>\`).join("")}</div>
+    \${CANDLEGEND}
+  </div></section>\`;
+}
+function formsPage(){
+  const f=(DATA.facts&&DATA.facts.forms)||[];
+  const total=f.reduce((n,x)=>n+x.candidate,0);
+  const rows=f.map(x=>\`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>\${dot("candidate","")} \${esc(formLabel(x.name))}</span><span class="small">\${fmt(x.candidate)}\${x.distinct<x.candidate?\` <span style="color:var(--ink-3)">· \${fmt(x.distinct)} distinct</span>\`:""}</span></li>\`).join("");
+  return \`<section class="band"><div class="wrap"><span class="eyebrow">By form</span>
+    <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Forms</h1>
+    <p class="lede" style="max-width:66ch">Every piece the machine read, by philatelic form — from a plain single stamp to a souvenir sheet, block, se-tenant strip or cover — across \${fmt(total)} read. <strong>Candidate</strong>: the form is the machine's reading (a first-day cover reads simply as "cover"), a person confirms it. A sheet is one collectible <em>and</em> its stamps (ADR-0036).</p>
+    <ul style="list-style:none;padding:0;margin:20px 0 0;columns:2;column-gap:40px">\${rows||"<li class=small>No forms read yet.</li>"}</ul>
+    \${CANDLEGEND}
+  </div></section>\`;
+}
+function moneyBand(){
+  const c=(DATA.facts&&DATA.facts.currencies||[]).filter(x=>x.name!=="unmarked");
+  if(!c.length) return "";
+  const top=c.slice(0,15);
+  return \`<section class="band reveal" aria-labelledby="cur-h"><div class="wrap">
+    <div class="band-head"><div><span class="eyebrow">By currency</span><h2 id="cur-h">The money on the stamps</h2></div><a class="more" href="#/money">All currencies →</a></div>
+    <p class="small" style="max-width:66ch;margin-top:4px">A light read of the face values' currency — francs, pence, cents, forint. <strong>Coarse and candidate</strong>: parsed from the denomination the machine saw, not a normalised value; a real currency pass is a later step.</p>
+    <div class="grid g3" style="margin-top:16px">\${top.map(x=>\`<div class="card" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span>\${dot("candidate","")} \${esc(x.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">\${fmt(x.candidate)}</strong></div>\`).join("")}</div>
+    \${CANDLEGEND}
+  </div></section>\`;
+}
+function moneyPage(){
+  const all=(DATA.facts&&DATA.facts.currencies)||[];
+  const c=all.filter(x=>x.name!=="unmarked");
+  const unmarked=(all.find(x=>x.name==="unmarked")||{}).candidate||0;
+  const rows=c.map(x=>\`<li style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4)"><span>\${dot("candidate","")} \${esc(x.name)}</span><span class="small">\${fmt(x.candidate)}</span></li>\`).join("");
+  return \`<section class="band"><div class="wrap"><span class="eyebrow">By currency</span>
+    <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">Money</h1>
+    <p class="lede" style="max-width:66ch">\${fmt(c.length)} currencies the atlas read across the face values. <strong>A light candidate parse</strong> — grouped by the symbol the machine saw ("80f", "10p", "2.50€"), not a normalised value; a proper currency resolver is a later step, and \${fmt(unmarked)} face value\${unmarked===1?"":"s"} it couldn't place are left <em>unmarked</em> rather than guessed.</p>
+    <ul style="list-style:none;padding:0;margin:20px 0 0;columns:2;column-gap:40px">\${rows||"<li class=small>No currencies read yet.</li>"}</ul>
+    \${CANDLEGEND}
+  </div></section>\`;
+}
+function homePage(){ return frontispiece()+glanceBand()+candidatesBand()+issuersBand()+themesBand()+territoriesBand()+formsBand()+moneyBand()+todayBand()+mapBand()+doorsBand()+recentBand(); }
 
 /* =====================================================================
    CHAPTERS · populated where the projection allows, awaiting where not
@@ -1539,6 +1592,8 @@ function buildIndex(){
   if(DATA.facts&&(DATA.facts.issuers||[]).length) add("Pages","Page","Issuers","the collection by issuer name, as read","#/countries",["issuers countries where from"]);
   if(DATA.facts&&(DATA.facts.themes||[]).length) add("Pages","Page","Themes","the collection by subject theme, as read","#/themes",["themes subjects what about"]);
   if(DATA.facts&&(DATA.facts.territories||[]).length) add("Pages","Page","Territories","issuers rolled up to the place, and which no longer exist","#/territories",["territories countries places extinct defunct"]);
+  if(DATA.facts&&(DATA.facts.forms||[]).some(f=>f.name!=="single")) add("Pages","Page","Forms","the collection by philatelic form — sheets, blocks, covers","#/forms",["forms format miniature souvenir sheet block cover se-tenant strip first day"]);
+  if(DATA.facts&&(DATA.facts.currencies||[]).some(c=>c.name!=="unmarked")) add("Pages","Page","Money","the face values by currency, as read","#/money",["money currency denomination face value franc pence cent"]);
   if(stampOfTheDay()) add("Pages","Page","Stamp of the day",stampOfTheDay().title,"#/stamp/today",["today featured rotate"]);
   PARTS.forEach((p,i)=>add("Pages","Part",\`Part \${ROMAN[i]} · \${p.title}\`,p.blurb,partHref(p),[p.chapters.map(c=>c[1]).join(" "),"contents"]));
   CHAPTERS.forEach(c=>{ const m=CH[c[0]]; add("Chapters","Chapter",m.title,\`\${ROMAN[m.i]} · \${c[1]} · \${chapterStatus(c[0])}\`,chHref(c[0]),[c[1],strip(m.deck||"")],{alias:[c[1]],to:c[0]}); });
@@ -1601,6 +1656,8 @@ function parseRoute(){
   if(seg[0]==="countries"||seg[0]==="issuers") return {kind:"countries"};
   if(seg[0]==="themes") return {kind:"themes"};
   if(seg[0]==="territories") return {kind:"territories"};
+  if(seg[0]==="forms") return {kind:"forms"};
+  if(seg[0]==="money"||seg[0]==="currencies") return {kind:"money"};
   if(seg[0]==="stamp"){ if(seg[1]==="today"){ const s=stampOfTheDay(); return s?{kind:"stamp",stamp:s,redirect:stampHref(s.id)}:{kind:"register",redirect:"#/stamps",noToday:true}; } const s=stampById(seg[1]); return s?{kind:"stamp",stamp:s}:{kind:"404",hash:h}; }
   return {kind:"404",hash:h};
 }
@@ -1629,6 +1686,8 @@ function navigate(){
     case "countries": html=countriesPage(); title="Issuers — Stamp Atlas"; break;
     case "themes":   html=themesPage(); title="Themes — Stamp Atlas"; break;
     case "territories": html=territoriesPage(); title="Territories — Stamp Atlas"; break;
+    case "forms":    html=formsPage(); title="Forms — Stamp Atlas"; break;
+    case "money":    html=moneyPage(); title="Money — Stamp Atlas"; break;
     case "stamp":    html=stampPage(r.stamp); title=\`\${r.stamp.title} · \${issuerName(r.stamp)} \${yearOf(r.stamp)||""} — Stamp Atlas\`; break;
     default:         html=notFoundPage(r.hash); title="Off the edge of the map — Stamp Atlas";
   }
