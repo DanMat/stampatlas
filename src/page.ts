@@ -1102,14 +1102,14 @@ function candidatesPage(){
 /* One candidate stamp, in full — everything the machine read, each field marked candidate, with
    its apparent duplicates and its provenance. No image (real stamp imagery is never published). */
 function candidatePage(c){
-  const crumbs=\`<div class="wrap st-crumbs"><a href="#/">Frontispiece</a><span>›</span><a href="#/candidates">Candidate readings</a><span>›</span><span><a href="\${setHref('album',c.album)}" style="color:inherit">\${esc(c.album)}</a> · p\${esc(String(c.page))} · \${c.ordinal}/\${c.stampsOnPage}</span></div>\`;
+  const crumbs=\`<div class="wrap st-crumbs"><a href="#/">Frontispiece</a><span>›</span><a href="#/candidates">Candidate readings</a><span>›</span><span><a href="\${setHref('album',c.album)}" style="color:inherit">\${esc(c.album)}</a> · <a href="\${setHref('page',\`\${c.album}|\${c.page}\`)}" style="color:inherit">p\${esc(String(c.page))}</a> · \${c.ordinal}/\${c.stampsOnPage}</span></div>\`;
   const row=(label,val,extra)=>val?\`<div style="display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-top:1px solid var(--rule-soft)"><span class="small" style="color:var(--ink-3);min-width:12ch">\${esc(label)}</span><span style="text-align:right">\${val}\${extra?\` <span class="small" style="color:var(--ink-3)">\${extra}</span>\`:""}</span></div>\`:"";
   // Issuer + its candidate resolution — every entity a drill-down link.
   const terr=c.territory&&c.territory!==c.issuer?\` → \${sl('territory',c.territory,esc(c.territory))}\`:"";
   const defunct=c.issuerStatus==="defunct"?\` <span class="small" style="color:var(--terra)">· no longer issues\${c.succeededBy?\` → \${sl('territory',c.succeededBy,esc(c.succeededBy))}\`:""}</span>\`:"";
   const issuerRow=row("Issuer", c.issuer?\`\${sl('issuer',c.issuer,esc(c.issuer))}\${terr}\${defunct}\`:"", c.issuer?"as printed":"");
-  const cur=c.denomination?candCurrency(c):null;
-  const denomVal=c.denomination?(cur&&cur!=="unmarked"?sl('currency',cur,esc(c.denomination)):esc(c.denomination)):"";
+  // Denomination drills to the same face value FROM THE SAME ISSUER (8c means nothing across issuers).
+  const denomVal=c.denomination?(c.issuer?sl('denomination',\`\${c.issuer}|\${c.denomination}\`,esc(c.denomination)):esc(c.denomination)):"";
   const formVal=c.form?sl('form',c.form,\`\${esc(c.form)}\${c.containsCount?\` of \${fmt(c.containsCount)}\`:""}\`):"";
   const subjects=(c.subjects||[]).length?c.subjects.map(esc).join(", "):"";
   // Apparent duplicates — other candidates sharing this fingerprint.
@@ -1135,7 +1135,7 @@ function candidatePage(c){
       <div class="card">
         <h3 style="margin-top:0">Where it sits</h3>
         \${row("Album", sl('album',c.album,esc(c.album)))}
-        \${row("Page", esc(String(c.page)))}
+        \${row("Page", sl('page',\`\${c.album}|\${c.page}\`,esc(String(c.page))))}
         \${row("On the page", \`\${c.ordinal} of \${c.stampsOnPage}\`)}
         \${c.capturedAt?row("Photographed", esc(niceDate(c.capturedAt))):""}
         <p class="small" style="color:var(--ink-3);border-top:1px solid var(--rule-soft);margin-top:10px;padding-top:10px">No image is shown: the atlas never publishes photographs of the stamps themselves.</p>
@@ -1159,13 +1159,15 @@ function candCurrency(c){
   if(/fill|\\bf\\b/i.test(d)) return francLand?"franc":"Ft forint";
   return "unmarked";
 }
-const DIM_LABEL={territory:"Territory",theme:"Theme",form:"Form",issuer:"Issuer",currency:"Currency",defunct:"No longer exists",album:"Album"};
+const DIM_LABEL={territory:"Territory",theme:"Theme",form:"Form",issuer:"Issuer",currency:"Currency",defunct:"No longer exists",album:"Album",page:"Page",denomination:"Denomination"};
 function setMatch(c,dim,value){
   if(dim==="territory") return c.territory===value;
   if(dim==="theme") return c.theme===value;
   if(dim==="form") return c.form===value;
   if(dim==="issuer") return c.issuer===value;
   if(dim==="album") return c.album===value;
+  if(dim==="denomination"){ const i=value.indexOf("|"); return (c.issuer||"")===value.slice(0,i) && (c.denomination||"")===value.slice(i+1); }
+  if(dim==="page"){ const i=value.lastIndexOf("|"); return c.album===value.slice(0,i) && String(c.page)===value.slice(i+1); }
   if(dim==="currency") return candCurrency(c)===value;
   if(dim==="defunct") return c.issuerStatus==="defunct" && (value==="*"||(c.resolvedIssuer||c.issuer)===value);
   return false;
@@ -1182,11 +1184,17 @@ function placeExplainer(name){
 /* Curated philatelic-term definitions — authored, not machine-guessed. Shown on a form's page. */
 const FORM_GLOSSARY={single:"A single postage stamp — one design, one unit, separated from its neighbours.","se-tenant":"Se-tenant (French, “joined together”): two or more different stamp designs printed side by side and kept attached.",strip:"A strip — three or more stamps still joined in a row, as issued.",block:"A block — four or more stamps still joined in a rectangle; the classic is the block of four.","miniature-sheet":"A miniature sheet — one or a few stamps on a small decorative sheet with a wide illustrated margin, sold as a single unit.","souvenir-sheet":"A souvenir sheet — a commemorative sheetlet, often a single stamp in an ornate border, issued to mark an event.",sheetlet:"A sheetlet — a small complete pane of stamps, smaller than a full post-office sheet.",cover:"A cover — an envelope or wrapper that has been through the post, collected for its stamps, postmark and route. A first-day cover is one posted on an issue’s first day.","postal-stationery":"Postal stationery — an item with the postage imprinted rather than affixed: a pre-stamped envelope, postcard or aerogramme.",other:"Other / unclassified — a piece the machine couldn’t confidently type: a label, a fragment, or something unusual."};
 function formGlossary(name){ const g=FORM_GLOSSARY[name]; return g?\`<div class="card" style="border-left:3px solid var(--moss);margin-bottom:18px"><h3 style="margin-top:0">What is a \${esc(formLabel(name).replace(/s$/,""))}?</h3><p class="small" style="color:var(--ink-2);line-height:1.65">\${esc(g)}</p></div>\`:""; }
+/* Curated one-line descriptions of the atlas's own theme vocabulary — authored, not sourced. */
+const THEME_GLOSSARY={wildlife:"Animals in the wild — birds, mammals, fish, insects — one of the most-loved subjects in stamp design.",flora:"Plants and flowers — botanical subjects, blossoms and trees.",sport:"Sporting subjects — the Olympics, football, athletics and games.",space:"Space and astronautics — rockets, satellites, the Moon landings, cosmonauts.",transport:"Ways of getting about — trains, ships, aircraft and cars.",people:"People — heads of state, writers, scientists and everyday figures.",buildings:"Architecture and landmarks — churches, palaces, monuments and civic buildings.",art:"Art and culture — paintings and sculpture reproduced on stamps.",religion:"Religious subjects — saints, festivals, sacred art and places of worship.",maritime:"The sea and ships — vessels, harbours, naval and seafaring subjects.",military:"Armed forces and conflict — soldiers, battles, commemorations and insignia.",royalty:"Monarchy and royal subjects — kings, queens, coronations and jubilees.",event:"Anniversaries and occasions — exhibitions, congresses and commemorations.",map:"Maps and cartography — a territory drawn on its own stamp.",heraldry:"Coats of arms, crests and civic heraldry.",cartoon:"Cartoon and animation — comic and animated characters.",postal:"The post itself — postal history, definitives, and postage-and-revenue issues.",landscape:"Scenery and views — countryside, cityscapes and natural vistas.",monument:"Monuments and memorials.",character:"Fictional and popular characters.",flag:"Flags and national emblems.",peace:"Peace, diplomacy and international cooperation.",industry:"Industry, technology and labour.",other:"Subjects that didn't fit a clear theme — the honest catch-all."};
+function themeGlossary(name){ const g=THEME_GLOSSARY[name]||\`Stamps the machine grouped under “\${name}” by their subject.\`; return \`<div class="card" style="border-left:3px solid var(--moss);margin-bottom:18px"><h3 style="margin-top:0">Theme · \${esc(name)}</h3><p class="small" style="color:var(--ink-2);line-height:1.65">\${esc(g)}</p></div>\`; }
 /* The filtered set behind any count: every matching candidate stamp, grouped by album, each a link
    to its own page. This is the drill-down — a number is never a dead end. */
 function setPage(dim,value){
   const cands=(DATA.candidates||[]).filter(c=>setMatch(c,dim,value));
-  const label=dim==="form"?formLabel(value):(dim==="defunct"&&value!=="*"?value:value);
+  // page value is "<album>|<page>"; denomination value is "<issuer>|<face value>".
+  const pageParts=dim==="page"?[value.slice(0,value.lastIndexOf("|")),value.slice(value.lastIndexOf("|")+1)]:null;
+  const denomParts=dim==="denomination"?[value.slice(0,value.indexOf("|")),value.slice(value.indexOf("|")+1)]:null;
+  const label=dim==="form"?formLabel(value):dim==="page"?\`\${pageParts[0]} · page \${pageParts[1]}\`:dim==="denomination"?denomParts[1]:value;
   const byAlbum={}; cands.forEach(c=>{ (byAlbum[c.album]=byAlbum[c.album]||[]).push(c); });
   const groups=Object.keys(byAlbum).sort().map(al=>{
     const rows=byAlbum[al].slice().sort((a,b)=>a.id.localeCompare(b.id)).map(c=>\`<li><a href="\${candHref(c.id)}" style="color:inherit;text-decoration:none"><span class="meta">\${dot("candidate")} p\${esc(String(c.page))} · \${c.ordinal}/\${c.stampsOnPage}</span> <span class="small">\${esc(c.reading||"nothing legible yet")}</span></a></li>\`).join("");
@@ -1195,12 +1203,15 @@ function setPage(dim,value){
     return \`<div class="card"><h3>\${head}</h3><ul class="recent" style="margin-top:8px">\${rows}</ul></div>\`;
   }).join("");
   const heading=dim==="defunct"&&value==="*"?"Issuers that no longer exist":esc(String(label));
-  const backHref={territory:"#/territories",theme:"#/themes",form:"#/forms",issuer:"#/countries",currency:"#/money",defunct:"#/territories",album:"#/"}[dim]||"#/";
-  // The nerdy header: a form's definition, or a sourced history for a place/issuer.
+  const backHref={territory:"#/territories",theme:"#/themes",form:"#/forms",issuer:"#/countries",currency:"#/money",defunct:"#/territories",album:"#/",page:pageParts?setHref('album',pageParts[0]):"#/",denomination:"#/money"}[dim]||"#/";
+  // The nerdy header: a form's definition, a theme's description, or a sourced history for a place/issuer.
   const explainer = dim==="form" ? formGlossary(value)
+    : dim==="theme" ? themeGlossary(value)
     : (["territory","issuer","defunct"].includes(dim) && value!=="*") ? placeExplainer(value) : "";
   const leadPhrase = dim==="defunct" ? "from issuers that no longer exist"
     : dim==="album" ? \`in <strong>\${esc(String(label))}</strong>\`
+    : dim==="page" ? \`on <strong>\${esc(String(label))}</strong>\`
+    : dim==="denomination" ? \`with a face value of <strong>\${esc(String(label))}</strong>\${denomParts[0]?\` from <strong>\${esc(denomParts[0])}</strong>\`:""}\`
     : dim==="form" ? \`read as <strong>\${esc(String(label))}</strong>\`
     : \`the machine read as <strong>\${esc(String(label))}</strong>\`;
   return \`<section class="band"><div class="wrap"><span class="eyebrow"><a href="\${backHref}" style="color:inherit">\${esc(DIM_LABEL[dim]||dim)}</a>\${dim==="defunct"&&value==="*"?"":\` · \${esc(String(label))}\`}</span>
