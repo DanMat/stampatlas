@@ -1108,8 +1108,9 @@ function candidatePage(c){
   const terr=c.territory&&c.territory!==c.issuer?\` → \${sl('territory',c.territory,esc(c.territory))}\`:"";
   const defunct=c.issuerStatus==="defunct"?\` <span class="small" style="color:var(--terra)">· no longer issues\${c.succeededBy?\` → \${sl('territory',c.succeededBy,esc(c.succeededBy))}\`:""}</span>\`:"";
   const issuerRow=row("Issuer", c.issuer?\`\${sl('issuer',c.issuer,esc(c.issuer))}\${terr}\${defunct}\`:"", c.issuer?"as printed":"");
-  // Denomination drills to the same face value FROM THE SAME ISSUER (8c means nothing across issuers).
-  const denomVal=c.denomination?(c.issuer?sl('denomination',\`\${c.issuer}|\${c.denomination}\`,esc(c.denomination)):esc(c.denomination)):"";
+  // Denomination drills to the same NORMALISED face value FROM THE SAME ISSUER (8c means nothing
+  // across issuers, and "25c"/"25 CENTS" are the same value read two ways).
+  const denomVal=c.denomination?(c.issuer?sl('denomination',\`\${c.issuer}|\${normDenom(c.denomination)}\`,esc(c.denomination)):esc(c.denomination)):"";
   const formVal=c.form?sl('form',c.form,\`\${esc(c.form)}\${c.containsCount?\` of \${fmt(c.containsCount)}\`:""}\`):"";
   const subjects=(c.subjects||[]).length?c.subjects.map(esc).join(", "):"";
   // Apparent duplicates — other candidates sharing this fingerprint.
@@ -1159,6 +1160,18 @@ function candCurrency(c){
   if(/fill|\\bf\\b/i.test(d)) return francLand?"franc":"Ft forint";
   return "unmarked";
 }
+/* Normalise a face value to a canonical value+unit key so read-style variants group — "25 CENTS",
+   "25c", "25 CTS" all become "25 c". Deterministic equivalence for MATCHING; the page still shows
+   the value exactly as read. A bare number keeps no unit (stays distinct — 25 of an unknown unit). */
+function normDenom(d){
+  if(!d) return "";
+  let s=d.toLowerCase().trim().replace(/½/g,".5").replace(/¼/g,".25").replace(/¾/g,".75").replace(/⅓/g,".33").replace(/⅔/g,".67");
+  const nm=s.match(/\\d+(?:[.,]\\d+)?/); const num=nm?parseFloat(nm[0].replace(",",".")):null;
+  let unit=s.replace(/\\d+(?:[.,]\\d+)?/,"").replace(/[^a-z¢£$€]/g,"");
+  const U=[[/^(c|cent|cents|cts|ct|¢)$/,"c"],[/^(p|d|penny|pence)$/,"d"],[/^(pta|ptas|pts|peseta|pesetas)$/,"pta"],[/^(l|lire|lira)$/,"lire"],[/^(fr|fs|franc|francs)$/,"fr"],[/^(ft|forint)$/,"ft"],[/^(fill|filler)$/,"fill"],[/^(eur|euro|€)$/,"eur"],[/^(gbp|£)$/,"gbp"],[/^(usd|\\$)$/,"usd"],[/^(kr|kop|kopeck|kopek)$/,"kop"],[/^(pf|pfennig)$/,"pf"],[/^(k|kn|kuna)$/,"kn"],[/^(din|dinar)$/,"din"]];
+  for(const [re,to] of U){ if(re.test(unit)){ unit=to; break; } }
+  return num!=null?\`\${num}\${unit?" "+unit:""}\`:s;
+}
 const DIM_LABEL={territory:"Territory",theme:"Theme",form:"Form",issuer:"Issuer",currency:"Currency",defunct:"No longer exists",album:"Album",page:"Page",denomination:"Denomination"};
 function setMatch(c,dim,value){
   if(dim==="territory") return c.territory===value;
@@ -1166,7 +1179,7 @@ function setMatch(c,dim,value){
   if(dim==="form") return c.form===value;
   if(dim==="issuer") return c.issuer===value;
   if(dim==="album") return c.album===value;
-  if(dim==="denomination"){ const i=value.indexOf("|"); return (c.issuer||"")===value.slice(0,i) && (c.denomination||"")===value.slice(i+1); }
+  if(dim==="denomination"){ const i=value.indexOf("|"); return (c.issuer||"")===value.slice(0,i) && normDenom(c.denomination)===value.slice(i+1); }
   if(dim==="page"){ const i=value.lastIndexOf("|"); return c.album===value.slice(0,i) && String(c.page)===value.slice(i+1); }
   if(dim==="currency") return candCurrency(c)===value;
   if(dim==="defunct") return c.issuerStatus==="defunct" && (value==="*"||(c.resolvedIssuer||c.issuer)===value);
@@ -1194,7 +1207,10 @@ function setPage(dim,value){
   // page value is "<album>|<page>"; denomination value is "<issuer>|<face value>".
   const pageParts=dim==="page"?[value.slice(0,value.lastIndexOf("|")),value.slice(value.lastIndexOf("|")+1)]:null;
   const denomParts=dim==="denomination"?[value.slice(0,value.indexOf("|")),value.slice(value.indexOf("|")+1)]:null;
-  const label=dim==="form"?formLabel(value):dim==="page"?\`\${pageParts[0]} · page \${pageParts[1]}\`:dim==="denomination"?denomParts[1]:value;
+  // For a denomination set, show a real as-read value (not the normalised key) and note read-variants.
+  const denomVariants=dim==="denomination"?[...new Set(cands.map(c=>c.denomination).filter(Boolean))]:[];
+  const denomRep=dim==="denomination"?(denomVariants[0]||denomParts[1]):null;
+  const label=dim==="form"?formLabel(value):dim==="page"?\`\${pageParts[0]} · page \${pageParts[1]}\`:dim==="denomination"?denomRep:value;
   const byAlbum={}; cands.forEach(c=>{ (byAlbum[c.album]=byAlbum[c.album]||[]).push(c); });
   const groups=Object.keys(byAlbum).sort().map(al=>{
     const rows=byAlbum[al].slice().sort((a,b)=>a.id.localeCompare(b.id)).map(c=>\`<li><a href="\${candHref(c.id)}" style="color:inherit;text-decoration:none"><span class="meta">\${dot("candidate")} p\${esc(String(c.page))} · \${c.ordinal}/\${c.stampsOnPage}</span> <span class="small">\${esc(c.reading||"nothing legible yet")}</span></a></li>\`).join("");
@@ -1211,7 +1227,7 @@ function setPage(dim,value){
   const leadPhrase = dim==="defunct" ? "from issuers that no longer exist"
     : dim==="album" ? \`in <strong>\${esc(String(label))}</strong>\`
     : dim==="page" ? \`on <strong>\${esc(String(label))}</strong>\`
-    : dim==="denomination" ? \`with a face value of <strong>\${esc(String(label))}</strong>\${denomParts[0]?\` from <strong>\${esc(denomParts[0])}</strong>\`:""}\`
+    : dim==="denomination" ? \`with a face value of <strong>\${esc(String(label))}</strong>\${denomParts[0]?\` from <strong>\${esc(denomParts[0])}</strong>\`:""}\${denomVariants.length>1?\` <span class="small" style="color:var(--ink-3)">(read as \${denomVariants.map(esc).join(", ")})</span>\`:""}\`
     : dim==="form" ? \`read as <strong>\${esc(String(label))}</strong>\`
     : \`the machine read as <strong>\${esc(String(label))}</strong>\`;
   return \`<section class="band"><div class="wrap"><span class="eyebrow"><a href="\${backHref}" style="color:inherit">\${esc(DIM_LABEL[dim]||dim)}</a>\${dim==="defunct"&&value==="*"?"":\` · \${esc(String(label))}\`}</span>
