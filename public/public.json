@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T02:57:39.035Z",
+  "generatedAt": "2026-09-09T03:00:36.377Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -110,12 +110,12 @@
         "eligiblePopulation": 25
       }
     ],
-    "asOf": "2026-09-09T02:57:51.987Z",
+    "asOf": "2026-09-09T03:00:48.337Z",
     "namingProgress": {
       "namedByMachine": 307,
       "verifiedByPerson": 0
     },
-    "distinctReadings": 272,
+    "distinctReadings": 298,
     "issuers": [
       {
         "name": "Nippon",
