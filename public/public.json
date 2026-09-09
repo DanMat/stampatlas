@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T01:30:04.592Z",
+  "generatedAt": "2026-09-09T02:49:52.073Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -88,9 +88,29 @@
           "unknown": 0
         },
         "eligiblePopulation": 13
+      },
+      {
+        "metric": "distinctTerritoryCount",
+        "unit": "territories an issuer here sits in — resolved from the as-read name, candidate not confirmed",
+        "value": {
+          "confirmed": 0,
+          "candidate": 24,
+          "unknown": 0
+        },
+        "eligiblePopulation": 24
+      },
+      {
+        "metric": "extinctIssuerCount",
+        "unit": "issuers here that no longer issue — Ceylon, Umm al-Quwain, the Trucial States; candidate, not confirmed",
+        "value": {
+          "confirmed": 0,
+          "candidate": 8,
+          "unknown": 0
+        },
+        "eligiblePopulation": 25
       }
     ],
-    "asOf": "2026-09-09T01:30:16.463Z",
+    "asOf": "2026-09-09T02:50:04.109Z",
     "namingProgress": {
       "namedByMachine": 307,
       "verifiedByPerson": 0
@@ -101,175 +121,291 @@
         "name": "Nippon",
         "candidate": 42,
         "confirmed": 0,
-        "distinct": 41
+        "distinct": 41,
+        "territory": "Japan",
+        "resolvedName": "Japan",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "NIPPON",
         "candidate": 38,
         "confirmed": 0,
-        "distinct": 38
+        "distinct": 38,
+        "territory": "Japan",
+        "resolvedName": "Japan",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "Japan Post",
         "candidate": 20,
         "confirmed": 0,
-        "distinct": 20
+        "distinct": 20,
+        "territory": "Japan",
+        "resolvedName": "Japan Post",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "Umm Al Qiwain",
         "candidate": 16,
         "confirmed": 0,
-        "distinct": 13
+        "distinct": 13,
+        "territory": "Umm Al Qiwain",
+        "resolvedName": "Umm Al Qiwain",
+        "status": "defunct",
+        "succeededBy": "United Arab Emirates"
       },
       {
         "name": "YEMEN",
         "candidate": 15,
         "confirmed": 0,
-        "distinct": 15
+        "distinct": 15,
+        "territory": "Yemen",
+        "resolvedName": "Yemen",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "Monaco",
         "candidate": 14,
         "confirmed": 0,
-        "distinct": 13
+        "distinct": 13,
+        "territory": "Monaco",
+        "resolvedName": "Monaco",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "UMM AL QIWAIN",
         "candidate": 9,
         "confirmed": 0,
-        "distinct": 9
+        "distinct": 9,
+        "territory": "Umm Al Qiwain",
+        "resolvedName": "Umm Al Qiwain",
+        "status": "defunct",
+        "succeededBy": "United Arab Emirates"
       },
       {
         "name": "Magyar Posta",
         "candidate": 8,
         "confirmed": 0,
-        "distinct": 7
+        "distinct": 7,
+        "territory": "Hungary",
+        "resolvedName": "Hungary",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "Angola",
         "candidate": 6,
         "confirmed": 0,
-        "distinct": 6
+        "distinct": 6,
+        "territory": "Angola",
+        "resolvedName": "Angola",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "Fujeira",
         "candidate": 6,
         "confirmed": 0,
-        "distinct": 6
+        "distinct": 6,
+        "territory": "Fujairah",
+        "resolvedName": "Fujairah",
+        "status": "defunct",
+        "succeededBy": "United Arab Emirates"
       },
       {
         "name": "Mongolia",
         "candidate": 6,
         "confirmed": 0,
-        "distinct": 6
+        "distinct": 6,
+        "territory": "Mongolia",
+        "resolvedName": "Mongolia",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "Guyana",
         "candidate": 4,
         "confirmed": 0,
-        "distinct": 4
+        "distinct": 4,
+        "territory": "Guyana",
+        "resolvedName": "Guyana",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "N.D. Hrvatska",
         "candidate": 4,
         "confirmed": 0,
-        "distinct": 4
+        "distinct": 4,
+        "territory": "Independent State of Croatia",
+        "resolvedName": "Independent State of Croatia",
+        "status": "defunct",
+        "succeededBy": "Yugoslavia"
       },
       {
         "name": "Republik Maluku Selatan",
         "candidate": 4,
         "confirmed": 0,
-        "distinct": 4
+        "distinct": 4,
+        "territory": "South Moluccas",
+        "resolvedName": "Republic of South Moluccas",
+        "status": "defunct",
+        "succeededBy": "Indonesia"
       },
       {
         "name": "Sanda Island",
         "candidate": 4,
         "confirmed": 0,
-        "distinct": 3
+        "distinct": 3,
+        "territory": "Sanda Island",
+        "resolvedName": "Sanda Island Local Post",
+        "status": "unknown",
+        "succeededBy": null
       },
       {
         "name": "Aitutaki",
         "candidate": 3,
         "confirmed": 0,
-        "distinct": 3
+        "distinct": 3,
+        "territory": "Cook Islands",
+        "resolvedName": "Aitutaki (Cook Islands)",
+        "status": "defunct",
+        "succeededBy": "Cook Islands"
       },
       {
         "name": "Ajman State",
         "candidate": 3,
         "confirmed": 0,
-        "distinct": 2
+        "distinct": 2,
+        "territory": "Ajman",
+        "resolvedName": "Ajman",
+        "status": "defunct",
+        "succeededBy": "United Arab Emirates"
       },
       {
         "name": "Republica del Ecuador",
         "candidate": 3,
         "confirmed": 0,
-        "distinct": 2
+        "distinct": 2,
+        "territory": "Ecuador",
+        "resolvedName": "Ecuador",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "MONGOLIA",
         "candidate": 2,
         "confirmed": 0,
-        "distinct": 2
+        "distinct": 2,
+        "territory": "Mongolia",
+        "resolvedName": "Mongolia",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "S. TOME E PRINCIPE",
         "candidate": 2,
         "confirmed": 0,
-        "distinct": 2
+        "distinct": 2,
+        "territory": "Sao Tome and Principe",
+        "resolvedName": "Sao Tome and Principe",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "AJMAN STATE",
         "candidate": 1,
         "confirmed": 0,
-        "distinct": 1
+        "distinct": 1,
+        "territory": "Ajman",
+        "resolvedName": "Ajman",
+        "status": "defunct",
+        "succeededBy": "United Arab Emirates"
       },
       {
         "name": "Batum",
         "candidate": 1,
         "confirmed": 0,
-        "distinct": 1
+        "distinct": 1,
+        "territory": "Batum",
+        "resolvedName": "Batum (British Occupation)",
+        "status": "defunct",
+        "succeededBy": null
       },
       {
         "name": "Korea",
         "candidate": 1,
         "confirmed": 0,
-        "distinct": 1
+        "distinct": 1,
+        "territory": "Korea",
+        "resolvedName": "Korea (unspecified)",
+        "status": "unknown",
+        "succeededBy": null
       },
       {
         "name": "Poste Vaticane / Città del Vaticano",
         "candidate": 1,
         "confirmed": 0,
-        "distinct": 1
+        "distinct": 1,
+        "territory": "Vatican City",
+        "resolvedName": "Vatican City",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "RAS AL KHAIMA",
         "candidate": 1,
         "confirmed": 0,
-        "distinct": 1
+        "distinct": 1,
+        "territory": "Ras al Khaimah",
+        "resolvedName": "Ras al Khaimah",
+        "status": "defunct",
+        "succeededBy": "United Arab Emirates"
       },
       {
         "name": "Republic of Korea",
         "candidate": 1,
         "confirmed": 0,
-        "distinct": 1
+        "distinct": 1,
+        "territory": "South Korea",
+        "resolvedName": "Republic of Korea (South Korea)",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "Republic of Liberia",
         "candidate": 1,
         "confirmed": 0,
-        "distinct": 1
+        "distinct": 1,
+        "territory": "Liberia",
+        "resolvedName": "Liberia",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "Republikan'i Madagasikara",
         "candidate": 1,
         "confirmed": 0,
-        "distinct": 1
+        "distinct": 1,
+        "territory": "Madagascar",
+        "resolvedName": "Madagascar",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "St. Vincent",
         "candidate": 1,
         "confirmed": 0,
-        "distinct": 1
+        "distinct": 1,
+        "territory": "Saint Vincent and the Grenadines",
+        "resolvedName": "Saint Vincent and the Grenadines",
+        "status": "current",
+        "succeededBy": null
       }
     ],
     "themes": [
@@ -352,16 +488,153 @@
         "distinct": 1
       }
     ],
-    "pending": [
+    "territories": [
       {
-        "metric": "distinctTerritoryCount",
-        "blockedBy": "resolving the issuer of an issue to a normalised territory"
+        "name": "Japan",
+        "candidate": 100,
+        "confirmed": 0,
+        "distinct": 99
       },
       {
-        "metric": "extinctIssuerCount",
-        "blockedBy": "the Issuer succession graph — which issuers were succeeded, merged or dissolved"
+        "name": "Umm Al Qiwain",
+        "candidate": 25,
+        "confirmed": 0,
+        "distinct": 22
+      },
+      {
+        "name": "Yemen",
+        "candidate": 15,
+        "confirmed": 0,
+        "distinct": 15
+      },
+      {
+        "name": "Monaco",
+        "candidate": 14,
+        "confirmed": 0,
+        "distinct": 13
+      },
+      {
+        "name": "Hungary",
+        "candidate": 8,
+        "confirmed": 0,
+        "distinct": 7
+      },
+      {
+        "name": "Mongolia",
+        "candidate": 8,
+        "confirmed": 0,
+        "distinct": 8
+      },
+      {
+        "name": "Angola",
+        "candidate": 6,
+        "confirmed": 0,
+        "distinct": 6
+      },
+      {
+        "name": "Fujairah",
+        "candidate": 6,
+        "confirmed": 0,
+        "distinct": 6
+      },
+      {
+        "name": "Ajman",
+        "candidate": 4,
+        "confirmed": 0,
+        "distinct": 3
+      },
+      {
+        "name": "Guyana",
+        "candidate": 4,
+        "confirmed": 0,
+        "distinct": 4
+      },
+      {
+        "name": "Independent State of Croatia",
+        "candidate": 4,
+        "confirmed": 0,
+        "distinct": 4
+      },
+      {
+        "name": "Sanda Island",
+        "candidate": 4,
+        "confirmed": 0,
+        "distinct": 3
+      },
+      {
+        "name": "South Moluccas",
+        "candidate": 4,
+        "confirmed": 0,
+        "distinct": 4
+      },
+      {
+        "name": "Cook Islands",
+        "candidate": 3,
+        "confirmed": 0,
+        "distinct": 3
+      },
+      {
+        "name": "Ecuador",
+        "candidate": 3,
+        "confirmed": 0,
+        "distinct": 2
+      },
+      {
+        "name": "Sao Tome and Principe",
+        "candidate": 2,
+        "confirmed": 0,
+        "distinct": 2
+      },
+      {
+        "name": "Batum",
+        "candidate": 1,
+        "confirmed": 0,
+        "distinct": 1
+      },
+      {
+        "name": "Korea",
+        "candidate": 1,
+        "confirmed": 0,
+        "distinct": 1
+      },
+      {
+        "name": "Liberia",
+        "candidate": 1,
+        "confirmed": 0,
+        "distinct": 1
+      },
+      {
+        "name": "Madagascar",
+        "candidate": 1,
+        "confirmed": 0,
+        "distinct": 1
+      },
+      {
+        "name": "Ras al Khaimah",
+        "candidate": 1,
+        "confirmed": 0,
+        "distinct": 1
+      },
+      {
+        "name": "Saint Vincent and the Grenadines",
+        "candidate": 1,
+        "confirmed": 0,
+        "distinct": 1
+      },
+      {
+        "name": "South Korea",
+        "candidate": 1,
+        "confirmed": 0,
+        "distinct": 1
+      },
+      {
+        "name": "Vatican City",
+        "candidate": 1,
+        "confirmed": 0,
+        "distinct": 1
       }
     ],
+    "pending": [],
     "years": {
       "earliestIssueYear": 1778,
       "earliest": {
@@ -629,6 +902,10 @@
         "grey/blue cat, die-cut shape"
       ],
       "theme": "wildlife",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts grey/blue cat, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M2188AZ02WN71TD7T5FZ402P",
@@ -655,6 +932,10 @@
         "blue-toned landscape, round stamp"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts blue-toned landscape, round stamp. Printed \"NIPPON\". A face value of 75. A single stamp.",
       "basis": [
         "asr_01M2188BN1YAK09CG48CNTDZCN",
@@ -681,6 +962,10 @@
         "rabbit with strawberries/berries, oval stamp"
       ],
       "theme": "wildlife",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts rabbit with strawberries/berries, oval stamp. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M2188D16MJ5X8S7N77NQ07J3",
@@ -707,6 +992,10 @@
         "green leaves with flowers"
       ],
       "theme": "flora",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts green leaves with flowers. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M2188C0EXAGR9C9DZJP90JFV",
@@ -733,6 +1022,10 @@
         "purple rabbit, die-cut shape"
       ],
       "theme": "wildlife",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts purple rabbit, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M2188BAPQZT0NHXYSHT2AT5N",
@@ -759,6 +1052,10 @@
         "large orange/brown cat, die-cut shape"
       ],
       "theme": "wildlife",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts large orange/brown cat, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M2188CP8237RC5DX2698TCE3",
@@ -785,6 +1082,10 @@
         "blue background with white flowers and child figure, die-cut shape"
       ],
       "theme": "flora",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts blue background with white flowers and child figure, die-cut shape. Printed \"NIPPON\". A single stamp.",
       "basis": [
         "asr_01M2188CC3EQP48ER4556C74WG",
@@ -810,6 +1111,10 @@
         "floral/envelope design, scalloped round stamp"
       ],
       "theme": "flora",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts floral/envelope design, scalloped round stamp. Printed \"NIPPON\". A single stamp.",
       "basis": [
         "asr_01M218885T9DKVR22BQ0QV6HSP",
@@ -835,6 +1140,10 @@
         "lavender rabbit, die-cut shape"
       ],
       "theme": "wildlife",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts lavender rabbit, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21889EHGMJF3GXMJ64W1JCM",
@@ -861,6 +1170,10 @@
         "child figure in yellow, round stamp"
       ],
       "theme": "people",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts child figure in yellow, round stamp. Printed \"NIPPON\". A single stamp.",
       "basis": [
         "asr_01M21889X3A799KMETXGFHC0AJ",
@@ -886,6 +1199,10 @@
         "brown horse or donkey, die-cut shape"
       ],
       "theme": "wildlife",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts brown horse or donkey, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M2188AM1AW17RWM9K1DSB17N",
@@ -912,6 +1229,10 @@
         "purple/pink pansies"
       ],
       "theme": "flora",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts purple/pink pansies. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M2188A83YXP5HMF819JBHS31",
@@ -938,6 +1259,10 @@
         "parakeet/lovebird, pink background"
       ],
       "theme": "wildlife",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts parakeet/lovebird, pink background. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21888FVFAMAHWDZARH6KYX5",
@@ -964,6 +1289,10 @@
         "blue/purple rabbit with moon and stars, die-cut shape"
       ],
       "theme": "wildlife",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts blue/purple rabbit with moon and stars, die-cut shape. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M218893X4JQB2C92VYX8VNGH",
@@ -990,6 +1319,10 @@
         "white animal (goat or dog), die-cut shape"
       ],
       "theme": "wildlife",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts white animal (goat or dog), die-cut shape. Printed \"NIPPON\". A single stamp.",
       "basis": [
         "asr_01M21888TJDE2AKVXXP3NH5ME8",
@@ -1015,6 +1348,10 @@
         "Prince Albert I Antarctic expedition portrait (sepia/purple)"
       ],
       "theme": "people",
+      "territory": "Monaco",
+      "resolvedIssuer": "Monaco",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Prince Albert I Antarctic expedition portrait (sepia/purple). Printed \"Monaco\". A face value of 2.50€. Issued 2015. A souvenir-sheet of 2.",
       "basis": [
         "asr_01M2189Q2JE5J68H267GZ4HN9Q",
@@ -1042,6 +1379,10 @@
         "spotted wildcat or horse painting"
       ],
       "theme": "art",
+      "territory": "Fujairah",
+      "resolvedIssuer": "Fujairah",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts spotted wildcat or horse painting. Printed \"Fujeira\". A block of 6.",
       "basis": [
         "asr_01M2189P754B317BBWDMQFAKFE",
@@ -1067,6 +1408,10 @@
         "75th Grand Prix de Monaco - vintage race car (purple background)"
       ],
       "theme": "sport",
+      "territory": "Monaco",
+      "resolvedIssuer": "Monaco",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts 75th Grand Prix de Monaco - vintage race car (purple background). Printed \"Monaco\". A face value of 1.30€. Issued 1929. A souvenir-sheet of 4.",
       "basis": [
         "asr_01M2189RRS07CEYNHTDQ31EGH2",
@@ -1094,6 +1439,10 @@
         "75th Grand Prix de Monaco - vintage race car (blue background)"
       ],
       "theme": "sport",
+      "territory": "Monaco",
+      "resolvedIssuer": "Monaco",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts 75th Grand Prix de Monaco - vintage race car (blue background). Printed \"Monaco\". A face value of 0.85€. Issued 1929. A souvenir-sheet of 4.",
       "basis": [
         "asr_01M2189S50HEVTFE4J3F49HABY",
@@ -1121,6 +1470,10 @@
         "Dalmatian dog painting"
       ],
       "theme": "art",
+      "territory": "Fujairah",
+      "resolvedIssuer": "Fujairah",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Dalmatian dog painting. Printed \"Fujeira\". A block of 6.",
       "basis": [
         "asr_01M2189NP7SBBAXBG4KQGC8W30",
@@ -1146,6 +1499,10 @@
         "dark animal (bull/ox) painting"
       ],
       "theme": "art",
+      "territory": "Fujairah",
+      "resolvedIssuer": "Fujairah",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts dark animal (bull/ox) painting. Printed \"Fujeira\". A block of 6.",
       "basis": [
         "asr_01M2189NDMTXTDHZV8TNXT2E82",
@@ -1171,6 +1528,10 @@
         "African tribal scene with figures"
       ],
       "theme": "people",
+      "territory": "Fujairah",
+      "resolvedIssuer": "Fujairah",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts African tribal scene with figures. Printed \"Fujeira\". A block of 6.",
       "basis": [
         "asr_01M2189PS9MMRYAZYTB8RSGSG1",
@@ -1196,6 +1557,10 @@
         "African tribal scene with cattle"
       ],
       "theme": "people",
+      "territory": "Fujairah",
+      "resolvedIssuer": "Fujairah",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts African tribal scene with cattle. Printed \"Fujeira\". A block of 6.",
       "basis": [
         "asr_01M2189PGKGBSE9X5ZP6ZJZXKT",
@@ -1221,6 +1586,10 @@
         "75th Grand Prix de Monaco - vintage race car (green background)"
       ],
       "theme": "sport",
+      "territory": "Monaco",
+      "resolvedIssuer": "Monaco",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts 75th Grand Prix de Monaco - vintage race car (green background). Printed \"Monaco\". A face value of 0.85€. Issued 1929. A souvenir-sheet of 4.",
       "basis": [
         "asr_01M2189RCXNKV5JS1W2SPVBVRK",
@@ -1248,6 +1617,10 @@
         "cattle/herd painting"
       ],
       "theme": "art",
+      "territory": "Fujairah",
+      "resolvedIssuer": "Fujairah",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts cattle/herd painting. Printed \"Fujeira\". A block of 6.",
       "basis": [
         "asr_01M2189NZ6KBEP83NGEVF0EJJ5",
@@ -1273,6 +1646,10 @@
         "75th Grand Prix de Monaco - vintage race car (yellow background)"
       ],
       "theme": "sport",
+      "territory": "Monaco",
+      "resolvedIssuer": "Monaco",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts 75th Grand Prix de Monaco - vintage race car (yellow background). Printed \"Monaco\". A face value of 1.06€. Issued 1929. A souvenir-sheet of 4.",
       "basis": [
         "asr_01M2189QYCADEHTXPQ1PB6ZSMC",
@@ -1300,6 +1677,10 @@
         "Prince Albert I Antarctic expedition scene (ship/ice)"
       ],
       "theme": "maritime",
+      "territory": "Monaco",
+      "resolvedIssuer": "Monaco",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Prince Albert I Antarctic expedition scene (ship/ice). Printed \"Monaco\". A face value of 2.50€. Issued 2015. A souvenir-sheet of 2.",
       "basis": [
         "asr_01M2189QFR5EESRMSKXVKD0Q0E",
@@ -1327,6 +1708,10 @@
         "Globe/emblem design"
       ],
       "theme": "other",
+      "territory": "Ecuador",
+      "resolvedIssuer": "Ecuador",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Globe/emblem design. Printed \"Republica del Ecuador\". A face value of 10c. Issued 1939. A single stamp.",
       "basis": [
         "asr_01M218A0V4ZGT3DS816YZAZ49M",
@@ -1354,6 +1739,10 @@
         "Figures with starburst design"
       ],
       "theme": "other",
+      "territory": "Saint Vincent and the Grenadines",
+      "resolvedIssuer": "Saint Vincent and the Grenadines",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Figures with starburst design. Printed \"St. Vincent\". A face value of 3 cents. A single stamp.",
       "basis": [
         "asr_01M218A2604DNPDWWZ49G4KN0A",
@@ -1380,6 +1769,10 @@
         "Globe/emblem design"
       ],
       "theme": "other",
+      "territory": "Ecuador",
+      "resolvedIssuer": "Ecuador",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Globe/emblem design. Printed \"Republica del Ecuador\". A face value of 5c. Issued 1939. A single stamp.",
       "basis": [
         "asr_01M218A1M2BKBR2N62G1CVT0NW",
@@ -1407,6 +1800,10 @@
         "Globe/emblem design"
       ],
       "theme": "other",
+      "territory": "Ecuador",
+      "resolvedIssuer": "Ecuador",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Globe/emblem design. Printed \"Republica del Ecuador\". A face value of 10c. Issued 1939. A single stamp.",
       "basis": [
         "asr_01M218A17VDHX8AVCQMVM66VKM",
@@ -1432,6 +1829,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M218A203SEYJNHPFJQ3RV146"
@@ -1455,6 +1856,10 @@
         "sports figure, single athlete design"
       ],
       "theme": "sport",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts sports figure, single athlete design. A face value of 1. A single stamp.",
       "basis": [
         "asr_01M218B06BTVK98JPCKE1YAPXJ",
@@ -1480,6 +1885,10 @@
         "sailing ship, blue"
       ],
       "theme": "maritime",
+      "territory": "Monaco",
+      "resolvedIssuer": "Monaco",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts sailing ship, blue. Printed \"Monaco\". A face value of 2f. A single stamp.",
       "basis": [
         "asr_01M218B0SZE7HHZH65P70QT77D",
@@ -1506,6 +1915,10 @@
         "sailing ship, blue"
       ],
       "theme": "maritime",
+      "territory": "Monaco",
+      "resolvedIssuer": "Monaco",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts sailing ship, blue. Printed \"Monaco\". A face value of 2f. A single stamp.",
       "basis": [
         "asr_01M218B2EJCTWR8SRAFZHKRX8J",
@@ -1532,6 +1945,10 @@
         "football players with flags"
       ],
       "theme": "sport",
+      "territory": "Hungary",
+      "resolvedIssuer": "Hungary",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts football players with flags. Printed \"Magyar Posta\". A face value of 1 Ft. A single stamp.",
       "basis": [
         "asr_01M218B3ZD0V3JT7ZHYTEKGXD8",
@@ -1558,6 +1975,10 @@
         "figure/design, red-toned"
       ],
       "theme": "other",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts figure/design, red-toned. A face value of 1. A single stamp.",
       "basis": [
         "asr_01M218B1TB095MB9ZWN92M8ZH7",
@@ -1583,6 +2004,10 @@
         "football players with flags"
       ],
       "theme": "sport",
+      "territory": "Hungary",
+      "resolvedIssuer": "Hungary",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts football players with flags. Printed \"Magyar Posta\". A face value of 4 Ft. A single stamp.",
       "basis": [
         "asr_01M218B5E97E9P4699ZV2JBNG9",
@@ -1609,6 +2034,10 @@
         "butterfly"
       ],
       "theme": "wildlife",
+      "territory": "South Moluccas",
+      "resolvedIssuer": "Republic of South Moluccas",
+      "issuerStatus": "defunct",
+      "succeededBy": "Indonesia",
       "reading": "Depicts butterfly. Printed \"Republik Maluku Selatan\". A face value of 10. A single stamp.",
       "basis": [
         "asr_01M218B30XMPM87F8EVFV41BCC",
@@ -1635,6 +2064,10 @@
         "football players with flags (World Cup themed)"
       ],
       "theme": "sport",
+      "territory": "Hungary",
+      "resolvedIssuer": "Hungary",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts football players with flags (World Cup themed). Printed \"Magyar Posta\". A face value of 1 Ft. A single stamp.",
       "basis": [
         "asr_01M218B3C3EGWS0BM7T8NY4CBK",
@@ -1661,6 +2094,10 @@
         "football players with flags, 'VB Chile' World Cup"
       ],
       "theme": "sport",
+      "territory": "Hungary",
+      "resolvedIssuer": "Hungary",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts football players with flags, 'VB Chile' World Cup. Printed \"Magyar Posta\". A face value of 2 Ft. Issued 1962. A single stamp.",
       "basis": [
         "asr_01M218B4PVR37MSHZY1HJ8P4ZD",
@@ -1688,6 +2125,10 @@
         "castle/building, red-toned"
       ],
       "theme": "buildings",
+      "territory": "Monaco",
+      "resolvedIssuer": "Monaco",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts castle/building, red-toned. Printed \"Monaco\". A face value of 3f. A single stamp.",
       "basis": [
         "asr_01M218B2394ZG1P5DFF7FZ3EPW",
@@ -1714,6 +2155,10 @@
         "abstract/pattern design"
       ],
       "theme": "other",
+      "territory": "Monaco",
+      "resolvedIssuer": "Monaco",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts abstract/pattern design. Printed \"Monaco\". A face value of 3f. A single stamp.",
       "basis": [
         "asr_01M218B0F8Z0ABTRD29EW00V95",
@@ -1740,6 +2185,10 @@
         "butterfly"
       ],
       "theme": "wildlife",
+      "territory": "South Moluccas",
+      "resolvedIssuer": "Republic of South Moluccas",
+      "issuerStatus": "defunct",
+      "succeededBy": "Indonesia",
       "reading": "Depicts butterfly. Printed \"Republik Maluku Selatan\". A single stamp.",
       "basis": [
         "asr_01M218B2R6CC2VJ3BATCS8Q1C6",
@@ -1765,6 +2214,10 @@
         "football players with flags"
       ],
       "theme": "sport",
+      "territory": "Hungary",
+      "resolvedIssuer": "Hungary",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts football players with flags. Printed \"Magyar Posta\". A face value of 1 Ft. A single stamp.",
       "basis": [
         "asr_01M218B53294KMRFX241B5G55E",
@@ -1791,6 +2244,10 @@
         "football players with flags"
       ],
       "theme": "sport",
+      "territory": "Hungary",
+      "resolvedIssuer": "Hungary",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts football players with flags. Printed \"Magyar Posta\". A face value of 2 Ft. A single stamp.",
       "basis": [
         "asr_01M218B3P1F9K3942WCC6PSG09",
@@ -1817,6 +2274,10 @@
         "butterfly"
       ],
       "theme": "wildlife",
+      "territory": "South Moluccas",
+      "resolvedIssuer": "Republic of South Moluccas",
+      "issuerStatus": "defunct",
+      "succeededBy": "Indonesia",
       "reading": "Depicts butterfly. Printed \"Republik Maluku Selatan\". A face value of 2½. A single stamp.",
       "basis": [
         "asr_01M218B15E6GJ4A7VBRPXAN45S",
@@ -1843,6 +2304,10 @@
         "Olympic sport scene, colorful"
       ],
       "theme": "sport",
+      "territory": "Hungary",
+      "resolvedIssuer": "Hungary",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Olympic sport scene, colorful. Printed \"Magyar Posta\". A face value of 40 f. A single stamp.",
       "basis": [
         "asr_01M218B4AZBF7TTN5H37MNCN39",
@@ -1869,6 +2334,10 @@
         "butterfly"
       ],
       "theme": "wildlife",
+      "territory": "South Moluccas",
+      "resolvedIssuer": "Republic of South Moluccas",
+      "issuerStatus": "defunct",
+      "succeededBy": "Indonesia",
       "reading": "Depicts butterfly. Printed \"Republik Maluku Selatan\". A face value of 7½. A single stamp.",
       "basis": [
         "asr_01M218B1GDSSP3YPVJ7FB0AJX6",
@@ -1895,6 +2364,10 @@
         "Fish/underwater aquatic scene"
       ],
       "theme": "wildlife",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts Fish/underwater aquatic scene. A face value of 60. A single stamp.",
       "basis": [
         "asr_01M21VCS192F9B6YW0HW2D8N1Q",
@@ -1920,6 +2393,10 @@
         "Bird (Costa series)"
       ],
       "theme": "wildlife",
+      "territory": "Independent State of Croatia",
+      "resolvedIssuer": "Independent State of Croatia",
+      "issuerStatus": "defunct",
+      "succeededBy": "Yugoslavia",
       "reading": "Depicts Bird (Costa series). Printed \"N.D. Hrvatska\". A face value of 30. A single stamp.",
       "basis": [
         "asr_01M21VCTQJK46037GYMDA8Q1QZ",
@@ -1946,6 +2423,10 @@
         "Flowers/berries, decorative border"
       ],
       "theme": "flora",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts Flowers/berries, decorative border. A single stamp.",
       "basis": [
         "asr_01M21VCVRH5TR8XEQ8NN9WEXAM",
@@ -1970,6 +2451,10 @@
         "Bird (Costa series)"
       ],
       "theme": "wildlife",
+      "territory": "Independent State of Croatia",
+      "resolvedIssuer": "Independent State of Croatia",
+      "issuerStatus": "defunct",
+      "succeededBy": "Yugoslavia",
       "reading": "Depicts Bird (Costa series). Printed \"N.D. Hrvatska\". A face value of 35. A single stamp.",
       "basis": [
         "asr_01M21VCVYYQNMR47XADGB5NXFD",
@@ -1996,6 +2481,10 @@
         "Children in colorful traditional dress, decorative border"
       ],
       "theme": "people",
+      "territory": "Mongolia",
+      "resolvedIssuer": "Mongolia",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Children in colorful traditional dress, decorative border. Printed \"Mongolia\". A face value of 60. A single stamp.",
       "basis": [
         "asr_01M21VCV42ES0CM3R52RGD25W9",
@@ -2022,6 +2511,10 @@
         "Deer with children, decorative border"
       ],
       "theme": "wildlife",
+      "territory": "Mongolia",
+      "resolvedIssuer": "Mongolia",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Deer with children, decorative border. Printed \"Mongolia\". A face value of 50. A single stamp.",
       "basis": [
         "asr_01M21VCTCA36FZF7SA4483A463",
@@ -2048,6 +2541,10 @@
         "Red poppy flower"
       ],
       "theme": "flora",
+      "territory": "Independent State of Croatia",
+      "resolvedIssuer": "Independent State of Croatia",
+      "issuerStatus": "defunct",
+      "succeededBy": "Yugoslavia",
       "reading": "Depicts Red poppy flower. Printed \"N.D. Hrvatska\". A face value of 40. A single stamp.",
       "basis": [
         "asr_01M21VCS9SVQAD6E7N919JTS80",
@@ -2074,6 +2571,10 @@
         "Olympic athlete throwing javelin"
       ],
       "theme": "sport",
+      "territory": "Hungary",
+      "resolvedIssuer": "Hungary",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Olympic athlete throwing javelin. Printed \"Magyar Posta\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21VCRQAJ6HGRJEX24KV90DM",
@@ -2100,6 +2601,10 @@
         "Colorful abstract/portrait design"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts Colorful abstract/portrait design. A face value of 1. A single stamp.",
       "basis": [
         "asr_01M21VCRDEMDXS6BR35BA8Q9DE",
@@ -2125,6 +2630,10 @@
         "Purple/violet flower"
       ],
       "theme": "flora",
+      "territory": "Independent State of Croatia",
+      "resolvedIssuer": "Independent State of Croatia",
+      "issuerStatus": "defunct",
+      "succeededBy": "Yugoslavia",
       "reading": "Depicts Purple/violet flower. Printed \"N.D. Hrvatska\". A face value of 20. A single stamp.",
       "basis": [
         "asr_01M21VCR39ZDC0GCQQGDZJ42Y4",
@@ -2151,6 +2660,10 @@
         "Coastal landscape with buildings/boats"
       ],
       "theme": "maritime",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts Coastal landscape with buildings/boats. A single stamp.",
       "basis": [
         "asr_01M21VCSN2CR5N21F6FN34VWS6",
@@ -2175,6 +2688,10 @@
         "Sheep/lamb with flowers, ornate decorative border"
       ],
       "theme": "wildlife",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts Sheep/lamb with flowers, ornate decorative border. A single stamp.",
       "basis": [
         "asr_01M21VCT57NSH3BMHKKN25F807",
@@ -2199,6 +2716,10 @@
         "Children in purple/pink traditional dress, decorative border"
       ],
       "theme": "people",
+      "territory": "Mongolia",
+      "resolvedIssuer": "Mongolia",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Children in purple/pink traditional dress, decorative border. Printed \"Mongolia\". A single stamp.",
       "basis": [
         "asr_01M21VCVFTV0GW878418K0W1EH",
@@ -2224,6 +2745,10 @@
         "Olympic athlete swimming/diving"
       ],
       "theme": "sport",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts Olympic athlete swimming/diving. A face value of 60. A single stamp.",
       "basis": [
         "asr_01M21VCSWR9KWN4Q4KW7D3N080",
@@ -2249,6 +2774,10 @@
         "Space capsule/satellite (Soyuz-related)"
       ],
       "theme": "space",
+      "territory": "Mongolia",
+      "resolvedIssuer": "Mongolia",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Space capsule/satellite (Soyuz-related). Printed \"MONGOLIA\". A face value of 50. A single stamp.",
       "basis": [
         "asr_01M218DHQ1KCQTMWPNDYTYG3K8",
@@ -2275,6 +2804,10 @@
         "Sheep and other animals"
       ],
       "theme": "wildlife",
+      "territory": "Ajman",
+      "resolvedIssuer": "Ajman",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Sheep and other animals. Printed \"AJMAN STATE\". A face value of various (e.g., 1, 4, 5, 10, 15). A block of 8.",
       "basis": [
         "asr_01M218DK6ZEZGDBVBBK57DCRA0",
@@ -2301,6 +2834,10 @@
         "Campeonato Mundial de Futebol 1982 Espana - soccer players"
       ],
       "theme": "sport",
+      "territory": "Sao Tome and Principe",
+      "resolvedIssuer": "Sao Tome and Principe",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Campeonato Mundial de Futebol 1982 Espana - soccer players. Printed \"S. TOME E PRINCIPE\". A face value of 15/15/15/3. Issued 1982. A strip of 4.",
       "basis": [
         "asr_01M218DKHYN80BG7P9HEAKHTME",
@@ -2328,6 +2865,10 @@
         "Historical/royal court painting scene with figures in robes"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts Historical/royal court painting scene with figures in robes. A face value of 7. A strip of 4.",
       "basis": [
         "asr_01M218DJM9Q8Y5RCDA1MT8GBRX",
@@ -2353,6 +2894,10 @@
         "Football/soccer players in action"
       ],
       "theme": "sport",
+      "territory": "Sao Tome and Principe",
+      "resolvedIssuer": "Sao Tome and Principe",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Football/soccer players in action. Printed \"S. TOME E PRINCIPE\". A block of 4.",
       "basis": [
         "asr_01M218DJBZ796P5YBXT6D2VCYJ",
@@ -2378,6 +2923,10 @@
         "Dogs, horses, and other animals in nature scenes"
       ],
       "theme": "wildlife",
+      "territory": "Ras al Khaimah",
+      "resolvedIssuer": "Ras al Khaimah",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Dogs, horses, and other animals in nature scenes. Printed \"RAS AL KHAIMA\". A face value of various (e.g., 10, 15, 20, 25, 50, 70, 120, 150). A block of 8.",
       "basis": [
         "asr_01M218DJWHHH9M4KV627V1FV46",
@@ -2404,6 +2953,10 @@
         "Camels"
       ],
       "theme": "wildlife",
+      "territory": "Mongolia",
+      "resolvedIssuer": "Mongolia",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Camels. Printed \"MONGOLIA\". A face value of 40. A single stamp.",
       "basis": [
         "asr_01M218DJ224MM93QDVZTFWR3BW",
@@ -2430,6 +2983,10 @@
         "Tractor"
       ],
       "theme": "transport",
+      "territory": "Mongolia",
+      "resolvedIssuer": "Mongolia",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Tractor. Printed \"Mongolia\". A face value of 60s. A single stamp.",
       "basis": [
         "asr_01M218EE54DFRKFNX9KFSRJ3PT",
@@ -2456,6 +3013,10 @@
         "Gorilla (side profile)"
       ],
       "theme": "wildlife",
+      "territory": "Angola",
+      "resolvedIssuer": "Angola",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Gorilla (side profile). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
       "basis": [
         "asr_01M218EF4Y2K4EN1W7173A9GDE",
@@ -2482,6 +3043,10 @@
         "Tractor"
       ],
       "theme": "transport",
+      "territory": "Mongolia",
+      "resolvedIssuer": "Mongolia",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Tractor. Printed \"Mongolia\". A face value of 50s. A single stamp.",
       "basis": [
         "asr_01M218EEFJQ5SAE3T27K8AQBEX",
@@ -2508,6 +3073,10 @@
         "Gorilla (portrait)"
       ],
       "theme": "wildlife",
+      "territory": "Angola",
+      "resolvedIssuer": "Angola",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Gorilla (portrait). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
       "basis": [
         "asr_01M218EFGPJ8K4C8E8C3XRHBZT",
@@ -2534,6 +3103,10 @@
         "Gorilla (sitting)"
       ],
       "theme": "wildlife",
+      "territory": "Angola",
+      "resolvedIssuer": "Angola",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Gorilla (sitting). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
       "basis": [
         "asr_01M218EG71SZD62W8TVW6C6SGJ",
@@ -2560,6 +3133,10 @@
         "Gorilla (close-up face)"
       ],
       "theme": "wildlife",
+      "territory": "Angola",
+      "resolvedIssuer": "Angola",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Gorilla (close-up face). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
       "basis": [
         "asr_01M218EETNWBAT0DRDN51YW2ZQ",
@@ -2586,6 +3163,10 @@
         "Gorilla (open mouth/roaring)"
       ],
       "theme": "wildlife",
+      "territory": "Angola",
+      "resolvedIssuer": "Angola",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Gorilla (open mouth/roaring). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
       "basis": [
         "asr_01M218EFV2JNYB1HBYD3S7Q62N",
@@ -2612,6 +3193,10 @@
         "Soviet-Mongolian friendship/space theme illustration (exact subject unclear)"
       ],
       "theme": "space",
+      "territory": "Mongolia",
+      "resolvedIssuer": "Mongolia",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Soviet-Mongolian friendship/space theme illustration (exact subject unclear). Printed \"Mongolia\". A face value of 1. A single stamp.",
       "basis": [
         "asr_01M218EDTRATE83D6FX7JHT9M7",
@@ -2638,6 +3223,10 @@
         "Gorilla (close-up face, different angle)"
       ],
       "theme": "wildlife",
+      "territory": "Angola",
+      "resolvedIssuer": "Angola",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Gorilla (close-up face, different angle). Printed \"Angola\". A face value of KZ. 3.500.000,00. A single stamp.",
       "basis": [
         "asr_01M218EGJ7Y1CPCHQ0E9SS2ZQX",
@@ -2664,6 +3253,10 @@
         "Bird (appears to be a rooster or pheasant)"
       ],
       "theme": "wildlife",
+      "territory": "South Korea",
+      "resolvedIssuer": "Republic of Korea (South Korea)",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Bird (appears to be a rooster or pheasant). Printed \"Republic of Korea\". A face value of 20. A single stamp.",
       "basis": [
         "asr_01M218EQ784J193MGZ1EFK8Z46",
@@ -2690,6 +3283,10 @@
         "Butterfly"
       ],
       "theme": "wildlife",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts Butterfly. A face value of 4. A single stamp.",
       "basis": [
         "asr_01M218EQJEY3WY2MGJ5KTXGADV",
@@ -2715,6 +3312,10 @@
         "Train (bullet train/rail)"
       ],
       "theme": "transport",
+      "territory": "Korea",
+      "resolvedIssuer": "Korea (unspecified)",
+      "issuerStatus": "unknown",
+      "succeededBy": null,
       "reading": "Depicts Train (bullet train/rail). Printed \"Korea\". A face value of 10. A single stamp.",
       "basis": [
         "asr_01M218EPWTPEM39VRJTDVDVJZG",
@@ -2739,6 +3340,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A strip.",
       "basis": [
         "asr_01M21JGMTSQHBE78B334Y81ARV"
@@ -2760,6 +3365,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPT9MK0NRWHRGZJ4YR7QE"
@@ -2781,6 +3390,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPTH2ZDQDMFDJA82G12JM"
@@ -2802,6 +3415,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPTV4VRRK523FARB0DJKQ"
@@ -2823,6 +3440,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPV50B5J9A6SCV4DF632M"
@@ -2844,6 +3465,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPV9PT84228FS0HYDE62C"
@@ -2865,6 +3490,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPSZBS63S15DJE6XM6NCM"
@@ -2886,6 +3515,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPTP280QYJH7NXXH0QEM4"
@@ -2907,6 +3540,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPST35JBB5816A1V001JB"
@@ -2928,6 +3565,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPT4FKXYTE2W5DBQTYS9D"
@@ -2949,6 +3590,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPV0EJZR4CRJ6E58FM9GN"
@@ -2970,6 +3615,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A other.",
       "basis": [
         "asr_01M21JQGJ82FRAJP2Q1HR39QP7"
@@ -2991,6 +3640,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JQHH7KB80SQCMZ2E3BGS4"
@@ -3012,6 +3665,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JQHBDGTRYT2HHNT5GN48P"
@@ -3035,6 +3692,10 @@
         "flag"
       ],
       "theme": "other",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts flag. A single stamp.",
       "basis": [
         "asr_01M21JQGPZ05Z59RX2QAGBNZQ5",
@@ -3057,6 +3718,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A other.",
       "basis": [
         "asr_01M21JQG8MBPVDK2P2CDS7Z17T"
@@ -3080,6 +3745,10 @@
         "butterfly"
       ],
       "theme": "wildlife",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts butterfly. A single stamp.",
       "basis": [
         "asr_01M21JQH44TC1S250VHXJQ3GM5",
@@ -3104,6 +3773,10 @@
         "portrait"
       ],
       "theme": "people",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts portrait. A single stamp.",
       "basis": [
         "asr_01M21JQGXT1PD6G954ST8358AS",
@@ -3126,6 +3799,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A other.",
       "basis": [
         "asr_01M21JQGDGCDX36862594787AC"
@@ -3149,6 +3826,10 @@
         "golden-haired character, orange/red background"
       ],
       "theme": "other",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts golden-haired character, orange/red background. A face value of 08. A single stamp.",
       "basis": [
         "asr_01M21JHY14CSM6G67QAV8GVXN2",
@@ -3174,6 +3855,10 @@
         "character, red/orange background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character, red/orange background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ1DBRZC3P8VHN84GQMH6",
@@ -3200,6 +3885,10 @@
         "character, orange background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character, orange background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ3SRGWKRAS8430R0772V",
@@ -3226,6 +3915,10 @@
         "character, dark blue background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character, dark blue background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ4PESARHA6T26W41HG64",
@@ -3252,6 +3945,10 @@
         "robot/mechanical character"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts robot/mechanical character. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ2DG02PXDASV2FF9ZBC6",
@@ -3278,6 +3975,10 @@
         "character with circular blue pattern"
       ],
       "theme": "other",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts character with circular blue pattern. A face value of 08. A single stamp.",
       "basis": [
         "asr_01M21JHZJQYMDZV5T1VFYSH3RT",
@@ -3303,6 +4004,10 @@
         "character with blue rocket/spaceship"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character with blue rocket/spaceship. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ1PXG0B8VY6SD8DYMM20",
@@ -3329,6 +4034,10 @@
         "green-toned character"
       ],
       "theme": "other",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts green-toned character. A face value of 08. A single stamp.",
       "basis": [
         "asr_01M21JJ4E704SAVKMVG5YMTGZ8",
@@ -3354,6 +4063,10 @@
         "young boy character, red/orange background (possibly young Goku)"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts young boy character, red/orange background (possibly young Goku). Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JHYY6XC42GQ04V1HK34HP",
@@ -3380,6 +4093,10 @@
         "character with angel-like wings"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character with angel-like wings. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ0G93MRY2PZZBEPMA5A2",
@@ -3406,6 +4123,10 @@
         "green wand/staff item"
       ],
       "theme": "other",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts green wand/staff item. A face value of 08. A single stamp.",
       "basis": [
         "asr_01M21JJ14M5TEEJ4HKTKVSXABY",
@@ -3431,6 +4152,10 @@
         "Dragon Ball Z character, blue/white background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Dragon Ball Z character, blue/white background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JHYA13EVWKDWP760JVS5B",
@@ -3457,6 +4182,10 @@
         "character, blue/white background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character, blue/white background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ3156ERAQ26S9R4HDS4Z",
@@ -3483,6 +4212,10 @@
         "character, dark background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character, dark background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JHZV4SFFCR5EP0Q7QH7AQ",
@@ -3509,6 +4242,10 @@
         "witch-like character, purple/dark background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts witch-like character, purple/dark background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ05MX112Q40YGGDMJFDE",
@@ -3535,6 +4272,10 @@
         "character, blue sky background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character, blue sky background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JHZ7Z2SF7CVM0JP56WFYG",
@@ -3561,6 +4302,10 @@
         "character, white/light background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character, white/light background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ5PTYW6BWVKJ2HQVDX6H",
@@ -3587,6 +4332,10 @@
         "character, blue background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character, blue background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ5BYY09CD4TTFNT8WA7A",
@@ -3613,6 +4362,10 @@
         "red character wearing helmet"
       ],
       "theme": "other",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts red character wearing helmet. A face value of 08. A single stamp.",
       "basis": [
         "asr_01M21JJ2R76XQEZJKSG8DMHEWV",
@@ -3638,6 +4391,10 @@
         "character, red/fire background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character, red/fire background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ50K1X26X3JYS35NHMH4",
@@ -3664,6 +4421,10 @@
         "character, purple background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character, purple background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ0TCAM9P3EZR1QFNTYQH",
@@ -3690,6 +4451,10 @@
         "character, green/tree background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character, green/tree background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ43BTXCSGPXHG3JMK1SN",
@@ -3716,6 +4481,10 @@
         "character, brown/tan background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character, brown/tan background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ3D7X4H2PSXM6F94F8HY",
@@ -3742,6 +4511,10 @@
         "fighting scene, red background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts fighting scene, red background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JJ2311N2KE2WQEDQE3V6G",
@@ -3768,6 +4541,10 @@
         "Dragon Ball Z character, green background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan Post",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Dragon Ball Z character, green background. Printed \"Japan Post\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JHYKXG8ZAT8A8CYFYQ90V",
@@ -3794,6 +4571,10 @@
         "pink-haired character"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts pink-haired character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKBHEGYPMWC0A5QWY79P1",
@@ -3820,6 +4601,10 @@
         "outdoor scene with character"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts outdoor scene with character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK999ZTQH7T59VB593Z81",
@@ -3846,6 +4631,10 @@
         "red-hooded character"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts red-hooded character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKAX7P41AATW5SGJXBSPG",
@@ -3872,6 +4661,10 @@
         "monster character"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts monster character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKB6VDD59PBWRSSD4SH2R",
@@ -3898,6 +4691,10 @@
         "pink stylized character"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts pink stylized character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK8M7MSZ3G2P7VFDBZYMT",
@@ -3924,6 +4721,10 @@
         "anime character with city background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts anime character with city background. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK8A51H56GW4DCMSWRV8T",
@@ -3950,6 +4751,10 @@
         "character seated, blue outfit"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character seated, blue outfit. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKHRVT7DRS3QP1BT7GQAE",
@@ -3976,6 +4781,10 @@
         "ninja-style character, orange explosion background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts ninja-style character, orange explosion background. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKJSTZ32SN2CS868NGYY5",
@@ -4002,6 +4811,10 @@
         "character with green hair, sleeping pose"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character with green hair, sleeping pose. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKHF2AR1Z6FMKNQY1W7S4",
@@ -4028,6 +4841,10 @@
         "character portrait, purple tones"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character portrait, purple tones. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKGVC16SXQFXR5FZRHBCZ",
@@ -4054,6 +4871,10 @@
         "blue/water themed character"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts blue/water themed character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKFK13XFSRR268MHXNM3M",
@@ -4080,6 +4901,10 @@
         "anime characters, portrait"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts anime characters, portrait. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK80F7546QVNX28V9KSVX",
@@ -4106,6 +4931,10 @@
         "boxing-style character"
       ],
       "theme": "sport",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts boxing-style character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKDZ528XKF2XEBPA6FA3W",
@@ -4132,6 +4961,10 @@
         "two characters together"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts two characters together. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKCHXDNTMKNSMEQ21EER3",
@@ -4158,6 +4991,10 @@
         "character portrait"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character portrait. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKEKEVHKNJRHRNKEH2VTW",
@@ -4184,6 +5021,10 @@
         "character, pink background"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character, pink background. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKKT8YWNBN4FV39TYGE6K",
@@ -4210,6 +5051,10 @@
         "character with magnifying/eye motif"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character with magnifying/eye motif. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKG6VNHPFB8FSSH9WBXPX",
@@ -4236,6 +5081,10 @@
         "character with pink/cherry blossom theme"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character with pink/cherry blossom theme. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKKG5876KYDAWE4A3MA8E",
@@ -4262,6 +5111,10 @@
         "robot/fighting scene"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts robot/fighting scene. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKD88GCHPXECGFYFPGSAC",
@@ -4288,6 +5141,10 @@
         "pirate-style character in white"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts pirate-style character in white. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKH5CR61S43KFZRRDB2CH",
@@ -4314,6 +5171,10 @@
         "ninja character in green setting"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts ninja character in green setting. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKK47SK232KBBSBZV2TCR",
@@ -4340,6 +5201,10 @@
         "dark character close-up"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts dark character close-up. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKE9ASW1Z6JBCZJRA6BP0",
@@ -4366,6 +5231,10 @@
         "orange-clad action character"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts orange-clad action character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKA8MQ5V275R9K803GYWA",
@@ -4392,6 +5261,10 @@
         "Detective-style character, night scene"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Detective-style character, night scene. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKFWQRFVTVZE0T5TP1J0F",
@@ -4418,6 +5291,10 @@
         "fire/action scene"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts fire/action scene. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKDKKPAN4Y6DAFQTB52M3",
@@ -4444,6 +5321,10 @@
         "fist/action close-up"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts fist/action close-up. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKJ3ZJC3MQYBSSEJAJY1X",
@@ -4470,6 +5351,10 @@
         "sports character"
       ],
       "theme": "sport",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts sports character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKF90XF61QND4FYZVKVPP",
@@ -4496,6 +5381,10 @@
         "character portrait"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character portrait. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKCW18P83QYA4V8626M92",
@@ -4522,6 +5411,10 @@
         "dark-toned character portrait"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts dark-toned character portrait. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKC6CJB47510RH9BXZ5BG",
@@ -4548,6 +5441,10 @@
         "character portrait, warm tones"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character portrait, warm tones. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKGH0RMJJCX0A5343G1GA",
@@ -4574,6 +5471,10 @@
         "two boxers fighting"
       ],
       "theme": "sport",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts two boxers fighting. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKEX1AJKBWR7BPCWE4BW0",
@@ -4600,6 +5501,10 @@
         "ninja-style character, orange tones"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts ninja-style character, orange tones. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKJE4BN5PMTPQNEFMR29X",
@@ -4626,6 +5531,10 @@
         "character with spiky red hair"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character with spiky red hair. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKAJV52CDXGDEG8KTZ97P",
@@ -4652,6 +5561,10 @@
         "monster/robot character"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts monster/robot character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK9MAF66MEWPPCZBP2B4W",
@@ -4678,6 +5591,10 @@
         "baseball player character"
       ],
       "theme": "sport",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts baseball player character. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK8ZQBJ9Y83AZNHM1KE7V",
@@ -4704,6 +5621,10 @@
         "character in green setting"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character in green setting. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK9YVEZF4K8CFXPNAHPGW",
@@ -4730,6 +5651,10 @@
         "anime character in landscape"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts anime character in landscape. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JK7NVS1TGSY0AHXK7FQXN",
@@ -4756,6 +5681,10 @@
         "action character mid-motion"
       ],
       "theme": "other",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts action character mid-motion. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21JKBVNPD57JXMSF0DJMDJP",
@@ -4782,6 +5711,10 @@
         "anime character, blue-toned illustration"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts anime character, blue-toned illustration. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8H9JPET1DW8C3ZDBN47K",
@@ -4808,6 +5741,10 @@
         "anime character with hat (Detective Conan style)"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts anime character with hat (Detective Conan style). A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8JJA6MMAP70KKM2E5JDZ",
@@ -4833,6 +5770,10 @@
         "colorful anime character illustration"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts colorful anime character illustration. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8QSZ411A6QGPM9M9WMB5",
@@ -4859,6 +5800,10 @@
         "character with animal companion (tanuki-like)"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character with animal companion (tanuki-like). Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8SFB9T7S507E012QBPTS",
@@ -4885,6 +5830,10 @@
         "small stamp, character in red/white stripes, image inverted"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts small stamp, character in red/white stripes, image inverted. A face value of 08. A single stamp.",
       "basis": [
         "asr_01M21W8MMHF6F8WX4Q5F8XV1G7",
@@ -4910,6 +5859,10 @@
         "anime character illustration"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts anime character illustration. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8S2V2ED9SC50SR84SKPG",
@@ -4936,6 +5889,10 @@
         "spiky-haired character, different color scheme"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts spiky-haired character, different color scheme. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8QFNRN219WPWBQXGF86W",
@@ -4962,6 +5919,10 @@
         "spiky-haired action character (shonen style)"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts spiky-haired action character (shonen style). Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8NVBX3Q7VFP72PQYFQFY",
@@ -4988,6 +5949,10 @@
         "close-up anime character portrait"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts close-up anime character portrait. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8Q4Y3DDPYCBE9PYZRF8W",
@@ -5014,6 +5979,10 @@
         "anime character portrait"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts anime character portrait. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8MX6D8EZF9HDHS5NDZQ2",
@@ -5040,6 +6009,10 @@
         "small stamp, tanuki/raccoon character"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts small stamp, tanuki/raccoon character. A face value of 08. A single stamp.",
       "basis": [
         "asr_01M21W8P5X289T4SMAJCDVFBX8",
@@ -5065,6 +6038,10 @@
         "two anime characters (Detective Conan style)"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts two anime characters (Detective Conan style). A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8HZ0QCG9W9FTVB8HPTBT",
@@ -5090,6 +6067,10 @@
         "character with red hair"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character with red hair. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8RR6G1Q329GFJGT1AQ9P",
@@ -5116,6 +6097,10 @@
         "character with web/net pattern background"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character with web/net pattern background. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8PQYJ17NSDMKQ7YPRXF9",
@@ -5142,6 +6127,10 @@
         "character with light hair, close-up"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character with light hair, close-up. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8SSKPWWXA81WJKG99GMS",
@@ -5168,6 +6157,10 @@
         "two panda characters"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts two panda characters. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8N7F8D3MV63GAJ7NYWK0",
@@ -5194,6 +6187,10 @@
         "character reading a book"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character reading a book. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8NHD4HK9SW3XB3TZYQ0T",
@@ -5220,6 +6217,10 @@
         "character with light/blonde hair"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character with light/blonde hair. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8RE9T5F7B06R8XTWE3KP",
@@ -5246,6 +6247,10 @@
         "two characters, pink/orange tones"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts two characters, pink/orange tones. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8R422R6JQTMQWM8BK9BE",
@@ -5272,6 +6277,10 @@
         "character with hand near face"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts character with hand near face. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8PE0EZ3QA4Y22VHSR5DC",
@@ -5298,6 +6307,10 @@
         "dark mecha/robot illustration"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts dark mecha/robot illustration. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8KK1CRFD8YAVRV2CHQRD",
@@ -5324,6 +6337,10 @@
         "Pikachu, action pose"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Pikachu, action pose. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8JVNDGRA3JFTG7JVFHMR",
@@ -5350,6 +6367,10 @@
         "Pikachu, different pose"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Pikachu, different pose. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8K6H2C3ZWPZZ097P8ZBR",
@@ -5376,6 +6397,10 @@
         "anime character, warm-toned scene"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts anime character, warm-toned scene. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8M9NTA986V5GJ8GZC3N2",
@@ -5402,6 +6427,10 @@
         "anime character with building background"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts anime character with building background. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8KZ22YAXYWTJNGMN8A4B",
@@ -5428,6 +6457,10 @@
         "Pikachu holding Poké Ball"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Pikachu holding Poké Ball. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8HMQCS0DNC7XFTXTVMXT",
@@ -5454,6 +6487,10 @@
         "Pikachu, pink background"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Pikachu, pink background. Printed \"NIPPON\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21W8J8BAZ6K113PC4QH5366",
@@ -5480,6 +6517,10 @@
         "anime character, purple background"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts anime character, purple background. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA3CNKNJ5GFSY6FDBWNEM",
@@ -5505,6 +6546,10 @@
         "character with cup"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts character with cup. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA5KDMXSYPJ2MPT5E5RYF",
@@ -5530,6 +6575,10 @@
         "character with bubbles"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts character with bubbles. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA6P1X87PKH77TKNXHBBS",
@@ -5555,6 +6604,10 @@
         "anime character, orange accent"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts anime character, orange accent. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA489D4ASNK1DVPPW77WT",
@@ -5580,6 +6633,10 @@
         "character, blue background, denomination 120 with flame graphic"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts character, blue background, denomination 120 with flame graphic. A face value of 120. A single stamp.",
       "basis": [
         "asr_01M21WA5VJYA7JB1JQ4BFJY26Q",
@@ -5605,6 +6662,10 @@
         "figure with hat, blue background"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts figure with hat, blue background. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WABKMW4V20B2A6VTYPB0F",
@@ -5630,6 +6691,10 @@
         "character with orange hair"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts character with orange hair. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA9PAZ4GXSPPXRJZEPZPM",
@@ -5655,6 +6720,10 @@
         "white-haired character"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts white-haired character. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WADKBYM18QJDAGCR8FNHC",
@@ -5680,6 +6749,10 @@
         "character in colorful outfit"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts character in colorful outfit. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WAC6JM4S7BH1Q9F0061ZS",
@@ -5705,6 +6778,10 @@
         "blue-suited character"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts blue-suited character. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA9D40WB9CSHGDM76WT6D",
@@ -5730,6 +6807,10 @@
         "figures in coats"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts figures in coats. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA7QZZRNYAVSS06XJ540D",
@@ -5755,6 +6836,10 @@
         "character in snow scene"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts character in snow scene. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA6DQ6CVWXPMPJT0GYBSA",
@@ -5780,6 +6865,10 @@
         "Astro Boy, cheerful pose"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Astro Boy, cheerful pose. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WACFGX0FZA27PNT83K7KZ",
@@ -5806,6 +6895,10 @@
         "two characters, blue background"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts two characters, blue background. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA8H6WYK5W22ZF2GX5JTP",
@@ -5831,6 +6924,10 @@
         "character with sword/action pose"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts character with sword/action pose. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WADBKWGTAA04A7067M0C0",
@@ -5856,6 +6953,10 @@
         "character in winter scene"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts character in winter scene. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA88VQKBBZWJM7TYMK8WA",
@@ -5881,6 +6982,10 @@
         "blue-haired character"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts blue-haired character. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA77N64608B5Q96Y8F7C0",
@@ -5906,6 +7011,10 @@
         "figures in period costume"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts figures in period costume. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WAD2WQAAS969KTSDXSVTX",
@@ -5931,6 +7040,10 @@
         "dark-clothed figure"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts dark-clothed figure. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA94GN3Y9MMRY0GXDEVEZ",
@@ -5956,6 +7069,10 @@
         "two figures, yellow/gold background"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts two figures, yellow/gold background. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WAA6VPG91QTNSKPR9YFKY",
@@ -5981,6 +7098,10 @@
         "pink cartoon character"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts pink cartoon character. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA7FRRHTJJF513272KX19",
@@ -6006,6 +7127,10 @@
         "character with machine, yellow background"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts character with machine, yellow background. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WAB03MEC3DGNWGF87V006",
@@ -6031,6 +7156,10 @@
         "red robot/mecha scene"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts red robot/mecha scene. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA5B2B9MG4T22XSWTAK5A",
@@ -6056,6 +7185,10 @@
         "character in green landscape"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts character in green landscape. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WADVKBHRHH5P3Q6EN71NC",
@@ -6081,6 +7214,10 @@
         "figure with red/white stripes"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts figure with red/white stripes. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WAAFERPKHJD0H0K81JAAR",
@@ -6106,6 +7243,10 @@
         "round mecha character"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts round mecha character. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WAAQRSF45TKWHD0MSDABX",
@@ -6131,6 +7272,10 @@
         "character with rabbit-like figure"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts character with rabbit-like figure. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WABX1WZGYR886QAD5TDH8",
@@ -6156,6 +7301,10 @@
         "character with penguin/rainbow"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts character with penguin/rainbow. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA80A2KHK0W3TVKRM7PDR",
@@ -6181,6 +7330,10 @@
         "character in red hat"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts character in red hat. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA6YMPHVZRSEW0SC1PNXN",
@@ -6206,6 +7359,10 @@
         "figure, dark background"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts figure, dark background. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WACSTF6QNAVRTJG6R0EE1",
@@ -6231,6 +7388,10 @@
         "Astro Boy (Tetsuwan Atom), running pose"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Astro Boy (Tetsuwan Atom), running pose. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WAB8MX26AK2G5NSP028Z5",
@@ -6257,6 +7418,10 @@
         "crowd scene"
       ],
       "theme": "people",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts crowd scene. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA8VAST0S1BV516ZTXSCG",
@@ -6282,6 +7447,10 @@
         "two characters together"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts two characters together. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA9YBBS2TK8KMMHC4MF4V",
@@ -6307,6 +7476,10 @@
         "group of figures, blue background"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts group of figures, blue background. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA4TK46BJ6Z210EYKW526",
@@ -6332,6 +7505,10 @@
         "red-haired character"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts red-haired character. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WAEJN8R2Y2HBCHX3KRR7R",
@@ -6357,6 +7534,10 @@
         "Astro Boy, flexing pose, PHILANIPPON-style border"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Astro Boy, flexing pose, PHILANIPPON-style border. Printed \"Nippon\". A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WAF4D616M9B45ZCJ9P9F9",
@@ -6383,6 +7564,10 @@
         "PHILANIPPON 2011 Astro Boy commemorative"
       ],
       "theme": "art",
+      "territory": "Japan",
+      "resolvedIssuer": "Japan",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts PHILANIPPON 2011 Astro Boy commemorative. Printed \"Nippon\". A face value of 80. Issued 2011. A single stamp.",
       "basis": [
         "asr_01M21WAE4Z75E444HVMEFRK7JC",
@@ -6410,6 +7595,10 @@
         "robot/mecha character"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts robot/mecha character. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WAETY0P7PDWKA16ZYWG8M",
@@ -6435,6 +7624,10 @@
         "armored/samurai figures"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts armored/samurai figures. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA646K6MBNR0F8GA024T4",
@@ -6460,6 +7653,10 @@
         "round-faced character"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts round-faced character. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA52V15D60XHZMSTKFNWF",
@@ -6485,6 +7682,10 @@
         "anime character, blue tones"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts anime character, blue tones. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA3YSFP9BAT8TA150N79V",
@@ -6510,6 +7711,10 @@
         "anime character pointing"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts anime character pointing. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA3NKJ93EGMRYYAWP5A6Z",
@@ -6535,6 +7740,10 @@
         "anime character"
       ],
       "theme": "art",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts anime character. A face value of 80. A single stamp.",
       "basis": [
         "asr_01M21WA4J6YWFHMSKHTMDE6PYC",
@@ -6558,6 +7767,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPD47NBZVR2R091WHV3VR"
@@ -6579,6 +7792,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPDNJ3GPVM3FQF66VC34C"
@@ -6600,6 +7817,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPCY42AAXET8RAYKM498S"
@@ -6621,6 +7842,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPCRAH794SS1D1XCG6W5B"
@@ -6642,6 +7867,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPDTFV90K0VVCEVEGCG1V"
@@ -6663,6 +7892,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPD9CVQAFEJVXKDSF5MNX"
@@ -6684,6 +7917,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPEA9APR1GZX6MWBMXRZT"
@@ -6705,6 +7942,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPE5B97QSQ6TMQ9J1W5T5"
@@ -6726,6 +7967,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPDZY3232CPF2BPM03CB0"
@@ -6747,6 +7992,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "A single stamp.",
       "basis": [
         "asr_01M21JPDFPTBC3Y1ZZ28V621S5"
@@ -6770,6 +8019,10 @@
         "Life of Christ - painting scene (Roman numeral XI)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (Roman numeral XI). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRJZTAGKGK57ET8K7EHYM",
@@ -6795,6 +8048,10 @@
         "Life of Christ - painting scene (Roman numeral VIII?)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (Roman numeral VIII?). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRN0XAKAY6E97GWP9M7C3",
@@ -6820,6 +8077,10 @@
         "Life of Christ - painting scene (Roman numeral III)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (Roman numeral III). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRPEYEGCY5V4T2BT9B0EM",
@@ -6845,6 +8106,10 @@
         "Life of Christ - painting scene (Roman numeral IX?)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (Roman numeral IX?). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRMQ94AMP0CWVPC7M5XF1",
@@ -6870,6 +8135,10 @@
         "Life of Christ - painting scene (Roman numeral XII?)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (Roman numeral XII?). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRK8BC4DWWM48D2SJRHAH",
@@ -6895,6 +8164,10 @@
         "Life of Christ - painting scene (Roman numeral X)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (Roman numeral X). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRME402RBH5M9S9CT9FH5",
@@ -6920,6 +8193,10 @@
         "Life of Christ - painting scene (Roman numeral V)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (Roman numeral V). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRQ1V649T0721YZJNT7VK",
@@ -6945,6 +8222,10 @@
         "Life of Christ - painting scene (Roman numeral II)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (Roman numeral II). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRP70QNCH3CE8K2JJTSKD",
@@ -6970,6 +8251,10 @@
         "Life of Christ - painting scene (numeral 15)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (numeral 15). Printed \"YEMEN\". A face value of 15. A se-tenant.",
       "basis": [
         "asr_01M21JRKVGRSBW70ZZ39XQA3FW",
@@ -6996,6 +8281,10 @@
         "Life of Christ - painting scene (Roman numeral I)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (Roman numeral I). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRNYMSSZ6NGFTH33RH3XC",
@@ -7021,6 +8310,10 @@
         "Life of Christ - painting scene (Roman numeral VII?)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (Roman numeral VII?). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRNPA6XH3D99NAE9B6TPN",
@@ -7046,6 +8339,10 @@
         "Life of Christ - painting scene (Roman numeral XIV)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (Roman numeral XIV). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRM5ZPD1FRZCSR4V1JGG8",
@@ -7071,6 +8368,10 @@
         "Life of Christ - painting scene (numeral 4)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (numeral 4). Printed \"YEMEN\". A face value of 4. A se-tenant.",
       "basis": [
         "asr_01M21JRNBSQTSKRBQQV3CT2KNV",
@@ -7097,6 +8398,10 @@
         "Life of Christ - painting scene (numeral 3)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (numeral 3). Printed \"YEMEN\". A face value of 3. A se-tenant.",
       "basis": [
         "asr_01M21JRPR5QCJNXQS9XSNKPP0H",
@@ -7123,6 +8428,10 @@
         "Life of Christ - painting scene (Roman numeral XIII?)"
       ],
       "theme": "religion",
+      "territory": "Yemen",
+      "resolvedIssuer": "Yemen",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Life of Christ - painting scene (Roman numeral XIII?). Printed \"YEMEN\". A se-tenant.",
       "basis": [
         "asr_01M21JRKK7W4VA3PE056XCJD51",
@@ -7148,6 +8457,10 @@
         "The Vatican Collections: The Papacy and Art (sculptures, Madonna and Child, papal emblem)"
       ],
       "theme": "art",
+      "territory": "Vatican City",
+      "resolvedIssuer": "Vatican City",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts The Vatican Collections: The Papacy and Art (sculptures, Madonna and Child, papal emblem). Printed \"Poste Vaticane / Città del Vaticano\". A face value of 100/200/300/400/1000 (mixed, per stamp). Issued 1983. A souvenir-sheet of 6.",
       "basis": [
         "asr_01M21WEB4SD2VG0QGSBGFDQZFH",
@@ -7175,6 +8488,10 @@
         "Famous Paintings - Life of Christ"
       ],
       "theme": "art",
+      "territory": "Ajman",
+      "resolvedIssuer": "Ajman",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Famous Paintings - Life of Christ. Printed \"Ajman State\". A strip of 18.",
       "basis": [
         "asr_01M21WEBTPFYKW0QR6BZW1KKK3",
@@ -7200,6 +8517,10 @@
         "Famous Paintings - Life of Christ"
       ],
       "theme": "art",
+      "territory": "Ajman",
+      "resolvedIssuer": "Ajman",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Famous Paintings - Life of Christ. Printed \"Ajman State\". A strip of 18.",
       "basis": [
         "asr_01M21WEBHH23NMTFPPQWWYB0S0",
@@ -7225,6 +8546,10 @@
         "Famous Paintings - Life of Christ"
       ],
       "theme": "art",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Famous Paintings - Life of Christ. Printed \"Umm Al Qiwain\". A strip of 18.",
       "basis": [
         "asr_01M21WEC3T0TATAG768FX9WDAY",
@@ -7250,6 +8575,10 @@
         "History of Olympic Games"
       ],
       "theme": "sport",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts History of Olympic Games. Printed \"Umm Al Qiwain\". A sheetlet of 20.",
       "basis": [
         "asr_01M21JTWHZZ4DEN31RJ7B3WGKF",
@@ -7275,6 +8604,10 @@
         "Tropical Fishes"
       ],
       "theme": "wildlife",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Tropical Fishes. Printed \"Umm Al Qiwain\". A sheetlet of 20.",
       "basis": [
         "asr_01M21JTVQ4NXS9MCX92AXNEXN4",
@@ -7300,6 +8633,10 @@
         "Old and New Locomotives"
       ],
       "theme": "transport",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Old and New Locomotives. Printed \"Umm Al Qiwain\". A sheetlet of 20.",
       "basis": [
         "asr_01M21JTX6T4GN86GAVBVWS4XRN",
@@ -7325,6 +8662,10 @@
         "Tropical Fishes"
       ],
       "theme": "wildlife",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Tropical Fishes. Printed \"Umm Al Qiwain\". A sheetlet of 20.",
       "basis": [
         "asr_01M21JTVZMVQTB87W9V5XQS211",
@@ -7350,6 +8691,10 @@
         "Aircraft (unlabeled sheetlet)"
       ],
       "theme": "transport",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Aircraft (unlabeled sheetlet). Printed \"Umm Al Qiwain\". A sheetlet of 20.",
       "basis": [
         "asr_01M21JTWWA38V76EZTSK9YYHXT",
@@ -7375,6 +8720,10 @@
         "Wild Animals"
       ],
       "theme": "wildlife",
+      "territory": "Ajman",
+      "resolvedIssuer": "Ajman",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Wild Animals. Printed \"Ajman State\". A sheetlet of 20.",
       "basis": [
         "asr_01M21JTW82ZV49PJRSK384FP01",
@@ -7400,6 +8749,10 @@
         "Summer Olympic Games - Korea '88 (javelin thrower)"
       ],
       "theme": "sport",
+      "territory": "Guyana",
+      "resolvedIssuer": "Guyana",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Summer Olympic Games - Korea '88 (javelin thrower). Printed \"Guyana\". A face value of $2. Issued 1988. A souvenir-sheet of 1.",
       "basis": [
         "asr_01M21JVS3HTPN7ZMH3HHQ0RKD5",
@@ -7427,6 +8780,10 @@
         "Lady with Umbrella Statue - Barcelona (Olympics)"
       ],
       "theme": "sport",
+      "territory": "Guyana",
+      "resolvedIssuer": "Guyana",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Lady with Umbrella Statue - Barcelona (Olympics). Printed \"Guyana\". A face value of $2.55. A souvenir-sheet of 1.",
       "basis": [
         "asr_01M21JVR6FK9HP48FY13RK1ZHP",
@@ -7453,6 +8810,10 @@
         "Famous Men - portrait sheet"
       ],
       "theme": "people",
+      "territory": null,
+      "resolvedIssuer": null,
+      "issuerStatus": null,
+      "succeededBy": null,
       "reading": "Depicts Famous Men - portrait sheet. A sheetlet of 16.",
       "basis": [
         "asr_01M21JVRG2Z4S356SNVQF6ZTP6",
@@ -7477,6 +8838,10 @@
         "Plymouth Plantation Village (Bicentenary of American Independence)"
       ],
       "theme": "event",
+      "territory": "Liberia",
+      "resolvedIssuer": "Liberia",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Plymouth Plantation Village (Bicentenary of American Independence). Printed \"Republic of Liberia\". A face value of 75. A souvenir-sheet of 1.",
       "basis": [
         "asr_01M21JVRPFGZ5SFHTKGF3AG2WB",
@@ -7503,6 +8868,10 @@
         "Nude - Joan Miro"
       ],
       "theme": "art",
+      "territory": "Guyana",
+      "resolvedIssuer": "Guyana",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Nude - Joan Miro. Printed \"Guyana\". A single stamp.",
       "basis": [
         "asr_01M21JVSGP93KK4SEK9ZRGVQJ7",
@@ -7528,6 +8897,10 @@
         "The General Lee - Barcelona (Olympics)"
       ],
       "theme": "sport",
+      "territory": "Guyana",
+      "resolvedIssuer": "Guyana",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts The General Lee - Barcelona (Olympics). Printed \"Guyana\". A face value of $2.55. A souvenir-sheet of 1.",
       "basis": [
         "asr_01M21JVSRQ62FXSJC1SCQWSN6J",
@@ -7554,6 +8927,10 @@
         "50e Concours International de Bouquets - flower arrangements"
       ],
       "theme": "flora",
+      "territory": "Monaco",
+      "resolvedIssuer": "Monaco",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts 50e Concours International de Bouquets - flower arrangements. Printed \"Monaco\". A face value of 0,85F (each, x3). A strip of 3.",
       "basis": [
         "asr_01M21JX0SJ5WAC001CDP6S23YK",
@@ -7580,6 +8957,10 @@
         "Religious icon (Byzantine-style painting)"
       ],
       "theme": "religion",
+      "territory": "Cook Islands",
+      "resolvedIssuer": "Aitutaki (Cook Islands)",
+      "issuerStatus": "defunct",
+      "succeededBy": "Cook Islands",
       "reading": "Depicts Religious icon (Byzantine-style painting). Printed \"Aitutaki\". A souvenir-sheet of 1.",
       "basis": [
         "asr_01M21JWZXDR57CEHPZ2ZMA1GKC",
@@ -7605,6 +8986,10 @@
         "Bicentennial of Cook's Discovery of the Hawaiian Islands"
       ],
       "theme": "event",
+      "territory": "Cook Islands",
+      "resolvedIssuer": "Aitutaki (Cook Islands)",
+      "issuerStatus": "defunct",
+      "succeededBy": "Cook Islands",
       "reading": "Depicts Bicentennial of Cook's Discovery of the Hawaiian Islands. Printed \"Aitutaki\". A face value of 35c / 50c / ?. Issued 1778 (event date on sheet border). A souvenir-sheet of 3.",
       "basis": [
         "asr_01M21JX087HTQ0ZER3D1ETNS23",
@@ -7632,6 +9017,10 @@
         "Easter 1971 - religious paintings"
       ],
       "theme": "religion",
+      "territory": "Cook Islands",
+      "resolvedIssuer": "Aitutaki (Cook Islands)",
+      "issuerStatus": "defunct",
+      "succeededBy": "Cook Islands",
       "reading": "Depicts Easter 1971 - religious paintings. Printed \"Aitutaki\". A face value of 20c / 35c / 15c / ? (one value not legible). Issued 1971. A se-tenant of 4.",
       "basis": [
         "asr_01M21JWZ69G1ESZ8F8898RC5MM",
@@ -7659,6 +9048,10 @@
         "Field Poppy - postage stamp with postmark"
       ],
       "theme": "flora",
+      "territory": "Batum",
+      "resolvedIssuer": "Batum (British Occupation)",
+      "issuerStatus": "defunct",
+      "succeededBy": null,
       "reading": "Depicts Field Poppy - postage stamp with postmark. Printed \"Batum\". A face value of 500. A single stamp.",
       "basis": [
         "asr_01M21JX1C1DCJZNYJXT3CBVYX6",
@@ -7685,6 +9078,10 @@
         "Map-shaped stamp with inset portrait"
       ],
       "theme": "map",
+      "territory": "Madagascar",
+      "resolvedIssuer": "Madagascar",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Map-shaped stamp with inset portrait. Printed \"Republikan'i Madagasikara\". A face value of 2000. A single stamp.",
       "basis": [
         "asr_01M21JWZJ7ZJ06SAJY362BXN93",
@@ -7711,6 +9108,10 @@
         "Portrait (woman) - Philatélie de l'Amérique du Nord et du Sud"
       ],
       "theme": "people",
+      "territory": "Monaco",
+      "resolvedIssuer": "Monaco",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Portrait (woman) - Philatélie de l'Amérique du Nord et du Sud. Printed \"Monaco\". A face value of 2,60€. Issued 1997-2022. A souvenir-sheet.",
       "basis": [
         "asr_01M21WGE5Q0EAHA3PSE8B0R4RN",
@@ -7738,6 +9139,10 @@
         "Mahatma Gandhi"
       ],
       "theme": "people",
+      "territory": "Sanda Island",
+      "resolvedIssuer": "Sanda Island Local Post",
+      "issuerStatus": "unknown",
+      "succeededBy": null,
       "reading": "Depicts Mahatma Gandhi. Printed \"Sanda Island\". A face value of 1/4P. A block of 4.",
       "basis": [
         "asr_01M21WGF8NTRKMHABJM1Q7YFRW",
@@ -7764,6 +9169,10 @@
         "People/beach scene"
       ],
       "theme": "people",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts People/beach scene. Printed \"Umm Al Qiwain\". Issued 1971. A single stamp.",
       "basis": [
         "asr_01M21WGEYS8WAN6W16QVZBZH76",
@@ -7790,6 +9199,10 @@
         "People scene"
       ],
       "theme": "people",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts People scene. Printed \"Umm Al Qiwain\". A single stamp.",
       "basis": [
         "asr_01M21WGJVW7H8FD1NJ8VH2TBNW",
@@ -7815,6 +9228,10 @@
         "Bird on branch"
       ],
       "theme": "wildlife",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Bird on branch. Printed \"Umm Al Qiwain\". A single stamp.",
       "basis": [
         "asr_01M21WGHPPCFTJN3J5W486D7EQ",
@@ -7840,6 +9257,10 @@
         "Nature/plant scene"
       ],
       "theme": "flora",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Nature/plant scene. Printed \"Umm Al Qiwain\". A single stamp.",
       "basis": [
         "asr_01M21WGJHR0915SBQ7SQ7GGQTQ",
@@ -7865,6 +9286,10 @@
         "Bird (kingfisher-type)"
       ],
       "theme": "wildlife",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Bird (kingfisher-type). Printed \"Umm Al Qiwain\". A face value of 1 Riyal. A single stamp.",
       "basis": [
         "asr_01M21WGHCJ935MZJ78K6XWZWCF",
@@ -7889,6 +9314,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Printed \"Umm Al Qiwain\". A single stamp.",
       "basis": [
         "asr_01M21WGHZF1WN6AW2VKFNWFFTX",
@@ -7913,6 +9342,10 @@
         "Nature/plant scene"
       ],
       "theme": "flora",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Nature/plant scene. Printed \"Umm Al Qiwain\". A single stamp.",
       "basis": [
         "asr_01M21WGJ8K90ZJ9E3GSD01DH18",
@@ -7938,6 +9371,10 @@
         "La Cité Interdite à Monaco (Forbidden City / imperial court life)"
       ],
       "theme": "buildings",
+      "territory": "Monaco",
+      "resolvedIssuer": "Monaco",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts La Cité Interdite à Monaco (Forbidden City / imperial court life). Printed \"Monaco\". A face value of 3,40€. Issued 2017. A souvenir-sheet.",
       "basis": [
         "asr_01M21WGDSDNFDRSRZN8F5VGTCW",
@@ -7965,6 +9402,10 @@
         "People/beach scene"
       ],
       "theme": "people",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts People/beach scene. Printed \"Umm Al Qiwain\". A single stamp.",
       "basis": [
         "asr_01M21WGH3H5DWSAA07XNKWTE0D",
@@ -7988,6 +9429,10 @@
       "containsCount": null,
       "subjects": [],
       "theme": null,
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Printed \"Umm Al Qiwain\". A single stamp.",
       "basis": [
         "asr_01M21WGGW9VVV32VVQSSK444R3",
@@ -8012,6 +9457,10 @@
         "Portrait (man) - Philatélie de l'Amérique du Nord et du Sud"
       ],
       "theme": "people",
+      "territory": "Monaco",
+      "resolvedIssuer": "Monaco",
+      "issuerStatus": "current",
+      "succeededBy": null,
       "reading": "Depicts Portrait (man) - Philatélie de l'Amérique du Nord et du Sud. Printed \"Monaco\". A face value of 2,60€. Issued 1997-2022. A souvenir-sheet.",
       "basis": [
         "asr_01M21WGEHYTAYDF0KSB8D8QTW4",
@@ -8039,6 +9488,10 @@
         "Mahatma Gandhi"
       ],
       "theme": "people",
+      "territory": "Sanda Island",
+      "resolvedIssuer": "Sanda Island Local Post",
+      "issuerStatus": "unknown",
+      "succeededBy": null,
       "reading": "Depicts Mahatma Gandhi. Printed \"Sanda Island\". A face value of 1P. A block of 4.",
       "basis": [
         "asr_01M21WGFWGEC4B9X2TM4AQ73P5",
@@ -8065,6 +9518,10 @@
         "Animal (antelope/deer)"
       ],
       "theme": "wildlife",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Animal (antelope/deer). Printed \"Umm Al Qiwain\". A single stamp.",
       "basis": [
         "asr_01M21WGGK5WMPKNRGRDA1J4V39",
@@ -8090,6 +9547,10 @@
         "Mahatma Gandhi"
       ],
       "theme": "people",
+      "territory": "Sanda Island",
+      "resolvedIssuer": "Sanda Island Local Post",
+      "issuerStatus": "unknown",
+      "succeededBy": null,
       "reading": "Depicts Mahatma Gandhi. Printed \"Sanda Island\". A face value of 1/2P. A block of 4.",
       "basis": [
         "asr_01M21WGFJJ4P1AAQG1GBBBVSX7",
@@ -8116,6 +9577,10 @@
         "Mahatma Gandhi"
       ],
       "theme": "people",
+      "territory": "Sanda Island",
+      "resolvedIssuer": "Sanda Island Local Post",
+      "issuerStatus": "unknown",
+      "succeededBy": null,
       "reading": "Depicts Mahatma Gandhi. Printed \"Sanda Island\". A face value of 1/2P. A block of 4.",
       "basis": [
         "asr_01M21WGG7HN4FPHR0F2Y9BKSKW",
@@ -8142,6 +9607,10 @@
         "Martial arts/combat sport pose"
       ],
       "theme": "sport",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Martial arts/combat sport pose. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYV8HCSNWXVSRKNJS5FJB",
@@ -8167,6 +9636,10 @@
         "Athlete performing exercise/gymnastics move"
       ],
       "theme": "sport",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Athlete performing exercise/gymnastics move. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYTNS4S4TQD2VQ5QT2DJ5",
@@ -8192,6 +9665,10 @@
         "Person in green outfit with flowers/plant"
       ],
       "theme": "other",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Person in green outfit with flowers/plant. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYTYDED29SN3GD20FKDJ5",
@@ -8217,6 +9694,10 @@
         "Landscape/mountain scene with figure or animal"
       ],
       "theme": "other",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Landscape/mountain scene with figure or animal. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYWC7J0PZ64W0AR8J1WNW",
@@ -8242,6 +9723,10 @@
         "Person in white robes, possibly falconry or traditional scene"
       ],
       "theme": "other",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Person in white robes, possibly falconry or traditional scene. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYVJ2TMRBJNXZDXH2G898",
@@ -8267,6 +9752,10 @@
         "Athlete in red performing gymnastics move"
       ],
       "theme": "sport",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Athlete in red performing gymnastics move. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYW3J5A2SJGTASF5Y70NB",
@@ -8292,6 +9781,10 @@
         "Athlete in red, jumping/running pose"
       ],
       "theme": "sport",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Athlete in red, jumping/running pose. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYWYTF8EHW3DD0ZWAYVNM",
@@ -8317,6 +9810,10 @@
         "Person in colorful sports uniform, possibly wrestling"
       ],
       "theme": "sport",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Person in colorful sports uniform, possibly wrestling. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYWMSPRAQQQ2WYRA5X7HV",
@@ -8342,6 +9839,10 @@
         "Circular emblem/badge design, blue and red"
       ],
       "theme": "other",
+      "territory": "Umm Al Qiwain",
+      "resolvedIssuer": "Umm Al Qiwain",
+      "issuerStatus": "defunct",
+      "succeededBy": "United Arab Emirates",
       "reading": "Depicts Circular emblem/badge design, blue and red. Printed \"UMM AL QIWAIN\". A single stamp.",
       "basis": [
         "asr_01M21JYVTWB6CTSRRZG4VMFZE2",
