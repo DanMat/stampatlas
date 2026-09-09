@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T00:21:18.018Z",
+  "generatedAt": "2026-09-09T00:33:55.283Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -90,208 +90,248 @@
         "eligiblePopulation": 13
       }
     ],
-    "asOf": "2026-09-09T00:21:27.809Z",
+    "asOf": "2026-09-09T00:34:04.348Z",
     "namingProgress": {
       "namedByMachine": 202,
       "verifiedByPerson": 0
     },
+    "distinctReadings": 171,
     "issuers": [
       {
         "name": "Nippon",
         "candidate": 38,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 37
       },
       {
         "name": "Japan Post",
         "candidate": 20,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 20
       },
       {
         "name": "NIPPON",
         "candidate": 15,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 15
       },
       {
         "name": "YEMEN",
         "candidate": 15,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 15
       },
       {
         "name": "Monaco",
         "candidate": 11,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 10
       },
       {
         "name": "UMM AL QIWAIN",
         "candidate": 9,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 9
       },
       {
         "name": "Magyar Posta",
         "candidate": 7,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 6
       },
       {
         "name": "Angola",
         "candidate": 6,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 6
       },
       {
         "name": "Fujeira",
         "candidate": 6,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 6
       },
       {
         "name": "Umm Al Qiwain",
         "candidate": 5,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 4
       },
       {
         "name": "Guyana",
         "candidate": 4,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 4
       },
       {
         "name": "Republik Maluku Selatan",
         "candidate": 4,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 4
       },
       {
         "name": "Aitutaki",
         "candidate": 3,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 3
       },
       {
         "name": "Mongolia",
         "candidate": 3,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 3
       },
       {
         "name": "Republica del Ecuador",
         "candidate": 3,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 2
       },
       {
         "name": "MONGOLIA",
         "candidate": 2,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 2
       },
       {
         "name": "S. TOME E PRINCIPE",
         "candidate": 2,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 2
       },
       {
         "name": "Ajman State",
         "candidate": 1,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 1
       },
       {
         "name": "AJMAN STATE",
         "candidate": 1,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 1
       },
       {
         "name": "Batum",
         "candidate": 1,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 1
       },
       {
         "name": "Korea",
         "candidate": 1,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 1
       },
       {
         "name": "RAS AL KHAIMA",
         "candidate": 1,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 1
       },
       {
         "name": "Republic of Korea",
         "candidate": 1,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 1
       },
       {
         "name": "Republic of Liberia",
         "candidate": 1,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 1
       },
       {
         "name": "Republikan'i Madagasikara",
         "candidate": 1,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 1
       },
       {
         "name": "St. Vincent",
         "candidate": 1,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 1
       }
     ],
     "themes": [
       {
         "name": "other",
         "candidate": 71,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 69
       },
       {
         "name": "wildlife",
         "candidate": 28,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 27
       },
       {
         "name": "sport",
         "candidate": 27,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 26
       },
       {
         "name": "religion",
         "candidate": 17,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 17
       },
       {
         "name": "art",
         "candidate": 6,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 6
       },
       {
         "name": "flora",
         "candidate": 6,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 6
       },
       {
         "name": "people",
         "candidate": 6,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 6
       },
       {
         "name": "transport",
         "candidate": 5,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 5
       },
       {
         "name": "maritime",
         "candidate": 3,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 2
       },
       {
         "name": "event",
         "candidate": 2,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 2
       },
       {
         "name": "space",
         "candidate": 2,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 2
       },
       {
         "name": "buildings",
         "candidate": 1,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 1
       },
       {
         "name": "map",
         "candidate": 1,
-        "confirmed": 0
+        "confirmed": 0,
+        "distinct": 1
       }
     ],
     "pending": [
