@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T09:43:57.376Z",
+  "generatedAt": "2026-09-11T11:56:39.819Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -74,10 +74,10 @@
         "unit": "pieces read as more than a single stamp — sheets, blocks, se-tenant, covers; candidate",
         "value": {
           "confirmed": 0,
-          "candidate": 348,
+          "candidate": 342,
           "unknown": 0
         },
-        "eligiblePopulation": 4417
+        "eligiblePopulation": 4361
       },
       {
         "metric": "distinctCurrencyCount",
@@ -94,10 +94,10 @@
         "unit": "issuers whose name is printed on a stamp here — as read, not yet resolved to entities",
         "value": {
           "confirmed": 0,
-          "candidate": 400,
+          "candidate": 397,
           "unknown": 0
         },
-        "eligiblePopulation": 400
+        "eligiblePopulation": 397
       },
       {
         "metric": "distinctThemeCount",
@@ -130,13 +130,13 @@
         "eligiblePopulation": 231
       }
     ],
-    "asOf": "2026-09-11T09:46:45.578Z",
+    "asOf": "2026-09-11T11:59:47.330Z",
     "namingProgress": {
-      "namedByMachine": 4417,
-      "individualStamps": 4955,
+      "namedByMachine": 4361,
+      "individualStamps": 4899,
       "verifiedByPerson": 0
     },
-    "distinctReadings": 4149,
+    "distinctReadings": 4093,
     "issuers": [
       {
         "name": "United States",
@@ -449,16 +449,6 @@
         "succeededBy": null
       },
       {
-        "name": "United Nations",
-        "candidate": 33,
-        "confirmed": 0,
-        "distinct": 33,
-        "territory": "United Nations",
-        "resolvedName": "United Nations Postal Administration",
-        "status": "current",
-        "succeededBy": null
-      },
-      {
         "name": "République Française",
         "candidate": 32,
         "confirmed": 0,
@@ -595,6 +585,16 @@
         "distinct": 21,
         "territory": "Japan",
         "resolvedName": "Japan Post",
+        "status": "current",
+        "succeededBy": null
+      },
+      {
+        "name": "United Nations",
+        "candidate": 21,
+        "confirmed": 0,
+        "distinct": 21,
+        "territory": "United Nations",
+        "resolvedName": "United Nations Postal Administration",
         "status": "current",
         "succeededBy": null
       },
@@ -759,16 +759,6 @@
         "succeededBy": null
       },
       {
-        "name": "Republic of Korea",
-        "candidate": 13,
-        "confirmed": 0,
-        "distinct": 11,
-        "territory": "South Korea",
-        "resolvedName": "South Korea",
-        "status": "current",
-        "succeededBy": null
-      },
-      {
         "name": "U.S. POSTAGE",
         "candidate": 13,
         "confirmed": 0,
@@ -817,6 +807,16 @@
         "resolvedName": "Ras Al Khaimah",
         "status": "defunct",
         "succeededBy": "United Arab Emirates"
+      },
+      {
+        "name": "Republic of Korea",
+        "candidate": 12,
+        "confirmed": 0,
+        "distinct": 10,
+        "territory": "South Korea",
+        "resolvedName": "South Korea",
+        "status": "current",
+        "succeededBy": null
       },
       {
         "name": "Cayman Islands",
@@ -1469,16 +1469,6 @@
         "succeededBy": null
       },
       {
-        "name": "Nations Unies",
-        "candidate": 5,
-        "confirmed": 0,
-        "distinct": 5,
-        "territory": "United Nations",
-        "resolvedName": "United Nations Postal Administration",
-        "status": "current",
-        "succeededBy": null
-      },
-      {
         "name": "NR Bulgaria",
         "candidate": 5,
         "confirmed": 0,
@@ -1596,16 +1586,6 @@
         "territory": "Yugoslavia",
         "resolvedName": "Yugoslavia",
         "status": "defunct",
-        "succeededBy": null
-      },
-      {
-        "name": "Korea",
-        "candidate": 4,
-        "confirmed": 0,
-        "distinct": 4,
-        "territory": "Korea",
-        "resolvedName": "Korea",
-        "status": "unknown",
         "succeededBy": null
       },
       {
@@ -1946,6 +1926,16 @@
         "territory": "Italy",
         "resolvedName": "Italy",
         "status": "current",
+        "succeededBy": null
+      },
+      {
+        "name": "Korea",
+        "candidate": 3,
+        "confirmed": 0,
+        "distinct": 3,
+        "territory": "Korea",
+        "resolvedName": "Korea",
+        "status": "unknown",
         "succeededBy": null
       },
       {
@@ -3989,26 +3979,6 @@
         "succeededBy": "Myanmar"
       },
       {
-        "name": "United Nations (Naciones Unidas)",
-        "candidate": 1,
-        "confirmed": 0,
-        "distinct": 1,
-        "territory": "United Nations",
-        "resolvedName": "United Nations Postal Administration",
-        "status": "current",
-        "succeededBy": null
-      },
-      {
-        "name": "United Nations (Russian/Spanish text: Eliminate Racial Discrimination)",
-        "candidate": 1,
-        "confirmed": 0,
-        "distinct": 1,
-        "territory": "United Nations",
-        "resolvedName": "United Nations Postal Administration",
-        "status": "current",
-        "succeededBy": null
-      },
-      {
         "name": "United Nations Postage",
         "candidate": 1,
         "confirmed": 0,
@@ -4142,27 +4112,27 @@
     "themes": [
       {
         "name": "people",
-        "candidate": 804,
+        "candidate": 802,
         "confirmed": 0,
-        "distinct": 731
+        "distinct": 729
       },
       {
         "name": "other",
-        "candidate": 715,
+        "candidate": 707,
         "confirmed": 0,
-        "distinct": 684
+        "distinct": 676
       },
       {
         "name": "buildings",
-        "candidate": 434,
+        "candidate": 431,
         "confirmed": 0,
-        "distinct": 414
+        "distinct": 411
       },
       {
         "name": "wildlife",
-        "candidate": 330,
+        "candidate": 327,
         "confirmed": 0,
-        "distinct": 320
+        "distinct": 317
       },
       {
         "name": "royalty",
@@ -4172,9 +4142,9 @@
       },
       {
         "name": "art",
-        "candidate": 269,
+        "candidate": 265,
         "confirmed": 0,
-        "distinct": 259
+        "distinct": 255
       },
       {
         "name": "religion",
@@ -4190,9 +4160,9 @@
       },
       {
         "name": "event",
-        "candidate": 188,
+        "candidate": 183,
         "confirmed": 0,
-        "distinct": 174
+        "distinct": 169
       },
       {
         "name": "flora",
@@ -4208,9 +4178,9 @@
       },
       {
         "name": "transport",
-        "candidate": 127,
+        "candidate": 126,
         "confirmed": 0,
-        "distinct": 121
+        "distinct": 120
       },
       {
         "name": "sport",
@@ -4220,9 +4190,9 @@
       },
       {
         "name": "maritime",
-        "candidate": 87,
+        "candidate": 86,
         "confirmed": 0,
-        "distinct": 83
+        "distinct": 82
       },
       {
         "name": "space",
@@ -4473,12 +4443,6 @@
         "distinct": 43
       },
       {
-        "name": "United Nations",
-        "candidate": 43,
-        "confirmed": 0,
-        "distinct": 43
-      },
-      {
         "name": "Brazil",
         "candidate": 39,
         "confirmed": 0,
@@ -4569,6 +4533,12 @@
         "distinct": 22
       },
       {
+        "name": "United Nations",
+        "candidate": 24,
+        "confirmed": 0,
+        "distinct": 24
+      },
+      {
         "name": "Bulgaria",
         "candidate": 21,
         "confirmed": 0,
@@ -4641,12 +4611,6 @@
         "distinct": 12
       },
       {
-        "name": "South Korea",
-        "candidate": 13,
-        "confirmed": 0,
-        "distinct": 11
-      },
-      {
         "name": "Malaysia",
         "candidate": 12,
         "confirmed": 0,
@@ -4663,6 +4627,12 @@
         "candidate": 12,
         "confirmed": 0,
         "distinct": 12
+      },
+      {
+        "name": "South Korea",
+        "candidate": 12,
+        "confirmed": 0,
+        "distinct": 10
       },
       {
         "name": "West Berlin",
@@ -4875,12 +4845,6 @@
         "distinct": 4
       },
       {
-        "name": "Korea",
-        "candidate": 4,
-        "confirmed": 0,
-        "distinct": 4
-      },
-      {
         "name": "Lebanon",
         "candidate": 4,
         "confirmed": 0,
@@ -4930,6 +4894,12 @@
       },
       {
         "name": "Cook Islands",
+        "candidate": 3,
+        "confirmed": 0,
+        "distinct": 3
+      },
+      {
+        "name": "Korea",
         "candidate": 3,
         "confirmed": 0,
         "distinct": 3
@@ -5304,21 +5274,21 @@
     "forms": [
       {
         "name": "single",
-        "candidate": 4068,
+        "candidate": 4018,
         "confirmed": 0,
-        "distinct": 3838
+        "distinct": 3788
       },
       {
         "name": "other",
-        "candidate": 121,
+        "candidate": 116,
         "confirmed": 0,
-        "distinct": 121
+        "distinct": 116
       },
       {
         "name": "strip",
-        "candidate": 66,
+        "candidate": 65,
         "confirmed": 0,
-        "distinct": 52
+        "distinct": 51
       },
       {
         "name": "se-tenant",
@@ -5360,7 +5330,7 @@
     "currencies": [
       {
         "name": "unmarked",
-        "candidate": 3587,
+        "candidate": 3573,
         "confirmed": 0,
         "unit": "",
         "valueTotal": null
@@ -5374,10 +5344,10 @@
       },
       {
         "name": "Ft forint",
-        "candidate": 61,
+        "candidate": 54,
         "confirmed": 0,
         "unit": "Ft",
-        "valueTotal": 85.06
+        "valueTotal": 85.03
       },
       {
         "name": "£ sterling",
@@ -15291,32 +15261,6 @@
         "asr_01M22QQ8W62M8ZWZKHF4JRENEP",
         "asr_01M22QQ8ZARH1SS4ENJXKXNBTE",
         "asr_01M22QQ90Q13Z5EXK1JHAXEEMT"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p109-1",
-      "album": "PA-1D6G14-K",
-      "page": 109,
-      "ordinal": 1,
-      "stampsOnPage": 1,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M22QQNBX60GS4SGCR3GPN7ER"
       ],
       "knowledge": [],
       "capturedAt": "2026-09-09T07:49:07.518Z"
@@ -28563,32 +28507,6 @@
         "asr_01M22RK4WXHG7HPYAWWV011KNX",
         "asr_01M22RK4YMFJY3TQDJ05V0ZBHJ",
         "asr_01M22RK505H60AF0M7XWSCSX4N"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p127-1",
-      "album": "PA-1D6G14-K",
-      "page": 127,
-      "ordinal": 1,
-      "stampsOnPage": 1,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "other",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A other.",
-      "basis": [
-        "asr_01M22RKDW2FE5J7FKPM216C3MB"
       ],
       "knowledge": [],
       "capturedAt": "2026-09-09T07:49:07.518Z"
@@ -62323,35 +62241,6 @@
       "capturedAt": "2026-09-09T07:49:07.518Z"
     },
     {
-      "id": "PA-1D6G14-K-p169-1",
-      "album": "PA-1D6G14-K",
-      "page": 169,
-      "ordinal": 1,
-      "stampsOnPage": 1,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "not legible (appears to show hand/fingers)"
-      ],
-      "theme": "other",
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "Depicts not legible (appears to show hand/fingers). A single stamp.",
-      "basis": [
-        "asr_01M22T852A0XA1G2VYSS0AMGA0",
-        "asr_01M22T853RCX2BWRX4J1D1FPR8"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
       "id": "PA-1D6G14-K-p170-1",
       "album": "PA-1D6G14-K",
       "page": 170,
@@ -63096,347 +62985,6 @@
         "asr_01M22T9EK69Q14X3AJG0JYJRHT",
         "asr_01M22T9EN9VC80ZBATVM54X5J0",
         "asr_01M22T9EPR3RH5Y23DQY9E1X04"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p171-1",
-      "album": "PA-1D6G14-K",
-      "page": 171,
-      "ordinal": 1,
-      "stampsOnPage": 11,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "United Nations",
-      "denomination": "20c",
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Universal Postal Union Headquarters"
-      ],
-      "theme": "buildings",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts Universal Postal Union Headquarters. Printed \"United Nations\". A face value of 20c. A single stamp.",
-      "basis": [
-        "asr_01M22TA1R1AGGZHY3451R3Q3EB",
-        "asr_01M22TA1SJ1A1H5BG96ECW9YGJ",
-        "asr_01M22TA1V5M1RJGR3AXX8KWA11",
-        "asr_01M22TA1WKT1A7C1P77M9PYCM0"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p171-10",
-      "album": "PA-1D6G14-K",
-      "page": 171,
-      "ordinal": 10,
-      "stampsOnPage": 11,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "United Nations (Naciones Unidas)",
-      "denomination": "60c",
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Colorful abstract mosaic pattern"
-      ],
-      "theme": "art",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts Colorful abstract mosaic pattern. Printed \"United Nations (Naciones Unidas)\". A face value of 60c. A single stamp.",
-      "basis": [
-        "asr_01M22TA3MZNMCKVRX92XNN0ZZZ",
-        "asr_01M22TA3PGMXDNQSTT21V07HD8",
-        "asr_01M22TA3QYGK2WVFTZV3428SRN",
-        "asr_01M22TA3SG4V24JBQZQBY4NTTM"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p171-11",
-      "album": "PA-1D6G14-K",
-      "page": 171,
-      "ordinal": 11,
-      "stampsOnPage": 11,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "United Nations",
-      "denomination": "13c",
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Combat Racial Discrimination (circular emblem design)"
-      ],
-      "theme": "other",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts Combat Racial Discrimination (circular emblem design). Printed \"United Nations\". A face value of 13c. A single stamp.",
-      "basis": [
-        "asr_01M22TA217FDRXKFYPPZ9K7P1M",
-        "asr_01M22TA22MF41KD5S9PSAS2TQ4",
-        "asr_01M22TA245HR946RK6S6BXYQQ2",
-        "asr_01M22TA27TVHZA3C8GGYBR85MB"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p171-2",
-      "album": "PA-1D6G14-K",
-      "page": 171,
-      "ordinal": 2,
-      "stampsOnPage": 11,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "United Nations",
-      "denomination": "21c",
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Pablo Picasso - portrait (UN International School)"
-      ],
-      "theme": "art",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts Pablo Picasso - portrait (UN International School). Printed \"United Nations\". A face value of 21c. A single stamp.",
-      "basis": [
-        "asr_01M22TA4X6BWZRSDZZNM1RF7E8",
-        "asr_01M22TA4YMBRTFD81Q2Q2NMARK",
-        "asr_01M22TA503SQGKYHQRFTYX3QHR",
-        "asr_01M22TA51K45B4QHDZXPKT29W5"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p171-3",
-      "album": "PA-1D6G14-K",
-      "page": 171,
-      "ordinal": 3,
-      "stampsOnPage": 11,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "United Nations",
-      "denomination": "8c",
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "UN Headquarters building"
-      ],
-      "theme": "buildings",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts UN Headquarters building. Printed \"United Nations\". A face value of 8c. A single stamp.",
-      "basis": [
-        "asr_01M22TA3BCF1DV9HJTGX0GZA55",
-        "asr_01M22TA3D15D58BS8ZQQ31CWYZ",
-        "asr_01M22TA3EQV844WRTDC07G8D96",
-        "asr_01M22TA3GHG8299EEHT47X83PZ"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p171-4",
-      "album": "PA-1D6G14-K",
-      "page": 171,
-      "ordinal": 4,
-      "stampsOnPage": 11,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "United Nations",
-      "denomination": "13c",
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "World Food Programme (basket/wheat design)"
-      ],
-      "theme": "event",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts World Food Programme (basket/wheat design). Printed \"United Nations\". A face value of 13c. A single stamp.",
-      "basis": [
-        "asr_01M22TA4B3JWN60HS3P0RRNP67",
-        "asr_01M22TA4CE8NBC9DFHW02KXJ99",
-        "asr_01M22TA4EGGV7TD9TFB6E8NY5H",
-        "asr_01M22TA4G22M1WWFTSWFWCWDEP"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p171-5",
-      "album": "PA-1D6G14-K",
-      "page": 171,
-      "ordinal": 5,
-      "stampsOnPage": 11,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "United Nations",
-      "denomination": "13c",
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "International Support for Refugees (UNHCR) - stone/rock design"
-      ],
-      "theme": "other",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts International Support for Refugees (UNHCR) - stone/rock design. Printed \"United Nations\". A face value of 13c. A single stamp.",
-      "basis": [
-        "asr_01M22TA31NPR39PEMBXGCX3K5J",
-        "asr_01M22TA334S46B3CEDNAA2P418",
-        "asr_01M22TA34PDZMD7XM4GGK6RQ8V",
-        "asr_01M22TA36E2VNDAZS0CCRZKQ87"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p171-6",
-      "album": "PA-1D6G14-K",
-      "page": 171,
-      "ordinal": 6,
-      "stampsOnPage": 11,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "United Nations",
-      "denomination": "6c",
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Peaceful Uses of the Sea-Bed"
-      ],
-      "theme": "maritime",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts Peaceful Uses of the Sea-Bed. Printed \"United Nations\". A face value of 6c. A single stamp.",
-      "basis": [
-        "asr_01M22TA41GF4WZPGV8YWGGBNYM",
-        "asr_01M22TA436YD9WCB85WPNRQSTE",
-        "asr_01M22TA44QK1DDJQVMT3K15DM9",
-        "asr_01M22TA467ZDXB07DCNN9K6T96"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p171-7",
-      "album": "PA-1D6G14-K",
-      "page": 171,
-      "ordinal": 7,
-      "stampsOnPage": 11,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "United Nations (Russian/Spanish text: Eliminate Racial Discrimination)",
-      "denomination": "8c",
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Four interlocking hearts design"
-      ],
-      "theme": "other",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts Four interlocking hearts design. Printed \"United Nations (Russian/Spanish text: Eliminate Racial Discrimination)\". A face value of 8c. A single stamp.",
-      "basis": [
-        "asr_01M22TA2DX1Z1E91JPKFW3BC53",
-        "asr_01M22TA2FNVS72E2FZ6W6AGSDX",
-        "asr_01M22TA2HBX7X8PY0Y20D9WH80",
-        "asr_01M22TA2JQ38APGP6VZCPS27BK"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p171-8",
-      "album": "PA-1D6G14-K",
-      "page": 171,
-      "ordinal": 8,
-      "stampsOnPage": 11,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "United Nations",
-      "denomination": "6c",
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "International Support for Refugees (UNHCR)"
-      ],
-      "theme": "other",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts International Support for Refugees (UNHCR). Printed \"United Nations\". A face value of 6c. A single stamp.",
-      "basis": [
-        "asr_01M22TA2QH97YPM31Y4WRCNG72",
-        "asr_01M22TA2T4MKHEJPK8WKA7WFG4",
-        "asr_01M22TA2VJZXSXYPSPWYC2R2PH",
-        "asr_01M22TA2X3C51VH1D1CPGCS5J6"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p171-9",
-      "album": "PA-1D6G14-K",
-      "page": 171,
-      "ordinal": 9,
-      "stampsOnPage": 11,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "United Nations",
-      "denomination": "8c",
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Pablo Picasso - portrait (UN International School)"
-      ],
-      "theme": "art",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts Pablo Picasso - portrait (UN International School). Printed \"United Nations\". A face value of 8c. A single stamp.",
-      "basis": [
-        "asr_01M22TA4MDRP96ZAJ4EQC12HEF",
-        "asr_01M22TA4NWQ2WM144KC9SCZXBG",
-        "asr_01M22TA4QDPHBMNMA1NMEY0HH8",
-        "asr_01M22TA4RV2Y66XWWX88PGHAQT"
       ],
       "knowledge": [],
       "capturedAt": "2026-09-09T07:49:07.518Z"
@@ -64305,261 +63853,6 @@
         "asr_01M22TBA8E9AY7573MZDCWN6QB",
         "asr_01M22TBA9XC40W8QX9K2BQZGWD",
         "asr_01M22TBABDNNA3APZ6VVF5VJ5C"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p173-1",
-      "album": "PA-1D6G14-K",
-      "page": 173,
-      "ordinal": 1,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "United Nations",
-      "denomination": "F.s 0.50",
-      "year": "1971",
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "UNHCR Refugees (hands design)"
-      ],
-      "theme": "event",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts UNHCR Refugees (hands design). Printed \"United Nations\". A face value of F.s 0.50. Issued 1971. A single stamp.",
-      "basis": [
-        "asr_01M22TDDZ01A2TJEFC6XFP3RQW",
-        "asr_01M22TDE0FAXSMBF1KXZW7NFHN",
-        "asr_01M22TDE285AVR6WTKKK6XWY0F",
-        "asr_01M22TDE3XG7XJ5TT6X8SMAEHM",
-        "asr_01M22TDE5M71RXQW867F331H2S"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p173-2",
-      "album": "PA-1D6G14-K",
-      "page": 173,
-      "ordinal": 2,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "Nations Unies",
-      "denomination": null,
-      "year": "1971",
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Pablo Picasso portrait (small illustration)"
-      ],
-      "theme": "art",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts Pablo Picasso portrait (small illustration). Printed \"Nations Unies\". Issued 1971. A single stamp.",
-      "basis": [
-        "asr_01M22TDEQMX703GW469JS7VT8N",
-        "asr_01M22TDES7SCBQB6K4BAEEBF4D",
-        "asr_01M22TDETWBG974953PX2KGQ8V",
-        "asr_01M22TDEWHE49M4P7JCK6FZDBS"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p173-3",
-      "album": "PA-1D6G14-K",
-      "page": 173,
-      "ordinal": 3,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "United Nations",
-      "denomination": "F.s 0.30",
-      "year": "1971",
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Elimination of Racial Discrimination (heart design)"
-      ],
-      "theme": "event",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts Elimination of Racial Discrimination (heart design). Printed \"United Nations\". A face value of F.s 0.30. Issued 1971. A single stamp.",
-      "basis": [
-        "asr_01M22TDCRVH61HZJWYD3NJ3DYT",
-        "asr_01M22TDCTKFMHMXZBP50S0AS08",
-        "asr_01M22TDCWC25SMSHSQ1EM6PVKW",
-        "asr_01M22TDCY2C3F19H0B8KYEPTVG",
-        "asr_01M22TDCZXNH8ZWS3P64W4RW04"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p173-4",
-      "album": "PA-1D6G14-K",
-      "page": 173,
-      "ordinal": 4,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "Nations Unies",
-      "denomination": "F.s 0.50",
-      "year": "1971",
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "World Food Programme (basket/geometric design)"
-      ],
-      "theme": "event",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts World Food Programme (basket/geometric design). Printed \"Nations Unies\". A face value of F.s 0.50. Issued 1971. A single stamp.",
-      "basis": [
-        "asr_01M22TDEAR2N0Z5G7VJE1VG8ZD",
-        "asr_01M22TDECGS4CVY19HQT6JYFN7",
-        "asr_01M22TDEE8D43H82V5GQR8MPGY",
-        "asr_01M22TDEFR3X34TEJ2QR3BR8EN",
-        "asr_01M22TDEJ7ZD6AZHG2PWDDM64Y"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p173-5",
-      "album": "PA-1D6G14-K",
-      "page": 173,
-      "ordinal": 5,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "Nations Unies",
-      "denomination": "F.s 0.40",
-      "year": "1971",
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Interlocking rings/circles design"
-      ],
-      "theme": "other",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts Interlocking rings/circles design. Printed \"Nations Unies\". A face value of F.s 0.40. Issued 1971. A single stamp.",
-      "basis": [
-        "asr_01M22TDD58NTK74XWTC7TR58NX",
-        "asr_01M22TDD6ZD9MRZXBCNB6GCYFA",
-        "asr_01M22TDD8MCVDBSJ9H98GN83GE",
-        "asr_01M22TDDAE6E3ER5DRM73T3VFR",
-        "asr_01M22TDDCAK009B8SFAGPVCF5D"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p173-6",
-      "album": "PA-1D6G14-K",
-      "page": 173,
-      "ordinal": 6,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "Nations Unies",
-      "denomination": "F.s 0.10",
-      "year": "1971",
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Universal Postal Union headquarters design"
-      ],
-      "theme": "buildings",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts Universal Postal Union headquarters design. Printed \"Nations Unies\". A face value of F.s 0.10. Issued 1971. A single stamp.",
-      "basis": [
-        "asr_01M22TDF1TRD16VADVKEPF2M9A",
-        "asr_01M22TDF3CGTMY7CX44S4B08AH",
-        "asr_01M22TDF4Z0JVV4NE14Y9877KH",
-        "asr_01M22TDF74B8XW5Y3HN5RC1G72",
-        "asr_01M22TDF8VMPE8C0620X9ZCS38"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p173-7",
-      "album": "PA-1D6G14-K",
-      "page": 173,
-      "ordinal": 7,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "United Nations",
-      "denomination": "F.s 0.30",
-      "year": "1971",
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "UN Volunteers Programme (teardrop design)"
-      ],
-      "theme": "event",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts UN Volunteers Programme (teardrop design). Printed \"United Nations\". A face value of F.s 0.30. Issued 1971. A single stamp.",
-      "basis": [
-        "asr_01M22TDDHR6R6K890FV51TSQNJ",
-        "asr_01M22TDDKDCNT2PGJS0DM7JTSW",
-        "asr_01M22TDDNYE7W6JASDBN400C2T",
-        "asr_01M22TDDQNG79VKTB3QVATKPQ0",
-        "asr_01M22TDDSJHJ9PQT55065DXKAC"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
-      "id": "PA-1D6G14-K-p173-8",
-      "album": "PA-1D6G14-K",
-      "page": 173,
-      "ordinal": 8,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "Nations Unies",
-      "denomination": "1.10 F.S",
-      "year": "1971",
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Pablo Picasso portrait - Ecole internationale (enlarged)"
-      ],
-      "theme": "people",
-      "territory": "United Nations",
-      "resolvedIssuer": "United Nations Postal Administration",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts Pablo Picasso portrait - Ecole internationale (enlarged). Printed \"Nations Unies\". A face value of 1.10 F.S. Issued 1971. A single stamp.",
-      "basis": [
-        "asr_01M22TDFFV0AS026NKM67QSRNE",
-        "asr_01M22TDFHKBYNDKYS8X68KA786",
-        "asr_01M22TDFKDE06880NPSGV5CKWN",
-        "asr_01M22TDFNQ6PR5EXQDZ7FKQ9GQ",
-        "asr_01M22TDFQNQKRFSTGBTM9YKK2T"
       ],
       "knowledge": [],
       "capturedAt": "2026-09-09T07:49:07.518Z"
@@ -111320,35 +110613,6 @@
       "capturedAt": "2026-09-09T07:49:07.518Z"
     },
     {
-      "id": "PA-1D6G14-K-p67-1",
-      "album": "PA-1D6G14-K",
-      "page": 67,
-      "ordinal": 1,
-      "stampsOnPage": 1,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "unclear reddish/brown blurred image, possibly a stamp or reflection"
-      ],
-      "theme": "other",
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "Depicts unclear reddish/brown blurred image, possibly a stamp or reflection. A single stamp.",
-      "basis": [
-        "asr_01M22NRJZDV00QW64XCAZM99ZQ",
-        "asr_01M22NRK0WPDZGY1X56VFVWNPC"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
       "id": "PA-1D6G14-K-p68-1",
       "album": "PA-1D6G14-K",
       "page": 68,
@@ -133947,32 +133211,6 @@
       "capturedAt": "2026-09-09T07:49:07.518Z"
     },
     {
-      "id": "PA-1D6G14-K-p97-1",
-      "album": "PA-1D6G14-K",
-      "page": 97,
-      "ordinal": 1,
-      "stampsOnPage": 1,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "other",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A other.",
-      "basis": [
-        "asr_01M22Q604VM2HH2P1BVQFZF3F4"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-09T07:49:07.518Z"
-    },
-    {
       "id": "PA-1D6G14-K-p98-1",
       "album": "PA-1D6G14-K",
       "page": 98,
@@ -138720,601 +137958,6 @@
       "capturedAt": "2026-09-08T06:16:24.785Z"
     },
     {
-      "id": "PA-2C3N3Y-1-p8-1",
-      "album": "PA-2C3N3Y-1",
-      "page": 8,
-      "ordinal": 1,
-      "stampsOnPage": 3,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "Republic of Korea",
-      "denomination": "20",
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Bird (appears to be a rooster or pheasant)"
-      ],
-      "theme": "wildlife",
-      "territory": "South Korea",
-      "resolvedIssuer": "Republic of Korea (South Korea)",
-      "issuerStatus": "current",
-      "succeededBy": null,
-      "reading": "Depicts Bird (appears to be a rooster or pheasant). Printed \"Republic of Korea\". A face value of 20. A single stamp.",
-      "basis": [
-        "asr_01M218EQ784J193MGZ1EFK8Z46",
-        "asr_01M218EQ90YT9MPXPMK0FWQF8A",
-        "asr_01M218EQAXGDX74FNTH77XG5PB",
-        "asr_01M218EQCNJ9K2JSR79T5JRA2J"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:24.785Z"
-    },
-    {
-      "id": "PA-2C3N3Y-1-p8-2",
-      "album": "PA-2C3N3Y-1",
-      "page": 8,
-      "ordinal": 2,
-      "stampsOnPage": 3,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": "4",
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Butterfly"
-      ],
-      "theme": "wildlife",
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "Depicts Butterfly. A face value of 4. A single stamp.",
-      "basis": [
-        "asr_01M218EQJEY3WY2MGJ5KTXGADV",
-        "asr_01M218EQN0H3VSEW3B5HY911NJ",
-        "asr_01M218EQPQDVBTYAS50XWWRZKM"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:24.785Z"
-    },
-    {
-      "id": "PA-2C3N3Y-1-p8-3",
-      "album": "PA-2C3N3Y-1",
-      "page": 8,
-      "ordinal": 3,
-      "stampsOnPage": 3,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": "Korea",
-      "denomination": "10",
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "Train (bullet train/rail)"
-      ],
-      "theme": "transport",
-      "territory": "Korea",
-      "resolvedIssuer": "Korea (unspecified)",
-      "issuerStatus": "unknown",
-      "succeededBy": null,
-      "reading": "Depicts Train (bullet train/rail). Printed \"Korea\". A face value of 10. A single stamp.",
-      "basis": [
-        "asr_01M218EPWTPEM39VRJTDVDVJZG",
-        "asr_01M218EPYJMS7K6XXJYQGEJM9M",
-        "asr_01M218EQ09XJGHCD1EQ9KP6K6D",
-        "asr_01M218EQ233GRRFR2JTVDEQ4AP"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:24.785Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p1-1",
-      "album": "PA-7KQ7BY-T",
-      "page": 1,
-      "ordinal": 1,
-      "stampsOnPage": 1,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "strip",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A strip.",
-      "basis": [
-        "asr_01M21JGMTSQHBE78B334Y81ARV"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p11-1",
-      "album": "PA-7KQ7BY-T",
-      "page": 11,
-      "ordinal": 1,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPT9MK0NRWHRGZJ4YR7QE"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p11-10",
-      "album": "PA-7KQ7BY-T",
-      "page": 11,
-      "ordinal": 10,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPTH2ZDQDMFDJA82G12JM"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p11-2",
-      "album": "PA-7KQ7BY-T",
-      "page": 11,
-      "ordinal": 2,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPTV4VRRK523FARB0DJKQ"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p11-3",
-      "album": "PA-7KQ7BY-T",
-      "page": 11,
-      "ordinal": 3,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPV50B5J9A6SCV4DF632M"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p11-4",
-      "album": "PA-7KQ7BY-T",
-      "page": 11,
-      "ordinal": 4,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPV9PT84228FS0HYDE62C"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p11-5",
-      "album": "PA-7KQ7BY-T",
-      "page": 11,
-      "ordinal": 5,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPSZBS63S15DJE6XM6NCM"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p11-6",
-      "album": "PA-7KQ7BY-T",
-      "page": 11,
-      "ordinal": 6,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPTP280QYJH7NXXH0QEM4"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p11-7",
-      "album": "PA-7KQ7BY-T",
-      "page": 11,
-      "ordinal": 7,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPST35JBB5816A1V001JB"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p11-8",
-      "album": "PA-7KQ7BY-T",
-      "page": 11,
-      "ordinal": 8,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPT4FKXYTE2W5DBQTYS9D"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p11-9",
-      "album": "PA-7KQ7BY-T",
-      "page": 11,
-      "ordinal": 9,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPV0EJZR4CRJ6E58FM9GN"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p15-1",
-      "album": "PA-7KQ7BY-T",
-      "page": 15,
-      "ordinal": 1,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "other",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A other.",
-      "basis": [
-        "asr_01M21JQGJ82FRAJP2Q1HR39QP7"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p15-2",
-      "album": "PA-7KQ7BY-T",
-      "page": 15,
-      "ordinal": 2,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JQHH7KB80SQCMZ2E3BGS4"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p15-3",
-      "album": "PA-7KQ7BY-T",
-      "page": 15,
-      "ordinal": 3,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JQHBDGTRYT2HHNT5GN48P"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p15-4",
-      "album": "PA-7KQ7BY-T",
-      "page": 15,
-      "ordinal": 4,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "flag"
-      ],
-      "theme": "other",
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "Depicts flag. A single stamp.",
-      "basis": [
-        "asr_01M21JQGPZ05Z59RX2QAGBNZQ5",
-        "asr_01M21JQGS3TZ8V1MYK9XH17HJE"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p15-5",
-      "album": "PA-7KQ7BY-T",
-      "page": 15,
-      "ordinal": 5,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "other",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A other.",
-      "basis": [
-        "asr_01M21JQG8MBPVDK2P2CDS7Z17T"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p15-6",
-      "album": "PA-7KQ7BY-T",
-      "page": 15,
-      "ordinal": 6,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "butterfly"
-      ],
-      "theme": "wildlife",
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "Depicts butterfly. A single stamp.",
-      "basis": [
-        "asr_01M21JQH44TC1S250VHXJQ3GM5",
-        "asr_01M21JQH6604XYZGRN65Z9KD7G"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p15-7",
-      "album": "PA-7KQ7BY-T",
-      "page": 15,
-      "ordinal": 7,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [
-        "portrait"
-      ],
-      "theme": "people",
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "Depicts portrait. A single stamp.",
-      "basis": [
-        "asr_01M21JQGXT1PD6G954ST8358AS",
-        "asr_01M21JQGZ7TSGY02BSEDVJPVA1"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p15-8",
-      "album": "PA-7KQ7BY-T",
-      "page": 15,
-      "ordinal": 8,
-      "stampsOnPage": 8,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "other",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A other.",
-      "basis": [
-        "asr_01M21JQGDGCDX36862594787AC"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
       "id": "PA-7KQ7BY-T-p3-1",
       "album": "PA-7KQ7BY-T",
       "page": 3,
@@ -143386,266 +142029,6 @@
         "asr_01M21WA4J6YWFHMSKHTMDE6PYC",
         "asr_01M21WA4KW2RH9Z14Z2DQJZGJW",
         "asr_01M21WA4NKBT6JNQ99X7SSW118"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p9-1",
-      "album": "PA-7KQ7BY-T",
-      "page": 9,
-      "ordinal": 1,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPD47NBZVR2R091WHV3VR"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p9-10",
-      "album": "PA-7KQ7BY-T",
-      "page": 9,
-      "ordinal": 10,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPDNJ3GPVM3FQF66VC34C"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p9-2",
-      "album": "PA-7KQ7BY-T",
-      "page": 9,
-      "ordinal": 2,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPCY42AAXET8RAYKM498S"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p9-3",
-      "album": "PA-7KQ7BY-T",
-      "page": 9,
-      "ordinal": 3,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPCRAH794SS1D1XCG6W5B"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p9-4",
-      "album": "PA-7KQ7BY-T",
-      "page": 9,
-      "ordinal": 4,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPDTFV90K0VVCEVEGCG1V"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p9-5",
-      "album": "PA-7KQ7BY-T",
-      "page": 9,
-      "ordinal": 5,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPD9CVQAFEJVXKDSF5MNX"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p9-6",
-      "album": "PA-7KQ7BY-T",
-      "page": 9,
-      "ordinal": 6,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPEA9APR1GZX6MWBMXRZT"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p9-7",
-      "album": "PA-7KQ7BY-T",
-      "page": 9,
-      "ordinal": 7,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPE5B97QSQ6TMQ9J1W5T5"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p9-8",
-      "album": "PA-7KQ7BY-T",
-      "page": 9,
-      "ordinal": 8,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPDZY3232CPF2BPM03CB0"
-      ],
-      "knowledge": [],
-      "capturedAt": "2026-09-08T06:16:14.923Z"
-    },
-    {
-      "id": "PA-7KQ7BY-T-p9-9",
-      "album": "PA-7KQ7BY-T",
-      "page": 9,
-      "ordinal": 9,
-      "stampsOnPage": 10,
-      "status": "candidate",
-      "reader": "page-vision",
-      "issuer": null,
-      "denomination": null,
-      "year": null,
-      "form": "single",
-      "containsCount": null,
-      "subjects": [],
-      "theme": null,
-      "territory": null,
-      "resolvedIssuer": null,
-      "issuerStatus": null,
-      "succeededBy": null,
-      "reading": "A single stamp.",
-      "basis": [
-        "asr_01M21JPDFPTBC3Y1ZZ28V621S5"
       ],
       "knowledge": [],
       "capturedAt": "2026-09-08T06:16:14.923Z"
