@@ -1069,13 +1069,13 @@ function recentBand(){
 }
 function candidatesBand(){
   const cands=DATA.candidates||[];
-  const np=(DATA.facts&&DATA.facts.namingProgress)||{namedByMachine:cands.length,verifiedByPerson:0};
+  const np=(DATA.facts&&DATA.facts.namingProgress)||{namedByMachine:cands.length,individualStamps:cands.length,verifiedByPerson:0};
   if(!cands.length) return "";
   const sample=cands.slice(0,12);
   return `<section class="band reveal" aria-labelledby="cand-h"><div class="wrap">
     <div class="band-head"><div><span class="eyebrow">The machine's reading</span><h2 id="cand-h">What the atlas thinks it sees</h2></div><a class="more" href="#/candidates">All candidate readings →</a></div>
-    <p class="lede" style="max-width:64ch;margin-top:6px">Each card is the machine's <strong>candidate</strong> reading of one stamp — drawn from the photograph, cited to what it saw, <em>and not yet confirmed by a person</em>. <strong>${fmt(np.namedByMachine)}</strong> named by the atlas · <strong>${fmt(np.verifiedByPerson)}</strong> verified by a person. The gap is honest guesswork, and the page never hides it.</p>
-    ${(DATA.facts&&DATA.facts.distinctReadings)?`<p class="small" style="margin-top:8px;color:var(--ink-2)"><strong>${fmt(np.namedByMachine)}</strong> read · <strong>${fmt(DATA.facts.distinctReadings)}</strong> distinct as read · <strong>${fmt(np.namedByMachine-DATA.facts.distinctReadings)}</strong> look like duplicates <span class="small" style="color:var(--ink-3)">— fingerprinted on what was read, an estimate not a verified count</span></p>`:""}
+    <p class="lede" style="max-width:64ch;margin-top:6px">Each card is the machine's <strong>candidate</strong> reading of one stamp — drawn from the photograph, cited to what it saw, <em>and not yet confirmed by a person</em>. <strong>${fmt(np.individualStamps||np.namedByMachine)}</strong> stamps named by the atlas · <strong>${fmt(np.verifiedByPerson)}</strong> verified by a person. The gap is honest guesswork, and the page never hides it.</p>
+    ${(DATA.facts&&DATA.facts.distinctReadings)?`<p class="small" style="margin-top:8px;color:var(--ink-2)"><strong>${fmt(np.namedByMachine)}</strong> items read <span class="small" style="color:var(--ink-3)">(a block counts as one item)</span> · <strong>${fmt(DATA.facts.distinctReadings)}</strong> distinct as read · <strong>${fmt(np.namedByMachine-DATA.facts.distinctReadings)}</strong> look like duplicates <span class="small" style="color:var(--ink-3)">— fingerprinted on what was read, an estimate not a verified count</span></p>`:""}
     <div class="grid g3" style="margin-top:18px">${sample.map(c=>`<a class="card" href="${candHref(c.id)}" style="display:block;color:inherit;text-decoration:none"><div class="meta">${dot("candidate","*")} ${esc(c.album)} · p${esc(String(c.page))} · ${c.ordinal}/${c.stampsOnPage}</div><p class="small" style="margin-top:8px">${esc(c.reading||"Nothing legible yet — a closer photograph would help.")}</p></a>`).join("")}</div>
     ${cands.length>sample.length?`<p class="small" style="margin-top:14px"><a href="#/candidates">…and ${fmt(cands.length-sample.length)} more candidate readings →</a></p>`:""}
     ${CANDLEGEND}
@@ -1083,7 +1083,7 @@ function candidatesBand(){
 }
 function candidatesPage(){
   const cands=DATA.candidates||[];
-  const np=(DATA.facts&&DATA.facts.namingProgress)||{namedByMachine:cands.length,verifiedByPerson:0};
+  const np=(DATA.facts&&DATA.facts.namingProgress)||{namedByMachine:cands.length,individualStamps:cands.length,verifiedByPerson:0};
   const byAlbum={}; cands.forEach(c=>{ (byAlbum[c.album]=byAlbum[c.album]||[]).push(c); });
   const groups=Object.keys(byAlbum).sort().map(al=>{
     const rows=byAlbum[al].map(c=>`<li><a href="${candHref(c.id)}" style="color:inherit;text-decoration:none"><span class="meta">${dot("candidate")} p${esc(String(c.page))} · ${c.ordinal}/${c.stampsOnPage}</span> <span class="small">${esc(c.reading||"nothing legible yet")}</span></a></li>`).join("");
@@ -1091,8 +1091,8 @@ function candidatesPage(){
   }).join("");
   return `<section class="band"><div class="wrap"><span class="eyebrow">The machine's reading · candidates</span>
     <h1 style="margin-top:8px">Candidate readings</h1>
-    <p class="lede" style="max-width:64ch">${fmt(np.namedByMachine)} stamps the atlas has read and named as <strong>candidates</strong>, ${fmt(np.verifiedByPerson)} confirmed by a person. A candidate is the machine's honest guess from the photograph, cited to what it saw; a person turns it from a guess into a fact over time. Nothing here is verified, and it says so.</p>
-    ${(DATA.facts&&DATA.facts.distinctReadings)?`<p class="small" style="max-width:66ch;margin-top:2px;color:var(--ink-2)"><strong>${fmt(np.namedByMachine)}</strong> read · <strong>${fmt(DATA.facts.distinctReadings)}</strong> distinct as read · <strong>${fmt(np.namedByMachine-DATA.facts.distinctReadings)}</strong> look like duplicates. Two stamps count as one when they read the same — issuer, year, value and subject; a fuzzy signal (sparse reads merge, "Nippon" and "NIPPON" split), never a verified duplicate count.</p>`:""}
+    <p class="lede" style="max-width:64ch">${fmt(np.individualStamps||np.namedByMachine)} stamps the atlas has read and named as <strong>candidates</strong>, ${fmt(np.verifiedByPerson)} confirmed by a person. A candidate is the machine's honest guess from the photograph, cited to what it saw; a person turns it from a guess into a fact over time. Nothing here is verified, and it says so.</p>
+    ${(DATA.facts&&DATA.facts.distinctReadings)?`<p class="small" style="max-width:66ch;margin-top:2px;color:var(--ink-2)"><strong>${fmt(np.namedByMachine)}</strong> items read <span class="small" style="color:var(--ink-3)">(a block counts as one item)</span> · <strong>${fmt(DATA.facts.distinctReadings)}</strong> distinct as read · <strong>${fmt(np.namedByMachine-DATA.facts.distinctReadings)}</strong> look like duplicates. Two stamps count as one when they read the same — issuer, year, value and subject; a fuzzy signal (sparse reads merge, "Nippon" and "NIPPON" split), never a verified duplicate count.</p>`:""}
     <div class="grid g2" style="margin-top:18px">${groups||"<p class=small>No candidate readings yet.</p>"}</div>
     ${CANDLEGEND}
   </div></section>`;
