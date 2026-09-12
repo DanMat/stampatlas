@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T18:31:15.903Z",
+  "generatedAt": "2026-09-12T19:05:13.468Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -130,7 +130,7 @@
         "eligiblePopulation": 298
       }
     ],
-    "asOf": "2026-09-12T18:34:43.782Z",
+    "asOf": "2026-09-12T19:08:41.482Z",
     "namingProgress": {
       "namedByMachine": 5251,
       "individualStamps": 7260,
@@ -9649,10 +9649,10 @@
     ],
     "pending": [],
     "years": {
-      "earliestIssueYear": 1000,
+      "earliestIssueYear": 1840,
       "earliest": {
         "confirmed": null,
-        "candidate": 1000,
+        "candidate": 1840,
         "confirmedStampId": null
       },
       "latest": {
