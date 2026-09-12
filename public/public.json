@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T19:14:36.425Z",
+  "generatedAt": "2026-09-12T20:27:43.241Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -130,7 +130,7 @@
         "eligiblePopulation": 298
       }
     ],
-    "asOf": "2026-09-12T19:18:04.787Z",
+    "asOf": "2026-09-12T20:31:11.862Z",
     "namingProgress": {
       "namedByMachine": 5251,
       "individualStamps": 7260,
@@ -176893,7 +176893,32 @@
         "asr_01M2ADXA4R3E4D9AYQZN8FHRT8",
         "asr_01M2ADXA69A3WAHNF5ZSMMC7AJ"
       ],
-      "knowledge": [],
+      "knowledge": [
+        {
+          "factType": "summary",
+          "value": "The coronation of King George VI and Queen Elizabeth took place at Westminster Abbey on 12 May 1937 — the very date that had originally been set for the coronation of his brother Edward VIII.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Coronation_of_George_VI_and_Elizabeth",
+          "factId": "asr_01M2BMQ9156TM2DD6EV3C1A6KK",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "George VI came to the throne only because Edward VIII abdicated in December 1936: widespread unwillingness to accept the divorced American Wallis Simpson as the King's consort, and Edward's refusal to give her up, led to the abdication.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Coronation_of_George_VI_and_Elizabeth",
+          "factId": "asr_01M2BMQ92PBQ9873K292ZC759R",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "The coronation was commemorated by the issuing of official medals, coinage and stamps.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Coronation_of_George_VI_and_Elizabeth",
+          "factId": "asr_01M2BMQ9466YZ06E7D6A5NAT57",
+          "status": "candidate"
+        }
+      ],
       "capturedAt": "2026-09-12T08:11:35.470Z"
     },
     {
@@ -176929,7 +176954,32 @@
         "asr_01M2ADX9RB15VNTB7XP57HH1JT",
         "asr_01M2ADX9SWJNZPKNWRS4CTRJH7"
       ],
-      "knowledge": [],
+      "knowledge": [
+        {
+          "factType": "summary",
+          "value": "The Penny Black, issued in Britain from May 1840, was the world's first adhesive postage stamp used in a public postal system and bore a profile of the 21-year-old Queen Victoria.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Penny_Black",
+          "factId": "asr_01M2BMQ95QJ8YH2QW8NFCM447R",
+          "status": "candidate"
+        },
+        {
+          "factType": "succeeded-by",
+          "value": "The Penny Black was short-lived: a red cancellation was hard to see on the black design and the red ink was easy to remove, so by February 1841 it was replaced by the Penny Red, cancelled in black ink instead.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Penny_Black",
+          "factId": "asr_01M2BMQ977VBG126JETZ2RM290",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "About 68.8 million Penny Blacks were printed from 11 plates by Perkins Bacon in London.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Penny_Black",
+          "factId": "asr_01M2BMQ98YY66BBCXN0WNV8Y85",
+          "status": "candidate"
+        }
+      ],
       "capturedAt": "2026-09-12T08:11:35.470Z"
     },
     {
@@ -179493,7 +179543,24 @@
         "asr_01M2ADY6BW6C6BTNKWDVED781F",
         "asr_01M2ADY6DE3SKQEQ9XN6FT6GHM"
       ],
-      "knowledge": [],
+      "knowledge": [
+        {
+          "factType": "summary",
+          "value": "Aitutaki is the second most-populated island in the Cook Islands, an 'almost atoll' of a volcanic main island ringed by fifteen smaller islets, with a population of 1,782 in 2021.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Aitutaki",
+          "factId": "asr_01M2BMQ9F7YHARND9P0YXHRPPA",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "The Cook Islands are self-governing while in free association with New Zealand, and most Cook Islanders hold New Zealand citizenship plus the distinct status of Cook Islands nationals.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Cook_Islands",
+          "factId": "asr_01M2BMQ9GQ0DSEYGHJW71S7TAE",
+          "status": "candidate"
+        }
+      ],
       "capturedAt": "2026-09-12T08:11:35.470Z"
     },
     {
@@ -179526,7 +179593,24 @@
         "asr_01M2ADY7CES5A1Q0VBNEXDRQ1Q",
         "asr_01M2ADY7E3DD52DEQEDBQ0XREE"
       ],
-      "knowledge": [],
+      "knowledge": [
+        {
+          "factType": "summary",
+          "value": "Aitutaki, the issuer, is an 'almost atoll' in the Cook Islands and the territory's second-largest tourist destination, with tourism dominating its economy.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Aitutaki",
+          "factId": "asr_01M2BMQAF9SDBNW8KE2W09DE15",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "The Cook Islands are self-governing in free association with New Zealand, with their capital at Avarua on Rarotonga.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Cook_Islands",
+          "factId": "asr_01M2BMQAGS516H6KQTFM1T37V9",
+          "status": "candidate"
+        }
+      ],
       "capturedAt": "2026-09-12T08:11:35.470Z"
     },
     {
@@ -179559,7 +179643,24 @@
         "asr_01M2ADY8AXABSMW1BTFAKGVZNF",
         "asr_01M2ADY8D88QJ1QCFNS8NEG60Q"
       ],
-      "knowledge": [],
+      "knowledge": [
+        {
+          "factType": "summary",
+          "value": "Aitutaki, the issuer of this souvenir sheet, is the second most-populated island in the Cook Islands after Rarotonga and had a population of 1,782 in 2021.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Aitutaki",
+          "factId": "asr_01M2BMQAJ5NGN1BA4F1QA62QPN",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "The Cook Islands are self-governing while in free association with New Zealand, and New Zealand cannot pass laws for them.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Cook_Islands",
+          "factId": "asr_01M2BMQAKKFYJ5TH7J64TP6MME",
+          "status": "candidate"
+        }
+      ],
       "capturedAt": "2026-09-12T08:11:35.470Z"
     },
     {
@@ -179629,7 +179730,32 @@
         "asr_01M2ADY9PXABVSGYN5G3V3HJN9",
         "asr_01M2ADY9RNPC4KAK5148803NZX"
       ],
-      "knowledge": [],
+      "knowledge": [
+        {
+          "factType": "summary",
+          "value": "Sir Rowland Hill (1795-1879) was an English teacher, inventor and social reformer usually credited with originating the basic concepts of the modern postal service, including the invention of the postage stamp.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Rowland_Hill",
+          "factId": "asr_01M2BMQ9J9GPKA7YD2WSN4W69N",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "Hill died on 27 August 1879 and was buried in Westminster Abbey, which is why 1979 marked the centenary of his death and prompted commemorative stamp issues such as this one.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Rowland_Hill",
+          "factId": "asr_01M2BMQ9KRWGXCRB8S360FMHN3",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "The issuing territory, Aitutaki, is part of the Cook Islands, which are self-governing in free association with New Zealand.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Cook_Islands",
+          "factId": "asr_01M2BMQ9N9YHSPH2RC9KRZ6J4E",
+          "status": "candidate"
+        }
+      ],
       "capturedAt": "2026-09-12T08:11:35.470Z"
     },
     {
@@ -179664,7 +179790,32 @@
         "asr_01M2ADY8P9234FDM14N62357Y1",
         "asr_01M2ADY8S01NET6895HBQ09T41"
       ],
-      "knowledge": [],
+      "knowledge": [
+        {
+          "factType": "summary",
+          "value": "Sir Rowland Hill (1795-1879) proposed low, uniform postage rates by weight rather than distance; the penny rate took effect on 10 January 1840 and paid internal correspondence rose about 120% between November 1839 and February 1840.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Rowland_Hill",
+          "factId": "asr_01M2BMQ9PXAAN3958PSK1WC9EV",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "Within three years of the 1840 Penny Black, adhesive stamps spread to multiple countries, and by 1860 they were used in 90 countries.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Rowland_Hill",
+          "factId": "asr_01M2BMQ9RCKCWXKKAC3H04F7V2",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "Aitutaki, the issuer of this sheet, is the second most-populated island in the Cook Islands and is often praised for its lagoon; in 2010 Lonely Planet's Tony Wheeler nominated it as the world's most beautiful island.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Aitutaki",
+          "factId": "asr_01M2BMQ9SQ9MKHXZNYHKP0E3FG",
+          "status": "candidate"
+        }
+      ],
       "capturedAt": "2026-09-12T08:11:35.470Z"
     },
     {
@@ -179697,7 +179848,24 @@
         "asr_01M2ADY716EDB32MKJK0KJX8JW",
         "asr_01M2ADY72W09B9PDB9Y0HSH8CC"
       ],
-      "knowledge": [],
+      "knowledge": [
+        {
+          "factType": "summary",
+          "value": "Aitutaki, the issuer, is the second most-populated island in the Cook Islands after Rarotonga, an 'almost atoll' whose barrier reef forms roughly an equilateral triangle with 12-kilometre sides.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Aitutaki",
+          "factId": "asr_01M2BMQ9W4HG2A95WM8BNQGKF1",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "The Cook Islands comprise 15 islands with a total land area of about 236.7 square kilometres, and their capital is Avarua on the main island of Rarotonga.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Cook_Islands",
+          "factId": "asr_01M2BMQ9XMFTZSVRWED5FJGNCF",
+          "status": "candidate"
+        }
+      ],
       "capturedAt": "2026-09-12T08:11:35.470Z"
     },
     {
@@ -179730,7 +179898,24 @@
         "asr_01M2ADYA11M3YRMD67GS3FFQVN",
         "asr_01M2ADYA2VD982A14KEV4KSGNV"
       ],
-      "knowledge": [],
+      "knowledge": [
+        {
+          "factType": "summary",
+          "value": "Aitutaki, the issuer of this souvenir sheet, is the second most-populated island in the Cook Islands and its second-largest tourist destination, drawing 38,777 visitors in 2018.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Aitutaki",
+          "factId": "asr_01M2BMQ9Z26RR39WPH1F14E477",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "The Cook Islands are self-governing in free association with New Zealand; New Zealand cannot pass laws for the Cook Islands, which have conducted their own foreign and defence policy since the start of the 21st century.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Cook_Islands",
+          "factId": "asr_01M2BMQA0R6PCTVA8V5KZT59MT",
+          "status": "candidate"
+        }
+      ],
       "capturedAt": "2026-09-12T08:11:35.470Z"
     },
     {
@@ -179763,7 +179948,24 @@
         "asr_01M2ADY932HHN5ZHKXY44Y2RN4",
         "asr_01M2ADY94W02X2WQY3E14E7NZ7"
       ],
-      "knowledge": [],
+      "knowledge": [
+        {
+          "factType": "summary",
+          "value": "Aitutaki is an 'almost atoll' in the Cook Islands whose lagoon covers roughly 50-74 square kilometres; its main village is Arutanga on the west side.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Aitutaki",
+          "factId": "asr_01M2BMQA262F3T7XF7XFDR2AYA",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "The Cook Islands are an associated state of New Zealand in Polynesia; the 2021 census recorded 15,040 residents, with a larger population of Cook Islanders living in New Zealand and Australia.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Cook_Islands",
+          "factId": "asr_01M2BMQA3N9J156QP806GC42P2",
+          "status": "candidate"
+        }
+      ],
       "capturedAt": "2026-09-12T08:11:35.470Z"
     },
     {
@@ -179798,7 +180000,32 @@
         "asr_01M2ADY6NXP81F2CDWAQDSG2AX",
         "asr_01M2ADY6QXQSW1NC5WW2F3SYVX"
       ],
-      "knowledge": [],
+      "knowledge": [
+        {
+          "factType": "summary",
+          "value": "Sir Rowland Hill (1795-1879), shown on this stamp, is usually credited with originating the basic concepts of the modern postal service, including the invention of the postage stamp; he was buried in Westminster Abbey.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Rowland_Hill",
+          "factId": "asr_01M2BMQA52SYJ8E9ZM1APFDQT8",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "The Penny Black also depicted here was the world's first adhesive postage stamp (Britain, 1840), bearing the profile of the 21-year-old Queen Victoria.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Penny_Black",
+          "factId": "asr_01M2BMQA6HG9B1F2H2EDYJAK6Q",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "The UPU emblem shown derives from the Universal Postal Union, founded in 1874 by the Treaty of Bern to coordinate a uniform worldwide postal system; its emblem comes from a 1909 Bern monument depicting the five continents transmitting messages around the globe.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Universal_Postal_Union",
+          "factId": "asr_01M2BMQA86TFX94FC28QBATN7P",
+          "status": "candidate"
+        }
+      ],
       "capturedAt": "2026-09-12T08:11:35.470Z"
     },
     {
@@ -179831,7 +180058,24 @@
         "asr_01M2ADY9D21DXSN44ZMVN4C9AJ",
         "asr_01M2ADY9ER9FN5RWV8S8RAWKEQ"
       ],
-      "knowledge": [],
+      "knowledge": [
+        {
+          "factType": "summary",
+          "value": "Aitutaki, the issuer, is the second most-populated island in the Cook Islands, consisting of a main volcanic island surrounded by fifteen smaller islets.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Aitutaki",
+          "factId": "asr_01M2BMQA9PGR6XW7WCDV45BXYJ",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "Most Cook Islanders hold New Zealand citizenship plus the status of Cook Islands nationals, a distinct status not given to other New Zealand citizens.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Cook_Islands",
+          "factId": "asr_01M2BMQAB2610VR0RE8MDGFNQW",
+          "status": "candidate"
+        }
+      ],
       "capturedAt": "2026-09-12T08:11:35.470Z"
     },
     {
@@ -179864,7 +180108,24 @@
         "asr_01M2ADY8146SGMRM5KWG20EDMW",
         "asr_01M2ADY82NCP9VN5AJ6GW2F591"
       ],
-      "knowledge": [],
+      "knowledge": [
+        {
+          "factType": "summary",
+          "value": "Aitutaki, the issuer, is the second most-populated island in the Cook Islands; its islet Tapuaetai (One Foot Island) won 'Australasia's Leading Beach' at the 2008 World Travel Awards.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Aitutaki",
+          "factId": "asr_01M2BMQACNJWG24355J25GVJX3",
+          "status": "candidate"
+        },
+        {
+          "factType": "note",
+          "value": "The Cook Islands form an island country and associated state of New Zealand in Polynesia, with 15 islands and a total land area of about 236.7 square kilometres.",
+          "source": "Wikipedia",
+          "sourceUrl": "https://en.wikipedia.org/wiki/Cook_Islands",
+          "factId": "asr_01M2BMQADZ0VKM2HRGRWA3552Z",
+          "status": "candidate"
+        }
+      ],
       "capturedAt": "2026-09-12T08:11:35.470Z"
     },
     {
