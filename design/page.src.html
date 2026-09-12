@@ -905,11 +905,18 @@ function smartTile(id, cls, href){ return metric(id) ? metricTile(id, cls, href)
 /* the span of years: confirmed headline, candidate stretch named honestly */
 function yearsTile(which){
   const y=DATA.facts&&DATA.facts.years; const key=which==="earliest"?"earliestIssueYear":"latestIssueYear";
-  if(!y||!y[which]||y[which].confirmed==null) return which==="earliest"?pendingTile("earliestIssueYear"):`<div class="perf"><div class="inner tile"><div class="n" style="font-weight:300;color:var(--ink-4)">—</div><div class="l">Latest year of issue</div><div class="s"><span class="tag unknown">awaiting</span> identification</div></div></div>`;
-  const e=y[which]; const st=stampById(e.confirmedStampId);
-  /* no anchor inside the tile — the tile itself is the link (nested <a> would split the markup) */
-  const s=`<span class="tag confirmed">confirmed</span>${st?` ${esc(st.short)} →`:""}${e.candidate!=null&&e.candidate!==e.confirmed?`<br><span class="tag candidate">candidate</span> ${esc(String(e.candidate))} — the machine's reading, unchecked`:""}`;
-  return tile(esc(String(e.confirmed)), which==="earliest"?"Earliest year of issue":"Latest year of issue", s, "gold", key, st?stampHref(st.id):chHref("time"));
+  const label=which==="earliest"?"Earliest year of issue":"Latest year of issue";
+  const e=y&&y[which];
+  // Nothing dated at all — stay pending.
+  if(!e||(e.confirmed==null&&e.candidate==null)) return which==="earliest"?pendingTile("earliestIssueYear"):`<div class="perf"><div class="inner tile"><div class="n" style="font-weight:300;color:var(--ink-4)">—</div><div class="l">${label}</div><div class="s"><span class="tag unknown">awaiting</span> identification</div></div></div>`;
+  // A person has confirmed a year — print it as the headline, name any candidate stretch beneath.
+  if(e.confirmed!=null){
+    const st=stampById(e.confirmedStampId);
+    const s=`<span class="tag confirmed">confirmed</span>${st?` ${esc(st.short)} →`:""}${e.candidate!=null&&e.candidate!==e.confirmed?`<br><span class="tag candidate">candidate</span> ${esc(String(e.candidate))} — the machine's reading, unchecked`:""}`;
+    return tile(esc(String(e.confirmed)), label, s, "gold", key, st?stampHref(st.id):chHref("time"));
+  }
+  // No confirmed year yet — surface the machine's candidate reading, hedged honestly.
+  return tile(esc(String(e.candidate)), label, `<span class="tag candidate">candidate</span> the machine's dating, awaiting a person`, "gold", key, chHref("time"));
 }
 function pendItems(ids){ return ids.map(id=>{ const p=pendingOf(id); if(!p) return ""; const label=FRIENDLY_PENDING[id]||id;
   return `<li data-key="${esc(label)}" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--rule-soft);padding:9px 0"><span>${esc(label)}</span><span class="mono" style="color:var(--ink-3)">awaiting ${esc(p.blockedBy)}</span></li>`; }).filter(Boolean).join(""); }
@@ -1398,6 +1405,21 @@ function subfacetPage(cfg){
     ${CANDLEGEND}
   </div></section>`;
 }
+/* One compact directory for the theme sub-facets — a link per facet, not a full band each, so the
+   home page stays short and clicking a facet opens its own list (the big lists live on their pages). */
+const FACET_NAV={people:"People",monarchs:"Monarchs",sports:"Sports",animals:"Wildlife",transport:"Transport",space:"Space"};
+function facetsDirectoryBand(){
+  const items=[];
+  const ppl=(DATA.facts&&DATA.facts.people)||[];
+  if(ppl.length) items.push({route:"people",label:"People",k:ppl.length,n:ppl.reduce((a,x)=>a+x.candidate+x.confirmed,0)});
+  SUBFACETS.forEach(f=>{ const rows=subfacetRows(f.scheme); if(rows.length) items.push({route:f.route,label:FACET_NAV[f.route]||f.title,k:rows.length,n:rows.reduce((a,x)=>a+x.candidate+x.confirmed,0)}); });
+  if(!items.length) return "";
+  return `<section class="band reveal" aria-labelledby="facdir-h"><div class="wrap">
+    <div class="band-head"><div><span class="eyebrow">Who &amp; what</span><h2 id="facdir-h">Zoom into a theme</h2></div><span class="small muted italic">each opens its own list</span></div>
+    <p class="small" style="max-width:66ch;margin-top:4px">The broad themes above, subdivided into named values — the people on the stamps, the monarchs, the sports, the wildlife, the ways things travelled, the reaches of space. Candidate readings; a person confirms them over time.</p>
+    <div class="grid g3" style="margin-top:14px">${items.map(it=>`<a class="card" href="#/${it.route}" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;color:inherit;text-decoration:none"><span>${esc(it.label)} <span class="small" style="color:var(--ink-3)">· ${fmt(it.k)}</span></span><strong style="font-family:var(--ff-display);font-size:1.3em">${fmt(it.n)}</strong></a>`).join("")}</div>
+  </div></section>`;
+}
 function territoriesBand(){
   const t=(DATA.facts&&DATA.facts.territories)||[];
   if(!t.length) return "";
@@ -1473,7 +1495,7 @@ function moneyPage(){
     ${CANDLEGEND}
   </div></section>`;
 }
-function homePage(){ return frontispiece()+glanceBand()+candidatesBand()+issuersBand()+themesBand()+peopleBand()+SUBFACETS.map(subfacetBand).join("")+territoriesBand()+formsBand()+moneyBand()+todayBand()+mapBand()+doorsBand()+recentBand(); }
+function homePage(){ return frontispiece()+glanceBand()+candidatesBand()+issuersBand()+themesBand()+facetsDirectoryBand()+territoriesBand()+formsBand()+moneyBand()+todayBand()+mapBand()+doorsBand()+recentBand(); }
 
 /* =====================================================================
    CHAPTERS · populated where the projection allows, awaiting where not
@@ -1515,7 +1537,7 @@ function timeCh(){
   const cand=stamps().filter(s=>s.identity.year&&s.identity.year.status==="candidate");
   const body=`<div class="card" style="margin-bottom:20px"><h3>The cabinet of decades</h3><p class="small">Every named stamp by its decade of issue. Solid is what a person has confirmed; hatched is what the machine suggests and nobody has checked.</p>${decadeChart()}</div>
   <div class="grid g2 split" style="--split:1fr 1fr;align-items:start"><div class="card"><h3>The confirmed years, in order</h3><div class="timeline" style="margin-top:12px">${conf.map(s=>`<div class="ev" data-key="${esc(s.id)}"><div class="y">${esc(String(yearOf(s)))}</div><div class="t"><a href="${stampHref(s.id)}">${esc(s.title)}</a></div><div class="o">${esc(issuerName(s))} · ${esc(denomOf(s)||"")}</div></div>`).join("")}${cand.map(s=>`<div class="ev cand" data-key="${esc(s.id)}"><div class="y">${esc(String(yearOf(s)))} · candidate</div><div class="t"><a href="${stampHref(s.id)}">${esc(s.title)}</a></div><div class="o">${esc(issuerName(s))} — the machine's dating, awaiting a person</div></div>`).join("")}</div></div>
-  <div class="grid" style="gap:12px">${yearsTile("earliest")}${yearsTile("latest")}<div class="card flat"><span class="eyebrow">Span</span><p class="small" style="margin:6px 0 0">Confirmed: <strong>${y.earliest.confirmed}–${y.latest.confirmed}</strong>, ${y.latest.confirmed-y.earliest.confirmed} years. If every candidate were right: ${y.earliest.candidate}–${y.latest.candidate}. The atlas prints the first and names the second.</p></div></div></div>`;
+  <div class="grid" style="gap:12px">${yearsTile("earliest")}${yearsTile("latest")}<div class="card flat"><span class="eyebrow">Span</span><p class="small" style="margin:6px 0 0">${(y.earliest.confirmed!=null&&y.latest.confirmed!=null)?`Confirmed: <strong>${y.earliest.confirmed}–${y.latest.confirmed}</strong>, ${y.latest.confirmed-y.earliest.confirmed} years. ${(y.earliest.candidate!=null&&y.latest.candidate!=null)?`If every candidate were right: ${y.earliest.candidate}–${y.latest.candidate}. The atlas prints the first and names the second.`:""}`:(y.earliest.candidate!=null&&y.latest.candidate!=null)?`The machine's candidate reach spans <strong>${y.earliest.candidate}–${y.latest.candidate}</strong>, ${y.latest.candidate-y.earliest.candidate} years — its dating, awaiting a person to confirm the ends.`:"Awaiting a dated stamp."}</p></div></div></div>`;
   return chapter("time",1,"The world in time","Read in order, the collection becomes a timeline of the last two centuries.",body);
 }
 function issuersCh(){
