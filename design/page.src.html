@@ -1046,7 +1046,7 @@ function mapBand(){
 }
 /* what each chapter can honestly show today — drives the doorway status lines and the Contents */
 function chapterStatus(id){
-  const has={ glance:true, time:!!(DATA.facts&&DATA.facts.years), issuers:(DATA.issuers||[]).some(i=>i.status==="confirmed"), map:(DATA.issuers||[]).length>0, people:(DATA.people||[]).length>0,
+  const has={ glance:true, time:!!(DATA.facts&&DATA.facts.years), issuers:(DATA.issuers||[]).some(i=>i.status==="confirmed"), map:(DATA.issuers||[]).length>0, people:(DATA.people||[]).length>0||((DATA.facts&&DATA.facts.people)||[]).length>0,
     themes:(DATA.themes||[]).length>0, dna:storied().length>0, connections:stamps().some(s=>(s.connections&&s.connections.stamps||[]).length), language:stamps().length>0, physical:stamps().length>0, sets:(DATA.sets||[]).length>0, albums:(DATA.albums||[]).length>0, colour:false, play:(DATA.discoveries||[]).length>0, questions:true, unknown:true };
   return has[id]?"charted":"awaiting";
 }
@@ -1194,10 +1194,12 @@ function normDenom(d){
   for(const [re,to] of U){ if(re.test(unit)){ unit=to; break; } }
   return num!=null?`${num}${unit?" "+unit:""}`:s;
 }
-const DIM_LABEL={territory:"Territory",theme:"Theme",form:"Form",issuer:"Issuer",currency:"Currency",defunct:"No longer exists",album:"Album",page:"Page",denomination:"Denomination"};
+const DIM_LABEL={territory:"Territory",theme:"Theme",person:"Person",monarch:"Monarch",sport:"Sport",animal:"Animal",mode:"Transport",cosmos:"Space",form:"Form",issuer:"Issuer",currency:"Currency",defunct:"No longer exists",album:"Album",page:"Page",denomination:"Denomination"};
+const FACET_DIMS=["person","monarch","sport","animal","mode","cosmos"];
 function setMatch(c,dim,value){
   if(dim==="territory") return c.territory===value;
   if(dim==="theme") return c.theme===value;
+  if(FACET_DIMS.includes(dim)) return (c.subthemes||{})[dim]===value;
   if(dim==="form") return c.form===value;
   if(dim==="issuer") return c.issuer===value;
   if(dim==="album") return c.album===value;
@@ -1241,7 +1243,7 @@ function setPage(dim,value){
     return `<div class="card"><h3>${head}</h3><ul class="recent" style="margin-top:8px">${rows}</ul></div>`;
   }).join("");
   const heading=dim==="defunct"&&value==="*"?"Issuers that no longer exist":esc(String(label));
-  const backHref={territory:"#/territories",theme:"#/themes",form:"#/forms",issuer:"#/countries",currency:"#/money",defunct:"#/territories",album:"#/",page:pageParts?setHref('album',pageParts[0]):"#/",denomination:"#/money"}[dim]||"#/";
+  const backHref={territory:"#/territories",theme:"#/themes",person:"#/people",monarch:"#/monarchs",sport:"#/sports",animal:"#/animals",mode:"#/transport",cosmos:"#/space",form:"#/forms",issuer:"#/countries",currency:"#/money",defunct:"#/territories",album:"#/",page:pageParts?setHref('album',pageParts[0]):"#/",denomination:"#/money"}[dim]||"#/";
   // The nerdy header: a form's definition, a theme's description, or a sourced history for a place/issuer.
   const explainer = dim==="form" ? formGlossary(value)
     : dim==="theme" ? themeGlossary(value)
@@ -1329,6 +1331,63 @@ function themesPage(){
     ${CANDLEGEND}
   </div></section>`;
 }
+function peopleBand(){
+  const p=(DATA.facts&&DATA.facts.people)||[];
+  if(!p.length) return "";
+  const total=p.reduce((n,x)=>n+x.candidate+x.confirmed,0);
+  const top=p.slice(0,15);
+  return `<section class="band reveal" aria-labelledby="ppl-h"><div class="wrap">
+    <div class="band-head"><div><span class="eyebrow">By person</span><h2 id="ppl-h">The faces on the stamps</h2></div><a class="more" href="#/people">All ${fmt(p.length)} people →</a></div>
+    <p class="small" style="max-width:66ch;margin-top:4px">The 'people' theme, subdivided into the individuals the machine named — from the ${fmt(total)} stamps it read as depicting a person. A candidate reading; a person confirms who's who over time. Anonymous and allegorical figures aren't named.</p>
+    <div class="grid g3" style="margin-top:16px">${top.map(x=>`<a class="card" href="${setHref('person',x.name)}" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;color:inherit;text-decoration:none"><span>${dot("candidate","")} ${esc(x.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">${fmt(x.candidate+x.confirmed)}</strong></a>`).join("")}</div>
+    ${CANDLEGEND}
+  </div></section>`;
+}
+function peoplePage(){
+  const p=(DATA.facts&&DATA.facts.people)||[];
+  const total=p.reduce((n,x)=>n+x.candidate+x.confirmed,0);
+  const rows=p.map(x=>`<li><a href="${setHref('person',x.name)}" style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4);color:inherit;text-decoration:none"><span>${dot("candidate","")} ${esc(x.name)}</span><span class="small">${fmt(x.candidate+x.confirmed)}${x.distinct<x.candidate?` <span style="color:var(--ink-3)">· ${fmt(x.distinct)} distinct</span>`:""}</span></a></li>`).join("");
+  return `<section class="band"><div class="wrap"><span class="eyebrow"><a href="${chHref('themes')}" style="color:inherit">Themes</a> · By person</span>
+    <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">The people</h1>
+    <p class="lede" style="max-width:66ch">${fmt(p.length)} individuals the atlas named within the <a href="${setHref('theme','people')}">people</a> theme, from ${fmt(total)} stamps it read as portraits. <strong>A candidate reading</strong> — each is only as good as the subject the machine read, and a person confirms who's depicted over time. Anonymous portraits and national allegories (Britannia, Marianne) are kept honest as unnamed, not forced into a name.</p>
+    <ul style="list-style:none;padding:0;margin:20px 0 0;columns:2;column-gap:40px">${rows||"<li class=small>No people named yet.</li>"}</ul>
+    ${CANDLEGEND}
+  </div></section>`;
+}
+/* Config-driven sub-facets (ADR-0054): each subdivides a coarse theme into named values, rendered
+   generically from DATA.facts.subfacets[scheme]. Add a facet = add a row here + run classify-facet. */
+const SUBFACETS=[
+  {scheme:"monarch", route:"monarchs", dim:"Monarch",  title:"The monarchs",  eye:"By monarch",       of:"royalty",   lead:"crowned heads named within the <a href='#/set/theme/royalty'>royalty</a> theme, from the stamps read as royal portraits"},
+  {scheme:"sport",   route:"sports",   dim:"Sport",    title:"The sports",    eye:"By sport",          of:"sport",     lead:"sports named within the <a href='#/set/theme/sport'>sport</a> theme, from the stamps read as sporting subjects"},
+  {scheme:"animal",  route:"animals",  dim:"Animal",   title:"The wildlife",  eye:"By animal group",   of:"wildlife",  lead:"animal groups named within the <a href='#/set/theme/wildlife'>wildlife</a> theme, from the stamps read as creatures"},
+  {scheme:"mode",    route:"transport",dim:"Transport",title:"Ways to travel",eye:"By mode",           of:"transport", lead:"transport modes named within the <a href='#/set/theme/transport'>transport</a> theme, from the stamps read as vehicles"},
+  {scheme:"cosmos",  route:"space",    dim:"Space",    title:"Space",         eye:"By space subject",  of:"space",     lead:"subjects named within the <a href='#/set/theme/space'>space</a> theme, from the stamps read as astronautics"},
+];
+const subfacetByScheme=s=>SUBFACETS.find(f=>f.scheme===s);
+const subfacetByRoute=r=>SUBFACETS.find(f=>f.route===r);
+const subfacetRows=s=>((DATA.facts&&DATA.facts.subfacets&&DATA.facts.subfacets[s])||[]);
+function subfacetBand(cfg){
+  const p=subfacetRows(cfg.scheme); if(!p.length) return "";
+  const total=p.reduce((n,x)=>n+x.candidate+x.confirmed,0);
+  const top=p.slice(0,12);
+  return `<section class="band reveal" aria-labelledby="sf-${cfg.scheme}"><div class="wrap">
+    <div class="band-head"><div><span class="eyebrow">${esc(cfg.eye)}</span><h2 id="sf-${cfg.scheme}">${esc(cfg.title)}</h2></div><a class="more" href="#/${cfg.route}">All ${fmt(p.length)} →</a></div>
+    <p class="small" style="max-width:66ch;margin-top:4px">The '${esc(cfg.of)}' theme, subdivided — ${cfg.lead}. A candidate reading, from ${fmt(total)} stamps; a person confirms it over time. Generic and unclear subjects aren't named.</p>
+    <div class="grid g3" style="margin-top:16px">${top.map(x=>`<a class="card" href="${setHref(cfg.scheme,x.name)}" style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;color:inherit;text-decoration:none"><span>${dot("candidate","")} ${esc(x.name)}</span><strong style="font-family:var(--ff-display);font-size:1.5em">${fmt(x.candidate+x.confirmed)}</strong></a>`).join("")}</div>
+    ${CANDLEGEND}
+  </div></section>`;
+}
+function subfacetPage(cfg){
+  const p=subfacetRows(cfg.scheme);
+  const total=p.reduce((n,x)=>n+x.candidate+x.confirmed,0);
+  const rows=p.map(x=>`<li><a href="${setHref(cfg.scheme,x.name)}" style="display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--ink-4);color:inherit;text-decoration:none"><span>${dot("candidate","")} ${esc(x.name)}</span><span class="small">${fmt(x.candidate+x.confirmed)}${x.distinct<x.candidate?` <span style="color:var(--ink-3)">· ${fmt(x.distinct)} distinct</span>`:""}</span></a></li>`).join("");
+  return `<section class="band"><div class="wrap"><span class="eyebrow">${esc(cfg.eye)}</span>
+    <h1 id="pageTitle" tabindex="-1" style="margin-top:8px">${esc(cfg.title)}</h1>
+    <p class="lede" style="max-width:66ch">${fmt(p.length)} ${esc(cfg.dim.toLowerCase())} groups the atlas named — ${cfg.lead}. <strong>A candidate reading</strong>: each is only as good as the subject the machine read, and a person confirms it over time. Generic or unclear subjects are kept honest as unnamed.</p>
+    <ul style="list-style:none;padding:0;margin:20px 0 0;columns:2;column-gap:40px">${rows||"<li class=small>Nothing named yet.</li>"}</ul>
+    ${CANDLEGEND}
+  </div></section>`;
+}
 function territoriesBand(){
   const t=(DATA.facts&&DATA.facts.territories)||[];
   if(!t.length) return "";
@@ -1404,7 +1463,7 @@ function moneyPage(){
     ${CANDLEGEND}
   </div></section>`;
 }
-function homePage(){ return frontispiece()+glanceBand()+candidatesBand()+issuersBand()+themesBand()+territoriesBand()+formsBand()+moneyBand()+todayBand()+mapBand()+doorsBand()+recentBand(); }
+function homePage(){ return frontispiece()+glanceBand()+candidatesBand()+issuersBand()+themesBand()+peopleBand()+SUBFACETS.map(subfacetBand).join("")+territoriesBand()+formsBand()+moneyBand()+todayBand()+mapBand()+doorsBand()+recentBand(); }
 
 /* =====================================================================
    CHAPTERS · populated where the projection allows, awaiting where not
@@ -1469,6 +1528,16 @@ function mapCh(){
 }
 function peopleCh(){
   const ppl=DATA.people||[];
+  // Candidate subdivision of the 'people' theme into named individuals (ADR-0054) — shown as a
+  // ranking until confirmed named stamps exist; the awaiting plate only if nothing has been read.
+  const facet=((DATA.facts&&DATA.facts.people)||[]).slice();
+  if(!ppl.length && facet.length){
+    const max=Math.max(...facet.map(p=>p.candidate+p.confirmed));
+    const total=facet.reduce((n,p)=>n+p.candidate+p.confirmed,0);
+    const bubbles=facet.slice(0,60).map(p=>{const n=p.candidate+p.confirmed;return `<a class="bubble" href="${setHref('person',p.name)}" style="--s:${(52+74*(n/max)).toFixed(0)}px" title="${esc(p.name)} · ${n}"><span class="t">${esc(p.name)}</span><span class="c">${n}</span></a>`;}).join("");
+    const body=`<div class="card"><div class="bubbles">${bubbles}</div><p class="small muted" style="text-align:center;margin:10px 0 0">${fmt(facet.length)} people the machine named across ${fmt(total)} portrait readings — sized by how often each face recurs. A <strong>candidate</strong> reading; anonymous and allegorical figures aren't named. <a href="#/people">See the full list →</a></p></div>`;
+    return chapter("people",4,"The people","The faces a nation chose to print — monarchs, poets, engineers, a nurse. A kind of national autobiography.",body);
+  }
   if(!ppl.length) return awaiting("people",4,"The people","The faces a nation chose to print — monarchs, poets, engineers, a nurse. A kind of national autobiography.","Once the designs are read, this chapter gathers the people who appear on the stamps, and how often each recurs.",{src:"assets/plate-people.jpg",cap:"Plate · The gallery of faces"});
   const printed=ppl.filter(p=>!p.notPrinted), behind=ppl.filter(p=>p.notPrinted);
   const card=p=>`<div class="card" data-key="${esc(p.id)}"><span class="eyebrow">${esc(p.role)}</span><h3 style="margin-top:6px">${esc(p.name)}</h3><div class="mono muted" style="margin-top:4px">${esc(p.lived||"")}</div><p class="small" style="margin-top:10px">${p.stamps.length} stamp${p.stamps.length===1?"":"s"}: ${p.stamps.map(stampLink).join(", ")}</p></div>`;
@@ -1713,6 +1782,8 @@ function buildIndex(){
   if((DATA.candidates||[]).length) add("Pages","Page","Candidate readings","what the machine read, not yet confirmed","#/candidates",["candidates machine reading unconfirmed"]);
   if(DATA.facts&&(DATA.facts.issuers||[]).length) add("Pages","Page","Issuers","the collection by issuer name, as read","#/countries",["issuers countries where from"]);
   if(DATA.facts&&(DATA.facts.themes||[]).length) add("Pages","Page","Themes","the collection by subject theme, as read","#/themes",["themes subjects what about"]);
+  if(DATA.facts&&(DATA.facts.people||[]).length) add("Pages","Page","People","the 'people' theme subdivided into named individuals","#/people",["people persons faces who portraits named individuals"]);
+  SUBFACETS.forEach(f=>{ if(subfacetRows(f.scheme).length) add("Pages","Page",f.title,`the '${f.of}' theme subdivided by ${f.dim.toLowerCase()}`,"#/"+f.route,[f.scheme+" "+f.of+" "+f.dim]); });
   if(DATA.facts&&(DATA.facts.territories||[]).length) add("Pages","Page","Territories","issuers rolled up to the place, and which no longer exist","#/territories",["territories countries places extinct defunct"]);
   if(DATA.facts&&(DATA.facts.forms||[]).some(f=>f.name!=="single")) add("Pages","Page","Forms","the collection by philatelic form — sheets, blocks, covers","#/forms",["forms format miniature souvenir sheet block cover se-tenant strip first day"]);
   if(DATA.facts&&(DATA.facts.currencies||[]).some(c=>c.name!=="unmarked")) add("Pages","Page","Money","the face values by currency, as read","#/money",["money currency denomination face value franc pence cent"]);
@@ -1778,6 +1849,8 @@ function parseRoute(){
   if(seg[0]==="set"&&seg[1]) return {kind:"set",dim:seg[1],value:seg[2]?decodeURIComponent(seg.slice(2).join("/")):"*"};
   if(seg[0]==="countries"||seg[0]==="issuers") return {kind:"countries"};
   if(seg[0]==="themes") return {kind:"themes"};
+  if(seg[0]==="people") return {kind:"peoplefacet"};
+  { const f=subfacetByRoute(seg[0]); if(f) return {kind:"subfacet",scheme:f.scheme}; }
   if(seg[0]==="territories") return {kind:"territories"};
   if(seg[0]==="forms") return {kind:"forms"};
   if(seg[0]==="money"||seg[0]==="currencies") return {kind:"money"};
@@ -1809,6 +1882,8 @@ function navigate(){
     case "set":      html=setPage(r.dim,r.value); title=`${r.value==="*"?"Set":r.value} — Stamp Atlas`; break;
     case "countries": html=countriesPage(); title="Issuers — Stamp Atlas"; break;
     case "themes":   html=themesPage(); title="Themes — Stamp Atlas"; break;
+    case "peoplefacet": html=peoplePage(); title="The people — Stamp Atlas"; break;
+    case "subfacet": { const cfg=subfacetByScheme(r.scheme); html=subfacetPage(cfg); title=`${cfg.title} — Stamp Atlas`; break; }
     case "territories": html=territoriesPage(); title="Territories — Stamp Atlas"; break;
     case "forms":    html=formsPage(); title="Forms — Stamp Atlas"; break;
     case "money":    html=moneyPage(); title="Money — Stamp Atlas"; break;
