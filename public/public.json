@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T18:04:35.277Z",
+  "generatedAt": "2026-09-12T18:31:15.903Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -130,7 +130,7 @@
         "eligiblePopulation": 298
       }
     ],
-    "asOf": "2026-09-12T18:08:01.086Z",
+    "asOf": "2026-09-12T18:34:43.782Z",
     "namingProgress": {
       "namedByMachine": 5251,
       "individualStamps": 7260,
@@ -14131,6 +14131,2114 @@
         "source": "Wikipedia",
         "license": "CC BY-SA 4.0",
         "fetchedAt": "2026-09-12T16:52:03.268Z"
+      }
+    },
+    "people": {
+      "Rowland Hill": {
+        "title": "Rowland Hill",
+        "extract": "\n\nSir Rowland Hill, KCB, FRS was an English teacher, inventor and social reformer. He campaigned for a comprehensive reform of the postal system, based on the concept of Uniform Penny Post and his solution of pre-payment, facilitating the safe, speedy and cheap transfer of letters. Hill later served as a government postal official, and he is usually credited with originating the basic concepts of the modern postal service, including the invention of the postage stamp.",
+        "url": "https://en.wikipedia.org/wiki/Rowland_Hill",
+        "description": "Devisor of the British postal system (1795–1879)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:11.129Z"
+      },
+      "George Washington": {
+        "title": "George Washington",
+        "extract": "George Washington was a Founding Father and the first president of the United States, serving from 1789 to 1797. As commander of the Continental Army, Washington led Patriot forces to victory in the American Revolutionary War against the British Empire. He is commonly known as the Father of His Country for his role in bringing about American independence.",
+        "url": "https://en.wikipedia.org/wiki/George_Washington",
+        "description": "Founding Father, U.S. president from 1789 to 1797",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:11.298Z"
+      },
+      "Francisco Franco": {
+        "title": "Francisco Franco",
+        "extract": "Francisco Franco Bahamonde was a Spanish military general and the dictator of Spain from 1939 until his death in 1975. He had led the Nationalist forces in overthrowing the Second Spanish Republic during the Spanish Civil War from 1936 to 1939. This period in Spanish history, from the Nationalist victory to Franco's death, is commonly known as Francoist Spain.",
+        "url": "https://en.wikipedia.org/wiki/Francisco_Franco",
+        "description": "Dictator of Spain from 1939 to 1975",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:11.466Z"
+      },
+      "Queen Victoria": {
+        "title": "Queen Victoria",
+        "extract": "Victoria was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death in 1901. Her reign of 63 years and 216 days, which was longer than those of any of her predecessors, constituted the Victorian era, a period of industrial, political, scientific, and military change within the United Kingdom marked by a great expansion of the British Empire. In 1876, the British parliament voted to grant her the additional title of Empress of India.",
+        "url": "https://en.wikipedia.org/wiki/Queen_Victoria",
+        "description": "Queen of the United Kingdom from 1837 to 1901",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:11.641Z"
+      },
+      "Gustav Heinemann": {
+        "title": "Gustav Heinemann",
+        "extract": "Gustav Walter Heinemann was a German politician who was President of West Germany from 1969 to 1974. He served as mayor of Essen from 1946 to 1949, West German Minister of the Interior from 1949 to 1950, and Minister of Justice from 1966 to 1969.",
+        "url": "https://en.wikipedia.org/wiki/Gustav_Heinemann",
+        "description": "President of West Germany from 1969 to 1974",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:11.819Z"
+      },
+      "Walter Ulbricht": {
+        "title": "Walter Ulbricht",
+        "extract": "Walter Ernst Paul Ulbricht was a German communist politician and revolutionary. Ulbricht played a leading role in the creation of the Weimar-era Communist Party of Germany (KPD) and later in the early development and establishment of the German Democratic Republic. As the First Secretary of the Communist Socialist Unity Party from 1950 to 1971, he was the chief decision-maker in East Germany. From President Wilhelm Pieck's death in 1960, he was also the East German head of state until his own death in 1973. As the leader of a significant Communist satellite, Ulbricht had a degree of bargaining power with the Kremlin that he used effectively. For example, he demanded the building of the Berlin Wall in 1961 when the Kremlin was reluctant.",
+        "url": "https://en.wikipedia.org/wiki/Walter_Ulbricht",
+        "description": "Leader of East Germany from 1950 to 1971",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:11.993Z"
+      },
+      "Abraham Lincoln": {
+        "title": "Abraham Lincoln",
+        "extract": "Abraham Lincoln was the 16th president of the United States, serving from 1861 until his assassination in 1865. He led the United States through the American Civil War, defeating the Confederacy and playing a major role in the abolition of slavery.",
+        "url": "https://en.wikipedia.org/wiki/Abraham_Lincoln",
+        "description": "President of the United States from 1861 to 1865",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:12.170Z"
+      },
+      "José de San Martín": {
+        "title": "José de San Martín",
+        "extract": "José Francisco de San Martín y Matorras, nicknamed \"the Liberator of Argentina, Chile and Peru\", was an Argentine general and the primary leader of the southern and central parts of South America's successful struggle for independence from the Spanish Empire who served as the Protector of Peru. Born in Yapeyú, Corrientes, in modern-day Argentina, he left the Viceroyalty of the Río de la Plata at the early age of seven to study in Málaga, Spain.",
+        "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_de_San_Mart%C3%ADn",
+        "description": "Argentine general and leader (1778–1850)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:12.349Z"
+      },
+      "Cayetano Arellano": {
+        "title": "Cayetano Arellano",
+        "extract": "Cayetano Simplicio Arellano y Lonzón was a Filipino jurist who served as the first Chief Justice of the Philippines from 1899 to 1920.",
+        "url": "https://en.wikipedia.org/wiki/Cayetano_Arellano",
+        "description": "Chief Justice of the Philippines from 1901 to 1920",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:14.535Z"
+      },
+      "Mustafa Kemal Atatürk": {
+        "title": "Mustafa Kemal Atatürk",
+        "extract": "Mustafa Kemal Atatürk was a Turkish field marshal and statesperson who was the founder of the Republic of Turkey and served as its first president from 1923 until his death in 1938. He led sweeping reforms, turning Turkey into a secular, industrialising nation. Ideologically a secularist, republican, and nationalist, his policies and socio-political theories became known as Kemalism. Atatürk's personality cult and the Kemalist historiography developed around it have had significant and ongoing influences on Turkey's political culture and historical narrative.",
+        "url": "https://en.wikipedia.org/wiki/Mustafa_Kemal_Atat%C3%BCrk",
+        "description": "President of Turkey from 1923 to 1938",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:14.710Z"
+      },
+      "Benjamin Franklin": {
+        "title": "Benjamin Franklin",
+        "extract": "Benjamin Franklin was an American polymath who was one of the Founding Fathers of the United States; a drafter and signer of the Declaration of Independence; and the first postmaster general.",
+        "url": "https://en.wikipedia.org/wiki/Benjamin_Franklin",
+        "description": "American Founding Father and polymath (1706–1790)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:14.925Z"
+      },
+      "Simón Bolívar": {
+        "title": "Simón Bolívar",
+        "extract": "Simón José Antonio de la Santísima Trinidad Bolívar Palacios Ponte y Blanco was a Venezuelan military officer and statesman who led what are currently the countries of Bolivia, Colombia, Ecuador, Panama, Peru, and Venezuela to independence from the Spanish Empire. He is known colloquially as El Libertador, \"the Liberator,\" of America.",
+        "url": "https://en.wikipedia.org/wiki/Sim%C3%B3n_Bol%C3%ADvar",
+        "description": "Venezuelan statesman and military officer (1783–1830)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:15.094Z"
+      },
+      "Theodor Heuss": {
+        "title": "Theodor Heuss",
+        "extract": "Theodor Heuss was a German politician who served as the first president of West Germany from 1949 to 1959. His civil demeanour and cordial nature – somewhat a contrast to German nationalist traditions and the stern character of chancellor Konrad Adenauer – largely contributed to the stabilisation of democracy in West Germany during the Wirtschaftswunder years. Before beginning his career as a politician, Heuss had been a political journalist. Heuss is remembered as a major representative of social liberalism in Germany.",
+        "url": "https://en.wikipedia.org/wiki/Theodor_Heuss",
+        "description": "President of West Germany from 1949 to 1959",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:15.271Z"
+      },
+      "Jacqueline Kennedy": {
+        "title": "Jacqueline Kennedy Onassis",
+        "extract": "Jacqueline Lee Kennedy Onassis was the first lady of the United States from 1961 to 1963, as the wife of John F. Kennedy, the 35th president of the United States. She redefined the previously mostly ceremonial role into a platform for arts and culture by hosting multiple high-profile events at the White House and leading its restoration into being a historical site. Through her fashion and cultural literacy, she improved the global standing of the United States during the politically volatile Cold War. Her personal style became known as the \"Jackie Look\", which inspired worldwide fashion trends during the 1960s.",
+        "url": "https://en.wikipedia.org/wiki/Jacqueline_Kennedy_Onassis",
+        "description": "First Lady of the United States from 1961 to 1963",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:15.447Z"
+      },
+      "Duke of Caxias": {
+        "title": "Luís Alves de Lima e Silva, Duke of Caxias",
+        "extract": "Luís Alves de Lima e Silva, Duke of Caxias, nicknamed \"o Pacificador\" and \"o Duque de Ferro\", was an army officer, politician and monarchist of the Empire of Brazil. Like his father and uncles, Caxias pursued a military career. In 1823 he fought as a young officer in the Brazilian War of Independence against Portugal, then spent three years in Brazil's southernmost province, Cisplatina, as the government unsuccessfully resisted that province's secession in the Cisplatine War. Though his own father and uncles renounced Emperor Dom Pedro I during the protests of 1831, Caxias remained loyal. Pedro I abdicated in favor of his young son Dom Pedro II, whom Caxias instructed in swordsmanship and horsemanship and eventually befriended.",
+        "url": "https://en.wikipedia.org/wiki/Lu%C3%ADs_Alves_de_Lima_e_Silva%2C_Duke_of_Caxias",
+        "description": "Brazilian army officer and politician",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:16.567Z"
+      },
+      "Mahatma Gandhi": {
+        "title": "Mahatma Gandhi",
+        "extract": "Mohandas Karamchand Gandhi was an Indian lawyer, anti-colonial nationalist, and political ethicist who employed nonviolent resistance to lead the successful campaign for India's independence from British rule, and to later inspire movements for civil rights and freedom across the world. The honorific Mahātmā, first applied to him in 1914 in South Africa, is now used throughout the world.",
+        "url": "https://en.wikipedia.org/wiki/Mahatma_Gandhi",
+        "description": "Indian independence activist (1869–1948)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:16.735Z"
+      },
+      "Thomas Jefferson": {
+        "title": "Thomas Jefferson",
+        "extract": "Thomas Jefferson was a Founding Father and the third president of the United States, serving from 1801 to 1809. From 1797 to 1801, he served as the second vice president under John Adams. A prolific writer and philosopher, Jefferson was the primary author of the Declaration of Independence. His political philosophy, defined by republicanism, individual liberty, agrarianism, and limited government, formed the basis for Jeffersonian democracy. While he remains celebrated as an icon of American political values, Jefferson is also controversial for having owned more than 600 enslaved people.",
+        "url": "https://en.wikipedia.org/wiki/Thomas_Jefferson",
+        "description": "Founding Father, U.S. president from 1801 to 1809",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:16.909Z"
+      },
+      "Adolf Hitler": {
+        "title": "Adolf Hitler",
+        "extract": "Adolf Hitler was an Austrian-born German politician who was dictator of Germany in the Nazi era from 1933 until his suicide in 1945. He rose to power as the leader of the Nazi Party, becoming the chancellor of Germany in 1933 and then taking the title of Führer und Reichskanzler in 1934. Germany's invasion of Poland on 1 September 1939 under his leadership marked the outbreak of the Second World War. Throughout the ensuing conflict, Hitler was closely involved in the direction of German military operations and was central to the perpetration of the genocide of about six million Jews in the Holocaust as well as the deaths of millions of other victims.",
+        "url": "https://en.wikipedia.org/wiki/Adolf_Hitler",
+        "description": "Dictator of Germany from 1933 to 1945",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:17.074Z"
+      },
+      "Emilio Jacinto": {
+        "title": "Emilio Jacinto",
+        "extract": "Emilio Jacinto y Dizon was a Filipino general during the Philippine Revolution. He was one of the highest-ranking officers in the Philippine Revolution and was one of the highest-ranking officers of the revolutionary society Kataas-taasang, Kagalang-galang na Katipunan ng mga Anak ng Bayan, or simply and more popularly called Katipunan, being a member of its Supreme Council. He was elected Secretary of State for the Haring Bayang Katagalugan, a revolutionary government established during the outbreak of hostilities. He is popularly known in Philippine history textbooks as the Brains of the Katipunan while some contend he should be rightfully recognized as the \"Brains of the Revolution\". Jacinto was present in the so-called Cry of Pugad Lawin with Andrés Bonifacio, the Supremo of the Katipunan, and others of its members which signaled the start of the Revolution against the Spanish government in the islands.",
+        "url": "https://en.wikipedia.org/wiki/Emilio_Jacinto",
+        "description": "Filipino revolutionary (1875–1899)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:17.380Z"
+      },
+      "Franklin D. Roosevelt": {
+        "title": "Franklin D. Roosevelt",
+        "extract": "Franklin Delano Roosevelt, also known as FDR, was the 32nd president of the United States, serving from 1933 until his death in 1945. He is the longest-serving US president and the only one to have served more than two terms. His first two terms centered on combating the Great Depression, while his third and fourth focused on US involvement in World War II. A member of the Democratic Party, Roosevelt served in the New York State Senate from 1911 to 1913 and as the 44th governor of New York from 1929 to 1932.",
+        "url": "https://en.wikipedia.org/wiki/Franklin_D._Roosevelt",
+        "description": "President of the United States from 1933 to 1945",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:17.550Z"
+      },
+      "Dwight D. Eisenhower": {
+        "title": "Dwight D. Eisenhower",
+        "extract": "Dwight David \"Ike\" Eisenhower was the 34th president of the United States, serving from 1953 to 1961. In his previous military career, he commanded the Allied Expeditionary Force during World War II, including in Operation Torch in North Africa and Operation Overlord on D-Day in Normandy. For his distinguished service in the U.S. Army, Eisenhower was honored with the five-star rank of General of the Army.",
+        "url": "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower",
+        "description": "World War II general, U.S. president from 1953 to 1961",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:17.723Z"
+      },
+      "Joaquim Murtinho": {
+        "title": "Joaquim Murtinho",
+        "extract": "Joaquim Murtinho was a Brazilian physician and politician. Murtinho was born in Cuiabá, the capital of Mato Grosso, and moved to Rio de Janeiro for his education. He graduated from the Faculty of Medicine of Rio de Janeiro and became a physician and later a politician. Murtinho initially served as Minister of Industry, and Commerce (1899–1902) under president Prudente de Morais; then pursued austerity measures as Minister of Finance (1898–1902) under president Campos Sales. Murtinho also served two non-consecutive terms as senator for Mato Grosso, 1890–1896 and 1903–1911.",
+        "url": "https://en.wikipedia.org/wiki/Joaquim_Murtinho",
+        "description": "",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:19.074Z"
+      },
+      "Dag Hammarskjöld": {
+        "title": "Dag Hammarskjöld",
+        "extract": "Dag Hjalmar Agne Carl Hammarskjöld was a Swedish economist and diplomat who served as the second Secretary-General of the United Nations from April 1953 until his death in a plane crash in September 1961. As of 2026, he remains the youngest person to have held the post, having been only 47 years old when he was elected. He was a son of Hjalmar Hammarskjöld, who served as Prime Minister of Sweden from 1914 to 1917.",
+        "url": "https://en.wikipedia.org/wiki/Dag_Hammarskj%C3%B6ld",
+        "description": "UN Secretary-General from 1953 to 1961",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:19.245Z"
+      },
+      "Douglas MacArthur": {
+        "title": "Douglas MacArthur",
+        "extract": "Douglas MacArthur was an American general. He served with distinction in World War I; as chief of staff of the United States Army from 1930 to 1935; as Supreme Commander, Southwest Pacific Area, from 1942 to 1945; as Supreme Commander for the Allied Powers overseeing the occupation of Japan from 1945 to 1951; and as head of the United Nations Command in the Korean War from 1950 to 1951. He is one of only five people to hold the rank of General of the Army, and the only person to hold the rank of Field Marshal in the Philippine Army.",
+        "url": "https://en.wikipedia.org/wiki/Douglas_MacArthur",
+        "description": "United States Army general (1880–1964)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:19.423Z"
+      },
+      "Emilio Aguinaldo": {
+        "title": "Emilio Aguinaldo",
+        "extract": "Emilio Aguinaldo y Famy was a Filipino revolutionary, politician, and military leader who served as president of the Philippines from 1899 to 1901, and the president of the first constitutional republic in Asia. He led Philippine forces first against Spain in the Philippine Revolution (1896–1898), then in the Spanish–American War (1898), and later against the United States during the Philippine–American War (1899–1901). He is regarded in the Philippines as the country's first president during the period of the First Philippine Republic, although his presidency was not widely recognized outside of the revolutionary Philippines.",
+        "url": "https://en.wikipedia.org/wiki/Emilio_Aguinaldo",
+        "description": "Filipino revolutionary leader (1869–1964)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:19.602Z"
+      },
+      "George W. Norris": {
+        "title": "George W. Norris",
+        "extract": "George William Norris was an American progressive politician from Nebraska. He served in the United States House of Representatives as a Republican from 1903 to 1913, and in the United States Senate from 1913 to 1943. Disillusioned with the Republican Party, he became an independent in 1936. In the Senate, Norris was the chairman of the powerful Judiciary Committee and the Agriculture and Forestry Committee.",
+        "url": "https://en.wikipedia.org/wiki/George_W._Norris",
+        "description": "American politician (1861–1944)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:20.350Z"
+      },
+      "John F. Kennedy": {
+        "title": "John F. Kennedy",
+        "extract": "John Fitzgerald Kennedy, also known as JFK, was the 35th president of the United States, serving from 1961 until his assassination in 1963. He was the youngest person elected president, at 43 years, and the first Catholic president. Kennedy served at the height of the Cold War, and the majority of his foreign policy concerned relations with the Soviet Union and Cuba. A member of the Democratic Party, Kennedy represented Massachusetts in both houses of the United States Congress before his presidency.",
+        "url": "https://en.wikipedia.org/wiki/John_F._Kennedy",
+        "description": "President of the United States from 1961 to 1963",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:20.524Z"
+      },
+      "Josip Broz Tito": {
+        "title": "Josip Broz Tito",
+        "extract": "Josip Broz, commonly known as Tito, was a Yugoslav communist revolutionary and politician who led Yugoslavia as prime minister from 1943 to 1963 and as president from 1953 until his death in 1980. He was the longtime leader of the League of Communists of Yugoslavia, supreme commander of the Yugoslav Partisans during World War II, and one of the founders of the Non-Aligned Movement. The political ideology and policies associated with his rule are known as Titoism.",
+        "url": "https://en.wikipedia.org/wiki/Josip_Broz_Tito",
+        "description": "Leader of Yugoslavia from 1943 to 1980",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:20.702Z"
+      },
+      "Nicolaus Copernicus": {
+        "title": "Nicolaus Copernicus",
+        "extract": "Nicolaus Copernicus was a Renaissance polymath who formulated a model of the universe that placed the Sun rather than Earth at its center. The publication of Copernicus's model in his book De revolutionibus orbium coelestium, just before his death in 1543, was a major event in the history of science, triggering the Copernican Revolution and making a pioneering contribution to the Scientific Revolution. Though a similar heliocentric model had been developed eighteen centuries earlier by Aristarchus of Samos, an ancient Greek astronomer, Copernicus likely arrived at his model independently.",
+        "url": "https://en.wikipedia.org/wiki/Nicolaus_Copernicus",
+        "description": "Mathematician and astronomer (1473–1543)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:20.879Z"
+      },
+      "Rafael Trujillo": {
+        "title": "Rafael Trujillo",
+        "extract": "Rafael Leónidas Trujillo Molina, nicknamed \"El Jefe\", was a Dominican military officer and dictator who ruled the Dominican Republic from August 1930 until his assassination in May 1961. He was the country's 36th and 39th president, from 1930 to 1938 and from 1942 to 1952 respectively. He was also the country's first generalissimo, its de facto most powerful position at the time, from 1930 until his assassination. In that position, Trujillo ruled the country under figurehead presidents.",
+        "url": "https://en.wikipedia.org/wiki/Rafael_Trujillo",
+        "description": "Dictator of the Dominican Republic from 1930 to 1961",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:21.052Z"
+      },
+      "William Wordsworth": {
+        "title": "William Wordsworth",
+        "extract": "William Wordsworth was an English Romantic poet who, with Samuel Taylor Coleridge, helped to launch the Romantic Age in English literature with their joint publication Lyrical Ballads (1798).",
+        "url": "https://en.wikipedia.org/wiki/William_Wordsworth",
+        "description": "English Romantic poet (1770–1850)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:21.227Z"
+      },
+      "Andrew Jackson": {
+        "title": "Andrew Jackson",
+        "extract": "Andrew Jackson was the seventh president of the United States from 1829 to 1837. He rose to fame as a U.S. Army general and served in both houses of the U.S. Congress. His political philosophy, which dominated his presidency, became the basis for the rise of Jacksonian democracy. His legacy is controversial: being praised as an advocate for white working Americans and preserving the union of states, and criticized for his racist policies, particularly towards Native Americans.",
+        "url": "https://en.wikipedia.org/wiki/Andrew_Jackson",
+        "description": "President of the United States from 1829 to 1837",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:21.403Z"
+      },
+      "Bronisław Malinowski": {
+        "title": "Bronisław Malinowski",
+        "extract": "Bronisław Kasper Malinowski was a Polish anthropologist and ethnologist whose writings on ethnography, social theory, and field research have exerted a lasting influence on the discipline of anthropology.",
+        "url": "https://en.wikipedia.org/wiki/Bronis%C5%82aw_Malinowski",
+        "description": "Polish anthropologist and ethnographer (1884–1942)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:22.424Z"
+      },
+      "Chief Joseph": {
+        "title": "Chief Joseph",
+        "extract": "Hin-mah-too-yah-lat-kekt, popularly known as Chief Joseph, Young Joseph, or Joseph the Younger, was a leader of the wal-lam-wat-kain (Wallowa) band of Nez Perce, a Native American tribe of the interior Pacific Northwest region of the United States, in the latter half of the 19th century. He succeeded his father Tuekakas in the early 1870s.",
+        "url": "https://en.wikipedia.org/wiki/Chief_Joseph",
+        "description": "Native American leader (1840–1904)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:22.605Z"
+      },
+      "Elizabeth II": {
+        "title": "Elizabeth II",
+        "extract": "Elizabeth II was Queen of the United Kingdom and other Commonwealth realms from 6 February 1952 until her death in 2022. She was queen regnant of 32 sovereign states during her lifetime and was the monarch of 15 realms at her death. Her reign of 70 years and 214 days is the longest of any British monarch, the second-longest of any sovereign state, and the longest of any queen regnant in history.",
+        "url": "https://en.wikipedia.org/wiki/Elizabeth_II",
+        "description": "Queen of the United Kingdom from 1952 to 2022",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:23.442Z"
+      },
+      "Ferdinand Marcos": {
+        "title": "Ferdinand Marcos",
+        "extract": "Ferdinand Emmanuel Edralin Marcos Sr. was a Filipino lawyer, dictator, and kleptocrat who served as the tenth president of the Philippines from 1965 to 1986. From 1972 to 1981, Marcos ruled the Philippines under martial law, embracing a policy of \"constitutional authoritarianism.\" Following the lifting of martial law in 1981, a wide-ranging economic crisis, and the assassination of Ninoy Aquino, Marcos was deposed in 1986 by the People Power Revolution and was succeeded as president by Aquino's widow, Corazon Aquino. He was also the father of Bongbong Marcos, the incumbent president of the Philippines since 2022.",
+        "url": "https://en.wikipedia.org/wiki/Ferdinand_Marcos",
+        "description": "President of the Philippines from 1965 to 1986",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:23.618Z"
+      },
+      "Fiorello LaGuardia": {
+        "title": "Fiorello La Guardia",
+        "extract": "Fiorello Henry La Guardia was an American attorney and politician who served as the 100th mayor of New York City from 1934 to 1946. He previously represented New York in the U.S. House of Representatives from 1917 to 1919 and again from 1923 to 1933. He was known for his irascible, energetic, and charismatic personality and diminutive, rotund stature. A member of the Republican Party, La Guardia was frequently cross-endorsed by parties other than his own, especially parties on the left under New York's electoral fusion laws. A panel of 69 scholars in 1993 ranked him as the best big city mayor in American history.",
+        "url": "https://en.wikipedia.org/wiki/Fiorello_La_Guardia",
+        "description": "American politician (1882–1947)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:24.264Z"
+      },
+      "Frank Lloyd Wright": {
+        "title": "Frank Lloyd Wright",
+        "extract": "Frank Lloyd Wright Sr. was an American architect, designer, writer, and educator. He designed more than 1,000 structures over a creative period of 70 years. Wright played a key role in the architectural movements of the twentieth century, influencing architects worldwide through his works and mentoring hundreds of apprentices in his Taliesin Fellowship. Wright believed in designing in harmony with humanity and the environment, a philosophy he called organic architecture. This philosophy was exemplified in Fallingwater (1935), which has been called \"the best all-time work of American architecture\".",
+        "url": "https://en.wikipedia.org/wiki/Frank_Lloyd_Wright",
+        "description": "American architect (1867–1959)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:24.439Z"
+      },
+      "Friedrich Engels": {
+        "title": "Friedrich Engels",
+        "extract": "Friedrich Engels was a German philosopher, social and political theorist, and revolutionary socialist. He is best known for his lifelong collaboration with Karl Marx, with whom he co-authored The Communist Manifesto (1848) and developed the political and philosophical system that came to be known as Marxism. After Marx's death, Engels served as the editor of his works, completing the second and third volumes of Das Kapital.",
+        "url": "https://en.wikipedia.org/wiki/Friedrich_Engels",
+        "description": "German philosopher and socialist (1820–1895)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:24.615Z"
+      },
+      "Gustaf Mannerheim": {
+        "title": "Carl Gustaf Emil Mannerheim",
+        "extract": "Baron Carl Gustaf Emil Mannerheim was a Finnish military commander and statesman. He served as the military leader of the Whites in the Finnish Civil War (1918), as regent of Finland (1918–1919), as commander-in-chief of the Finnish Defence Forces during World War II (1939–1945), and as the president of Finland (1944–1946). He became Finland's only field marshal in 1933 and was appointed honorary Marshal of Finland in 1942.",
+        "url": "https://en.wikipedia.org/wiki/Carl_Gustaf_Emil_Mannerheim",
+        "description": "Finnish military leader and statesman (1867–1951)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:25.201Z"
+      },
+      "James Monroe": {
+        "title": "James Monroe",
+        "extract": "James Monroe was a Founding Father and the fifth president of the United States, serving from 1817 to 1825. He was the last Founding Father to serve as president, as well as the last president of the Virginia dynasty. A member of the Democratic-Republican Party, Monroe's presidency coincided with the Era of Good Feelings, in which the First Party System era of American politics concluded. He issued the Monroe Doctrine, a policy aimed at limiting European colonialism in the Americas.",
+        "url": "https://en.wikipedia.org/wiki/James_Monroe",
+        "description": "Founding Father, U.S. president from 1817 to 1825",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:25.380Z"
+      },
+      "Jason Lee": {
+        "title": "Jason Lee",
+        "extract": "Jason Michael Lee is an American actor, filmmaker, photographer, and former professional skateboarder. He is known for playing Earl Hickey in the television comedy series My Name Is Earl, for which he was nominated for the Golden Globe Award for Best Actor in a Television Series – Musical or Comedy in 2005 and 2006. He is also known for his roles in Kevin Smith films such as Mallrats (1995), Chasing Amy (1997), Dogma (1999), Jay and Silent Bob Strike Back (2001), Jersey Girl (2004), Clerks II (2006), Cop Out (2010), and Jay and Silent Bob Reboot (2019). Lee won the Independent Spirit Award for Best Supporting Male for his performance in Chasing Amy.",
+        "url": "https://en.wikipedia.org/wiki/Jason_Lee",
+        "description": "American actor and skateboarder (born 1970)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:25.561Z"
+      },
+      "José Bonifácio": {
+        "title": "José Bonifácio de Andrada e Silva",
+        "extract": "José Bonifácio de Andrada e Silva was a Brazilian statesman, naturalist, mineralist, professor and poet, born in Santos, São Paulo, then part of the Portuguese Empire.",
+        "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Bonif%C3%A1cio_de_Andrada_e_Silva",
+        "description": "Brazilian politician (1763–1838)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:26.316Z"
+      },
+      "Karl Marx": {
+        "title": "Karl Marx",
+        "extract": "Karl Marx was a German philosopher, social and political theorist, and revolutionary socialist. He developed the theory of historical materialism, analysing societal structure and change, particularly class struggle under capitalism, and predicting the system's ultimate replacement by communism. Marx co-authored The Communist Manifesto (1848) with Friedrich Engels, and undertook a critique of classical political economy in his magnum opus, Das Kapital (1867–1894). His ideas and their later development, collectively known as Marxism, have had enormous influence on intellectual, political, and social history, and have inspired revolutionary movements in many countries.",
+        "url": "https://en.wikipedia.org/wiki/Karl_Marx",
+        "description": "German philosopher and socialist (1818–1883)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:26.488Z"
+      },
+      "Lapu-Lapu": {
+        "title": "Lapulapu",
+        "extract": "Lapulapu, also spelled Lapu-Lapu, and whose name was first recorded as Çilapulapu, was a Datu of Mactan, an island now part of the Philippines.",
+        "url": "https://en.wikipedia.org/wiki/Lapulapu",
+        "description": "Datu of Mactan (fl. 1521)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:26.663Z"
+      },
+      "Marie Curie": {
+        "title": "Marie Curie",
+        "extract": "Maria Salomea Skłodowska Curie, better known as Marie Curie, was a Polish and naturalised-French physicist and chemist. She shared the 1903 Nobel Prize in Physics with her husband, Pierre Curie, \"for their joint researches on the radioactivity phenomena discovered by Professor Henri Becquerel\". She won the 1911 Nobel Prize in Chemistry \"[for] the discovery of the elements radium and polonium, by the isolation of radium and the study of the nature and compounds of this remarkable element\".",
+        "url": "https://en.wikipedia.org/wiki/Marie_Curie",
+        "description": "Polish-French physicist and chemist (1867–1934)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:26.829Z"
+      },
+      "Mother Teresa": {
+        "title": "Mother Teresa",
+        "extract": "Anjezë Gonxhe Bojaxhiu, better known as Mother Teresa or Saint Mother Teresa of Calcutta, was an Albanian-Indian Catholic nun, founder of the Missionaries of Charity and a Catholic saint.",
+        "url": "https://en.wikipedia.org/wiki/Mother_Teresa",
+        "description": "Albanian-Indian Catholic saint (1910–1997)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:26.997Z"
+      },
+      "Nathan Söderblom": {
+        "title": "Nathan Söderblom",
+        "extract": "Lars Olof Jonathan Söderblom was a Swedish bishop. He was the Church of Sweden Archbishop of Uppsala from 1914 to 1931, and recipient of the 1930 Nobel Peace Prize. He is commemorated in the Calendar of Saints of the Lutheran Church on 12 July.",
+        "url": "https://en.wikipedia.org/wiki/Nathan_S%C3%B6derblom",
+        "description": "Swedish bishop",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:28.203Z"
+      },
+      "Oswaldo Cruz": {
+        "title": "Oswaldo Cruz",
+        "extract": "Oswaldo Gonçalves Cruz, was a Brazilian physician, pioneer bacteriologist, epidemiologist and public health officer and the founder of the Oswaldo Cruz Institute.",
+        "url": "https://en.wikipedia.org/wiki/Oswaldo_Cruz",
+        "description": "Brazilian physician and bacteriologist (1872–1917)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:28.378Z"
+      },
+      "Patrick Henry": {
+        "title": "Patrick Henry",
+        "extract": "Patrick Henry was an American politician, planter and orator who declared to the Second Virginia Convention (1775): \"Give me liberty or give me death!\" A Founding Father, he served as the first and sixth post-colonial governor of Virginia, from 1776 to 1779 and from 1784 to 1786.",
+        "url": "https://en.wikipedia.org/wiki/Patrick_Henry",
+        "description": "American Founding Father (1736–1799)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:28.972Z"
+      },
+      "Rudolf Virchow": {
+        "title": "Rudolf Virchow",
+        "extract": "Rudolf Ludwig Carl Virchow was a German physician, anthropologist, pathologist, prehistorian, biologist, writer, editor, and politician. He is known as \"the father of modern pathology\" and as the founder of social medicine, and to his colleagues, the \"Pope of medicine\".",
+        "url": "https://en.wikipedia.org/wiki/Rudolf_Virchow",
+        "description": "German doctor and polymath (1821–1902)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:29.691Z"
+      },
+      "Rui Barbosa": {
+        "title": "Ruy Barbosa",
+        "extract": "Ruy Barbosa de Oliveira, also known as Rui Barbosa, was a Brazilian politician, writer, jurist, philologist, journalist and diplomat.",
+        "url": "https://en.wikipedia.org/wiki/Ruy_Barbosa",
+        "description": "Brazilian politician (1849–1923)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:30.426Z"
+      },
+      "Sukarno": {
+        "title": "Sukarno",
+        "extract": "Sukarno was an Indonesian statesman, activist, and revolutionary who served as the first president of Indonesia from 1945 to 1967.",
+        "url": "https://en.wikipedia.org/wiki/Sukarno",
+        "description": "President of Indonesia from 1945 to 1967",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:30.590Z"
+      },
+      "Sun Yat-sen": {
+        "title": "Sun Yat-sen",
+        "extract": "Sun Yat-sen was a Chinese physician, revolutionary and political philosopher who founded the Republic of China (ROC) and the Kuomintang (KMT). Sun is credited with leading the 1911 Revolution and overthrowing the Qing dynasty. He served as the first president of the Provisional Government of the Republic of China (1912) and as the inaugural premier of the Kuomintang.",
+        "url": "https://en.wikipedia.org/wiki/Sun_Yat-sen",
+        "description": "Chinese revolutionary and statesman (1866–1925)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:30.764Z"
+      },
+      "Theodore Roosevelt": {
+        "title": "Theodore Roosevelt",
+        "extract": "Theodore Roosevelt Jr. was the 26th president of the United States, serving from 1901 to 1909. Previously serving for six months as vice president under William McKinley, Roosevelt became president after McKinley's assassination in 1901. He was 42 years old upon his first inauguration, making him the youngest person to hold the office.",
+        "url": "https://en.wikipedia.org/wiki/Theodore_Roosevelt",
+        "description": "President of the United States from 1901 to 1909",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:30.937Z"
+      },
+      "Thomas Paine": {
+        "title": "Thomas Paine",
+        "extract": "Thomas Paine was an English-born American Founding Father, inventor, political philosopher, and statesman. His pamphlets Common Sense (1776) and The American Crisis (1776–1783) framed the Patriot argument for independence from Great Britain at the outset of the American Revolution. Paine advanced Enlightenment-era arguments for human rights that shaped revolutionary discourse on both sides of the Atlantic.",
+        "url": "https://en.wikipedia.org/wiki/Thomas_Paine",
+        "description": "English-born philosopher and author (1737–1809)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:31.111Z"
+      },
+      "Vladimir Lenin": {
+        "title": "Vladimir Lenin",
+        "extract": "Vladimir Ilyich Ulyanov, better known as Vladimir Lenin, was a Russian revolutionary, politician, and political theorist. He served as the first and founding head of government of Soviet Russia from 1917 to 1924 and of the Soviet Union from 1922 to 1924. Ideologically a Marxist, his developments to the ideology are called Leninism.",
+        "url": "https://en.wikipedia.org/wiki/Vladimir_Lenin",
+        "description": "Leader of the Soviet Union from 1922 to 1924",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:31.284Z"
+      },
+      "William Shakespeare": {
+        "title": "William Shakespeare",
+        "extract": "William Shakespeare was an English playwright, poet and actor. He is widely regarded as the greatest writer in the English language and the world's pre-eminent dramatist. He is often called England's national poet and the \"Bard of Avon\" or simply \"the Bard\". His extant works, including collaborations, consist of some 39 plays, 154 sonnets, 3 long narrative poems and a few other verses, some of uncertain authorship. His plays have been translated into every major living language and are performed more often than those of any other playwright. Shakespeare remains arguably the most influential writer in the English language, and his works continue to be studied and reinterpreted.",
+        "url": "https://en.wikipedia.org/wiki/William_Shakespeare",
+        "description": "English playwright and poet (1564–1616)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:31.458Z"
+      },
+      "Adolph von Menzel": {
+        "title": "Adolph Menzel",
+        "extract": "Adolph Friedrich Erdmann von Menzel was a German Realist artist noted for drawings, etchings, and paintings. Along with Caspar David Friedrich, he is considered one of the two most prominent German painters of the 19th century, and was the most successful artist of his era in Germany. First known as Adolph Menzel, he was knighted in 1898 and changed his name to Adolph von Menzel.",
+        "url": "https://en.wikipedia.org/wiki/Adolph_Menzel",
+        "description": "German artist (1815–1905)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:32.539Z"
+      },
+      "Albert Einstein": {
+        "title": "Albert Einstein",
+        "extract": "Albert Einstein was a German-born theoretical physicist best known for developing the theory of relativity. Einstein also made important contributions to quantum theory. His mass–energy equivalence formula E = mc2, which arises from special relativity, has been called \"the world's most famous equation\". He received the 1921 Nobel Prize in Physics for \"his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect\".",
+        "url": "https://en.wikipedia.org/wiki/Albert_Einstein",
+        "description": "German-born theoretical physicist (1879–1955)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:32.714Z"
+      },
+      "Alexander Hamilton": {
+        "title": "Alexander Hamilton",
+        "extract": "Alexander Hamilton was an American military officer, statesman, and Founding Father who served as the first U.S. secretary of the treasury from 1789 to 1795 under the presidency of George Washington. He also founded America's first political party, the Federalist Party, in 1791.",
+        "url": "https://en.wikipedia.org/wiki/Alexander_Hamilton",
+        "description": "American Founding Father (1750s–1804)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:32.891Z"
+      },
+      "Alexander the Great": {
+        "title": "Alexander the Great",
+        "extract": "Alexander III of Macedon, most commonly known as Alexander the Great, was king of the ancient Greek kingdom of Macedon from 336 BC until his death. He was the son of Philip II, born to him by his fourth wife, Olympias, and ascended to the throne at the age of 20 after Philip was assassinated. Alexander spent most of his reign conducting a lengthy military campaign throughout Asia and Egypt, and by the age of 30, he had created one of the largest empires in history, stretching from Greece to northwestern India. He was undefeated in battle and is widely considered to be one of history's greatest and most successful military commanders.",
+        "url": "https://en.wikipedia.org/wiki/Alexander_the_Great",
+        "description": "King of Macedon from 336 to 323 BC",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:33.066Z"
+      },
+      "Alexander von Humboldt": {
+        "title": "Alexander von Humboldt",
+        "extract": "Friedrich Wilhelm Heinrich Alexander von Humboldt was a German polymath, geographer, naturalist, explorer, and proponent of Romantic philosophy and science. He was the younger brother of the Prussian minister, philosopher, and linguist Wilhelm von Humboldt (1767–1835). Humboldt's quantitative work on botanical geography laid the foundation for the field of biogeography, while his advocacy of long-term systematic geophysical measurement pioneered modern geomagnetic and meteorological monitoring. Humboldt and Carl Ritter are both regarded as the founders of modern geography as they established it as an independent scientific discipline.",
+        "url": "https://en.wikipedia.org/wiki/Alexander_von_Humboldt",
+        "description": "German polymath (1769–1859)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:33.239Z"
+      },
+      "Alfons Mucha": {
+        "title": "Alphonse Mucha",
+        "extract": "Alfons Maria Mucha, known in English as Alphonse Mucha, was a Czech painter, illustrator, and graphic artist. Living in Paris during the Art Nouveau period, he was widely known for his distinctly stylised and decorative theatrical posters, particularly those of Sarah Bernhardt. He produced illustrations, advertisements, decorative panels, as well as designs, which became among the best-known images of the period.",
+        "url": "https://en.wikipedia.org/wiki/Alphonse_Mucha",
+        "description": "Czech painter, illustrator and graphic artist (1860–1939)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:33.442Z"
+      },
+      "Alfred E. Smith": {
+        "title": "Al Smith",
+        "extract": "Alfred Emanuel Smith was an American politician who served as the 42nd governor of New York from 1919 to 1920 and again from 1923 to 1928. A member of the Democratic Party, he was the party's presidential nominee in the 1928 presidential election, losing to Republican nominee Herbert Hoover in a landslide.",
+        "url": "https://en.wikipedia.org/wiki/Al_Smith",
+        "description": "American politician (1873–1944)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:34.202Z"
+      },
+      "Álvar Núñez Cabeza de Vaca": {
+        "title": "Álvar Núñez Cabeza de Vaca",
+        "extract": "Álvar Núñez Cabeza de Vaca was a Spanish explorer of the New World, and one of four survivors of the 1527 Narváez expedition. During eight years of travelling across what is today the Southwestern United States, he became a trader, evangelist, and faith healer to various Native American tribes before reconnecting with Spanish civilization in Mexico in 1536.",
+        "url": "https://en.wikipedia.org/wiki/%C3%81lvar_N%C3%BA%C3%B1ez_Cabeza_de_Vaca",
+        "description": "Spanish explorer of the New World",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:34.378Z"
+      },
+      "Andrew Carnegie": {
+        "title": "Andrew Carnegie",
+        "extract": "Andrew Carnegie was a Scottish-American industrialist and philanthropist. Carnegie led the expansion of the American steel industry in the late-19th century and became one of the richest Americans in history.",
+        "url": "https://en.wikipedia.org/wiki/Andrew_Carnegie",
+        "description": "American industrialist and philanthropist (1835–1919)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:34.551Z"
+      },
+      "Andrew W. Mellon": {
+        "title": "Andrew Mellon",
+        "extract": "Andrew William Mellon, known also as A. W. Mellon, was an American banker, businessman, industrialist, philanthropist, art collector, and politician. The son of Mellon family patriarch Thomas Mellon, he established a vast business empire before moving into politics. He served as United States Secretary of the Treasury from March 9, 1921, to February 12, 1932, presiding over the boom years of the 1920s and the Wall Street crash of 1929. A conservative Republican, Mellon favored policies that reduced taxation and the national debt of the United States in the aftermath of World War I. Mellon also helped fund and manage Kennywood Park in West Mifflin, Pennsylvania.",
+        "url": "https://en.wikipedia.org/wiki/Andrew_Mellon",
+        "description": "American businessman and politician (1855-1937)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:36.281Z"
+      },
+      "Anita Garibaldi": {
+        "title": "Anita Garibaldi",
+        "extract": "Anita Garibaldi was a Brazilian naturalized Italian republican revolutionary, who was the wife and comrade-in-arms of Italian revolutionary Giuseppe Garibaldi. Their partnership epitomized the spirit of the 19th century's Age of Romanticism and revolutionary liberalism.",
+        "url": "https://en.wikipedia.org/wiki/Anita_Garibaldi",
+        "description": "Brazilian revolutionary (1821–1849)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:36.452Z"
+      },
+      "Arkady Gaidar": {
+        "title": "Arkady Gaidar",
+        "extract": "Arkady Petrovich Gaidar was a Russian Soviet writer, whose stories were very popular among Soviet children, and a Red Army commander.",
+        "url": "https://en.wikipedia.org/wiki/Arkady_Gaidar",
+        "description": "Soviet children's writer (1904–1941)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:36.633Z"
+      },
+      "August Bebel": {
+        "title": "August Bebel",
+        "extract": "Ferdinand August Bebel was a German social democratic politician. One of the founders of the Social Democratic Party of Germany (SPD), he was a leader of the German workers' movement for over four decades. Bebel served as a member of parliament in the North German Confederation from 1867 to 1870 and in the German Empire from 1871 until his death in 1913, becoming the movement's leading parliamentary voice.",
+        "url": "https://en.wikipedia.org/wiki/August_Bebel",
+        "description": "German social democratic politician (1840–1913)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:36.807Z"
+      },
+      "Augustus": {
+        "title": "Augustus",
+        "extract": "Augustus, also known as Octavian, was the founder of the Roman Empire and the first Roman emperor from 27 BC until his death in AD 14. The reign of Augustus initiated an imperial cult and an era of imperial peace when the Roman world was largely free of armed conflict. The principate, a style of government in which the emperor showed nominal deference to the Senate, was established during his reign and lasted until the Crisis of the Third Century.",
+        "url": "https://en.wikipedia.org/wiki/Augustus",
+        "description": "Roman emperor from 27 BC to AD 14",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:36.973Z"
+      },
+      "Benito Mussolini": {
+        "title": "Benito Mussolini",
+        "extract": "Benito Amilcare Andrea Mussolini was an Italian politician, journalist, and dictator who led the Kingdom of Italy as a fascist dictatorship from 1922 until his overthrow in 1943. Known under his rule as Il Duce, he founded fascism in 1919 with the creation of the Fasci Italiani di Combattimento, which became the National Fascist Party (PNF) in 1921. Mussolini was appointed Prime Minister of Italy after the March on Rome in 1922, establishing a totalitarian fascist dictatorship. He oversaw Italy's participation in World War II as a prominent member of the Axis Powers, and was executed by the Italian resistance near the end of the war in 1945.",
+        "url": "https://en.wikipedia.org/wiki/Benito_Mussolini",
+        "description": "Dictator of Italy from 1922 to 1943",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:37.149Z"
+      },
+      "Benjamin Harrison": {
+        "title": "Benjamin Harrison",
+        "extract": "Benjamin Harrison was the 23rd president of the United States, serving from 1889 to 1893. He was a member of the Harrison family of Virginia—a grandson of the ninth president, William Henry Harrison, and a great-grandson of Benjamin Harrison V, a Founding Father. A Union army veteran and a Republican, he defeated Democratic Party incumbent Grover Cleveland to win the presidency in the 1888 United States presidential election by winning the Electoral College while losing the popular vote. He was defeated by Cleveland in the 1892 United States presidential election, becoming the first president to be succeeded in office by his predecessor.",
+        "url": "https://en.wikipedia.org/wiki/Benjamin_Harrison",
+        "description": "President of the United States from 1889 to 1893",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:37.323Z"
+      },
+      "Bernardino Rivadavia": {
+        "title": "Bernardino Rivadavia",
+        "extract": "Bernardino de la Trinidad González Rivadavia was the first President of Argentina, then called the United Provinces of the Río de la Plata, from February 8, 1826 to June 27, 1827.",
+        "url": "https://en.wikipedia.org/wiki/Bernardino_Rivadavia",
+        "description": "1st President of Argentina",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:37.498Z"
+      },
+      "Betsy Ross": {
+        "title": "Betsy Ross",
+        "extract": "Elizabeth Griscom Ross, also known by her second and third married names, Ashburn and Claypoole, was an American upholsterer who was credited by her relatives in 1870 with designing and making the first U.S. flag, commonly known as the Betsy Ross flag. Though historians dismissed the story both then and now, Ross family tradition holds that General George Washington, commander-in-chief of the Continental Army and two members of a congressional committee—Robert Morris and George Ross—visited Ross in 1776. Ross convinced Washington to change the shape of the stars in a sketch of a flag he showed her from six-pointed to five-pointed by demonstrating that it was easier and speedier to cut the latter. However, there is no archival evidence or other recorded verbal tradition to substantiate this story of the first U.S. flag. It appears that the story first surfaced in the writings of her grandson in the 1870s, with no mention or documentation in earlier decades. The myth was later incorporated into a large oil painting that appeared at the 1893 Chicago World's fair. The painter, Charles Weisgerber, subsequently promoted the myth, even buying a house he deemed The Betsy Ross House. He solicited money nationwide for the upkeep of the house as a tourist attraction. With the solicitations, he provided a synopsis of the myth with reproductions of his painting.",
+        "url": "https://en.wikipedia.org/wiki/Betsy_Ross",
+        "description": "American upholsterer (1752–1836)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:37.673Z"
+      },
+      "Brien McMahon": {
+        "title": "Brien McMahon",
+        "extract": "Brien McMahon was an American lawyer and politician who served in the United States Senate from 1945 to 1952. McMahon was a major figure in the establishment of the Atomic Energy Commission, through his authorship of the Atomic Energy Act of 1946.",
+        "url": "https://en.wikipedia.org/wiki/Brien_McMahon",
+        "description": "American politician (1903–1952)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:37.853Z"
+      },
+      "Campos Sales": {
+        "title": "Campos Sales",
+        "extract": "Manoel Ferraz de Campos Sales was a Brazilian lawyer, coffee farmer, and politician who served as the fourth president of Brazil from 1898 to 1902.",
+        "url": "https://en.wikipedia.org/wiki/Campos_Sales",
+        "description": "President of Brazil from free 1898 to 1902",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:38.031Z"
+      },
+      "Carl Gustaf Emil Mannerheim": {
+        "title": "Carl Gustaf Emil Mannerheim",
+        "extract": "Baron Carl Gustaf Emil Mannerheim was a Finnish military commander and statesman. He served as the military leader of the Whites in the Finnish Civil War (1918), as regent of Finland (1918–1919), as commander-in-chief of the Finnish Defence Forces during World War II (1939–1945), and as the president of Finland (1944–1946). He became Finland's only field marshal in 1933 and was appointed honorary Marshal of Finland in 1942.",
+        "url": "https://en.wikipedia.org/wiki/Carl_Gustaf_Emil_Mannerheim",
+        "description": "Finnish military leader and statesman (1867–1951)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:38.205Z"
+      },
+      "Cayetano Valdés": {
+        "title": "Cayetano Valdés y Flores",
+        "extract": "Cayetano Valdés y Flores Bazán was a Spanish Navy officer and explorer who served in the American Revolutionary War and the French Revolutionary and Napoleonic Wars, fighting on opposing sides at different times due to the changing fortunes of Spain. He took part in a number of battles, including the Battle of Cape Spartel, the Battle of Cape St. Vincent and the Battle of Trafalgar. He was an explorer, most notable in the Pacific Northwest, where he and Dionisio Alcalá Galiano conducted the first circumnavigation of Vancouver Island, in partial cooperation with George Vancouver. Over his long career he achieved the highest ranks in the Spanish Navy, eventually being named Captain General of Cádiz and Captain General of the Navy.",
+        "url": "https://en.wikipedia.org/wiki/Cayetano_Vald%C3%A9s_y_Flores",
+        "description": "Spanish Navy officer and explorer",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:38.884Z"
+      },
+      "Charles de Gaulle": {
+        "title": "Charles de Gaulle",
+        "extract": "Charles André Joseph Marie de Gaulle was a French general and statesman who is famously known for leading the Free French Forces against Nazi Germany and its puppet state of Vichy France in World War II and chaired the Provisional Government of the French Republic from 1944 to 1946 to restore democracy back in France. Following the 1958 Algiers putsch, he came out of retirement at the request of President René Coty, who appointed him Prime Minister. He commissioned a new 1958 French constitution which was approved by voters in a swift majority, during a referendum, establishing the French Fifth Republic. He was subsequently elected the President of France later that year, a position he held until his resignation in 1969.",
+        "url": "https://en.wikipedia.org/wiki/Charles_de_Gaulle",
+        "description": "French general and statesman (1890–1970)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:39.054Z"
+      },
+      "Charles Evans Hughes": {
+        "title": "Charles Evans Hughes",
+        "extract": "Charles Evans Hughes was an American politician, academic, and jurist who served as the 11th chief justice of the United States from 1930 to 1941. A member of the Republican Party, he previously was the 36th governor of New York (1907–1910), an associate justice of the Supreme Court (1910–1916), and 44th U.S. secretary of state (1921–1925). He was the Republican nominee in the 1916 presidential election, narrowly losing to incumbent president Woodrow Wilson.",
+        "url": "https://en.wikipedia.org/wiki/Charles_Evans_Hughes",
+        "description": "Chief Justice of the United States from 1930 to 1941",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:39.229Z"
+      },
+      "Chico Rei": {
+        "title": "Chico Rei",
+        "extract": "Chico Rei is a semi-mythic heroic figure from the slave trade in Brazil.",
+        "url": "https://en.wikipedia.org/wiki/Chico_Rei",
+        "description": "Semi-mythic heroic Brazilian slave",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:39.852Z"
+      },
+      "Comte de Frontenac": {
+        "title": "Louis de Buade de Frontenac",
+        "extract": "Louis de Buade, Comte de Frontenac et de Palluau was a French soldier, courtier, and Governor General of New France in North America from 1672 to 1682, and again from 1689 to his death in 1698. He established a number of Forts on the Great Lakes and engaged in a series of battles against the English and the Iroquois.",
+        "url": "https://en.wikipedia.org/wiki/Louis_de_Buade_de_Frontenac",
+        "description": "French soldier and governor (1622–1698)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:40.955Z"
+      },
+      "Daniel Boone": {
+        "title": "Daniel Boone",
+        "extract": "Daniel Boone was an American pioneer and frontiersman whose adventures made him one of the first folk heroes of the United States. He became famous for his exploration and settlement of Kentucky, which was then beyond the western borders of the Thirteen Colonies. In 1775, under commission from Judge Richard Henderson's Transylvania Company, Boone blazed the Wilderness Road through the Cumberland Gap and into Kentucky in the face of resistance from nearby Indian tribes. He founded Boonesborough, one of the first English-speaking settlements west of the Appalachian Mountains. By the end of the 18th century, more than 200,000 people had entered Kentucky by following the route marked by Boone.",
+        "url": "https://en.wikipedia.org/wiki/Daniel_Boone",
+        "description": "American pioneer and frontiersman (1734–1820)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:41.432Z"
+      },
+      "Daniel Edward Howard": {
+        "title": "Daniel Edward Howard",
+        "extract": "Daniel Edward Howard was the 16th president of Liberia, serving from 1912 to 1920.",
+        "url": "https://en.wikipedia.org/wiki/Daniel_Edward_Howard",
+        "description": "President of Liberia from 1912 to 1920 (1861-1935)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:41.874Z"
+      },
+      "Daniel Webster": {
+        "title": "Daniel Webster",
+        "extract": "Daniel Webster was an American lawyer, statesman, and diplomat who represented New Hampshire and Massachusetts in the U.S. Congress and served as the 14th and 19th U.S. secretary of state under presidents William Henry Harrison, John Tyler, and Millard Fillmore. Webster was one of the most prominent American lawyers of the 19th century, arguing over 200 cases before the United States Supreme Court in his career. During his life, Webster had been a member of the Federalist Party, the National Republican Party, and the Whig Party. He was among the three members of the Great Triumvirate along with Henry Clay and John C. Calhoun.",
+        "url": "https://en.wikipedia.org/wiki/Daniel_Webster",
+        "description": "American lawyer and statesman (1782–1852)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:42.048Z"
+      },
+      "Dante Alighieri": {
+        "title": "Dante Alighieri",
+        "extract": "Dante Alighieri, widely known mononymously as Dante, was an Italian poet, writer, and philosopher. His Divine Comedy, originally called Comedìa and later christened Divina by Giovanni Boccaccio, is widely considered one of the most important poems of the Middle Ages and the greatest literary work in the Italian language.",
+        "url": "https://en.wikipedia.org/wiki/Dante_Alighieri",
+        "description": "Italian writer and philosopher (1265–1321)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:42.222Z"
+      },
+      "Davy Crockett": {
+        "title": "Davy Crockett",
+        "extract": "David Crockett was an American politician, militia officer and frontiersman. Often referred to in popular culture as the \"King of the Wild Frontier\", he represented Tennessee in the United States House of Representatives and fought in the Texas Revolution.",
+        "url": "https://en.wikipedia.org/wiki/Davy_Crockett",
+        "description": "American politician and frontiersman (1786–1836)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:42.394Z"
+      },
+      "Don Bosco": {
+        "title": "John Bosco",
+        "extract": "John Melchior Bosco, SDB, popularly known as Don Bosco, was an Italian Catholic priest, educator, and writer. While working in Turin, where the population suffered many of the ill effects of industrialization and urbanization, he dedicated his life to the betterment and education of street children, juvenile delinquents, and other disadvantaged youth. He developed teaching methods based on love rather than punishment, a method that became known as the Salesian Preventive System.",
+        "url": "https://en.wikipedia.org/wiki/John_Bosco",
+        "description": "19th-century Italian Roman Catholic priest, educator, and writer",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:43.244Z"
+      },
+      "Eamonn Ceannt": {
+        "title": "Éamonn Ceannt",
+        "extract": "Éamonn Ceannt, born Edward Thomas Kent, was an Irish republican, mostly known for his role in the Easter Rising of 1916.",
+        "url": "https://en.wikipedia.org/wiki/%C3%89amonn_Ceannt",
+        "description": "Irish republican (1881–1916)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:44.303Z"
+      },
+      "Eça de Queiroz": {
+        "title": "Eça de Queiroz",
+        "extract": "José Maria de Eça de Queiroz or Queirós is generally considered to have been the greatest Portuguese writer in the realist style. Zola considered him to be far greater than Flaubert. In the London Observer, Jonathan Keates ranked him alongside Dickens, Balzac and Tolstoy.",
+        "url": "https://en.wikipedia.org/wiki/E%C3%A7a_de_Queiroz",
+        "description": "Portuguese realist writer (1845–1900)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:44.492Z"
+      },
+      "Edgar Lee Masters": {
+        "title": "Edgar Lee Masters",
+        "extract": "Edgar Lee Masters was an American attorney, poet, biographer, and dramatist. He is the author of Spoon River Anthology (1915), The New Star Chamber and Other Essays, Songs and Satires, The Great Valley, The Serpent in the Wilderness, An Obscure Tale, The Spleen, Mark Twain: A Portrait, Lincoln: The Man, and Illinois Poems. In all, Masters published twelve plays, twenty-one books of poetry, six novels and six biographies, including those of Abraham Lincoln, Mark Twain, Vachel Lindsay, and Walt Whitman.",
+        "url": "https://en.wikipedia.org/wiki/Edgar_Lee_Masters",
+        "description": "American poet (1868–1950)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:44.666Z"
+      },
+      "Edward VII": {
+        "title": "Edward VII",
+        "extract": "Edward VII was King of the United Kingdom and the British Dominions, and Emperor of India, from 22 January 1901 until his death in 1910.",
+        "url": "https://en.wikipedia.org/wiki/Edward_VII",
+        "description": "King of the United Kingdom from 1901 to 1910",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:45.764Z"
+      },
+      "Eilert Sundt": {
+        "title": "Eilert Sundt",
+        "extract": "Eilert Lund Sundt was a Norwegian theologist and sociologist, known for his work on morality, marriage and other subjects among the working class. He was an early pioneer of the field of sociology in Norway.",
+        "url": "https://en.wikipedia.org/wiki/Eilert_Sundt",
+        "description": "Norwegian theologian and sociologist (1817–1875)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:46.282Z"
+      },
+      "Eleanor Roosevelt": {
+        "title": "Eleanor Roosevelt",
+        "extract": "Anna Eleanor Roosevelt was an American political figure, diplomat, and activist. She was the longest-serving first lady of the United States, during her husband Franklin D. Roosevelt's four terms as president from 1933 to 1945. Through her travels, public engagement, and advocacy, she largely redefined the role. Widowed in 1945, she served as a United States delegate to the United Nations General Assembly from 1945 to 1952, and took a leading role in designing the text and gaining international support for the Universal Declaration of Human Rights. In 1948, she was given a standing ovation by the assembly upon their adoption of the declaration. President Harry S. Truman called her the \"First Lady of the World\" in tribute to her human rights achievements.",
+        "url": "https://en.wikipedia.org/wiki/Eleanor_Roosevelt",
+        "description": "American diplomat and activist (1884–1962)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:46.469Z"
+      },
+      "Eleftherios Venizelos": {
+        "title": "Eleftherios Venizelos",
+        "extract": "Eleftherios Kyriakou Venizelos was a Cretan Greek statesman and prominent leader of the Greek national liberation movement. As the leader of the Liberal Party, Venizelos served as prime minister of Greece for over 12 years, spanning eight terms from 1910 to 1933.",
+        "url": "https://en.wikipedia.org/wiki/Eleftherios_Venizelos",
+        "description": "Prime Minister of Greece (1910–20; 1928–33)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:46.642Z"
+      },
+      "Emanuel Lasker": {
+        "title": "Emanuel Lasker",
+        "extract": "Emanuel Lasker was a German chess player, mathematician, and philosopher. He was the second World Chess Champion, holding the title for 27 years, from 1894 to 1921, the longest reign of any officially recognised World Chess Champion, winning 6 World Chess Championships. In his prime, Lasker was one of the most dominant champions.",
+        "url": "https://en.wikipedia.org/wiki/Emanuel_Lasker",
+        "description": "German chess player (1868–1941)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:46.840Z"
+      },
+      "Emily Dickinson": {
+        "title": "Emily Dickinson",
+        "extract": "Emily Elizabeth Dickinson was an American poet. Largely unpublished and unknown during her lifetime, her work is now widely regarded as canonical. The Poetry Foundation describes her as having \"created in her writing a distinctively elliptical language for expressing what was possible but not yet realized.\"",
+        "url": "https://en.wikipedia.org/wiki/Emily_Dickinson",
+        "description": "American poet (1830–1886)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:47.022Z"
+      },
+      "Ephraim McDowell": {
+        "title": "Ephraim McDowell",
+        "extract": "Ephraim McDowell was an American medical doctor and pioneer surgeon. The first person to successfully remove an ovarian tumor, he has been called \"the father of ovariotomy\" as well as founding father of abdominal surgery.",
+        "url": "https://en.wikipedia.org/wiki/Ephraim_McDowell",
+        "description": "American physician (1771–1830)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:47.711Z"
+      },
+      "Erich Weinert": {
+        "title": "Erich Weinert",
+        "extract": "Erich Bernhard Gustav Weinert was a German Communist writer, poet and a member of the Communist Party of Germany (KPD).",
+        "url": "https://en.wikipedia.org/wiki/Erich_Weinert",
+        "description": "German politician and writer (1890–1953)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:48.326Z"
+      },
+      "Ernest Hemingway": {
+        "title": "Ernest Hemingway",
+        "extract": "Ernest Miller Hemingway was an American novelist, short-story writer, and journalist. Known for an economical, understated style that influenced later 20th-century writers, he has been romanticized for his adventurous lifestyle and outspoken, blunt public image. Some of his seven novels, six short-story collections and two non-fiction works have become classics of American literature, and he was awarded the 1954 Nobel Prize in Literature.",
+        "url": "https://en.wikipedia.org/wiki/Ernest_Hemingway",
+        "description": "American author and journalist (1899–1961)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:48.501Z"
+      },
+      "Ernie Pyle": {
+        "title": "Ernie Pyle",
+        "extract": "Ernest Taylor Pyle was an American journalist and war correspondent who is best known for his stories about ordinary American soldiers during World War II. Pyle is also notable for the columns he wrote as a roving human-interest reporter from 1935 through 1941 for the Scripps-Howard newspaper syndicate that earned him wide acclaim for his simple accounts of ordinary people across North America. When the United States entered World War II, he lent the same distinctive, folksy style of his human-interest stories to his wartime reports from the European theater (1942–44) and Pacific theater (1945). Pyle won the Pulitzer Prize in 1944 for his newspaper accounts of \"dogface\" infantry soldiers from a first-person perspective. He was killed by enemy fire on Iejima during the Battle of Okinawa.",
+        "url": "https://en.wikipedia.org/wiki/Ernie_Pyle",
+        "description": "American war correspondent and writer",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:48.674Z"
+      },
+      "Ernst Barlach": {
+        "title": "Ernst Barlach",
+        "extract": "Ernst Heinrich Barlach was a German expressionist sculptor, medallist, printmaker and writer. Although he was a supporter of the war in the years leading to World War I, his participation in the conflict made him change his position, and he is mostly known for his sculptures protesting against it. This created many conflicts during the rise of the Nazi Party, when most of his works were confiscated as degenerate art. Stylistically, his literary and artistic work would fall between the categories of twentieth-century Realism and Expressionism.",
+        "url": "https://en.wikipedia.org/wiki/Ernst_Barlach",
+        "description": "German expressionist sculptor, printmaker and writer (1870–1938)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:49.489Z"
+      },
+      "Esteban Echeverría": {
+        "title": "Esteban Echeverría",
+        "extract": "José Esteban Antonio Echeverría was an Argentine poet, fiction writer, cultural promoter, and liberal activist who played a significant role in the development of Argentine literature, not only through his own writings but also through his organizational efforts. He was one of Latin America's most important Romantic authors. Echeverría's romantic liberalism was influenced by both the democratic nationalism of Giuseppe Mazzini and the utopian socialist doctrines of Henri de Saint-Simon.",
+        "url": "https://en.wikipedia.org/wiki/Esteban_Echeverr%C3%ADa",
+        "description": "Argentine poet and writer",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:50.888Z"
+      },
+      "Eugene O'Neill": {
+        "title": "Eugene O'Neill",
+        "extract": "Eugene Gladstone O'Neill Sr. was an American playwright. His poetically titled plays were among the first to introduce into the U.S. the drama techniques of realism, earlier associated with Chekhov, Ibsen, and Strindberg. The tragedy Long Day's Journey into Night is often included on lists of the finest American plays in the 20th century, alongside Tennessee Williams's A Streetcar Named Desire and Arthur Miller's Death of a Salesman. He was awarded the 1936 Nobel Prize in Literature and the 1957 Tony Award for Best Play. O'Neill is also the only playwright to win four Pulitzer Prizes for Drama.",
+        "url": "https://en.wikipedia.org/wiki/Eugene_O'Neill",
+        "description": "American playwright (1888–1953)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:51.071Z"
+      },
+      "Felix Mendelssohn": {
+        "title": "Felix Mendelssohn",
+        "extract": "Jakob Ludwig Felix Mendelssohn Bartholdy, simply known as Felix Mendelssohn, was a German composer, pianist, organist and conductor of the early Romantic era. Mendelssohn's compositions include symphonies, concertos, piano music, organ music and chamber music. His best-known works include the String Octet, the overture and incidental music for A Midsummer Night's Dream, the Italian and Scottish Symphonies, the oratorios St. Paul and Elijah, the Hebrides Overture, the mature Violin Concerto, and the melody used in the Christmas carol \"Hark! The Herald Angels Sing\". Mendelssohn's Songs Without Words are his most famous solo piano compositions.",
+        "url": "https://en.wikipedia.org/wiki/Felix_Mendelssohn",
+        "description": "German composer (1809–1847)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:51.513Z"
+      },
+      "Floriano Peixoto": {
+        "title": "Floriano Peixoto",
+        "extract": "Floriano Vieira Peixoto was a Brazilian military officer and politician. A veteran of the Paraguayan War and several other conflicts in Brazil, he served as the second president of Brazil from 1891 to 1894, and previously as the country's first vice president in 1891. Born in Ipioca and nicknamed the Iron Marshal, he was the first vice president of Brazil to have succeeded the president mid-term.",
+        "url": "https://en.wikipedia.org/wiki/Floriano_Peixoto",
+        "description": "President of Brazil from 1891 to 1894",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:52.290Z"
+      },
+      "Francis Parkman": {
+        "title": "Francis Parkman",
+        "extract": "Francis Parkman Jr. was an American historian, best known as author of The Oregon Trail: Sketches of Prairie and Rocky-Mountain Life and his monumental seven-volume France and England in North America. These works are still valued as historical sources and as literature. He was also a leading horticulturist, briefly a professor of horticulture at Harvard University and author of several books on the topic. Parkman wrote essays opposed to legal voting for women that continued to circulate long after his death. Parkman was a trustee of the Boston Athenæum from 1858 until his death in 1893.",
+        "url": "https://en.wikipedia.org/wiki/Francis_Parkman",
+        "description": "American historian (1823–1893)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:52.473Z"
+      },
+      "Francisco Pizarro": {
+        "title": "Francisco Pizarro",
+        "extract": "Francisco Pizarro, 1st Marquess of the Conquest, was a Spanish conquistador, best known for his expeditions that led to the Spanish conquest of the Inca Empire.",
+        "url": "https://en.wikipedia.org/wiki/Francisco_Pizarro",
+        "description": "Spanish conquistador (1478–1541)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:52.648Z"
+      },
+      "František Škroup": {
+        "title": "František Škroup",
+        "extract": "František Jan Škroup was a Czech composer and conductor. His brother Jan Nepomuk Škroup was also a successful composer and his father, Dominik Škroup, and other brother Ignác Škroup were lesser known composers. He is the author of the melody for the Czech national anthem \"Kde domov můj?\".",
+        "url": "https://en.wikipedia.org/wiki/Franti%C5%A1ek_%C5%A0kroup",
+        "description": "Czech composer and conductor (1801–1862)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:54.354Z"
+      },
+      "Franz von Taxis": {
+        "title": "House of Thurn und Taxis",
+        "extract": "The Princely House of Thurn and Taxis is a German noble family that originated in Lombardy (Italy). It was a key player in the postal services in Europe; its operations began around 1290 in the Bergamo region, and from the 16th to the 19th century, it maintained significant, Europe-wide networks with headquarters in Brussels and Frankfurt.",
+        "url": "https://en.wikipedia.org/wiki/House_of_Thurn_und_Taxis",
+        "description": "German noble family",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:55.320Z"
+      },
+      "Frédéric Chopin": {
+        "title": "Frédéric Chopin",
+        "extract": "Frédéric François Chopin was a Polish composer and virtuoso pianist of the early Romantic period who wrote primarily for solo piano. He has maintained worldwide renown as a leading composer of his era whose \"poetic genius was based on a professional technique that was without equal in his generation\".",
+        "url": "https://en.wikipedia.org/wiki/Fr%C3%A9d%C3%A9ric_Chopin",
+        "description": "Polish composer and pianist (1810–1849)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:55.496Z"
+      },
+      "Frederick Douglass": {
+        "title": "Frederick Douglass",
+        "extract": "Frederick Douglass was an American social reformer, abolitionist, orator, writer, and statesman. He was \"the most important leader of the movement for African-American civil rights in the 19th century\".",
+        "url": "https://en.wikipedia.org/wiki/Frederick_Douglass",
+        "description": "American abolitionist (1818–1895)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:55.671Z"
+      },
+      "Fredrika Bremer": {
+        "title": "Fredrika Bremer",
+        "extract": "Fredrika Bremer was a Finnish-born Swedish writer and reformer. Her Sketches of Everyday Life were wildly popular in Britain and the United States during the 1840s and 1850s and she is regarded as the Swedish Jane Austen, bringing the realist novel to prominence in Swedish literature.",
+        "url": "https://en.wikipedia.org/wiki/Fredrika_Bremer",
+        "description": "Swedish writer and reformer (1801–1865)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:56.290Z"
+      },
+      "Friedrich von Bodelschwingh": {
+        "title": "Friedrich von Bodelschwingh",
+        "extract": "Friedrich \"Fritz\" von Bodelschwingh, also known as Friedrich von Bodelschwingh the Younger, was a German pastor, theologian and public health advocate. His father was Friedrich von Bodelschwingh the Elder, founder of the v. Bodelschwinghsche Anstalten Bethel charitable foundations.",
+        "url": "https://en.wikipedia.org/wiki/Friedrich_von_Bodelschwingh",
+        "description": "German theologian (1877–1946)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:56.865Z"
+      },
+      "Frodo Baggins": {
+        "title": "Frodo Baggins",
+        "extract": "Frodo Baggins is a fictional character in J. R. R. Tolkien's writings and one of the protagonists in The Lord of the Rings. Frodo is a hobbit of the Shire who inherits the One Ring from his cousin Bilbo Baggins, described familiarly as \"uncle\", and undertakes the quest to destroy it in the fires of Mount Doom in Mordor. He is mentioned in Tolkien's posthumously published works, The Silmarillion and Unfinished Tales.",
+        "url": "https://en.wikipedia.org/wiki/Frodo_Baggins",
+        "description": "Fictional hobbit protagonist in J. R. R. Tolkien's The Lord of the Rings",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:57.038Z"
+      },
+      "Georg Herwegh": {
+        "title": "Georg Herwegh",
+        "extract": "Georg Friedrich Rudolph Theodor Herwegh was a German poet, who is considered part of the Young Germany movement.",
+        "url": "https://en.wikipedia.org/wiki/Georg_Herwegh",
+        "description": "German poet (1817–1875)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:57.646Z"
+      },
+      "George Eastman": {
+        "title": "George Eastman",
+        "extract": "George Eastman  was an American innovator and entrepreneur who founded the Eastman Kodak Company and helped to bring the photographic use of roll film into the mainstream. After a decade of experiments in photography, he patented and sold a roll film camera, making amateur photography accessible to the general public for the first time. Working as the treasurer and later president of Kodak, he oversaw the expansion of the company and the film industry.",
+        "url": "https://en.wikipedia.org/wiki/George_Eastman",
+        "description": "American entrepreneur, inventor, and photographer (1854–1932)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:58.011Z"
+      },
+      "George Gershwin": {
+        "title": "George Gershwin",
+        "extract": "George Gershwin was an American composer and pianist whose compositions spanned jazz, popular and classical music. Among his best-known works are the songs \"Swanee\" (1919) and \"Fascinating Rhythm\" (1924), the orchestral compositions Rhapsody in Blue (1924) and An American in Paris (1928) and his Piano Concerto (1925), the jazz standards \"Embraceable You\" (1928) and \"I Got Rhythm\" (1930) and the opera Porgy and Bess (1935), which included the hit \"Summertime\". His Of Thee I Sing (1931) was the first musical to win the Pulitzer Prize for Drama, although as composer, he did not participate in reception of the award.",
+        "url": "https://en.wikipedia.org/wiki/George_Gershwin",
+        "description": "American composer and pianist (1898–1937)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:58.186Z"
+      },
+      "George Rogers Clark": {
+        "title": "George Rogers Clark",
+        "extract": "George Rogers Clark was an American military officer and surveyor from Virginia who became the highest-ranking Patriot military officer on the northwestern frontier during the Revolutionary War. He served as leader of the Virginia militia in Kentucky throughout much of the war, and is credited for founding Louisville, Kentucky in 1778. He is best known for his captures of Kaskaskia, Illinois, in 1778 and Vincennes, Indiana, in 1779 during the Illinois campaign, which greatly weakened British influence in the Northwest Territory and earned Clark the nickname \"Conqueror of the Old Northwest\". The British ceded the entire Northwest Territory to the United States in the 1783 Treaty of Paris.",
+        "url": "https://en.wikipedia.org/wiki/George_Rogers_Clark",
+        "description": "American military officer and surveyor (1752–1818)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:58.361Z"
+      },
+      "Gerhart Hauptmann": {
+        "title": "Gerhart Hauptmann",
+        "extract": "Gerhart Johann Robert Hauptmann was a German dramatist and novelist. He is counted among the most important promoters of literary naturalism, though he integrated other styles into his work as well. He received the Nobel Prize in Literature in 1912.",
+        "url": "https://en.wikipedia.org/wiki/Gerhart_Hauptmann",
+        "description": "German author (1862–1946)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:58.537Z"
+      },
+      "Gherman Titov": {
+        "title": "Gherman Titov",
+        "extract": "Gherman Stepanovich Titov was a Soviet and Russian cosmonaut who, on 6 August 1961, became the second human to orbit the Earth, aboard Vostok 2, preceded by Yuri Gagarin on Vostok 1. He was the fourth person in space, counting suborbital voyages of US astronauts Alan Shepard and Gus Grissom. Born in Altai Krai in western Siberia, Titov was the first spacefarer born in Asia. At 25 years old at launch, he remains the youngest professional astronaut and the youngest person to fly in Earth orbit.",
+        "url": "https://en.wikipedia.org/wiki/Gherman_Titov",
+        "description": "Soviet cosmonaut (1935–2000)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:58.713Z"
+      },
+      "Giuseppe Garibaldi": {
+        "title": "Giuseppe Garibaldi",
+        "extract": "Giuseppe Maria Garibaldi was an Italian general, revolutionary and republican. He contributed to the Unification of Italy (Risorgimento) and the creation of the Kingdom of Italy. He is considered to be one of Italy's \"fathers of the fatherland\", along with Camillo Benso di Cavour, King Victor Emmanuel II and Giuseppe Mazzini. Garibaldi is also known as the \"Hero of the Two Worlds\" because of his military enterprises in South America and Europe.",
+        "url": "https://en.wikipedia.org/wiki/Giuseppe_Garibaldi",
+        "description": "Italian patriot and general (1807–1882)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:58.890Z"
+      },
+      "Giuseppe Mazzini": {
+        "title": "Giuseppe Mazzini",
+        "extract": "Giuseppe Mazzini was an Italian politician, lawyer, journalist, philosopher, and political activist who worked for the unification of Italy (Risorgimento) and was a major leader of the Italian revolutionary movement. His efforts helped bring about the independent and unified Italy in place of the several separate states, many dominated by foreign powers, that existed until the 19th century. An Italian nationalist in the historical radical tradition and a proponent of a republicanism of social-democratic inspiration, Mazzini \"helped define the European movement for popular democracy in a republican state.\" He is widely known as the \"Prophet of Italian Nationalism\".",
+        "url": "https://en.wikipedia.org/wiki/Giuseppe_Mazzini",
+        "description": "Italian activist, politician, journalist and philosopher (1805–1872)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:59.066Z"
+      },
+      "Grzegorz Piramowicz": {
+        "title": "Grzegorz Piramowicz",
+        "extract": "Grzegorz Piramowicz was a Polish Roman Catholic priest, educator, writer, and philosopher of Armenian origin. He was a member of the Commission of National Education and Society for Elementary Books, and one of the founders of the Society of Friends of the Constitution.",
+        "url": "https://en.wikipedia.org/wiki/Grzegorz_Piramowicz",
+        "description": "",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:59.248Z"
+      },
+      "Gualberto Villarroel": {
+        "title": "Gualberto Villarroel",
+        "extract": "Gualberto Villarroel López was a Bolivian military officer who served as the 39th president of Bolivia from 1943 to 1946. A reformist, sometimes compared with Argentina's Juan Perón, he is nonetheless remembered for his alleged fascist sympathies and violent demise.",
+        "url": "https://en.wikipedia.org/wiki/Gualberto_Villarroel",
+        "description": "39th President of Bolivia",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:59.421Z"
+      },
+      "Hanns Eisler": {
+        "title": "Hanns Eisler",
+        "extract": "Hanns Eisler was an Austrian and German composer. He is best known for composing the national anthem of East Germany, for his long artistic association with Bertolt Brecht, and for the scores he wrote for films. The Hochschule für Musik Hanns Eisler Berlin is named after him.",
+        "url": "https://en.wikipedia.org/wiki/Hanns_Eisler",
+        "description": "Austrian and German composer (1898–1962)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:27:59.966Z"
+      },
+      "Harry S. Truman": {
+        "title": "Harry S. Truman",
+        "extract": "Harry S. Truman was the 33rd president of the United States, serving from 1945 to 1953. As the 34th vice president in 1945, he assumed the presidency upon the death of Franklin D. Roosevelt in April. Truman set up the Marshall Plan to rebuild the badly damaged economy of Western Europe. He established the Truman Doctrine and supported the founding of NATO to contain the expansion of Soviet communism. A member of the Democratic Party, he proposed numerous New Deal coalition liberal domestic reforms, but few were enacted by the conservative coalition that dominated the United States Congress.",
+        "url": "https://en.wikipedia.org/wiki/Harry_S._Truman",
+        "description": "President of the United States from 1945 to 1953",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:00.135Z"
+      },
+      "Harvey W. Wiley": {
+        "title": "Harvey Washington Wiley",
+        "extract": "Harvey Washington Wiley was an American physician and chemist who advocated successfully for the passage of the landmark Pure Food and Drug Act of 1906 and subsequently worked at the Good Housekeeping Institute laboratories. He was the first commissioner of the United States Food and Drug Administration. Wiley's advocacy for stricter food and drug regulations indirectly contributed to Coca-Cola's decision to remove cocaine from its formula in the early 20th century. This move addressed public health concerns but has drawn modern criticism for its impact on drug policy perceptions.",
+        "url": "https://en.wikipedia.org/wiki/Harvey_Washington_Wiley",
+        "description": "American physician and Food and Drugs Commissioner (1844–1930)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:00.718Z"
+      },
+      "Heinrich Mann": {
+        "title": "Heinrich Mann",
+        "extract": "Luiz Heinrich Mann, best known as simply Heinrich Mann, was a German-American writer known for his sociopolitical novels. From 1930 until 1933, he was president of the fine poetry division of the Prussian Academy of Arts. His fierce criticism of the growing Fascism and Nazism forced him to flee Germany after the Nazis came to power during 1933. He was the elder brother of writer Thomas Mann.",
+        "url": "https://en.wikipedia.org/wiki/Heinrich_Mann",
+        "description": "German-American socialist writer and anti-fascist activist (1871–1950)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:00.892Z"
+      },
+      "Heinrich von Stephan": {
+        "title": "Heinrich von Stephan",
+        "extract": "Ernst Heinrich Wilhelm von Stephan was a general post director for the German Empire who reorganized the German postal service. He was integral in the founding of the Universal Postal Union in 1874, and in 1877 introduced the telephone to Germany.",
+        "url": "https://en.wikipedia.org/wiki/Heinrich_von_Stephan",
+        "description": "German postmaster (1831–1897)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:04.712Z"
+      },
+      "Henri Bourassa": {
+        "title": "Henri Bourassa",
+        "extract": "Joseph-Napoléon-Henri Bourassa was a French Canadian political leader and publisher. In 1899, Bourassa was outspoken against the British government's request for Canada to send a militia to fight for Britain in the Second Boer War. Prime Minister Sir Wilfrid Laurier's compromise was to send a volunteer force, but the seeds were sown for future conscription protests during the World Wars of the next half-century. Bourassa unsuccessfully challenged the proposal to build warships to help protect the empire. He led the opposition to conscription during World War I and argued that Canada's interests were not at stake. He opposed Catholic bishops who defended military support of Britain and its allies. Bourassa was an ideological father of French-Canadian nationalism. Bourassa was also a defining force in forging French Canada's attitude to the Canadian Confederation of 1867.",
+        "url": "https://en.wikipedia.org/wiki/Henri_Bourassa",
+        "description": "Canadian politician (1868–1952)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:05.480Z"
+      },
+      "Henry David Thoreau": {
+        "title": "Henry David Thoreau",
+        "extract": "Henry David Thoreau was an American naturalist, essayist, poet, and philosopher. A leading transcendentalist, he is best known for his book Walden, a reflection upon simple living in natural surroundings, and his essay \"Civil Disobedience\", an argument in favor of citizen disobedience against an unjust state.",
+        "url": "https://en.wikipedia.org/wiki/Henry_David_Thoreau",
+        "description": "American philosopher (1817–1862)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:05.653Z"
+      },
+      "Henry Ford": {
+        "title": "Henry Ford",
+        "extract": "Henry Ford was an American industrialist and business magnate. As the founder of the Ford Motor Company, he is credited as a pioneer in making automobiles affordable for middle-class Americans through the system that came to be known as Fordism. In 1911, he was awarded a patent for the transmission mechanism that would be used in the Ford Model T and other automobiles.",
+        "url": "https://en.wikipedia.org/wiki/Henry_Ford",
+        "description": "American business magnate (1863–1947)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:05.825Z"
+      },
+      "Henry Hudson": {
+        "title": "Henry Hudson",
+        "extract": "Henry Hudson was an English sea explorer and navigator during the early 17th century, best known for his explorations of present-day Canada and parts of the Northeastern United States.",
+        "url": "https://en.wikipedia.org/wiki/Henry_Hudson",
+        "description": "English explorer (c. 1565 – after 1611)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:06.008Z"
+      },
+      "Henry Kelsey": {
+        "title": "Henry Kelsey",
+        "extract": "Henry Kelsey was an English fur trader, explorer, and sailor who played an important role in establishing the Hudson's Bay Company in Canada. He is the first recorded European to have visited the present-day provinces of Saskatchewan and, possibly, Alberta, as well as the first to have explored the Great Plains from the north. In his travels to the plains he encountered several Plains First Nations, as well as vast herds of the American bison, their primary source of food.",
+        "url": "https://en.wikipedia.org/wiki/Henry_Kelsey",
+        "description": "English explorer and fur trader",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:06.184Z"
+      },
+      "Herbert Hoover": {
+        "title": "Herbert Hoover",
+        "extract": "Herbert Clark Hoover was the 31st president of the United States, serving from 1929 to 1933. Hoover's term as president was dominated by the Great Depression, which his attempts to alleviate proved unpopular with the American people. As a result, he lost reelection to Franklin D. Roosevelt in the 1932 United States presidential election.",
+        "url": "https://en.wikipedia.org/wiki/Herbert_Hoover",
+        "description": "President of the United States from 1929 to 1933",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:06.362Z"
+      },
+      "Jacques Marquette": {
+        "title": "Jacques Marquette",
+        "extract": "Jacques Marquette, sometimes known as Père Marquette or James Marquette, was a French Jesuit missionary who founded Michigan's first European settlement, Sault Sainte Marie, and later founded Saint Ignace. In 1673, Marquette, along with Louis Jolliet, an explorer born near Quebec City, explored and mapped the northern portion of the Mississippi River Valley.",
+        "url": "https://en.wikipedia.org/wiki/Jacques_Marquette",
+        "description": "17th-century French Jesuit missionary and explorer in North America",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:07.170Z"
+      },
+      "James A. Garfield": {
+        "title": "James A. Garfield",
+        "extract": "James Abram Garfield was the 20th president of the United States, serving from March 1881 until his death in September that year after being shot in July. A preacher, lawyer, and Civil War general, Garfield served nine terms in the United States House of Representatives and is the only sitting member of the House to be elected president. Before he ran for president, the Ohio General Assembly had elected him to the U.S. Senate, a position he declined upon becoming president-elect.",
+        "url": "https://en.wikipedia.org/wiki/James_A._Garfield",
+        "description": "President of the United States in 1881",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:07.351Z"
+      },
+      "James Buchanan": {
+        "title": "James Buchanan",
+        "extract": "James Buchanan Jr. was the 15th president of the United States, serving from 1857 to 1861. A northern Democrat, he sought to resolve the sectional crisis through a pro-slavery interpretation of the U.S. Constitution, which alienated abolitionists in the North. In his final months in office, seven Southern states seceded, forming the Confederacy. On April 12, 1861, Confederate forces attacked Fort Sumter, sparking the American Civil War.",
+        "url": "https://en.wikipedia.org/wiki/James_Buchanan",
+        "description": "President of the United States from 1857 to 1861",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:07.527Z"
+      },
+      "Jawaharlal Nehru": {
+        "title": "Jawaharlal Nehru",
+        "extract": "Jawaharlal Nehru was an Indian lawyer, anti-colonial nationalist, secular humanist, social democrat, and statesman who was a central figure in India during the middle of the 20th century. Nehru was a principal leader of the Indian nationalist movement in the 1930s and 1940s. Upon India's independence in 1947, he served as the country's first prime minister, holding office for 16 years 286 days. Nehru promoted parliamentary democracy, secularism, and science and technology during the 1950s, powerfully influencing India's arc as a modern nation. In international affairs, he steered India clear of the two blocs of the Cold War. A well-regarded author, he wrote books such as Letters from a Father to His Daughter (1929), An Autobiography (1936) and The Discovery of India (1946), that have been read around the world.",
+        "url": "https://en.wikipedia.org/wiki/Jawaharlal_Nehru",
+        "description": "Prime Minister of India from 1947 to 1964",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:07.702Z"
+      },
+      "Joel Chandler Harris": {
+        "title": "Joel Chandler Harris",
+        "extract": "Joel Chandler Harris was an American journalist and folklorist best known for his collection of Uncle Remus stories. Born in Eatonton, Georgia, where he served as an apprentice on a plantation during his teenage years, Harris spent most of his adult life in Atlanta working as an associate editor at The Atlanta Constitution.",
+        "url": "https://en.wikipedia.org/wiki/Joel_Chandler_Harris",
+        "description": "American writer and journalist (1848–1908)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:07.881Z"
+      },
+      "Johann Winckelmann": {
+        "title": "Johann Joachim Winckelmann",
+        "extract": "Johann Joachim Winckelmann was a German art historian and archaeologist. He was a pioneering Hellenist who first articulated the differences between Greek, Greco-Roman and Roman art. \"The prophet and founding hero of modern archaeology\", Winckelmann was one of the founders of scientific archaeology and first applied the categories of style on a large, systematic basis to the history of art. Many consider him the father of the discipline of art history. He was one of the first to separate Greek art into periods and time classifications.",
+        "url": "https://en.wikipedia.org/wiki/Johann_Joachim_Winckelmann",
+        "description": "German art historian (1717–1768)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:08.675Z"
+      },
+      "John Adams": {
+        "title": "John Adams",
+        "extract": "John Adams was a Founding Father and the second president of the United States from 1797 to 1801. Before his presidency, he was a leader of the American Revolution that achieved independence from Great Britain. During the latter part of the Revolutionary War and in the early years of the new nation, he served the Continental Congress of the United States as a senior diplomat in Europe. Adams was the first vice president of the United States, serving from 1789 to 1797. He was a dedicated diarist and regularly corresponded with contemporaries, including his wife and advisor Abigail Adams and his friend and rival Thomas Jefferson.",
+        "url": "https://en.wikipedia.org/wiki/John_Adams",
+        "description": "President of the United States from 1797 to 1801",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:08.939Z"
+      },
+      "John Dewey": {
+        "title": "John Dewey",
+        "extract": "John Dewey was an American philosopher, psychologist, and educational reformer. He was one of the most prominent American scholars in the first half of the twentieth century.",
+        "url": "https://en.wikipedia.org/wiki/John_Dewey",
+        "description": "American philosopher, psychologist, and activist (1859–1952)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:09.119Z"
+      },
+      "John Foster Dulles": {
+        "title": "John Foster Dulles",
+        "extract": "John Foster Dulles was an American politician, lawyer, and diplomat who served as United States secretary of state under President Dwight D. Eisenhower from 1953 until his resignation in 1959. A member of the Republican Party, he was briefly a U.S. senator from New York in 1949. Dulles was a significant figure in the early Cold War era who pushed for an aggressive rollback campaign against communist regimes and their allies throughout the world.",
+        "url": "https://en.wikipedia.org/wiki/John_Foster_Dulles",
+        "description": "American politician and diplomat (1888–1959)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:09.296Z"
+      },
+      "John Heartfield": {
+        "title": "John Heartfield",
+        "extract": "John Heartfield was a German visual artist who pioneered the use of art as a political weapon. Some of his most famous photomontages were anti-Nazi and anti-fascist statements. Heartfield also created book jackets for book authors, such as Upton Sinclair, as well as stage sets for contemporary playwrights, such as Bertolt Brecht and Erwin Piscator. In 1916 Heartfield, his brother Wieland Herzfelde and George Grosz founded the Malik-Verlag through which they published most of their work.",
+        "url": "https://en.wikipedia.org/wiki/John_Heartfield",
+        "description": "German visual artist (1891–1968)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:09.671Z"
+      },
+      "John Jay": {
+        "title": "John Jay",
+        "extract": "John Jay was an American statesman, diplomat, signatory of the Treaty of Paris, and a Founding Father of the United States. He served from 1789 to 1795 as the first chief justice of the United States and from 1795 to 1801 as the second governor of New York. Jay directed U.S. foreign policy for much of the 1780s and was an important leader of the Federalist Party after the ratification of the United States Constitution in 1788.",
+        "url": "https://en.wikipedia.org/wiki/John_Jay",
+        "description": "American Founding Father (1745–1829)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:09.850Z"
+      },
+      "John Wesley Powell": {
+        "title": "John Wesley Powell",
+        "extract": "John Wesley Powell was a U.S. Army soldier, explorer of the American West, and director of major scientific and cultural institutions. He is famous for his 1869 geographic expedition, a three-month river trip down the Green and Colorado rivers, including the first official U.S. government-sponsored passage through the Grand Canyon.",
+        "url": "https://en.wikipedia.org/wiki/John_Wesley_Powell",
+        "description": "American geologist and explorer (1834–1902)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:10.021Z"
+      },
+      "Johnny Appleseed": {
+        "title": "Johnny Appleseed",
+        "extract": "John Chapman, better known as Johnny Appleseed, was an American pioneer nurseryman who introduced trees grown with apple seeds to large parts of Pennsylvania, Ohio, Indiana, Illinois, and the Canadian province of Ontario, as well as the northern counties of West Virginia. He became an American icon while still alive, due to his kind, generous ways, his leadership in conservation, and the symbolic importance that he attributed to apples. He was the inspiration for many museums and historical sites such as the Johnny Appleseed Museum in Urbana, Ohio, and today is recognized as an American folk hero.",
+        "url": "https://en.wikipedia.org/wiki/Johnny_Appleseed",
+        "description": "American pioneer nurseryman (1774–1845)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:10.195Z"
+      },
+      "José Antonio Páez": {
+        "title": "José Antonio Páez",
+        "extract": "José Antonio Páez Herrera was a Venezuelan politician and military officer who served as the president of Venezuela three times. The first as the 5th president from 1830 to 1835, the second as the 8th president from 1839 to 1843, and the third as the 15th president from 1861 to 1863. He fought against the Spanish Crown for Simón Bolívar during the Venezuelan War of Independence. Páez later led Venezuela's separation from Gran Colombia.",
+        "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Antonio_P%C3%A1ez",
+        "description": "President of Venezuela",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:10.373Z"
+      },
+      "Jose Burgos": {
+        "title": "José Burgos",
+        "extract": "José Apolonio Burgos y García was a Filipino Catholic priest, accused of mutiny by the Spanish colonial authorities in the Philippines in the 19th century. He was tried and executed in Manila along with two other clergymen, Mariano Gomez and Jacinto Zamora, who are collectively known as the Gomburza.",
+        "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Burgos",
+        "description": "Filipino Catholic priest (1837 to 1872)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:10.855Z"
+      },
+      "Jose Rizal": {
+        "title": "José Rizal",
+        "extract": "José Protasio Rizal Mercado y Alonso Realonda was a Filipino nationalist, writer, and polymath active at the end of the Spanish colonial period of the Philippines. He is popularly considered to be a national hero of the Philippines. An ophthalmologist by profession, Rizal became a writer and a key member of the Filipino Propaganda Movement in the 1880s, which advocated political reforms for the colony under Spain.",
+        "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Rizal",
+        "description": "Filipino nationalist, writer, and polymath (1861–1896)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:11.717Z"
+      },
+      "Joseph Plunkett": {
+        "title": "Joseph Plunkett",
+        "extract": "Joseph Mary Plunkett was an Irish republican, poet and journalist. As a leader of the 1916 Easter Rising, he was one of the seven signatories to the Proclamation of the Irish Republic. Plunkett married Grace Gifford in 1916, seven hours before his execution.",
+        "url": "https://en.wikipedia.org/wiki/Joseph_Plunkett",
+        "description": "Irish republican, poet and journalist (1887-1916)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:12.392Z"
+      },
+      "Joseph Pulitzer": {
+        "title": "Joseph Pulitzer",
+        "extract": "Joseph Pulitzer was a Hungarian-American politician and a newspaper publisher of the St. Louis Post-Dispatch and the New York World. He became a leading national figure in the U.S. Democratic Party and served one term representing New York's 9th congressional district.",
+        "url": "https://en.wikipedia.org/wiki/Joseph_Pulitzer",
+        "description": "Hungarian-American newspaper publisher (1847–1911)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:12.574Z"
+      },
+      "Juan Pablo Duarte": {
+        "title": "Juan Pablo Duarte",
+        "extract": "Juan Pablo Duarte y Díez was a Dominican military leader, writer, activist, and nationalist politician who was the foremost of the Founding Fathers of the Dominican Republic and bears the title of Father of the Nation. As one of the most celebrated figures in Dominican history, Duarte is considered a folk hero and revolutionary visionary in the modern Dominican Republic, who, along with military generals Matías Ramón Mella and Francisco del Rosario Sánchez, organized and promoted La Trinitaria, a secret society that eventually led to the Dominican revolt and independence from Haitian rule in 1844 and the start of the Dominican War of Independence.",
+        "url": "https://en.wikipedia.org/wiki/Juan_Pablo_Duarte",
+        "description": "Dominican Republic's Father of the Nation (1813–1876)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:12.751Z"
+      },
+      "Karl Landsteiner": {
+        "title": "Karl Landsteiner",
+        "extract": "Karl Landsteiner was an Austrian-American biologist, physician, and immunologist. He emigrated with his family to New York in 1923 at the age of 55 for professional opportunities, working for the Rockefeller Institute.",
+        "url": "https://en.wikipedia.org/wiki/Karl_Landsteiner",
+        "description": "Austrian immunologist (1868–1943)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:12.930Z"
+      },
+      "Käthe Kollwitz": {
+        "title": "Käthe Kollwitz",
+        "extract": "Käthe Kollwitz was a German artist who worked with painting, printmaking and sculpture. Her most famous art cycles, including The Weavers and The Peasant War, depict the effects of poverty, hunger and war on the working class. Her early work was realistic, but became freer in later years. Kollwitz was the first woman not only to be elected to the Prussian Academy of Arts but also to receive honorary professor status.",
+        "url": "https://en.wikipedia.org/wiki/K%C3%A4the_Kollwitz",
+        "description": "German artist (1867–1945)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:13.111Z"
+      },
+      "Lajos Kossuth": {
+        "title": "Lajos Kossuth",
+        "extract": "Lajos Kossuth de Udvard et Kossuthfalva was a Hungarian nobleman, lawyer, journalist, politician, statesman, revolutionist and governor-president of the Hungarian State during the war of independence of 1848–1849.",
+        "url": "https://en.wikipedia.org/wiki/Lajos_Kossuth",
+        "description": "Hungarian statesman (1802–1894)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:13.287Z"
+      },
+      "Legolas": {
+        "title": "Legolas",
+        "extract": "Legolas is a fictional character in J. R. R. Tolkien's The Lord of the Rings. He is a Sindar Elf of the Woodland Realm and son of its king, Thranduil, becoming one of the nine members of the Fellowship who set out to destroy the One Ring. Though Dwarves and Elves are traditionally rivals, he and the Dwarf Gimli form a close friendship during their travels together.",
+        "url": "https://en.wikipedia.org/wiki/Legolas",
+        "description": "Fictional elf from Tolkien's legendarium",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:13.467Z"
+      },
+      "Leif Erikson": {
+        "title": "Leif Erikson",
+        "extract": "Leif Erikson, also known as Leif the Lucky, was a Norse explorer who is thought to have been the first European to set foot on continental America, approximately half a millennium before Christopher Columbus. According to the sagas of Icelanders, he established a Norse settlement at Vinland, which is usually interpreted as being coastal North America. There is ongoing speculation that the settlement made by Leif and his crew corresponds to the remains of a Norse settlement found in Newfoundland, Canada, called L'Anse aux Meadows, which was occupied approximately 1,000 years ago.",
+        "url": "https://en.wikipedia.org/wiki/Leif_Erikson",
+        "description": "Norse explorer (c. 970–c. 1020)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:13.642Z"
+      },
+      "Louis-Joseph Papineau": {
+        "title": "Louis-Joseph Papineau",
+        "extract": "Louis-Joseph Papineau, born in Montreal, Quebec, was a politician, lawyer, and the landlord of the seigneurie de la Petite-Nation. He led the reformist Patriote movement, organized boycotts against British imports, and then led the unsuccessful Lower Canada Rebellion of 1837–1838. He later served two terms as member of the Legislative Assembly of the Province of Canada. His father was Joseph Papineau, also a Quebec politician. Papineau was the grandfather of the journalist Henri Bourassa, founder of the newspaper Le Devoir.",
+        "url": "https://en.wikipedia.org/wiki/Louis-Joseph_Papineau",
+        "description": "Lower Canada politician, lawyer, and seigneur",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:13.817Z"
+      },
+      "Lucy Stone": {
+        "title": "Lucy Stone",
+        "extract": "Lucy Stone was an American orator, abolitionist and suffragist who was a vocal advocate for and organizer of promoting rights for women. In 1847, Stone became the first woman from Massachusetts to earn a college degree. She spoke out for women's rights and campaigned against slavery. Stone was known for using her birth name, after marriage, contrary to the custom of women taking their husband's surname.",
+        "url": "https://en.wikipedia.org/wiki/Lucy_Stone",
+        "description": "American abolitionist and suffragist (1818–1893)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:14.211Z"
+      },
+      "Ludwig van Beethoven": {
+        "title": "Ludwig van Beethoven",
+        "extract": "Ludwig van Beethoven was a German composer, conductor, and pianist. Regarded as one of the greatest composers in the history of Western music, he was mentored during the Classical period, and his musical style was a key driver of the transition to Romantic music, and the expansion of instrumental forms such as the symphony, the piano sonata and the string quartet. His compositions have attracted extraordinary casual and scholarly interest, and remain among the most performed in the world.",
+        "url": "https://en.wikipedia.org/wiki/Ludwig_van_Beethoven",
+        "description": "German composer (1770–1827)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:14.387Z"
+      },
+      "Lyndon B. Johnson": {
+        "title": "Lyndon B. Johnson",
+        "extract": "Lyndon Baines Johnson, also known as LBJ, was the 36th president of the United States from 1963 to 1969. Johnson was vice president under John F. Kennedy from 1961 until Kennedy's assassination in 1963, when he assumed the presidency. Before becoming vice president, he served in both houses of the U.S. Congress, representing Texas as a member of the Democratic Party.",
+        "url": "https://en.wikipedia.org/wiki/Lyndon_B._Johnson",
+        "description": "President of the United States from 1963 to 1969",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:14.572Z"
+      },
+      "Manuel L. Quezon": {
+        "title": "Manuel L. Quezon",
+        "extract": "Manuel Luis Quezon y Molina GCGH KGCR, also known by his initials MLQ, was a Filipino lawyer, statesman, soldier, and politician who served as the second president of the Philippines from 1935 until his death in 1944. He was the first Filipino to head a government of the entire Philippines and is considered the second president of the Philippines after Emilio Aguinaldo (1899–1901), whom Quezon defeated in the 1935 presidential election. Quezon City, a city in Metro Manila and Quezon Province, are named after him.",
+        "url": "https://en.wikipedia.org/wiki/Manuel_L._Quezon",
+        "description": "President of the Philippines from 1935 to 1944",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:15.937Z"
+      },
+      "Marcelo del Pilar": {
+        "title": "Marcelo H. del Pilar",
+        "extract": "Marcelo Hilario del Pilar y Gatmaitán, commonly known as Marcelo H. del Pilar and also known by his nom de plume Pláridel, was a Filipino writer, lawyer, journalist, and freemason. Del Pilar, along with José Rizal and Graciano López Jaena, became known as the leaders of the Reform Movement in Spain.",
+        "url": "https://en.wikipedia.org/wiki/Marcelo_H._del_Pilar",
+        "description": "Filipino writer, lawyer, and journalist",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:16.456Z"
+      },
+      "Marcus Garvey": {
+        "title": "Marcus Garvey",
+        "extract": "Marcus Mosiah Garvey Jr. was a Jamaican political activist. He was the founder and first President-General of the Universal Negro Improvement Association and African Communities League, through which he declared himself Provisional President of Africa. Ideologically a black nationalist and Pan-Africanist, Garvey's ideas are known as Garveyism. Garvey was born to a moderately prosperous Afro-Jamaican family in Saint Ann's Bay and was apprenticed into the print trade as a teenager. Working in Kingston, he became involved in trade unionism before living briefly in Costa Rica, Panama, and England. On returning to Jamaica, he founded UNIA in 1914. In 1916, he relocated to the United States and founded a UNIA branch in New York City's Harlem. Emphasising unity within the African diaspora, he campaigned to end European colonial rule in Africa and supported the continent's unification. He envisioned a unified Africa as a one-party state, led by himself, that would pass laws to promote black racial purity. Although he never visited Africa, he remained committed to the Back-to-Africa movement, arguing that part of the diaspora should migrate there. Garveyist ideas gained increasing popularity, and UNIA's membership expanded. As a black separatist, he established links with white racists such as the Ku Klux Klan (KKK) who shared his racial separatist views. This created a divide between Garvey and prominent African-American civil rights activists like W. E. B. Du Bois, who promoted racial integration. Believing that black people should be financially independent from white-dominated societies, Garvey launched various businesses in the U.S., including the Negro Factories Corporation and Negro World newspaper. In 1919, he became President of the Black Star Line shipping and passenger company, designed to forge a link between North America and Africa and facilitate African-American migration to Liberia. In 1923 Garvey was convicted of mail fraud for selling the company's stock, and was imprisoned in the United States Penitentiary, Atlanta for nearly two years. Garvey blamed Jews, claiming that they were prejudiced against him because of his links to the KKK. After his sentence was commuted by U.S. president Calvin Coolidge, Garvey was deported to Jamaica in 1927. Settling in Kingston with his wife Amy Jacques, Garvey established the People's Political Party in 1929, briefly serving as a city councillor. With UNIA in increasing financial difficulty, he relocated to London in 1935, where his anti-socialist stance distanced him from many of the city's black activists. He died there in 1940. In 1964 his body was returned to Jamaica for reburial in National Heroes Park, Kingston. Garvey was a controversial figure. Some in the African diasporic community regarded him as a pretentious demagogue, and were highly critical of his collaboration with white supremacists, his violent rhetoric, and his prejudice against mixed-race people and Jews. He received praise for encouraging a sense of pride and self-worth among Africans and the African diaspora amid widespread poverty, discrimination and colonialism. In Jamaica, he was the first person formally recognised as a national hero. His ideas exerted a considerable influence on such movements as Rastafari, the Nation of Islam and the Black Power Movement.",
+        "url": "https://en.wikipedia.org/wiki/Marcus_Garvey",
+        "description": "Jamaican activist and orator (1887–1940)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:16.630Z"
+      },
+      "Mariano Moreno": {
+        "title": "Mariano Moreno",
+        "extract": "Mariano Moreno was an Argentine lawyer, journalist, and politician. He played a decisive role in the Primera Junta, the first national government of Argentina, created after the May Revolution.",
+        "url": "https://en.wikipedia.org/wiki/Mariano_Moreno",
+        "description": "Argentine lawyer, journalist, and politician",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:16.808Z"
+      },
+      "Marquis de Lafayette": {
+        "title": "Marquis de Lafayette",
+        "extract": "Marie-Joseph Paul Yves Roch Gilbert du Motier, Marquis de La Fayette, known in the United States as Lafayette, was a French military officer and politician who volunteered to join the Continental Army, led by General George Washington, in the American Revolutionary War. Lafayette commanded Continental Army troops in the decisive siege of Yorktown in 1781, the Revolutionary War's final major battle, which secured American independence. After returning to France, Lafayette became a key figure in the French Revolution of 1789 and the July Revolution of 1830 and continues to be celebrated as a hero in both France and the United States.",
+        "url": "https://en.wikipedia.org/wiki/Marquis_de_Lafayette",
+        "description": "French military officer and politician (1757–1834)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:16.984Z"
+      },
+      "Martin Luther King Jr.": {
+        "title": "Martin Luther King Jr.",
+        "extract": "Martin Luther King Jr. was an American civil rights activist and Baptist minister who was a prominent leader of the civil rights movement from 1955 until his assassination in 1968. He advanced civil rights for people of color in the United States through the use of nonviolent resistance and civil disobedience against Jim Crow laws and other forms of legalized discrimination, which most commonly affected African Americans.",
+        "url": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.",
+        "description": "American minister and civil rights activist (1929–1968)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:17.168Z"
+      },
+      "Maxim Gorky": {
+        "title": "Maxim Gorky",
+        "extract": "Alexei Maximovich Peshkov, popularly known as Maxim Gorky, was a Russian and Soviet writer, journalist, and proponent of socialism. He was nominated five times for the Nobel Prize in Literature. Before his success as an author, he travelled widely across the Russian Empire, changing jobs frequently; these experiences would later influence his writing. He associated with fellow Russian writers Leo Tolstoy and Anton Chekhov, both mentioned by Gorky in his memoirs.",
+        "url": "https://en.wikipedia.org/wiki/Maxim_Gorky",
+        "description": "Russian and Soviet writer (1868–1936)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:17.343Z"
+      },
+      "Nandalal Bose": {
+        "title": "Nandalal Bose",
+        "extract": "Nandalal Bose was one of the pioneers of modern Indian art and a key figure of Contextual Modernism.",
+        "url": "https://en.wikipedia.org/wiki/Nandalal_Bose",
+        "description": "Indian artist and a pioneer of modern Indian art (1882-1966)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:18.558Z"
+      },
+      "Nicolae Bălcescu": {
+        "title": "Nicolae Bălcescu",
+        "extract": "Nicolae Bălcescu was a Romanian Wallachian soldier, historian, journalist, and leader of the 1848 Wallachian Revolution.",
+        "url": "https://en.wikipedia.org/wiki/Nicolae_B%C4%83lcescu",
+        "description": "Romanian journalist and historian (1819–1852)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:18.738Z"
+      },
+      "Niels Stensen": {
+        "title": "Nicolas Steno",
+        "extract": "Niels Steensen was a Danish scientist, a pioneer in both anatomy and geology who became a Catholic bishop in his later years. He has been beatified by the Catholic Church.",
+        "url": "https://en.wikipedia.org/wiki/Nicolas_Steno",
+        "description": "Danish scientist and Catholic bishop (1638 – 1686)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:19.503Z"
+      },
+      "Norman Manley": {
+        "title": "Norman Manley",
+        "extract": "Norman Washington Manley was a Jamaican statesman who served as the first and only premier of Jamaica. A Rhodes Scholar, Manley became one of Jamaica's leading lawyers in the 1920s. Manley was an advocate of universal suffrage, which was granted by the British colonial government to the colony in 1944.",
+        "url": "https://en.wikipedia.org/wiki/Norman_Manley",
+        "description": "Premier of Jamaica from 1959 to 1962",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:20.102Z"
+      },
+      "Omar Khayyam": {
+        "title": "Omar Khayyam",
+        "extract": "Omar Khayyam (1048–1131) was a Persian poet and polymath, known for his contributions to mathematics, astronomy, philosophy, and Persian literature. He was born in Nishapur, Iran and lived during the Seljuk era, around the time of the First Crusade.",
+        "url": "https://en.wikipedia.org/wiki/Omar_Khayyam",
+        "description": "Persian polymath and poet (1048–1131)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:20.861Z"
+      },
+      "Osman Hamdi Bey": {
+        "title": "Osman Hamdi Bey",
+        "extract": "Osman Hamdi Bey was an Ottoman Greek administrator, intellectual, art expert and also a prominent and pioneering painter. He was the Ottoman Empire's first archaeologist and first museologist and he is regarded as the founding father of museology, archaeology, fine arts education and museum curator's professions in Turkey.",
+        "url": "https://en.wikipedia.org/wiki/Osman_Hamdi_Bey",
+        "description": "Ottoman administrator, intellectual and artist (1842–1910)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:21.035Z"
+      },
+      "Otto Grotewohl": {
+        "title": "Otto Grotewohl",
+        "extract": "Otto Emil Franz Grotewohl was a German politician who served as the first prime minister of the German Democratic Republic from its founding in October 1949 until his death in September 1964.",
+        "url": "https://en.wikipedia.org/wiki/Otto_Grotewohl",
+        "description": "German politician (1894–1964)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:21.501Z"
+      },
+      "Otto Nagel": {
+        "title": "Otto Nagel",
+        "extract": "Otto Nagel was a German painter, graphic designer and long-time head of the Berlin Academy of Arts who was one of the most prolific artists of East Germany.",
+        "url": "https://en.wikipedia.org/wiki/Otto_Nagel",
+        "description": "German painter and graphic designer",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:21.673Z"
+      },
+      "Paul Laurence Dunbar": {
+        "title": "Paul Laurence Dunbar",
+        "extract": "Paul Laurence Dunbar was an American poet, novelist, and short story writer of the late 19th and early 20th centuries. Born in Dayton, Ohio, to parents who had been enslaved in Kentucky before the American Civil War, Dunbar began writing stories and verse when he was a child. He published his first poems at the age of 16 in a Dayton newspaper, and served as president of his high school's literary society.",
+        "url": "https://en.wikipedia.org/wiki/Paul_Laurence_Dunbar",
+        "description": "African-American writer (1872–1906)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:22.617Z"
+      },
+      "Paul von Hindenburg": {
+        "title": "Paul von Hindenburg",
+        "extract": "Paul Ludwig Hans Anton von Beneckendorff und von Hindenburg was a German military officer and statesman who led the Imperial German Army during World War I and later became President of Germany from 1925 until his death in 1934. Though ideologically opposed to Nazism, he played a key role in the Nazi seizure of power in 1933 through his appointment of Adolf Hitler as Chancellor of Germany.",
+        "url": "https://en.wikipedia.org/wiki/Paul_von_Hindenburg",
+        "description": "President of Germany from 1925 to 1934",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:22.786Z"
+      },
+      "Pedro Menéndez de Avilés": {
+        "title": "Pedro Menéndez de Avilés",
+        "extract": "Pedro Menéndez de Avilés was a Spanish admiral, explorer, and conquistador from Avilés, in Asturias, Spain. He is notable for planning the first regular trans-oceanic convoys, which became known as the Spanish treasure fleet, and for founding St. Augustine, Florida, in 1565. This was the first successful European settlement in Spanish Florida and the most significant city in the region for nearly three centuries.",
+        "url": "https://en.wikipedia.org/wiki/Pedro_Men%C3%A9ndez_de_Avil%C3%A9s",
+        "description": "Spanish explorer and governor (1519–1574)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:22.957Z"
+      },
+      "Petr Parléř": {
+        "title": "Peter Parler",
+        "extract": "Peter Parler was a German-Bohemian architect and sculptor from the Parler family of master builders. Along with his father, Heinrich Parler, he is one of the most prominent and influential craftsmen of the Middle Ages. Born and apprenticed in the town of Schwäbisch Gmünd, Peter worked at several important late Medieval building sites, including Strasbourg, Cologne, and Nuremberg. After 1356 he lived in Prague, capital of the Kingdom of Bohemia and seat of the Holy Roman Empire, where he created his most famous works: St. Vitus Cathedral and the Charles Bridge.",
+        "url": "https://en.wikipedia.org/wiki/Peter_Parler",
+        "description": "14th-century German architect and sculptor",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:23.695Z"
+      },
+      "Prince Albert I": {
+        "title": "Albert I of Monaco",
+        "extract": "Albert I was Prince of Monaco from 10 September 1889 until his death in 1922. He devoted much of his life to oceanography, exploration and science. Alongside his expeditions, Albert I's reign oversaw major reforms on political, social, and economic levels, with the Monégasque Revolution leading to the end of absolute monarchy and his promulgation of a constitution in 1911.",
+        "url": "https://en.wikipedia.org/wiki/Albert_I_of_Monaco",
+        "description": "Prince of Monaco from 1889 to 1922",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:24.275Z"
+      },
+      "Rabindranath Tagore": {
+        "title": "Rabindranath Tagore",
+        "extract": "Rabindranath Tagore was a Bengali poet, author, playwright, musician, composer, philosopher, social reformer, painter, and one of the foremost figures of the Bengal Renaissance. In 1913, Tagore became the first Indian and non-European to win a Nobel Prize in any category, and also the first lyricist to win the Nobel Prize in Literature. A significant moulder of culture within Bengal and the Indian subcontinent, he wrote and composed the national anthems of India and Bangladesh.",
+        "url": "https://en.wikipedia.org/wiki/Rabindranath_Tagore",
+        "description": "Indian polymath (1861–1941)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:24.452Z"
+      },
+      "Ramon Magsaysay": {
+        "title": "Ramon Magsaysay",
+        "extract": "Ramon del Fierro Magsaysay Sr. was a Filipino politician and military officer who was the seventh president of the Philippines, serving from 1953 until his death in 1957. An automobile mechanic by profession, Magsaysay was appointed military governor of Zambales after serving as a guerrilla leader during the Pacific War. He then served two terms as Liberal Party congressman for Zambales's at-large district before being appointed Secretary of National Defense by President Elpidio Quirino. He was eventually elected as president under the banner of the Nacionalista Party, the youngest to be elected to the position, and second youngest overall. He was the first Philippine president born in the 20th century and the first to be born after the Spanish colonial era. Magsaysay died in a plane crash on March 17, 1957, in Cebu. His successor, Carlos P. Garcia, assumed the presidency. He is the most recent Philippine president to have died in office.",
+        "url": "https://en.wikipedia.org/wiki/Ramon_Magsaysay",
+        "description": "President of the Philippines from 1953 to 1957",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:24.628Z"
+      },
+      "Robert A. Taft": {
+        "title": "Robert A. Taft",
+        "extract": "Robert Alphonso Taft Sr. was an American politician and lawyer who represented Ohio in the United States Senate from 1939 until his death in 1953. A member of the Republican Party, he briefly served as Senate majority leader and was a leader of the conservative coalition of Republicans and conservative Democrats who blocked expansion of the New Deal. Often referred to as \"Mr. Republican\", he co-sponsored the Taft–Hartley Act of 1947, which banned closed shops, created the framework of right-to-work states, and tightened other regulations on labor unions and practices.",
+        "url": "https://en.wikipedia.org/wiki/Robert_A._Taft",
+        "description": "American politician (1889–1953)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:24.805Z"
+      },
+      "Robert Baden-Powell": {
+        "title": "Robert Baden-Powell, 1st Baron Baden-Powell",
+        "extract": "\nLieutenant-General Robert Stephenson Smyth Baden-Powell, 1st Baron Baden-Powell, was a British Army officer, writer, founder of The Boy Scouts Association and its first Chief Scout, and founder, with his sister Agnes, of The Girl Guides Association. Baden-Powell wrote Scouting for Boys, which with his previous books – such as his 1884 Reconnaissance and Scouting and his 1899 Aids to Scouting for N.-C.Os and Men, which was intended for the military, and The Scout magazine – helped the rapid growth of the Scout Movement.",
+        "url": "https://en.wikipedia.org/wiki/Robert_Baden-Powell%2C_1st_Baron_Baden-Powell",
+        "description": "British soldier and founder of The Scout Association (1857–1941)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:25.580Z"
+      },
+      "Robert E. Lee": {
+        "title": "Robert E. Lee",
+        "extract": "Robert Edward Lee was a Confederate general whose early actions in the American Civil War led to his appointment as the overall commander of the Confederate States Army near the end of the war. He led the Army of Northern Virginia, the Confederacy's most powerful army, from 1862 until its surrender in 1865, earning a reputation as one of the war's most skilled tacticians.",
+        "url": "https://en.wikipedia.org/wiki/Robert_E._Lee",
+        "description": "Confederate States Army general (1807–1870)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:25.756Z"
+      },
+      "Robert Frost": {
+        "title": "Robert Frost",
+        "extract": "Robert Lee Frost was an American poet. Known for his realistic depictions of rural life and his command of American colloquial speech, Frost frequently wrote about settings from rural life in New England in the early 20th century, using them to examine complex social and philosophical themes.",
+        "url": "https://en.wikipedia.org/wiki/Robert_Frost",
+        "description": "American poet (1874–1963)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:25.927Z"
+      },
+      "Robert Fulton": {
+        "title": "Robert Fulton",
+        "extract": "Robert Fulton was an American engineer and inventor who is widely credited with developing the world's first commercially successful steamboat, the North River Steamboat. In 1807, that steamboat traveled on the Hudson River with passengers from New York City to Albany and back again, a round trip of 300 nautical miles, in 62 hours. The success of his steamboat changed river traffic and trade on major American rivers.",
+        "url": "https://en.wikipedia.org/wiki/Robert_Fulton",
+        "description": "American engineer and inventor (1765–1815)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:26.103Z"
+      },
+      "Robert Koch": {
+        "title": "Robert Koch",
+        "extract": "Heinrich Hermann Robert Koch was a German physician and microbiologist. He won the 1905 Nobel Prize in Physiology or Medicine \"for his investigations and discoveries in relation to tuberculosis\".",
+        "url": "https://en.wikipedia.org/wiki/Robert_Koch",
+        "description": "German physician and bacteriologist (1843–1910)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:26.276Z"
+      },
+      "Roswitha von Gandersheim": {
+        "title": "Hrotsvitha",
+        "extract": "Hrotsvitha was a secular canoness who wrote drama and Christian poetry under the Ottonian dynasty. She was born in Bad Gandersheim to Saxon nobles and entered Gandersheim Abbey as a canoness. She is considered the first female writer from the Germanosphere, the first person since the Fall of the Roman Empire to write dramas in the Latin West, and the first German female poet.",
+        "url": "https://en.wikipedia.org/wiki/Hrotsvitha",
+        "description": "German canoness and poet (c. 935–973)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:27.334Z"
+      },
+      "Sam Houston": {
+        "title": "Sam Houston",
+        "extract": "Samuel Houston was an American military general and statesman who played a prominent role in the Texas Revolution in which the Republic of Texas seceded from Mexico. He served as the first and third president of the Republic of Texas and then one of the first two United States Senators from Texas after it became a U.S. state. Earlier he served as the sixth governor of Tennessee, and later as the seventh governor of Texas, the only individual to be elected governor of two different U.S. states.",
+        "url": "https://en.wikipedia.org/wiki/Sam_Houston",
+        "description": "American general and statesman (1793–1863)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:28.236Z"
+      },
+      "Sam Rayburn": {
+        "title": "Sam Rayburn",
+        "extract": "Samuel Taliaferro Rayburn was an American politician who served as the 43rd speaker of the United States House of Representatives. He was a three-time House speaker, former House majority leader, two-time House minority leader, and a 25-term congressman, representing Texas's 4th congressional district as a Democrat from 1913 to 1961. He holds the record for the longest tenure as Speaker of the United States House of Representatives, serving for over 17 years.",
+        "url": "https://en.wikipedia.org/wiki/Sam_Rayburn",
+        "description": "American politician (1882–1961)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:28.515Z"
+      },
+      "Sebastián de Belalcázar": {
+        "title": "Sebastián de Belalcázar",
+        "extract": "Sebastián Moyano y Cabrera, best known as Sebastián de Belalcázar was a Spanish conquistador. Belalcázar, also written as Benalcázar. He is known as the founder of important early virreinal cities in the northwestern part of South America; Quito in 1534 and Cali, Pasto, and Popayán in 1537. Belalcázar led expeditions in present-day Ecuador and Colombia and died of natural causes after being sentenced to death in the port of Cartagena de Indias in 1551.",
+        "url": "https://en.wikipedia.org/wiki/Sebasti%C3%A1n_de_Belalc%C3%A1zar",
+        "description": "Spanish conquistador (c.1490–1551)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:28.688Z"
+      },
+      "Sidney Lanier": {
+        "title": "Sidney Lanier",
+        "extract": "Sidney Clopton Lanier was an American musician, poet and author. He served in the Confederate States Army as a private, worked on a blockade-running ship for which he was imprisoned, taught, worked at a hotel where he gave musical performances, was a church organist, and worked as a lawyer. As a poet he sometimes used dialects. Many of his poems are written in heightened, but often archaic, American English. He became a flautist and sold poems to publications. He eventually became a professor of literature at Johns Hopkins University in Baltimore, and is known for his adaptation of musical meter to poetry. Many schools, other structures and two lakes are named for him, and he became hailed in the South as the \"poet of the Confederacy\". A 1972 US postage stamp honored him as an \"American poet\".",
+        "url": "https://en.wikipedia.org/wiki/Sidney_Lanier",
+        "description": "American musician and poet (1842–1881)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:28.863Z"
+      },
+      "Stephen Leacock": {
+        "title": "Stephen Leacock",
+        "extract": "Stephen Butler Leacock was a Canadian teacher, political scientist, writer, and humourist. From 1915 to 1925, he was the best-known English-speaking humourist in the world.",
+        "url": "https://en.wikipedia.org/wiki/Stephen_Leacock",
+        "description": "Canadian writer and economist",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:29.039Z"
+      },
+      "Suleyman Stalsky": {
+        "title": "Suleyman Stalsky",
+        "extract": "Suleiman Stalsky was a North Caucasian poet of Lezgin descent from Dagestan. Russian writer Maxim Gorky described him as \"Homer of 20th century\".",
+        "url": "https://en.wikipedia.org/wiki/Suleyman_Stalsky",
+        "description": "Russian poet from Dagestan (1869–1937)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:29.461Z"
+      },
+      "Susan B. Anthony": {
+        "title": "Susan B. Anthony",
+        "extract": "Susan B. Anthony was an American social reformer and women's rights activist who played a pivotal role in the women's suffrage movement. Born into a Quaker family committed to social equality, she collected anti-slavery petitions at the age of 17. In 1856, she became the New York state agent for the American Anti-Slavery Society.",
+        "url": "https://en.wikipedia.org/wiki/Susan_B._Anthony",
+        "description": "American women's rights activist (1820–1906)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:29.636Z"
+      },
+      "Theodor Fontane": {
+        "title": "Theodor Fontane",
+        "extract": "Theodor Fontane was a German novelist and poet. He has been called “the greatest German realist novelist” and “clearly the greatest German novelist before Thomas Mann.”\nHe published the first of his novels, for which he is best known today, only at age 58 after a career as a journalist. Many of his novels delve into topics that were more or less taboo for discussion in the polite society of Fontane's day, including marital infidelity, class differences, urban vs. rural differences, abandonment of children, and suicide. His novels sold well during his lifetime and several have been adapted for film or audio works.",
+        "url": "https://en.wikipedia.org/wiki/Theodor_Fontane",
+        "description": "German journalist, novelist and poet",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:30.009Z"
+      },
+      "Thomas Edison": {
+        "title": "Thomas Edison",
+        "extract": "Thomas Alva Edison was an American inventor and businessman known for his work on the incandescent light bulb, the phonograph, electric power distribution and early motion pictures. The merger of the Edison General Electric Company and the competitor Thomson-Houston Electric Company resulted in the formation of General Electric. Edison registered 1,093 patents in the United States.",
+        "url": "https://en.wikipedia.org/wiki/Thomas_Edison",
+        "description": "American inventor and businessman (1847–1931)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:30.183Z"
+      },
+      "Vallabhbhai Patel": {
+        "title": "Vallabhbhai Patel",
+        "extract": "Vallabhbhai Patel, commonly known as Sardar Patel, was a Gandhian Indian independence activist, lawyer and statesman who served as the first Deputy Prime Minister and Home Minister of India from 1947 to 1950. He was a senior leader of the Indian National Congress, who played a significant role in the Indian independence movement and India's political integration. In India and elsewhere, he was often called Sardar meaning \"chief\". He acted as the Home Minister during the political integration of India and the Indo-Pakistani War of 1947.",
+        "url": "https://en.wikipedia.org/wiki/Vallabhbhai_Patel",
+        "description": "Indian independence activist (1875–1950)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:30.372Z"
+      },
+      "W.C. Handy": {
+        "title": "W. C. Handy",
+        "extract": "William Christopher Handy was an American composer and musician who referred to himself as the Father of the Blues. He was one of the most influential songwriters in the United States. One of many musicians who played the distinctively American blues music, Handy did not create the blues genre but was one of the first to publish music in the blues form, thereby taking the blues from a regional music style with a limited audience to a new level of popularity.",
+        "url": "https://en.wikipedia.org/wiki/W._C._Handy",
+        "description": "American blues composer and musician (1873–1958)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:31.505Z"
+      },
+      "Walt Disney": {
+        "title": "Walt Disney",
+        "extract": "Walter Elias Disney was an American animator, film producer, voice actor, and entrepreneur. A pioneer of the American animation industry, he introduced several developments in the production of cartoons. As a film producer, he holds the record for most Academy Awards won (22) and nominations (59) by an individual. He was presented with two Golden Globe Special Achievement Awards and an Emmy Award, among other honors. Several of his films are included in the National Film Registry by the Library of Congress and have also been named as some of the best by the American Film Institute.",
+        "url": "https://en.wikipedia.org/wiki/Walt_Disney",
+        "description": "American animator, producer and entrepreneur (1901–1966)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:31.672Z"
+      },
+      "Walter F. George": {
+        "title": "Walter F. George",
+        "extract": "Walter Franklin George was an American politician from the state of Georgia. He was a longtime Democratic United States senator from 1922 to 1957 and was President pro tempore of the United States Senate from 1955 to 1957.",
+        "url": "https://en.wikipedia.org/wiki/Walter_F._George",
+        "description": "American politician (1878–1957)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:32.174Z"
+      },
+      "Washington Irving": {
+        "title": "Washington Irving",
+        "extract": "Washington Irving was an American short-story writer, essayist, biographer, historian, and diplomat of the early 19th century. He wrote the short stories \"Rip Van Winkle\" (1819) and \"The Legend of Sleepy Hollow\" (1820), both of which appear in his collection The Sketch Book of Geoffrey Crayon, Gent. His historical works include biographies of Oliver Goldsmith, Muhammad, and George Washington, as well as several histories of 15th-century Spain that deal with subjects such as the Alhambra, Christopher Columbus, and the Moors. Irving served as the American ambassador to Spain in the 1840s.",
+        "url": "https://en.wikipedia.org/wiki/Washington_Irving",
+        "description": "American writer, historian and diplomat (1783–1859)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:32.356Z"
+      },
+      "Will Rogers": {
+        "title": "Will Rogers",
+        "extract": "William Penn Adair Rogers was a Native American vaudeville performer, actor, and humorous social commentator. He was born as a citizen of the Cherokee Nation, in the Indian Territory, now part of Oklahoma, and is known as \"Oklahoma's Favorite Son\". As an entertainer and humorist, he traveled around the world three times, made 71 films, and wrote more than 4,000 nationally syndicated newspaper columns. By the mid-1930s, Rogers was hugely popular in the United States for his leading political wit and was one of the higher paid Hollywood film stars. He died in 1935 with aviator Wiley Post when their small airplane crashed on takeoff from a lagoon near Utqiaġvik, Alaska, in northern Alaska.",
+        "url": "https://en.wikipedia.org/wiki/Will_Rogers",
+        "description": "Cherokee humorist and entertainer from Indian Territory, U.S. (1879–1935)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:33.243Z"
+      },
+      "Willa Cather": {
+        "title": "Willa Cather",
+        "extract": "Willa Sibert Cather was an American writer known for her novels of life on the Great Plains, including O Pioneers!, The Song of the Lark, and My Ántonia. In 1923, she was awarded the Pulitzer Prize for One of Ours, a novel set during World War I.",
+        "url": "https://en.wikipedia.org/wiki/Willa_Cather",
+        "description": "American writer (1873–1947)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:33.425Z"
+      },
+      "William McKinley": {
+        "title": "William McKinley",
+        "extract": "William McKinley was the 25th president of the United States, serving from 1897 until his assassination in 1901. A member of the Republican Party, he led a realignment that made Republicans largely dominant in the industrial states and nationwide for decades. McKinley successfully led the U.S. in the Spanish–American War and oversaw a period of American expansionism, with the annexations of Hawaii, Puerto Rico, Guam, the Philippines, and American Samoa.",
+        "url": "https://en.wikipedia.org/wiki/William_McKinley",
+        "description": "President of the United States from 1897 to 1901",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:33.770Z"
+      },
+      "William Penn": {
+        "title": "William Penn",
+        "extract": "William Penn was an English writer, theologian, religious thinker, and influential Quaker who founded the Province of Pennsylvania. An advocate of democracy and religious freedom, Penn was known for his amicable relations and successful treaties with the Lenape native peoples who had resided in present-day Pennsylvania before European colonisation there.",
+        "url": "https://en.wikipedia.org/wiki/William_Penn",
+        "description": "English writer and religious thinker (1644–1718)",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:33.944Z"
+      },
+      "Władysław Broniewski": {
+        "title": "Władysław Broniewski",
+        "extract": "Władysław Kazimierz Broniewski was a Polish poet, writer, translator and soldier, known for his revolutionary and patriotic writings.",
+        "url": "https://en.wikipedia.org/wiki/W%C5%82adys%C5%82aw_Broniewski",
+        "description": "Polish poet, writer, translator and soldier",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:34.582Z"
+      },
+      "George VI": {
+        "title": "George VI",
+        "extract": "George VI was King of the United Kingdom and the Dominions of the British Commonwealth from 11 December 1936 until his death in 1952. He was also the last Emperor of India from 1936 until the British Raj was dissolved in August 1947, though the title was only formally relinquished in June 1948. Following the London Declaration of 1949, he was the first Head of the Commonwealth.",
+        "url": "https://en.wikipedia.org/wiki/George_VI",
+        "description": "King of the United Kingdom from 1936 to 1952",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:34.767Z"
+      },
+      "Juliana of the Netherlands": {
+        "title": "Juliana of the Netherlands",
+        "extract": "Juliana was Queen of the Netherlands from 1948 until her abdication in 1980.",
+        "url": "https://en.wikipedia.org/wiki/Juliana_of_the_Netherlands",
+        "description": "Queen of the Netherlands from 1948 to 1980",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:34.945Z"
+      },
+      "Baudouin of Belgium": {
+        "title": "Baudouin of Belgium",
+        "extract": "Baudouin was King of the Belgians from 17 July 1951 until his death in 1993. He was the last Belgian king to be sovereign of the Congo, before it became independent in 1960 and became the Democratic Republic of the Congo.",
+        "url": "https://en.wikipedia.org/wiki/Baudouin_of_Belgium",
+        "description": "King of the Belgians from 1951 to 1993",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:35.125Z"
+      },
+      "Bhumibol Adulyadej": {
+        "title": "Bhumibol Adulyadej",
+        "extract": "Bhumibol Adulyadej, titled Rama IX, was King of Thailand from 9 June 1946 until his death in 2016. His reign of 70 years and 126 days is the longest of any Thai monarch, the longest on record of any independent Asian sovereign, and the third-longest of any sovereign state with a verified date.",
+        "url": "https://en.wikipedia.org/wiki/Bhumibol_Adulyadej",
+        "description": "King of Thailand from 1946 to 2016",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:35.384Z"
+      },
+      "George V": {
+        "title": "George V",
+        "extract": "George V was King of the United Kingdom and the British Dominions, and Emperor of India, from 6 May 1910 until his death in 1936.",
+        "url": "https://en.wikipedia.org/wiki/George_V",
+        "description": "King of the United Kingdom from 1910 to 1936",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:35.595Z"
+      },
+      "Victoria": {
+        "title": "Queen Victoria",
+        "extract": "Victoria was Queen of the United Kingdom of Great Britain and Ireland from 20 June 1837 until her death in 1901. Her reign of 63 years and 216 days, which was longer than those of any of her predecessors, constituted the Victorian era, a period of industrial, political, scientific, and military change within the United Kingdom marked by a great expansion of the British Empire. In 1876, the British parliament voted to grant her the additional title of Empress of India.",
+        "url": "https://en.wikipedia.org/wiki/Queen_Victoria",
+        "description": "Queen of the United Kingdom from 1837 to 1901",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:35.764Z"
+      },
+      "Alfonso XIII of Spain": {
+        "title": "Alfonso XIII",
+        "extract": "Alfonso XIII, also known as El Africano or the African for his Africanist views, was King of Spain from his birth until 14 April 1931, when the Second Spanish Republic was proclaimed. He became a monarch at birth as his father, Alfonso XII, had died the previous year. Alfonso's mother, Maria Christina of Austria, served as regent until he assumed full powers on his sixteenth birthday in 1902.",
+        "url": "https://en.wikipedia.org/wiki/Alfonso_XIII",
+        "description": "King of Spain from 1886 to 1931",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:35.939Z"
+      },
+      "Gustaf VI Adolf": {
+        "title": "Gustaf VI Adolf",
+        "extract": "Gustaf VI Adolf was King of Sweden from 29 October 1950 until his death in 1973. He was the eldest son of Gustaf V and his wife, Victoria of Baden. Before Gustaf Adolf acceded to the throne, he was crown prince for nearly 43 years during his father's reign. As king, and shortly before his death, he gave his approval to constitutional changes which removed the Swedish monarchy's last political powers. He was a lifelong amateur archeologist particularly interested in Ancient Italian cultures.",
+        "url": "https://en.wikipedia.org/wiki/Gustaf_VI_Adolf",
+        "description": "King of Sweden from 1950 to 1973",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:36.116Z"
+      },
+      "Vittorio Emanuele III": {
+        "title": "Victor Emmanuel III",
+        "extract": "Victor Emmanuel III was King of Italy from 29 July 1900 until his abdication on 9 May 1946. A member of the House of Savoy, he also reigned as Emperor of Ethiopia from 1936 to 1941 and King of the Albanians from 1939 to 1943, following the Italian invasions of Ethiopia and Albania. During his reign of nearly 46 years, which began after the assassination of his father Umberto I, the Kingdom of Italy became involved in World War I and in World War II. His reign also encompassed the birth, rise, and fall of the Fascist regime.",
+        "url": "https://en.wikipedia.org/wiki/Victor_Emmanuel_III",
+        "description": "King of Italy from 1900 to 1946",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:36.765Z"
+      },
+      "Ferdinand II of Aragon": {
+        "title": "Ferdinand II of Aragon",
+        "extract": "Ferdinand II, also known as Ferdinand the Catholic, was King of Aragon from 1479 until his death in 1516. As the husband and co-ruler of Queen Isabella I of Castile, he was also King of Castile from 1475 to 1504. He reigned jointly with Isabella over a dynastically unified Spain; together, they are known as the Catholic Monarchs. Ferdinand is considered the de facto first king of Spain, and was described as such during his reign, even though, legally, Castile and Aragon remained two separate kingdoms until they were formally united by the Nueva Planta decrees issued between 1707 and 1716.",
+        "url": "https://en.wikipedia.org/wiki/Ferdinand_II_of_Aragon",
+        "description": "King of Aragon from 1479 to 1516",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:36.945Z"
+      },
+      "Haakon VII": {
+        "title": "Haakon VII",
+        "extract": "Haakon VII was King of Norway from 1905 until his death in 1957.",
+        "url": "https://en.wikipedia.org/wiki/Haakon_VII",
+        "description": "King of Norway from 1905 to 1957",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:37.788Z"
+      },
+      "Isabella I of Castile": {
+        "title": "Isabella I of Castile",
+        "extract": "Isabella I, also known as Isabella the Catholic, was Queen of Castile and León from 1474 until her death in 1504. She was also Queen of Aragon from 1479 until her death as the wife of King Ferdinand II. Reigning together over a dynastically unified Spain, Isabella and Ferdinand are known as the Catholic Monarchs. Her reign marked the end of the Reconquista and also the start of the Spanish Empire, allowing Spain to become a major force in European politics.",
+        "url": "https://en.wikipedia.org/wiki/Isabella_I_of_Castile",
+        "description": "Queen of Castile and León from 1474 to 1504",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:38.014Z"
+      },
+      "Leopold III of Belgium": {
+        "title": "Leopold III of Belgium",
+        "extract": "Leopold III was King of the Belgians from 23 February 1934 until his abdication on 16 July 1951. At the outbreak of World War II, Leopold tried to maintain Belgian neutrality, but after the German invasion in May 1940, he surrendered his country, earning him much hostility, both at home and abroad.",
+        "url": "https://en.wikipedia.org/wiki/Leopold_III_of_Belgium",
+        "description": "King of the Belgians from 1934 to 1951",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:38.193Z"
+      },
+      "Margrethe II of Denmark": {
+        "title": "Margrethe II",
+        "extract": "Margrethe II is a member of the Danish royal family who reigned as Queen of Denmark from 14 January 1972 until her abdication on 14 January 2024. Having reigned for exactly 52 years, she is the second-longest-reigning Danish monarch after Christian IV.",
+        "url": "https://en.wikipedia.org/wiki/Margrethe_II",
+        "description": "Queen of Denmark from 1972 to 2024",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:39.409Z"
+      },
+      "Olav V of Norway": {
+        "title": "Olav V",
+        "extract": "Olav V was King of Norway from 1957 until his death in 1991.",
+        "url": "https://en.wikipedia.org/wiki/Olav_V",
+        "description": "King of Norway from 1957 to 1991",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:39.584Z"
+      },
+      "Philip, Duke of Edinburgh": {
+        "title": "Prince Philip, Duke of Edinburgh",
+        "extract": "Prince Philip, Duke of Edinburgh, was the husband of Queen Elizabeth II and served as consort of the British monarch from her accession on 6 February 1952 until his death in 2021, making him the longest-serving royal consort in British history.",
+        "url": "https://en.wikipedia.org/wiki/Prince_Philip%2C_Duke_of_Edinburgh",
+        "description": "Consort of Elizabeth II from 1952 to 2021",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:40.590Z"
+      },
+      "Prince Bernhard of the Netherlands": {
+        "title": "Prince Bernhard of Lippe-Biesterfeld",
+        "extract": "Prince Bernhard of Lippe-Biesterfeld was Prince of the Netherlands from 6 September 1948 to 30 April 1980 as the husband of Queen Juliana. They had four daughters together, including Queen Beatrix of the Netherlands.",
+        "url": "https://en.wikipedia.org/wiki/Prince_Bernhard_of_Lippe-Biesterfeld",
+        "description": "Prince consort of the Netherlands from 1948 to 1980",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:41.285Z"
+      },
+      "Recceswinth": {
+        "title": "Recceswinth",
+        "extract": "Recceswinth was the Visigothic King of Hispania and Septimania in 649–672. He ruled jointly with his father Chindaswinth until his father's death in 653.",
+        "url": "https://en.wikipedia.org/wiki/Recceswinth",
+        "description": "King of the Visigoths from 649 to 672",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:41.782Z"
+      },
+      "Roger II of Sicily": {
+        "title": "Roger II of Sicily",
+        "extract": "Roger II or Roger the Great was King of Sicily and Africa, son of Roger I of Sicily and successor to his brother Simon. He began his rule as Count of Sicily in 1105, became Duke of Apulia and Calabria in 1127, then King of Sicily in 1130 and King of Africa in 1148.",
+        "url": "https://en.wikipedia.org/wiki/Roger_II_of_Sicily",
+        "description": "King of Sicily from 1130 to 1154",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:42.349Z"
+      },
+      "Wilhelmina of the Netherlands": {
+        "title": "Wilhelmina of the Netherlands",
+        "extract": "Wilhelmina was Queen of the Netherlands from 1890 until her abdication in 1948. She reigned for nearly 58 years, making her the longest-reigning monarch in Dutch history, as well as the longest-reigning female monarch outside of the United Kingdom. Her reign encompassed World War I, the Dutch economic crisis of 1933, and World War II.",
+        "url": "https://en.wikipedia.org/wiki/Wilhelmina_of_the_Netherlands",
+        "description": "Queen of the Netherlands from 1890 to 1948",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T18:28:42.565Z"
       }
     }
   },
