@@ -1220,6 +1220,15 @@ function placeExplainer(name){
     <p class="small" style="color:var(--ink-2);line-height:1.65">\${esc(r.extract)}</p>
     <p class="small" style="color:var(--ink-3);margin-top:8px">Source: <a href="\${esc(r.url)}" target="_blank" rel="noopener">\${esc(r.source||"Wikipedia")}</a>\${r.license?\` · \${esc(r.license)}\`:""}. Sourced context, cited — not one of the collection's own facts.</p></div>\`;
 }
+/* A sourced, attributed bio for a named person/monarch (ADR-0024) — Wikipedia, cited. Never
+   machine-invented; shown only when a bio was actually sourced by fetch-entity-refs. */
+const personRef=name=>((DATA.references&&DATA.references.people)||{})[name]||null;
+function personExplainer(name){
+  const r=personRef(name); if(!r||!r.extract) return "";
+  return \`<div class="card" style="border-left:3px solid var(--terra);margin-bottom:18px"><h3 style="margin-top:0">About \${esc(name)}\${r.description?\` <span class="small" style="color:var(--ink-3);font-weight:400">· \${esc(r.description)}</span>\`:""}</h3>
+    <p class="small" style="color:var(--ink-2);line-height:1.65">\${esc(r.extract)}</p>
+    <p class="small" style="color:var(--ink-3);margin-top:8px">Source: <a href="\${esc(r.url)}" target="_blank" rel="noopener">\${esc(r.source||"Wikipedia")}</a>\${r.license?\` · \${esc(r.license)}\`:""}. Sourced context, cited — not one of the collection's own facts.</p></div>\`;
+}
 /* Curated philatelic-term definitions — authored, not machine-guessed. Shown on a form's page. */
 const FORM_GLOSSARY={single:"A single postage stamp — one design, one unit, separated from its neighbours.","se-tenant":"Se-tenant (French, “joined together”): two or more different stamp designs printed side by side and kept attached.",strip:"A strip — three or more stamps still joined in a row, as issued.",block:"A block — four or more stamps still joined in a rectangle; the classic is the block of four.","miniature-sheet":"A miniature sheet — one or a few stamps on a small decorative sheet with a wide illustrated margin, sold as a single unit.","souvenir-sheet":"A souvenir sheet — a commemorative sheetlet, often a single stamp in an ornate border, issued to mark an event.",sheetlet:"A sheetlet — a small complete pane of stamps, smaller than a full post-office sheet.",cover:"A cover — an envelope or wrapper that has been through the post, collected for its stamps, postmark and route. A first-day cover is one posted on an issue’s first day.","postal-stationery":"Postal stationery — an item with the postage imprinted rather than affixed: a pre-stamped envelope, postcard or aerogramme.",other:"Other / unclassified — a piece the machine couldn’t confidently type: a label, a fragment, or something unusual."};
 function formGlossary(name){ const g=FORM_GLOSSARY[name]; return g?\`<div class="card" style="border-left:3px solid var(--moss);margin-bottom:18px"><h3 style="margin-top:0">What is a \${esc(formLabel(name).replace(/s$/,""))}?</h3><p class="small" style="color:var(--ink-2);line-height:1.65">\${esc(g)}</p></div>\`:""; }
@@ -1249,6 +1258,7 @@ function setPage(dim,value){
   // The nerdy header: a form's definition, a theme's description, or a sourced history for a place/issuer.
   const explainer = dim==="form" ? formGlossary(value)
     : dim==="theme" ? themeGlossary(value)
+    : (["person","monarch"].includes(dim) && value!=="*") ? personExplainer(value)
     : (["territory","issuer","defunct"].includes(dim) && value!=="*") ? placeExplainer(value) : "";
   const leadPhrase = dim==="defunct" ? "from issuers that no longer exist"
     : dim==="album" ? \`in <strong>\${esc(String(label))}</strong>\`
