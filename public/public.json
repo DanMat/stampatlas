@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T16:46:09.891Z",
+  "generatedAt": "2026-09-12T16:54:45.805Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -130,7 +130,7 @@
         "eligiblePopulation": 298
       }
     ],
-    "asOf": "2026-09-12T16:49:34.216Z",
+    "asOf": "2026-09-12T16:58:09.734Z",
     "namingProgress": {
       "namedByMachine": 5251,
       "individualStamps": 7260,
@@ -10638,6 +10638,357 @@
         "source": "Wikipedia",
         "license": "CC BY-SA 4.0",
         "fetchedAt": "2026-09-09T13:18:00.316Z"
+      },
+      "Turks and Caicos Islands": {
+        "title": "Turks and Caicos Islands",
+        "extract": "Turks and Caicos Islands is a British Overseas Territory consisting of the larger Caicos Islands and smaller Turks Islands, two groups of tropical islands in the Lucayan Archipelago of the Atlantic Ocean and northern West Indies. They are known primarily for tourism and as an offshore financial centre. The resident population in 2023 was estimated by The World Factbook at 59,367, making it the third-largest of the British overseas territories by population. However, according to a Department of Statistics estimate in 2022, the population was 47,720.",
+        "url": "https://en.wikipedia.org/wiki/Turks_and_Caicos_Islands",
+        "description": "British Overseas Territory in the North Atlantic Ocean",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:43.786Z"
+      },
+      "Niue": {
+        "title": "Niue",
+        "extract": "Niue is a self-governing island country in free association with New Zealand. It is situated in the South Pacific Ocean, is part of Polynesia, and is predominantly inhabited by Polynesians. As one of the world's largest coral islands, Niue is nicknamed \"The Rock\", which comes from the traditional name \"Rock of Polynesia\".",
+        "url": "https://en.wikipedia.org/wiki/Niue",
+        "description": "Island country",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:43.961Z"
+      },
+      "Central African Republic": {
+        "title": "Central African Republic",
+        "extract": "The Central African Republic (CAR) is a landlocked country in Central Africa. It is bordered by Chad to the north, Sudan to the northeast, South Sudan to the east, the Democratic Republic of the Congo to the south, the Republic of the Congo to the southwest, and Cameroon to the west. The Central African Republic covers a land area of about 620,000 square kilometres (240,000 sq mi). As of 2024, it has a population of 5,357,744, consisting of about 80 ethnic groups. Having been a French colony under the name Ubangi-Shari, Sango is its national language and also served as co-official language alongside French. Its capital and largest city is Bangui, which sits on the country's southern border with the Democratic Republic of the Congo.",
+        "url": "https://en.wikipedia.org/wiki/Central_African_Republic",
+        "description": "Country in Central Africa",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:44.130Z"
+      },
+      "Palau": {
+        "title": "Palau",
+        "extract": "Palau, officially the Republic of Palau, is an island country located in the Micronesia subregion of Oceania in the western Pacific Ocean. The Republic of Palau consists of approximately 340 islands and is the western part of the Caroline Islands, while the eastern and central parts make up the Federated States of Micronesia.",
+        "url": "https://en.wikipedia.org/wiki/Palau",
+        "description": "Country in the Western Pacific",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:44.307Z"
+      },
+      "Christmas Island": {
+        "title": "Christmas Island",
+        "extract": "\nChristmas Island, officially the Territory of Christmas Island, is an Australian external territory in the Indian Ocean comprising the island of the same name. It is about 350 kilometres south of Java and Sumatra and about 1,550 km north-west of the closest point on the Australian mainland. It has an area of 135 square kilometres (52 sq mi). Christmas Island's geographic isolation and history of minimal human disturbance has led to a high level of endemism among its flora and fauna, which is of interest to scientists and naturalists. The territory derives its name from its discovery on Christmas Day 1643 by Captain William Mynors.",
+        "url": "https://en.wikipedia.org/wiki/Christmas_Island",
+        "description": "External territory of Australia",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:45.013Z"
+      },
+      "Anguilla": {
+        "title": "Anguilla",
+        "extract": "Anguilla is a British Overseas Territory of the Caribbean region in the North Atlantic Ocean. It is one of the most northerly of the Leeward Islands in the Lesser Antilles, lying east of Puerto Rico and the Virgin Islands and directly north of Saint Martin. The territory consists of the main island of Anguilla, approximately 16 miles long by 3 miles (5 km) wide at its widest point, together with a number of much smaller islands and cays with no permanent population. The territory's capital is The Valley. The total land area of the territory is 35 square miles (91 km2), with a population of approximately 15,753 in 2021.",
+        "url": "https://en.wikipedia.org/wiki/Anguilla",
+        "description": "British Overseas Territory in the Leeward Islands",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:45.181Z"
+      },
+      "Saint Lucia": {
+        "title": "Saint Lucia",
+        "extract": "Saint Lucia is an island country in the eastern and southern Caribbean. Part of the Windward Islands of the Lesser Antilles, it is located north/northeast of the island of Saint Vincent, northwest of Barbados and south of Martinique. It covers a land area of 617 km2 (238 sq mi) with an officially estimated population of over 184,100 people as of mid 2023. The nation's capital and largest city is Castries.",
+        "url": "https://en.wikipedia.org/wiki/Saint_Lucia",
+        "description": "Country in the West Indies in the eastern Caribbean Sea",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:45.352Z"
+      },
+      "Micronesia": {
+        "title": "Micronesia",
+        "extract": "Micronesia is a subregion of Oceania, consisting of approximately 2,000 small islands in the Northwestern Pacific Ocean. It has a close shared cultural history with three other island regions: Maritime Southeast Asia to the west, Polynesia to the east, and Melanesia to the south—as well as with the wider community of Austronesian peoples.",
+        "url": "https://en.wikipedia.org/wiki/Micronesia",
+        "description": "Subregion of Oceania",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:45.526Z"
+      },
+      "British Indian Ocean Territory": {
+        "title": "British Indian Ocean Territory",
+        "extract": "The British Indian Ocean Territory (BIOT) is a British Overseas Territory situated in the Indian Ocean. The territory comprises the seven atolls of the Chagos Archipelago with over 1,000 individual islands, many very small, amounting to a total land area of 60 square kilometres. The largest and most southerly island is Diego Garcia, 27 square kilometres, the site of a Joint Military Facility of the United Kingdom and the United States. Official administration is remote from London, though the local capital is often regarded as being on Diego Garcia.",
+        "url": "https://en.wikipedia.org/wiki/British_Indian_Ocean_Territory",
+        "description": "British Overseas Territory in the Indian Ocean",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:45.695Z"
+      },
+      "Vanuatu": {
+        "title": "Vanuatu",
+        "extract": "Vanuatu, officially the Republic of Vanuatu, is an archipelagic country in Melanesia located in the South Pacific Ocean. The archipelago, which is of volcanic origin, is 1,750 km (1,090 mi) east of northern Australia, 540 km (340 mi) northeast of New Caledonia, east of New Guinea, southeast of Solomon Islands, and west of Fiji.",
+        "url": "https://en.wikipedia.org/wiki/Vanuatu",
+        "description": "Country in Oceania",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:45.861Z"
+      },
+      "Tonga": {
+        "title": "Tonga",
+        "extract": "Tonga, officially known as the Kingdom of Tonga, is an island country in Polynesia, part of Oceania. The country has 171 islands, of which 45 are inhabited. Its total surface area is about 750 km2 (290 sq mi), scattered over 700,000 km2 (270,000 sq mi) in the southern Pacific Ocean. As of September 2026, Tonga has a population of 103,291, 70% of whom live on the main island, Tongatapu. The country stretches approximately 800 km north-south. It is surrounded by Fiji and Wallis and Futuna (France) to the northwest, Samoa to the northeast, New Caledonia (France) and Vanuatu to the west, Niue to the east and Kermadec to the southwest. Tonga is about 1,800 km from New Zealand's North Island.",
+        "url": "https://en.wikipedia.org/wiki/Tonga",
+        "description": "Country in Oceania",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:46.038Z"
+      },
+      "British Virgin Islands": {
+        "title": "British Virgin Islands",
+        "extract": "The British Virgin Islands (BVI), officially the Virgin Islands, is a British Overseas Territory in the Caribbean, to the east of Puerto Rico and the US Virgin Islands and north-west of Anguilla. The islands are geographically part of the Virgin Islands archipelago and are located in the Leeward Islands of the Lesser Antilles and part of the West Indies.",
+        "url": "https://en.wikipedia.org/wiki/British_Virgin_Islands",
+        "description": "British Overseas Territory in the Caribbean",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:46.214Z"
+      },
+      "Kiribati": {
+        "title": "Kiribati",
+        "extract": "Kiribati, officially the Republic of Kiribati, is an archipelagic country spanning the Micronesia and Polynesia sub-regions of Oceania in the central Pacific Ocean. The state comprises 32 atolls and other islands and one remote raised coral island, Banaba. Its total land area is 811 km2 (313 sq mi) dispersed over 3,441,810 km2 (1,328,890 sq mi) of ocean. The spread of the country's islands, from Banaba in the west to Kiritimati in the east straddles the equator and the 180th meridian. The International Date Line goes around Kiribati and swings far to the east, almost reaching 150°W. This brings Kiribati's easternmost islands, the southern Line Islands south of Hawaii, into the same day as the Gilbert Islands and places them in the most advanced time zone on Earth: UTC+14.",
+        "url": "https://en.wikipedia.org/wiki/Kiribati",
+        "description": "Island country in the central Pacific",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:46.391Z"
+      },
+      "Samoa": {
+        "title": "Samoa",
+        "extract": "Samoa, officially the Independent State of Samoa, is an island country in Polynesia, a part of Oceania, which is in the South Pacific Ocean. It consists of two main islands, two smaller, inhabited islands, and several smaller, uninhabited islands, including the Aleipata Islands. Samoa is located 64 km west of American Samoa, 889 km northeast of Tonga, 1,152 km northeast of Fiji, 483 km east of Wallis and Futuna, 1,151 km southeast of Tuvalu, 519 km south of Tokelau, 4,190 km southwest of Hawaii, and 610 km northwest of Niue. The capital and largest city is Apia.",
+        "url": "https://en.wikipedia.org/wiki/Samoa",
+        "description": "Island country in the Pacific Ocean",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:46.566Z"
+      },
+      "New Caledonia": {
+        "title": "New Caledonia",
+        "extract": "New Caledonia is a French territory consisting of a group of islands in the southwest Pacific Ocean, 220 km (140 mi) southwest of Vanuatu and 1,210 km (750 mi) east of Australia. Located 16,100 km (10,000 mi) from Metropolitan France, it forms a sui generis collectivity of the French Republic, having a unique legal status enshrined in a dedicated chapter of the French Constitution.",
+        "url": "https://en.wikipedia.org/wiki/New_Caledonia",
+        "description": "French territory in the southwest Pacific Ocean",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:46.734Z"
+      },
+      "Gambia": {
+        "title": "The Gambia",
+        "extract": "The Gambia, officially the Republic of The Gambia, is a country in West Africa. Geographically, The Gambia is the smallest country in continental Africa; it is bounded by Senegal on all sides except for the western part, which is bordered by the Atlantic Ocean.",
+        "url": "https://en.wikipedia.org/wiki/The_Gambia",
+        "description": "Country in West Africa",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:47.666Z"
+      },
+      "Malawi": {
+        "title": "Malawi",
+        "extract": "Malawi, officially the Republic of Malawi, is a landlocked country in Southeast Africa. It is bordered by Zambia to the west, Tanzania to the north and northeast, and Mozambique to the east, south, and southwest. Malawi spans over 118,484 km2 (45,747 sq mi) and has a population of 22,224,282. Lilongwe is its capital and largest city.",
+        "url": "https://en.wikipedia.org/wiki/Malawi",
+        "description": "Country in Southeastern Africa",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:47.844Z"
+      },
+      "Montserrat": {
+        "title": "Montserrat",
+        "extract": "Montserrat is a British Overseas Territory in the Caribbean. It is part of the Leeward Islands, the northern portion of the Lesser Antilles chain of the West Indies. Montserrat is about 16 km (10 mi) long and 11 km (7 mi) wide, with roughly 40 km (25 mi) of coastline. It is nicknamed \"The Emerald Isle of the Caribbean\" both for its resemblance to coastal Ireland and for the Irish ancestry of many of its inhabitants. Montserrat is the only non-fully sovereign full member of the Caribbean Community and the Organisation of Eastern Caribbean States, although it is not the only dependency in the Caribbean.",
+        "url": "https://en.wikipedia.org/wiki/Montserrat",
+        "description": "British Overseas Territory in the Caribbean",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:48.009Z"
+      },
+      "Ascension Island": {
+        "title": "Ascension Island",
+        "extract": "Ascension Island is an isolated volcanic island, near 8° south of the Equator in the South Atlantic Ocean. It is about 960 miles (1,540 km) from the coast of Africa and 1,400 miles (2,300 km) from the coast of South America. It is governed as part of the British Overseas Territory of Saint Helena, Ascension and Tristan da Cunha, of which the main island, Saint Helena, is around 800 miles (1,300 km) to the southeast. The territory also includes the sparsely populated Tristan da Cunha archipelago, 2,000 miles (3,200 km) to the south, about halfway to the Antarctic Circle.",
+        "url": "https://en.wikipedia.org/wiki/Ascension_Island",
+        "description": "Island in the South Atlantic Ocean",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:48.193Z"
+      },
+      "Bangladesh": {
+        "title": "Bangladesh",
+        "extract": "Bangladesh, officially the People's Republic of Bangladesh, is a country in South Asia. It is the eighth-most populous country in the world with a population of almost 177.8 million people within an area of 148,461 square kilometres (57,321 sq mi). Bangladesh shares land borders with India to the north, west, and east, and Myanmar to the southeast. It has a coastline along the Bay of Bengal to its south and is separated from Bhutan and Nepal by the Siliguri Corridor, and from China by the Indian states of West Bengal and Sikkim to its north. Dhaka, the capital and largest city, is the nation's political, financial, and cultural centre. Chittagong is the second-largest city and the busiest port of the country.",
+        "url": "https://en.wikipedia.org/wiki/Bangladesh",
+        "description": "Country in South Asia",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:48.361Z"
+      },
+      "Eswatini": {
+        "title": "Eswatini",
+        "extract": "Eswatini, formally the Kingdom of Eswatini, also known by its former official names Swaziland and the Kingdom of Swaziland, is a landlocked country in Southern Africa. It is bordered by South Africa on all sides except the east, where it shares a border with Mozambique. At no more than 200 km (120 mi) north to south and 130 km (81 mi) east to west, Eswatini is the second smallest country in continental Africa. However, its climate and topography are diverse, ranging from a cool and mountainous highveld to a hot and dry lowveld. The executive capital and largest city is Mbabane, and the legislative and second capital is Lobamba.",
+        "url": "https://en.wikipedia.org/wiki/Eswatini",
+        "description": "Country in Southern Africa",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:48.537Z"
+      },
+      "Falkland Islands": {
+        "title": "Falkland Islands",
+        "extract": "The Falkland Islands, commonly referred to as the Falklands, is an archipelago in the South Atlantic Ocean on the Patagonian Shelf. The principal islands are about 300 mi (500 km) east of South America's southern Patagonian coast and 752 mi (1,210 km) from Cape Dubouzet at the northern tip of the Antarctic Peninsula, at a latitude of about 52°S. The archipelago, with an area of 4,700 sq mi (12,000 km2), comprises East Falkland, West Falkland, and 776 smaller islands. As a British Overseas Territory, the Falklands have internal self-governance, while the United Kingdom takes responsibility for their defence and foreign affairs. The capital and largest settlement is Stanley on East Falkland.",
+        "url": "https://en.wikipedia.org/wiki/Falkland_Islands",
+        "description": "Group of islands in the South Atlantic",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:48.714Z"
+      },
+      "Gibraltar": {
+        "title": "Gibraltar",
+        "extract": "Gibraltar is a British Overseas Territory and city located at the southern tip of the Iberian Peninsula, on the Bay of Gibraltar, near the exit of the Mediterranean Sea into the Atlantic Ocean. It has an area of 6.8 km2 (2.6 sq mi) and is bordered to the north by Spain. The landscape is dominated by the Rock of Gibraltar, at the foot of which is a densely populated town area. Gibraltar is home to around 34,000 people, primarily Gibraltarians.",
+        "url": "https://en.wikipedia.org/wiki/Gibraltar",
+        "description": "British Overseas Territory in Iberia",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:48.882Z"
+      },
+      "Lesotho": {
+        "title": "Lesotho",
+        "extract": "Lesotho, officially the Kingdom of Lesotho, is a landlocked country in Southern Africa. Surrounded by South Africa, it is the largest of the three sovereign enclaves. Lesotho is located in the Maloti Mountains, with the highest peak in southern Africa. It has an area of over 30,000 km2 (11,600 mi2), with a population of about 2.3 million. Its capital and largest city is Maseru.",
+        "url": "https://en.wikipedia.org/wiki/Lesotho",
+        "description": "Country in Southern Africa",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:49.049Z"
+      },
+      "Nauru": {
+        "title": "Nauru",
+        "extract": "Nauru, officially the Republic of Naoero, is an island country and microstate in the South Pacific Ocean. It lies within the Micronesia subregion of Oceania, with its nearest neighbour being Banaba about 300 kilometres (190 mi) to the east. Yaren is its de facto capital.",
+        "url": "https://en.wikipedia.org/wiki/Nauru",
+        "description": "Island country in Oceania",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:49.215Z"
+      },
+      "Norfolk Island": {
+        "title": "Norfolk Island",
+        "extract": "Norfolk Island is an external territory of Australia located in the Pacific Ocean between New Zealand and New Caledonia, 1,412 kilometres (877 mi) directly east of Australia's Evans Head and about 900 kilometres (560 mi) from Lord Howe Island. Together with the neighbouring Phillip Island and Nepean Island, the three islands collectively form the Territory of Norfolk Island. At the 2021 census, it had 2,188 inhabitants living on a total area of about 35 km2 (14 sq mi). Its capital is Kingston.",
+        "url": "https://en.wikipedia.org/wiki/Norfolk_Island",
+        "description": "External territory of Australia",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:49.394Z"
+      },
+      "Saint Helena": {
+        "title": "Saint Helena",
+        "extract": "Saint Helena is a volcanic tropical island located in the South Atlantic Ocean, west of Africa. The nearest countries geographically are Angola and Namibia. The island is about 1,860 km (1,160 mi) west of Angola, 3,280 km (2,040 mi) east of Brazil and South America, and 4,000 km (2,500 mi) east of Rio de Janeiro, Brazil. It is one of the three constituent parts of Saint Helena, Ascension and Tristan da Cunha, a British overseas territory.",
+        "url": "https://en.wikipedia.org/wiki/Saint_Helena",
+        "description": "British Overseas Territory in the South Atlantic Ocean",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:49.570Z"
+      },
+      "Saint Helena, Ascension and Tristan da Cunha": {
+        "title": "Saint Helena, Ascension and Tristan da Cunha",
+        "extract": "Saint Helena, Ascension and Tristan da Cunha is a British Overseas Territory located in the South Atlantic and consisting of the island of Saint Helena, Ascension Island, and the archipelago of Tristan da Cunha. Its name was Saint Helena and Dependencies until 1 September 2009, when a new constitution came into force, giving the three islands equal status as three territories, with a grouping under the Crown.",
+        "url": "https://en.wikipedia.org/wiki/Saint_Helena%2C_Ascension_and_Tristan_da_Cunha",
+        "description": "British Overseas Territory in the South Atlantic",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:49.752Z"
+      },
+      "Saint Kitts and Nevis": {
+        "title": "Saint Kitts and Nevis",
+        "extract": "Saint Kitts and Nevis (SKN), officially the Federation of Saint Christopher and Nevis or the Federation of Saint Kitts and Nevis, is an island country located in the Caribbean consisting of the two islands of Saint Kitts and Nevis, in the Leeward Islands chain of the Lesser Antilles. With 261 square kilometres (101 sq mi) of territory, and roughly 48,000 inhabitants, it is the smallest sovereign state in the Western Hemisphere, in both area and population, as well as the world's smallest sovereign Federation. The country is a Commonwealth realm, with Charles III as king and head of state.",
+        "url": "https://en.wikipedia.org/wiki/Saint_Kitts_and_Nevis",
+        "description": "Country in the West Indies",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:49.926Z"
+      },
+      "Seychelles": {
+        "title": "Seychelles",
+        "extract": "Seychelles, officially the Republic of Seychelles, is an archipelagic country consisting of 115 islands in the Indian Ocean. Its capital and largest city, Victoria, is 1,500 kilometres east of mainland Africa. Nearby island countries and territories include the Maldives, Comoros, Madagascar, Mauritius, and the French overseas departments of Mayotte and Réunion to the south; and the Chagos Archipelago to the east.\nSeychelles is the smallest country in Africa as well as the least populated sovereign African country, with an estimated population of 100,600 in 2022.",
+        "url": "https://en.wikipedia.org/wiki/Seychelles",
+        "description": "Island country in the Indian Ocean",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:51.065Z"
+      },
+      "Solomon Islands": {
+        "title": "Solomon Islands",
+        "extract": "Solomon Islands, also known simply as the Solomons, is an archipelagic country consisting of six major islands and over 1,000 smaller islands in Melanesia, Oceania, to the north-east of Australia. It is adjacent to Bougainville to the west, New Caledonia and Vanuatu to the south-east, Fiji, Tuvalu, and Wallis and Futuna to the east, and the Federated States of Micronesia and Nauru to the north. It has a total area of 28,896 square kilometres, and a population of 828,857 according to official estimates from 2025. Its capital and largest city, Honiara, is located on the largest island, Guadalcanal. The country takes its name from the wider area of the Solomon Islands archipelago, which is a collection of Melanesian islands that also includes the Autonomous Region of Bougainville, but excludes the Santa Cruz Islands.",
+        "url": "https://en.wikipedia.org/wiki/Solomon_Islands",
+        "description": "Island country in Melanesia",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:51.234Z"
+      },
+      "Tuvalu": {
+        "title": "Tuvalu",
+        "extract": "Tuvalu is an archipelagic country in the Polynesian sub-region of Oceania in the Pacific Ocean, about midway between Hawaii and Australia. It lies east-northeast of the Santa Cruz Islands, northeast of Vanuatu, southeast of Nauru, south of Kiribati, west of Tokelau, northwest of Samoa and Wallis and Futuna, and north of Fiji.",
+        "url": "https://en.wikipedia.org/wiki/Tuvalu",
+        "description": "Island country in Oceania",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:51.402Z"
+      },
+      "Wallis and Futuna": {
+        "title": "Wallis and Futuna",
+        "extract": "Wallis and Futuna, officially the Territory of the Wallis and Futuna Islands, is a French island collectivity in the South Pacific, situated between Tuvalu to the northwest, Fiji to the southwest, Tonga to the southeast, Samoa to the east, and Tokelau to the northeast.",
+        "url": "https://en.wikipedia.org/wiki/Wallis_and_Futuna",
+        "description": "Overseas collectivity of France",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:51.578Z"
+      },
+      "Botswana": {
+        "title": "Botswana",
+        "extract": "Botswana, officially the Republic of Botswana, is a landlocked country in Southern Africa. Botswana is topographically flat, with approximately 70% of its territory being a part of the Kalahari Desert. It is bordered by South Africa to the south and southeast, Namibia to the west and north, Zambia to the north, and Zimbabwe to the northeast. Its total area is 581,730 square kilometres (224,610 sq mi). Gaborone, in the South-East District, is the country's capital and largest city.",
+        "url": "https://en.wikipedia.org/wiki/Botswana",
+        "description": "Country in Southern Africa",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:51.746Z"
+      },
+      "South Yemen": {
+        "title": "South Yemen",
+        "extract": "South Yemen, officially the People's Democratic Republic of Yemen (PDRY), abbreviated to Democratic Yemen, was a country in South Arabia that existed in what is now southeast Yemen from 1967 until its unification with the Yemen Arab Republic in 1990. The sole communist state in the Middle East and the Arab world, it comprised the southern and eastern governorates of the present-day Republic of Yemen, including the islands of Perim, Kamaran, and the Socotra Archipelago. It shared ill-defined and often disputed borders with the Yemen Arab Republic to the northwest, Saudi Arabia to the north, Oman to the east. Its capital and largest city was Aden.",
+        "url": "https://en.wikipedia.org/wiki/South_Yemen",
+        "description": "1967–1990 state in Western Asia",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:51.922Z"
+      },
+      "Bhutan": {
+        "title": "Bhutan",
+        "extract": "Bhutan, officially the Kingdom of Bhutan, is a landlocked country in South Asia, located in the Eastern Himalayas, bordering China's Tibet Autonomous Region to the north and northwest and India to the south and southeast. With a population of over 800,000 (800,871) and a territory of 38,394 square kilometres (14,824 sq mi), Bhutan ranks 133rd in land area and 160th in population. It is a democratic constitutional monarchy with a king as the head of state and a prime minister as the head of government. The Je Khenpo is the head of the state religion, Vajrayana Buddhism.",
+        "url": "https://en.wikipedia.org/wiki/Bhutan",
+        "description": "Country in South Asia",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:52.263Z"
+      },
+      "Western Samoa": {
+        "title": "Samoa",
+        "extract": "Samoa, officially the Independent State of Samoa, is an island country in Polynesia, a part of Oceania, which is in the South Pacific Ocean. It consists of two main islands, two smaller, inhabited islands, and several smaller, uninhabited islands, including the Aleipata Islands. Samoa is located 64 km west of American Samoa, 889 km northeast of Tonga, 1,152 km northeast of Fiji, 483 km east of Wallis and Futuna, 1,151 km southeast of Tuvalu, 519 km south of Tokelau, 4,190 km southwest of Hawaii, and 610 km northwest of Niue. The capital and largest city is Apia.",
+        "url": "https://en.wikipedia.org/wiki/Samoa",
+        "description": "Island country in the Pacific Ocean",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:51:56.056Z"
+      },
+      "Swaziland": {
+        "title": "Eswatini",
+        "extract": "Eswatini, formally the Kingdom of Eswatini, also known by its former official names Swaziland and the Kingdom of Swaziland, is a landlocked country in Southern Africa. It is bordered by South Africa on all sides except the east, where it shares a border with Mozambique. At no more than 200 km (120 mi) north to south and 130 km (81 mi) east to west, Eswatini is the second smallest country in Africa. However, its climate and topography are diverse, ranging from a cool and mountainous highveld to a hot and dry lowveld. The executive capital and largest city is Mbabane, and the legislative and second capital is Lobamba.",
+        "url": "https://en.wikipedia.org/wiki/Eswatini",
+        "description": "Country in Southern Africa",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:52:00.851Z"
+      },
+      "People's Democratic Republic of Yemen": {
+        "title": "South Yemen",
+        "extract": "South Yemen, officially the People's Democratic Republic of Yemen (PDRY), abbreviated to Democratic Yemen, was a country in South Arabia that existed in what is now southeast Yemen from 1967 until its unification with the Yemen Arab Republic in 1990. The sole communist state in the Middle East and the Arab world, it comprised the southern and eastern governorates of the present-day Republic of Yemen, including the islands of Perim, Kamaran, and the Socotra Archipelago. It shared ill-defined and often disputed borders with the Yemen Arab Republic to the northwest, Saudi Arabia to the north, Oman to the east. Its capital and largest city was Aden.",
+        "url": "https://en.wikipedia.org/wiki/South_Yemen",
+        "description": "1967–1990 state in Western Asia",
+        "source": "Wikipedia",
+        "license": "CC BY-SA 4.0",
+        "fetchedAt": "2026-09-12T16:52:03.268Z"
       }
     }
   },
