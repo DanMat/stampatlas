@@ -975,6 +975,13 @@ function metricTile(id, cls, href){ const m=metric(id); if(!m) return ""; const 
 function pendingTile(id){ const p=pendingOf(id); const label=FRIENDLY_PENDING[id]||id;
   return `<div class="perf" data-key="${esc(label)}"><div class="inner tile"><div class="n" style="font-weight:300;color:var(--ink-4)">—</div><div class="l">${esc(label)}</div><div class="s"><span class="tag unknown">awaiting</span> ${p?esc(p.blockedBy):"not yet available"}</div></div></div>`; }
 function smartTile(id, cls, href){ return metric(id) ? metricTile(id, cls, href) : pendingTile(id); }
+/* The earliest/latest candidate stamp by its read year — mirrors the emit's floor (1840, the Penny
+   Black) and cap (next year), so the year tile can link straight to the stamp behind the number. */
+function candYearStamp(which){
+  const cs=DATA.candidates||[]; const cap=new Date().getFullYear()+1; let best=null, bestY=null;
+  for(const c of cs){ const m=/\b(\d{4})\b/.exec(String(c.year||"")); if(!m) continue; const y=+m[1]; if(y<1840||y>cap) continue; if(bestY==null||(which==="earliest"?y<bestY:y>bestY)){ bestY=y; best=c; } }
+  return best;
+}
 /* the span of years: confirmed headline, candidate stretch named honestly */
 function yearsTile(which){
   const y=DATA.facts&&DATA.facts.years; const key=which==="earliest"?"earliestIssueYear":"latestIssueYear";
@@ -988,8 +995,10 @@ function yearsTile(which){
     const s=`<span class="tag confirmed">confirmed</span>${st?` ${esc(st.short)} →`:""}${e.candidate!=null&&e.candidate!==e.confirmed?`<br><span class="tag candidate">candidate</span> ${esc(String(e.candidate))} — the machine's reading, unchecked`:""}`;
     return tile(esc(String(e.confirmed)), label, s, "gold", key, st?stampHref(st.id):chHref("time"));
   }
-  // No confirmed year yet — surface the machine's candidate reading, hedged honestly.
-  return tile(esc(String(e.candidate)), label, `<span class="tag candidate">candidate</span> the machine's dating, awaiting a person`, "gold", key, chHref("time"));
+  // No confirmed year yet — surface the machine's candidate reading, hedged honestly, and link
+  // straight to the candidate stamp the machine dated to that year (ADR-0055 traceability).
+  const cst=candYearStamp(which);
+  return tile(esc(String(e.candidate)), label, `<span class="tag candidate">candidate</span> the machine's dating${cst?` — open the stamp →`:", awaiting a person"}`, "gold", key, cst?candHref(cst.id):chHref("time"));
 }
 function pendItems(ids){ return ids.map(id=>{ const p=pendingOf(id); if(!p) return ""; const label=FRIENDLY_PENDING[id]||id;
   return `<li data-key="${esc(label)}" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--rule-soft);padding:9px 0"><span>${esc(label)}</span><span class="mono" style="color:var(--ink-3)">awaiting ${esc(p.blockedBy)}</span></li>`; }).filter(Boolean).join(""); }
