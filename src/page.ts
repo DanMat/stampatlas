@@ -779,6 +779,52 @@ function candAgg(){
   _candAgg={issuers,territories,themes,denoms,withDen,dated,monarch,total:cs.length,extinct:issuers.filter(i=>i.status==="defunct").length};
   return _candAgg;
 }
+// Candidate connections — threads the machine can see between candidate stamps: a person on two
+// nations' post, a state and its named successor, one subject issued across borders. Hedged.
+const candIss=c=>c.resolvedIssuer||c.issuer||"";
+let _candConn=null;
+function candConnections(){
+  if(_candConn) return _candConn;
+  const cs=DATA.candidates||[]; const out=[]; const seen=new Set();
+  const addPair=(a,b,why,kind)=>{ if(!a||!b||a.id===b.id) return; const k=[a.id,b.id].sort().join("|"); if(seen.has(k)) return; seen.add(k); out.push({a,b,why,kind}); };
+  const firstByIssuer=new Map(); cs.forEach(c=>{ const k=candIss(c); if(k&&!firstByIssuer.has(k)) firstByIssuer.set(k,c); });
+  // 1. Same PERSON across two different issuers.
+  const byPerson=new Map();
+  cs.forEach(c=>{ const p=c.subthemes&&c.subthemes.person; if(p){ const l=byPerson.get(p)||[]; l.push(c); byPerson.set(p,l); } });
+  [...byPerson.entries()].map(([p,arr])=>{ const reps=new Map(); arr.forEach(c=>{ const k=candIss(c); if(k&&!reps.has(k)) reps.set(k,c); }); return {p,reps:[...reps.values()]}; })
+    .filter(x=>x.reps.length>=2).sort((a,b)=>b.reps.length-a.reps.length).slice(0,14)
+    .forEach(x=>{ addPair(x.reps[0],x.reps[1],\`\${x.p} appears on the post of \${candIss(x.reps[0])} and \${candIss(x.reps[1])}\${x.reps.length>2?\` — and \${x.reps.length-2} more\`:""}.\`,"person"); });
+  // 2. Successor states: one pair per defunct issuer <-> its named successor.
+  const defunct=new Map();
+  cs.forEach(c=>{ if(c.issuerStatus==="defunct"&&c.succeededBy&&!defunct.has(candIss(c))) defunct.set(candIss(c),c); });
+  [...defunct.values()].forEach(c=>{ const succ=firstByIssuer.get(c.succeededBy); if(succ&&candIss(succ)!==candIss(c)) addPair(c,succ,\`\${candIss(c)} no longer issues under that name; \${c.succeededBy} prints in its place.\`,"successor"); });
+  // 3. Omnibus: same exact subject + year across >=2 issuers (bonus; exact-match only, so rare-but-true).
+  const bySY=new Map();
+  cs.forEach(c=>{ const s=(c.subjects&&c.subjects[0]); if(s&&c.year){ const k=s.toLowerCase().trim()+"|"+c.year; const l=bySY.get(k)||[]; l.push(c); bySY.set(k,l); } });
+  [...bySY.values()].forEach(arr=>{ const reps=new Map(); arr.forEach(c=>{ const k=candIss(c); if(k&&!reps.has(k)) reps.set(k,c); }); const r=[...reps.values()]; if(r.length>=2) addPair(r[0],r[1],\`Both mark \${(r[0].subjects&&r[0].subjects[0])} in \${r[0].year} — the same subject issued across borders\${r.length>2?\` (\${r.length} issuers)\`:""}.\`,"omnibus"); });
+  _candConn=out.slice(0,30);
+  return _candConn;
+}
+// Candidate sets — two honest, measured signals (no catalogue data): a "possible omnibus" (one
+// person honoured across >=2 issuers in one clean year — e.g. the 1979 Rowland Hill centenary) and
+// a "candidate set" (one issuer, one clean year, >=2 denominations). Only ~1 in 5 candidates has a
+// clean 4-digit year, so these cover a minority by design. Issuer aliases fold split identities.
+const ISSUER_ALIAS={'United States Postal Service':'United States','French Republic':'France','Royal Mail':'United Kingdom'};
+const canonIssuer=c=>{ const n=c.resolvedIssuer||c.issuer||""; return ISSUER_ALIAS[n]||n; };
+const cleanYear=y=>(typeof y==="string"&&/^\\d{4}$/.test(y.trim()))?y.trim():(typeof y==="number"&&y>=1000&&y<=2100?String(y):null);
+let _candSets=null;
+function candSets(){
+  if(_candSets) return _candSets;
+  const cs=DATA.candidates||[];
+  const omb=new Map();
+  cs.forEach(c=>{ const p=c.subthemes&&(c.subthemes.person||c.subthemes.monarch); const y=cleanYear(c.year); if(!p||!y) return; const k=p+"|"+y; const g=omb.get(k)||{person:p,year:y,issuers:new Set(),stamps:[]}; g.issuers.add(canonIssuer(c)); g.stamps.push(c); omb.set(k,g); });
+  const omnibus=[...omb.values()].filter(g=>g.issuers.size>=2).map(g=>({person:g.person,year:g.year,issuers:[...g.issuers],stamps:g.stamps})).sort((a,b)=>b.stamps.length-a.stamps.length);
+  const setM=new Map();
+  cs.forEach(c=>{ const iss=canonIssuer(c); const y=cleanYear(c.year); if(!iss||!y) return; const k=iss+"|"+y; const g=setM.get(k)||{issuer:iss,year:y,denoms:new Set(),stamps:[]}; if(c.denomination){ const d=normDenom(c.denomination); if(d) g.denoms.add(d); } g.stamps.push(c); setM.set(k,g); });
+  const sets=[...setM.values()].filter(g=>g.stamps.length>=2&&g.denoms.size>=2).map(g=>({issuer:g.issuer,year:g.year,denoms:[...g.denoms],stamps:g.stamps})).sort((a,b)=>b.stamps.length-a.stamps.length);
+  _candSets={omnibus,sets};
+  return _candSets;
+}
 /* The "distinct as read" fingerprint — the same fields facts.ts groups on. Two candidates that
    fingerprint alike are the apparent duplicates a person would later merge or keep. */
 const candFingerprint=c=>{
@@ -1084,7 +1130,7 @@ function mapBand(){
 function chapterStatus(id){
   const A=candAgg();
   const has={ glance:true, time:!!(DATA.facts&&DATA.facts.years), issuers:(DATA.issuers||[]).some(i=>i.status==="confirmed")||A.issuers.length>0, map:(DATA.issuers||[]).length>0||A.territories.length>0, people:(DATA.people||[]).length>0||((DATA.facts&&DATA.facts.people)||[]).length>0,
-    themes:(DATA.themes||[]).length>0||A.themes.length>0, dna:storied().length>0||A.total>0, connections:stamps().some(s=>(s.connections&&s.connections.stamps||[]).length), language:stamps().length>0||A.denoms.length>0, physical:stamps().length>0, sets:(DATA.sets||[]).length>0, albums:(DATA.albums||[]).length>0, colour:false, play:(DATA.discoveries||[]).length>0||A.total>0, questions:true, unknown:true };
+    themes:(DATA.themes||[]).length>0||A.themes.length>0, dna:storied().length>0||A.total>0, connections:stamps().some(s=>(s.connections&&s.connections.stamps||[]).length)||candConnections().length>0, language:stamps().length>0||A.denoms.length>0, physical:stamps().length>0, sets:(DATA.sets||[]).length>0||candSets().omnibus.length>0||candSets().sets.length>0, albums:(DATA.albums||[]).length>0, colour:false, play:(DATA.discoveries||[]).length>0||A.total>0, questions:true, unknown:true };
   return has[id]?"charted":"awaiting";
 }
 function doorsBand(){
@@ -1674,7 +1720,15 @@ function dnaCh(){
 function connectionsCh(){
   const pairs=[]; const seen=new Set();
   stamps().forEach(s=>(s.connections&&s.connections.stamps||[]).forEach(c=>{ const k=[s.id,c.id].sort().join("|"); if(seen.has(k)||!stampById(c.id)) return; seen.add(k); pairs.push([s,stampById(c.id),c.why]); }));
-  if(!pairs.length) return awaiting("connections",7,"Connections","Two stamps, one thread — the same event seen from two countries, decades apart.","Once objects are identified, the atlas draws the links between them: shared events, shared designs, successor states.",{cap:"Connection plate · pending",prompt:"Two stamps, one connection — drawn once both are read."});
+  if(!pairs.length){
+    const cc=candConnections();
+    if(cc.length){
+      const cobj=c=>\`<a class="obj" href="\${candHref(c.id)}" style="text-decoration:none;color:inherit"><div><div class="ttl">\${esc((c.subjects&&c.subjects[0])||c.reading||candIss(c)||"a stamp")}</div><div class="meta">\${esc(candIss(c)||"—")} · \${esc(String(c.year||"—"))}</div></div></a>\`;
+      const body=\`<p class="small muted">Threads the machine can see between candidate stamps — a person on two nations' post, a state and its successor, one subject across borders. Candidate links, awaiting a person.</p><div class="grid g2">\${cc.map(p=>\`<div class="card" data-key="\${esc(p.a.id+'|'+p.b.id)}"><div class="pair">\${cobj(p.a)}<span class="link" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M4 14h20M18 8l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>\${cobj(p.b)}</div><p class="connect-note">\${esc(p.why)}</p></div>\`).join("")}</div>\`;
+      return chapter("connections",7,"Connections","Two stamps, one thread — the same event seen from two countries, decades apart.",body);
+    }
+    return awaiting("connections",7,"Connections","Two stamps, one thread — the same event seen from two countries, decades apart.","Once objects are identified, the atlas draws the links between them: shared events, shared designs, successor states.",{cap:"Connection plate · pending",prompt:"Two stamps, one connection — drawn once both are read."});
+  }
   const obj=s=>\`<a class="obj" href="\${stampHref(s.id)}"><span class="ph">\${stampPlate(s,"sm")}</span><div><div class="ttl">\${esc(s.title)}</div><div class="meta">\${esc(issuerName(s))} · \${esc(String(yearOf(s)||"—"))}</div></div></a>\`;
   const body=\`<div class="grid g2">\${pairs.map(([a,b,why])=>\`<div class="card"><div class="pair">\${obj(a)}<span class="link" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 28 28"><path d="M4 14h20M18 8l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>\${obj(b)}</div><p class="connect-note">\${esc(why)}</p></div>\`).join("")}</div>\`;
   return chapter("connections",7,"Connections","Two stamps, one thread — the same event seen from two countries, decades apart.",body);
@@ -1704,7 +1758,18 @@ function physicalCh(){
   return chapter("physical",9,"The physical object","Paper, perforation, watermark, postmark — the stamp as a thing you can hold.",body);
 }
 function setsCh(){
-  const sets=DATA.sets||[]; if(!sets.length) return awaiting("sets",10,"Sets &amp; series","Series and omnibus issues — one design shared across many issuers in a single year.","Once issues are identified, the atlas reconstructs the sets: the long-running series, and the omnibus designs that crossed borders.",{cap:"Set plate · pending"});
+  const sets=DATA.sets||[];
+  if(!sets.length){
+    const CS=candSets();
+    if(CS.omnibus.length||CS.sets.length){
+      const omb=CS.omnibus.map(g=>\`<div class="card" data-key="\${esc('omb-'+g.person+g.year)}"><span class="eyebrow">\${esc(g.year)} · possible omnibus</span><h3 style="margin-top:6px"><a href="\${setHref('person',g.person)}" style="color:inherit;text-decoration:none">\${esc(g.person)}</a></h3><p class="small" style="margin-top:8px"><strong>\${fmt(g.stamps.length)}</strong> stamps across <strong>\${g.issuers.length}</strong> issuers — one figure honoured in \${esc(g.year)} across borders.</p><p class="small muted" style="margin-top:6px">\${g.issuers.slice(0,10).map(esc).join(" · ")}\${g.issuers.length>10?\` · +\${g.issuers.length-10}\`:""}</p></div>\`).join("");
+      const setCards=CS.sets.slice(0,60).map(g=>\`<div class="card" data-key="\${esc('set-'+g.issuer+g.year)}"><span class="eyebrow">\${esc(g.year)} · candidate set</span><h3 style="margin-top:6px">\${esc(g.issuer)}</h3><p class="small" style="margin-top:8px"><strong>\${fmt(g.stamps.length)}</strong> stamps · \${g.denoms.length} denominations</p><p class="small muted" style="margin-top:4px">\${g.denoms.slice(0,12).map(esc).join(" · ")}\${g.denoms.length>12?" · …":""}</p></div>\`).join("");
+      const body=\`\${CS.omnibus.length?\`<h3 style="margin:0 0 10px">Possible omnibus issues</h3><p class="small muted" style="margin:0 0 14px">One figure issued across many countries in a single year — the clearest kind of set the machine can see. Grouped from our own candidate reads, no catalogue data.</p><div class="grid g3">\${omb}</div>\`:""}
+      \${CS.sets.length?\`<h3 style="margin:26px 0 10px">Candidate sets within an issuer</h3><p class="small muted" style="margin:0 0 14px">One issuer, one year, several denominations — the shape of a set. A <strong>candidate</strong> grouping over the ~1 in 5 stamps that carry a clean year, not a catalogue's definition.</p><div class="grid g3">\${setCards}</div>\${CS.sets.length>60?\`<p class="small muted" style="margin-top:12px">Showing the 60 largest of \${fmt(CS.sets.length)} candidate sets.</p>\`:""}\`:""}\`;
+      return chapter("sets",10,"Sets &amp; series","Series and omnibus issues — one design shared across many issuers in a single year.",body);
+    }
+    return awaiting("sets",10,"Sets &amp; series","Series and omnibus issues — one design shared across many issuers in a single year.","Once issues are identified, the atlas reconstructs the sets: the long-running series, and the omnibus designs that crossed borders.",{cap:"Set plate · pending"});
+  }
   const body=\`<div class="grid g3">\${sets.map(t=>{ const pct=Math.round(100*t.valuesHeld/t.valuesTotal); return \`<div class="card" data-key="\${esc(t.id)}"><span class="eyebrow">\${esc(String(t.year))}</span><h3 style="margin-top:6px">\${esc(t.name)}</h3><div class="bar" style="grid-template-columns:1fr auto;margin-top:12px"><span class="trk"><span class="fil" style="width:\${pct}%"></span></span><span class="val">\${t.valuesHeld} of \${t.valuesTotal}</span></div><p class="small" style="margin:10px 0 0">\${t.stamps.map(stampLink).join(", ")}\${t.note?\` · <span class="muted">\${esc(t.note)}</span>\`:""}</p></div>\`; }).join("")}</div><p class="small muted" style="margin-top:14px">A set is shown only when the issue itself is confirmed; a stamp whose issue is still unresolved (there is one) belongs to no set yet.</p>\`;
   return chapter("sets",10,"Sets &amp; series","Series and omnibus issues — one design shared across many issuers in a single year.",body);
 }
