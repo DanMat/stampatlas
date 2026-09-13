@@ -750,6 +750,33 @@ const setHref=(dim,value)=>`#/set/${dim}/${encodeURIComponent(value)}`;
    Falls back to plain text when there's no value to link to. */
 const sl=(dim,value,text)=>value?`<a href="${setHref(dim,value)}" style="color:inherit;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--terra) 55%,transparent);text-underline-offset:2px">${text}</a>`:text;
 const candidateById=id=>(DATA.candidates||[]).find(c=>c.id===id)||null;
+// Candidate aggregates — chapters light up from the machine's candidate corpus (hedged), not only
+// from confirmed data. Computed once from DATA.candidates, which the page already ships.
+let _candAgg=null;
+function candAgg(){
+  if(_candAgg) return _candAgg;
+  const cs=DATA.candidates||[];
+  const issM=new Map(), terrM=new Map(), thM=new Map(), denM=new Map(); let withDen=0, dated=0, monarch=0;
+  for(const c of cs){
+    const iname=c.resolvedIssuer||c.issuer;
+    if(iname){ const e=issM.get(iname)||{name:iname,count:0,terr:new Map(),status:null,succeededBy:null};
+      e.count++; if(c.territory) e.terr.set(c.territory,(e.terr.get(c.territory)||0)+1);
+      if(!e.status&&c.issuerStatus) e.status=c.issuerStatus; if(!e.succeededBy&&c.succeededBy) e.succeededBy=c.succeededBy;
+      issM.set(iname,e); }
+    if(c.territory) terrM.set(c.territory,(terrM.get(c.territory)||0)+1);
+    const t=c.theme; if(t&&!/^(unidentified|other)$/i.test(t)) thM.set(t,(thM.get(t)||0)+1);
+    if(c.denomination){ withDen++; denM.set(c.denomination,(denM.get(c.denomination)||0)+1); }
+    if(c.year) dated++;
+    if(c.subthemes&&c.subthemes.monarch) monarch++;
+  }
+  const topTerr=e=>{ let best=null,bn=-1; e.terr.forEach((n,k)=>{ if(n>bn){bn=n;best=k;} }); return best; };
+  const issuers=[...issM.values()].map(e=>({name:e.name,count:e.count,status:e.status,succeededBy:e.succeededBy,territory:topTerr(e)})).sort((a,b)=>b.count-a.count||a.name.localeCompare(b.name));
+  const territories=[...terrM.entries()].map(([name,count])=>({name,count})).sort((a,b)=>b.count-a.count||a.name.localeCompare(b.name));
+  const themes=[...thM.entries()].map(([name,count])=>({name,count})).sort((a,b)=>b.count-a.count||a.name.localeCompare(b.name));
+  const denoms=[...denM.entries()].map(([value,count])=>({value,count})).sort((a,b)=>b.count-a.count);
+  _candAgg={issuers,territories,themes,denoms,withDen,dated,monarch,total:cs.length,extinct:issuers.filter(i=>i.status==="defunct").length};
+  return _candAgg;
+}
 /* The "distinct as read" fingerprint — the same fields facts.ts groups on. Two candidates that
    fingerprint alike are the apparent duplicates a person would later merge or keep. */
 const candFingerprint=c=>{
@@ -1053,8 +1080,9 @@ function mapBand(){
 }
 /* what each chapter can honestly show today — drives the doorway status lines and the Contents */
 function chapterStatus(id){
-  const has={ glance:true, time:!!(DATA.facts&&DATA.facts.years), issuers:(DATA.issuers||[]).some(i=>i.status==="confirmed"), map:(DATA.issuers||[]).length>0, people:(DATA.people||[]).length>0||((DATA.facts&&DATA.facts.people)||[]).length>0,
-    themes:(DATA.themes||[]).length>0, dna:storied().length>0, connections:stamps().some(s=>(s.connections&&s.connections.stamps||[]).length), language:stamps().length>0, physical:stamps().length>0, sets:(DATA.sets||[]).length>0, albums:(DATA.albums||[]).length>0, colour:false, play:(DATA.discoveries||[]).length>0, questions:true, unknown:true };
+  const A=candAgg();
+  const has={ glance:true, time:!!(DATA.facts&&DATA.facts.years), issuers:(DATA.issuers||[]).some(i=>i.status==="confirmed")||A.issuers.length>0, map:(DATA.issuers||[]).length>0||A.territories.length>0, people:(DATA.people||[]).length>0||((DATA.facts&&DATA.facts.people)||[]).length>0,
+    themes:(DATA.themes||[]).length>0||A.themes.length>0, dna:storied().length>0||A.total>0, connections:stamps().some(s=>(s.connections&&s.connections.stamps||[]).length), language:stamps().length>0||A.denoms.length>0, physical:stamps().length>0, sets:(DATA.sets||[]).length>0, albums:(DATA.albums||[]).length>0, colour:false, play:(DATA.discoveries||[]).length>0||A.total>0, questions:true, unknown:true };
   return has[id]?"charted":"awaiting";
 }
 function doorsBand(){
@@ -1545,7 +1573,18 @@ function timeCh(){
 }
 function issuersCh(){
   const conf=(DATA.issuers||[]).filter(i=>i.status==="confirmed"); const cand=(DATA.issuers||[]).filter(i=>i.status==="candidate");
-  if(!conf.length) return awaiting("issuers",2,"The issuers","Who printed the post — kingdoms, colonies, republics that lasted a decade, and the states that outlived them.","Every stamp is issued by somewhere. Once identification runs, this chapter counts the distinct issuers, and how many of them are places that no longer exist.",{pending:["distinctIssuerCount","extinctIssuerCount"],src:"assets/plate-issuers.jpg",cap:"Plate · Lost postal worlds"});
+  if(!conf.length){
+    const A=candAgg();
+    if(A.issuers.length){
+      const rows=A.issuers.slice(0,150).map(i=>`<tr data-key="${esc(i.name)}"><td><strong>${esc(i.name)}</strong></td><td>${i.territory?`<a href="${setHref('territory',i.territory)}">${esc(i.territory)}</a>`:"—"}</td><td>${i.status==="defunct"?`<span class="tag defunct">no longer issues${i.succeededBy?` → ${esc(i.succeededBy)}`:""}</span>`:i.status==="current"?`<span class="tag current">current</span>`:`<span class="tag unknown">unknown</span>`}</td><td class="num">${fmt(i.count)}</td></tr>`).join("");
+      const body=`<div class="card"><span class="tag candidate">the machine's candidates — awaiting a person</span>
+      <p class="small" style="margin-top:10px"><strong>${fmt(A.issuers.length)}</strong> distinct issuers read across <strong>${fmt(A.total)}</strong> candidate stamps${A.extinct?`, <strong>${fmt(A.extinct)}</strong> of them places that no longer issue under the name printed`:""}. An issuer here is the name the machine resolved from the inscription; a person has not confirmed these, so none is counted.</p>
+      <div class="scroll-x"><table class="tbl"><thead><tr><th>Issuer (resolved)</th><th>Territory</th><th>Status</th><th style="text-align:right">Stamps</th></tr></thead><tbody>${rows}</tbody></table></div>
+      ${A.issuers.length>150?`<p class="small muted" style="margin-top:10px">Showing the 150 most-read of ${fmt(A.issuers.length)}.</p>`:""}</div>`;
+      return chapter("issuers",2,"The issuers","Who printed the post — kingdoms, colonies, republics that lasted a decade, and the states that outlived them.",body);
+    }
+    return awaiting("issuers",2,"The issuers","Who printed the post — kingdoms, colonies, republics that lasted a decade, and the states that outlived them.","Every stamp is issued by somewhere. Once identification runs, this chapter counts the distinct issuers, and how many of them are places that no longer exist.",{pending:["distinctIssuerCount","extinctIssuerCount"],src:"assets/plate-issuers.jpg",cap:"Plate · Lost postal worlds"});
+  }
   const rows=conf.map(i=>{ const its=stamps().filter(s=>s.identity.issuerId===i.id); return `<tr data-key="${esc(i.id)}"><td><strong>${esc(i.name)}</strong><br><span class="mono muted">as printed: ${esc(i.asPrinted||"")}</span></td><td>${esc(i.today||"")}${i.note?`<br><span class="small muted">${esc(i.note)}</span>`:""}</td><td><span class="tag ${i.state==="defunct"?"defunct":"current"}">${i.state==="defunct"?"no longer issues":"current"}</span></td><td class="num">${its.length}</td><td>${its.map(s=>stampLink(s.id)).join(", ")}</td></tr>`; }).join("");
   const body=`<div class="grid g3" style="margin-bottom:20px">${smartTile("distinctIssuerCount","")}${smartTile("extinctIssuerCount","accent")}${smartTile("distinctTerritoryCount","gold")}</div>
   <div class="card"><h3>Counted under the name printed</h3><p class="small">An issuer is the name on the stamp, in the year it was issued. Where that place has since been renamed, divided or absorbed, its successor is listed beside it — as a door, not a relabelling.</p>
@@ -1555,7 +1594,16 @@ function issuersCh(){
 }
 function mapCh(){
   const iss=DATA.issuers||[];
-  if(!iss.length) return awaiting("map",3,"The map","Every issuer pinned on an aged chart — where the post came from, and how the borders moved.","Once territories are resolved, the collection is drawn onto a world chart: a pin for every place that issued a stamp, the vanished ones marked apart.",{pending:["distinctTerritoryCount"],plate:"era",cap:"Survey chart · pending",prompt:"A blank survey chart — pins appear as territories are resolved."});
+  if(!iss.length){
+    const A=candAgg();
+    if(A.territories.length){
+      const rows=A.territories.map(t=>`<li data-key="${esc(t.name)}" style="break-inside:avoid;border-top:1px solid var(--rule-soft);padding:8px 0;display:flex;justify-content:space-between;gap:10px"><a href="${setHref('territory',t.name)}" style="text-decoration:none;color:var(--ink);font-weight:500">${esc(t.name)}</a><span class="mono muted">${fmt(t.count)}</span></li>`).join("");
+      const body=`<div><span class="tag candidate">candidate territories — no coastlines drawn</span><p class="map-note" style="margin:12px 0 18px">The machine has placed candidate stamps in <strong>${fmt(A.territories.length)}</strong> territories. A survey chart with pins waits on each territory being resolved to a seat with coordinates; until then the atlas lists them plainly rather than draw a map it cannot yet honestly plot. A place named is still a fact.</p>
+      <div class="card place"><span class="eyebrow">Gazetteer · candidate</span><ul style="list-style:none;margin:10px 0 0;padding:0;column-width:220px;column-gap:28px">${rows}</ul></div></div>`;
+      return chapter("map",3,"The map","Every issuer pinned on an aged chart — where the post came from, and how the borders moved.",body);
+    }
+    return awaiting("map",3,"The map","Every issuer pinned on an aged chart — where the post came from, and how the borders moved.","Once territories are resolved, the collection is drawn onto a world chart: a pin for every place that issued a stamp, the vanished ones marked apart.",{pending:["distinctTerritoryCount"],plate:"era",cap:"Survey chart · pending",prompt:"A blank survey chart — pins appear as territories are resolved."});
+  }
   const conf=iss.filter(i=>i.status==="confirmed");
   const body=`<div class="map-wrap"><div>${surveyChart()}<div class="mini-legend" style="margin-top:10px"><span><i style="background:var(--terra)"></i> current issuer</span><span><i style="background:var(--ochre)"></i> no longer issues</span><span><i class="hollow"></i> machine candidate</span></div><p class="map-note">Coastlines are deliberately absent: the atlas draws land only where a territory has been resolved, and none has been drawn yet. Pins are placed at the issuer's seat, not the stamp's subject.</p></div>
     <div class="card place"><span class="eyebrow">Gazetteer of issuers</span><ul style="list-style:none;margin:8px 0 0;padding:0">${conf.map(i=>`<li style="border-top:1px solid var(--rule-soft);padding:9px 0"><div style="display:flex;justify-content:space-between;gap:8px"><strong>${esc(i.name)}</strong><span class="tag ${i.state==="defunct"?"defunct":"current"}">${i.state==="defunct"?"vanished":"current"}</span></div><div class="small muted">→ ${esc(i.today||"")}${i.note?` · ${esc(i.note)}`:""}</div></li>`).join("")}</ul></div></div>`;
@@ -1581,13 +1629,36 @@ function peopleCh(){
 }
 function themesCh(){
   const th=(DATA.themes||[]).slice().sort((a,b)=>b.stamps.length-a.stamps.length);
-  if(!th.length) return awaiting("themes",5,"The themes","What the collection keeps returning to — birds, ships, flight, the ends of wars.","Once subjects are identified, the recurring themes surface here — and the honest absences, the subjects the collection never touches.",{src:"assets/plate-themes.jpg",cap:"Plate · A cabinet of subjects"});
+  if(!th.length){
+    const A=candAgg();
+    if(A.themes.length){
+      const max=A.themes[0].count; const total=A.themes.reduce((n,t)=>n+t.count,0);
+      const bubbles=A.themes.map(t=>`<a class="bubble" href="${setHref('theme',t.name)}" data-key="${esc(t.name)}" style="--s:${(52+74*(t.count/max)).toFixed(0)}px" title="${esc(t.name)} · ${t.count}"><span class="t">${esc(t.name)}</span><span class="c">${fmt(t.count)}</span></a>`).join("");
+      const body=`<div class="card"><div class="bubbles">${bubbles}</div><p class="small muted" style="text-align:center;margin:10px 0 0">${fmt(A.themes.length)} recurring themes the machine grouped across ${fmt(total)} candidate readings — sized by how often each recurs. A <strong>candidate</strong> grouping; a person hasn't confirmed the subjects yet.</p></div>`;
+      return chapter("themes",5,"The themes","What the collection keeps returning to — birds, ships, flight, the ends of wars.",body);
+    }
+    return awaiting("themes",5,"The themes","What the collection keeps returning to — birds, ships, flight, the ends of wars.","Once subjects are identified, the recurring themes surface here — and the honest absences, the subjects the collection never touches.",{src:"assets/plate-themes.jpg",cap:"Plate · A cabinet of subjects"});
+  }
   const max=Math.max(...th.map(t=>t.stamps.length));
   const body=`<div class="card"><div class="bubbles">${th.map(t=>`<a class="bubble" href="${stampHref(t.stamps[0])}" data-key="${esc(t.id)}" style="--s:${(56+70*(t.stamps.length/max)).toFixed(0)}px" title="${esc(t.name)} · ${t.stamps.length}"><span class="t">${esc(t.name)}</span><span class="c">${t.stamps.length}</span></a>`).join("")}</div><p class="small muted" style="text-align:center;margin:8px 0 0">Sized by how many named stamps carry the theme. With ${stamps().length} named, this is a sketch of a pattern, not a pattern.</p></div>`;
   return chapter("themes",5,"The themes","What the collection keeps returning to — birds, ships, flight, the ends of wars.",body);
 }
 function dnaCh(){
-  const st=stamps(); if(!storied().length) return awaiting("dna",6,"The collection's DNA","The shape of the whole, distilled to a handful of honest sentences.","When there is enough read to summarise, this chapter states what the collection is — in plain, checkable lines drawn straight from the counts.",{cap:"Profile · pending",prompt:"The collection, distilled — once there is enough to distil."});
+  const st=stamps();
+  if(!storied().length){
+    const A=candAgg();
+    if(A.total){
+      const lines=[
+        `<strong>${fmt(A.total)}</strong> stamps have a candidate reading; none is confirmed, so every line here is the machine's, awaiting a person.`,
+        `It resolved <strong>${fmt(A.issuers.length)}</strong> distinct issuers across <strong>${fmt(A.territories.length)}</strong> territories — <strong>${fmt(A.extinct)}</strong> issuers no longer exist under the name printed.`,
+        `<strong>${fmt(A.themes.length)}</strong> recurring themes surfaced${A.themes[0]?`; the commonest is <strong>${esc(A.themes[0].name)}</strong> (${fmt(A.themes[0].count)} stamps)`:""}.`,
+        `<strong>${fmt(A.dated)}</strong> carry a readable year, <strong>${fmt(A.withDen)}</strong> a legible face value, and <strong>${fmt(A.monarch)}</strong> a named monarch's head.`,
+      ];
+      const body=`<div class="card"><span class="tag candidate">a sketch, from ${fmt(A.total)} candidate readings</span><div style="display:grid;gap:14px;margin-top:14px">${lines.map(l=>`<p class="sentence" style="margin:0">${l}</p>`).join("")}</div><p class="small muted" style="margin:16px 0 0">Every sentence is computed from the machine's candidate readings, not written — and not yet confirmed. As stamps are named the sentences firm up.</p></div>`;
+      return chapter("dna",6,"The collection's DNA","The shape of the whole, distilled to a handful of honest sentences.",body);
+    }
+    return awaiting("dna",6,"The collection's DNA","The shape of the whole, distilled to a handful of honest sentences.","When there is enough read to summarise, this chapter states what the collection is — in plain, checkable lines drawn straight from the counts.",{cap:"Profile · pending",prompt:"The collection, distilled — once there is enough to distil."});
+  }
   const iss=(DATA.issuers||[]).filter(i=>i.status==="confirmed"); const gone=iss.filter(i=>i.state==="defunct"); const y=DATA.facts.years; const m=disp(metric("philatelicItemCount"));
   const lines=[
     `<strong>${fmt(m.pop)}</strong> stamps found, <strong>${fmt(m.v.confirmed)}</strong> named — the atlas speaks for the named ones only.`,
@@ -1607,7 +1678,18 @@ function connectionsCh(){
   return chapter("connections",7,"Connections","Two stamps, one thread — the same event seen from two countries, decades apart.",body);
 }
 function languageCh(){
-  const st=stamps(); if(!st.length) return awaiting("language",8,"Money &amp; language","Denominations and scripts — the day a currency went decimal, the alphabets the post was printed in.","Once the face values and inscriptions are read, this chapter charts the money and the writing systems across the collection.",{cap:"Denomination plate · pending"});
+  const st=stamps();
+  if(!st.length){
+    const A=candAgg();
+    if(A.denoms.length){
+      const pct=Math.round(100*A.withDen/Math.max(1,A.total));
+      const rows=A.denoms.slice(0,40).map(d=>`<tr data-key="${esc(d.value)}"><td>${esc(d.value)}</td><td class="num">${fmt(d.count)}</td></tr>`).join("");
+      const body=`<div class="grid g2 split" style="--split:1fr 300px;align-items:start"><div class="card"><span class="tag candidate">face values as read — awaiting a person</span><h3 style="margin-top:10px">The commonest denominations</h3><p class="small">Read from <strong>${fmt(A.withDen)}</strong> of ${fmt(A.total)} candidate stamps. Values are printed as the machine read them; currencies and decimal days resolve once a person confirms the issuers.</p><div class="scroll-x"><table class="tbl"><thead><tr><th>Face value (as read)</th><th style="text-align:right">Stamps</th></tr></thead><tbody>${rows}</tbody></table></div>${A.denoms.length>40?`<p class="small muted" style="margin-top:10px">Showing the 40 commonest of ${fmt(A.denoms.length)} distinct values.</p>`:""}</div>
+      <div class="card flat"><p class="small"><strong>${pct}%</strong> of candidate stamps carry a legible face value so far. The chart of currencies — annas and cents, marks by the thousand million — draws itself once face values are read across the whole collection, not just the commonest few.</p></div></div>`;
+      return chapter("language",8,"Money &amp; language","Denominations and scripts — the day a currency went decimal, the alphabets the post was printed in.",body);
+    }
+    return awaiting("language",8,"Money &amp; language","Denominations and scripts — the day a currency went decimal, the alphabets the post was printed in.","Once the face values and inscriptions are read, this chapter charts the money and the writing systems across the collection.",{cap:"Denomination plate · pending"});
+  }
   const rows=st.map(s=>{ const d=s.identity.denomination||{}; return `<tr data-key="${esc(s.id)}"><td>${stampLink(s.id)}</td><td>${esc(d.value||"—")} ${dot(d.status)}</td><td>${esc(d.currency||"—")}</td><td>${esc((s.identity.script||{}).value||"—")}</td></tr>`; }).join("");
   const body=`<div class="grid g2 split" style="--split:1fr 300px;align-items:start"><div class="card"><h3>Face values read so far</h3><div class="scroll-x"><table class="tbl"><thead><tr><th>Stamp</th><th>Value</th><th>Currency</th><th>Script</th></tr></thead><tbody>${rows}</tbody></table></div></div><div class="grid" style="gap:12px">${pendingTile("denominationCoverage")}<div class="card flat"><p class="small">The chart of currencies — decimal days, annas and cents, marks by the thousand million — draws itself once face values are read across the collection, not just the named few.</p></div></div></div>`;
   return chapter("language",8,"Money &amp; language","Denominations and scripts — the day a currency went decimal, the alphabets the post was printed in.",body);
@@ -1634,7 +1716,24 @@ function albumsCh(){
 const colourCh = () => awaiting("colour",12,"Colour","The collection by hue — the commonest inks, the most colourful decade.","Once the images are read for colour, this chapter sorts the collection by its dominant inks — honestly, and without a scan of any modern design.",{pending:["colourProfile"],plate:"art",cap:"Colour study · pending",prompt:"A colour study — the collection's palette, drawn fresh."});
 function playCh(){
   const disc=DATA.discoveries||[]; const dyk=DATA.didYouKnow||[];
-  if(!disc.length&&!dyk.length){ const body=`<div class="grid g2 split" style="--split:1fr 320px;align-items:start"><div><span class="tag unknown">Nothing to discover yet</span><p class="deck" style="margin:12px 0 0;font-style:normal;color:var(--ink)">A door for wandering — a surprising fact, a question of scale, a giraffe where you didn't expect one. Each one is computed straight from the collection, so none of it can be invented.</p><p class="small muted" style="margin-top:14px">The surprises begin once the first pages are read. Until the data can support a fact, the atlas offers none — that is the whole game.</p></div><div class="perf"><div class="inner" style="padding:10px">${plate("art",{size:"full",cap:"Discovery · pending",prompt:"A surprising fact will appear here — drawn from the data, never from the imagination."})}</div></div></div>`; return chapter("play",13,"Play &amp; discovery","A way in for the curious — surprising facts and questions of scale, drawn straight from the data.",body); }
+  if(!disc.length&&!dyk.length){
+    const A=candAgg();
+    if(A.total){
+      const t0=A.territories[0], th0=A.themes[0], th1=A.themes[1], th2=A.themes[2];
+      const discC=[
+        t0?`<div class="card hook surprise"><p class="q" style="margin-top:0">Which corner of the world fills the most pages?</p><p class="a"><a href="${setHref('territory',t0.name)}">${esc(t0.name)}</a> — ${fmt(t0.count)} candidate stamps, ${Math.round(100*t0.count/A.total)}% of everything read so far.</p><div class="grounded"><span>rests on</span><a href="${setHref('territory',t0.name)}">${esc(t0.name)}</a></div></div>`:"",
+        th0?`<div class="card hook surprise"><p class="q" style="margin-top:0">What does the collection keep coming back to?</p><p class="a"><a href="${setHref('theme',th0.name)}">${esc(th0.name)}</a>, on ${fmt(th0.count)} stamps${th1&&th2?` — more than <a href="${setHref('theme',th1.name)}">${esc(th1.name)}</a> and <a href="${setHref('theme',th2.name)}">${esc(th2.name)}</a> together`:""}.</p><div class="grounded"><span>rests on</span><a href="${setHref('theme',th0.name)}">${esc(th0.name)}</a></div></div>`:"",
+        `<div class="card hook surprise"><p class="q" style="margin-top:0">How many of the issuers no longer exist?</p><p class="a"><strong>${fmt(A.extinct)}</strong> of ${fmt(A.issuers.length)} — states that printed a stamp and then vanished under that name.</p><div class="grounded"><span>rests on</span><a href="${chHref('issuers')}">the issuers</a></div></div>`,
+      ].filter(Boolean);
+      const withK=(DATA.candidates||[]).filter(c=>c.knowledge&&c.knowledge.length);
+      const step=Math.max(1,Math.floor(withK.length/6));
+      const pick=[]; for(let i=0;i<withK.length&&pick.length<6;i+=step) pick.push(withK[i]);
+      const dykC=pick.map(c=>{ const f=c.knowledge.find(k=>k.factType!=="summary")||c.knowledge[0]; const label=(c.subjects&&c.subjects[0])||c.resolvedIssuer||"a stamp"; return `<div class="card hook"><p class="q" style="margin-top:0">${esc(f.value)}</p><div class="grounded"><span>from ${esc(f.source||"a source")} on</span><a href="${candHref(c.id)}">${esc(label)}</a></div></div>`; });
+      const body=`<div class="grid g2"><div class="grid" style="gap:12px"><span class="eyebrow">Discoveries · computed from the candidates</span>${discC.join("")}</div>
+      <div class="grid" style="gap:12px"><span class="eyebrow">Did you know · sourced</span>${dykC.join("")||`<div class="card"><p class="small muted">Sourced facts appear here as stamps are enriched.</p></div>`}</div></div><p class="small muted" style="margin-top:14px">Nothing here is written by hand: a discovery is arithmetic over the machine's candidate readings, and a “did you know” is a sourced fact already sitting on a candidate stamp's page — both hedged, and awaiting a person.</p>`;
+      return chapter("play",13,"Play &amp; discovery","A way in for the curious — surprising facts and questions of scale, drawn straight from the data.",body);
+    }
+    const body=`<div class="grid g2 split" style="--split:1fr 320px;align-items:start"><div><span class="tag unknown">Nothing to discover yet</span><p class="deck" style="margin:12px 0 0;font-style:normal;color:var(--ink)">A door for wandering — a surprising fact, a question of scale, a giraffe where you didn't expect one. Each one is computed straight from the collection, so none of it can be invented.</p><p class="small muted" style="margin-top:14px">The surprises begin once the first pages are read. Until the data can support a fact, the atlas offers none — that is the whole game.</p></div><div class="perf"><div class="inner" style="padding:10px">${plate("art",{size:"full",cap:"Discovery · pending",prompt:"A surprising fact will appear here — drawn from the data, never from the imagination."})}</div></div></div>`; return chapter("play",13,"Play &amp; discovery","A way in for the curious — surprising facts and questions of scale, drawn straight from the data.",body); }
   const links=o=>(o.stamps||[]).map(id=>stampById(id)).filter(Boolean).map(x=>`<a href="${stampHref(x.id)}">${esc(x.short)}</a>`).join("")||"<span>the survey counts</span>";
   const body=`<div class="grid g2"><div class="grid" style="gap:12px"><span class="eyebrow">Discoveries · computed</span>${disc.map(o=>`<div class="card hook surprise"><p class="q" style="margin-top:0">${esc(o.q)}</p><p class="a">${esc(o.a)}</p><div class="grounded"><span>rests on</span>${links(o)}</div></div>`).join("")}</div>
   <div class="grid" style="gap:12px"><span class="eyebrow">Did you know · grounded</span>${dyk.map(o=>`<div class="card hook"><p class="q" style="margin-top:0">${esc(o.text)}</p><div class="grounded"><span>from the facts of</span>${links(o)}</div></div>`).join("")}</div></div><p class="small muted" style="margin-top:14px">One of each is chosen by the date for the frontispiece. Nothing here is written by hand: a discovery is arithmetic over the projection, and a “did you know” is a fact that already sits on a stamp's page.</p>`;
