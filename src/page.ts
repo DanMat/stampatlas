@@ -977,11 +977,21 @@ function metricTile(id, cls, href){ const m=metric(id); if(!m) return ""; const 
 function pendingTile(id){ const p=pendingOf(id); const label=FRIENDLY_PENDING[id]||id;
   return \`<div class="perf" data-key="\${esc(label)}"><div class="inner tile"><div class="n" style="font-weight:300;color:var(--ink-4)">—</div><div class="l">\${esc(label)}</div><div class="s"><span class="tag unknown">awaiting</span> \${p?esc(p.blockedBy):"not yet available"}</div></div></div>\`; }
 function smartTile(id, cls, href){ return metric(id) ? metricTile(id, cls, href) : pendingTile(id); }
-/* The earliest/latest candidate stamp by its read year — mirrors the emit's floor (1840, the Penny
-   Black) and cap (next year), so the year tile can link straight to the stamp behind the number. */
+/* The earliest/latest candidate stamp by its ISSUE year, returning {stamp, year}. The machine's
+   \`year\` conflates issue dates with DEPICTED dates — a birth/death year, an anniversary, a range
+   like 1847-1947 printed on a commemorative. So accept only a bare 4-digit reading (excludes
+   "1840 (birth)" and ranges) whose subject/reading doesn't announce itself as a commemoration.
+   Floor 1840 (the Penny Black), cap next year. Hedged everywhere as a candidate. */
 function candYearStamp(which){
-  const cs=DATA.candidates||[]; const cap=new Date().getFullYear()+1; let best=null, bestY=null;
-  for(const c of cs){ const m=/\\b(\\d{4})\\b/.exec(String(c.year||"")); if(!m) continue; const y=+m[1]; if(y<1840||y>cap) continue; if(bestY==null||(which==="earliest"?y<bestY:y>bestY)){ bestY=y; best=c; } }
+  const cs=DATA.candidates||[]; const cap=new Date().getFullYear()+1;
+  const depicted=/anniversar|centenar|centennial|commemorat|geboren|\\bborn\\b|\\bbirth\\b|\\bdeath\\b|\\bdied\\b|jubile/i;
+  let best=null, bestY=null;
+  for(const c of cs){
+    const raw=String(c.year||""); const m=/^\\s*(\\d{4})\\s*$/.exec(raw); if(!m) continue; // bare 4-digit only
+    const y=+m[1]; if(y<1840||y>cap) continue;
+    if(depicted.test(raw+" "+((c.subjects||[]).join(" "))+" "+(c.reading||""))) continue; // depicted date, not issue
+    if(bestY==null||(which==="earliest"?y<bestY:y>bestY)){ bestY=y; best={stamp:c,year:y}; }
+  }
   return best;
 }
 /* the span of years: confirmed headline, candidate stretch named honestly */
@@ -998,9 +1008,11 @@ function yearsTile(which){
     return tile(esc(String(e.confirmed)), label, s, "gold", key, st?stampHref(st.id):chHref("time"));
   }
   // No confirmed year yet — surface the machine's candidate reading, hedged honestly, and link
-  // straight to the candidate stamp the machine dated to that year (ADR-0055 traceability).
+  // straight to the candidate stamp the machine dated to that year (ADR-0055 traceability). Use the
+  // filtered issue-year (drops depicted birth/anniversary dates), so the number and the link agree.
   const cst=candYearStamp(which);
-  return tile(esc(String(e.candidate)), label, \`<span class="tag candidate">candidate</span> the machine's dating\${cst?\` — open the stamp →\`:", awaiting a person"}\`, "gold", key, cst?candHref(cst.id):chHref("time"));
+  if(cst) return tile(esc(String(cst.year)), label, \`<span class="tag candidate">candidate</span> the machine's dating — open the stamp →\`, "gold", key, candHref(cst.stamp.id));
+  return tile(esc(String(e.candidate)), label, \`<span class="tag candidate">candidate</span> the machine's dating, awaiting a person\`, "gold", key, chHref("time"));
 }
 function pendItems(ids){ return ids.map(id=>{ const p=pendingOf(id); if(!p) return ""; const label=FRIENDLY_PENDING[id]||id;
   return \`<li data-key="\${esc(label)}" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--rule-soft);padding:9px 0"><span>\${esc(label)}</span><span class="mono" style="color:var(--ink-3)">awaiting \${esc(p.blockedBy)}</span></li>\`; }).filter(Boolean).join(""); }
