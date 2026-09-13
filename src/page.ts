@@ -1090,12 +1090,15 @@ function candidatesBand(){
     \${CANDLEGEND}
   </div></section>\`;
 }
+/* Natural order for a stamp locator: page number, then ordinal on the page — never the lexical id
+   (which sorts p3-1, p3-10, p3-2…). Falls back to the id when a page/ordinal isn't numeric. */
+const cmpCand=(a,b)=>(Number(a.page)-Number(b.page))||(Number(a.ordinal)-Number(b.ordinal))||String(a.id).localeCompare(String(b.id));
 function candidatesPage(){
   const cands=DATA.candidates||[];
   const np=(DATA.facts&&DATA.facts.namingProgress)||{namedByMachine:cands.length,individualStamps:cands.length,verifiedByPerson:0};
   const byAlbum={}; cands.forEach(c=>{ (byAlbum[c.album]=byAlbum[c.album]||[]).push(c); });
   const groups=Object.keys(byAlbum).sort().map(al=>{
-    const rows=byAlbum[al].map(c=>\`<li><a href="\${candHref(c.id)}" style="color:inherit;text-decoration:none"><span class="meta">\${dot("candidate")} p\${esc(String(c.page))} · \${c.ordinal}/\${c.stampsOnPage}</span> <span class="small">\${esc(c.reading||"nothing legible yet")}</span></a></li>\`).join("");
+    const rows=byAlbum[al].slice().sort(cmpCand).map(c=>\`<li><a href="\${candHref(c.id)}" style="color:inherit;text-decoration:none"><span class="meta">\${dot("candidate")} p\${esc(String(c.page))} · \${c.ordinal}/\${c.stampsOnPage}</span> <span class="small">\${esc(c.reading||"nothing legible yet")}</span></a></li>\`).join("");
     return \`<div class="card"><h3>\${esc(al)}</h3><ul class="recent" style="margin-top:8px">\${rows}</ul></div>\`;
   }).join("");
   return \`<section class="band"><div class="wrap"><span class="eyebrow">The machine's reading · candidates</span>
@@ -1255,7 +1258,7 @@ function setPage(dim,value){
   const label=dim==="form"?formLabel(value):dim==="page"?\`\${pageParts[0]} · page \${pageParts[1]}\`:dim==="denomination"?denomRep:value;
   const byAlbum={}; cands.forEach(c=>{ (byAlbum[c.album]=byAlbum[c.album]||[]).push(c); });
   const groups=Object.keys(byAlbum).sort().map(al=>{
-    const rows=byAlbum[al].slice().sort((a,b)=>a.id.localeCompare(b.id)).map(c=>\`<li><a href="\${candHref(c.id)}" style="color:inherit;text-decoration:none"><span class="meta">\${dot("candidate")} p\${esc(String(c.page))} · \${c.ordinal}/\${c.stampsOnPage}</span> <span class="small">\${esc(c.reading||"nothing legible yet")}</span></a></li>\`).join("");
+    const rows=byAlbum[al].slice().sort(cmpCand).map(c=>\`<li><a href="\${candHref(c.id)}" style="color:inherit;text-decoration:none"><span class="meta">\${dot("candidate")} p\${esc(String(c.page))} · \${c.ordinal}/\${c.stampsOnPage}</span> <span class="small">\${esc(c.reading||"nothing legible yet")}</span></a></li>\`).join("");
     // Don't self-link the album header when we're already viewing that album.
     const head=dim==="album"?esc(al):\`<a href="\${setHref('album',al)}" style="color:inherit">\${esc(al)}</a>\`;
     return \`<div class="card"><h3>\${head}</h3><ul class="recent" style="margin-top:8px">\${rows}</ul></div>\`;
