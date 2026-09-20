@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T19:01:28.062Z",
+  "generatedAt": "2026-09-20T19:37:29.814Z",
   "facts": {
     "countingRules": [
       "Trial and survey captures are excluded — only sessions committed for the archive count.",
@@ -51,13 +51,13 @@
       },
       {
         "metric": "countedStampCount",
-        "unit": "stamps a person counted on a photographed page",
+        "unit": "stamps on the photographed pages — a person's count where they counted, else the machine's page reading",
         "value": {
           "confirmed": 6104,
-          "candidate": 0,
+          "candidate": 1817,
           "unknown": 0
         },
-        "eligiblePopulation": 6104
+        "eligiblePopulation": 7921
       },
       {
         "metric": "philatelicItemCount",
@@ -130,7 +130,7 @@
         "eligiblePopulation": 320
       }
     ],
-    "asOf": "2026-09-20T19:07:41.809Z",
+    "asOf": "2026-09-20T19:43:12.053Z",
     "namingProgress": {
       "namedByMachine": 7351,
       "individualStamps": 11128,

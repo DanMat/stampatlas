@@ -850,7 +850,7 @@ const FRIENDLY = {
   albumPositionCount:    {label:"Positions traversed",        d:"pages, covers, inserts and dividers walked through"},
   positionOccupancy:     {label:"Positions holding material", d:"positions actually seen to hold a stamp"},
   albumArchetypeCoverage:{label:"Album structures classified",d:"albums whose layout a person has identified"},
-  countedStampCount:     {label:"Stamps counted",            d:"individual stamps a person has counted on the photographed pages — confirmed by hand, not a machine"},
+  countedStampCount:     {label:"Stamps counted",            d:"stamps on the photographed pages — a person's own count where they counted, the machine's page reading elsewhere; the vault's album totals. The confirmed figure is the hand-counted portion"},
   philatelicItemCount:   {label:"Stamps & items counted",    d:"individual stamps, covers and blocks found on a page — and how many are named"},
   distinctIssuerCount:   {label:"Distinct issuers",           d:"places whose name is printed on a stamp here"},
   extinctIssuerCount:    {label:"Issuers that no longer exist",d:"counted under the name printed, in the year issued"},
@@ -1064,7 +1064,9 @@ function decadeChart(){
 function frontispiece(){
   const albums=DATA.albums||[]; const positions=albums.reduce((n,a)=>n+(a.positionCount||0),0);
   const items=metric("philatelicItemCount"); const named=items?(items.value.confirmed||0):0;
-  const counted=metric("countedStampCount"); const countedN=counted?(counted.value.confirmed||0):0;
+  const counted=metric("countedStampCount");
+  const countedN=counted?((counted.value.confirmed||0)+(counted.value.candidate||0)):0; // effective total (vault rule)
+  const handN=counted?(counted.value.confirmed||0):0;                                    // the hand-counted portion
   const np=(DATA.facts&&DATA.facts.namingProgress)||{namedByMachine:0,individualStamps:0,verifiedByPerson:0};
   const distinctRead=(DATA.facts&&DATA.facts.distinctReadings)||0;   // unique as read (copies collapsed)
   const itemsRead=np.namedByMachine||0;                              // pieces read (a block/sheet = one item)
@@ -1072,18 +1074,18 @@ function frontispiece(){
     <div>
       <span class="eyebrow">Frontispiece · a collection, being charted · as of ${esc(asOfDate())}</span>
       <h1 style="margin-top:10px" tabindex="-1" id="pageTitle">Every stamp is a small <em>window</em> onto a place and a year.</h1>
-      <p class="lede" style="margin-top:20px">One lifetime's collection of those windows, being charted page by page into an atlas of five Parts. ${countedN?`<strong>${fmt(countedN)} stamps counted by hand so far</strong>${named?`, ${fmt(named)} of them named`:`, none named yet`} — the count is confirmed, the names come slowly, and the page says which is which.`:`<strong>Nothing has been counted yet.</strong> That is the honest first page of every atlas: come back and watch it fill in.`}</p>
+      <p class="lede" style="margin-top:20px">One lifetime's collection of those windows, being charted page by page into an atlas of five Parts. ${countedN?`<strong>${fmt(countedN)} stamps counted so far</strong>${named?`, ${fmt(named)} of them named`:`, none named yet`} — ${fmt(handN)} confirmed by hand, the rest the machine's page reading; the names come slowly, and the page says which is which.`:`<strong>Nothing has been counted yet.</strong> That is the honest first page of every atlas: come back and watch it fill in.`}</p>
       <div class="actions">
         <a class="btn primary" href="${partHref(PARTS[0])}">Open Part I</a>
         <a class="btn" href="#/stamps">The Register</a>
         <a class="btn ghost" href="${chHref("unknown")}">What isn't known yet</a>
       </div>
       <div class="bigfacts">
-        <div class="bf" title="Every stamp a person counted by hand across the photographed pages — one confirmed count per page. A page left blank takes the machine's page count; an empty page counts as zero. This is the ground truth the machine's reading is measured against."><div class="n">${countedN?fmt(countedN):"—"}</div><div class="l">${countedN?"counted by hand":"awaiting the count"}</div></div>
+        <div class="bf" title="Stamps on the photographed pages — a person's own count where they counted a page, the machine's page reading everywhere else; the same figure the private vault shows for each album.${handN?` ${fmt(handN)} of these are confirmed by hand.`:''}"><div class="n">${countedN?fmt(countedN):"—"}</div><div class="l">${countedN?"counted":"awaiting the count"}</div></div>
         <div class="bf" title="Pieces the reader found in the photographs with look-alike copies collapsed into one — same issuer, year, value and subject. A fuzzy fingerprint and an estimate, never a verified duplicate count."><div class="n">${distinctRead?fmt(distinctRead):"—"}</div><div class="l">distinct as read</div></div>
         <div class="bf" title="Every piece the reader found in the photographs, before de-duplication. A block or sheet counts as one item. A machine candidate reading, not yet confirmed by a person."><div class="n">${itemsRead?fmt(itemsRead):"—"}</div><div class="l">items read</div></div>
       </div>
-      <p class="small muted" style="margin-top:12px;max-width:54ch"><em>Counted by hand</em> is the truth; the other two are the machine's <em>candidate</em> readings. As the reader improves year on year, its counts should close on the hand count — the gap is the work left to do.</p>
+      <p class="small muted" style="margin-top:12px;max-width:56ch"><em>Counted</em> is a person's own count where a page was counted, the machine's page reading elsewhere — the collection's working total. The other two are the machine's <em>candidate</em> readings; as the reader improves year on year they should close on the counted total, and the gap is the work left to do.</p>
     </div>
     <div class="hero-plate">
       <svg class="hero-graticule" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" stroke="var(--ochre)" stroke-width=".7">${[40,80,120,160,190].map(r=>`<circle cx="200" cy="200" r="${r}"/>`).join("")}${[0,30,60,90,120,150].map(a=>`<line x1="200" y1="10" x2="200" y2="390" transform="rotate(${a} 200 200)"/>`).join("")}</g></svg>
