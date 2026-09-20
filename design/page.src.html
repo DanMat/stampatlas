@@ -217,6 +217,7 @@ a.perf{display:block;text-decoration:none;color:inherit}
 .bigfacts .n{font-family:var(--ff-display);font-size:clamp(28px,3vw,42px);font-weight:600;line-height:1;font-variation-settings:"opsz" 144,"SOFT" 30;color:var(--ink);letter-spacing:-.02em}
 .bigfacts .n small{font-size:.5em;font-weight:400;color:var(--ink-3)}
 .bigfacts .l{font-family:var(--ff-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-top:6px}
+.bigfacts .bf[title]{cursor:help}
 
 /* the dashboard bands under the frontispiece */
 .band{padding:clamp(22px,3.5vw,44px) 0;border-top:1px solid var(--rule)}
@@ -1064,6 +1065,9 @@ function frontispiece(){
   const albums=DATA.albums||[]; const positions=albums.reduce((n,a)=>n+(a.positionCount||0),0);
   const items=metric("philatelicItemCount"); const named=items?(items.value.confirmed||0):0;
   const counted=metric("countedStampCount"); const countedN=counted?(counted.value.confirmed||0):0;
+  const np=(DATA.facts&&DATA.facts.namingProgress)||{namedByMachine:0,individualStamps:0,verifiedByPerson:0};
+  const distinctRead=(DATA.facts&&DATA.facts.distinctReadings)||0;   // unique as read (copies collapsed)
+  const itemsRead=np.namedByMachine||0;                              // pieces read (a block/sheet = one item)
   return `<section class="front" id="top"><div class="wrap">
     <div>
       <span class="eyebrow">Frontispiece · a collection, being charted · as of ${esc(asOfDate())}</span>
@@ -1075,10 +1079,11 @@ function frontispiece(){
         <a class="btn ghost" href="${chHref("unknown")}">What isn't known yet</a>
       </div>
       <div class="bigfacts">
-        <div class="bf"><div class="n">${fmt(albums.length)}</div><div class="l">albums charted</div></div>
-        <div class="bf"><div class="n">${fmt(positions)}</div><div class="l">positions traversed</div></div>
-        <div class="bf"><div class="n">${countedN?fmt(countedN):"—"}</div><div class="l">${countedN?"stamps counted":"stamps · awaiting the count"}</div></div>
+        <div class="bf" title="Every stamp a person counted by hand across the photographed pages — one confirmed count per page. A page left blank takes the machine's page count; an empty page counts as zero. This is the ground truth the machine's reading is measured against."><div class="n">${countedN?fmt(countedN):"—"}</div><div class="l">${countedN?"counted by hand":"awaiting the count"}</div></div>
+        <div class="bf" title="Pieces the reader found in the photographs with look-alike copies collapsed into one — same issuer, year, value and subject. A fuzzy fingerprint and an estimate, never a verified duplicate count."><div class="n">${distinctRead?fmt(distinctRead):"—"}</div><div class="l">distinct as read</div></div>
+        <div class="bf" title="Every piece the reader found in the photographs, before de-duplication. A block or sheet counts as one item. A machine candidate reading, not yet confirmed by a person."><div class="n">${itemsRead?fmt(itemsRead):"—"}</div><div class="l">items read</div></div>
       </div>
+      <p class="small muted" style="margin-top:12px;max-width:54ch"><em>Counted by hand</em> is the truth; the other two are the machine's <em>candidate</em> readings. As the reader improves year on year, its counts should close on the hand count — the gap is the work left to do.</p>
     </div>
     <div class="hero-plate">
       <svg class="hero-graticule" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" stroke="var(--ochre)" stroke-width=".7">${[40,80,120,160,190].map(r=>`<circle cx="200" cy="200" r="${r}"/>`).join("")}${[0,30,60,90,120,150].map(a=>`<line x1="200" y1="10" x2="200" y2="390" transform="rotate(${a} 200 200)"/>`).join("")}</g></svg>
@@ -1087,6 +1092,9 @@ function frontispiece(){
   </div></section>`;
 }
 function glanceBand(){
+  const gnp=(DATA.facts&&DATA.facts.namingProgress)||{individualStamps:0};
+  const indiv=gnp.individualStamps||0;   // every stamp, each sheet/block counted out — one section below the hero
+  const indivLine=indiv?`<p class="small" title="Every stamp once each sheet and block is counted out by its read contents. The reader's fullest tally and its loosest — empty printed sheet frames can be over-counted. A candidate count, not yet verified by a person." style="margin-top:14px;color:var(--ink-2);cursor:help"><strong>${fmt(indiv)}</strong> individual stamps once every sheet and block is counted out <span class="small" style="color:var(--ink-3)">— the reader's fullest tally, still a candidate count and not yet verified by a person</span></p>`:"";
   const occ=metric("positionOccupancy"); let survey="";
   if(occ){ const o=occ.value||{}; const pop=(occ.eligiblePopulation!=null)?occ.eligiblePopulation:((o.confirmed||0)+(o.candidate||0)+(o.unknown||0)); const examined=Math.max(0,pop-(o.unknown||0)); const p=pop?Math.round(100*examined/pop):0; const seg=x=>pop?Math.round(100*(x||0)/pop):0; const hatch="repeating-linear-gradient(90deg,var(--ink-4) 0 3px,transparent 3px 6px)";
     survey=`<div class="survey-line"><span><strong style="font-family:var(--ff-display);font-size:1.5em;color:${p===0?"var(--ink-4)":"var(--terra)"}">${p}%</strong> of positions examined</span><span class="meterbar" role="img" aria-label="${p}% of positions examined"><i style="width:${seg(o.confirmed)}%;background:var(--terra)"></i><i style="width:${seg(o.candidate)}%;background:var(--ochre)"></i><i style="width:${seg(o.unknown)}%;background:${hatch}"></i></span><span class="small">${fmt(o.unknown||0)} not yet looked at — hatched, not guessed</span></div>`; }
@@ -1102,6 +1110,7 @@ function glanceBand(){
       ${smartTile("extinctIssuerCount","accent",chHref("issuers"))}
       ${metricTile("positionOccupancy","gold",chHref("glance"))}
     </div>
+    ${indivLine}
     ${survey}
   </div></section>`;
 }
